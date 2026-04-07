@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>G7 AI Architecture Divergence — The Grove Foundation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fragment+Mono:ital@0;1&family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --amber:#D4621A; --amber-bright:#E8784A; --amber-dim:#8B3D10;
+  --bg:#080808; --bg2:#0f0f0f; --bg3:#161616;
+  --border:#252525; --border-light:#333;
+  --text:#E8E2D9; --text-dim:#7A736A; --text-mid:#B0A898;
+  --green:#4CAF72; --green-dim:rgba(76,175,114,0.08);
+  --red:#C0392B; --red-dim:rgba(192,57,43,0.06);
+  --mono:'Fragment Mono', monospace;
+  --serif:'Instrument Serif', Georgia, serif;
+  --sans:'DM Sans', sans-serif;
+}
+</style>
+</head>
+<body style="margin:0; background:var(--bg); color:var(--text); font-family:var(--sans); -webkit-font-smoothing:antialiased;">
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+body::before { content:''; position:fixed; inset:0; background-image:linear-gradient(var(--border) 1px,transparent 1px),linear-gradient(90deg,var(--border) 1px,transparent 1px); background-size:40px 40px; opacity:0.25; pointer-events:none; z-index:0; }
+.container { position:relative; z-index:1; max-width:1100px; margin:0 auto; padding:64px 48px 80px; }
+.eyebrow { font-family:var(--mono); font-size:11px; letter-spacing:0.25em; text-transform:uppercase; color:var(--amber); margin-bottom:12px; }
+h1 { font-family:var(--serif); font-weight:400; font-size:clamp(28px,3.2vw,40px); line-height:1.15; color:var(--text); margin-bottom:8px; letter-spacing:-0.01em; }
+h1 em { color:var(--amber); font-style:italic; }
+.subtitle { font-weight:300; font-size:15px; color:var(--text-dim); margin-bottom:48px; max-width:680px; line-height:1.6; }
+.divider { width:48px; height:1px; background:var(--amber); margin-bottom:40px; }
+
+/* ── COUNTRY CARDS ── */
+.country-grid { display:flex; flex-direction:column; gap:2px; }
+.country-row {
+  display:grid;
+  grid-template-columns:180px 1fr 200px;
+  gap:0;
+  background:var(--bg2);
+  border:1px solid var(--border);
+  border-bottom:none;
+  transition:all 0.25s;
+  cursor:default;
+  position:relative;
+  overflow:hidden;
+}
+.country-row:last-child { border-bottom:1px solid var(--border); }
+.country-row:hover { background:var(--bg3); }
+.country-row.sovereign { border-left:3px solid var(--green); }
+.country-row.centralized { border-left:3px solid var(--red); }
+
+.country-row.centralized { background:var(--red-dim); }
+.country-row.centralized:hover { background:rgba(192,57,43,0.1); }
+.country-row.centralized .col-name .flag-label { color:var(--red); }
+.country-row.centralized .col-signal { border-left-color:rgba(192,57,43,0.15); }
+
+.col-name {
+  padding:24px 20px;
+  display:flex; flex-direction:column; justify-content:center;
+  border-right:1px solid var(--border);
+}
+.flag-label { font-family:var(--serif); font-size:20px; color:var(--green); line-height:1.2; }
+.arch-tag {
+  font-family:var(--mono); font-size:9px; letter-spacing:0.15em;
+  text-transform:uppercase; margin-top:6px;
+  padding:3px 8px; display:inline-block; width:fit-content;
+}
+.arch-tag.sovereign { color:var(--green); background:var(--green-dim); border:1px solid rgba(76,175,114,0.2); }
+.arch-tag.centralized { color:var(--red); background:var(--red-dim); border:1px solid rgba(192,57,43,0.2); }
+
+.col-body { padding:20px 24px; display:flex; flex-direction:column; justify-content:center; }
+.investment { font-family:var(--mono); font-size:13px; color:var(--text); margin-bottom:6px; letter-spacing:0.02em; }
+.description { font-size:13px; color:var(--text-dim); line-height:1.55; font-weight:300; }
+
+.col-signal {
+  padding:20px 24px;
+  border-left:1px solid var(--border);
+  display:flex; flex-direction:column; justify-content:center;
+}
+.signal-label { font-family:var(--mono); font-size:9px; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-dim); margin-bottom:6px; }
+.signal-text { font-family:var(--serif); font-style:italic; font-size:13px; color:var(--text-mid); line-height:1.5; }
+
+/* ── SUMMARY BAR ── */
+.summary-bar {
+  display:grid; grid-template-columns:1fr 1fr; gap:1px;
+  background:var(--border); border:1px solid var(--border);
+  margin-top:40px; margin-bottom:40px;
+}
+.summary-cell { background:var(--bg2); padding:28px 24px; }
+.summary-num { font-family:var(--serif); font-size:48px; line-height:1; margin-bottom:8px; }
+.summary-label { font-family:var(--mono); font-size:10px; letter-spacing:0.15em; text-transform:uppercase; }
+.summary-detail { font-size:13px; color:var(--text-dim); margin-top:8px; line-height:1.5; font-weight:300; }
+
+/* ── FOOTER ── */
+.table-footer { font-size:12px; color:var(--text-dim); line-height:1.7; font-weight:300; border-top:1px solid var(--border); padding-top:24px; margin-top:40px; }
+.table-footer strong { color:var(--text-mid); font-weight:500; }
+.cc-badge { font-family:var(--mono); font-size:10px; color:var(--amber-dim); letter-spacing:0.1em; margin-top:24px; }
+.insight-box { background:rgba(212,98,26,0.04); border:1px solid rgba(212,98,26,0.2); padding:24px 28px; margin-top:40px; }
+.insight-box p { font-size:14px; color:var(--text-mid); line-height:1.7; font-weight:300; }
+
+/* ── RESPONSIVE ── */
+@media (max-width:900px) {
+  .container { padding:40px 24px 60px; }
+  .country-row { grid-template-columns:1fr; }
+  .col-name { border-right:none; border-bottom:1px solid var(--border); padding:16px 20px; }
+  .col-signal { border-left:none; border-top:1px solid var(--border); }
+  .summary-bar { grid-template-columns:1fr; }
+}
+</style>
+
+<div class="container">
+  <div class="eyebrow">Research &mdash; April 2026</div>
+  <h1>G7 AI Architecture <em>Divergence</em></h1>
+  <p class="subtitle">Six of seven G7 nations are investing in sovereign AI infrastructure, domestic foundation models, and architectural independence. One is consolidating toward four vendors.</p>
+  <div class="divider"></div>
+
+  <!-- ══ SUMMARY BAR ══ -->
+  <div class="summary-bar">
+    <div class="summary-cell">
+      <div class="summary-num" style="color:var(--green);">6</div>
+      <div class="summary-label" style="color:var(--green);">Building sovereign</div>
+      <div class="summary-detail">France, Germany, Japan, Canada, UK, Italy are investing in domestic AI infrastructure, open-weight models, and architectural independence from US vendors.</div>
+    </div>
+    <div class="summary-cell">
+      <div class="summary-num" style="color:var(--red);">1</div>
+      <div class="summary-label" style="color:var(--red);">Consolidating centralized</div>
+      <div class="summary-detail">The United States is preempting state regulation, taking equity stakes in vendors, and framing deregulation of four companies as national AI strategy.</div>
+    </div>
+  </div>
+
+  <!-- ══ COUNTRY ROWS ══ -->
+  <div class="country-grid">
+
+    <!-- FRANCE -->
+    <div class="country-row sovereign">
+      <div class="col-name">
+        <div class="flag-label">France</div>
+        <div class="arch-tag sovereign">Sovereign + Open-Weight</div>
+      </div>
+      <div class="col-body">
+        <div class="investment">&euro;109B AI infrastructure &middot; Mistral &euro;2.8B raised</div>
+        <div class="description">Open-weight models (Apache 2.0) deployed on French-controlled servers. Military eliminated US cloud dependencies. Mistral building 200MW sovereign data center capacity by 2027. Framework agreements with Germany for public administration AI.</div>
+      </div>
+      <div class="col-signal">
+        <div class="signal-label">Key signal</div>
+        <div class="signal-text">&ldquo;This is our fight for sovereignty, for strategic autonomy.&rdquo; &mdash; Macron</div>
+      </div>
+    </div>
+
+    <!-- GERMANY -->
+    <div class="country-row sovereign">
+      <div class="col-name">
+        <div class="flag-label">Germany</div>
+        <div class="arch-tag sovereign">Sovereign + EU-Aligned</div>
+      </div>
+      <div class="col-body">
+        <div class="investment">100,000 GPUs via Nvidia / Deutsche Telekom by 2027</div>
+        <div class="description">Joint Digital Sovereignty Summit with France (Nov 2025). Partnered with SAP and Mistral to build sovereign AI stack for public administration. EU AI Act compliance as architectural driver.</div>
+      </div>
+      <div class="col-signal">
+        <div class="signal-label">Key signal</div>
+        <div class="signal-text">Chancellor Merz: GPU deployment is &ldquo;an important step toward digital sovereignty.&rdquo;</div>
+      </div>
+    </div>
+
+    <!-- JAPAN -->
+    <div class="country-row sovereign">
+      <div class="col-name">
+        <div class="flag-label">Japan</div>
+        <div class="arch-tag sovereign">Sovereign + Domestic Models</div>
+      </div>
+      <div class="col-body">
+        <div class="investment">&yen;1T ($6.4B) five-year plan &middot; $5.5B AI infra market 2026</div>
+        <div class="description">First National AI Basic Plan (Dec 2025). Fujitsu manufacturing &ldquo;Made in Japan&rdquo; sovereign AI servers. METI joint venture with 10+ companies for domestic foundation models. Focus on &ldquo;Physical AI&rdquo; for robotics and manufacturing.</div>
+      </div>
+      <div class="col-signal">
+        <div class="signal-label">Key signal</div>
+        <div class="signal-text">Domestic foundation models, sovereign hardware manufacturing, AI as national security infrastructure.</div>
+      </div>
+    </div>
+
+    <!-- CANADA -->
+    <div class="country-row sovereign">
+      <div class="col-name">
+        <div class="flag-label">Canada</div>
+        <div class="arch-tag sovereign">Sovereign Compute + Open Source</div>
+      </div>
+      <div class="col-body">
+        <div class="investment">C$2B Sovereign AI Compute Strategy &middot; C$925.6M Budget 2025</div>
+        <div class="description">Sovereign compute infrastructure program. AI Compute Access Fund for domestic firms. Open source identified as &ldquo;third path&rdquo; between building walls and accepting subordination. New national AI strategy expected 2026.</div>
+      </div>
+      <div class="col-signal">
+        <div class="signal-label">Key signal</div>
+        <div class="signal-text">PM Carney at Davos: &ldquo;Shared standards reduce fragmentation.&rdquo;</div>
+      </div>
+    </div>
+
+    <!-- UK -->
+    <div class="country-row sovereign">
+      <div class="col-name">
+        <div class="flag-label">United Kingdom</div>
+        <div class="arch-tag sovereign">Trending Sovereign</div>
+      </div>
+      <div class="col-body">
+        <div class="investment">&pound;500M Sovereign AI Unit &middot; &pound;18B infrastructure program</div>
+        <div class="description">Sovereign AI Unit launched April 2026. Innovate UK funding distributed and decentralized systems. &pound;250M for AI Research Resource. Isambard-AI supercomputer operational. Hedging with concurrent OpenAI/Stargate UK partnership.</div>
+      </div>
+      <div class="col-signal">
+        <div class="signal-label">Key signal</div>
+        <div class="signal-text">&ldquo;An AI maker, not an AI taker.&rdquo; Distributed systems funded as sovereign research priority.</div>
+      </div>
+    </div>
+
+    <!-- ITALY -->
+    <div class="country-row sovereign">
+      <div class="col-name">
+        <div class="flag-label">Italy</div>
+        <div class="arch-tag sovereign">Institutional Capacity</div>
+      </div>
+      <div class="col-body">
+        <div class="investment">AI4Industry &euro;20M/yr &middot; 8 Competence Centers</div>
+        <div class="description">G7 2024 Presidency launched AI Code of Conduct Reporting Framework. AI HUB for Sustainable Development. National AI institute in Turin. Focus on SME adoption and institutional capacity-building rather than frontier model development.</div>
+      </div>
+      <div class="col-signal">
+        <div class="signal-label">Key signal</div>
+        <div class="signal-text">Institutional infrastructure over model competition. Standards and governance as national contribution.</div>
+      </div>
+    </div>
+
+    <!-- UNITED STATES -->
+    <div class="country-row centralized">
+      <div class="col-name">
+        <div class="flag-label">United States</div>
+        <div class="arch-tag centralized">Centralized + Vendor Consolidation</div>
+      </div>
+      <div class="col-body">
+        <div class="investment">$500B Stargate (announced) &middot; $8.9B Intel equity stake</div>
+        <div class="description">Federal preemption of state AI laws (Dec 2025 EO). DOJ mobilized against state regulation. Commerce Dept took 9.9% equity in Intel. $10B+ in equity positions across semiconductors. AI strategy routes through four companies. Flagship Stargate campus failed first winter stress test.</div>
+      </div>
+      <div class="col-signal">
+        <div class="signal-label">Key signal</div>
+        <div class="signal-text">&ldquo;To win, United States AI companies must be free to innovate without cumbersome regulation.&rdquo; &mdash; Dec 2025 EO</div>
+      </div>
+    </div>
+
+  </div><!-- /country-grid -->
+
+  <!-- ══ INSIGHT ══ -->
+  <div class="insight-box">
+    <p>The divergence is not about policy preferences. It's about architectural choices with structural consequences. Sovereign architectures reduce latency, eliminate vendor lock-in, enable auditability, and distribute strategic risk. Centralized architectures concentrate all four. Every G7 nation except the United States has concluded that the structural risks of centralized AI dependency outweigh the convenience of incumbent vendor ecosystems.</p>
+  </div>
+
+  <!-- ══ FOOTER ══ -->
+  <div class="table-footer">
+    <strong>Sources:</strong> G7 IDT Ministerial Declaration (Dec 2025). G7 Leaders&rsquo; Statement on AI for Prosperity (Jun 2025). France AI Action Summit (Feb 2025). Japan National AI Basic Plan (Dec 2025). Canadian Sovereign AI Compute Strategy (Budget 2024/2025). UK AI Opportunities Action Plan One Year On (Jan 2026). Innovate UK Sovereign AI PoC (Aug 2025). White House EO &ldquo;Ensuring a National Policy Framework for AI&rdquo; (Dec 2025). White House AI Action Plan (Jul 2025). Bloomberg (Mar 2026) on Stargate Abilene. <em>Science</em> (Jan 2026) &ldquo;The mirage of AI deregulation.&rdquo;
+    <div class="cc-badge">CC BY 4.0 &mdash; THE GROVE FOUNDATION &mdash; APRIL 2026</div>
+  </div>
+
+</div><!-- /container -->
+</body>
+</html>

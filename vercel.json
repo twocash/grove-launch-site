@@ -1,0 +1,18 @@
+{
+  "version": 2,
+  "buildCommand": "",
+  "outputDirectory": ".",
+  "framework": null,
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "rewrites": [
+    {
+      "source": "/autonomaton/:path*",
+      "destination": "https://grove-autonomaton-pattern.vercel.app/autonomaton/:path*"
+    },
+    {
+      "source": "/autonomaton",
+      "destination": "https://grove-autonomaton-pattern.vercel.app/autonomaton"
+    }
+  ]
+}

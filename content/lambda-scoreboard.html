@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Λ Landscape — The Grove Foundation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fragment+Mono:ital@0;1&family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --amber:#D4621A; --amber-bright:#E8784A; --amber-dim:#8B3D10;
+  --bg:#080808; --bg2:#0f0f0f; --bg3:#161616;
+  --border:#252525; --border-light:#333;
+  --text:#E8E2D9; --text-dim:#7A736A; --text-mid:#B0A898;
+  --green:#4CAF72; --red:#C0392B; --yellow:#D4A017;
+  --mono:'Fragment Mono', monospace;
+  --serif:'Instrument Serif', Georgia, serif;
+  --sans:'DM Sans', sans-serif;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body { background:var(--bg); color:var(--text); font-family:var(--sans); -webkit-font-smoothing:antialiased; }
+body::before { content:''; position:fixed; inset:0; background-image:linear-gradient(var(--border) 1px,transparent 1px),linear-gradient(90deg,var(--border) 1px,transparent 1px); background-size:40px 40px; opacity:0.25; pointer-events:none; z-index:0; }
+.container { position:relative; z-index:1; max-width:1100px; margin:0 auto; padding:48px 48px 80px; }
+.eyebrow { font-family:var(--mono); font-size:11px; letter-spacing:0.25em; text-transform:uppercase; color:var(--amber); margin-bottom:12px; }
+h1 { font-family:var(--serif); font-weight:400; font-size:clamp(28px,3.2vw,40px); line-height:1.15; color:var(--text); margin-bottom:8px; }
+h1 em { color:var(--amber); font-style:italic; }
+.subtitle { font-weight:300; font-size:15px; color:var(--text-dim); margin-bottom:12px; max-width:720px; line-height:1.6; }
+.timestamp { font-family:var(--mono); font-size:11px; color:var(--text-dim); letter-spacing:0.08em; margin-bottom:40px; }
+.timestamp span { color:var(--amber); }
+.divider { width:48px; height:1px; background:var(--amber); margin-bottom:40px; }
+
+/* ── SCOREBOARD ── */
+.board { border:1px solid var(--border); margin-bottom:48px; }
+.board-header {
+  display:grid; grid-template-columns:42px 1fr 100px 90px 70px 50px;
+  padding:12px 20px; border-bottom:1px solid var(--border);
+  font-family:var(--mono); font-size:9px; letter-spacing:0.15em;
+  text-transform:uppercase; color:var(--amber);
+}
+.row {
+  display:grid; grid-template-columns:42px 1fr 100px 90px 70px 50px;
+  padding:0 20px; align-items:center; min-height:64px;
+  border-bottom:1px solid rgba(37,37,37,0.6);
+  cursor:pointer; transition:background 0.15s;
+}
+.row:last-child { border-bottom:none; }
+.row:hover { background:var(--bg3); }
+.row.expanded { background:var(--bg3); border-bottom:1px solid var(--border); }
+.row.sovereignty { border-left:3px solid var(--green); }
+.row.dependency { border-left:3px solid var(--red); }
+.row.hybrid { border-left:3px solid var(--yellow); }
+
+.rank { font-family:var(--mono); font-size:14px; color:var(--text-dim); text-align:center; }
+.pattern-name { font-family:var(--serif); font-size:17px; color:var(--text); }
+.pattern-cat { font-family:var(--mono); font-size:9px; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-dim); margin-top:2px; }
+.lambda-score { font-family:var(--mono); font-size:16px; font-weight:600; text-align:right; }
+.tier-badge { font-family:var(--mono); font-size:9px; letter-spacing:0.08em; padding:4px 8px; text-align:center; white-space:nowrap; }
+.tier-ac { background:rgba(212,98,26,0.1); color:var(--amber); border:1px solid rgba(212,98,26,0.3); }
+.tier-sc { background:rgba(212,160,23,0.1); color:var(--yellow); border:1px solid rgba(212,160,23,0.3); }
+.tier-si { background:rgba(192,57,43,0.08); color:var(--red); border:1px solid rgba(192,57,43,0.25); }
+.dir-arrow { font-size:16px; text-align:center; font-weight:600; }
+.dir-up { color:var(--green); }
+.dir-down { color:var(--red); }
+.dir-flat { color:var(--text-dim); }
+
+/* ── EXPANDED DETAIL ── */
+.detail-panel {
+  display:none; padding:20px 20px 20px 62px;
+  border-bottom:1px solid var(--border);
+  background:rgba(15,15,15,0.8);
+}
+.detail-panel.open { display:block; }
+.detail-grid { display:grid; grid-template-columns:repeat(5,1fr); gap:16px; margin-bottom:16px; }
+.detail-var { text-align:center; }
+.detail-var-label { font-family:var(--mono); font-size:9px; letter-spacing:0.12em; color:var(--text-dim); margin-bottom:4px; }
+.detail-var-val { font-family:var(--serif); font-size:24px; }
+.detail-var-val.denom { color:var(--amber); }
+.detail-insight { font-size:13px; color:var(--text-dim); line-height:1.6; font-weight:300; border-left:2px solid var(--border); padding-left:16px; }
+
+/* ── SECTIONS ── */
+.section { margin-bottom:48px; }
+.section-head { font-family:var(--mono); font-size:10px; letter-spacing:0.2em; text-transform:uppercase; color:var(--amber); margin-bottom:20px; }
+h2 { font-family:var(--serif); font-weight:400; font-size:clamp(22px,2.5vw,30px); line-height:1.2; margin-bottom:16px; }
+h2 em { color:var(--amber); font-style:italic; }
+.body-text { font-size:14px; color:var(--text-mid); line-height:1.7; font-weight:300; max-width:720px; margin-bottom:16px; }
+
+/* ── FORMULA ── */
+.formula-box { background:var(--bg2); border:1px solid var(--border); padding:32px; text-align:center; margin-bottom:24px; }
+.formula { font-family:var(--serif); font-style:italic; font-size:clamp(24px,3vw,36px); color:var(--text); letter-spacing:0.02em; }
+.formula .denom { color:var(--amber); }
+.var-strip { display:grid; grid-template-columns:repeat(5,1fr); gap:1px; background:var(--border); border:1px solid var(--border); margin-bottom:24px; }
+.var-cell { background:var(--bg2); padding:16px; text-align:center; }
+.var-sym { font-family:var(--serif); font-style:italic; font-size:22px; margin-bottom:4px; }
+.var-sym.exp { color:var(--amber); }
+.var-name { font-family:var(--mono); font-size:8px; letter-spacing:0.15em; text-transform:uppercase; color:var(--text-dim); margin-bottom:6px; }
+.var-desc { font-size:11px; color:var(--text-dim); line-height:1.45; }
+
+/* ── PROFILES ── */
+.profiles { display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--border); border:1px solid var(--border); margin-bottom:24px; }
+.profile-col { background:var(--bg2); padding:28px; }
+.profile-label { font-family:var(--mono); font-size:10px; letter-spacing:0.15em; text-transform:uppercase; margin-bottom:12px; }
+.profile-desc { font-size:13px; color:var(--text-mid); line-height:1.65; font-weight:300; }
+.profile-members { font-family:var(--mono); font-size:11px; color:var(--text-dim); margin-top:12px; letter-spacing:0.04em; }
+.profile-kicker { font-size:13px; margin-top:12px; line-height:1.5; font-weight:400; }
+
+/* ── CALIBRATIONS ── */
+.cal-table { width:100%; border-collapse:collapse; }
+.cal-table th { font-family:var(--mono); font-size:9px; color:var(--amber); letter-spacing:0.12em; text-align:left; padding:0 12px 10px 0; border-bottom:1px solid var(--amber-dim); font-weight:400; }
+.cal-table td { padding:12px 12px 12px 0; border-bottom:1px solid var(--border); font-size:13px; }
+.cal-name { font-family:var(--serif); font-size:15px; color:var(--text); }
+.cal-sub { font-size:10px; color:var(--text-dim); font-family:var(--mono); margin-top:2px; }
+
+/* ── INTEGRITY + FOOTER ── */
+.integrity { background:rgba(212,98,26,0.04); border:1px solid rgba(212,98,26,0.2); padding:24px 28px; margin-bottom:40px; }
+.integrity p { font-size:14px; color:var(--text-mid); line-height:1.7; font-weight:300; }
+.cc-badge { font-family:var(--mono); font-size:10px; color:var(--amber-dim); letter-spacing:0.1em; margin-top:24px; }
+
+/* ── RESPONSIVE ── */
+@media(max-width:768px) {
+  .container { padding:32px 20px 60px; }
+  .board-header,.row { grid-template-columns:32px 1fr 70px 50px; }
+  .board-header > :nth-child(4),.board-header > :nth-child(5),
+  .row > :nth-child(4),.row > :nth-child(5) { display:none; }
+  .detail-grid { grid-template-columns:repeat(3,1fr); }
+  .profiles,.var-strip { grid-template-columns:1fr; }
+  .detail-panel { padding-left:20px; }
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="eyebrow">The &Lambda; Landscape &mdash; Live Standings</div>
+  <h1>Structural propagation <em>scored.</em></h1>
+  <p class="subtitle">Every major analyst framework measures market momentum. The &Lambda; framework measures whether an AI architecture would continue spreading if the money stopped.</p>
+  <div class="timestamp">Last scored: <span>March 2026</span> &middot; Next update: <span>June 2026</span> &middot; Quarterly for public &middot; Monthly for members</div>
+
+  <!-- ══ SCOREBOARD ══ -->
+  <div class="board">
+    <div class="board-header">
+      <div>#</div><div>Pattern</div><div style="text-align:right;">&Lambda; Score</div><div style="text-align:center;">Tier</div><div style="text-align:center;">Profile</div><div style="text-align:center;">Trend</div>
+    </div>
+    <div id="standings"></div>
+  </div>
+  <p style="font-family:var(--mono); font-size:10px; color:var(--text-dim); margin-top:-36px; margin-bottom:48px; letter-spacing:0.04em;">Click any row to see sub-scores and structural analysis</p>
+
+  <!-- ══ THE QUESTION ══ -->
+  <div class="section">
+    <div class="section-head">What this measures</div>
+    <h2>The question nobody else <em>asks</em></h2>
+    <p class="body-text">$650 billion is being deployed into AI infrastructure. Analyst frameworks &mdash; Gartner, Forrester, IDC &mdash; measure how much money flows in. None of them measure a structural question: does this architecture propagate on its own merits, or does it require continuous capital subsidy and vendor distribution power to sustain adoption?</p>
+    <p class="body-text">The &Lambda; framework isolates that structural question. It draws on technology diffusion theory &mdash; Bass curves, Granovetter cascades, Schelling tipping points &mdash; to model whether a deployment pattern has reached the threshold where adoption becomes self-reinforcing. Technology adoption is not linear. It follows threshold dynamics where small changes in friction produce outsized changes in adoption. A pattern scoring 0.03 isn&rsquo;t 30&times; worse than one scoring 1.0 &mdash; it exists in a fundamentally different regime. The tiers are not rankings. They are phase states.</p>
+  </div>
+
+  <!-- ══ THE FORMULA ══ -->
+  <div class="section">
+    <div class="section-head">The methodology</div>
+    <div class="formula-box">
+      <div class="formula">&Lambda; = (S &times; R &times; V) / (1 + (<span class="denom">&beta; &middot; F<sub>c</sub></span>)&sup2;)</div>
+    </div>
+    <div class="var-strip">
+      <div class="var-cell"><div class="var-sym">S</div><div class="var-name">Spreadability</div><div class="var-desc">How freely replicated. Open licensing scores high.</div></div>
+      <div class="var-cell"><div class="var-sym">R</div><div class="var-name">Standardized Rails</div><div class="var-desc">Infrastructure fit. Well-paved integration paths.</div></div>
+      <div class="var-cell"><div class="var-sym">V</div><div class="var-name">Validation</div><div class="var-desc">Discounts theory. Pre-deployment: 0.2. Validated: 1.0.</div></div>
+      <div class="var-cell"><div class="var-sym exp">F<sub>c</sub></div><div class="var-name">Cognitive Friction</div><div class="var-desc">Adoption resistance. Squared in the denominator.</div></div>
+      <div class="var-cell"><div class="var-sym exp">&beta;</div><div class="var-name">Exogenous Incentive</div><div class="var-desc">External forcing. Geometric mean of financial, regulatory, ideological.</div></div>
+    </div>
+    <p class="body-text">S, R, and V are linear &mdash; improve them 10% and the score moves 10%. But F<sub>c</sub> and &beta; are squared in the denominator. Reduce friction by half and adoption doesn&rsquo;t double. <strong style="color:var(--text);">It quadruples.</strong> The geometry of the fight matters more than the size of the sword.</p>
+  </div>
+
+  <!-- ══ STRUCTURAL PROFILES ══ -->
+  <div class="section">
+    <div class="section-head">The structural insight</div>
+    <h2>Dependency compounds. <em>Sovereignty compounds.</em></h2>
+    <div class="profiles">
+      <div class="profile-col">
+        <div class="profile-label" style="color:var(--red);">Dependency Profile</div>
+        <div class="profile-desc">High integration ease. Low spreadability. Easy to adopt, hard to leave. Each quarter of adoption accumulates switching costs &mdash; proprietary weights, vendor-controlled deprecation, captured telemetry.</div>
+        <div class="profile-members">OpenAI &middot; Google Gemini &middot; Microsoft Copilot &middot; Anthropic Claude</div>
+        <div class="profile-kicker" style="color:var(--red);">Every quarter on a centralized API is another quarter of vendor leverage.</div>
+      </div>
+      <div class="profile-col">
+        <div class="profile-label" style="color:var(--green);">Sovereignty Profile</div>
+        <div class="profile-desc">High spreadability. Higher adoption friction. Harder to adopt, easier to leave. Each quarter of adoption builds structural independence &mdash; open weights, portable architecture, sovereign telemetry.</div>
+        <div class="profile-members">Mistral / DeepSeek &middot; Autonomaton</div>
+        <div class="profile-kicker" style="color:var(--green);">Every quarter on an open architecture is another quarter of independence.</div>
+      </div>
+    </div>
+    <p class="body-text">Which profile wins depends on one question: does the financial and regulatory environment over the next 3&ndash;4 years favor continued centralization, or does it reward architectural independence? Six of seven G7 nations have made their bet.</p>
+  </div>
+
+  <!-- ══ CALIBRATIONS ══ -->
+  <div class="section">
+    <div class="section-head">Historical calibration</div>
+    <h2>A framework that only explains the past <em>isn&rsquo;t a methodology.</em></h2>
+    <table class="cal-table">
+      <thead><tr><th>Pattern</th><th>&Lambda;</th><th>Predicted</th><th>Actual</th></tr></thead>
+      <tbody>
+        <tr><td><div class="cal-name">TCP/IP</div><div class="cal-sub">vs. OSI &middot; 1970s&ndash;90s</div></td><td style="font-family:var(--mono);color:var(--green);">0.452</td><td>Phase Transition</td><td style="color:var(--green);">&check; Confirmed</td></tr>
+        <tr><td><div class="cal-name">ISO Shipping Container</div><div class="cal-sub">Trade Standard &middot; 1960s</div></td><td style="font-family:var(--mono);color:var(--green);">0.380</td><td>Phase Transition</td><td style="color:var(--green);">&check; Confirmed</td></tr>
+        <tr><td><div class="cal-name">Bitcoin</div><div class="cal-sub">Incentive-Driven &middot; 2009&ndash;</div></td><td style="font-family:var(--mono);color:var(--green);">0.122</td><td>Phase Transition</td><td style="color:var(--green);">&check; Confirmed</td></tr>
+        <tr><td><div class="cal-name">U.S. Metric System</div><div class="cal-sub">Structural Failure &middot; ongoing</div></td><td style="font-family:var(--mono);color:var(--red);">0.003</td><td>Structural Failure</td><td style="color:var(--red);">&check; Confirmed</td></tr>
+      </tbody>
+    </table>
+    <p class="body-text" style="margin-top:20px;">The framework correctly classifies all four known historical outcomes. The distinction between a methodology and a narrative is the willingness to be wrong.</p>
+  </div>
+
+  <!-- ══ INTEGRITY ══ -->
+  <div class="integrity">
+    <p><strong style="color:var(--amber);">Conflict of interest disclosure.</strong> The Grove Foundation publishes this framework and champions the Autonomaton architecture. The Autonomaton is scored within this report using the same methodology applied to all other patterns. It scores last &mdash; &Lambda; = 0.0001, Structurally Inert, V = 0.2 (pre-deployment concept). We built a methodology that crushed our own entry and published the results. Institutional credibility depends on this.</p>
+  </div>
+
+  <div style="font-size:12px; color:var(--text-dim); line-height:1.7; font-weight:300; border-top:1px solid var(--border); padding-top:24px;">
+    <strong style="color:var(--text-mid);">Methodology:</strong> &Lambda; 2.0 &mdash; Power law with geometric mean &beta; aggregation, validated against 4 historical calibrations. 96 cited sources. Full methodology available as PDF.<br>
+    <strong style="color:var(--text-mid);">Scoring cadence:</strong> Quarterly (public). Monthly (members). Member updates include sensitivity analyses and sector-specific deployment briefs.<br>
+    <strong style="color:var(--text-mid);">License:</strong> CC BY 4.0
+    <div class="cc-badge">THE GROVE FOUNDATION &mdash; &Lambda; LANDSCAPE &mdash; MARCH 2026</div>
+  </div>
+
+</div><!-- /container -->
+
+<script>
+var DATA = [
+  { rank:1, name:'Mistral / DeepSeek', cat:'Open Weight', S:0.80, R:0.60, V:1.0, Fc:6.0, beta:0.630, lambda:0.0314, tier:'ac', profile:'sovereignty', dir:'up',
+    insight:'Balanced incentive structure across all three dimensions (financial, regulatory, ideological). Apache 2.0 licensing. €830M infrastructure raise (Mar 2026). France and Germany government contracts. The only pattern with β < 1.0 — the geometric mean rewards balance.' },
+  { rank:2, name:'Meta Llama', cat:'Open Weight', S:0.70, R:0.70, V:1.0, Fc:5.0, beta:1.357, lambda:0.0104, tier:'sc', profile:'sovereignty', dir:'down',
+    insight:'Strong financial incentive (β_fin = 0.5) masked structural fragility under old min() aggregation. Geometric mean exposes it. Avocado closed-source pivot (Dec 2025) and Llama 4 EU geofencing (Apr 2025) signal tightening. If Meta fully closes licensing, score collapses to Structurally Inert.' },
+  { rank:3, name:'Apple Intelligence', cat:'On-Device', S:0.20, R:0.57, V:1.0, Fc:2.0, beta:1.710, lambda:0.0090, tier:'sc', profile:'hybrid', dir:'flat',
+    insight:'Lowest cognitive friction in the landscape (Fc = 2.0) — it ships pre-installed. But lowest spreadability (S = 0.20) — locked to Apple hardware. Structurally sovereign (on-device) but architecturally closed. A walled garden with good fences.' },
+  { rank:4, name:'Anthropic Claude', cat:'Centralized API', S:0.47, R:0.80, V:1.0, Fc:5.0, beta:1.587, lambda:0.0059, tier:'sc', profile:'dependency', dir:'flat',
+    insight:'Strong capability scores but structurally dependent on the API model. High R (well-paved integration) combined with low S (proprietary weights) creates the classic Dependency Profile. Every integration deepens the switching cost.' },
+  { rank:5, name:'OpenAI GPT', cat:'Centralized API', S:0.47, R:0.93, V:1.0, Fc:6.0, beta:2.924, lambda:0.0014, tier:'si', profile:'dependency', dir:'flat',
+    insight:'Highest rail compatibility in the landscape (R = 0.93) — the best-paved integration path. But β_fin = 1.0 was sufficient under old min() to define β = 1.0. Geometric mean pulls it to 2.924 because regulatory (5.0) and ideological (5.0) incentives are weak. Market dominance without structural propagation.' },
+  { rank:6, name:'Google Gemini', cat:'Platform Bundle', S:0.30, R:0.80, V:1.0, Fc:5.0, beta:2.924, lambda:0.0011, tier:'si', profile:'dependency', dir:'flat',
+    insight:'Platform bundling drives adoption through distribution power, not structural merit. If the bundle were unbundled — if organizations had to actively choose Gemini rather than receive it with Workspace — the pattern collapses.' },
+  { rank:7, name:'Microsoft Copilot', cat:'Platform Bundle', S:0.30, R:0.80, V:1.0, Fc:8.0, beta:5.000, lambda:0.0002, tier:'si', profile:'dependency', dir:'down',
+    insight:'Highest cognitive friction in the landscape (Fc = 8.0). Deployed across 450M commercial Office seats at $30/user/month. The score says: this adoption is subsidy-driven, not structural. Remove the bundle and usage patterns suggest low organic demand.' },
+  { rank:8, name:'Autonomaton', cat:'Sovereign Open', S:0.93, R:0.83, V:0.20, Fc:6.0, beta:6.300, lambda:0.0001, tier:'si', profile:'sovereignty', dir:'flat',
+    insight:'Highest S and R in the landscape — structurally the most propagation-ready architecture. But V = 0.2 (pre-deployment) and β = 6.3 (no external forcing) crush the score. This is by design. The Grove publishes its own score honestly. V rises with validated deployments. β drops as regulatory frameworks favor governance-by-design.' }
+];
+
+var TIERS = { ac:'Approaching Critical', sc:'Sub-Critical', si:'Structurally Inert' };
+var TIER_CLS = { ac:'tier-ac', sc:'tier-sc', si:'tier-si' };
+var DIR_SYM = { up:'↑', down:'↓', flat:'→' };
+var DIR_CLS = { up:'dir-up', down:'dir-down', flat:'dir-flat' };
+var PROF_LABEL = { sovereignty:'SOV', dependency:'DEP', hybrid:'HYB' };
+var PROF_COLOR = { sovereignty:'var(--green)', dependency:'var(--red)', hybrid:'var(--yellow)' };
+
+function render() {
+  var el = document.getElementById('standings');
+  var html = '';
+  DATA.forEach(function(d, i) {
+    var scoreColor = d.tier === 'ac' ? 'var(--amber)' : d.tier === 'sc' ? 'var(--yellow)' : 'var(--red)';
+    html += '<div class="row ' + d.profile + '" onclick="toggle(' + i + ')" id="row-' + i + '">';
+    html += '<div class="rank">' + d.rank + '</div>';
+    html += '<div><div class="pattern-name">' + d.name + '</div><div class="pattern-cat">' + d.cat + '</div></div>';
+    html += '<div class="lambda-score" style="color:' + scoreColor + ';">' + d.lambda.toFixed(4) + '</div>';
+    html += '<div style="text-align:center;"><span class="tier-badge ' + TIER_CLS[d.tier] + '">' + TIERS[d.tier] + '</span></div>';
+    html += '<div style="text-align:center;font-family:var(--mono);font-size:10px;letter-spacing:0.1em;color:' + PROF_COLOR[d.profile] + ';">' + PROF_LABEL[d.profile] + '</div>';
+    html += '<div class="dir-arrow ' + DIR_CLS[d.dir] + '">' + DIR_SYM[d.dir] + '</div>';
+    html += '</div>';
+    // Detail panel
+    html += '<div class="detail-panel" id="detail-' + i + '">';
+    html += '<div class="detail-grid">';
+    html += '<div class="detail-var"><div class="detail-var-label">Spreadability</div><div class="detail-var-val">' + d.S.toFixed(2) + '</div></div>';
+    html += '<div class="detail-var"><div class="detail-var-label">Rails</div><div class="detail-var-val">' + d.R.toFixed(2) + '</div></div>';
+    html += '<div class="detail-var"><div class="detail-var-label">Validation</div><div class="detail-var-val"' + (d.V < 1 ? ' style="color:var(--red);"' : '') + '>' + d.V.toFixed(1) + '</div></div>';
+    html += '<div class="detail-var"><div class="detail-var-label">Friction</div><div class="detail-var-val denom">' + d.Fc.toFixed(1) + '</div></div>';
+    html += '<div class="detail-var"><div class="detail-var-label">&beta; (geo mean)</div><div class="detail-var-val denom">' + d.beta.toFixed(3) + '</div></div>';
+    html += '</div>';
+    html += '<div class="detail-insight">' + d.insight + '</div>';
+    html += '</div>';
+  });
+  el.innerHTML = html;
+}
+
+function toggle(idx) {
+  var panel = document.getElementById('detail-' + idx);
+  var row = document.getElementById('row-' + idx);
+  var isOpen = panel.classList.contains('open');
+  // Close all
+  document.querySelectorAll('.detail-panel').forEach(function(p) { p.classList.remove('open'); });
+  document.querySelectorAll('.row').forEach(function(r) { r.classList.remove('expanded'); });
+  // Open clicked if wasn't open
+  if (!isOpen) {
+    panel.classList.add('open');
+    row.classList.add('expanded');
+  }
+}
+render();
+</script>
+</body>
+</html>

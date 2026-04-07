@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Observations — The Grove</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fragment+Mono:ital@0;1&family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --amber:#D4621A; --amber-bright:#E8784A; --amber-dim:#8B3D10;
+    --bg:#080808; --bg2:#0f0f0f; --bg3:#161616;
+    --border:#252525; --border-light:#333;
+    --text:#E8E2D9; --text-dim:#7A736A; --text-mid:#B0A898;
+    --green:#4CAF72; --red:#C0392B;
+    --mono:'Fragment Mono', monospace;
+    --serif:'Instrument Serif', Georgia, serif;
+    --sans:'DM Sans', sans-serif;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:var(--bg); color:var(--text); font-family:var(--sans); -webkit-font-smoothing:antialiased; overflow-x:hidden; }
+  strong { color:var(--text); font-weight:500; }
+  em { color:var(--amber); font-style:normal; }
+  body::before { content:''; position:fixed; inset:0; background-image:linear-gradient(var(--border) 1px,transparent 1px),linear-gradient(90deg,var(--border) 1px,transparent 1px); background-size:40px 40px; opacity:0.35; pointer-events:none; z-index:0; }
+</style>
+<style>
+  .beat { position:relative; z-index:1; min-height:100vh; padding:80px 48px; display:flex; align-items:center; justify-content:center; }
+  .beat-inner { max-width:900px; width:100%; }
+  .eyebrow { font-family:var(--mono); font-size:11px; letter-spacing:0.25em; text-transform:uppercase; color:var(--amber); margin-bottom:28px; }
+  .headline { font-family:var(--serif); font-weight:400; font-size:clamp(28px,3.5vw,42px); line-height:1.15; color:var(--text); margin-bottom:24px; letter-spacing:-0.01em; }
+  .lead { font-weight:300; font-size:clamp(15px,1.5vw,17px); line-height:1.75; color:var(--text-mid); max-width:680px; margin-bottom:48px; }
+  .divider { width:48px; height:1px; background:var(--amber); margin-bottom:40px; }
+  .insight-box { background:rgba(212,98,26,0.04); border:1px solid rgba(212,98,26,0.2); padding:24px 28px; margin-bottom:32px; }
+  .insight-box p { font-size:15px; color:var(--text-mid); line-height:1.7; font-weight:300; }
+  .insight-box strong { color:var(--text); font-weight:500; }
+  .insight-box .red { color:var(--red); }
+  .insight-box .green { color:var(--green); }
+  .footer-note { font-family:var(--serif); font-style:italic; font-size:16px; color:var(--text-dim); line-height:1.6; max-width:640px; border-top:1px solid var(--border); padding-top:24px; }
+  canvas { display:block; width:100%; }
+
+  /* ── SCROLL REVEAL ── */
+  .reveal { opacity:0; transform:translateY(24px); transition:opacity 0.7s ease, transform 0.7s ease; }
+  .reveal.visible { opacity:1; transform:translateY(0); }
+  /* ── SLIDERS ── */
+  input[type="range"] { -webkit-appearance:none; appearance:none; width:100%; height:2px; background:var(--border-light); outline:none; cursor:pointer; }
+  input[type="range"]::-webkit-slider-thumb { -webkit-appearance:none; width:16px; height:16px; border-radius:50%; background:var(--amber); border:2px solid var(--bg); cursor:pointer; }
+  input[type="range"]::-moz-range-thumb { width:16px; height:16px; border-radius:50%; background:var(--amber); border:2px solid var(--bg); cursor:pointer; }
+  .slider-row { display:flex; align-items:center; gap:20px; margin-bottom:10px; }
+  .slider-label { font-family:var(--mono); font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-dim); white-space:nowrap; }
+  .slider-val { font-family:var(--serif); font-size:32px; color:var(--amber); min-width:56px; text-align:right; line-height:1; }
+  .slider-hint { font-family:var(--mono); font-size:10px; color:var(--text-dim); margin-bottom:40px; letter-spacing:0.04em; }
+
+  /* ── ABSORPTION BARS ── */
+  .abs-chart { position:relative; margin-bottom:40px; }
+  .abs-row { display:grid; grid-template-columns:140px 1fr 50px; align-items:center; gap:0; padding:8px 0; cursor:pointer; transition:all 0.2s; border-bottom:1px solid rgba(255,255,255,0.03); }
+  .abs-row:hover { background:rgba(212,98,26,0.06); margin:0 -12px; padding-left:12px; padding-right:12px; border-left:2px solid var(--amber); }
+  .abs-row:hover .abs-name { color:var(--amber); }
+  .abs-row.selected { background:rgba(212,98,26,0.08); margin:0 -12px; padding-left:12px; padding-right:12px; border-left:2px solid var(--amber); }
+  .abs-name { font-family:var(--serif); font-size:15px; color:var(--text); }
+  .abs-bar-wrap { position:relative; height:24px; }
+  .abs-bar { height:100%; transition:width 0.8s cubic-bezier(0.4,0,0.2,1); position:relative; }
+  .abs-marker { font-family:var(--mono); font-size:10px; color:var(--text-dim); text-align:right; padding-top:4px; }
+  .abs-threshold { position:absolute; top:0; bottom:0; width:2px; background:rgba(192,57,43,0.7); z-index:5; transition:opacity 0.8s; }
+  .abs-threshold-label { position:absolute; top:-20px; transform:translateX(-50%); font-family:var(--mono); font-size:9px; letter-spacing:0.1em; color:var(--red); white-space:nowrap; text-transform:uppercase; }
+  .abs-detail { background:rgba(232,228,222,0.03); border:1px solid rgba(232,228,222,0.08); padding:24px 28px; margin-bottom:32px; }
+  .abs-detail h3 { font-family:var(--serif); font-size:22px; font-weight:400; margin-bottom:8px; }
+  .abs-detail .displacement { font-family:var(--mono); font-size:11px; color:var(--amber); margin-bottom:12px; letter-spacing:0.02em; }
+  .abs-detail p { font-size:14px; color:var(--text-mid); line-height:1.7; }
+  .abs-ai-section { background:var(--bg3); border:1px solid var(--border); padding:24px 28px; margin-bottom:32px; }
+  .abs-ai-header { display:flex; justify-content:space-between; align-items:baseline; margin-bottom:16px; }
+  .abs-ai-label { font-family:var(--mono); font-size:11px; color:var(--amber); letter-spacing:0.06em; text-transform:uppercase; }
+  .abs-ai-value { font-family:var(--serif); font-size:28px; transition:color 0.3s; }
+  .abs-ai-insight { font-size:14px; line-height:1.6; margin-top:16px; transition:color 0.3s; }
+
+  /* ── STATS GRID ── */
+  .stats { display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--border); border:1px solid var(--border); margin-bottom:40px; }
+  .stat { background:var(--bg2); padding:24px; }
+  .stat-label { font-family:var(--mono); font-size:10px; letter-spacing:0.15em; text-transform:uppercase; margin-bottom:12px; }
+  .stat-pair { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+  .stat-item-label { font-size:12px; color:var(--text-dim); margin-bottom:4px; }
+  .stat-item-value { font-family:var(--serif); font-size:26px; line-height:1; }
+
+  /* ── RESPONSIVE ── */
+  /* ── TOP RAIL ── */
+  .top-rail { position:fixed; top:0; left:0; right:0; z-index:100; padding:16px 48px; display:flex; justify-content:space-between; align-items:center; background:rgba(8,8,8,0.92); backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px); border-bottom:1px solid rgba(37,37,37,0.5); opacity:0; transform:translateY(-4px); transition:opacity 0.4s ease, transform 0.4s ease; pointer-events:none; }
+  .top-rail.visible { opacity:1; transform:translateY(0); pointer-events:auto; }
+  .rail-left { display:flex; flex-direction:column; gap:2px; }
+  .rail-name { font-family:var(--mono); font-size:11px; letter-spacing:0.2em; text-transform:uppercase; color:var(--amber-dim); }
+  .rail-tagline { font-family:var(--serif); font-style:italic; font-size:13px; color:var(--text-dim); letter-spacing:-0.01em; }
+  .rail-enter { font-family:var(--mono); font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-dim); text-decoration:none; padding:8px 16px; border:1px solid var(--border); transition:all 0.2s; }
+  .rail-enter:hover { color:var(--amber); border-color:rgba(212,98,26,0.4); }
+
+  /* ── GATE SECTION ── */
+  .gate-section { min-height:80vh; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; padding:80px 48px; position:relative; z-index:1; }
+  .gate-mark { font-family:var(--mono); font-size:11px; letter-spacing:0.25em; text-transform:uppercase; color:var(--amber); margin-bottom:48px; }
+  .gate-title { font-family:var(--serif); font-style:normal; font-size:clamp(28px,3.5vw,44px); color:var(--text); margin-bottom:12px; }
+  .gate-subtitle { font-weight:300; font-size:15px; color:var(--text-dim); margin-bottom:48px; }
+  .gate-input { width:320px; background:var(--bg3); border:1px solid var(--border); color:var(--text); font-family:var(--mono); font-size:14px; padding:14px 18px; outline:none; letter-spacing:0.08em; transition:border-color 0.2s; }
+  .gate-input::placeholder { color:var(--text-dim); letter-spacing:0.12em; }
+  .gate-input:focus { border-color:var(--amber-dim); }
+  .gate-input.error { border-color:var(--red); animation:gateShake 0.4s ease; }
+  @keyframes gateShake { 0%,100%{transform:translateX(0);} 25%{transform:translateX(-6px);} 75%{transform:translateX(6px);} }
+  .gate-hint { font-family:var(--mono); font-size:10px; color:var(--text-dim); margin-top:14px; }
+  .gate-footer { font-family:var(--mono); font-size:10px; color:var(--border-light); letter-spacing:0.15em; margin-top:48px; }
+
+  @media (max-width:768px) { .top-rail { padding:12px 24px; } .gate-section { padding:60px 24px; } .gate-input { width:280px; } }
+</style>
+</head>
+<body>
+<!-- ══════ TOP RAIL ══════ -->
+<nav class="top-rail" id="topRail">
+  <div class="rail-left">
+    <div class="rail-name">The Grove</div>
+    <div class="rail-tagline">a punk rock opera in three acts</div>
+  </div>
+  <a href="#gate" class="rail-enter" id="railLink">Enter &rarr;</a>
+</nav>
+
+<!-- ══════════════════════════════════════
+     BEAT 1: THE ABSORPTION PROBLEM
+═══════════════════════════════════════ -->
+<section class="beat" id="absorption">
+  <div class="beat-inner reveal">
+    <div class="eyebrow">Observation 01</div>
+    <h1 class="headline">The Absorption Problem</h1>
+    <p style="font-family:var(--mono); font-size:13px; color:var(--amber); margin-top:-16px; margin-bottom:16px; letter-spacing:0.04em; text-transform:uppercase;">Time from introduction to economic rebalancing</p>
+    <p class="lead">Every technology wave displaced workers. Every economy eventually absorbed the shock. But the window keeps shrinking &mdash; and the adjustment mechanisms haven&rsquo;t gotten faster. The absorption trend is clear.</p>
+    <div class="divider"></div>
+
+    <div class="abs-chart" id="absChart"></div>
+    <p style="font-family:var(--mono); font-size:10px; color:var(--text-dim); margin-top:4px; margin-bottom:24px; letter-spacing:0.04em;">Click any row to explore &middot; Drag the slider to test assumptions</p>
+
+    <div id="absDetail" style="display:none;" class="abs-detail">
+      <div style="display:flex; justify-content:space-between; align-items:baseline;">
+        <h3 id="detailName"></h3>
+        <span style="font-family:var(--mono); font-size:12px; color:var(--text-dim);" id="detailPeriod"></span>
+      </div>
+      <div class="displacement" id="detailDisplacement"></div>
+      <p id="detailText"></p>
+    </div>
+    <div class="abs-ai-section">
+      <div class="abs-ai-header">
+        <span class="abs-ai-label">How long will AI absorption take?</span>
+        <span class="abs-ai-value" id="aiYears" style="color:var(--amber);">3 years</span>
+      </div>
+      <input type="range" min="1" max="25" value="3" step="1" id="aiSlider">
+      <div style="display:flex; justify-content:space-between; margin-top:8px;">
+        <span style="font-family:var(--mono); font-size:10px; color:var(--text-dim);">1 year</span>
+        <span style="font-family:var(--mono); font-size:10px; color:var(--text-dim);">25 years</span>
+      </div>
+      <p class="abs-ai-insight" id="aiInsight" style="color:var(--text-mid);"></p>
+    </div>
+
+    <div class="footer-note">
+      Markets are pricing AI like it&rsquo;s the next PC revolution.<br>
+      The compression curve says it&rsquo;s something we haven&rsquo;t seen before.
+    </div>
+  </div>
+</section>
+<!-- ══════════════════════════════════════
+     BEAT 2: THE GEOMETRY OF KNOWLEDGE
+═══════════════════════════════════════ -->
+<section class="beat" id="geometry">
+  <div class="beat-inner reveal">
+    <div class="eyebrow">Observation 02</div>
+    <h1 class="headline">The Geometry of Knowledge</h1>
+    <p class="lead">The sphere of knowledge is an old idea, dating back to Plato. The geometric insight &mdash; as our knowledge grows, so does our awareness of what we don&rsquo;t know &mdash; is often attributed to Einstein. What&rsquo;s interesting is when you apply the geometry of knowledge to network architecture.</p>
+    <div class="divider"></div>
+
+    <div class="slider-row">
+      <span class="slider-label">Nodes in the network</span>
+      <input type="range" min="1" max="150" value="6" step="1" id="nodeDriver">
+      <span class="slider-val" id="nodeOut">6</span>
+    </div>
+    <div class="slider-hint">There are effectively infinite domains of knowledge. How much frontier surface area does each architecture expose for exploration?</div>
+
+    <canvas id="sphereCanvas"></canvas>
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-label" style="color:var(--green);">Distributed AI Architecture</div>
+        <div class="stat-pair">
+          <div><div class="stat-item-label">Frontier surface area</div><div class="stat-item-value" style="color:var(--green);" id="distSA">6&times;</div></div>
+          <div><div class="stat-item-label">Exploration surfaces</div><div class="stat-item-value" style="color:var(--text);" id="distOwner">6 nodes</div></div>
+        </div>
+        <p style="font-size:12px; color:var(--text-dim); margin-top:12px; line-height:1.5;">Each domain or node creates additional frontier surface area for knowledge exploration. Reduces dependency with each node added.</p>
+        <p style="font-size:11px; color:var(--green); margin-top:10px; line-height:1.5; padding:8px 12px; background:rgba(76,175,114,0.06); border-left:2px solid rgba(76,175,114,0.3);">Each sovereign node requires its own governance, its own telemetry, its own approval gates &mdash; architectural sovereignty, not just network topology. Without it, distributed is just centralized with extra steps.</p>
+      </div>
+      <div class="stat">
+        <div class="stat-label" style="color:var(--red);">Centralized AI Vendor</div>
+        <div class="stat-pair">
+          <div><div class="stat-item-label">Frontier surface area</div><div class="stat-item-value" style="color:var(--red);" id="centSA">1&times;</div></div>
+          <div><div class="stat-item-label">Exploration surfaces</div><div class="stat-item-value" style="color:var(--red);" id="centOwner">1 hub</div></div>
+        </div>
+        <p style="font-size:12px; color:var(--text-dim); margin-top:12px; line-height:1.5;">The exploration surface is internal to the vendor. Creates dependency with each query. Vendor controls model, pricing, TOS, and deprecation timeline.</p>
+      </div>
+    </div>
+
+    <div class="insight-box"><p id="geoInsight"></p></div>
+  </div>
+</section>
+<!-- ══════════════════════════════════════
+     BEAT 3: WHEN YOU BECOME THE SURFACE
+═══════════════════════════════════════ -->
+<section class="beat" id="capture">
+  <div class="beat-inner reveal">
+    <div class="eyebrow">The Implication</div>
+    <h1 class="headline">When you become the knowledge surface</h1>
+    <p class="lead">In the distributed model, each node&rsquo;s frontier surface area faces outward &mdash; toward undiscovered knowledge. The node explores, the node discovers, the node keeps the map.</p>
+    <p class="lead" style="margin-top:-24px;">In the centralized model, the exploration surface is internal to the vendor. <strong>Its users provide the knowledge surface area for the vendor to explore.</strong></p>
+    <div class="divider"></div>
+
+    <canvas id="captureCanvas"></canvas>
+
+    <div class="stats" style="margin-top:40px;">
+      <div class="stat">
+        <div class="stat-label" style="color:var(--green);">Distributed AI Architecture</div>
+        <p style="font-size:14px; color:var(--text-mid); line-height:1.7; margin-top:8px;">Your queries expand <em style="color:var(--green);font-style:normal;">your own</em> frontier. Each node maintains sovereignty over its exploration surface. The network gets smarter. So do you.</p>
+      </div>
+      <div class="stat">
+        <div class="stat-label" style="color:var(--red);">Centralized AI Vendor</div>
+        <p style="font-size:14px; color:var(--text-mid); line-height:1.7; margin-top:8px;">Every query you send gives the provider new surfaces to explore. Specifically:</p>
+        <div style="margin-top:12px; font-family:var(--mono); font-size:12px; line-height:2.2; color:var(--text);">
+          <div><span style="color:var(--red);">&bull;</span> What you asked</div>
+          <div><span style="color:var(--red);">&bull;</span> What you don&rsquo;t know</div>
+          <div><span style="color:var(--red);">&bull;</span> What you&rsquo;re researching</div>
+          <div><span style="color:var(--red);">&bull;</span> How you think</div>
+        </div>
+        <p style="font-size:13px; color:var(--red); margin-top:12px; line-height:1.6;">Your areas of ignorance become the provider&rsquo;s new knowledge surfaces.</p>
+      </div>
+    </div>
+
+    <div class="insight-box" style="margin-top:32px;">
+      <p>We watched what happened when a handful of companies captured the social graph. We watched what happened when they captured search intent. <strong class="red">Centralized AI captures the cognitive frontier itself &mdash; the boundary between what people know and what they&rsquo;re trying to figure out.</strong></p>
+      <p style="margin-top:16px;">The most valuable thing about a thinking person isn&rsquo;t what they know. It&rsquo;s what they&rsquo;re trying to figure out. In the centralized AI model, that signal &mdash; <strong>the surface area of your ignorance</strong> &mdash; routes to a single owner. And unlike social media, there&rsquo;s no way to scroll past it. <strong>This is the architecture of thought, and right now, four companies are building it as a star graph.</strong></p>
+    </div>
+
+    <div class="footer-note" style="margin-top:32px;">
+      These are two of twelve observations from a 55,000-word architectural study.<br>
+      The rest is behind the door.
+    </div>
+
+    <div style="margin-top:48px; border-top:1px solid var(--border); padding-top:24px;">
+      <div style="font-family:var(--mono); font-size:10px; letter-spacing:0.15em; text-transform:uppercase; color:var(--amber-dim); margin-bottom:16px;">Sources &amp; further reading</div>
+      <div style="font-size:12px; color:var(--text-dim); line-height:2; font-weight:300;">
+        <strong style="color:var(--text-mid);">Knowledge sphere geometry:</strong> Gleiser, M. <em>The Island of Knowledge</em> (Basic Books, 2014). The geometric formalization of knowledge as volume and awareness-of-ignorance as surface area. The insight dates to Plato; the quote &ldquo;as our circle of knowledge expands, so does the circumference of darkness surrounding it&rdquo; is widely attributed to Einstein but unverified.<br>
+        <strong style="color:var(--text-mid);">Network topology &amp; scaling laws:</strong> Reed, D.P. &ldquo;The Law of the Pack&rdquo; <em>Harvard Business Review</em> (Feb 2001). Metcalfe&rsquo;s Law scales as n&sup2;; Reed&rsquo;s Law shows group-forming networks scale as 2<sup>n</sup>. Star topologies collapse both to n&times;1.<br>
+        <strong style="color:var(--text-mid);">End-to-end argument:</strong> Saltzer, J.H., Reed, D.P., Clark, D.D. &ldquo;End-to-End Arguments in System Design&rdquo; <em>ACM Transactions on Computer Systems</em> 2(4), Nov 1984. The architectural proof that intelligence at endpoints structurally outperforms intelligence in the network core.<br>
+        <strong style="color:var(--text-mid);">Technology absorption:</strong> Brynjolfsson, E. &amp; McAfee, A. <em>The Second Machine Age</em> (W.W. Norton, 2014). Perez, C. <em>Technological Revolutions and Financial Capital</em> (Edward Elgar, 2002). Historical absorption timelines and institutional adaptation lag.<br>
+        <strong style="color:var(--text-mid);">Elite overproduction:</strong> Turchin, P. <em>End Times: Elites, Counter-Elites, and the Path of Political Disintegration</em> (Penguin, 2023). Credential surplus as predictor of societal instability across ten millennia of data.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     THE GATE
+═══════════════════════════════════════ -->
+<section class="gate-section reveal" id="gate">
+  <div class="gate-mark">Confidential Preview</div>
+  <div class="gate-title">Material beyond this point is shared<br>under NDA with invited reviewers.</div>
+  <div style="width:48px; height:1px; background:var(--amber); margin:32px auto;"></div>
+  <div><input type="password" id="gatePw" class="gate-input" placeholder="access code" autocomplete="off"></div>
+  <div class="gate-hint">Press Enter to continue</div>
+  <div class="gate-footer">NOT FOR DISTRIBUTION</div>
+</section>
+
+<script>
+// ══════════════════════════════════════
+// BEAT 1: THE ABSORPTION PROBLEM
+// ══════════════════════════════════════
+var WAVES = [
+  { name:'Steam Power', period:'1780s\u20131860s', years:70, displacement:'Agricultural workers \u2192 Factory labor', detail:'Three generations to restructure from agrarian to industrial labor. Entire populations migrated. New cities formed around factories.' },
+  { name:'Electrification', period:'1890s\u20131930s', years:40, displacement:'Manual assembly \u2192 Machine-assisted production', detail:'Took 30+ years before factories reorganized around electric motors instead of steam belts. Productivity gains didn\u2019t arrive until workflows were reinvented, not just powered differently.' },
+  { name:'Automobile', period:'1910s\u20131940s', years:30, displacement:'Horse economy \u2192 Auto economy', detail:'Displaced horse-drawn transport, blacksmiths, stable workers. But created gas stations, highways, suburbs, trucking, dealerships. The absorption created entirely new economic geography.' },
+  { name:'Personal Computer', period:'1980s\u20132000s', years:18, displacement:'Clerical labor \u2192 Knowledge work', detail:'Typing pools, filing clerks, switchboard operators displaced. But the adjustment window was wide enough for retraining. Community colleges added IT programs. The displaced workers had a decade to adapt.' },
+  { name:'Internet / Mobile', period:'2007\u20132019', years:12, displacement:'Brick-and-mortar \u2192 Digital-first', detail:'Retail, media, travel agencies, taxi dispatchers compressed. Faster than prior waves, but still gave displaced industries 5\u201310 years of gradual decline. Bookstores didn\u2019t vanish overnight.' },
+  { name:'AI', period:'2023\u2013?', years:null, displacement:'Knowledge work \u2192 AI-augmented output', detail:'Software work compressed from months to days. Creative production from weeks to hours. But retraining programs take 2\u20134 years. New industry formation takes 5\u201310. What happens when displacement outpaces every absorption mechanism we have?' }
+];
+var THRESHOLD = 8, MAX_YRS = 80;
+var selectedWave = null;
+function buildAbsChart() {
+  var chart = document.getElementById('absChart');
+  var html = '<div style="position:relative;">';
+  // Decade markers
+  html += '<div style="display:flex;justify-content:space-between;margin-bottom:12px;padding-left:140px;">';
+  for (var d = 0; d <= 80; d += 10) {
+    html += '<span style="font-family:var(--mono);font-size:10px;color:rgba(232,228,222,0.25);width:0;text-align:center;position:relative;">' + (d > 0 ? d + 'y' : '') + '</span>';
+  }
+  html += '</div>';
+  // Grid lines container
+  html += '<div style="position:absolute;top:32px;bottom:0;left:140px;right:50px;">';
+  for (var d = 10; d <= 80; d += 10) {
+    html += '<div style="position:absolute;left:' + ((d/MAX_YRS)*100) + '%;top:0;bottom:0;width:1px;background:rgba(232,228,222,0.05);"></div>';
+  }
+  // Threshold line
+  html += '<div class="abs-threshold" style="left:' + ((THRESHOLD/MAX_YRS)*100) + '%;"><div class="abs-threshold-label">Adjustment floor</div></div>';
+  html += '</div>';
+  // Bars
+  for (var i = 0; i < WAVES.length; i++) {
+    var w = WAVES[i];
+    var isAI = w.years === null;
+    var barW = isAI ? 0 : ((w.years / MAX_YRS) * 100);
+    var color = isAI ? 'transparent' : (w.years <= THRESHOLD ? 'rgba(192,57,43,0.7)' : 'rgba(212,98,26,0.5)');
+    html += '<div class="abs-row" data-idx="' + i + '" onclick="selectWave(' + i + ')">';
+    html += '<div class="abs-name">' + w.name + '</div>';
+    html += '<div class="abs-bar-wrap"><div class="abs-bar" style="width:' + barW + '%;background:' + color + ';"></div></div>';
+    html += '<div class="abs-marker">' + (isAI ? '<span style="color:var(--red);animation:pulse 2s ease infinite;">?</span>' : '~' + w.years + 'y') + '</div>';
+    html += '</div>';
+  }
+  html += '</div>';
+  chart.innerHTML = html;
+  // Animate bars in
+  setTimeout(function() {
+    var bars = chart.querySelectorAll('.abs-bar');
+    bars.forEach(function(b, i) { setTimeout(function() { b.style.width = b.style.width; }, i * 200); });
+  }, 200);
+}
+
+function selectWave(idx) {
+  selectedWave = (selectedWave === idx) ? null : idx;
+  var det = document.getElementById('absDetail');
+  if (selectedWave === null) { det.style.display = 'none'; return; }
+  var w = WAVES[selectedWave];
+  det.style.display = 'block';
+  document.getElementById('detailName').textContent = w.name;
+  document.getElementById('detailPeriod').textContent = w.period;
+  document.getElementById('detailDisplacement').textContent = w.displacement;
+  document.getElementById('detailText').textContent = w.detail;
+  var rows = document.querySelectorAll('.abs-row');
+  rows.forEach(function(r, i) { r.classList.toggle('selected', i === selectedWave); });
+}
+function updateAI() {
+  var v = parseInt(document.getElementById('aiSlider').value);
+  var el = document.getElementById('aiYears');
+  var ins = document.getElementById('aiInsight');
+  el.textContent = v + ' years';
+  el.style.color = v < THRESHOLD ? 'var(--red)' : 'var(--amber)';
+  ins.style.color = v < THRESHOLD ? 'rgba(192,87,83,0.9)' : 'var(--text-mid)';
+  if (v <= 2) ins.textContent = 'At this speed, displacement outpaces every known absorption mechanism. Retraining programs take 2\u20134 years. New industry formation takes 5\u201310. There is no historical precedent for economic adjustment at this rate.';
+  else if (v <= 5) ins.textContent = 'Faster than any prior technology wave. The internet gave us ~12 years. This would be less than half that. Labor markets have never successfully adjusted this quickly.';
+  else if (v <= THRESHOLD) ins.textContent = 'Below the adjustment floor. Even the fastest prior rebalancing (internet/mobile at ~12 years) required a decade. ' + v + ' years leaves no margin for institutional adaptation.';
+  else if (v <= 12) ins.textContent = 'Comparable to internet/mobile absorption. This assumes AI disruption follows the same pattern \u2014 gradual adoption, industry-by-industry displacement. But the compression evidence suggests otherwise.';
+  else if (v <= 18) ins.textContent = 'Comparable to the PC revolution. Possible if AI adoption is slower than current trajectory suggests, or if the impact is narrower than feared.';
+  else ins.textContent = 'Slower than the PC revolution. This assumes significant regulatory friction, adoption barriers, or narrower-than-expected impact. This is the optimistic scenario.';
+}
+document.getElementById('aiSlider').addEventListener('input', updateAI);
+// ══════════════════════════════════════
+// BEAT 2: THE GEOMETRY OF KNOWLEDGE
+// ══════════════════════════════════════
+var sc = document.getElementById('sphereCanvas');
+var sctx = sc.getContext('2d');
+var sW, sH, sDpr;
+
+function sizeSphere() {
+  sDpr = window.devicePixelRatio || 1;
+  sW = sc.parentElement.offsetWidth;
+  sH = Math.min(520, sW * 0.58);
+  sc.style.height = sH + 'px';
+  sc.width = sW * sDpr;
+  sc.height = sH * sDpr;
+  sctx.setTransform(sDpr, 0, 0, sDpr, 0, 0);
+}
+sizeSphere();
+
+function drawSpheres() {
+  var n = parseInt(document.getElementById('nodeDriver').value);
+  document.getElementById('nodeOut').textContent = n;
+  document.getElementById('distSA').textContent = n + '\u00D7';
+  document.getElementById('distOwner').textContent = n + ' nodes';
+
+  sctx.clearRect(0, 0, sW, sH);
+  sctx.fillStyle = '#0a0a0a';
+  sctx.fillRect(0, 0, sW, sH);
+
+  var midX = sW / 2;
+  var leftCx = sW * 0.25, rightCx = sW * 0.75, cy = sH * 0.5;
+  var maxR = Math.min(sH * 0.4, sW * 0.2);
+  var showDots = Math.min(n, 28);
+  // Distributed AI model: frontier surface area expands with new nodes
+  var distR = Math.min(maxR, 14 + Math.sqrt(n) * (maxR * 0.13));
+  var distRingW = Math.min(maxR * 0.1, 1.5 + Math.sqrt(n) * 1.8);
+
+  // Centralized AI model: hub grows with every query but frontier barely moves
+  var starR = Math.min(maxR * 0.38, 14 + Math.log2(Math.max(1, n)) * (maxR * 0.04));
+  var starRingW = Math.min(4, 1 + Math.log2(Math.max(1, n)) * 0.45);
+
+  // Divider
+  sctx.strokeStyle = '#1a1a1a';
+  sctx.lineWidth = 1;
+  sctx.setLineDash([3, 5]);
+  sctx.beginPath(); sctx.moveTo(midX, 8); sctx.lineTo(midX, sH - 8); sctx.stroke();
+  sctx.setLineDash([]);
+
+  // ── DISTRIBUTED SIDE ──
+  var dGrad = sctx.createRadialGradient(leftCx, cy, distR * 0.2, leftCx, cy, distR + distRingW + 40);
+  dGrad.addColorStop(0, 'rgba(76,175,114,0.10)');
+  dGrad.addColorStop(0.5, 'rgba(76,175,114,0.04)');
+  dGrad.addColorStop(1, 'transparent');
+  sctx.fillStyle = dGrad;
+  sctx.beginPath(); sctx.arc(leftCx, cy, distR + distRingW + 40, 0, Math.PI * 2); sctx.fill();
+
+  sctx.fillStyle = 'rgba(76,175,114,0.06)';
+  sctx.beginPath(); sctx.arc(leftCx, cy, distR, 0, Math.PI * 2); sctx.fill();
+
+  var dHi = sctx.createRadialGradient(leftCx - distR * 0.25, cy - distR * 0.25, 0, leftCx, cy, distR);
+  dHi.addColorStop(0, 'rgba(255,255,255,0.03)');
+  dHi.addColorStop(1, 'transparent');
+  sctx.fillStyle = dHi;
+  sctx.beginPath(); sctx.arc(leftCx, cy, distR, 0, Math.PI * 2); sctx.fill();
+
+  sctx.strokeStyle = 'rgba(76,175,114,0.55)';
+  sctx.lineWidth = distRingW;
+  sctx.beginPath(); sctx.arc(leftCx, cy, distR + distRingW / 2, 0, Math.PI * 2); sctx.stroke();
+  // Explorer nodes inside the distributed sphere
+  var pts = [];
+  for (var i = 0; i < showDots; i++) {
+    var a = (2 * Math.PI * i / showDots) - Math.PI / 2;
+    var jr = 0.25 + ((i * 7 + 3) % 11) / 22;
+    pts.push({ x: distR * jr * Math.cos(a + i * 0.15), y: distR * jr * Math.sin(a + i * 0.15) });
+  }
+  for (var i = 0; i < showDots; i++) {
+    for (var j = i + 1; j < showDots; j++) {
+      var op = Math.max(0.015, 0.06 - showDots * 0.002);
+      sctx.strokeStyle = 'rgba(76,175,114,' + op + ')';
+      sctx.lineWidth = 0.4;
+      sctx.beginPath(); sctx.moveTo(leftCx + pts[i].x, cy + pts[i].y); sctx.lineTo(leftCx + pts[j].x, cy + pts[j].y); sctx.stroke();
+    }
+  }
+  for (var i = 0; i < showDots; i++) {
+    sctx.fillStyle = '#4CAF72'; sctx.globalAlpha = 0.6;
+    sctx.beginPath(); sctx.arc(leftCx + pts[i].x, cy + pts[i].y, 2, 0, Math.PI * 2); sctx.fill();
+    sctx.globalAlpha = 1;
+  }
+  // ── CENTRALIZED SIDE ──
+  var sGrad = sctx.createRadialGradient(rightCx, cy, starR * 0.2, rightCx, cy, starR + starRingW + 20);
+  sGrad.addColorStop(0, 'rgba(192,57,43,0.07)');
+  sGrad.addColorStop(0.6, 'rgba(192,57,43,0.02)');
+  sGrad.addColorStop(1, 'transparent');
+  sctx.fillStyle = sGrad;
+  sctx.beginPath(); sctx.arc(rightCx, cy, starR + starRingW + 20, 0, Math.PI * 2); sctx.fill();
+
+  sctx.fillStyle = 'rgba(192,57,43,0.05)';
+  sctx.beginPath(); sctx.arc(rightCx, cy, starR, 0, Math.PI * 2); sctx.fill();
+
+  sctx.strokeStyle = 'rgba(192,57,43,0.4)';
+  sctx.lineWidth = starRingW;
+  sctx.beginPath(); sctx.arc(rightCx, cy, starR + starRingW / 2, 0, Math.PI * 2); sctx.stroke();
+
+  // Ghost nodes outside — they've lost their own frontiers
+  var orbitR = starR + starRingW + 35 + Math.min(55, n * 0.5);
+  for (var i = 0; i < showDots; i++) {
+    var a = (2 * Math.PI * i / showDots) - Math.PI / 2;
+    var px = rightCx + orbitR * Math.cos(a), py = cy + orbitR * Math.sin(a);
+    var dx = rightCx - px, dy = cy - py;
+    var dist = Math.sqrt(dx * dx + dy * dy);
+    var nx = dx / dist, ny = dy / dist;
+    // Arrow inward
+    sctx.strokeStyle = 'rgba(192,57,43,0.12)'; sctx.lineWidth = 0.6;
+    sctx.beginPath(); sctx.moveTo(px, py); sctx.lineTo(rightCx - nx * (starR + starRingW + 6), cy - ny * (starR + starRingW + 6)); sctx.stroke();
+    var ax = px + nx * dist * 0.45, ay = py + ny * dist * 0.45;
+    var angle = Math.atan2(dy, dx);
+    sctx.fillStyle = 'rgba(192,57,43,0.25)';
+    sctx.save(); sctx.translate(ax, ay); sctx.rotate(angle);
+    sctx.beginPath(); sctx.moveTo(0, -2.5); sctx.lineTo(6, 0); sctx.lineTo(0, 2.5); sctx.closePath(); sctx.fill(); sctx.restore();
+    // Ghost dot
+    sctx.fillStyle = '#555'; sctx.globalAlpha = 0.3;
+    sctx.beginPath(); sctx.arc(px, py, 2, 0, Math.PI * 2); sctx.fill();
+    sctx.strokeStyle = 'rgba(122,115,106,0.15)'; sctx.lineWidth = 0.5; sctx.setLineDash([2, 3]);
+    sctx.beginPath(); sctx.arc(px, py, 8, 0, Math.PI * 2); sctx.stroke();
+    sctx.setLineDash([]); sctx.globalAlpha = 1;
+  }
+  // Labels
+  sctx.font = '500 14px DM Sans, sans-serif'; sctx.textAlign = 'center';
+  sctx.fillStyle = '#4CAF72'; sctx.fillText('Distributed AI Architecture', leftCx, 24);
+  sctx.fillStyle = '#C0392B'; sctx.fillText('Centralized AI Vendor', rightCx, 24);
+  sctx.font = '11px Fragment Mono, monospace'; sctx.fillStyle = '#7A736A';
+  sctx.fillText(n + ' sovereign nodes \u2192 ' + n + ' frontiers', leftCx, 42);
+  sctx.fillText(n + ' dependent nodes \u2192 1 frontier', rightCx, 42);
+  sctx.fillStyle = '#C0392B'; sctx.font = '500 11px Fragment Mono, monospace';
+  sctx.fillText('vendor', rightCx, cy - 10);
+  sctx.fillStyle = '#7A736A'; sctx.font = '10px Fragment Mono, monospace';
+  sctx.fillText('controls model, pricing,', rightCx, cy + 4);
+  sctx.fillText('TOS, and deprecation', rightCx, cy + 16);
+  sctx.font = '12px DM Sans, sans-serif';
+  sctx.fillStyle = '#4CAF72'; sctx.fillText('Each node: sovereign governance, sovereign telemetry', leftCx, sH - 14);
+  sctx.fillStyle = '#C0392B'; sctx.fillText('All nodes: rented inference, captured telemetry', rightCx, sH - 14);
+  if (n > 1) { sctx.font = '300 13px DM Sans, sans-serif'; sctx.fillStyle = '#B0A898'; sctx.fillText(n + '\u00D7 more frontier surface area', leftCx, sH - 36); }
+  if (n > 28) { sctx.font = '10px DM Sans, sans-serif'; sctx.fillStyle = '#7A736A'; sctx.fillText('showing 28 of ' + n, leftCx, sH - 54); }
+  // Insight text
+  var ins = document.getElementById('geoInsight');
+  if (n === 1) {
+    ins.innerHTML = 'One node. Both architectures are identical. Add more.';
+  } else if (n <= 10) {
+    ins.innerHTML = 'There are effectively infinite domains of knowledge &mdash; medicine, law, engineering, ecology, music, philosophy, every sub-discipline, every local context, every language. <strong>In a distributed architecture, ' + n + ' nodes explore ' + n + ' different slices of that space simultaneously.</strong> Each domain or node creates additional frontier surface area for knowledge exploration. Route them through a single vendor and you get one entity\u2019s version of what matters. The frontier doesn\u2019t expand. It consolidates.';
+  } else if (n <= 50) {
+    ins.innerHTML = '<strong>' + n + ' independent nodes probing the unknown from ' + n + ' positions.</strong> In a distributed architecture, each node expands the total frontier surface area in directions no central authority would prioritize &mdash; because no central authority can model every context, every domain, every local need. The vendor\u2019s sphere gets <em style="color:var(--text-mid);font-style:italic;">denser</em>. It does not get <em style="color:var(--text-mid);font-style:italic;">wider</em>. Its frontier barely moved since node 10. <strong class="red">That\u2019s not a design flaw. That\u2019s the architecture working as intended.</strong><br><br><span style="color:var(--green);">Each sovereign node requires its own governance, its own telemetry, its own approval gates. Without architectural sovereignty, you just get a distributed network that\u2019s still dependent on whoever controls the inference layer.</span>';
+  } else {
+    ins.innerHTML = '<strong>' + n + ' nodes. Look at the difference.</strong> The distributed sphere has been expanding since node 2. Every new node pushes the frontier surface area outward into territory the vendor will never reach &mdash; because the vendor doesn\u2019t know those territories exist. It can\u2019t. It has one vantage point. One surface area. One set of priorities about what counts as knowledge.<br><br>In the centralized model, the exploration surface is internal to the vendor. Its users provide the knowledge surface area for the vendor to explore &mdash; your questions map your areas of ignorance. <strong class="red">That signal is worth more than the answers.</strong> It trains the vendor\u2019s product roadmap. It reveals which capabilities your industry needs next. The data retention policy covers the content. Nobody covers the signal.';
+  }
+}
+
+document.getElementById('nodeDriver').addEventListener('input', drawSpheres);
+window.addEventListener('resize', function() { sizeSphere(); drawSpheres(); });
+// ══════════════════════════════════════
+// BEAT 3: WHEN YOU BECOME THE SURFACE
+// ══════════════════════════════════════
+var cc = document.getElementById('captureCanvas');
+var cctx = cc.getContext('2d');
+var cW, cH;
+
+function sizeCapture() {
+  var d = window.devicePixelRatio || 1;
+  cW = cc.parentElement.offsetWidth;
+  cH = Math.min(480, cW * 0.55);
+  cc.style.height = cH + 'px';
+  cc.width = cW * d;
+  cc.height = cH * d;
+  cctx.setTransform(d, 0, 0, d, 0, 0);
+}
+sizeCapture();
+function drawCapture() {
+  cctx.clearRect(0, 0, cW, cH);
+  cctx.fillStyle = '#0a0a0a';
+  cctx.fillRect(0, 0, cW, cH);
+
+  var midX = cW / 2;
+  var leftCx = cW * 0.25, rightCx = cW * 0.75, cy = cH * 0.48;
+
+  // Divider
+  cctx.strokeStyle = '#1a1a1a'; cctx.lineWidth = 1;
+  cctx.setLineDash([3, 5]);
+  cctx.beginPath(); cctx.moveTo(midX, 8); cctx.lineTo(midX, cH - 8); cctx.stroke();
+  cctx.setLineDash([]);
+
+  // Headers
+  cctx.font = '500 14px DM Sans, sans-serif'; cctx.textAlign = 'center';
+  cctx.fillStyle = '#4CAF72'; cctx.fillText('Distributed AI Architecture', leftCx, 24);
+  cctx.fillStyle = '#C0392B'; cctx.fillText('Centralized AI Vendor', rightCx, 24);
+
+  // ── LEFT: Distributed — you at center of your network ──
+  // Domain nodes around you
+  var domains = ['medicine', 'law', 'engineering', 'ecology', 'philosophy', 'local knowledge'];
+  var domainR = 110;
+  var dpts = [];
+  for (var i = 0; i < domains.length; i++) {
+    var a = (2 * Math.PI * i / domains.length) - Math.PI / 2;
+    dpts.push({ x: leftCx + domainR * Math.cos(a), y: cy + domainR * Math.sin(a) });
+  }
+
+  // Mesh connections between domains
+  for (var i = 0; i < dpts.length; i++) {
+    for (var j = i + 1; j < dpts.length; j++) {
+      cctx.strokeStyle = 'rgba(76,175,114,0.08)'; cctx.lineWidth = 0.5;
+      cctx.beginPath(); cctx.moveTo(dpts[i].x, dpts[i].y); cctx.lineTo(dpts[j].x, dpts[j].y); cctx.stroke();
+    }
+  }
+  // Lines from you to domains
+  for (var i = 0; i < dpts.length; i++) {
+    cctx.strokeStyle = 'rgba(76,175,114,0.25)'; cctx.lineWidth = 1;
+    cctx.beginPath(); cctx.moveTo(leftCx, cy); cctx.lineTo(dpts[i].x, dpts[i].y); cctx.stroke();
+  }
+  // Domain nodes with labels
+  for (var i = 0; i < dpts.length; i++) {
+    cctx.fillStyle = 'rgba(76,175,114,0.12)';
+    cctx.beginPath(); cctx.arc(dpts[i].x, dpts[i].y, 22, 0, Math.PI * 2); cctx.fill();
+    cctx.strokeStyle = 'rgba(76,175,114,0.35)'; cctx.lineWidth = 1.5;
+    cctx.beginPath(); cctx.arc(dpts[i].x, dpts[i].y, 22, 0, Math.PI * 2); cctx.stroke();
+    cctx.font = '9px Fragment Mono, monospace'; cctx.fillStyle = '#4CAF72'; cctx.textAlign = 'center';
+    cctx.fillText(domains[i], dpts[i].x, dpts[i].y + 3);
+  }
+  // You at center — with frontier ring
+  cctx.fillStyle = 'rgba(76,175,114,0.06)';
+  cctx.beginPath(); cctx.arc(leftCx, cy, 34, 0, Math.PI * 2); cctx.fill();
+  cctx.strokeStyle = 'rgba(76,175,114,0.5)'; cctx.lineWidth = 4;
+  cctx.beginPath(); cctx.arc(leftCx, cy, 34, 0, Math.PI * 2); cctx.stroke();
+  cctx.fillStyle = '#4CAF72';
+  cctx.beginPath(); cctx.arc(leftCx, cy, 14, 0, Math.PI * 2); cctx.fill();
+  cctx.font = '500 10px Fragment Mono, monospace'; cctx.fillStyle = '#080808'; cctx.textAlign = 'center';
+  cctx.fillText('you', leftCx, cy + 4);
+
+  // Bottom label
+  cctx.font = '11px Fragment Mono, monospace'; cctx.fillStyle = '#4CAF72'; cctx.textAlign = 'center';
+  cctx.fillText('you explore \u2192 you keep the map', leftCx, cH - 16);
+
+  // ── RIGHT: Centralized — you → provider ──
+  var youX = rightCx - 110, provX = rightCx + 40, provR = 65;
+
+  // Connection line
+  cctx.strokeStyle = 'rgba(192,57,43,0.3)'; cctx.lineWidth = 2;
+  cctx.beginPath(); cctx.moveTo(youX + 16, cy); cctx.lineTo(provX - provR - 4, cy); cctx.stroke();
+  // Arrow
+  var arrX = provX - provR - 4;
+  cctx.fillStyle = 'rgba(192,57,43,0.5)';
+  cctx.beginPath(); cctx.moveTo(arrX, cy - 6); cctx.lineTo(arrX + 12, cy); cctx.lineTo(arrX, cy + 6); cctx.closePath(); cctx.fill();
+
+  // You — diminished
+  cctx.fillStyle = '#7A736A';
+  cctx.beginPath(); cctx.arc(youX, cy, 14, 0, Math.PI * 2); cctx.fill();
+  cctx.font = '500 10px Fragment Mono, monospace'; cctx.fillStyle = '#E8E2D9'; cctx.textAlign = 'center';
+  cctx.fillText('you', youX, cy + 4);
+  // Ghost frontier — dashed
+  cctx.strokeStyle = 'rgba(122,115,106,0.2)'; cctx.lineWidth = 1; cctx.setLineDash([3, 4]);
+  cctx.beginPath(); cctx.arc(youX, cy, 34, 0, Math.PI * 2); cctx.stroke();
+  cctx.setLineDash([]);
+
+  // Provider hub — larger
+  cctx.fillStyle = 'rgba(192,57,43,0.08)';
+  cctx.beginPath(); cctx.arc(provX, cy, provR, 0, Math.PI * 2); cctx.fill();
+  cctx.strokeStyle = 'rgba(192,57,43,0.4)'; cctx.lineWidth = 3;
+  cctx.beginPath(); cctx.arc(provX, cy, provR, 0, Math.PI * 2); cctx.stroke();
+  cctx.font = '500 12px Fragment Mono, monospace'; cctx.fillStyle = '#C0392B'; cctx.textAlign = 'center';
+  cctx.fillText('AI vendor', provX, cy - 8);
+  cctx.font = '9px Fragment Mono, monospace'; cctx.fillStyle = '#7A736A';
+  cctx.fillText('maps your ignorance', provX, cy + 8);
+
+  // Bottom label
+  cctx.font = '11px Fragment Mono, monospace'; cctx.fillStyle = '#C0392B'; cctx.textAlign = 'center';
+  cctx.fillText('you explore \u2192 vendor keeps the map', rightCx, cH - 16);
+}
+// ── SCROLL REVEAL ──
+var reveals = document.querySelectorAll('.reveal');
+var revealObserver = new IntersectionObserver(function(entries) {
+  entries.forEach(function(entry) {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      revealObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' });
+reveals.forEach(function(el) { revealObserver.observe(el); });
+
+// ── INIT ──
+buildAbsChart();
+selectWave(2);
+updateAI();
+sizeSphere();
+drawSpheres();
+sizeCapture();
+drawCapture();
+
+// ── TOP RAIL: fade in on scroll ──
+var rail = document.getElementById('topRail');
+var railLink = document.getElementById('railLink');
+window.addEventListener('scroll', function() {
+  if (window.scrollY > 100) { rail.classList.add('visible'); }
+  else { rail.classList.remove('visible'); }
+}, { passive: true });
+
+// ── AUTH STATE ──
+var ACCESS_CODE = 'grove2026';
+if (sessionStorage.getItem('grove-auth') === 'true') {
+  railLink.textContent = 'Go deeper \u2192';
+  railLink.href = 'hub.html#hub';
+  document.getElementById('gate').style.display = 'none';
+}
+
+// ── GATE INPUT ──
+var gatePw = document.getElementById('gatePw');
+if (gatePw) {
+  gatePw.addEventListener('keydown', function(e) {
+    if (e.key === 'Enter') {
+      if (gatePw.value === ACCESS_CODE) {
+        sessionStorage.setItem('grove-auth', 'true');
+        window.location.href = 'hub.html#hub';
+      } else {
+        gatePw.classList.add('error');
+        gatePw.value = '';
+        setTimeout(function() { gatePw.classList.remove('error'); }, 500);
+      }
+    }
+  });
+}
+
+window.addEventListener('resize', function() {
+  sizeSphere(); drawSpheres();
+  sizeCapture(); drawCapture();
+});
+</script>
+
+<style>
+  @keyframes pulse {
+    0%, 100% { opacity: 0.4; }
+    50% { opacity: 1; }
+  }
+</style>
+</body>
+</html>
