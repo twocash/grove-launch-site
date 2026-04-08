@@ -27,6 +27,7 @@ html { scroll-behavior:smooth; }
 body { background:var(--bg); color:var(--text); font-family:var(--sans); -webkit-font-smoothing:antialiased; overflow-x:hidden; line-height:1.6; }
 strong { color:var(--text); font-weight:500; }
 body::before { content:''; position:fixed; inset:0; background-image:linear-gradient(var(--border) 1px, transparent 1px),linear-gradient(90deg, var(--border) 1px, transparent 1px); background-size:40px 40px; opacity:0.15; pointer-events:none; z-index:0; }
+/* ── NAV ── */
 nav { position:fixed; top:0; left:0; right:0; z-index:100; padding:0 48px; height:56px; display:flex; justify-content:space-between; align-items:center; background:rgba(8,8,8,0.94); backdrop-filter:blur(16px); border-bottom:1px solid rgba(37,37,37,0.5); }
 .nav-logo { font-family:var(--mono); font-size:11px; letter-spacing:0.2em; text-transform:uppercase; color:var(--amber-dim); }
 .nav-links { display:flex; gap:32px; }
@@ -34,6 +35,7 @@ nav { position:fixed; top:0; left:0; right:0; z-index:100; padding:0 48px; heigh
 .nav-links a:hover, .nav-links a.active { color:var(--amber); border-bottom-color:var(--amber); }
 .nav-links a.nav-ext { color:var(--amber-dim); border:1px solid var(--amber-dim); padding:3px 10px; margin-left:8px; border-bottom:1px solid var(--amber-dim); }
 .nav-links a.nav-ext:hover { color:var(--amber); border-color:var(--amber); background:rgba(212,98,26,0.08); }
+/* ── LAYOUT ── */
 .section { position:relative; z-index:1; }
 .section-inner { max-width:760px; margin:0 auto; padding:120px 48px 100px; }
 .section-wide { max-width:1140px; margin:0 auto; padding:120px 48px 100px; }
@@ -45,10 +47,21 @@ nav { position:fixed; top:0; left:0; right:0; z-index:100; padding:0 48px; heigh
 .subhead { font-family:var(--serif); font-weight:400; font-size:clamp(20px,2.2vw,28px); color:var(--text); margin:64px 0 20px; line-height:1.2; }
 .subhead em { color:var(--amber); font-style:italic; }
 .lead { font-weight:300; font-size:clamp(15px,1.5vw,17px); line-height:1.75; color:var(--text-mid); max-width:700px; margin-bottom:32px; }
+.body-text { font-weight:300; font-size:15px; line-height:1.75; color:var(--text-mid); margin-bottom:20px; }
 .divider { width:48px; height:1px; background:var(--amber); margin:32px 0; }
 .reveal { opacity:0; transform:translateY(24px); transition:opacity 0.7s ease, transform 0.7s ease; }
 .reveal.visible { opacity:1; transform:translateY(0); }
-/* Scoreboard */
+/* ── STRUCTURAL SHARE ── */
+.share-panel { display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--border); border:1px solid var(--border); margin-bottom:32px; }
+.share-half { background:var(--bg2); padding:40px 48px; }
+.share-pct { font-family:var(--serif); font-size:clamp(56px,7vw,80px); line-height:1; margin-bottom:8px; }
+.share-label { font-family:var(--mono); font-size:11px; letter-spacing:0.15em; text-transform:uppercase; margin-bottom:16px; }
+.share-desc { font-size:14px; line-height:1.7; color:var(--text-mid); font-weight:300; }
+.share-bar { height:6px; display:flex; margin:24px 0 12px; border:1px solid var(--border); overflow:hidden; }
+.share-bar-sov { background:var(--green); }
+.share-bar-con { background:var(--red); }
+.share-note { font-family:var(--mono); font-size:10px; color:var(--text-dim); letter-spacing:0.06em; }
+/* ── SCOREBOARD ── */
 .board { border:1px solid var(--border); margin-bottom:32px; }
 .board-header { display:grid; grid-template-columns:36px 2fr 1fr 1.2fr 48px; padding:10px 20px; border-bottom:1px solid var(--border); font-family:var(--mono); font-size:9px; letter-spacing:0.15em; text-transform:uppercase; color:var(--amber); align-items:center; }
 .srow { display:grid; grid-template-columns:36px 2fr 1fr 1.2fr 48px; padding:0 20px; align-items:center; min-height:56px; border-bottom:1px solid rgba(37,37,37,0.6); cursor:pointer; transition:background 0.15s; }
@@ -76,28 +89,70 @@ nav { position:fixed; top:0; left:0; right:0; z-index:100; padding:0 48px; heigh
 .sdv-v { font-family:var(--serif); font-size:22px; }
 .sdv-v.exp { color:var(--amber); }
 .s-insight { font-size:12px; color:var(--text-dim); line-height:1.6; border-left:2px solid var(--border); padding-left:14px; }
+/* ── HISTORICAL TABLE ── */
+.cal-table { width:100%; border-collapse:collapse; margin:20px 0 32px; }
+.cal-table th { font-family:var(--mono); font-size:9px; letter-spacing:0.12em; text-transform:uppercase; color:var(--amber); padding:12px 10px; text-align:center; border-bottom:1px solid var(--border); }
+.cal-table th:first-child { text-align:left; }
+.cal-table td { padding:14px 10px; border-bottom:1px solid rgba(37,37,37,0.5); text-align:center; font-family:var(--mono); font-size:13px; color:var(--text-mid); }
+.cal-table td:first-child { text-align:left; font-family:var(--sans); }
+.cal-name { font-family:var(--serif); font-size:15px; color:var(--text); }
+.cal-sub { font-family:var(--mono); font-size:9px; color:var(--text-dim); letter-spacing:0.08em; margin-top:2px; }
+.cal-pass { font-family:var(--mono); font-size:10px; padding:3px 8px; background:rgba(76,175,114,0.1); color:var(--green); border:1px solid rgba(76,175,114,0.25); }
+.cal-fail { font-family:var(--mono); font-size:10px; padding:3px 8px; background:rgba(192,57,43,0.08); color:var(--red); border:1px solid rgba(192,57,43,0.25); }
+.cal-exp { color:var(--amber); }
+/* ── FORMULA ── */
 .formula-box { background:var(--bg3); border:1px solid var(--border); padding:28px; text-align:center; margin:24px 0; }
 .formula { font-family:var(--serif); font-style:italic; font-size:clamp(22px,2.8vw,34px); color:var(--text); }
 .formula .dm { color:var(--amber); }
-.var-strip { display:grid; grid-template-columns:repeat(5,1fr); gap:1px; background:var(--border); border:1px solid var(--border); margin-bottom:20px; }
-.var-cell { background:var(--bg2); padding:14px; text-align:center; }
-.var-sym { font-family:var(--serif); font-style:italic; font-size:20px; margin-bottom:3px; }
-.var-sym.exp { color:var(--amber); }
-.var-nm { font-family:var(--mono); font-size:8px; letter-spacing:0.15em; text-transform:uppercase; color:var(--text-dim); margin-bottom:4px; }
-.var-ds { font-size:10px; color:var(--text-dim); line-height:1.4; }
+/* ── VARIABLE CARDS ── */
+.var-cards { display:grid; grid-template-columns:repeat(5,1fr); gap:1px; background:var(--border); border:1px solid var(--border); margin:20px 0; }
+.var-card { background:var(--bg2); padding:20px 16px; text-align:center; }
+.var-card.exp-card { background:rgba(212,98,26,0.03); }
+.vc-sym { font-family:var(--serif); font-style:italic; font-size:24px; margin-bottom:6px; }
+.vc-sym.exp { color:var(--amber); }
+.vc-name { font-family:var(--mono); font-size:8px; letter-spacing:0.15em; text-transform:uppercase; color:var(--text-dim); margin-bottom:8px; }
+.vc-desc { font-size:11px; color:var(--text-dim); line-height:1.5; }
+.vc-badge { display:inline-block; font-family:var(--mono); font-size:8px; letter-spacing:0.1em; padding:2px 8px; margin-top:10px; border:1px solid var(--border); color:var(--text-dim); }
+.vc-badge.exp-badge { border-color:rgba(212,98,26,0.3); color:var(--amber-dim); }
+.asymmetry-box { border-left:3px solid var(--amber); background:rgba(212,98,26,0.04); padding:20px 24px; margin:24px 0; }
+.asymmetry-label { font-family:var(--mono); font-size:10px; letter-spacing:0.15em; text-transform:uppercase; color:var(--amber); margin-bottom:8px; }
+.asymmetry-body { font-family:var(--serif); font-style:italic; font-size:17px; color:var(--text); line-height:1.5; }
+/* ── FOUR-TIER GATE ── */
+.tier-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--border); border:1px solid var(--border); margin:24px 0; }
+.tier-col { background:var(--bg2); padding:24px 20px; }
+.tier-range { font-family:var(--mono); font-size:12px; letter-spacing:0.04em; margin-bottom:4px; }
+.tier-status { font-family:var(--serif); font-size:18px; margin-bottom:12px; }
+.tier-desc { font-size:12px; color:var(--text-dim); line-height:1.6; margin-bottom:16px; font-weight:300; }
+.tier-action-label { font-family:var(--mono); font-size:8px; letter-spacing:0.15em; text-transform:uppercase; color:var(--text-dim); margin-bottom:8px; }
+.tier-action { font-size:12px; color:var(--text-mid); line-height:1.8; padding-left:14px; border-left:2px solid var(--border); }
+/* ── PROFILES ── */
 .profiles { display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--border); border:1px solid var(--border); margin:24px 0; }
 .prof { background:var(--bg2); padding:24px; }
 .prof-label { font-family:var(--mono); font-size:10px; letter-spacing:0.15em; text-transform:uppercase; margin-bottom:10px; }
 .prof-desc { font-size:13px; color:var(--text-mid); line-height:1.6; font-weight:300; }
 .prof-members { font-family:var(--mono); font-size:10px; color:var(--text-dim); margin-top:10px; letter-spacing:0.04em; }
 .prof-kick { font-size:13px; margin-top:10px; line-height:1.5; font-weight:400; }
+/* ── PREDICTION ── */
+.prediction { display:grid; grid-template-columns:120px 1fr; gap:0; border:1px solid rgba(212,98,26,0.35); background:rgba(212,98,26,0.03); margin:32px 0; }
+.pred-label { background:rgba(212,98,26,0.08); padding:24px 20px; display:flex; align-items:center; justify-content:center; font-family:var(--mono); font-size:10px; letter-spacing:0.15em; text-transform:uppercase; color:var(--amber); text-align:center; line-height:1.6; border-right:1px solid rgba(212,98,26,0.2); }
+.pred-body { padding:24px; font-size:14px; color:var(--text-mid); line-height:1.7; font-weight:300; }
+.pred-body strong { color:var(--text); }
+/* ── INTEGRITY ── */
 .integrity { background:rgba(212,98,26,0.04); border:1px solid rgba(212,98,26,0.2); padding:24px 28px; margin:32px 0; }
 .integrity p { font-size:14px; color:var(--text-mid); line-height:1.7; font-weight:300; }
+/* ── HERO ── */
 #hero { min-height:70vh; display:flex; flex-direction:column; justify-content:center; position:relative; background:radial-gradient(ellipse at 20% 70%, rgba(212,98,26,0.08) 0%, transparent 55%); }
 #hero .section-inner { padding-top:80px; padding-bottom:80px; }
 .hero-meta { font-family:var(--mono); font-size:10px; color:var(--text-dim); letter-spacing:0.1em; margin-top:24px; }
 .hero-meta a { color:var(--amber-dim); text-decoration:none; border-bottom:1px solid var(--amber-dim); }
 #landscape { background:var(--bg2); border-top:1px solid var(--border); border-bottom:1px solid var(--border); }
+/* ── RESPONSIVE ── */
+@media(max-width:900px) {
+  .share-panel { grid-template-columns:1fr; }
+  .tier-grid { grid-template-columns:1fr 1fr; }
+  .prediction { grid-template-columns:1fr; }
+  .pred-label { border-right:none; border-bottom:1px solid rgba(212,98,26,0.2); padding:16px; }
+}
 @media(max-width:768px) {
   nav { padding:0 20px; }
   .nav-links { gap:16px; }
@@ -107,8 +162,10 @@ nav { position:fixed; top:0; left:0; right:0; z-index:100; padding:0 48px; heigh
   .board-header > :nth-child(4),.srow > :nth-child(4) { display:none; }
   .s-detail { padding-left:20px; }
   .s-detail-grid { grid-template-columns:repeat(3,1fr); }
-  .var-strip { grid-template-columns:repeat(3,1fr); }
+  .var-cards { grid-template-columns:repeat(3,1fr); }
   .profiles { grid-template-columns:1fr; }
+  .tier-grid { grid-template-columns:1fr; }
+  .cal-table th:nth-child(n+6), .cal-table td:nth-child(n+6) { display:none; }
 }
 </style>
 </head>
@@ -124,34 +181,140 @@ nav { position:fixed; top:0; left:0; right:0; z-index:100; padding:0 48px; heigh
     <a href="/about">About</a>
   </div>
 </nav>
+
+<!-- ═══════════════════════════════════════
+     HERO
+══════════════════════════════════════════ -->
 <section class="section" id="hero">
   <div class="section-inner">
     <div class="eyebrow">State of the Architecture</div>
     <h1 class="display">Which patterns would survive<br><em>without the money?</em></h1>
     <p class="lead">Every major analyst framework measures how many people are using an AI platform today. The Grove Foundation measures whether they&rsquo;d keep using it if nobody subsidized it. Can the pattern survive on its own, or does it need a benefactor?</p>
     <div class="divider"></div>
-    <p class="hero-meta">Last scored: March 2026 &middot; Next update: June 2026 &middot; <a href="/observations">&larr; Observations</a></p>
+    <p class="hero-meta">Last scored: March 2026 &middot; Next update: June 2026 &middot; 96 sources &middot; 8 patterns &middot; 4 historical calibrations &middot; CC BY 4.0</p>
   </div>
 </section>
+<!-- ═══════════════════════════════════════
+     STRUCTURAL SHARE
+══════════════════════════════════════════ -->
+<section class="section" style="background:var(--bg2); border-top:1px solid var(--border); border-bottom:1px solid var(--border);">
+  <div class="section-wide reveal">
+    <div class="eyebrow">Structural Share &middot; March 2026</div>
+    <div class="share-panel">
+      <div class="share-half">
+        <div class="share-pct" style="color:var(--green);">83%</div>
+        <div class="share-label" style="color:var(--green);">Sovereign</div>
+        <div class="share-desc">Open-weight, on-device, and architecturally independent patterns. Structural viability does not depend on a single vendor&rsquo;s continued investment or goodwill.</div>
+      </div>
+      <div class="share-half">
+        <div class="share-pct" style="color:var(--red);">17%</div>
+        <div class="share-label" style="color:var(--red);">Concentrated</div>
+        <div class="share-desc">Centralized API and platform-bundled patterns. Structural viability depends on vendor subsidy, enterprise lock-in, or distribution power that the pattern does not itself generate.</div>
+      </div>
+    </div>
+    <div class="share-bar"><div class="share-bar-sov" style="flex:83;"></div><div class="share-bar-con" style="flex:17;"></div></div>
+    <div class="share-note">Structural share weighted by &Lambda; score. Sovereign patterns hold 83% of total structural viability despite representing a fraction of current market revenue. Revenue is not viability.</div>
+  </div>
+</section>
+<!-- ═══════════════════════════════════════
+     SCOREBOARD
+══════════════════════════════════════════ -->
 <section class="section" id="landscape">
   <div class="section-wide reveal">
+    <h2 class="subhead">The <em>landscape.</em></h2>
     <div class="board">
       <div class="board-header">
         <div>#</div><div>Pattern</div><div style="text-align:right;">&Lambda;</div><div style="text-align:center;">Tier</div><div style="text-align:center;">Trend</div>
       </div>
       <div id="standings"></div>
     </div>
-    <p style="font-family:var(--mono); font-size:10px; color:var(--text-dim); margin-top:-20px; margin-bottom:32px; letter-spacing:0.04em;">Click any row to see sub-scores and structural analysis</p>
+    <p style="font-family:var(--mono); font-size:10px; color:var(--text-dim); margin-top:-20px; margin-bottom:48px; letter-spacing:0.04em;">Click any row to see sub-scores and structural analysis</p>
+
+    <!-- ── Historical Calibrations ── -->
+    <div class="eyebrow">Historical Calibrations &middot; Methodology Validation</div>
+    <p class="body-text">A framework that only explains the present isn&rsquo;t a methodology. It&rsquo;s a narrative. The &Lambda; formula was calibrated against four historical technology adoption events with known outcomes. It predicted all four correctly.</p>
+    <table class="cal-table">
+      <thead>
+        <tr><th style="width:180px;">Pattern</th><th>S</th><th>R</th><th>V</th><th class="cal-exp">Fc</th><th class="cal-exp">&beta;</th><th>&Lambda;</th><th>Outcome</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><div class="cal-name">TCP/IP</div><div class="cal-sub">vs. OSI &middot; 1970s&ndash;90s</div></td><td>0.95</td><td>0.80</td><td>1.0</td><td class="cal-exp">2.5</td><td class="cal-exp">0.33</td><td style="color:var(--green);">0.452</td><td><span class="cal-pass">Phase Transition &check;</span></td></tr>
+        <tr><td><div class="cal-name">Bitcoin</div><div class="cal-sub">Incentive-Driven &middot; 2009&ndash;</div></td><td>0.90</td><td>0.40</td><td>1.0</td><td class="cal-exp">7.0</td><td class="cal-exp">0.20</td><td style="color:var(--green);">0.122</td><td><span class="cal-pass">Phase Transition &check;</span></td></tr>
+        <tr><td><div class="cal-name">ISO Container</div><div class="cal-sub">Trade Standard &middot; 1960s</div></td><td>0.80</td><td>0.95</td><td>1.0</td><td class="cal-exp">1.0</td><td class="cal-exp">1.00</td><td style="color:var(--green);">0.380</td><td><span class="cal-pass">Phase Transition &check;</span></td></tr>
+        <tr><td><div class="cal-name">U.S. Metric System</div><div class="cal-sub">Structural Failure &middot; ongoing</div></td><td>0.80</td><td style="color:var(--red);">0.40</td><td>1.0</td><td class="cal-exp">10.0</td><td class="cal-exp">1.00</td><td style="color:var(--red);">0.003</td><td><span class="cal-fail">Structural Failure &check;</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+<!-- ═══════════════════════════════════════
+     THE FORMULA
+══════════════════════════════════════════ -->
+<section class="section">
+  <div class="section-wide reveal">
+    <div class="eyebrow">The Methodology</div>
+    <h2 class="headline">Here it is. <em>In its glory.</em></h2>
     <div class="formula-box">
       <div class="formula">&Lambda; = (S &times; R &times; V) / (1 + (<span class="dm">&beta; &middot; F<sub>c</sub></span>)&sup2;)</div>
     </div>
-    <div class="var-strip">
-      <div class="var-cell"><div class="var-sym">S</div><div class="var-nm">Spreadability</div><div class="var-ds">How freely replicated</div></div>
-      <div class="var-cell"><div class="var-sym">R</div><div class="var-nm">Rails</div><div class="var-ds">Infrastructure fit</div></div>
-      <div class="var-cell"><div class="var-sym">V</div><div class="var-nm">Validation</div><div class="var-ds">Theory discount</div></div>
-      <div class="var-cell"><div class="var-sym exp">F<sub>c</sub></div><div class="var-nm">Friction</div><div class="var-ds">Squared. Dominates.</div></div>
-      <div class="var-cell"><div class="var-sym exp">&beta;</div><div class="var-nm">Incentive</div><div class="var-ds">Geo mean of 3 forces</div></div>
+    <div class="var-cards">
+      <div class="var-card"><div class="vc-sym">S</div><div class="vc-name">Spreadability</div><div class="vc-desc">How freely replicated. Open-source licensing, replication cost, network accessibility.</div><div class="vc-badge">Linear</div></div>
+      <div class="var-card"><div class="vc-sym">R</div><div class="vc-name">Rail Compatibility</div><div class="vc-desc">Infrastructure fit. Does the pattern run on what already exists?</div><div class="vc-badge">Linear</div></div>
+      <div class="var-card"><div class="vc-sym">V</div><div class="vc-name">Validation</div><div class="vc-desc">Theory discount. Pre-publication: 0.2. Enterprise-validated: 1.0. We apply this to ourselves.</div><div class="vc-badge">Linear</div></div>
+      <div class="var-card exp-card"><div class="vc-sym exp">F<sub>c</sub></div><div class="vc-name">Cognitive Friction</div><div class="vc-desc">Mental energy to adopt. Paradigm switching cost. Lives in the denominator &mdash; small reductions produce outsized gains.</div><div class="vc-badge exp-badge">Denominator</div></div>
+      <div class="var-card exp-card"><div class="vc-sym exp">&beta;</div><div class="vc-name">Exogenous Incentive</div><div class="vc-desc">External forcing. Geometric mean of financial, regulatory, ideological dimensions. Lower = stronger.</div><div class="vc-badge exp-badge">Denominator</div></div>
     </div>
+    <div class="asymmetry-box">
+      <div class="asymmetry-label">The Core Asymmetry</div>
+      <div class="asymmetry-body">S, R, and V are linear. Improve any by 10% and &Lambda; moves proportionally. But F<sub>c</sub> and &beta; live in the denominator &mdash; with a squared term. In high-resistance regimes, reduce friction by half and adoption doesn&rsquo;t double. It quadruples. The geometry of the fight matters more than the size of the sword.</div>
+    </div>
+  </div>
+</section>
+<!-- ═══════════════════════════════════════
+     FOUR-TIER GATE
+══════════════════════════════════════════ -->
+<section class="section" style="background:var(--bg2); border-top:1px solid var(--border); border-bottom:1px solid var(--border);">
+  <div class="section-wide reveal">
+    <div class="eyebrow">Publication Gate</div>
+    <h2 class="subhead">The gate that makes every name here <em>safe.</em></h2>
+    <p class="body-text">The Grove doesn&rsquo;t publish anything below critical mass threshold. That&rsquo;s not a process. It&rsquo;s a structural commitment.</p>
+    <div class="tier-grid">
+      <div class="tier-col">
+        <div class="tier-range" style="color:var(--red);">&Lambda; &lt; 0.005</div>
+        <div class="tier-status" style="color:var(--red);">Structurally Inert</div>
+        <div class="tier-desc">Won&rsquo;t propagate without coercion. Publishing consumes institutional credibility.</div>
+        <div class="tier-action-label">Diagnose</div>
+        <div class="tier-action">Low S &rarr; Too proprietary<br>Low V &rarr; Unvalidated theory<br>High &beta; &rarr; No forcing function<br><span style="color:var(--red);">&rarr; Redesign or kill</span></div>
+      </div>
+      <div class="tier-col">
+        <div class="tier-range" style="color:var(--yellow);">0.005 &le; &Lambda; &lt; 0.03</div>
+        <div class="tier-status" style="color:var(--yellow);">Sub-Critical</div>
+        <div class="tier-desc">Viable but not self-sustaining. External support required. Pattern needs active intervention.</div>
+        <div class="tier-action-label">Intervention</div>
+        <div class="tier-action">Identify drag variable<br>Fund targeted reduction<br>Re-score each cycle<br><span style="color:var(--yellow);">&rarr; Iterate toward threshold</span></div>
+      </div>
+      <div class="tier-col">
+        <div class="tier-range" style="color:var(--amber);">0.03 &le; &Lambda; &lt; 0.10</div>
+        <div class="tier-status" style="color:var(--amber);">Approaching Critical</div>
+        <div class="tier-desc">Structural momentum building. The Grove&rsquo;s engine operates here &mdash; precision friction surgery.</div>
+        <div class="tier-action-label">Accelerate</div>
+        <div class="tier-action">High-priority intervention<br>Deploy grant resources<br>Protect the superposition<br><span style="color:var(--amber);">&rarr; Push toward critical mass</span></div>
+      </div>
+      <div class="tier-col">
+        <div class="tier-range" style="color:var(--green);">&Lambda; &ge; 0.10</div>
+        <div class="tier-status" style="color:var(--green);">Critical Mass</div>
+        <div class="tier-desc">Auto-catalytic. Self-propagating. The Grove&rsquo;s job: get out of the way.</div>
+        <div class="tier-action-label">Execution</div>
+        <div class="tier-action">Publish. CC BY 4.0<br>Set falsification criteria<br>Track adoption signal<br><span style="color:var(--green);">&rarr; Step back. Let it run.</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     PROFILES + PREDICTION + INTEGRITY
+══════════════════════════════════════════ -->
+<section class="section">
+  <div class="section-wide reveal">
     <h2 class="subhead">Dependency compounds. <em>Sovereignty compounds.</em></h2>
     <div class="profiles">
       <div class="prof">
@@ -167,12 +330,20 @@ nav { position:fixed; top:0; left:0; right:0; z-index:100; padding:0 48px; heigh
         <div class="prof-kick" style="color:var(--green);">Every quarter on an open architecture is another quarter of independence.</div>
       </div>
     </div>
+    <div class="prediction">
+      <div class="pred-label">Live<br>Falsifiable<br>Prediction</div>
+      <div class="pred-body"><strong>Mistral/DeepSeek maintains or extends its structural lead through 2027</strong> &mdash; measured by enterprise deployment growth rate exceeding Meta Llama by &gt;20% annually &mdash; or the geometric mean &beta; aggregation requires public recalibration. This is on the record. The distinction between a methodology and a narrative is the willingness to be wrong.</div>
+    </div>
+
     <div class="integrity">
       <p><strong style="color:var(--amber);">Conflict of interest disclosure.</strong> The Grove Foundation publishes this framework and champions the Autonomaton architecture. The Autonomaton is scored using the same methodology applied to all other patterns. It scores last &mdash; &Lambda; = 0.0001, Structurally Inert, V = 0.2. We built a methodology that crushed our own entry and published the results.</p>
     </div>
-    <p style="font-family:var(--mono); font-size:10px; color:var(--text-dim); letter-spacing:0.08em;">96 sources &middot; 8 patterns &middot; 4 historical calibrations &middot; CC BY 4.0</p>
   </div>
 </section>
+
+<!-- ═══════════════════════════════════════
+     FOOTER
+══════════════════════════════════════════ -->
 <section class="section" style="background:var(--bg2); border-top:1px solid var(--border);">
   <div class="section-inner" style="text-align:center;">
     <div style="font-family:var(--serif); font-style:italic; font-size:15px; color:var(--text-dim); margin-bottom:8px;">&ldquo;Design is philosophy expressed through constraint.&rdquo;</div>
