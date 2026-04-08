@@ -126,26 +126,14 @@ nav {
   letter-spacing:0.1em; margin-top:24px;
 }
 .scroll-cue {
-  position:absolute; bottom:40px; left:50%; transform:translateX(-50%);
-  display:flex; flex-direction:column; align-items:center; gap:8px;
+  position:absolute; bottom:36px; left:50%; transform:translateX(-50%);
+  display:flex; flex-direction:column; align-items:center; gap:6px;
 }
 .scroll-cue span {
   font-family:var(--mono); font-size:9px; color:var(--amber-dim);
   letter-spacing:0.2em; text-transform:uppercase;
 }
-.scroll-line {
-  width:1px; height:40px; position:relative; overflow:hidden;
-}
-.scroll-line::after {
-  content:''; position:absolute; top:-40px; left:0;
-  width:1px; height:40px; background:linear-gradient(to bottom, transparent, var(--amber));
-  animation:scroll-drop 2s ease-in-out infinite;
-}
-@keyframes scroll-drop {
-  0% { top:-40px; opacity:0; }
-  30% { opacity:1; }
-  100% { top:40px; opacity:0; }
-}
+.scroll-cue svg { opacity:0.6; }
 /* ── INSIGHT BOX ── */
 .insight-box {
   background:rgba(212,98,26,0.04);
@@ -229,7 +217,7 @@ nav {
     <div class="divider"></div>
     <p class="hero-meta">Open standards for distributed AI governance &middot; CC BY 4.0</p>
   </div>
-  <div class="scroll-cue"><span>Scroll</span><div class="scroll-line"></div></div>
+  <div class="scroll-cue"><span>Scroll</span><svg width="16" height="10" viewBox="0 0 16 10" fill="none"><path d="M1 1L8 8L15 1" stroke="#8B3D10" stroke-width="1.5"/></svg></div>
 </section>
 <!-- ═══════════════════════════════════════════════════
      PART I: THE ILLUSION OF POLICY AS ENGINEERING
@@ -385,6 +373,28 @@ const observer = new IntersectionObserver((entries) => {
   entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
 }, { threshold: 0.1 });
 document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// Keyboard section navigation
+(function(){
+  var sections = Array.from(document.querySelectorAll('.section'));
+  document.addEventListener('keydown', function(e){
+    if (e.key !== 'ArrowDown' && e.key !== 'ArrowUp') return;
+    var tag = document.activeElement.tagName;
+    if (tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT') return;
+    e.preventDefault();
+    var scrollY = window.scrollY + 80;
+    var i;
+    if (e.key === 'ArrowDown') {
+      for (i = 0; i < sections.length; i++) {
+        if (sections[i].offsetTop > scrollY + 10) { sections[i].scrollIntoView({behavior:'smooth',block:'start'}); return; }
+      }
+    } else {
+      for (i = sections.length - 1; i >= 0; i--) {
+        if (sections[i].offsetTop < scrollY - 10) { sections[i].scrollIntoView({behavior:'smooth',block:'start'}); return; }
+      }
+    }
+  });
+})();
 </script>
 </body>
 </html>
