@@ -54,7 +54,7 @@ nav {
 .nav-logo {
   font-family:var(--mono); font-size:11px;
   letter-spacing:0.2em; text-transform:uppercase;
-  color:var(--amber-dim);
+  color:var(--amber-dim); text-decoration:none;
 }
 .nav-links { display:flex; gap:32px; }
 .nav-links a {
@@ -453,12 +453,13 @@ input[type="range"]::-webkit-slider-thumb { -webkit-appearance:none; width:16px;
 </div>
 <!-- ══════ NAVIGATION ══════ -->
 <nav>
-  <div class="nav-logo">The Grove Foundation</div>
+  <a href="/" class="nav-logo">The Grove Foundation</a>
   <div class="nav-links">
     <a href="/">Thesis</a>
     <a href="/observations" class="active">Observations</a>
     <a href="/lambda">Standings</a>
     <a href="/standards/001">Open Standards</a>
+    <a href="/papers/telemetry-trap">Papers</a>
     <a href="https://the-grove.ai/autonomaton" target="_blank" rel="noopener noreferrer" class="nav-ext">Playground &nearr;</a>
     <a href="/about">About</a>
   </div>
