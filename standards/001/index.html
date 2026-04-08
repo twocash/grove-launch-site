@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Autonomaton Pattern — The Grove Foundation</title>
+<meta name="description" content="Toward Self-Authoring Software Systems. An open architectural standard for AI governance published under CC BY 4.0 by the Grove Foundation.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fragment+Mono:ital@0;1&family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --amber:#D4621A; --amber-bright:#F07030; --amber-dim:#8B3D10;
+  --amber-glow:rgba(212,98,26,0.12);
+  --bg:#080808; --bg2:#0f0f0f; --bg3:#161616; --bg4:#1a1a1a;
+  --border:#252525; --border-light:#333;
+  --text:#E8E2D9; --text-dim:#7A736A; --text-mid:#B0A898;
+  --green:#4CAF72; --green-dim:rgba(76,175,114,0.08);
+  --red:#C0392B; --red-dim:rgba(192,57,43,0.06);
+  --yellow:#D4A017;
+  --mono:'Fragment Mono', monospace;
+  --serif:'Instrument Serif', Georgia, serif;
+  --sans:'DM Sans', sans-serif;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body { background:var(--bg); color:var(--text); font-family:var(--sans); -webkit-font-smoothing:antialiased; overflow-x:hidden; line-height:1.6; }
+strong { color:var(--text); font-weight:500; }
+body::before { content:''; position:fixed; inset:0; background-image:linear-gradient(var(--border) 1px, transparent 1px),linear-gradient(90deg, var(--border) 1px, transparent 1px); background-size:40px 40px; opacity:0.15; pointer-events:none; z-index:0; }
+nav { position:fixed; top:0; left:0; right:0; z-index:100; padding:0 48px; height:56px; display:flex; justify-content:space-between; align-items:center; background:rgba(8,8,8,0.94); backdrop-filter:blur(16px); border-bottom:1px solid rgba(37,37,37,0.5); }
+.nav-logo { font-family:var(--mono); font-size:11px; letter-spacing:0.2em; text-transform:uppercase; color:var(--amber-dim); text-decoration:none; }
+.nav-links { display:flex; gap:32px; }
+.nav-links a { font-family:var(--mono); font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-dim); text-decoration:none; padding:4px 0; border-bottom:1px solid transparent; transition:all 0.2s; }
+.nav-links a:hover, .nav-links a.active { color:var(--amber); border-bottom-color:var(--amber); }
+.nav-links a.nav-ext { color:var(--amber-dim); border:1px solid var(--amber-dim); padding:3px 10px; margin-left:8px; border-bottom:1px solid var(--amber-dim); }
+.nav-links a.nav-ext:hover { color:var(--amber); border-color:var(--amber); background:rgba(212,98,26,0.08); }
+.section { position:relative; z-index:1; }
+.section-inner { max-width:760px; margin:0 auto; padding:120px 48px 100px; }
+.section-wide { max-width:1040px; margin:0 auto; padding:120px 48px 100px; }
+.eyebrow { font-family:var(--mono); font-size:11px; letter-spacing:0.25em; text-transform:uppercase; color:var(--amber); margin-bottom:20px; }
+.display { font-family:var(--serif); font-weight:400; font-size:clamp(44px,5.5vw,72px); line-height:1.06; color:var(--text); margin-bottom:24px; letter-spacing:-0.02em; }
+.display em { color:var(--amber); font-style:italic; }
+.headline { font-family:var(--serif); font-weight:400; font-size:clamp(28px,3.5vw,44px); line-height:1.12; color:var(--text); margin-bottom:20px; letter-spacing:-0.01em; }
+.headline em { color:var(--amber); font-style:italic; }
+.subhead { font-family:var(--serif); font-weight:400; font-size:clamp(20px,2.2vw,28px); color:var(--text); margin:64px 0 20px; line-height:1.2; }
+.subhead em { color:var(--amber); font-style:italic; }
+.lead { font-weight:300; font-size:clamp(15px,1.5vw,17px); line-height:1.75; color:var(--text-mid); max-width:700px; margin-bottom:32px; }
+.body-text { font-weight:300; font-size:15px; line-height:1.75; color:var(--text-mid); margin-bottom:20px; }
+.divider { width:48px; height:1px; background:var(--amber); margin:32px 0; }
+.reveal { opacity:0; transform:translateY(24px); transition:opacity 0.7s ease, transform 0.7s ease; }
+.reveal.visible { opacity:1; transform:translateY(0); }
+.section-num { font-family:var(--mono); font-size:11px; letter-spacing:0.2em; color:var(--amber-dim); margin-bottom:6px; }
+.pullquote { border-left:3px solid var(--amber); background:rgba(212,98,26,0.04); padding:24px 28px; margin:32px 0; font-family:var(--serif); font-style:italic; font-size:17px; color:var(--text); line-height:1.55; }
+/* ── PIPELINE ── */
+.pipeline { display:grid; grid-template-columns:repeat(5,1fr); gap:1px; background:var(--border); border:1px solid var(--border); margin:28px 0; }
+.pipe-stage { background:var(--bg2); padding:20px 16px; text-align:center; }
+.pipe-num { font-family:var(--mono); font-size:10px; color:var(--amber-dim); letter-spacing:0.15em; margin-bottom:4px; }
+.pipe-name { font-family:var(--serif); font-size:17px; color:var(--text); margin-bottom:8px; }
+.pipe-desc { font-size:11px; color:var(--text-dim); line-height:1.5; }
+/* ── ZONE CARDS ── */
+.zone-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--border); border:1px solid var(--border); margin:28px 0; }
+.zone-card { background:var(--bg2); padding:28px 24px; }
+.zone-label { font-family:var(--mono); font-size:10px; letter-spacing:0.2em; text-transform:uppercase; margin-bottom:8px; }
+.zone-name { font-family:var(--serif); font-size:22px; color:var(--text); margin-bottom:12px; }
+.zone-desc { font-size:13px; color:var(--text-mid); line-height:1.6; }
+/* ── TIER CARDS ── */
+.tier-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--border); border:1px solid var(--border); margin:28px 0; }
+.tier-card { background:var(--bg2); padding:20px 16px; text-align:center; }
+.tier-num { font-family:var(--mono); font-size:28px; color:var(--amber); margin-bottom:4px; }
+.tier-name { font-family:var(--serif); font-size:15px; color:var(--text); margin-bottom:8px; }
+.tier-desc { font-size:11px; color:var(--text-dim); line-height:1.5; }
+.tier-cost { font-family:var(--mono); font-size:10px; color:var(--amber-dim); margin-top:8px; }
+/* ── SCHEMA BLOCKS ── */
+.schema-block { background:var(--bg3); border:1px solid var(--border); padding:20px 24px; margin:20px 0; overflow-x:auto; }
+.schema-block pre { font-family:var(--mono); font-size:12px; color:var(--text-mid); line-height:1.6; white-space:pre; }
+.schema-block .schema-label { font-family:var(--mono); font-size:9px; letter-spacing:0.15em; text-transform:uppercase; color:var(--amber-dim); margin-bottom:12px; }
+/* ── PRINCIPLE CARDS ── */
+.principle-grid { display:grid; gap:1px; background:var(--border); border:1px solid var(--border); margin:28px 0; }
+.principle-card { display:grid; grid-template-columns:64px 1fr; background:var(--bg2); }
+.principle-num { display:flex; align-items:flex-start; justify-content:center; padding-top:20px; font-family:var(--serif); font-size:28px; color:var(--amber); background:rgba(212,98,26,0.04); border-right:1px solid var(--border); }
+.principle-body { padding:20px 24px; }
+.principle-title { font-family:var(--serif); font-size:17px; color:var(--text); margin-bottom:6px; }
+.principle-desc { font-size:13px; color:var(--text-mid); line-height:1.6; font-weight:300; }
+.principle-test { font-family:var(--mono); font-size:11px; color:var(--amber-dim); margin-top:8px; font-style:italic; }
+/* ── LINEAGE ── */
+.lineage-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:1px; background:var(--border); border:1px solid var(--border); margin:28px 0; }
+.lineage-card { background:var(--bg2); padding:20px 24px; }
+.lineage-year { font-family:var(--mono); font-size:10px; color:var(--amber-dim); letter-spacing:0.1em; margin-bottom:4px; }
+.lineage-name { font-family:var(--serif); font-size:17px; color:var(--text); margin-bottom:6px; }
+.lineage-desc { font-size:12px; color:var(--text-dim); line-height:1.5; }
+/* ── FLYWHEEL ── */
+.flywheel { display:grid; grid-template-columns:repeat(5,1fr); gap:1px; background:var(--border); border:1px solid var(--border); margin:28px 0; }
+.fly-step { background:var(--bg2); padding:16px; text-align:center; position:relative; }
+.fly-num { font-family:var(--mono); font-size:9px; color:var(--amber-dim); letter-spacing:0.12em; margin-bottom:4px; }
+.fly-name { font-family:var(--serif); font-size:14px; color:var(--text); margin-bottom:6px; }
+.fly-desc { font-size:11px; color:var(--text-dim); line-height:1.4; }
+/* ── DOWNLOAD BAR ── */
+.download-bar { display:flex; align-items:center; gap:16px; border:1px solid var(--border); background:var(--bg3); padding:16px 24px; margin:24px 0; }
+.download-bar a { font-family:var(--mono); font-size:11px; letter-spacing:0.1em; color:var(--amber); text-decoration:none; border:1px solid var(--amber-dim); padding:6px 16px; transition:all 0.2s; }
+.download-bar a:hover { background:rgba(212,98,26,0.12); border-color:var(--amber); }
+.download-meta { font-family:var(--mono); font-size:10px; color:var(--text-dim); letter-spacing:0.06em; }
+/* ── HERO ── */
+#hero { min-height:80vh; display:flex; flex-direction:column; justify-content:center; position:relative; background:radial-gradient(ellipse at 30% 80%, rgba(212,98,26,0.08) 0%, transparent 50%), radial-gradient(ellipse at 70% 20%, rgba(212,98,26,0.04) 0%, transparent 50%); }
+#hero .section-inner { padding-top:100px; padding-bottom:80px; }
+.hero-meta { font-family:var(--mono); font-size:10px; color:var(--text-dim); letter-spacing:0.1em; margin-top:24px; }
+/* ── RESPONSIVE ── */
+@media(max-width:900px) { .pipeline,.tier-grid,.flywheel { grid-template-columns:1fr; } .zone-grid,.lineage-grid { grid-template-columns:1fr; } }
+@media(max-width:768px) { nav { padding:0 20px; } .nav-links { gap:16px; } .nav-links a { font-size:9px; } .section-inner,.section-wide { padding:80px 24px 60px; } .principle-card { grid-template-columns:48px 1fr; } }
+</style>
+</head>
+<body>
+<nav>
+  <a href="/" class="nav-logo">The Grove Foundation</a>
+  <div class="nav-links">
+    <a href="/">Thesis</a>
+    <a href="/observations">Observations</a>
+    <a href="/lambda">Standings</a>
+    <a href="/standards/001" class="active">Open Standards</a>
+    <a href="/papers/telemetry-trap">Papers</a>
+    <a href="https://the-grove.ai/autonomaton" target="_blank" rel="noopener noreferrer" class="nav-ext">Playground &nearr;</a>
+    <a href="/about">About</a>
+  </div>
+</nav>
+
+<!-- ═══════════════════════════════════════
+     HERO
+══════════════════════════════════════════ -->
+<section class="section" id="hero">
+  <div class="section-inner">
+    <div class="eyebrow">Open Standard &middot; GRV-001 &middot; CC BY 4.0</div>
+    <h1 class="display">The Autonomaton <em>Pattern</em></h1>
+    <p class="lead">Toward Self-Authoring Software Systems</p>
+    <div class="divider"></div>
+    <p class="body-text">A design philosophy for software systems that learn from use, govern themselves through declarative configuration, and make human sovereignty an architectural property&mdash;not a policy aspiration. The pattern is model-agnostic, domain-agnostic, and published under CC BY 4.0 for anyone to implement.</p>
+    <p class="body-text">Three files and a loop. A routing config, a zones schema, a structured telemetry log, and a pipeline that traverses them in order. That is the entire architecture. Everything else is implication.</p>
+    <p class="hero-meta">Jim Calhoun &middot; The Grove Foundation &middot; v1.0 &middot; March 2026</p>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     I. THE PROBLEM
+══════════════════════════════════════════ -->
+<section class="section" style="background:var(--bg2); border-top:1px solid var(--border); border-bottom:1px solid var(--border);">
+  <div class="section-inner reveal">
+    <div class="section-num">I</div>
+    <h2 class="headline">The <em>Problem</em></h2>
+    <p class="body-text">The dominant paradigm for AI-assisted software is reactive. You ask. It answers. The session ends. Nothing is retained. Nothing is learned. The next session starts from zero.</p>
+    <p class="body-text">This is not a limitation of the models. It is a limitation of the architecture. The models are capable of pattern recognition, context assembly, and nuanced classification. But the systems built around them treat every interaction as independent&mdash;a stateless request-response cycle with no memory, no governance, and no mechanism for improvement.</p>
+    <p class="body-text">The consequences are structural:</p>
+    <p class="body-text"><strong>No learning.</strong> The system cannot distinguish a request it has seen a hundred times from one it has never seen. Every query pays full inference cost regardless of novelty. Institutional knowledge evaporates between sessions.</p>
+    <p class="body-text"><strong>No governance.</strong> There is no architectural distinction between a routine task and a high-stakes decision. The system treats &ldquo;rename this file&rdquo; and &ldquo;restructure this database&rdquo; with identical authority. Risk classification is absent, not because it&rsquo;s impossible, but because no standard architecture requires it.</p>
+    <p class="body-text"><strong>No sovereignty.</strong> The behavioral intelligence the system accumulates&mdash;your patterns, your preferences, your decision-making cadence&mdash;lives inside the provider&rsquo;s infrastructure. You cannot inspect it, export it, or take it with you.</p>
+
+    <div class="pullquote">The industry has built brilliant models and wrapped them in architectures that cannot learn, cannot be audited, and do not belong to the people who use them. The Autonomaton Pattern addresses the architecture, not the model.</div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     II. THE LINEAGE
+══════════════════════════════════════════ -->
+<section class="section">
+  <div class="section-inner reveal">
+    <div class="section-num">II</div>
+    <h2 class="headline">The <em>Lineage</em></h2>
+    <p class="body-text">The Autonomaton Pattern is not novel. It is a synthesis of established ideas from computer science, industrial engineering, and the PC revolution&rsquo;s deepest architectural insight: that coherent products are expressions of coherent worldviews.</p>
+    <p class="body-text">The generation that built the personal computer understood something the AI industry has forgotten. Wigginton, Kare, Mok&mdash;they understood that design is philosophy expressed through constraint. The Macintosh wasn&rsquo;t a collection of features. It was a worldview rendered in silicon and software. That tradition went underground when the industry shifted to platform scale. The Autonomaton Pattern is its return in the AI era.</p>
+  </div>
+</section>
+<section class="section">
+  <div class="section-wide reveal">
+    <div class="lineage-grid">
+      <div class="lineage-card">
+        <div class="lineage-year">IBM, 2001</div>
+        <div class="lineage-name">Autonomic Computing</div>
+        <div class="lineage-desc">Self-managing systems that configure, heal, optimize, and protect themselves. The Autonomaton extends this to the cognitive layer&mdash;systems that govern their own AI decision-making.</div>
+      </div>
+      <div class="lineage-card">
+        <div class="lineage-year">CS Theory, 1982+</div>
+        <div class="lineage-name">Computational Reflection</div>
+        <div class="lineage-desc">Systems that inspect and alter their own execution. The Skill Flywheel is a reflective mechanism: the system observes its own behavior, proposes optimizations, and rewrites its routing table.</div>
+      </div>
+      <div class="lineage-card">
+        <div class="lineage-year">Toyota, 1960s</div>
+        <div class="lineage-name">Digital Jidoka</div>
+        <div class="lineage-desc">Machines detect abnormalities and stop the line. Humans diagnose and approve the fix. The Zone Model is Jidoka applied to AI: the system detects risk, escalates appropriately, and never acts beyond its authority.</div>
+      </div>
+      <div class="lineage-card">
+        <div class="lineage-year">Industry Practice, 2010s</div>
+        <div class="lineage-name">Telemetry-Driven Development</div>
+        <div class="lineage-desc">User behavior IS the feature request. The Autonomaton&rsquo;s feed-first telemetry makes interaction data the primary input to the improvement cycle, not an afterthought.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     III. THE PATTERN
+══════════════════════════════════════════ -->
+<section class="section" style="background:var(--bg2); border-top:1px solid var(--border);">
+  <div class="section-inner reveal">
+    <div class="section-num">III</div>
+    <h2 class="headline">The <em>Pattern</em></h2>
+    <p class="body-text">Every Autonomaton instance traverses the same five stages, regardless of domain, model, or provider. The pipeline is not a suggestion. It is an invariant. Nothing runs alongside it. No sub-pipelines. No bypasses. No exceptions.</p>
+    <p class="body-text">This constraint is the source of every property that matters: auditability, composability, portability, and the structural guarantee that every action can be traced to a governance decision a human can read.</p>
+  </div>
+</section>
+<section class="section" style="background:var(--bg2);">
+  <div class="section-wide reveal">
+    <div class="pipeline">
+      <div class="pipe-stage"><div class="pipe-num">01</div><div class="pipe-name">Telemetry</div><div class="pipe-desc">Capture interaction data. Structured, inspectable, owned by the operator. Every interaction produces a trace&mdash;this is the system&rsquo;s primary output.</div></div>
+      <div class="pipe-stage"><div class="pipe-num">02</div><div class="pipe-name">Recognition</div><div class="pipe-desc">Classify intent, assess confidence, determine risk. The Cognitive Router dispatches to the cheapest tier capable of handling the request.</div></div>
+      <div class="pipe-stage"><div class="pipe-num">03</div><div class="pipe-name">Compilation</div><div class="pipe-desc">Assemble context from local knowledge, historical patterns, domain expertise, and operator configuration. Build the response.</div></div>
+      <div class="pipe-stage"><div class="pipe-num">04</div><div class="pipe-name">Approval</div><div class="pipe-desc">Zone-governed human checkpoint. Green = autonomous. Yellow = supervised. Red = human-only. The system never acts beyond its granted authority.</div></div>
+      <div class="pipe-stage"><div class="pipe-num">05</div><div class="pipe-name">Execution</div><div class="pipe-desc">Action fires. Output becomes telemetry for the next cycle. Audit trail generated as byproduct, not afterthought.</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="background:var(--bg2);">
+  <div class="section-inner reveal">
+    <h3 class="subhead">The Cognitive <em>Router</em></h3>
+    <p class="body-text">At Stage 02, the Cognitive Router classifies each request and dispatches it to the cheapest tier capable of handling it. This is the mechanism that makes the system structurally cheaper over time&mdash;as patterns are confirmed, they migrate downward through the tiers. The LLM is the brain. Keywords are the bootstrap cache. Confirmed patterns become deterministic rules.</p>
+  </div>
+</section>
+<section class="section" style="background:var(--bg2); border-bottom:1px solid var(--border);">
+  <div class="section-wide reveal">
+    <div class="tier-grid">
+      <div class="tier-card">
+        <div class="tier-num">T0</div>
+        <div class="tier-name">Deterministic</div>
+        <div class="tier-desc">Hardcoded rules, regex matches, keyword lookups. Zero inference cost.</div>
+        <div class="tier-cost">Cost: $0</div>
+      </div>
+      <div class="tier-card">
+        <div class="tier-num">T1</div>
+        <div class="tier-name">Local Model</div>
+        <div class="tier-desc">On-device inference. Private, fast, no network dependency.</div>
+        <div class="tier-cost">Cost: ~$0</div>
+      </div>
+      <div class="tier-card">
+        <div class="tier-num">T2</div>
+        <div class="tier-name">Cloud (Fast)</div>
+        <div class="tier-desc">Lightweight cloud models. Quick classification and routine generation.</div>
+        <div class="tier-cost">Cost: Low</div>
+      </div>
+      <div class="tier-card">
+        <div class="tier-num">T3</div>
+        <div class="tier-name">Cloud (Frontier)</div>
+        <div class="tier-desc">Frontier models for novel, complex, or high-stakes requests.</div>
+        <div class="tier-cost">Cost: High</div>
+      </div>
+    </div>
+    <p class="body-text" style="text-align:center; font-family:var(--mono); font-size:11px; color:var(--amber-dim);">&larr; Patterns migrate downward through confirmed use. The system gets cheaper as a structural property of operation. &rarr;</p>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     IV. THE PRINCIPLES
+══════════════════════════════════════════ -->
+<section class="section">
+  <div class="section-inner reveal">
+    <div class="section-num">IV</div>
+    <h2 class="headline">The <em>Principles</em></h2>
+    <p class="body-text">The Autonomaton Pattern implements the DEX (Declarative Exploration) standard&mdash;a set of architectural principles that separate exploration logic from execution capability. These are not guidelines. They are structural constraints. A system that violates them may work, but it is not an Autonomaton.</p>
+  </div>
+</section>
+<section class="section">
+  <div class="section-wide reveal">
+    <div class="principle-grid">
+      <div class="principle-card">
+        <div class="principle-num">I</div>
+        <div class="principle-body">
+          <div class="principle-title">Declarative Sovereignty</div>
+          <div class="principle-desc">Domain expertise belongs in configuration, not code. Every behavior rule is externalized in files a non-technical domain expert can read, edit, and version. Change the config, the behavior changes. Audit the config, the behavior is explained. No separate &ldquo;explainability layer&rdquo; required.</div>
+          <div class="principle-test">The test: can a domain expert alter system behavior by editing a YAML file, without a deploy?</div>
+        </div>
+      </div>
+      <div class="principle-card">
+        <div class="principle-num">II</div>
+        <div class="principle-body">
+          <div class="principle-title">Capability Agnosticism</div>
+          <div class="principle-desc">The architecture never assumes specific model capabilities. Today&rsquo;s frontier model is tomorrow&rsquo;s local script. The Cognitive Router dispatches to tiers, not to specific models. Swap providers without rewriting governance. Architecture should make modest capability sufficient.</div>
+          <div class="principle-test">The test: if the model hallucinates, does the architecture contain it without breaking?</div>
+        </div>
+      </div>
+      <div class="principle-card">
+        <div class="principle-num">III</div>
+        <div class="principle-body">
+          <div class="principle-title">Provenance as Infrastructure</div>
+          <div class="principle-desc">A fact without a root is a weed. Attribution chains are mandatory&mdash;the system tracks who collapsed the superposition and when. Every decision, every classification, every skill promotion carries a complete audit trail. Governance and auditability fall out of the architecture for free.</div>
+          <div class="principle-test">The test: can you trace any system action to the config rule and telemetry entry that produced it?</div>
+        </div>
+      </div>
+      <div class="principle-card">
+        <div class="principle-num">IV</div>
+        <div class="principle-body">
+          <div class="principle-title">Human-AI Symbiosis</div>
+          <div class="principle-desc">AI generates possibilities. Humans apply judgment. The system requires human-in-the-loop for all transitions that cross zone boundaries. Sovereignty is structural: the system earns autonomy through demonstrated reliability and can never unilaterally grant itself new authority.</div>
+          <div class="principle-test">The test: does the system ever act beyond explicitly granted authority, regardless of model capability?</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     V. THE ZONE MODEL
+══════════════════════════════════════════ -->
+<section class="section" style="background:var(--bg2); border-top:1px solid var(--border);">
+  <div class="section-inner reveal">
+    <div class="section-num">V</div>
+    <h2 class="headline">The Zone <em>Model</em></h2>
+    <p class="body-text">Every action traversing the pipeline passes through Stage 04: Approval. The Zone Model determines what happens there. It is the structural guarantee that the system respects human authority&mdash;not through prompting, but through architectural constraint.</p>
+  </div>
+</section>
+<section class="section" style="background:var(--bg2); border-bottom:1px solid var(--border);">
+  <div class="section-wide reveal">
+    <div class="zone-grid">
+      <div class="zone-card" style="border-top:3px solid var(--green);">
+        <div class="zone-label" style="color:var(--green);">Green Zone</div>
+        <div class="zone-name">Autonomous</div>
+        <div class="zone-desc">Routine operations the system handles without human intervention. These are actions the system has earned the right to perform through repeated confirmation&mdash;known patterns, low risk, high confidence. The operator defines the boundary.</div>
+      </div>
+      <div class="zone-card" style="border-top:3px solid var(--yellow);">
+        <div class="zone-label" style="color:var(--yellow);">Yellow Zone</div>
+        <div class="zone-name">Supervised</div>
+        <div class="zone-desc">The system proposes, the human approves. Novel patterns, moderate risk, or insufficient confidence. The system presents its recommendation with full context. The human decides. Every approval or rejection trains the next cycle.</div>
+      </div>
+      <div class="zone-card" style="border-top:3px solid var(--red);">
+        <div class="zone-label" style="color:var(--red);">Red Zone</div>
+        <div class="zone-name">Human-Only</div>
+        <div class="zone-desc">The system does not act. It may provide context, but the decision and execution belong entirely to the human. High-stakes, irreversible, or ethically sensitive operations. The system cannot promote itself out of the Red Zone.</div>
+      </div>
+    </div>
+    <p class="body-text">Zone boundaries are declarative&mdash;defined in configuration, not hardcoded. A healthcare deployment and a content scheduling deployment use the same Zone Model with different boundaries. The architecture is identical. The governance is domain-specific.</p>
+  </div>
+</section>
