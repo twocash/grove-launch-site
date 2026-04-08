@@ -126,12 +126,26 @@ nav {
   letter-spacing:0.1em; margin-top:24px;
 }
 .scroll-cue {
-  position:absolute; bottom:32px; left:50%; transform:translateX(-50%);
-  font-family:var(--mono); font-size:10px; color:var(--text-dim);
-  letter-spacing:0.15em; text-transform:uppercase;
-  animation:pulse 2s ease-in-out infinite;
+  position:absolute; bottom:40px; left:50%; transform:translateX(-50%);
+  display:flex; flex-direction:column; align-items:center; gap:8px;
 }
-@keyframes pulse { 0%,100%{opacity:0.3;} 50%{opacity:0.8;} }
+.scroll-cue span {
+  font-family:var(--mono); font-size:9px; color:var(--amber-dim);
+  letter-spacing:0.2em; text-transform:uppercase;
+}
+.scroll-line {
+  width:1px; height:40px; position:relative; overflow:hidden;
+}
+.scroll-line::after {
+  content:''; position:absolute; top:-40px; left:0;
+  width:1px; height:40px; background:linear-gradient(to bottom, transparent, var(--amber));
+  animation:scroll-drop 2s ease-in-out infinite;
+}
+@keyframes scroll-drop {
+  0% { top:-40px; opacity:0; }
+  30% { opacity:1; }
+  100% { top:40px; opacity:0; }
+}
 /* ── INSIGHT BOX ── */
 .insight-box {
   background:rgba(212,98,26,0.04);
@@ -215,7 +229,7 @@ nav {
     <div class="divider"></div>
     <p class="hero-meta">Open standards for distributed AI governance &middot; CC BY 4.0</p>
   </div>
-  <div class="scroll-cue">&darr;</div>
+  <div class="scroll-cue"><span>Scroll</span><div class="scroll-line"></div></div>
 </section>
 <!-- ═══════════════════════════════════════════════════
      PART I: THE ILLUSION OF POLICY AS ENGINEERING
