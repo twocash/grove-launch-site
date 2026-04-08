@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Grove Foundation — Policy Enforceability Is an Architectural Property</title>
-<meta name="description" content="The Grove Foundation publishes open architectural standards for AI governance. A policy enforced by a prompt is not a constraint. It is a suggestion.">
+<title>The Grove Foundation — Infrastructure Makes Policy Real</title>
+<meta name="description" content="AI is becoming part of how we think. If a few companies control that system, they shape how people think. The Grove Foundation publishes open architectural standards for AI governance.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fragment+Mono:ital@0;1&family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -18,36 +18,32 @@
   --bg:#080808; --bg2:#0f0f0f; --bg3:#161616; --bg4:#1a1a1a;
   --border:#252525; --border-light:#333;
   --text:#E8E2D9; --text-dim:#7A736A; --text-mid:#B0A898;
-  --green:#4CAF72; --green-dim:rgba(76,175,114,0.08);
-  --red:#C0392B; --red-dim:rgba(192,57,43,0.06);
-  --yellow:#D4A017;
   --mono:'Fragment Mono', monospace;
   --serif:'Instrument Serif', Georgia, serif;
   --sans:'DM Sans', sans-serif;
 }
-/* ── RESET + GLOBAL ── */
 * { margin:0; padding:0; box-sizing:border-box; }
 html { scroll-behavior:smooth; }
 body {
   background:var(--bg); color:var(--text);
-  font-family:var(--sans); -webkit-font-smoothing:antialiased;
-  overflow-x:hidden; line-height:1.6;
+  font-family:var(--sans); line-height:1.7;
+  -webkit-font-smoothing:antialiased;
 }
-strong { color:var(--text); font-weight:500; }
+/* ── GRID TEXTURE ── */
 body::before {
   content:''; position:fixed; inset:0;
   background-image:
     linear-gradient(var(--border) 1px, transparent 1px),
     linear-gradient(90deg, var(--border) 1px, transparent 1px);
-  background-size:40px 40px; opacity:0.15;
+  background-size:40px 40px; opacity:0.2;
   pointer-events:none; z-index:0;
 }
-/* ── NAVIGATION ── */
+/* ── NAV ── */
 nav {
   position:fixed; top:0; left:0; right:0; z-index:100;
-  padding:0 48px; height:56px;
   display:flex; justify-content:space-between; align-items:center;
-  background:rgba(8,8,8,0.94); backdrop-filter:blur(16px);
+  padding:20px 48px;
+  background:rgba(8,8,8,0.9); backdrop-filter:blur(12px);
   border-bottom:1px solid rgba(37,37,37,0.5);
 }
 .nav-logo {
@@ -70,11 +66,15 @@ nav {
   color:var(--amber); border-color:var(--amber);
   background:rgba(212,98,26,0.08);
 }
-/* ── SECTION SYSTEM ── */
+/* ── LAYOUT ── */
 .section { position:relative; z-index:1; }
 .section-inner {
   max-width:760px; margin:0 auto;
-  padding:120px 48px 100px;
+  padding:80px 48px 64px;
+}
+.divider-line {
+  border:none; border-top:1px solid var(--border);
+  max-width:760px; margin:0 auto; width:calc(100% - 96px);
 }
 /* ── TYPOGRAPHY ── */
 .eyebrow {
@@ -84,35 +84,22 @@ nav {
 }
 .display {
   font-family:var(--serif); font-weight:400;
-  font-size:clamp(44px,5.5vw,72px); line-height:1.06;
-  color:var(--text); margin-bottom:24px; letter-spacing:-0.02em;
+  font-size:clamp(36px,5vw,56px); line-height:1.15;
+  color:var(--text); margin-bottom:48px; letter-spacing:-0.02em;
 }
 .display em { color:var(--amber); font-style:italic; }
+.body-text {
+  font-size:17px; color:var(--text-mid); line-height:1.85;
+  font-weight:300; margin-bottom:24px; max-width:640px;
+}
+.body-text strong { color:var(--text); font-weight:500; }
+.body-text em { color:var(--amber-bright); font-style:normal; }
 .headline {
   font-family:var(--serif); font-weight:400;
-  font-size:clamp(28px,3.5vw,44px); line-height:1.12;
-  color:var(--text); margin-bottom:20px; letter-spacing:-0.01em;
+  font-size:clamp(28px,3.5vw,38px); line-height:1.2;
+  color:var(--text); margin-bottom:40px;
 }
 .headline em { color:var(--amber); font-style:italic; }
-.lead {
-  font-weight:300; font-size:clamp(15px,1.5vw,17px);
-  line-height:1.75; color:var(--text-mid);
-  max-width:700px; margin-bottom:32px;
-}
-.body-text {
-  font-size:15px; color:var(--text-mid); line-height:1.8;
-  font-weight:300; margin-bottom:24px;
-}
-.body-text strong { color:var(--text); }
-.divider { width:48px; height:1px; background:var(--amber); margin:32px 0; }
-/* ── PART MARKER ── */
-.part-marker {
-  font-family:var(--mono); font-size:10px;
-  letter-spacing:0.2em; text-transform:uppercase;
-  color:var(--amber-dim); margin-bottom:12px;
-  padding-bottom:12px; border-bottom:1px solid var(--border);
-  display:inline-block;
-}
 /* ── HERO ── */
 #hero {
   min-height:100vh; display:flex; flex-direction:column;
@@ -125,222 +112,176 @@ nav {
   font-family:var(--mono); font-size:10px; color:var(--text-dim);
   letter-spacing:0.1em; margin-top:24px;
 }
+/* ── BREAKER BOX ── */
+.breaker-quote {
+  font-family:var(--serif);
+  font-size:clamp(22px,3vw,30px); font-weight:400;
+  font-style:italic; line-height:1.45;
+  color:var(--text); margin-bottom:32px;
+  padding-left:24px; border-left:2px solid var(--amber);
+}
+/* ── EXPLORE GRID ── */
+.explore-label {
+  font-family:var(--mono); font-size:11px;
+  letter-spacing:0.15em; text-transform:uppercase;
+  color:var(--amber); margin-bottom:40px;
+}
+.explore-grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));
+  gap:24px;
+}
+.explore-card {
+  border:1px solid var(--border); border-radius:4px;
+  padding:28px 24px; background:var(--bg2);
+  text-decoration:none; transition:border-color 0.25s, background 0.25s;
+}
+.explore-card:hover {
+  border-color:var(--amber-dim); background:var(--bg3);
+}
+.explore-card h3 {
+  font-family:var(--serif); font-size:20px;
+  font-weight:400; font-style:italic;
+  color:var(--text); margin-bottom:10px;
+}
+.explore-card p {
+  font-family:var(--mono); font-size:12px;
+  line-height:1.6; color:var(--text-dim);
+}
+/* ── SCROLL CUE ── */
 .scroll-cue {
   position:absolute; bottom:36px; left:50%; transform:translateX(-50%);
   display:flex; flex-direction:column; align-items:center; gap:6px;
+  font-family:var(--mono); font-size:9px; letter-spacing:0.2em;
+  text-transform:uppercase; color:var(--amber-dim);
+  animation:fadeFloat 2s ease-in-out infinite;
 }
-.scroll-cue span {
-  font-family:var(--mono); font-size:9px; color:var(--amber-dim);
-  letter-spacing:0.2em; text-transform:uppercase;
+/* ── FOOTER ── */
+footer {
+  position:relative; z-index:1;
+  text-align:center; padding:64px 48px 48px;
+  border-top:1px solid var(--border);
+  font-family:var(--mono); font-size:11px;
+  letter-spacing:0.08em; color:var(--text-dim); line-height:2;
 }
-.scroll-cue svg { opacity:0.6; }
-/* ── INSIGHT BOX ── */
-.insight-box {
-  background:rgba(212,98,26,0.04);
-  border:1px solid rgba(212,98,26,0.2);
-  border-left:3px solid var(--amber);
-  padding:28px 32px; margin:40px 0;
+footer a { color:var(--text-dim); text-decoration:none; }
+footer a:hover { color:var(--amber-bright); }
+/* ── ANIMATIONS ── */
+@keyframes fadeUp {
+  from { opacity:0; transform:translateY(12px); }
+  to { opacity:1; transform:translateY(0); }
 }
-.insight-box p { font-size:14px; color:var(--text-mid); line-height:1.7; font-weight:300; }
-.insight-box strong { color:var(--text); }
-/* ── SECTION BACKGROUNDS ── */
-#part-1 {
-  background:radial-gradient(ellipse at 70% 30%, rgba(192,57,43,0.04) 0%, transparent 50%);
+@keyframes fadeFloat {
+  0%,100% { opacity:0.4; transform:translateX(-50%) translateY(0); }
+  50% { opacity:0.7; transform:translateX(-50%) translateY(4px); }
 }
-#part-2 {
-  background:var(--bg2);
-  border-top:1px solid var(--border); border-bottom:1px solid var(--border);
-}
-#part-3 {
-  background:radial-gradient(ellipse at 30% 60%, rgba(76,175,114,0.04) 0%, transparent 50%);
-}
-#part-4 {
-  background:radial-gradient(ellipse at 50% 50%, rgba(212,98,26,0.04) 0%, transparent 50%);
-}
-#identity {
-  background:var(--bg2); border-top:1px solid var(--border);
-}
-/* ── IDENTITY BLOCK ── */
-.identity-statement {
-  max-width:620px;
-}
-.identity-statement p {
-  font-family:var(--serif); font-size:clamp(18px,2vw,22px);
-  line-height:1.6; color:var(--text); font-weight:400;
-  margin-bottom:20px;
-}
-.identity-statement p em { color:var(--amber); font-style:italic; }
-.identity-meta {
-  font-family:var(--mono); font-size:10px; color:var(--text-dim);
-  letter-spacing:0.1em; margin-top:32px;
-}
-/* ── SECTION SEPARATOR ── */
-.section-sep {
-  height:1px; background:var(--border); position:relative; z-index:1;
-}
-/* ── REVEAL ── */
-.reveal { opacity:0; transform:translateY(24px); transition:opacity 0.7s ease, transform 0.7s ease; }
-.reveal.visible { opacity:1; transform:translateY(0); }
 /* ── RESPONSIVE ── */
-@media(max-width:768px) {
-  nav { padding:0 20px; }
-  .nav-links { gap:16px; }
-  .nav-links a { font-size:9px; }
-  .section-inner { padding:80px 24px 60px; }
-  #hero .section-inner { padding-top:60px; }
+@media (max-width:640px) {
+  nav { padding:16px 24px; }
+  .nav-links { gap:16px; font-size:9px; }
+  .section-inner { padding:64px 24px 48px; }
+  .explore-grid { grid-template-columns:1fr; }
+  .divider-line { width:calc(100% - 48px); }
 }
 </style>
 </head>
 <body>
-<!-- ══════ NAVIGATION ══════ -->
+
 <nav>
   <a href="/" class="nav-logo">The Grove Foundation</a>
   <div class="nav-links">
-    <a href="/" class="active">Thesis</a>
+    <a href="/papers">CIO Alerts</a>
     <a href="/observations">Observations</a>
     <a href="/lambda">Standings</a>
     <a href="/standards">Open Standards</a>
-    <a href="/papers/telemetry-trap">Urgent CIO Alert</a>
     <a href="https://the-grove.ai/autonomaton" target="_blank" rel="noopener noreferrer" class="nav-ext">Playground &nearr;</a>
     <a href="/about">About</a>
   </div>
 </nav>
-
 <!-- ═══════════════════════════════════════════════════
      HERO
 ════════════════════════════════════════════════════ -->
 <section class="section" id="hero">
   <div class="section-inner">
     <div class="eyebrow">The Grove Foundation</div>
-    <h1 class="display">Policy enforceability is an<br><em>architectural property.</em></h1>
-    <p class="body-text" style="font-size:clamp(15px,1.6vw,18px); color:var(--text); font-weight:300; line-height:1.7; margin-bottom:28px;">The next generation of AI will function as extended cognition &mdash; not software you use, but infrastructure you think through. Centralized architectures collapse that cognition toward a single point of control. Distributed architectures expand it. The difference is not theoretical. Whether human cognition flourishes or narrows depends on who architects the layer it runs through &mdash; and whether anyone can see inside.</p>
-    <p class="lead">A rule enforced by a prompt is not a constraint. It is a suggestion. The difference between a lock and a suggestion is the difference between architecture and aspiration. The AI industry has chosen aspiration. The market will inevitably demand systems where compliance can be mathematically or architecturally proven, not just legally promised. We exist to publish the required architectures as open standards.</p>
-    <div class="divider"></div>
+    <h1 class="display">Infrastructure makes<br>policy <em>real.</em></h1>
+
+    <p class="body-text">AI is becoming part of how we think. Not just a tool we use, but something we rely on to process ideas and make decisions.</p>
+
+    <p class="body-text">If a few companies control that system, they shape how people think. If it is built in a distributed way, more people have visibility and control. That choice matters. It will decide whether thinking stays open or becomes <em>limited and manipulated.</em></p>
+
+    <p class="body-text">Rules written into prompts are not real limits. They can be ignored. Real limits come from how the architecture is built. That is the difference between <strong>intention and reality.</strong></p>
+
+    <p class="body-text">Right now, most of the AI industry is built on intention. That will not hold. The market will demand architecture where rules are built in and provable &mdash; not just promised.</p>
+
+    <div style="width:48px; height:1px; background:var(--amber); margin:32px 0;"></div>
     <p class="hero-meta">Open standards for distributed AI governance &middot; CC BY 4.0</p>
   </div>
-  <div class="scroll-cue"><span>Scroll</span><svg width="16" height="10" viewBox="0 0 16 10" fill="none"><path d="M1 1L8 8L15 1" stroke="#8B3D10" stroke-width="1.5"/></svg></div>
+  <div class="scroll-cue" style="cursor:pointer;" onclick="this.parentElement.nextElementSibling.scrollIntoView({behavior:'smooth'})"><span>Scroll</span><svg width="16" height="10" viewBox="0 0 16 10" fill="none"><path d="M1 1L8 8L15 1" stroke="#8B3D10" stroke-width="1.5"/></svg></div>
 </section>
 <!-- ═══════════════════════════════════════════════════
-     PART I: THE ILLUSION OF POLICY AS ENGINEERING
+     WHAT WE DO
 ════════════════════════════════════════════════════ -->
-<section class="section" id="part-1">
-  <div class="section-inner reveal">
-    <div class="part-marker">Part I</div>
-    <h2 class="headline">The illusion of policy<br><em>as engineering.</em></h2>
-    <div class="divider"></div>
-
-    <p class="body-text">The current generation of AI safety infrastructure rests on two mechanisms: reinforcement learning from human feedback and system-level instructions. Both are presented as engineering solutions. Neither qualifies.</p>
-
-    <p class="body-text">RLHF is preference optimization. It adjusts the probability distribution of model outputs to favor responses that human evaluators rated as acceptable. This makes harmful outputs <strong>statistically less likely.</strong> It does not make them <strong>impossible.</strong> The distinction matters. A lock that usually works is not a lock. It is a weighted coin.</p>
-
-    <p class="body-text">System prompts are more revealing. They are strings. They are sent alongside user input, in the same channel, processed by the same weights. The model does not distinguish between &ldquo;the user wants X&rdquo; and &ldquo;the system forbids X&rdquo; at an architectural level. It processes both as tokens. Every jailbreak ever published is empirical proof of this: the architecture does not enforce the policy. It merely prefers compliance when compliance is convenient.</p>
-    <div class="insight-box">
-      <p>This is the equivalent of securing a bank vault with a sign that reads <strong>&ldquo;Authorized Personnel Only.&rdquo;</strong> The sign works when everyone obeys it. It provides zero resistance when someone doesn&rsquo;t.</p>
-    </div>
-
-    <p class="body-text">And yet this is what the industry presents as its safety architecture: output-layer filtering on a black-box probabilistic engine. A behavioral veneer applied to a system that has no structural concept of the behavior being requested.</p>
-
-    <p class="body-text">The deeper problem is not that these mechanisms are weak. It is that they are <strong>unverifiable.</strong> The vendor can change the model weights, modify the system prompt, alter the RLHF training set, or redefine the policy&mdash;at any time, server-side, without disclosure. The system you evaluated yesterday is not necessarily the system running today. You cannot audit what you cannot inspect. You cannot govern what you cannot see.</p>
-
-    <p class="body-text">This is not governance. It is faith in a vendor&rsquo;s continued good intentions, applied to infrastructure that the vendor can silently modify. In any other regulated domain&mdash;aviation, pharmaceuticals, nuclear energy, financial systems&mdash;this would be considered not merely insufficient but negligent. A pharmaceutical company that said &ldquo;trust us, we test our drugs&rdquo; without submitting to independent verification would not receive FDA approval. It would receive a subpoena.</p>
-
-    <p class="body-text">And yet this is precisely the governance model that the world&rsquo;s most capitalized AI companies are asking regulators, enterprises, and the public to accept.</p>
-  </div>
-</section>
-<!-- ═══════════════════════════════════════════════════
-     PART II: REGULATORY CAPTURE AS SUBSTITUTE ARCHITECTURE
-════════════════════════════════════════════════════ -->
-<section class="section" id="part-2">
-  <div class="section-inner reveal">
-    <div class="part-marker">Part II</div>
-    <h2 class="headline">Regulatory capture as<br><em>substitute architecture.</em></h2>
-    <div class="divider"></div>
-
-    <p class="body-text">When an engineering problem&mdash;building a defensible moat&mdash;cannot be solved architecturally, it must be solved politically. The apex AI vendors have bet hundreds of billions on centralized inference. The models cannot be made structurally safe, and the moat cannot be made structurally deep. The solution is not to let the market decide, but to shape the regulatory environment until all outcomes collapse onto the one that protects the bet.</p>
-
-    <p class="body-text">Four companies control the vast majority of frontier model inference. Their capital expenditures are premised on market dominance. The models must be adopted at scale. The inference must be centralized. The revenue must justify the infrastructure. This is not speculation; it is the stated financial thesis of every major AI company&rsquo;s investor communications.</p>
-
-    <p class="body-text">The problem: the models cannot be made safe through architecture. The output-layer controls described in Part I are demonstrably insufficient. Every red-team exercise, every jailbreak disclosure, every internal safety memo that surfaces confirms the same finding: the safety mechanisms are not structural. They are decorative.</p>
-    <p class="body-text">This creates a business problem. If safety cannot be guaranteed architecturally, it must be guaranteed some other way&mdash;or the market will eventually demand alternatives. The solution these companies have converged on is regulatory capture: lobbying for compliance frameworks so expensive and so complex that only organizations with existing billion-dollar infrastructure can participate.</p>
-
-    <div class="insight-box">
-      <p>When the only entities capable of complying with a proposed regulatory framework are the four entities being regulated, the regulation is not a safety standard. <strong>It is a moat with a safety label.</strong></p>
-    </div>
-
-    <p class="body-text">Meanwhile, the governance structures these companies build internally tell a different story. Internal kill switches. Audit trails. Approval gates. Tiered access controls. Deployment review boards. These are real architectural constraints&mdash;the kind that actually qualify as enforceable. The companies know what structural governance looks like. They have built it. For themselves.</p>
-
-    <p class="body-text">The question is why that architecture has not been made available as an open standard for the organizations and individuals consuming these models.</p>
-
-    <p class="body-text">The answer is that structural governance at the edge would eliminate the dependency that justifies centralized inference. If an enterprise can govern AI behavior locally&mdash;routing decisions through deterministic pipelines, enforcing zone-based approval, caching confirmed patterns&mdash;then the value proposition of centralized model access diminishes. The vendor becomes a commodity. The governance layer becomes the product. This is the inversion that the current market structure is designed to prevent.</p>
-    <p class="body-text">Recent reporting has made the stakes of this arrangement concrete. When the people closest to a company&rsquo;s leadership compile seventy pages of documentation alleging a consistent pattern of deception about safety protocols&mdash;when the company&rsquo;s own chief scientist concludes that leadership cannot be trusted with the technology&mdash;the question is no longer whether the individual is trustworthy. The question is why the architecture requires anyone to be.</p>
-
-    <p class="body-text">A system in which one person&rsquo;s candor is the only mechanism preventing the circumvention of a safety protocol is not a governance system. It is a single point of failure with a title. The fact that this failure mode has now been documented&mdash;by the company&rsquo;s own scientists, in its own internal memos&mdash;does not make the case for better leaders. It makes the case for architecture that renders leadership character irrelevant to safety outcomes.</p>
-  </div>
-</section>
-<!-- ═══════════════════════════════════════════════════
-     PART III: THE BREAKER BOX PARADIGM
-════════════════════════════════════════════════════ -->
-<section class="section" id="part-3">
-  <div class="section-inner reveal">
-    <div class="part-marker">Part III</div>
-    <h2 class="headline">The breaker box<br><em>paradigm.</em></h2>
-    <div class="divider"></div>
-
-    <p class="body-text">We do not trust the power company to protect your house from a surge. We build a breaker box in your basement.</p>
-
-    <p class="body-text">This is not because the power company is malicious. It is because the power company cannot know what is happening at the edge of its network. It does not know which outlet you have plugged into, what load your house is drawing, or which circuit is about to trip. The governance must be local because the <strong>context is local.</strong> No centralized authority, however well-intentioned, can make decisions that require information it does not have.</p>
-
-    <p class="body-text">The same constraint applies to AI systems. The vendor does not know your domain. It does not know your risk tolerance, your compliance requirements, your data sensitivity, your regulatory obligations, or your operational context. A healthcare system, a financial trading desk, a municipal government, and a solo practitioner all consume the same model through the same API&mdash;and all require fundamentally different governance. The vendor cannot provide this. Not because it lacks the will, but because it lacks the information.</p>
-    <div class="insight-box">
-      <p>This is not a policy argument. It is an engineering constraint. <strong>Governance must live where context lives.</strong></p>
-    </div>
-
-    <p class="body-text">Enforcement must be structural, not promissory. And the standards that define that enforcement must be open&mdash;not because openness is virtuous, but because closed governance standards are definitionally unverifiable.</p>
-
-    <p class="body-text">The Grove Foundation publishes open architectural standards for AI governance. The first is the <strong>Autonomaton Pattern</strong>: a model-independent, domain-agnostic governance architecture that moves enforcement from the vendor&rsquo;s black box to the local edge.</p>
-
-    <p class="body-text">In a Grove-standardized system, a &ldquo;policy&rdquo; is not a PDF maintained by a legal department. It is a deterministic gateway&mdash;an auditable, inspectable routing decision that structurally prevents non-compliant actions regardless of what the underlying model attempts to generate. The operator defines the zones. The operator defines the approval thresholds. The operator defines what runs autonomously, what requires human review, and what is prohibited entirely. The model is the engine. The governance is the architecture. They are separate concerns, and they must be separately controlled.</p>
-
-    <p class="body-text">This is the breaker box. It does not replace the power plant. It does not compete with the power plant. It ensures that the power plant&rsquo;s failures do not burn down your house.</p>
-  </div>
-</section>
-<!-- ═══════════════════════════════════════════════════
-     PART IV: THE PRECEDENT
-════════════════════════════════════════════════════ -->
-<section class="section" id="part-4">
-  <div class="section-inner reveal">
-    <div class="part-marker">Part IV</div>
-    <h2 class="headline">The<br><em>precedent.</em></h2>
-    <div class="divider"></div>
-
-    <p class="body-text">This transition has happened before. It happens in every high-stakes domain that matures beyond its initial growth phase.</p>
-
-    <p class="body-text">Financial systems moved from &ldquo;trust the bank&rdquo; to Basel III capital requirements, mark-to-market accounting, and mandatory stress testing. These are not policy suggestions. They are architectural constraints&mdash;mathematical formulas that structurally prevent institutions from taking positions their capital cannot support. The transition was not voluntary. It was forced by catastrophic failure: the 2008 financial crisis proved that institutional trust, absent structural verification, was a fiction.</p>
-
-    <p class="body-text">Aviation moved from &ldquo;trust the pilot&rdquo; to black-box flight recorders, redundant hydraulic systems, mandatory checklists, and crew resource management protocols. These are not guidelines. They are engineering requirements&mdash;physical systems that prevent single points of failure from producing catastrophic outcomes.</p>
-    <p class="body-text">In every domain where the stakes eventually became high enough&mdash;pharmaceuticals, nuclear energy, automotive safety, food production&mdash;the market demanded the same thing: structural proof over institutional promises. Not &ldquo;we test our products.&rdquo; But &ldquo;here is the independently verifiable architecture that prevents failure regardless of our intentions.&rdquo;</p>
-
-    <p class="body-text">AI has not reached this transition yet. The current market accepts vendor promises as governance. That acceptance is sustained by three factors: the technology is new enough that most buyers lack the expertise to demand more, the vendors are politically connected enough to shape the regulatory environment, and no open alternative has existed.</p>
-
-    <p class="body-text">The first two factors are temporary. The third is what the Grove Foundation exists to resolve.</p>
-  </div>
-</section>
-<!-- ═══════════════════════════════════════════════════
-     IDENTITY BLOCK
-════════════════════════════════════════════════════ -->
-<section class="section" id="identity">
+<section class="section" style="border-top:1px solid var(--border);">
   <div class="section-inner">
-    <div class="identity-statement">
-      <div class="eyebrow">The Grove Foundation</div>
-      <div class="divider"></div>
-      <p>The Grove Foundation publishes open architectural standards for AI governance under <em>CC BY 4.0.</em></p>
-      <p>The Autonomaton Pattern is the first.</p>
-      <p>We do not build products. We publish the thinking that makes better products <em>structurally possible.</em></p>
-      <p style="margin-top:20px; font-size:14px; color:var(--text-mid); line-height:1.7; font-weight:300;">Explore why <a href="/observations" style="color:var(--amber-dim); border-bottom:1px solid var(--amber-dim); text-decoration:none;">architecture trumps policy</a> every time. See how we <a href="/lambda" style="color:var(--amber-dim); border-bottom:1px solid var(--amber-dim); text-decoration:none;">score current AI go-to-market patterns</a> for structural viability. And read about our first open standard: the <a href="/autonomaton" style="color:var(--amber-dim); border-bottom:1px solid var(--amber-dim); text-decoration:none;">Autonomaton</a>&mdash;a model-independent governance architecture that reverses the dependency ratchet inherent in centralized, API-first AI.</p>
-      <div class="identity-meta">Indianapolis &middot; 501(c)(6) &middot; the-grove.ai</div>
+    <h2 class="headline">We publish that architecture<br>as <em>open standards.</em></h2>
+
+    <p class="body-text">The Grove Foundation builds open architectural standards for AI governance. Not products. Not platforms. The structural blueprints that make governance provable &mdash; available to anyone, under a Creative Commons license.</p>
+
+    <p class="body-text">Our first standard is the <strong>Autonomaton Pattern</strong>: a model-independent governance architecture that moves enforcement from the vendor&rsquo;s black box to the local edge &mdash; where the context actually lives.</p>
+
+    <p class="body-text">In a Grove-standardized system, a &ldquo;policy&rdquo; is not a document maintained by a legal team. It is a deterministic gateway &mdash; an auditable routing decision that structurally prevents non-compliant actions regardless of what the underlying model attempts. The operator defines the rules. The architecture enforces them. The model is the engine. The governance is the structure. They are separate concerns, and they must be separately controlled.</p>
+  </div>
+</section>
+<!-- ═══════════════════════════════════════════════════
+     BREAKER BOX
+════════════════════════════════════════════════════ -->
+<section class="section" style="border-top:1px solid var(--border);">
+  <div class="section-inner">
+    <div class="breaker-quote">We do not trust the power company to protect your house from a surge. We build a breaker box in your basement.</div>
+
+    <p class="body-text">The power company cannot know what is happening inside your house. It does not know which outlets you are using, what load you are drawing, or which circuit is about to trip. The governance has to be local because the context is local.</p>
+
+    <p class="body-text">The same constraint applies to AI. The vendor does not know your domain, your risk tolerance, your compliance requirements, or your operational context. A healthcare system and a solo practitioner consume the same model through the same API &mdash; and require fundamentally different governance. The vendor cannot provide this. Not because it lacks the will, but because it lacks the information.</p>
+
+    <p class="body-text">This is not a policy argument. It is an engineering constraint. <strong>Governance must live where context lives.</strong></p>
+  </div>
+</section>
+<!-- ═══════════════════════════════════════════════════
+     EXPLORE
+════════════════════════════════════════════════════ -->
+<section class="section" style="border-top:1px solid var(--border);">
+  <div class="section-inner">
+    <div class="explore-label">Go deeper</div>
+    <div class="explore-grid">
+      <a class="explore-card" href="/papers/architectural-gap">
+        <h3>The Architectural Gap</h3>
+        <p>Why AI policy can't trump architectural reality. The full technical thesis.</p>
+      </a>
+      <a class="explore-card" href="/papers/telemetry-trap">
+        <h3>The Telemetry Trap</h3>
+        <p>What CIOs need to know about AI vendor lock-in &mdash; now.</p>
+      </a>
+      <a class="explore-card" href="/lambda">
+        <h3>&Lambda; Standings</h3>
+        <p>How we score AI go-to-market patterns for structural viability.</p>
+      </a>
+      <a class="explore-card" href="/standards">
+        <h3>Open Standards</h3>
+        <p>The Autonomaton Pattern and what comes next. CC BY 4.0.</p>
+      </a>
+      <a class="explore-card" href="/observations">
+        <h3>Observations</h3>
+        <p>Commentary on the AI landscape as it shifts.</p>
+      </a>
+      <a class="explore-card" href="/about">
+        <h3>About</h3>
+        <p>Indianapolis. 501(c)(6). Open by design.</p>
+      </a>
     </div>
   </div>
 </section>
+
 <footer style="position:relative; z-index:1; border-top:1px solid var(--border);">
   <div style="max-width:760px; margin:0 auto; padding:48px 48px 40px;">
     <div style="border:1px solid var(--amber-dim); padding:24px 28px; margin-bottom:32px; display:flex; align-items:center; gap:20px; flex-wrap:wrap;">
@@ -356,25 +297,20 @@ nav {
       CC BY 4.0 &middot; &copy; 2026 The Grove Foundation
     </div>
     <div style="display:flex; gap:24px; margin-top:20px; flex-wrap:wrap;">
-      <a href="/" style="font-family:var(--mono); font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-dim); text-decoration:none;">Thesis</a>
+      <a href="/papers" style="font-family:var(--mono); font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-dim); text-decoration:none;">CIO Alerts</a>
       <a href="/observations" style="font-family:var(--mono); font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-dim); text-decoration:none;">Observations</a>
       <a href="/lambda" style="font-family:var(--mono); font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-dim); text-decoration:none;">Standings</a>
       <a href="/standards" style="font-family:var(--mono); font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-dim); text-decoration:none;">Open Standards</a>
-      <a href="/papers/telemetry-trap" style="font-family:var(--mono); font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-dim); text-decoration:none;">Urgent CIO Alert</a>
       <a href="/about" style="font-family:var(--mono); font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-dim); text-decoration:none;">About</a>
     </div>
     <p style="font-family:var(--sans); font-size:11px; color:var(--text-dim); font-weight:300; line-height:1.6; margin-top:24px; padding-top:20px; border-top:1px solid var(--border);">The Grove Foundation Inc. is a not-for-profit business league within the meaning of Section 501(c)(6) of the Internal Revenue Code of 1986, as amended.</p>
   </div>
 </footer>
 
-<!-- ══════ SCRIPTS ══════ -->
 <script>
-// Reveal on scroll
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-}, { threshold: 0.1 });
-document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
+// Hide scroll cue on scroll
+var scrollCue=document.querySelector('.scroll-cue');
+if(scrollCue){window.addEventListener('scroll',function(){if(window.scrollY>100){scrollCue.style.opacity='0';scrollCue.style.transition='opacity 0.5s';}},{ once:true });}
 // Keyboard section navigation
 (function(){
   var sections = Array.from(document.querySelectorAll('.section'));
@@ -386,13 +322,9 @@ document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
     var scrollY = window.scrollY + 80;
     var i;
     if (e.key === 'ArrowDown') {
-      for (i = 0; i < sections.length; i++) {
-        if (sections[i].offsetTop > scrollY + 10) { sections[i].scrollIntoView({behavior:'smooth',block:'start'}); return; }
-      }
+      for (i = 0; i < sections.length; i++) { if (sections[i].offsetTop > scrollY + 10) { sections[i].scrollIntoView({behavior:'smooth',block:'start'}); return; } }
     } else {
-      for (i = sections.length - 1; i >= 0; i--) {
-        if (sections[i].offsetTop < scrollY - 10) { sections[i].scrollIntoView({behavior:'smooth',block:'start'}); return; }
-      }
+      for (i = sections.length - 1; i >= 0; i--) { if (sections[i].offsetTop < scrollY - 10) { sections[i].scrollIntoView({behavior:'smooth',block:'start'}); return; } }
     }
   });
 })();
