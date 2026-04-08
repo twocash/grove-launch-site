@@ -1,3 +1,3 @@
 cd /d C:\GitHub\grove-launch-site
 git add -A
-git commit -m "expand standings page: structural share, historical calibrations, formula deep-dive, four-tier gate, falsifiable prediction"
+git commit -m "standings: reframe tiers as phase states, move profiles up, add landscape context, ground methodology intro"
