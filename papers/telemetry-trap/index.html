@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Telemetry Trap — The Grove Foundation</title>
+<meta name="description" content="Why enterprise AI contracts are missing the most dangerous lock-in clause in technology history. A white paper from the Grove Foundation.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fragment+Mono:ital@0;1&family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --amber:#D4621A; --amber-bright:#F07030; --amber-dim:#8B3D10;
+  --amber-glow:rgba(212,98,26,0.12);
+  --bg:#080808; --bg2:#0f0f0f; --bg3:#161616; --bg4:#1a1a1a;
+  --border:#252525; --border-light:#333;
+  --text:#E8E2D9; --text-dim:#7A736A; --text-mid:#B0A898;
+  --green:#4CAF72; --green-dim:rgba(76,175,114,0.08);
+  --red:#C0392B; --red-dim:rgba(192,57,43,0.06);
+  --yellow:#D4A017;
+  --mono:'Fragment Mono', monospace;
+  --serif:'Instrument Serif', Georgia, serif;
+  --sans:'DM Sans', sans-serif;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body { background:var(--bg); color:var(--text); font-family:var(--sans); -webkit-font-smoothing:antialiased; overflow-x:hidden; line-height:1.6; }
+strong { color:var(--text); font-weight:500; }
+body::before { content:''; position:fixed; inset:0; background-image:linear-gradient(var(--border) 1px, transparent 1px),linear-gradient(90deg, var(--border) 1px, transparent 1px); background-size:40px 40px; opacity:0.15; pointer-events:none; z-index:0; }
+/* ── NAV ── */
+nav { position:fixed; top:0; left:0; right:0; z-index:100; padding:0 48px; height:56px; display:flex; justify-content:space-between; align-items:center; background:rgba(8,8,8,0.94); backdrop-filter:blur(16px); border-bottom:1px solid rgba(37,37,37,0.5); }
+.nav-logo { font-family:var(--mono); font-size:11px; letter-spacing:0.2em; text-transform:uppercase; color:var(--amber-dim); }
+.nav-links { display:flex; gap:32px; }
+.nav-links a { font-family:var(--mono); font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-dim); text-decoration:none; padding:4px 0; border-bottom:1px solid transparent; transition:all 0.2s; }
+.nav-links a:hover, .nav-links a.active { color:var(--amber); border-bottom-color:var(--amber); }
+.nav-links a.nav-ext { color:var(--amber-dim); border:1px solid var(--amber-dim); padding:3px 10px; margin-left:8px; border-bottom:1px solid var(--amber-dim); }
+.nav-links a.nav-ext:hover { color:var(--amber); border-color:var(--amber); background:rgba(212,98,26,0.08); }
+/* ── LAYOUT ── */
+.section { position:relative; z-index:1; }
+.section-inner { max-width:760px; margin:0 auto; padding:120px 48px 100px; }
+.section-wide { max-width:1040px; margin:0 auto; padding:120px 48px 100px; }
+.eyebrow { font-family:var(--mono); font-size:11px; letter-spacing:0.25em; text-transform:uppercase; color:var(--amber); margin-bottom:20px; }
+.display { font-family:var(--serif); font-weight:400; font-size:clamp(44px,5.5vw,72px); line-height:1.06; color:var(--text); margin-bottom:24px; letter-spacing:-0.02em; }
+.display em { color:var(--amber); font-style:italic; }
+.headline { font-family:var(--serif); font-weight:400; font-size:clamp(28px,3.5vw,44px); line-height:1.12; color:var(--text); margin-bottom:20px; letter-spacing:-0.01em; }
+.headline em { color:var(--amber); font-style:italic; }
+.subhead { font-family:var(--serif); font-weight:400; font-size:clamp(20px,2.2vw,28px); color:var(--text); margin:64px 0 20px; line-height:1.2; }
+.subhead em { color:var(--amber); font-style:italic; }
+.lead { font-weight:300; font-size:clamp(15px,1.5vw,17px); line-height:1.75; color:var(--text-mid); max-width:700px; margin-bottom:32px; }
+.body-text { font-weight:300; font-size:15px; line-height:1.75; color:var(--text-mid); margin-bottom:20px; }
+.divider { width:48px; height:1px; background:var(--amber); margin:32px 0; }
+.reveal { opacity:0; transform:translateY(24px); transition:opacity 0.7s ease, transform 0.7s ease; }
+.reveal.visible { opacity:1; transform:translateY(0); }
+/* ── PAPER-SPECIFIC ── */
+.section-num { font-family:var(--mono); font-size:11px; letter-spacing:0.2em; color:var(--amber-dim); margin-bottom:6px; }
+.pullquote { border-left:3px solid var(--amber); background:rgba(212,98,26,0.04); padding:24px 28px; margin:32px 0; font-family:var(--serif); font-style:italic; font-size:17px; color:var(--text); line-height:1.55; }
+.pullquote .attr { font-family:var(--mono); font-style:normal; font-size:10px; color:var(--text-dim); letter-spacing:0.1em; margin-top:12px; }
+/* ── WARNING BANNER ── */
+.warning-banner { border:2px solid var(--amber); background:rgba(212,98,26,0.06); padding:32px 36px; margin:40px 0; position:relative; }
+.warning-banner::before { content:''; position:absolute; top:0; left:0; width:4px; height:100%; background:var(--amber); }
+.warning-label { font-family:var(--mono); font-size:12px; letter-spacing:0.2em; text-transform:uppercase; color:var(--amber); margin-bottom:12px; font-weight:600; }
+.warning-body { font-size:15px; color:var(--text); line-height:1.7; }
+.warning-body strong { color:var(--amber-bright); }
+/* ── LAYER CARDS ── */
+.layer-stack { display:grid; gap:1px; background:var(--border); border:1px solid var(--border); margin:28px 0; }
+.layer-card { display:grid; grid-template-columns:140px 1fr 160px 180px; align-items:center; background:var(--bg2); padding:20px 24px; gap:20px; }
+.layer-name { font-family:var(--serif); font-size:18px; color:var(--text); }
+.layer-desc { font-size:13px; color:var(--text-mid); line-height:1.5; font-weight:300; }
+.layer-export { font-family:var(--mono); font-size:11px; text-align:center; }
+.layer-legal { font-family:var(--mono); font-size:11px; text-align:center; }
+.layer-card.layer-danger { border-left:3px solid var(--red); }
+.layer-card.layer-warn { border-left:3px solid var(--yellow); }
+.layer-card.layer-ok { border-left:3px solid var(--green); }
+.export-yes { color:var(--green); }
+.export-partial { color:var(--yellow); }
+.export-none { color:var(--red); }
+.legal-yes { color:var(--green); }
+.legal-partial { color:var(--yellow); }
+.legal-none { color:var(--red); }
+/* ── COMPARISON GRID ── */
+.compare-grid { display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--border); border:1px solid var(--border); margin:28px 0; }
+.compare-col { background:var(--bg2); padding:0; }
+.compare-header { padding:20px 24px; border-bottom:1px solid var(--border); font-family:var(--mono); font-size:11px; letter-spacing:0.15em; text-transform:uppercase; }
+.compare-header.dep { color:var(--red); }
+.compare-header.sov { color:var(--green); }
+.compare-row { display:grid; grid-template-columns:180px 1fr 1fr; gap:1px; background:var(--border); }
+.compare-row > div { background:var(--bg2); padding:14px 24px; }
+.compare-dim { font-family:var(--mono); font-size:9px; letter-spacing:0.1em; text-transform:uppercase; color:var(--amber); padding:14px 24px; background:var(--bg3); font-weight:600; }
+.compare-val { font-size:13px; color:var(--text-mid); line-height:1.5; font-weight:300; padding:14px 24px; background:var(--bg2); }
+.compare-val.bad { border-left:2px solid var(--red); }
+.compare-val.good { border-left:2px solid var(--green); }
+/* ── DEMAND CARDS ── */
+.demand-list { display:grid; gap:1px; background:var(--border); border:1px solid var(--border); margin:28px 0; }
+.demand-card { display:grid; grid-template-columns:64px 1fr; background:var(--bg2); }
+.demand-num { display:flex; align-items:center; justify-content:center; font-family:var(--serif); font-size:28px; color:var(--amber); background:rgba(212,98,26,0.04); border-right:1px solid var(--border); }
+.demand-body { padding:20px 24px; }
+.demand-title { font-family:var(--serif); font-size:17px; color:var(--text); margin-bottom:6px; }
+.demand-desc { font-size:13px; color:var(--text-mid); line-height:1.6; font-weight:300; }
+/* ── PIPELINE ── */
+.pipeline { display:grid; grid-template-columns:repeat(5,1fr); gap:1px; background:var(--border); border:1px solid var(--border); margin:28px 0; }
+.pipe-stage { background:var(--bg2); padding:20px 16px; text-align:center; }
+.pipe-num { font-family:var(--mono); font-size:10px; color:var(--amber-dim); letter-spacing:0.15em; margin-bottom:4px; }
+.pipe-name { font-family:var(--serif); font-size:17px; color:var(--text); margin-bottom:8px; }
+.pipe-desc { font-size:11px; color:var(--text-dim); line-height:1.5; }
+.pipe-arrow { display:none; }
+/* ── MOVES ── */
+.moves { display:grid; grid-template-columns:repeat(5,1fr); gap:1px; background:var(--border); border:1px solid var(--border); margin:28px 0; }
+.move-card { background:var(--bg2); padding:16px; text-align:center; }
+.move-num { font-family:var(--mono); font-size:9px; color:var(--amber-dim); letter-spacing:0.12em; margin-bottom:4px; }
+.move-name { font-family:var(--serif); font-size:14px; color:var(--text); margin-bottom:6px; }
+.move-desc { font-size:11px; color:var(--text-dim); line-height:1.4; }
+/* ── DOWNLOAD ── */
+.download-bar { display:flex; align-items:center; gap:16px; border:1px solid var(--border); background:var(--bg3); padding:16px 24px; margin:24px 0; }
+.download-bar a { font-family:var(--mono); font-size:11px; letter-spacing:0.1em; color:var(--amber); text-decoration:none; border:1px solid var(--amber-dim); padding:6px 16px; transition:all 0.2s; }
+.download-bar a:hover { background:rgba(212,98,26,0.12); border-color:var(--amber); }
+.download-meta { font-family:var(--mono); font-size:10px; color:var(--text-dim); letter-spacing:0.06em; }
+/* ── HERO ── */
+#hero { min-height:80vh; display:flex; flex-direction:column; justify-content:center; position:relative; background:radial-gradient(ellipse at 30% 80%, rgba(192,57,43,0.1) 0%, transparent 50%), radial-gradient(ellipse at 70% 20%, rgba(212,98,26,0.06) 0%, transparent 50%); }
+#hero .section-inner { padding-top:100px; padding-bottom:80px; }
+.hero-meta { font-family:var(--mono); font-size:10px; color:var(--text-dim); letter-spacing:0.1em; margin-top:24px; }
+.hero-meta a { color:var(--amber-dim); text-decoration:none; border-bottom:1px solid rgba(139,61,16,0.5); }
+.hero-meta a:hover { color:var(--amber); border-bottom-color:var(--amber); }
+/* ── RESPONSIVE ── */
+@media(max-width:900px) { .layer-card { grid-template-columns:1fr; } .compare-grid { grid-template-columns:1fr; } .pipeline,.moves { grid-template-columns:1fr; } }
+@media(max-width:768px) { nav { padding:0 20px; } .nav-links { gap:16px; } .nav-links a { font-size:9px; } .section-inner,.section-wide { padding:80px 24px 60px; } .demand-card { grid-template-columns:48px 1fr; } }
+</style>
+</head>
+<body>
+<nav>
+  <div class="nav-logo">The Grove Foundation</div>
+  <div class="nav-links">
+    <a href="/">Thesis</a>
+    <a href="/observations">Observations</a>
+    <a href="/lambda">Standings</a>
+    <a href="/standards/001">Open Standards</a>
+    <a href="https://the-grove.ai/autonomaton" target="_blank" rel="noopener noreferrer" class="nav-ext">Playground &nearr;</a>
+    <a href="/about">About</a>
+  </div>
+</nav>
+
+<!-- ═══════════════════════════════════════
+     HERO
+══════════════════════════════════════════ -->
+<section class="section" id="hero">
+  <div class="section-inner">
+    <div class="eyebrow">White Paper &middot; April 2026</div>
+    <h1 class="display">The Telemetry <em>Trap</em></h1>
+    <p class="lead">Why enterprise AI contracts are missing the most dangerous lock-in clause in technology history.</p>
+    <div class="divider"></div>
+    <p class="body-text">Every major AI lab is building the same thing: a persistent agent that watches how you work, learns your patterns, and acts on your behalf. The lock-in is not about data. Enterprises have spent two decades building legal frameworks for data portability. The lock-in is about <strong>telemetry</strong>&mdash;the accumulated behavioral model an always-on agent builds by observing how your people work, what they prioritize, how they communicate, and what they ignore.</p>
+    <p class="body-text">That model has no export format, no portability standard, and no legal framework governing ownership. When you switch providers, you lose it. Your next agent starts from zero.</p>
+    <p class="hero-meta">Jim Calhoun &middot; Founder, The Grove Foundation &middot; CC BY 4.0 &middot; <a href="/docs/the-telemetry-trap-grove-white-paper.docx">Download canonical version</a></p>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     I. THE CONWAY SIGNAL
+══════════════════════════════════════════ -->
+<section class="section" style="background:var(--bg2); border-top:1px solid var(--border); border-bottom:1px solid var(--border);">
+  <div class="section-inner reveal">
+    <div class="section-num">I</div>
+    <h2 class="headline">The Conway <em>Signal</em></h2>
+    <p class="body-text">In March 2026, a packaging error pushed approximately 500,000 lines of Anthropic&rsquo;s Claude Code source to a public registry. Among the internal projects revealed was <strong>Conway</strong>: a standalone agent environment with persistent memory, extension support through a proprietary .cnw.zip format, external event triggers, and browser integration.</p>
+    <p class="body-text">Conway is not on Anthropic&rsquo;s public roadmap. It is an internal project that reveals the platform strategy the company has been executing across five surfaces in a single quarter.</p>
+    <p class="body-text">The significance is not what Conway does. Always-on agents are inevitable. The significance is what Conway <strong>accumulates</strong>. After six months of operation, a Conway instance doesn&rsquo;t just store your files and calendar entries. It holds a model of how you work: which emails you respond to immediately, which you ignore, which meetings you reschedule, which Slack threads you monitor, which decisions you delegate and which you keep.</p>
+
+    <div class="pullquote">Previous lock-in was about stuff. Files, records, message history. Stuff is painful to migrate but possible. Conway-class agents lock in something different: the accumulated model of how you work. There is no CSV for &ldquo;how this person thinks.&rdquo;</div>
+
+    <h3 class="subhead">The <em>Platform Strategy</em></h3>
+    <p class="body-text">Conway does not exist in isolation. It is the capstone of a five-move strategy Anthropic executed in under 90 days:</p>
+  </div>
+</section>
+
+<!-- Five Moves -->
+<section class="section" style="background:var(--bg2); border-bottom:1px solid var(--border);">
+  <div class="section-wide reveal">
+    <div class="moves">
+      <div class="move-card"><div class="move-num">MOVE 01</div><div class="move-name">Claude Code Channels</div><div class="move-desc">Developer messaging surface</div></div>
+      <div class="move-card"><div class="move-num">MOVE 02</div><div class="move-name">Cowork</div><div class="move-desc">Non-technical enterprise surface</div></div>
+      <div class="move-card"><div class="move-num">MOVE 03</div><div class="move-name">Marketplace</div><div class="move-desc">Procurement layer with partner billing through Anthropic</div></div>
+      <div class="move-card"><div class="move-num">MOVE 04</div><div class="move-name">$100M Partner Network</div><div class="move-desc">Lock partner apps into the ecosystem</div></div>
+      <div class="move-card"><div class="move-num">MOVE 05</div><div class="move-name">Third-Party Blocking</div><div class="move-desc">Block external tools from subscription access</div></div>
+    </div>
+    <p class="body-text">Every piece pushes in one direction: build inside our walls, use our surfaces, run through our billing. This is the Active Directory playbook. Microsoft went from operating system to desktop to enterprise identity in fifteen years. Anthropic is attempting the same arc&mdash;model provider to developer tool to enterprise platform to agent operating system&mdash;in fifteen months.</p>
+
+    <h3 class="subhead">The .cnw.zip <em>Paradox</em></h3>
+    <p class="body-text">Anthropic published MCP&mdash;the Model Context Protocol&mdash;as an open standard. OpenAI adopted it. Google adopted it. The Linux Foundation hosts it. Then Conway adds a proprietary extension layer on top. Extensions packaged as .cnw.zip include custom interfaces and tools that work only inside Conway&rsquo;s environment. They are not portable.</p>
+    <p class="body-text">This is the <strong>Google Play Services pattern</strong> applied to AI. Android is open source. Google Play Services&mdash;Maps, payments, push notifications&mdash;is proprietary. You can build Android without Google&rsquo;s services. In practice, nobody does. MCP is the open foundation. Conway&rsquo;s extension ecosystem is the proprietary layer on top.</p>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     II. THE TELEMETRY TRAP
+══════════════════════════════════════════ -->
+<section class="section">
+  <div class="section-inner reveal">
+    <div class="section-num">II</div>
+    <h2 class="headline">The Telemetry <em>Trap</em></h2>
+    <p class="body-text">Enterprise procurement teams have spent twenty years developing frameworks for data portability. GDPR, CCPA, SOC 2, data residency requirements, right-to-delete provisions&mdash;the legal infrastructure for &ldquo;can I take my stuff with me&rdquo; is mature. Imperfect, but functional.</p>
+    <p class="body-text">None of it covers what Conway-class agents accumulate.</p>
+
+    <h3 class="subhead">Three Layers of <em>Lock-In</em></h3>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-wide reveal">
+    <div class="layer-stack">
+      <div class="layer-card layer-ok">
+        <div class="layer-name">Data</div>
+        <div class="layer-desc">Files, messages, calendar, CRM records</div>
+        <div class="layer-export export-yes">&#10003; Exportable</div>
+        <div class="layer-legal legal-yes">GDPR, CCPA, SOC 2</div>
+      </div>
+      <div class="layer-card layer-warn">
+        <div class="layer-name">Integration</div>
+        <div class="layer-desc">API connections, workflow configs, tool mappings</div>
+        <div class="layer-export export-partial">&#9673; Partially exportable</div>
+        <div class="layer-legal legal-partial">Contract-specific</div>
+      </div>
+      <div class="layer-card layer-danger">
+        <div class="layer-name">Behavioral Telemetry</div>
+        <div class="layer-desc">How you work: patterns, priorities, decision timing, communication style</div>
+        <div class="layer-export export-none">&#10007; No export path exists</div>
+        <div class="layer-legal legal-none">No framework exists</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- II continued: Compounding + Contract Questions -->
+<section class="section">
+  <div class="section-inner reveal">
+    <h3 class="subhead">The <em>Compounding</em> Problem</h3>
+    <p class="body-text">Behavioral lock-in compounds. Every day Conway operates, it learns more about how your organization works. At month one, switching means losing convenience. At month six, switching means losing an agent that understands your VP&rsquo;s communication style, your team&rsquo;s deployment cadence, and which Slack channels carry signal. At month twelve, you are not switching AI providers. You are amputating institutional memory.</p>
+    <p class="body-text">The switching cost curve is not linear. It is exponential. And unlike data migration&mdash;which is painful but bounded&mdash;behavioral context migration is currently <strong>impossible</strong>. Not expensive. Not difficult. Impossible. The format does not exist. The standard does not exist. The receiving system has no way to ingest it.</p>
+
+    <div class="pullquote">The window for negotiating telemetry terms is before deployment, not after. Every month of always-on operation makes the exit cost higher and the negotiating leverage lower.</div>
+
+    <div class="warning-banner">
+      <div class="warning-label">&#9888; CIO Warning: Negotiate Telemetry Terms Now</div>
+      <div class="warning-body">Having reviewed enterprise AI procurement processes across multiple verticals, a pattern emerges. Legal teams focus on data handling, model liability, and uptime SLAs. They are not asking: <strong>Who owns the behavioral model the agent builds about our workflows?</strong> In what format can we export the derived context&mdash;not just the raw data? What happens to the accumulated intelligence if we terminate? Can we audit what the agent has learned about us&mdash;and delete specific inferences? Is there an open format for porting behavioral context to a competing platform? These are contract terms that should be in every enterprise AI agreement signed in 2026. They are in virtually none of them.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     III. THE STRUCTURAL ALTERNATIVE
+══════════════════════════════════════════ -->
+<section class="section" style="background:var(--bg2); border-top:1px solid var(--border);">
+  <div class="section-inner reveal">
+    <div class="section-num">III</div>
+    <h2 class="headline">The Structural <em>Alternative</em></h2>
+
+    <div class="warning-banner" style="border-color:var(--green); background:rgba(76,175,114,0.04);">
+      <div class="warning-label" style="color:var(--green);">&#9670; Independent Lineage &middot; March 31, 2026</div>
+      <div class="warning-body">On March 31, 2026&mdash;the same day Anthropic&rsquo;s source code leak exposed the Conway architecture&mdash;the Grove Foundation quietly published the Autonomaton Pattern under CC BY 4.0. The timing was not coincidental. The leak confirmed what we had been building toward for months: that the industry&rsquo;s leading AI lab had constructed internally the exact governance architecture it had no incentive to open-source. Publication could no longer wait for a controlled rollout. The structural alternative needed to be in the public commons before the proprietary version shipped.</div>
+    </div>
+
+    <p class="body-text">Where Conway accumulates behavioral context inside the provider&rsquo;s infrastructure, the Autonomaton Pattern makes that context sovereign by architecture. Not by policy. Not by contract clause. By the structural properties of the system itself.</p>
+    <h3 class="subhead">The Five-Stage <em>Invariant</em> Pipeline</h3>
+    <p class="body-text">Every Autonomaton instance traverses the same five stages, regardless of domain, model, or provider:</p>
+  </div>
+</section>
+
+<section class="section" style="background:var(--bg2); border-bottom:1px solid var(--border);">
+  <div class="section-wide reveal">
+    <div class="pipeline">
+      <div class="pipe-stage"><div class="pipe-num">01</div><div class="pipe-name">Telemetry</div><div class="pipe-desc">Capture interaction data. Structured, inspectable, owned by the operator.</div></div>
+      <div class="pipe-stage"><div class="pipe-num">02</div><div class="pipe-name">Recognition</div><div class="pipe-desc">Classify intent, assess confidence, determine risk. The Cognitive Router dispatches.</div></div>
+      <div class="pipe-stage"><div class="pipe-num">03</div><div class="pipe-name">Compilation</div><div class="pipe-desc">Assemble context from local knowledge, historical patterns, and domain expertise.</div></div>
+      <div class="pipe-stage"><div class="pipe-num">04</div><div class="pipe-name">Approval</div><div class="pipe-desc">Zone-governed human checkpoint. Green = autonomous. Yellow = supervised. Red = human-only.</div></div>
+      <div class="pipe-stage"><div class="pipe-num">05</div><div class="pipe-name">Execution</div><div class="pipe-desc">Action fires. Output becomes input for the next cycle. Audit trail generated as byproduct.</div></div>
+    </div>
+    <p class="body-text">The pipeline is not a suggestion. It is an invariant. Nothing runs alongside it. No sub-pipelines. No bypasses. This constraint is what makes the pattern auditable, composable, and&mdash;critically&mdash;portable.</p>
+  </div>
+</section>
+
+<!-- Conway vs Autonomaton comparison -->
+<section class="section" style="background:var(--bg2); border-bottom:1px solid var(--border);">
+  <div class="section-wide reveal">
+    <h3 class="subhead" style="margin-top:0;">Conway-Class Agent vs. <em>Autonomaton</em> Pattern</h3>
+    <div style="overflow-x:auto; border:1px solid var(--border);">
+      <div class="compare-row"><div class="compare-dim">Where behavioral model lives</div><div class="compare-val bad">Provider infrastructure</div><div class="compare-val good">Operator-owned config + telemetry files</div></div>
+      <div class="compare-row"><div class="compare-dim">Export format</div><div class="compare-val bad">None</div><div class="compare-val good">Structured JSON telemetry, declarative YAML config</div></div>
+      <div class="compare-row"><div class="compare-dim">Audit trail</div><div class="compare-val bad">Opaque</div><div class="compare-val good">Every pipeline decision traceable to a config rule anyone can read</div></div>
+      <div class="compare-row"><div class="compare-dim">Model portability</div><div class="compare-val bad">Locked to provider</div><div class="compare-val good">Model-agnostic Cognitive Router; swap providers without rewriting governance</div></div>
+      <div class="compare-row"><div class="compare-dim">Skill learning</div><div class="compare-val bad">Hidden in weights</div><div class="compare-val good">Explicit Skill Flywheel: visible, inspectable, deletable</div></div>
+      <div class="compare-row"><div class="compare-dim">Governance boundaries</div><div class="compare-val bad">Provider-defined</div><div class="compare-val good">Operator-defined zones (Green / Yellow / Red) in editable config</div></div>
+      <div class="compare-row"><div class="compare-dim">Extension ecosystem</div><div class="compare-val bad">Proprietary (.cnw.zip)</div><div class="compare-val good">Open standard (CC BY 4.0), any implementation</div></div>
+      <div class="compare-row"><div class="compare-dim">Switching cost</div><div class="compare-val bad">Exponential with time</div><div class="compare-val good">Flat: take your config and telemetry, deploy elsewhere</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- Sovereignty Architecture -->
+<section class="section" style="background:var(--bg2); border-bottom:1px solid var(--border);">
+  <div class="section-inner reveal">
+    <h3 class="subhead">The Sovereignty <em>Architecture</em></h3>
+    <p class="body-text">Three architectural properties make the Autonomaton&rsquo;s portability structural rather than aspirational:</p>
+    <p class="body-text"><strong>Declarative Governance.</strong> Every behavior rule is externalized in configuration files a non-technical domain expert can read and edit. Change the config, the behavior changes. Version the config, the behavior has a history. Audit the config, the behavior is explained. No separate &ldquo;explainability layer&rdquo; required. The governance is the architecture.</p>
+    <p class="body-text"><strong>Sovereign Zones.</strong> Every action has an explicit risk classification: Green (autonomous routine), Yellow (supervised proposals), Red (human-only). Zone boundaries are declarative&mdash;defined in configuration, not hardcoded. The system earns autonomy through demonstrated reliability. It cannot unilaterally grant itself new authority.</p>
+    <p class="body-text"><strong>Feed-First Telemetry.</strong> Every interaction generates structured telemetry as its primary output&mdash;not as a side effect. This telemetry is the behavioral context. It belongs to the operator. It is structured, inspectable, exportable, and deletable. It is the thing Conway locks inside provider infrastructure and the Autonomaton externalizes by design.</p>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     IV. THE PROCUREMENT GAP
+══════════════════════════════════════════ -->
+<section class="section">
+  <div class="section-inner reveal">
+    <div class="section-num">IV</div>
+    <h2 class="headline">The Procurement <em>Gap</em></h2>
+    <p class="body-text">Standard enterprise AI contracts address data handling comprehensively. They do not address what an always-on agent <em>learns</em>. The gap is not ignorance. It is a category error. Procurement teams are applying data-era frameworks to an intelligence-era problem.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-wide reveal">
+    <div class="layer-stack">
+      <div class="layer-card" style="background:var(--bg3); border-left:none;">
+        <div class="layer-name" style="font-family:var(--mono); font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--amber);">Contract Dimension</div>
+        <div class="layer-desc" style="font-family:var(--mono); font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-dim);">Status</div>
+        <div class="layer-export" style="font-family:var(--mono); font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-dim);">The Gap</div>
+        <div class="layer-legal"></div>
+      </div>
+      <div class="layer-card layer-ok">
+        <div class="layer-name">Data residency &amp; sovereignty</div>
+        <div class="layer-desc">Where data is stored, who can access it</div>
+        <div class="layer-export export-yes">Addressed</div>
+        <div class="layer-legal"></div>
+      </div>
+      <div class="layer-card layer-danger">
+        <div class="layer-name">Behavioral model ownership</div>
+        <div class="layer-desc">Who owns the patterns the agent derives about your workflows</div>
+        <div class="layer-export export-none">Not addressed</div>
+        <div class="layer-legal"></div>
+      </div>
+      <div class="layer-card layer-danger">
+        <div class="layer-name">Inference deletion rights</div>
+        <div class="layer-desc">Can you demand the agent forget what it learned about you?</div>
+        <div class="layer-export export-none">Not addressed</div>
+        <div class="layer-legal"></div>
+      </div>
+      <div class="layer-card layer-warn">
+        <div class="layer-name">Portability on termination</div>
+        <div class="layer-desc">Data export exists; no export for learned behavioral context</div>
+        <div class="layer-export export-partial">Partially addressed</div>
+        <div class="layer-legal"></div>
+      </div>
+      <div class="layer-card layer-warn">
+        <div class="layer-name">Audit rights</div>
+        <div class="layer-desc">Auditable data handling; no audit of what the agent has learned about you</div>
+        <div class="layer-export export-partial">Partially addressed</div>
+        <div class="layer-legal"></div>
+      </div>
+      <div class="layer-card layer-danger">
+        <div class="layer-name">Competitive intelligence</div>
+        <div class="layer-desc">No clause preventing provider from training on aggregate workflow patterns</div>
+        <div class="layer-export export-none">Rarely addressed</div>
+        <div class="layer-legal"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-inner reveal">
+    <h3 class="subhead">The Timeline <em>Pressure</em></h3>
+    <p class="body-text"><strong>Convergence.</strong> Every major lab&mdash;Anthropic, OpenAI, Google, Microsoft&mdash;is building always-on persistent agents. By mid-2027, the persistent agent will be the default enterprise AI interface, not an option.</p>
+    <p class="body-text"><strong>Compounding.</strong> Behavioral lock-in compounds daily. Enterprises deploying in H2 2026 without telemetry terms will face material switching costs by H1 2027.</p>
+    <p class="body-text"><strong>Contract cycles.</strong> Enterprise AI contracts are typically 12&ndash;36 months. Contracts signed in 2026 without telemetry provisions will not be renegotiable until 2028 or 2029&mdash;by which time the behavioral lock-in will be two to three years deep.</p>
+
+    <div class="pullquote">The negotiating leverage exists right now, before deployment, while providers still need your adoption. It will not exist after twelve months of accumulated behavioral context.</div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     V. THE STRUCTURAL INTERVENTION
+══════════════════════════════════════════ -->
+<section class="section" style="background:var(--bg2); border-top:1px solid var(--border);">
+  <div class="section-inner reveal">
+    <div class="section-num">V</div>
+    <h2 class="headline">The Structural <em>Intervention</em></h2>
+    <p class="body-text">Policy alone cannot solve an architecture problem. Data portability regulations did not prevent cloud lock-in&mdash;they made migration legally possible while leaving it technically expensive. The same dynamic will play out with behavioral telemetry unless the intervention is structural.</p>
+    <p class="body-text">Whether or not an enterprise adopts the Autonomaton Pattern, the architectural principles establish a minimum standard for any AI platform contract signed in 2026:</p>
+  </div>
+</section>
+
+<section class="section" style="background:var(--bg2); border-bottom:1px solid var(--border);">
+  <div class="section-wide reveal">
+    <div class="demand-list">
+      <div class="demand-card">
+        <div class="demand-num">1</div>
+        <div class="demand-body">
+          <div class="demand-title">Behavioral Telemetry Ownership</div>
+          <div class="demand-desc">The enterprise owns all derived behavioral models&mdash;not just the raw data that generated them. Workflow patterns, priority models, communication style inferences, and decision-timing data belong to the customer.</div>
+        </div>
+      </div>
+      <div class="demand-card">
+        <div class="demand-num">2</div>
+        <div class="demand-body">
+          <div class="demand-title">Structured Export on Termination</div>
+          <div class="demand-desc">On contract termination, the provider must deliver behavioral context in a structured, machine-readable format. The format must be sufficient for a competing system to reproduce the agent&rsquo;s learned behavior.</div>
+        </div>
+      </div>
+      <div class="demand-card">
+        <div class="demand-num">3</div>
+        <div class="demand-body">
+          <div class="demand-title">Inference Audit Rights</div>
+          <div class="demand-desc">The enterprise has the right to audit not just what data the agent accessed, but what inferences it drew&mdash;what patterns it detected, what priorities it assigned, what behavioral models it constructed.</div>
+        </div>
+      </div>
+      <div class="demand-card">
+        <div class="demand-num">4</div>
+        <div class="demand-body">
+          <div class="demand-title">Inference Deletion</div>
+          <div class="demand-desc">Beyond data deletion, the enterprise can demand deletion of specific behavioral inferences. If the agent learned something about your organizational patterns that you don&rsquo;t want retained, you can remove it.</div>
+        </div>
+      </div>
+      <div class="demand-card">
+        <div class="demand-num">5</div>
+        <div class="demand-body">
+          <div class="demand-title">Aggregate Learning Restrictions</div>
+          <div class="demand-desc">The contract must prohibit the provider from using your organization&rsquo;s behavioral telemetry to train models, improve products for other customers, or generate aggregate intelligence about your industry vertical.</div>
+        </div>
+      </div>
+      <div class="demand-card">
+        <div class="demand-num">6</div>
+        <div class="demand-body">
+          <div class="demand-title">Architecture Disclosure</div>
+          <div class="demand-desc">The provider must disclose the architecture of the behavioral learning system: what is captured, how it is stored, what is derived, and what would be lost on termination.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     VI. THE PRECEDENT
+══════════════════════════════════════════ -->
+<section class="section">
+  <div class="section-inner reveal">
+    <div class="section-num">VI</div>
+    <h2 class="headline">The <em>Precedent</em></h2>
+    <p class="body-text">This has happened before. TCP/IP was not built by AT&amp;T. The shipping container was not designed by a shipping line. The entities that benefit most from proprietary infrastructure never build the open standard that replaces it. The open standard comes from outside the incumbents&mdash;from an institution with no revenue model tied to lock-in.</p>
+    <p class="body-text">The Linux Foundation generates $300 million per year. Red Hat is a $5 billion company. Neither writes code. They write standards, certify compliance, convene ecosystems, and publish the research that keeps the open-source supply chain credible. The Grove Foundation runs the same playbook for cognitive sovereignty that Linux ran for compute sovereignty.</p>
+
+    <h3 class="subhead">The Regulatory <em>Reframe</em></h3>
+    <p class="body-text">Current AI regulation asks the wrong question. The EU AI Act, Executive Order 14110, and most regulatory frameworks focus on: which model did you use? What data did it train on? Is the output biased? These are important questions. They are not the structural question.</p>
+    <p class="body-text">The structural question is: <strong>how is the system governed?</strong> Who controls the routing? Who owns the telemetry? Who can audit the behavioral model? Who can port it to a competitor?</p>
+    <p class="body-text">An open governance standard published under CC BY 4.0 cannot be captured by a single vendor. It cannot be preempted by regulation because it is already in the public commons. It creates the structural condition for a competitive market in AI agents&mdash;a market where switching costs are bounded by architecture, not compounded by behavioral lock-in.</p>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     VII. THE WINDOW
+══════════════════════════════════════════ -->
+<section class="section" style="background:var(--bg2); border-top:1px solid var(--border); border-bottom:1px solid var(--border);">
+  <div class="section-inner reveal">
+    <div class="section-num">VII</div>
+    <h2 class="headline">The <em>Window</em></h2>
+    <p class="body-text">The industry is in a transition between two eras. The era of model competition&mdash;benchmarks, context windows, training runs&mdash;is giving way to the era of persistence competition: who owns the always-on layer, the agent that accumulates context across every session and becomes harder to leave every day.</p>
+    <p class="body-text">The margins between frontier models have compressed to the point where the model itself is no longer the primary competitive axis. The strategic logic has shifted: stop winning on model releases and start winning on the layer that makes customers sticky regardless of which model sits underneath. The persistent agent layer&mdash;the thing that holds your memory, your context, your workflows&mdash;is the actual product. The model is the loss leader.</p>
+    <p class="body-text">This is the moment&mdash;right now, in 2026&mdash;when the terms get set. The contracts being signed this year will determine whether enterprise AI operates on open architectural standards with portable behavioral context, or on proprietary platforms where the deepest form of organizational intelligence ever generated is locked inside a single provider&rsquo;s infrastructure.</p>
+
+    <div class="pullquote">The telemetry layer is the new moat. The question is whether you&rsquo;re building the moat or trapped inside it.</div>
+
+    <p class="body-text">The Autonomaton Pattern is not the only answer. It is the open answer. Three files and a loop. A routing config, a zones schema, a structured telemetry log, and a pipeline that traverses them in order. It proves that sovereign, portable, auditable AI governance is not a theoretical aspiration. It is an architectural property you can implement this quarter.</p>
+    <p class="body-text">The window is open. It is closing. And every enterprise that deploys an always-on agent without negotiating telemetry terms is making a decision they will spend years trying to reverse.</p>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     DOWNLOAD + FOOTER
+══════════════════════════════════════════ -->
+<section class="section">
+  <div class="section-inner">
+    <div class="download-bar">
+      <a href="/docs/the-telemetry-trap-grove-white-paper.pdf" download>Download PDF</a>
+      <a href="/docs/the-telemetry-trap-grove-white-paper.docx" download>Download DOCX</a>
+      <span class="download-meta">CC BY 4.0 &middot; April 2026 &middot; The Grove Foundation</span>
+    </div>
+    <div class="divider" style="margin-top:48px;"></div>
+    <p style="font-family:var(--mono); font-size:10px; color:var(--text-dim); letter-spacing:0.08em; line-height:1.7; margin-top:24px;"><strong style="color:var(--amber-dim);">The Grove Foundation</strong> publishes open architectural standards for AI governance. The Autonomaton Pattern is available under CC BY 4.0 at <a href="/" style="color:var(--amber-dim); text-decoration:none; border-bottom:1px solid rgba(139,61,16,0.5);">the-grove.ai</a>.</p>
+    <p style="font-family:var(--mono); font-size:10px; color:var(--text-dim); letter-spacing:0.08em; margin-top:8px;">Contact: <a href="mailto:jim@the-grove.ai" style="color:var(--amber-dim); text-decoration:none; border-bottom:1px solid rgba(139,61,16,0.5);">jim@the-grove.ai</a></p>
+  </div>
+</section>
+
+<script>
+var ro=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');ro.unobserve(e.target);}});},{threshold:0.08});
+document.querySelectorAll('.reveal').forEach(function(el){ro.observe(el);});
+</script>
+</body>
+</html>
