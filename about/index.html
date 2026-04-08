@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About — The Grove Foundation</title>
+<meta name="description" content="The Grove Foundation publishes open architectural standards for AI governance. Organized as a not-for-profit business league within the meaning of Section 501(c)(6) of the Internal Revenue Code.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fragment+Mono:ital@0;1&family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --amber:#D4621A; --amber-bright:#F07030; --amber-dim:#8B3D10;
+  --amber-glow:rgba(212,98,26,0.12);
+  --bg:#080808; --bg2:#0f0f0f; --bg3:#161616; --bg4:#1a1a1a;
+  --border:#252525; --border-light:#333;
+  --text:#E8E2D9; --text-dim:#7A736A; --text-mid:#B0A898;
+  --mono:'Fragment Mono', monospace;
+  --serif:'Instrument Serif', Georgia, serif;
+  --sans:'DM Sans', sans-serif;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body { background:var(--bg); color:var(--text); font-family:var(--sans); -webkit-font-smoothing:antialiased; overflow-x:hidden; line-height:1.6; }
+body::before { content:''; position:fixed; inset:0; background-image:linear-gradient(var(--border) 1px, transparent 1px),linear-gradient(90deg, var(--border) 1px, transparent 1px); background-size:40px 40px; opacity:0.15; pointer-events:none; z-index:0; }
+nav { position:fixed; top:0; left:0; right:0; z-index:100; padding:0 48px; height:56px; display:flex; justify-content:space-between; align-items:center; background:rgba(8,8,8,0.94); backdrop-filter:blur(16px); border-bottom:1px solid rgba(37,37,37,0.5); }
+.nav-logo { font-family:var(--mono); font-size:11px; letter-spacing:0.2em; text-transform:uppercase; color:var(--amber-dim); text-decoration:none; }
+.nav-links { display:flex; gap:32px; }
+.nav-links a { font-family:var(--mono); font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-dim); text-decoration:none; padding:4px 0; border-bottom:1px solid transparent; transition:all 0.2s; }
+.nav-links a:hover, .nav-links a.active { color:var(--amber); border-bottom-color:var(--amber); }
+.nav-links a.nav-ext { color:var(--amber-dim); border:1px solid var(--amber-dim); padding:3px 10px; margin-left:8px; border-bottom:1px solid var(--amber-dim); }
+.nav-links a.nav-ext:hover { color:var(--amber); border-color:var(--amber); background:rgba(212,98,26,0.08); }
+.section { position:relative; z-index:1; }
+.section-inner { max-width:760px; margin:0 auto; padding:100px 48px 80px; }
+.eyebrow { font-family:var(--mono); font-size:11px; letter-spacing:0.25em; text-transform:uppercase; color:var(--amber); margin-bottom:20px; }
+.display { font-family:var(--serif); font-weight:400; font-size:clamp(44px,5.5vw,72px); line-height:1.06; color:var(--text); margin-bottom:24px; letter-spacing:-0.02em; }
+.display em { color:var(--amber); font-style:italic; }
+.lead { font-weight:300; font-size:clamp(15px,1.5vw,17px); line-height:1.75; color:var(--text-mid); max-width:700px; margin-bottom:32px; }
+.body-text { font-weight:300; font-size:15px; line-height:1.75; color:var(--text-mid); margin-bottom:20px; }
+.divider { width:48px; height:1px; background:var(--amber); margin:32px 0; }
+.pullquote { font-family:var(--serif); font-size:clamp(20px,2.4vw,28px); font-style:italic; color:var(--text); line-height:1.4; border-left:2px solid var(--amber); padding-left:24px; margin:40px 0; }
+/* ── ROADMAP CARDS ── */
+.roadmap { display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--border); border:1px solid var(--border); margin:40px 0; }
+.roadmap-card { background:var(--bg2); padding:32px 28px; }
+.roadmap-act { font-family:var(--mono); font-size:11px; letter-spacing:0.2em; text-transform:uppercase; color:var(--amber); margin-bottom:12px; }
+.roadmap-title { font-family:var(--serif); font-size:22px; color:var(--text); margin-bottom:10px; line-height:1.2; }
+.roadmap-desc { font-size:13px; color:var(--text-mid); font-weight:300; line-height:1.6; }
+.roadmap-status { font-family:var(--mono); font-size:10px; letter-spacing:0.08em; color:var(--text-dim); margin-top:16px; }
+.roadmap-status.live { color:var(--amber); }
+.roadmap-card a { color:var(--amber); text-decoration:none; border-bottom:1px solid var(--amber-dim); }
+/* ── PEOPLE ── */
+.people-grid { display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--border); border:1px solid var(--border); margin:40px 0; }
+.person { background:var(--bg2); padding:28px; }
+.person-role { font-family:var(--mono); font-size:10px; letter-spacing:0.15em; text-transform:uppercase; color:var(--amber); margin-bottom:8px; }
+.person-name { font-family:var(--serif); font-size:20px; color:var(--text); margin-bottom:6px; }
+.person-bio { font-size:13px; color:var(--text-mid); font-weight:300; line-height:1.6; }
+/* ── FOOTER ── */
+.site-footer { position:relative; z-index:1; border-top:1px solid var(--border); }
+.footer-inner { max-width:760px; margin:0 auto; padding:48px 48px 40px; }
+.optin { border:1px solid var(--amber-dim); padding:24px 28px; margin-bottom:32px; display:flex; align-items:center; gap:20px; flex-wrap:wrap; }
+.optin-label { font-family:var(--mono); font-size:11px; letter-spacing:0.15em; text-transform:uppercase; color:var(--amber); white-space:nowrap; }
+.optin-form { display:flex; gap:8px; flex:1; min-width:240px; }
+.optin-form input { flex:1; background:var(--bg); border:1px solid var(--border-light); color:var(--text); font-family:var(--mono); font-size:12px; padding:8px 12px; outline:none; }
+.optin-form input::placeholder { color:var(--text-dim); }
+.optin-form input:focus { border-color:var(--amber-dim); }
+.optin-form button { background:var(--amber); color:var(--bg); font-family:var(--mono); font-size:10px; letter-spacing:0.12em; text-transform:uppercase; border:none; padding:8px 20px; cursor:pointer; transition:background 0.2s; white-space:nowrap; }
+.optin-form button:hover { background:var(--amber-bright); }
+.footer-meta { font-family:var(--mono); font-size:11px; color:var(--text-dim); line-height:2; }
+.footer-meta a { color:var(--amber); text-decoration:none; border-bottom:1px solid var(--amber-dim); }
+.footer-nav { display:flex; gap:24px; margin-top:20px; flex-wrap:wrap; }
+.footer-nav a { font-family:var(--mono); font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-dim); text-decoration:none; transition:color 0.2s; }
+.footer-nav a:hover { color:var(--amber); }
+.legal { font-family:var(--sans); font-size:11px; color:var(--text-dim); font-weight:300; line-height:1.6; margin-top:24px; padding-top:20px; border-top:1px solid var(--border); }
+@media(max-width:768px) { nav { padding:0 20px; } .nav-links { gap:16px; } .nav-links a { font-size:9px; } .section-inner { padding:80px 24px 60px; } .roadmap { grid-template-columns:1fr; } .people-grid { grid-template-columns:1fr; } .optin { flex-direction:column; align-items:stretch; } .footer-inner { padding:36px 24px 32px; } }
+</style>
+</head>
+<body>
+<nav>
+  <a href="/" class="nav-logo">The Grove Foundation</a>
+  <div class="nav-links">
+    <a href="/">Thesis</a>
+    <a href="/observations">Observations</a>
+    <a href="/lambda">Standings</a>
+    <a href="/standards">Open Standards</a>
+    <a href="/papers/telemetry-trap">Papers</a>
+    <a href="https://the-grove.ai/autonomaton" target="_blank" rel="noopener noreferrer" class="nav-ext">Playground &nearr;</a>
+    <a href="/about" class="active">About</a>
+  </div>
+</nav>
+
+<section class="section">
+  <div class="section-inner" style="padding-top:120px;">
+    <div class="eyebrow">The Foundation</div>
+    <h1 class="display">What <em>We Are</em></h1>
+    <p class="lead">The Grove Foundation exists to protect, preserve, and enhance human flourishing in the age of artificial intelligence.</p>
+    <div class="divider"></div>
+    <p class="body-text">We publish open architectural standards that ensure individuals and institutions retain sovereignty over their cognitive tools. Our core thesis: the architecture of AI systems determines whether those systems expand or collapse human possibility. Centralized architectures concentrate control. Distributed architectures distribute agency. We champion the distributed path.</p>
+
+    <p class="body-text">The Grove Foundation does not choose the future. We protect the conditions under which futures can be chosen &mdash; freely, by the people doing the thinking. Not the people with the biggest checkbooks.</p>
+
+    <div class="pullquote">Studying and promoting world-changing patterns that tip the balance toward human flourishing.</div>
+
+    <p class="body-text">We are a standards body, not a software company. We publish the patterns, score the implementations, and fund the research. Our standards are released under <a href="https://creativecommons.org/licenses/by/4.0/" style="color:var(--amber); text-decoration:none; border-bottom:1px solid var(--amber-dim);" target="_blank" rel="noopener noreferrer">CC BY 4.0</a> because the thesis requires it. Distributed cognition that depends on a single vendor&rsquo;s permission is not distributed.</p>
+  </div>
+</section>
+
+<section class="section" style="border-top:1px solid var(--border);">
+  <div class="section-inner">
+    <div class="eyebrow">The Roadmap</div>
+    <h2 class="display" style="font-size:clamp(32px,4vw,48px);">Three <em>Acts</em></h2>
+    <p class="body-text" style="margin-bottom:8px;">The same architectural pattern, applied at three scales. Each act builds on the one before it.</p>
+
+    <div class="roadmap">
+      <div class="roadmap-card">
+        <div class="roadmap-act">Act I</div>
+        <div class="roadmap-title">The Autonomaton</div>
+        <div class="roadmap-desc">Individual cognitive sovereignty. A governance architecture for AI workflows that ensures humans retain structural control over their tools. Five-stage pipeline, zone model, skill flywheel.</div>
+        <div class="roadmap-status live"><a href="/standards/001">GRV-001 Published &rarr;</a></div>
+      </div>
+      <div class="roadmap-card">
+        <div class="roadmap-act">Act II</div>
+        <div class="roadmap-title">The Trellis</div>
+        <div class="roadmap-desc">Domain-scale knowledge architecture. Declarative exploration infrastructure where domain experts compose cognitive workflows through configuration, not code.</div>
+        <div class="roadmap-status">In development</div>
+      </div>
+      <div class="roadmap-card">
+        <div class="roadmap-act">Act III</div>
+        <div class="roadmap-title">The Knowledge Commons</div>
+        <div class="roadmap-desc">Distributed cognitive economy. A network protocol where sovereign nodes exchange knowledge, expertise compounds, and no single entity controls the questions or the answers.</div>
+        <div class="roadmap-status">On the horizon</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="border-top:1px solid var(--border);">
+  <div class="section-inner">
+    <div class="eyebrow">People</div>
+    <h2 class="display" style="font-size:clamp(32px,4vw,48px);"><em>Leadership</em></h2>
+
+    <div class="people-grid">
+      <div class="person">
+        <div class="person-role">Founder &amp; Executive Director</div>
+        <div class="person-name">Jim Calhoun</div>
+        <div class="person-bio">Twenty years advising Fortune 500 brands on data, product, and growth strategy. Former Managing Director at Take Flight Advisors. Built the Autonomaton Pattern from the conviction that AI governance is an architecture problem, not a policy problem.</div>
+      </div>
+      <div class="person">
+        <div class="person-role">Advisor</div>
+        <div class="person-name">Clement Mok</div>
+        <div class="person-bio">Design authority and former Creative Director at Apple. Brings the discipline of design philosophy to the Foundation&rsquo;s standards work &mdash; ensuring the architecture is clear, not merely clever.</div>
+      </div>
+    </div>
+
+    <p class="body-text" style="margin-top:24px; font-size:13px;">Indianapolis, Indiana</p>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="optin">
+      <div class="optin-label">Follow the pattern</div>
+      <form class="optin-form" action="https://formspree.io/f/xcontact" method="POST">
+        <input type="email" name="email" placeholder="your@email.com" required>
+        <button type="submit">Subscribe</button>
+      </form>
+    </div>
+
+    <div class="footer-meta">
+      The Grove Foundation &middot; Indianapolis<br>
+      <a href="mailto:jim@the-grove.ai">jim@the-grove.ai</a><br>
+      CC BY 4.0 &middot; &copy; 2026 The Grove Foundation
+    </div>
+
+    <div class="footer-nav">
+      <a href="/">Thesis</a>
+      <a href="/observations">Observations</a>
+      <a href="/lambda">Standings</a>
+      <a href="/standards">Open Standards</a>
+      <a href="/papers/telemetry-trap">Papers</a>
+      <a href="/about">About</a>
+    </div>
+
+    <p class="legal">The Grove Foundation Inc. is a not-for-profit business league within the meaning of Section 501(c)(6) of the Internal Revenue Code of 1986, as amended.</p>
+  </div>
+</footer>
+
+</body>
+</html>

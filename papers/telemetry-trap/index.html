@@ -489,6 +489,32 @@ nav { position:fixed; top:0; left:0; right:0; z-index:100; padding:0 48px; heigh
   </div>
 </section>
 
+<footer style="position:relative; z-index:1; border-top:1px solid var(--border);">
+  <div style="max-width:760px; margin:0 auto; padding:48px 48px 40px;">
+    <div style="border:1px solid var(--amber-dim); padding:24px 28px; margin-bottom:32px; display:flex; align-items:center; gap:20px; flex-wrap:wrap;">
+      <div style="font-family:var(--mono); font-size:11px; letter-spacing:0.15em; text-transform:uppercase; color:var(--amber); white-space:nowrap;">Follow the pattern</div>
+      <form style="display:flex; gap:8px; flex:1; min-width:240px;" action="https://formspree.io/f/xcontact" method="POST">
+        <input type="email" name="email" placeholder="your@email.com" required style="flex:1; background:var(--bg); border:1px solid var(--border-light); color:var(--text); font-family:var(--mono); font-size:12px; padding:8px 12px; outline:none;">
+        <button type="submit" style="background:var(--amber); color:var(--bg); font-family:var(--mono); font-size:10px; letter-spacing:0.12em; text-transform:uppercase; border:none; padding:8px 20px; cursor:pointer;">Subscribe</button>
+      </form>
+    </div>
+    <div style="font-family:var(--mono); font-size:11px; color:var(--text-dim); line-height:2;">
+      The Grove Foundation &middot; Indianapolis<br>
+      <a href="mailto:jim@the-grove.ai" style="color:var(--amber); text-decoration:none; border-bottom:1px solid var(--amber-dim);">jim@the-grove.ai</a><br>
+      CC BY 4.0 &middot; &copy; 2026 The Grove Foundation
+    </div>
+    <div style="display:flex; gap:24px; margin-top:20px; flex-wrap:wrap;">
+      <a href="/" style="font-family:var(--mono); font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-dim); text-decoration:none;">Thesis</a>
+      <a href="/observations" style="font-family:var(--mono); font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-dim); text-decoration:none;">Observations</a>
+      <a href="/lambda" style="font-family:var(--mono); font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-dim); text-decoration:none;">Standings</a>
+      <a href="/standards" style="font-family:var(--mono); font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-dim); text-decoration:none;">Open Standards</a>
+      <a href="/papers/telemetry-trap" style="font-family:var(--mono); font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-dim); text-decoration:none;">Papers</a>
+      <a href="/about" style="font-family:var(--mono); font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-dim); text-decoration:none;">About</a>
+    </div>
+    <p style="font-family:var(--sans); font-size:11px; color:var(--text-dim); font-weight:300; line-height:1.6; margin-top:24px; padding-top:20px; border-top:1px solid var(--border);">The Grove Foundation Inc. is a not-for-profit business league within the meaning of Section 501(c)(6) of the Internal Revenue Code of 1986, as amended.</p>
+  </div>
+</footer>
+
 <script>
 var ro=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');ro.unobserve(e.target);}});},{threshold:0.08});
 document.querySelectorAll('.reveal').forEach(function(el){ro.observe(el);});
