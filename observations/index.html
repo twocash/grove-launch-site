@@ -159,12 +159,14 @@ canvas { display:block; width:100%; }
   letter-spacing:0.1em; margin-top:24px;
 }
 .scroll-cue {
-  position:absolute; bottom:32px; left:50%; transform:translateX(-50%);
-  font-family:var(--mono); font-size:10px; color:var(--text-dim);
-  letter-spacing:0.15em; text-transform:uppercase;
-  animation:pulse 2s ease-in-out infinite;
+  position:absolute; bottom:36px; left:50%; transform:translateX(-50%);
+  display:flex; flex-direction:column; align-items:center; gap:6px;
 }
-@keyframes pulse { 0%,100%{opacity:0.3;} 50%{opacity:0.8;} }
+.scroll-cue span {
+  font-family:var(--mono); font-size:9px; color:var(--amber-dim);
+  letter-spacing:0.2em; text-transform:uppercase;
+}
+.scroll-cue svg { opacity:0.6; }
 /* ── G7 COUNTRY ROWS ── */
 .country-grid { display:flex; flex-direction:column; gap:2px; }
 .country-row {
@@ -477,7 +479,7 @@ input[type="range"]::-webkit-slider-thumb { -webkit-appearance:none; width:16px;
     <div class="divider"></div>
     <p class="hero-meta"><a href="/" style="color:var(--amber-dim); text-decoration:none; border-bottom:1px solid var(--amber-dim);">&larr; Read the thesis</a> &middot; CC BY 4.0</p>
   </div>
-  <div class="scroll-cue">&darr;</div>
+  <div class="scroll-cue"><span>Scroll</span><svg width="16" height="10" viewBox="0 0 16 10" fill="none"><path d="M1 1L8 8L15 1" stroke="#8B3D10" stroke-width="1.5"/></svg></div>
 </section>
 <!-- ═══════════════════════════════════════════════════
      SECTION 1B: THESIS BODY — G7 TABLE + ARGUMENTS

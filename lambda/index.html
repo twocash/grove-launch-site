@@ -143,6 +143,9 @@ nav { position:fixed; top:0; left:0; right:0; z-index:100; padding:0 48px; heigh
 /* ── HERO ── */
 #hero { min-height:70vh; display:flex; flex-direction:column; justify-content:center; position:relative; background:radial-gradient(ellipse at 20% 70%, rgba(212,98,26,0.08) 0%, transparent 55%); }
 #hero .section-inner { padding-top:80px; padding-bottom:80px; }
+.scroll-cue { position:absolute; bottom:36px; left:50%; transform:translateX(-50%); display:flex; flex-direction:column; align-items:center; gap:6px; }
+.scroll-cue span { font-family:var(--mono); font-size:9px; color:var(--amber-dim); letter-spacing:0.2em; text-transform:uppercase; }
+.scroll-cue svg { opacity:0.6; }
 .hero-meta { font-family:var(--mono); font-size:10px; color:var(--text-dim); letter-spacing:0.1em; margin-top:24px; }
 .hero-meta a { color:var(--amber-dim); text-decoration:none; border-bottom:1px solid var(--amber-dim); }
 #landscape { background:var(--bg2); border-top:1px solid var(--border); border-bottom:1px solid var(--border); }
@@ -194,6 +197,7 @@ nav { position:fixed; top:0; left:0; right:0; z-index:100; padding:0 48px; heigh
     <div class="divider"></div>
     <p class="hero-meta">Last scored: March 2026 &middot; Next update: June 2026 &middot; 96 sources &middot; 8 patterns &middot; 4 historical calibrations &middot; CC BY 4.0</p>
   </div>
+  <div class="scroll-cue"><span>Scroll</span><svg width="16" height="10" viewBox="0 0 16 10" fill="none"><path d="M1 1L8 8L15 1" stroke="#8B3D10" stroke-width="1.5"/></svg></div>
 </section>
 <!-- ═══════════════════════════════════════
      STRUCTURAL SHARE
