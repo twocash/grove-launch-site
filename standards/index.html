@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Open Standards — The Grove Foundation</title>
+<meta name="description" content="Open architectural standards for AI governance published under CC BY 4.0 by the Grove Foundation.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fragment+Mono:ital@0;1&family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --amber:#D4621A; --amber-bright:#F07030; --amber-dim:#8B3D10;
+  --amber-glow:rgba(212,98,26,0.12);
+  --bg:#080808; --bg2:#0f0f0f; --bg3:#161616; --bg4:#1a1a1a;
+  --border:#252525; --border-light:#333;
+  --text:#E8E2D9; --text-dim:#7A736A; --text-mid:#B0A898;
+  --mono:'Fragment Mono', monospace;
+  --serif:'Instrument Serif', Georgia, serif;
+  --sans:'DM Sans', sans-serif;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body { background:var(--bg); color:var(--text); font-family:var(--sans); -webkit-font-smoothing:antialiased; overflow-x:hidden; line-height:1.6; }
+body::before { content:''; position:fixed; inset:0; background-image:linear-gradient(var(--border) 1px, transparent 1px),linear-gradient(90deg, var(--border) 1px, transparent 1px); background-size:40px 40px; opacity:0.15; pointer-events:none; z-index:0; }
+nav { position:fixed; top:0; left:0; right:0; z-index:100; padding:0 48px; height:56px; display:flex; justify-content:space-between; align-items:center; background:rgba(8,8,8,0.94); backdrop-filter:blur(16px); border-bottom:1px solid rgba(37,37,37,0.5); }
+.nav-logo { font-family:var(--mono); font-size:11px; letter-spacing:0.2em; text-transform:uppercase; color:var(--amber-dim); text-decoration:none; }
+.nav-links { display:flex; gap:32px; }
+.nav-links a { font-family:var(--mono); font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-dim); text-decoration:none; padding:4px 0; border-bottom:1px solid transparent; transition:all 0.2s; }
+.nav-links a:hover, .nav-links a.active { color:var(--amber); border-bottom-color:var(--amber); }
+.nav-links a.nav-ext { color:var(--amber-dim); border:1px solid var(--amber-dim); padding:3px 10px; margin-left:8px; border-bottom:1px solid var(--amber-dim); }
+.nav-links a.nav-ext:hover { color:var(--amber); border-color:var(--amber); background:rgba(212,98,26,0.08); }
+.section { position:relative; z-index:1; }
+.section-inner { max-width:760px; margin:0 auto; padding:120px 48px 100px; }
+.eyebrow { font-family:var(--mono); font-size:11px; letter-spacing:0.25em; text-transform:uppercase; color:var(--amber); margin-bottom:20px; }
+.display { font-family:var(--serif); font-weight:400; font-size:clamp(44px,5.5vw,72px); line-height:1.06; color:var(--text); margin-bottom:24px; letter-spacing:-0.02em; }
+.display em { color:var(--amber); font-style:italic; }
+.lead { font-weight:300; font-size:clamp(15px,1.5vw,17px); line-height:1.75; color:var(--text-mid); max-width:700px; margin-bottom:32px; }
+.body-text { font-weight:300; font-size:15px; line-height:1.75; color:var(--text-mid); margin-bottom:20px; }
+.divider { width:48px; height:1px; background:var(--amber); margin:32px 0; }
+/* ── STANDARDS CARDS ── */
+.standards-list { display:grid; gap:1px; background:var(--border); border:1px solid var(--border); margin:40px 0; }
+.standard-card { display:grid; grid-template-columns:80px 1fr; background:var(--bg2); text-decoration:none; transition:background 0.2s; }
+.standard-card:hover { background:var(--bg3); }
+.standard-id { display:flex; align-items:center; justify-content:center; font-family:var(--mono); font-size:12px; letter-spacing:0.1em; color:var(--amber); background:rgba(212,98,26,0.04); border-right:1px solid var(--border); }
+.standard-body { padding:28px 32px; }
+.standard-title { font-family:var(--serif); font-size:clamp(20px,2.2vw,26px); color:var(--text); margin-bottom:6px; line-height:1.2; }
+.standard-title em { color:var(--amber); font-style:italic; }
+.standard-subtitle { font-family:var(--sans); font-size:13px; color:var(--text-mid); font-weight:300; margin-bottom:12px; line-height:1.5; }
+.standard-meta { font-family:var(--mono); font-size:10px; color:var(--text-dim); letter-spacing:0.08em; }
+.standard-arrow { font-family:var(--mono); color:var(--amber-dim); margin-left:8px; transition:margin-left 0.2s; }
+.standard-card:hover .standard-arrow { margin-left:14px; color:var(--amber); }
+.footer-text { font-size:13px; color:var(--text-dim); margin-top:48px; }
+.footer-text a { color:var(--amber); text-decoration:none; border-bottom:1px solid var(--amber-dim); }
+@media(max-width:768px) { nav { padding:0 20px; } .nav-links { gap:16px; } .nav-links a { font-size:9px; } .section-inner { padding:80px 24px 60px; } .standard-card { grid-template-columns:56px 1fr; } }
+</style>
+</head>
+<body>
+<nav>
+  <a href="/" class="nav-logo">The Grove Foundation</a>
+  <div class="nav-links">
+    <a href="/">Thesis</a>
+    <a href="/observations">Observations</a>
+    <a href="/lambda">Standings</a>
+    <a href="/standards" class="active">Open Standards</a>
+    <a href="/papers/telemetry-trap">Papers</a>
+    <a href="https://the-grove.ai/autonomaton" target="_blank" rel="noopener noreferrer" class="nav-ext">Playground &nearr;</a>
+    <a href="/about">About</a>
+  </div>
+</nav>
+
+<section class="section" style="min-height:100vh; display:flex; flex-direction:column; justify-content:center;">
+  <div class="section-inner" style="padding-top:100px;">
+    <div class="eyebrow">Open Standards &middot; CC BY 4.0</div>
+    <h1 class="display">Open <em>Standards</em></h1>
+    <p class="lead">Architectural specifications for AI governance, published under Creative Commons for anyone to implement. The pattern is the product. The architecture is the intervention.</p>
+    <div class="divider"></div>
+
+    <div class="standards-list">
+      <a href="/standards/001" class="standard-card">
+        <div class="standard-id">001</div>
+        <div class="standard-body">
+          <div class="standard-title">The Autonomaton <em>Pattern</em></div>
+          <div class="standard-subtitle">Toward Self-Authoring Software Systems. A five-stage invariant pipeline, tiered Cognitive Router, Green/Yellow/Red zone governance, and a Skill Flywheel that makes the system cheaper, smarter, and more sovereign with every interaction.</div>
+          <div class="standard-meta">The Pattern &middot; v1.0 &middot; March 2026 <span class="standard-arrow">&rarr;</span></div>
+        </div>
+      </a>
+      <a href="/standards/002" class="standard-card">
+        <div class="standard-id">002</div>
+        <div class="standard-body">
+          <div class="standard-title">TCP/IP for the <em>Cognitive Layer</em></div>
+          <div class="standard-subtitle">The Autonomaton Pattern occupies the same structural position for distributed cognition that TCP/IP occupied for distributed networking. Principle-by-principle mapping across six dimensions, composition primitives, and the economic case for distributed cognitive infrastructure.</div>
+          <div class="standard-meta">Architectural Theory &middot; Working Draft &middot; March 2026 <span class="standard-arrow">&rarr;</span></div>
+        </div>
+      </a>
+    </div>
+
+    <p class="body-text">These standards are published under <a href="https://creativecommons.org/licenses/by/4.0/" style="color:var(--amber); text-decoration:none; border-bottom:1px solid var(--amber-dim);" target="_blank" rel="noopener noreferrer">CC BY 4.0</a> because the thesis requires it. Distributed cognition that depends on a single vendor&rsquo;s implementation is not distributed.</p>
+    <p class="footer-text" style="margin-top:64px; font-family:var(--mono); font-size:11px;">the-grove.ai &middot; &copy; 2026 The Grove Foundation</p>
+  </div>
+</section>
+</body>
+</html>
