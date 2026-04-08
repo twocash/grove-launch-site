@@ -1,109 +1,86 @@
-# Grove Launch Site — Deployment Session
+# Grove Launch Site — Session Continuation
 
-## Objective
-Publish the new Grove Foundation website to `the-grove.ai` (root domain). Archive the current site without deleting anything. Preserve the `/autonomaton/` playground as-is.
+## What happened last session
 
-## Current Architecture
+We expanded the Standings page (`/lambda`) from a basic scoreboard into the definitive Λ methodology page. Seven commits across the session:
 
-### Repositories & Vercel Projects
+### Nav & cleanup
+* Unified nav across all three pages: Thesis · Observations · Standings · Open Standards · Playground ↗ · About
+* Removed dead scoreboard JS from `/observations` (data array, renderBoard, stoggle — all orphaned after the scoreboard HTML was removed in a prior session)
+* Deleted build artifacts: `old-index-backup.html`, `trim_obs.py`, `build_lambda.py`, `landscape_extract.html`
 
-| Repo | Path | Vercel Project | Domain | Status |
-|------|------|---------------|--------|--------|
-| `grove-preview-hub` | `C:\GitHub\grove-preview-hub\` | `prj_2j0whel1WXsz74FDOTHXt9cyOZ6k` / `grove-preview-hub` | Currently serves `the-grove.ai` root | TO BE ARCHIVED |
-| `grove-autonomaton-pattern` | `C:\GitHub\grove-autonomaton-pattern\` | `prj_mvg3pJ4oiKqoL62Xc0rjZ1dxOeXN` / `grove-autonomaton-pattern` | `the-grove.ai/autonomaton` | DO NOT TOUCH |
-| `grove-launch-site` | `C:\GitHub\grove-launch-site\` | None — no git, no Vercel | Needs to become `the-grove.ai` root | NEW SITE |
+### Standings page expansion (`/lambda`)
+Added six new sections to transform a scoreboard into the full methodology page:
+1. **Structural Share** — Full-width 83%/17% sovereign vs. concentrated panel with bar chart
+2. **Dependency vs. Sovereignty profiles** — Renamed to "Centralized, API-First Architectures & Platform Bundles" vs. "Open Weight Models & Sovereign Architectures" (includes Apple Intelligence, ready for Gemma 4 breakout in Q2)
+3. **Historical Calibrations** — TCP/IP, Bitcoin, ISO Container, U.S. Metric System validation table
+4. **Enhanced Formula + Core Asymmetry** — Variable cards with Linear/Denominator badges, plus the "reduce friction by half, adoption quadruples" insight
+5. **Phase States** — Headline: "Adoption is not a gradient. It's a phase transition." Four-tier diagnostic (CTAs removed — descriptive only)
+6. **Methodology intro** — Grounded in Bass Diffusion, Granovetter threshold models, Arthur's increasing returns. No more "In its glory."
 
-### Vercel Org
-- Org ID: `team_odJBQTq9WJT64ceCXCYei9gl`
+### Critical data fix
+* **Meta Llama scores corrected** to match the Lambda 2.0 Recalculation Doc (`173S3JW6MoiLepP0fkZlu_LzbRYFxFeTolOKkhs127gU`):
+  - S: 0.70 → 0.60 (S1 downgraded for EU geofencing in Llama 4 license)
+  - β: 1.357 → 2.321 (β_ideo downgraded for Avocado closed-source pivot)
+  - Λ: 0.0104 → 0.0031 (collapsed from Sub-Critical to Structurally Inert)
+  - Rank: #2 → #4 (now below Apple Intelligence and Anthropic Claude)
+* Removed unverified falsifiable prediction (was deck language from preview hub, not from methodology docs)
+* Authoritative scoring source: Recalculation Doc Phase 1 Tab 1
 
-### What grove-preview-hub currently serves
-- `the-grove.ai/` → `index.html` (interactive sphere + confidential preview entry)
-- `the-grove.ai/preview` → `hub.html` via password (grove2026) — links to all decks
-- `the-grove.ai/lambda` → lambda scoreboard deck
-- `the-grove.ai/autonomaton` → served by SEPARATE Vercel project (grove-autonomaton-pattern), NOT by preview hub
-- Various deck routes: `/decks/architecture.html`, `/decks/thesis.html`, etc.
-- Has `X-Robots-Tag: noindex, nofollow` headers
-- Has password protection on preview
+### Home page
+* Added navigation paragraph to identity block linking to Observations, Standings, and Autonomaton Playground with the "dependency ratchet" framing
 
-### What grove-launch-site contains
-- Single file: `index.html` (~1048 lines) — complete, production-ready
-- Supporting content files in `/content/` and `/research/` (reference only, not served)
-- No build step required — static HTML, loads Google Fonts via CDN
-- All interactive JS (sphere, capture canvas, scoreboard) is inline
-- Links to `the-grove.ai/autonomaton` for the playground (external link, separate project)
+## What needs to happen next session
 
-## Deployment Plan
+### 1. Push to GitHub (blocked)
+The repo has no remote configured. `gh` CLI is authenticated under `understory-ip` which lacks CreateRepository permissions.
+**Action:** Either create `twocash/grove-launch-site` manually on GitHub, or re-auth `gh` under the twocash account. Then:
+```
+cd /d C:\GitHub\grove-launch-site
+git remote add origin https://github.com/twocash/grove-launch-site.git
+git push -u origin master
+```
 
-### Step 1: Audit current Vercel domain configuration
-Use Vercel MCP tools to understand:
-- How is `the-grove.ai` currently routed? Which project owns the root domain?
-- How is `the-grove.ai/autonomaton` routed? Is it a path rewrite in preview-hub's vercel.json, or a separate domain assignment?
-- Are there any other subdomains or path configurations?
+### 2. Build `/standards/001` — The Autonomaton Pattern publication
+This is the "school of thought" document — the anchor asset of the entire GTM plan. Nav link already exists but currently 404s.
+* Structure from project instructions: Problem → Lineage → Pattern (5-stage pipeline) → Principles (DEX pillars) → Reference Schemas → Zone Model → Flywheel → Implications
+* Format: Long-scroller HTML page in Grove design system, not a PDF
+* Quality gate: CTO, mid-career dev, and product leader each find something that changes how they think
+* License: CC BY 4.0
+* Source material: Pattern Document Draft 1.3 (PDF in project files), preview hub autonomaton deck, Trellis Architecture docs in project files
 
-### Step 2: Archive grove-preview-hub
-- Do NOT delete the repository or Vercel project
-- The decks are valuable reference material and may still be linked from Notion
-- Options:
-  a) Move the preview hub to a subdomain like `preview.the-grove.ai` or `archive.the-grove.ai`
-  b) Keep it deployed but remove the root domain assignment (it'll still be accessible via its `.vercel.app` URL)
-  c) Add a path prefix so old deck URLs still work (e.g., `/preview/decks/...`)
-- The preview hub has `noindex` headers already, so search engines won't care
-- Decide: do the deck URLs need to keep working? Jim may have shared links to specific decks with reviewers
+### 3. Build `/about` — Foundation page
+Nav link exists but currently 404s.
+* Content: 501(c)(6) status, mission, three-act vision (Autonomaton → DEX/Trellis → Knowledge Commons), advisors (Clement Mok confirmed), location (Indianapolis)
+* Keep it tight — institutional credibility page, not a marketing page
 
-### Step 3: Initialize grove-launch-site as a deployable project
-- `cd C:\GitHub\grove-launch-site`
-- `git init` + initial commit
-- Create a new GitHub repository (or use Vercel CLI direct deploy)
-- Add a `vercel.json` with appropriate config:
-  - NO noindex headers (this is the public site)
-  - Clean URLs if needed
-  - Consider: should `/content/` and `/research/` be served or blocked?
+### 4. Open task: Revisit Bluesky vs. Threads historical calibration
+The V1 methodology included Bluesky vs. Threads as a calibration case. Needs to be recalculated under V2 power law decay formula and geometric mean β. This is a separate task from the site build — capture it in Notion as a research item.
 
-### Step 4: Deploy grove-launch-site to Vercel
-- Create new Vercel project from the repo
-- Assign `the-grove.ai` root domain to this project
-- This will remove the domain from grove-preview-hub (Vercel handles this)
+### 5. Open task: Gemma 4 scoring
+Google announced serious progress on open weights. When ready, break out as a separate pattern in the scoreboard. The profile taxonomy is already set up to accommodate it under "Open Weight Models & Sovereign Architectures."
 
-### Step 5: Verify /autonomaton/ still works
-- The autonomaton playground is a SEPARATE Vercel project with its own deployment
-- It should be unaffected by the root domain change IF it's assigned as a path (`the-grove.ai/autonomaton`) on its own project
-- However, if `/autonomaton` was a rewrite rule in grove-preview-hub's vercel.json, we need to replicate that routing in the new project
-- **This is the critical check** — if the autonomaton routing breaks, the playground link on the new site goes dead
+### 6. Λ Scoreboard data on Observations page
+The observations page still has the floating scorecard panel (83/17 sovereign vs concentrated) but now that Standings has a full Structural Share section, consider whether to keep it on observations or remove it to avoid duplication. The scorecard was designed as a teaser — now that the full page exists, it may be redundant.
 
-### Step 6: Test everything
-- `the-grove.ai` → new launch site with hero, G7 table, sphere, scoreboard, autonomaton section, foundation
-- `the-grove.ai/autonomaton` → playground (React app, separate project)
-- Persistent scorecard widget appears on scroll
-- All 14 canonical links open correctly
-- Nav links scroll to correct sections
-- "Playground ↗" link in nav opens playground in new tab
-- Sphere slider and capture canvas render correctly
-- Lambda scoreboard rows expand on click
+## Key files and locations
+* Repo: `C:\GitHub\grove-launch-site\`
+* Vercel project: `grove-launch-site` (prj_FpKHXIO5VoGGN5ieWMvMeXJ9yh7N)
+* Vercel team: `team_odJBQTq9WJT64ceCXCYei9gl`
+* Deploy command: `cd /d C:\GitHub\grove-launch-site && vercel --prod --yes`
+* Commit pattern: write `do-commit.bat` then run it (CMD can't handle spaces in commit messages)
+* Git operations: use `cmd` shell with `cd /d` flag
+* Python: `C:\Python313\python.exe` with `PYTHONIOENCODING=utf-8`
+* The `/autonomaton` route is a Vercel rewrite in `vercel.json` — DO NOT TOUCH the `grove-autonomaton-pattern` repo or project
 
-## Critical Constraints
-- DO NOT modify `C:\GitHub\grove-autonomaton-pattern\` — that repo and its Vercel project stay untouched
-- DO NOT delete `C:\GitHub\grove-preview-hub\` — archive it, don't destroy it
-- The new site must work as a static HTML file (no build step, no SSR, no framework)
-- Git operations on Windows: use `.bat` files or `cd /d` flag for CMD directory changes
-- The site loads Google Fonts via CDN — needs internet access but no build tooling
+## Authoritative data sources
+* **Λ scores:** Recalculation Doc `173S3JW6MoiLepP0fkZlu_LzbRYFxFeTolOKkhs127gU` (Phase 1 Tab 1)
+* **Methodology:** Research Doc `1Dq2IaL8LQZpuxNpisTesn5xheaAxMiKWqGXxEp65mxc`
+* **Preview hub decks** (password-protected reference, not public): `C:\GitHub\grove-preview-hub\decks\`
 
-## Files to Reference
-- New site: `C:\GitHub\grove-launch-site\index.html` (the deliverable)
-- Current site: `C:\GitHub\grove-preview-hub\index.html` (what's being replaced)
-- Preview hub Vercel config: `C:\GitHub\grove-preview-hub\vercel.json`
-- Autonomaton Vercel config: `C:\GitHub\grove-autonomaton-pattern\.vercel\project.json`
-
-## Machine Context
-- Windows machine, git available via .bat files
-- Desktop Commander MCP tool available for filesystem operations
-- Vercel MCP tools available for deployment management
-- Python at `C:\Python313\python.exe` if needed
-- GitHub repos typically pushed via HTTPS
-
-## Success Criteria
-When this session is complete:
-1. `the-grove.ai` serves the new launch site
-2. `the-grove.ai/autonomaton` serves the playground (unchanged)
-3. The old preview hub is archived and accessible (via .vercel.app URL or subdomain)
-4. No content has been deleted
-5. The new site is in a git repo with clean history
+## Design system reference
+* Background: `#080808`, grid texture overlay
+* Amber: `#D4621A` / `#F07030` / `#8B3D10`
+* Fonts: Fragment Mono (mono), Instrument Serif (serif), DM Sans (sans)
+* Nav: fixed, 56px, blurred background, Fragment Mono 10px uppercase
+* Active nav link: amber color + amber bottom border
