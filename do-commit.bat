@@ -1,4 +1,4 @@
 @echo off
 cd /d C:\GitHub\grove-launch-site
 git add -A
-git commit -m "update-next-session-prompt-for-standards-001-continuation"
+git commit -m "Complete Autonomaton Pattern (sections VI-VIII + footer); fix nav-logo underline across all pages"

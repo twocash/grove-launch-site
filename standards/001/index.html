@@ -335,3 +335,168 @@ nav { position:fixed; top:0; left:0; right:0; z-index:100; padding:0 48px; heigh
     <p class="body-text">Zone boundaries are declarative&mdash;defined in configuration, not hardcoded. A healthcare deployment and a content scheduling deployment use the same Zone Model with different boundaries. The architecture is identical. The governance is domain-specific.</p>
   </div>
 </section>
+
+
+<!-- ═══════════════════════════════════════
+     VI. THE FLYWHEEL
+══════════════════════════════════════════ -->
+<section class="section">
+  <div class="section-inner reveal">
+    <div class="section-num">VI</div>
+    <h2 class="headline">The <em>Flywheel</em></h2>
+    <p class="body-text">The Autonomaton is not a static system. It is a self-reinforcing improvement loop&mdash;a ratchet that turns interaction data into reusable skills and migrates those skills toward cheaper execution tiers through confirmed use.</p>
+    <p class="body-text">The mechanism is structural, not statistical. Every skill is a readable specification&mdash;not an opaque weight adjustment. Delete a skill and the behavior stops. Add a skill and the behavior starts. The operator can inspect, edit, version, and audit every piece of learned behavior the system accumulates.</p>
+    <p class="body-text">The LLM is the brain. Keywords are the bootstrap cache. Confirmed patterns become deterministic rules. The ratchet only turns in one direction: toward cheaper, faster, more private execution&mdash;unless the operator explicitly resets it.</p>
+  </div>
+</section>
+<section class="section">
+  <div class="section-wide reveal">
+    <div class="flywheel">
+      <div class="fly-step"><div class="fly-num">01</div><div class="fly-name">Observe</div><div class="fly-desc">Telemetry captures interaction patterns. The system watches what the operator actually does.</div></div>
+      <div class="fly-step"><div class="fly-num">02</div><div class="fly-name">Detect</div><div class="fly-desc">Recognition identifies recurring patterns that cross a confidence threshold.</div></div>
+      <div class="fly-step"><div class="fly-num">03</div><div class="fly-name">Propose</div><div class="fly-desc">Compilation generates a skill specification&mdash;a declarative rule the operator can read and approve.</div></div>
+      <div class="fly-step"><div class="fly-num">04</div><div class="fly-name">Approve</div><div class="fly-desc">Human reviews, edits, or rejects the proposed skill. Nothing enters the system without consent.</div></div>
+      <div class="fly-step"><div class="fly-num">05</div><div class="fly-name">Execute</div><div class="fly-desc">Confirmed skill handles future matches autonomously. Usage data refines the pattern or deprecates it.</div></div>
+    </div>
+    <p class="body-text" style="text-align:center; font-family:var(--mono); font-size:11px; color:var(--amber-dim);">The ratchet: T3 &rarr; T2 &rarr; T1 &rarr; T0. Skills migrate toward deterministic execution through confirmed use. The system gets cheaper as a structural consequence of operation.</p>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     VII. REFERENCE SCHEMAS
+══════════════════════════════════════════ -->
+<section class="section" style="background:var(--bg2); border-top:1px solid var(--border);">
+  <div class="section-inner reveal">
+    <div class="section-num">VII</div>
+    <h2 class="headline">Reference <em>Schemas</em></h2>
+    <p class="body-text">The Autonomaton Pattern is implemented through structured data&mdash;not proprietary APIs. The following schemas are illustrative, not exhaustive. They show enough structure that a developer can say &ldquo;I could build this&rdquo; and enough constraint that an architect can say &ldquo;I can audit this.&rdquo;</p>
+  </div>
+</section>
+<section class="section" style="background:var(--bg2);">
+  <div class="section-wide reveal">
+    <div class="schema-block">
+      <div class="schema-label">Telemetry Entry</div>
+<pre>{
+  "id": "tel-20260315-001",
+  "timestamp": "2026-03-15T14:23:01Z",
+  "source": "user:direct",
+  "input": "Schedule the weekly team sync for Thursday at 2pm",
+  "context": { "domain": "scheduling", "recurrence": true },
+  "session_id": "ses-4a7b",
+  "provenance": { "operator": "jim@example.com", "environment": "atlas-v1.2" }
+}</pre>
+    </div>
+
+    <div class="schema-block">
+      <div class="schema-label">Intent Classification (Stage 02 Output)</div>
+<pre>{
+  "intent": "calendar.schedule.recurring",
+  "confidence": 0.94,
+  "tier_assigned": "T0",
+  "zone": "green",
+  "matched_skill": "skill-weekly-sync-017",
+  "fallback_tier": "T2",
+  "classification_source": "keyword_match",
+  "provenance": { "classifier": "cognitive-router-v3", "timestamp": "2026-03-15T14:23:01Z" }
+}</pre>
+    </div>
+
+    <div class="schema-block">
+      <div class="schema-label">Skill Specification</div>
+<pre>{
+  "skill_id": "skill-weekly-sync-017",
+  "name": "Weekly Team Sync Scheduler",
+  "version": "1.3",
+  "trigger": { "keywords": ["weekly sync", "team meeting", "recurring thursday"], "intent_pattern": "calendar.schedule.recurring" },
+  "zone": "green",
+  "tier": "T0",
+  "action": { "type": "calendar_create", "params": { "title": "Weekly Team Sync", "day": "thursday", "time": "14:00", "recurrence": "weekly" } },
+  "promotion_history": [
+    { "from": "T3", "to": "T2", "date": "2026-02-01", "confirmations": 3 },
+    { "from": "T2", "to": "T0", "date": "2026-02-18", "confirmations": 8 }
+  ],
+  "provenance": { "created_by": "flywheel", "approved_by": "jim@example.com", "last_used": "2026-03-08" }
+}</pre>
+    </div>
+
+    <div class="schema-block">
+      <div class="schema-label">Routing Configuration</div>
+<pre>{
+  "routing": {
+    "default_tier": "T2",
+    "escalation_threshold": 0.6,
+    "zone_overrides": {
+      "finance.*": "red",
+      "calendar.*": "green",
+      "hiring.*": "yellow"
+    },
+    "tier_preferences": {
+      "T0": { "max_latency_ms": 50 },
+      "T1": { "model": "local-llama-3", "max_latency_ms": 500 },
+      "T2": { "provider": "anthropic", "model": "claude-sonnet" },
+      "T3": { "provider": "anthropic", "model": "claude-opus", "requires_approval": true }
+    }
+  }
+}</pre>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     VIII. IMPLICATIONS
+══════════════════════════════════════════ -->
+<section class="section">
+  <div class="section-inner reveal">
+    <div class="section-num">VIII</div>
+    <h2 class="headline">The <em>Implications</em></h2>
+    <p class="body-text">The Autonomaton Pattern is not a product. It is a set of structural constraints that produce properties the industry currently treats as features&mdash;governance, auditability, sovereignty, cost reduction&mdash;as architectural byproducts. The implications extend beyond any single implementation.</p>
+
+    <h3 class="subhead">Governance by <em>Architecture</em></h3>
+    <p class="body-text">Policy documents describe what systems should do. Architecture determines what systems can do. The Autonomaton makes governance structural: the Zone Model enforces authority boundaries, the pipeline enforces sequencing, and declarative configuration makes every governance decision inspectable. You do not need a compliance team to audit an Autonomaton. You read the config.</p>
+
+    <h3 class="subhead">Auditability as <em>Byproduct</em></h3>
+    <p class="body-text">The five-stage pipeline produces a complete audit trail as a consequence of normal operation&mdash;not as an additional feature bolted on after the fact. Every action traces back to a telemetry entry, a classification decision, a skill specification, a zone boundary, and an approval record. The question &ldquo;why did the system do that?&rdquo; always has a readable answer.</p>
+
+    <h3 class="subhead">Sovereign <em>Computing</em></h3>
+    <p class="body-text">The operator owns the telemetry. The operator owns the configuration. The operator owns the skills. The behavioral intelligence the system accumulates belongs to the person who generated it&mdash;not to the model provider, not to the platform, not to the infrastructure vendor. Switch providers without losing institutional knowledge. Inspect your own data without filing a request. Delete a skill and know it is gone.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-inner reveal">
+    <h3 class="subhead">The <em>Vision</em></h3>
+    <p class="body-text">The Autonomaton Pattern is Act One of a three-act architecture.</p>
+    <p class="body-text"><strong>Act One: The Autonomaton.</strong> The transistor. A single node&mdash;one person, one cognitive engine, one knowledge store&mdash;that authors its own improvement through the invariant pipeline. This document.</p>
+    <p class="body-text"><strong>Act Two: The Trellis.</strong> The integrated circuit. A domain-scale knowledge architecture that organizes what individual Autonomaton nodes produce&mdash;making expertise navigable, refinable, and composable across an organization or discipline.</p>
+    <p class="body-text"><strong>Act Three: The Knowledge Commons.</strong> The network. A distributed economy where Autonomaton nodes share refined knowledge with provenance, attribution, and market pricing intact. Not a database. A protocol for sovereign expertise exchange.</p>
+    <p class="body-text">Same architectural DNA at every scale. The pattern you just read is the entry point.</p>
+
+    <div class="divider"></div>
+
+    <div class="pullquote">Four companies are spending $650 billion to build nuclear reactors so they can boil water. The Autonomaton Pattern is the still. Three files and a loop. The rest is distillation.</div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     FOOTER
+══════════════════════════════════════════ -->
+<section class="section" style="border-top:1px solid var(--border); background:var(--bg2);">
+  <div class="section-inner">
+    <div class="download-bar">
+      <a href="/docs/the-autonomaton-pattern-grv-001.pdf">PDF</a>
+      <span class="download-meta">GRV-001 &middot; v1.0 &middot; March 2026 &middot; CC BY 4.0</span>
+    </div>
+    <p class="body-text" style="font-size:13px; margin-top:32px;">This document is published under <a href="https://creativecommons.org/licenses/by/4.0/" style="color:var(--amber); text-decoration:none; border-bottom:1px solid var(--amber-dim);" target="_blank" rel="noopener noreferrer">Creative Commons Attribution 4.0 International (CC BY 4.0)</a>. You are free to share, adapt, and build upon this work for any purpose, provided you give appropriate credit.</p>
+    <p class="body-text" style="font-size:13px;">Jim Calhoun &middot; The Grove Foundation &middot; Indianapolis &middot; <a href="mailto:jim@the-grove.ai" style="color:var(--amber); text-decoration:none; border-bottom:1px solid var(--amber-dim);">jim@the-grove.ai</a></p>
+    <p class="body-text" style="font-size:11px; color:var(--text-dim); margin-top:24px; font-family:var(--mono);">the-grove.ai &middot; &copy; 2026 The Grove Foundation</p>
+  </div>
+</section>
+
+<script>
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+}, { threshold: 0.12 });
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
