@@ -457,6 +457,7 @@ input[type="range"]::-webkit-slider-thumb { -webkit-appearance:none; width:16px;
   <div class="nav-links">
     <a href="/">Thesis</a>
     <a href="/observations" class="active">Observations</a>
+    <a href="/lambda">Standings</a>
     <a href="/standards/001">Open Standards</a>
     <a href="https://the-grove.ai/autonomaton" target="_blank" rel="noopener noreferrer" class="nav-ext">Playground &nearr;</a>
     <a href="/about">About</a>
@@ -667,59 +668,6 @@ input[type="range"]::-webkit-slider-thumb { -webkit-appearance:none; width:16px;
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════════════
-     SECTION 4: Λ LANDSCAPE
-     Background shift. Scoreboard as instrument panel.
-════════════════════════════════════════════════════ -->
-<section class="section" id="landscape">
-  <div class="section-wide reveal">
-    <div class="eyebrow">State of the Architecture &mdash; Live Standings</div>
-    <h1 class="headline">Which patterns would survive <em>without the money?</em></h1>
-    <p class="lead">Every major analyst framework measures how many people are using an AI platform today. The Grove Foundation measures whether they&rsquo;d keep using it if nobody subsidized it. Can the pattern survive on its own, or does it need a benefactor?</p>
-    <p style="font-family:var(--mono); font-size:11px; color:var(--text-dim); letter-spacing:0.08em; margin-bottom:32px;">Last scored: <span style="color:var(--amber);">March 2026</span> &middot; Next update: <span style="color:var(--amber);">June 2026</span> &middot; Quarterly for public &middot; Monthly for members</p>
-
-    <div class="board">
-      <div class="board-header">
-        <div>#</div><div>Pattern</div><div style="text-align:right;">&Lambda;</div><div style="text-align:center;">Tier</div><div style="text-align:center;">Trend</div>
-      </div>
-      <div id="standings"></div>
-    </div>
-    <p style="font-family:var(--mono); font-size:10px; color:var(--text-dim); margin-top:-20px; margin-bottom:32px; letter-spacing:0.04em;">Click any row to see sub-scores and structural analysis</p>
-    <!-- Formula -->
-    <div class="formula-box">
-      <div class="formula">&Lambda; = (S &times; R &times; V) / (1 + (<span class="dm">&beta; &middot; F<sub>c</sub></span>)&sup2;)</div>
-    </div>
-    <div class="var-strip">
-      <div class="var-cell"><div class="var-sym">S</div><div class="var-nm">Spreadability</div><div class="var-ds">How freely replicated</div></div>
-      <div class="var-cell"><div class="var-sym">R</div><div class="var-nm">Rails</div><div class="var-ds">Infrastructure fit</div></div>
-      <div class="var-cell"><div class="var-sym">V</div><div class="var-nm">Validation</div><div class="var-ds">Theory discount</div></div>
-      <div class="var-cell"><div class="var-sym exp">F<sub>c</sub></div><div class="var-nm">Friction</div><div class="var-ds">Squared. Dominates.</div></div>
-      <div class="var-cell"><div class="var-sym exp">&beta;</div><div class="var-nm">Incentive</div><div class="var-ds">Geo mean of 3 forces</div></div>
-    </div>
-
-    <!-- Profiles -->
-    <h2 class="subhead">Dependency compounds. <em>Sovereignty compounds.</em></h2>
-    <div class="profiles">
-      <div class="prof">
-        <div class="prof-label" style="color:var(--red);">Dependency Profile</div>
-        <div class="prof-desc">Easy to integrate, hard to leave. Each quarter accumulates switching costs &mdash; proprietary weights, vendor-controlled deprecation, captured telemetry.</div>
-        <div class="prof-members">OpenAI &middot; Google &middot; Microsoft &middot; Anthropic</div>
-        <div class="prof-kick" style="color:var(--red);">Every quarter on a centralized API is another quarter of vendor leverage.</div>
-      </div>
-      <div class="prof">
-        <div class="prof-label" style="color:var(--green);">Sovereignty Profile</div>
-        <div class="prof-desc">Harder to adopt, easier to leave. Each quarter builds structural independence &mdash; open weights, portable architecture, sovereign telemetry.</div>
-        <div class="prof-members">Mistral / DeepSeek &middot; Autonomaton</div>
-        <div class="prof-kick" style="color:var(--green);">Every quarter on an open architecture is another quarter of independence.</div>
-      </div>
-    </div>
-    <!-- Integrity -->
-    <div class="integrity">
-      <p><strong style="color:var(--amber);">Conflict of interest disclosure.</strong> The Grove Foundation publishes this framework and champions the Autonomaton architecture. The Autonomaton is scored using the same methodology applied to all other patterns. It scores last &mdash; &Lambda; = 0.0001, Structurally Inert, V = 0.2. We built a methodology that crushed our own entry and published the results.</p>
-    </div>
-    <p style="font-family:var(--mono); font-size:10px; color:var(--text-dim); letter-spacing:0.08em;">96 sources &middot; 8 patterns &middot; 4 historical calibrations &middot; CC BY 4.0</p>
-  </div>
-</section>
 <section class="section" style="background:var(--bg2); border-top:1px solid var(--border);">
   <div class="section-inner" style="text-align:center;">
     <div style="font-family:var(--serif); font-style:italic; font-size:15px; color:var(--text-dim); margin-bottom:8px;">&ldquo;Design is philosophy expressed through constraint.&rdquo;</div>
@@ -845,44 +793,6 @@ function drawCapture(){
   cctx.font='11px Fragment Mono,monospace';cctx.fillStyle='#C0392B';cctx.fillText('you explore \u2192 vendor keeps the map',rightCx,cH-16);
 }
 // ══════════════════════════════════════
-// SCOREBOARD
-// ══════════════════════════════════════
-var SD=[
-  {r:1,n:'Mistral / DeepSeek',c:'Open Weight (Int\u2019l)',S:.80,R:.60,V:1,Fc:6,b:.630,l:.0314,t:'ac',p:'sovereignty',d:'up',i:'Balanced incentive structure. Apache 2.0. \u20AC830M infrastructure raise. France and Germany government contracts. Only pattern with \u03B2 < 1.0.'},
-  {r:2,n:'Meta Llama',c:'Open Weight (US)',S:.70,R:.70,V:1,Fc:5,b:1.357,l:.0104,t:'sc',p:'sovereignty',d:'down',i:'Geometric mean exposes structural fragility. Avocado closed-source pivot and Llama 4 EU geofencing signal tightening. If Meta fully closes licensing, score collapses.'},
-  {r:3,n:'Apple Intelligence',c:'On-Device',S:.20,R:.57,V:1,Fc:2,b:1.710,l:.0090,t:'sc',p:'hybrid',d:'flat',i:'Lowest friction (Fc=2.0) \u2014 ships pre-installed. But lowest spreadability (S=0.20) \u2014 locked to Apple hardware. A walled garden with good fences.'},
-  {r:4,n:'Anthropic Claude',c:'Centralized API',S:.47,R:.80,V:1,Fc:5,b:1.587,l:.0059,t:'sc',p:'dependency',d:'flat',i:'Strong capability but structurally dependent on the API model. High R + low S = classic Dependency Profile.'},
-  {r:5,n:'OpenAI GPT',c:'Centralized API',S:.47,R:.93,V:1,Fc:6,b:2.924,l:.0014,t:'si',p:'dependency',d:'flat',i:'Highest rail compatibility (R=0.93). But geometric mean \u03B2 = 2.924 because regulatory and ideological incentives are weak. Market dominance without structural propagation.'},
-  {r:6,n:'Google Gemini',c:'Platform Bundle',S:.30,R:.80,V:1,Fc:5,b:2.924,l:.0011,t:'si',p:'dependency',d:'flat',i:'Platform bundling drives adoption through distribution power, not structural merit. Unbundle it and the pattern collapses.'},
-  {r:7,n:'Microsoft Copilot',c:'Platform Bundle',S:.30,R:.80,V:1,Fc:8,b:5.000,l:.0002,t:'si',p:'dependency',d:'down',i:'Highest friction (Fc=8.0). 450M Office seats at $30/user/month. This adoption is subsidy-driven, not structural.'},
-  {r:8,n:'Autonomaton',c:'Sovereign Open',S:.93,R:.83,V:.2,Fc:6,b:6.300,l:.0001,t:'si',p:'sovereignty',d:'flat',i:'Highest S and R in the landscape. V=0.2 (pre-deployment) and \u03B2=6.3 crush the score. By design. Grove publishes its own score honestly.'}
-];
-var TN={ac:'Approaching Critical',sc:'Sub-Critical',si:'Structurally Inert'};
-var TC={ac:'t-ac',sc:'t-sc',si:'t-si'};
-var DS={up:'\u2191',down:'\u2193',flat:'\u2192'};
-var DC={up:'d-up',down:'d-dn',flat:'d-fl'};
-function renderBoard(){
-  var el=document.getElementById('standings'),h='';
-  SD.forEach(function(d,i){
-    var sc=d.t==='ac'?'var(--amber)':d.t==='sc'?'var(--yellow)':'var(--red)';
-    h+='<div class="srow '+d.p+'" onclick="stoggle('+i+')" id="sr-'+i+'">';
-    h+='<div class="s-rank">'+d.r+'</div>';
-    h+='<div><div class="s-name">'+d.n+'</div><div class="s-cat">'+d.c+'</div></div>';
-    h+='<div class="s-score" style="color:'+sc+'">'+d.l.toFixed(4)+'</div>';
-    h+='<div style="text-align:center"><span class="s-tier '+TC[d.t]+'">'+TN[d.t]+'</span></div>';
-    h+='<div class="s-dir '+DC[d.d]+'">'+DS[d.d]+'</div></div>';
-    h+='<div class="s-detail" id="sd-'+i+'"><div class="s-detail-grid">';
-    h+='<div class="sdv"><div class="sdv-l">S</div><div class="sdv-v">'+d.S.toFixed(2)+'</div></div>';
-    h+='<div class="sdv"><div class="sdv-l">R</div><div class="sdv-v">'+d.R.toFixed(2)+'</div></div>';
-    h+='<div class="sdv"><div class="sdv-l">V</div><div class="sdv-v"'+(d.V<1?' style="color:var(--red)"':'')+'>'+d.V.toFixed(1)+'</div></div>';
-    h+='<div class="sdv"><div class="sdv-l">Fc</div><div class="sdv-v exp">'+d.Fc.toFixed(1)+'</div></div>';
-    h+='<div class="sdv"><div class="sdv-l">\u03B2</div><div class="sdv-v exp">'+d.b.toFixed(3)+'</div></div>';
-    h+='</div><div class="s-insight">'+d.i+'</div></div>';
-  });
-  el.innerHTML=h;
-}
-function stoggle(i){var p=document.getElementById('sd-'+i),r=document.getElementById('sr-'+i),o=p.classList.contains('open');document.querySelectorAll('.s-detail').forEach(function(x){x.classList.remove('open')});document.querySelectorAll('.srow').forEach(function(x){x.classList.remove('expanded')});if(!o){p.classList.add('open');r.classList.add('expanded');}}
-// ══════════════════════════════════════
 // SCROLL REVEAL + NAV
 // ══════════════════════════════════════
 var reveals=document.querySelectorAll('.reveal');
@@ -916,7 +826,6 @@ updateScorecard();
 // ══════════════════════════════════════
 sizeSphere(); drawSpheres();
 sizeCapture(); drawCapture();
-renderBoard();
 window.addEventListener('resize',function(){sizeSphere();drawSpheres();sizeCapture();drawCapture();});
 </script>
 </body>

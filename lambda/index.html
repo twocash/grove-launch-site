@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Standings — The Grove Foundation</title>
+<meta name="description" content="Live structural viability scores for AI architecture patterns. Which patterns would survive without the money?">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fragment+Mono:ital@0;1&family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --amber:#D4621A; --amber-bright:#F07030; --amber-dim:#8B3D10;
+  --amber-glow:rgba(212,98,26,0.12);
+  --bg:#080808; --bg2:#0f0f0f; --bg3:#161616; --bg4:#1a1a1a;
+  --border:#252525; --border-light:#333;
+  --text:#E8E2D9; --text-dim:#7A736A; --text-mid:#B0A898;
+  --green:#4CAF72; --green-dim:rgba(76,175,114,0.08);
+  --red:#C0392B; --red-dim:rgba(192,57,43,0.06);
+  --yellow:#D4A017;
+  --mono:'Fragment Mono', monospace;
+  --serif:'Instrument Serif', Georgia, serif;
+  --sans:'DM Sans', sans-serif;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body { background:var(--bg); color:var(--text); font-family:var(--sans); -webkit-font-smoothing:antialiased; overflow-x:hidden; line-height:1.6; }
+strong { color:var(--text); font-weight:500; }
+body::before { content:''; position:fixed; inset:0; background-image:linear-gradient(var(--border) 1px, transparent 1px),linear-gradient(90deg, var(--border) 1px, transparent 1px); background-size:40px 40px; opacity:0.15; pointer-events:none; z-index:0; }
+nav { position:fixed; top:0; left:0; right:0; z-index:100; padding:0 48px; height:56px; display:flex; justify-content:space-between; align-items:center; background:rgba(8,8,8,0.94); backdrop-filter:blur(16px); border-bottom:1px solid rgba(37,37,37,0.5); }
+.nav-logo { font-family:var(--mono); font-size:11px; letter-spacing:0.2em; text-transform:uppercase; color:var(--amber-dim); }
+.nav-links { display:flex; gap:32px; }
+.nav-links a { font-family:var(--mono); font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-dim); text-decoration:none; padding:4px 0; border-bottom:1px solid transparent; transition:all 0.2s; }
+.nav-links a:hover, .nav-links a.active { color:var(--amber); border-bottom-color:var(--amber); }
+.nav-links a.nav-ext { color:var(--amber-dim); border:1px solid var(--amber-dim); padding:3px 10px; margin-left:8px; border-bottom:1px solid var(--amber-dim); }
+.nav-links a.nav-ext:hover { color:var(--amber); border-color:var(--amber); background:rgba(212,98,26,0.08); }
+.section { position:relative; z-index:1; }
+.section-inner { max-width:760px; margin:0 auto; padding:120px 48px 100px; }
+.section-wide { max-width:1140px; margin:0 auto; padding:120px 48px 100px; }
+.eyebrow { font-family:var(--mono); font-size:11px; letter-spacing:0.25em; text-transform:uppercase; color:var(--amber); margin-bottom:20px; }
+.display { font-family:var(--serif); font-weight:400; font-size:clamp(44px,5.5vw,72px); line-height:1.06; color:var(--text); margin-bottom:24px; letter-spacing:-0.02em; }
+.display em { color:var(--amber); font-style:italic; }
+.headline { font-family:var(--serif); font-weight:400; font-size:clamp(28px,3.5vw,44px); line-height:1.12; color:var(--text); margin-bottom:20px; letter-spacing:-0.01em; }
+.headline em { color:var(--amber); font-style:italic; }
+.subhead { font-family:var(--serif); font-weight:400; font-size:clamp(20px,2.2vw,28px); color:var(--text); margin:64px 0 20px; line-height:1.2; }
+.subhead em { color:var(--amber); font-style:italic; }
+.lead { font-weight:300; font-size:clamp(15px,1.5vw,17px); line-height:1.75; color:var(--text-mid); max-width:700px; margin-bottom:32px; }
+.divider { width:48px; height:1px; background:var(--amber); margin:32px 0; }
+.reveal { opacity:0; transform:translateY(24px); transition:opacity 0.7s ease, transform 0.7s ease; }
+.reveal.visible { opacity:1; transform:translateY(0); }
+/* Scoreboard */
+.board { border:1px solid var(--border); margin-bottom:32px; }
+.board-header { display:grid; grid-template-columns:36px 2fr 1fr 1.2fr 48px; padding:10px 20px; border-bottom:1px solid var(--border); font-family:var(--mono); font-size:9px; letter-spacing:0.15em; text-transform:uppercase; color:var(--amber); align-items:center; }
+.srow { display:grid; grid-template-columns:36px 2fr 1fr 1.2fr 48px; padding:0 20px; align-items:center; min-height:56px; border-bottom:1px solid rgba(37,37,37,0.6); cursor:pointer; transition:background 0.15s; }
+.srow:last-child { border-bottom:none; }
+.srow:hover { background:var(--bg3); }
+.srow.expanded { background:var(--bg3); }
+.srow.sovereignty { border-left:3px solid var(--green); }
+.srow.dependency { border-left:3px solid var(--red); }
+.srow.hybrid { border-left:3px solid var(--yellow); }
+.s-rank { font-family:var(--mono); font-size:13px; color:var(--text-dim); text-align:center; }
+.s-name { font-family:var(--serif); font-size:16px; color:var(--text); }
+.s-cat { font-family:var(--mono); font-size:8px; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-dim); margin-top:1px; }
+.s-score { font-family:var(--mono); font-size:15px; font-weight:600; text-align:center; }
+.s-tier { font-family:var(--mono); font-size:9px; letter-spacing:0.06em; padding:4px 10px; text-align:center; white-space:nowrap; display:inline-block; }
+.t-ac { background:rgba(212,98,26,0.1); color:var(--amber); border:1px solid rgba(212,98,26,0.3); }
+.t-sc { background:rgba(212,160,23,0.1); color:var(--yellow); border:1px solid rgba(212,160,23,0.3); }
+.t-si { background:rgba(192,57,43,0.08); color:var(--red); border:1px solid rgba(192,57,43,0.25); }
+.s-dir { font-size:16px; text-align:center; font-weight:600; }
+.d-up { color:var(--green); } .d-dn { color:var(--red); } .d-fl { color:var(--text-dim); }
+.s-detail { display:none; padding:16px 20px 16px 56px; border-bottom:1px solid var(--border); background:rgba(15,15,15,0.8); }
+.s-detail.open { display:block; }
+.s-detail-grid { display:grid; grid-template-columns:repeat(5,1fr); gap:12px; margin-bottom:12px; }
+.sdv { text-align:center; }
+.sdv-l { font-family:var(--mono); font-size:8px; letter-spacing:0.12em; color:var(--text-dim); margin-bottom:2px; }
+.sdv-v { font-family:var(--serif); font-size:22px; }
+.sdv-v.exp { color:var(--amber); }
+.s-insight { font-size:12px; color:var(--text-dim); line-height:1.6; border-left:2px solid var(--border); padding-left:14px; }
+.formula-box { background:var(--bg3); border:1px solid var(--border); padding:28px; text-align:center; margin:24px 0; }
+.formula { font-family:var(--serif); font-style:italic; font-size:clamp(22px,2.8vw,34px); color:var(--text); }
+.formula .dm { color:var(--amber); }
+.var-strip { display:grid; grid-template-columns:repeat(5,1fr); gap:1px; background:var(--border); border:1px solid var(--border); margin-bottom:20px; }
+.var-cell { background:var(--bg2); padding:14px; text-align:center; }
+.var-sym { font-family:var(--serif); font-style:italic; font-size:20px; margin-bottom:3px; }
+.var-sym.exp { color:var(--amber); }
+.var-nm { font-family:var(--mono); font-size:8px; letter-spacing:0.15em; text-transform:uppercase; color:var(--text-dim); margin-bottom:4px; }
+.var-ds { font-size:10px; color:var(--text-dim); line-height:1.4; }
+.profiles { display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--border); border:1px solid var(--border); margin:24px 0; }
+.prof { background:var(--bg2); padding:24px; }
+.prof-label { font-family:var(--mono); font-size:10px; letter-spacing:0.15em; text-transform:uppercase; margin-bottom:10px; }
+.prof-desc { font-size:13px; color:var(--text-mid); line-height:1.6; font-weight:300; }
+.prof-members { font-family:var(--mono); font-size:10px; color:var(--text-dim); margin-top:10px; letter-spacing:0.04em; }
+.prof-kick { font-size:13px; margin-top:10px; line-height:1.5; font-weight:400; }
+.integrity { background:rgba(212,98,26,0.04); border:1px solid rgba(212,98,26,0.2); padding:24px 28px; margin:32px 0; }
+.integrity p { font-size:14px; color:var(--text-mid); line-height:1.7; font-weight:300; }
+#hero { min-height:70vh; display:flex; flex-direction:column; justify-content:center; position:relative; background:radial-gradient(ellipse at 20% 70%, rgba(212,98,26,0.08) 0%, transparent 55%); }
+#hero .section-inner { padding-top:80px; padding-bottom:80px; }
+.hero-meta { font-family:var(--mono); font-size:10px; color:var(--text-dim); letter-spacing:0.1em; margin-top:24px; }
+.hero-meta a { color:var(--amber-dim); text-decoration:none; border-bottom:1px solid var(--amber-dim); }
+#landscape { background:var(--bg2); border-top:1px solid var(--border); border-bottom:1px solid var(--border); }
+@media(max-width:768px) {
+  nav { padding:0 20px; }
+  .nav-links { gap:16px; }
+  .nav-links a { font-size:9px; }
+  .section-inner, .section-wide { padding:80px 24px 60px; }
+  .board-header,.srow { grid-template-columns:28px 2fr 1fr 44px; }
+  .board-header > :nth-child(4),.srow > :nth-child(4) { display:none; }
+  .s-detail { padding-left:20px; }
+  .s-detail-grid { grid-template-columns:repeat(3,1fr); }
+  .var-strip { grid-template-columns:repeat(3,1fr); }
+  .profiles { grid-template-columns:1fr; }
+}
+</style>
+</head>
+<body>
+<nav>
+  <div class="nav-logo">The Grove Foundation</div>
+  <div class="nav-links">
+    <a href="/">Thesis</a>
+    <a href="/observations">Observations</a>
+    <a href="/lambda" class="active">Standings</a>
+    <a href="/standards/001">Open Standards</a>
+    <a href="https://the-grove.ai/autonomaton" target="_blank" rel="noopener noreferrer" class="nav-ext">Playground &nearr;</a>
+    <a href="/about">About</a>
+  </div>
+</nav>
+<section class="section" id="hero">
+  <div class="section-inner">
+    <div class="eyebrow">State of the Architecture</div>
+    <h1 class="display">Which patterns would survive<br><em>without the money?</em></h1>
+    <p class="lead">Every major analyst framework measures how many people are using an AI platform today. The Grove Foundation measures whether they&rsquo;d keep using it if nobody subsidized it. Can the pattern survive on its own, or does it need a benefactor?</p>
+    <div class="divider"></div>
+    <p class="hero-meta">Last scored: March 2026 &middot; Next update: June 2026 &middot; <a href="/observations">&larr; Observations</a></p>
+  </div>
+</section>
+<section class="section" id="landscape">
+  <div class="section-wide reveal">
+    <div class="board">
+      <div class="board-header">
+        <div>#</div><div>Pattern</div><div style="text-align:right;">&Lambda;</div><div style="text-align:center;">Tier</div><div style="text-align:center;">Trend</div>
+      </div>
+      <div id="standings"></div>
+    </div>
+    <p style="font-family:var(--mono); font-size:10px; color:var(--text-dim); margin-top:-20px; margin-bottom:32px; letter-spacing:0.04em;">Click any row to see sub-scores and structural analysis</p>
+    <div class="formula-box">
+      <div class="formula">&Lambda; = (S &times; R &times; V) / (1 + (<span class="dm">&beta; &middot; F<sub>c</sub></span>)&sup2;)</div>
+    </div>
+    <div class="var-strip">
+      <div class="var-cell"><div class="var-sym">S</div><div class="var-nm">Spreadability</div><div class="var-ds">How freely replicated</div></div>
+      <div class="var-cell"><div class="var-sym">R</div><div class="var-nm">Rails</div><div class="var-ds">Infrastructure fit</div></div>
+      <div class="var-cell"><div class="var-sym">V</div><div class="var-nm">Validation</div><div class="var-ds">Theory discount</div></div>
+      <div class="var-cell"><div class="var-sym exp">F<sub>c</sub></div><div class="var-nm">Friction</div><div class="var-ds">Squared. Dominates.</div></div>
+      <div class="var-cell"><div class="var-sym exp">&beta;</div><div class="var-nm">Incentive</div><div class="var-ds">Geo mean of 3 forces</div></div>
+    </div>
+    <h2 class="subhead">Dependency compounds. <em>Sovereignty compounds.</em></h2>
+    <div class="profiles">
+      <div class="prof">
+        <div class="prof-label" style="color:var(--red);">Dependency Profile</div>
+        <div class="prof-desc">Easy to integrate, hard to leave. Each quarter accumulates switching costs &mdash; proprietary weights, vendor-controlled deprecation, captured telemetry.</div>
+        <div class="prof-members">OpenAI &middot; Google &middot; Microsoft &middot; Anthropic</div>
+        <div class="prof-kick" style="color:var(--red);">Every quarter on a centralized API is another quarter of vendor leverage.</div>
+      </div>
+      <div class="prof">
+        <div class="prof-label" style="color:var(--green);">Sovereignty Profile</div>
+        <div class="prof-desc">Harder to adopt, easier to leave. Each quarter builds structural independence &mdash; open weights, portable architecture, sovereign telemetry.</div>
+        <div class="prof-members">Mistral / DeepSeek &middot; Autonomaton</div>
+        <div class="prof-kick" style="color:var(--green);">Every quarter on an open architecture is another quarter of independence.</div>
+      </div>
+    </div>
+    <div class="integrity">
+      <p><strong style="color:var(--amber);">Conflict of interest disclosure.</strong> The Grove Foundation publishes this framework and champions the Autonomaton architecture. The Autonomaton is scored using the same methodology applied to all other patterns. It scores last &mdash; &Lambda; = 0.0001, Structurally Inert, V = 0.2. We built a methodology that crushed our own entry and published the results.</p>
+    </div>
+    <p style="font-family:var(--mono); font-size:10px; color:var(--text-dim); letter-spacing:0.08em;">96 sources &middot; 8 patterns &middot; 4 historical calibrations &middot; CC BY 4.0</p>
+  </div>
+</section>
+<section class="section" style="background:var(--bg2); border-top:1px solid var(--border);">
+  <div class="section-inner" style="text-align:center;">
+    <div style="font-family:var(--serif); font-style:italic; font-size:15px; color:var(--text-dim); margin-bottom:8px;">&ldquo;Design is philosophy expressed through constraint.&rdquo;</div>
+    <div style="font-family:var(--mono); font-size:10px; color:var(--amber-dim); letter-spacing:0.15em;"><a href="/" style="color:var(--amber-dim); text-decoration:none;">THE GROVE FOUNDATION</a> &middot; INDIANAPOLIS &middot; CC BY 4.0</div>
+  </div>
+</section>
+<script>
+var SD=[
+  {r:1,n:'Mistral / DeepSeek',c:'Open Weight (Int\u2019l)',S:.80,R:.60,V:1,Fc:6,b:.630,l:.0314,t:'ac',p:'sovereignty',d:'up',i:'Balanced incentive structure. Apache 2.0. \u20AC830M infrastructure raise. France and Germany government contracts. Only pattern with \u03B2 < 1.0.'},
+  {r:2,n:'Meta Llama',c:'Open Weight (US)',S:.70,R:.70,V:1,Fc:5,b:1.357,l:.0104,t:'sc',p:'sovereignty',d:'down',i:'Geometric mean exposes structural fragility. Avocado closed-source pivot and Llama 4 EU geofencing signal tightening. If Meta fully closes licensing, score collapses.'},
+  {r:3,n:'Apple Intelligence',c:'On-Device',S:.20,R:.57,V:1,Fc:2,b:1.710,l:.0090,t:'sc',p:'hybrid',d:'flat',i:'Lowest friction (Fc=2.0) \u2014 ships pre-installed. But lowest spreadability (S=0.20) \u2014 locked to Apple hardware. A walled garden with good fences.'},
+  {r:4,n:'Anthropic Claude',c:'Centralized API',S:.47,R:.80,V:1,Fc:5,b:1.587,l:.0059,t:'sc',p:'dependency',d:'flat',i:'Strong capability but structurally dependent on the API model. High R + low S = classic Dependency Profile.'},
+  {r:5,n:'OpenAI GPT',c:'Centralized API',S:.47,R:.93,V:1,Fc:6,b:2.924,l:.0014,t:'si',p:'dependency',d:'flat',i:'Highest rail compatibility (R=0.93). But geometric mean \u03B2 = 2.924 because regulatory and ideological incentives are weak. Market dominance without structural propagation.'},
+  {r:6,n:'Google Gemini',c:'Platform Bundle',S:.30,R:.80,V:1,Fc:5,b:2.924,l:.0011,t:'si',p:'dependency',d:'flat',i:'Platform bundling drives adoption through distribution power, not structural merit. Unbundle it and the pattern collapses.'},
+  {r:7,n:'Microsoft Copilot',c:'Platform Bundle',S:.30,R:.80,V:1,Fc:8,b:5.000,l:.0002,t:'si',p:'dependency',d:'down',i:'Highest friction (Fc=8.0). 450M Office seats at $30/user/month. This adoption is subsidy-driven, not structural.'},
+  {r:8,n:'Autonomaton',c:'Sovereign Open',S:.93,R:.83,V:.2,Fc:6,b:6.300,l:.0001,t:'si',p:'sovereignty',d:'flat',i:'Highest S and R in the landscape. V=0.2 (pre-deployment) and \u03B2=6.3 crush the score. By design. Grove publishes its own score honestly.'}
+];
+var TN={ac:'Approaching Critical',sc:'Sub-Critical',si:'Structurally Inert'};
+var TC={ac:'t-ac',sc:'t-sc',si:'t-si'};
+var DS={up:'\u2191',down:'\u2193',flat:'\u2192'};
+var DC={up:'d-up',down:'d-dn',flat:'d-fl'};
+function renderBoard(){
+  var el=document.getElementById('standings'),h='';
+  SD.forEach(function(d,i){
+    var sc=d.t==='ac'?'var(--amber)':d.t==='sc'?'var(--yellow)':'var(--red)';
+    h+='<div class="srow '+d.p+'" onclick="stoggle('+i+')" id="sr-'+i+'">';
+    h+='<div class="s-rank">'+d.r+'</div>';
+    h+='<div><div class="s-name">'+d.n+'</div><div class="s-cat">'+d.c+'</div></div>';
+    h+='<div class="s-score" style="color:'+sc+'">'+d.l.toFixed(4)+'</div>';
+    h+='<div style="text-align:center"><span class="s-tier '+TC[d.t]+'">'+TN[d.t]+'</span></div>';
+    h+='<div class="s-dir '+DC[d.d]+'">'+DS[d.d]+'</div></div>';
+    h+='<div class="s-detail" id="sd-'+i+'"><div class="s-detail-grid">';
+    h+='<div class="sdv"><div class="sdv-l">S</div><div class="sdv-v">'+d.S.toFixed(2)+'</div></div>';
+    h+='<div class="sdv"><div class="sdv-l">R</div><div class="sdv-v">'+d.R.toFixed(2)+'</div></div>';
+    h+='<div class="sdv"><div class="sdv-l">V</div><div class="sdv-v"'+(d.V<1?' style="color:var(--red)"':'')+'>'+d.V.toFixed(1)+'</div></div>';
+    h+='<div class="sdv"><div class="sdv-l">Fc</div><div class="sdv-v exp">'+d.Fc.toFixed(1)+'</div></div>';
+    h+='<div class="sdv"><div class="sdv-l">\u03B2</div><div class="sdv-v exp">'+d.b.toFixed(3)+'</div></div>';
+    h+='</div><div class="s-insight">'+d.i+'</div></div>';
+  });
+  el.innerHTML=h;
+}
+function stoggle(i){var p=document.getElementById('sd-'+i),r=document.getElementById('sr-'+i),o=p.classList.contains('open');document.querySelectorAll('.s-detail').forEach(function(x){x.classList.remove('open')});document.querySelectorAll('.srow').forEach(function(x){x.classList.remove('expanded')});if(!o){p.classList.add('open');r.classList.add('expanded');}}
+var ro=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');ro.unobserve(e.target);}});},{threshold:0.08});
+document.querySelectorAll('.reveal').forEach(function(el){ro.observe(el);});
+renderBoard();
+</script>
+</body>
+</html>
