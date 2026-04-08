@@ -1,3 +1,3 @@
 cd /d C:\GitHub\grove-launch-site
 git add -A
-git commit --amend -m "grove-launch-site-initial"
+git commit -m "treatise-landing-page-v1"

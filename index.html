@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Grove Foundation — Open Standards for Distributed AI Architecture</title>
-<meta name="description" content="The Grove Foundation publishes open architectural standards for AI governance. The Autonomaton Pattern is the first.">
+<title>The Grove Foundation — Policy Enforceability Is an Architectural Property</title>
+<meta name="description" content="The Grove Foundation publishes open architectural standards for AI governance. A policy enforced by a prompt is not a constraint. It is a suggestion.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fragment+Mono:ital@0;1&family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -34,13 +34,12 @@ body {
   overflow-x:hidden; line-height:1.6;
 }
 strong { color:var(--text); font-weight:500; }
-/* Grid texture */
 body::before {
   content:''; position:fixed; inset:0;
   background-image:
     linear-gradient(var(--border) 1px, transparent 1px),
     linear-gradient(90deg, var(--border) 1px, transparent 1px);
-  background-size:40px 40px; opacity:0.2;
+  background-size:40px 40px; opacity:0.15;
   pointer-events:none; z-index:0;
 }
 /* ── NAVIGATION ── */
@@ -62,9 +61,7 @@ nav {
   text-transform:uppercase; color:var(--text-dim); text-decoration:none;
   padding:4px 0; border-bottom:1px solid transparent; transition:all 0.2s;
 }
-.nav-links a:hover, .nav-links a.active {
-  color:var(--amber); border-bottom-color:var(--amber);
-}
+.nav-links a:hover { color:var(--amber); border-bottom-color:var(--amber); }
 .nav-links a.nav-ext {
   color:var(--amber-dim); border:1px solid var(--amber-dim);
   padding:3px 10px; margin-left:8px; border-bottom:1px solid var(--amber-dim);
@@ -74,16 +71,11 @@ nav {
   background:rgba(212,98,26,0.08);
 }
 /* ── SECTION SYSTEM ── */
-.section {
-  position:relative; z-index:1;
-  padding:0; /* sections manage their own padding */
-}
+.section { position:relative; z-index:1; }
 .section-inner {
-  max-width:1000px; margin:0 auto;
+  max-width:760px; margin:0 auto;
   padding:120px 48px 100px;
 }
-.section-wide { max-width:1140px; margin:0 auto; padding:120px 48px 100px; }
-
 /* ── TYPOGRAPHY ── */
 .eyebrow {
   font-family:var(--mono); font-size:11px;
@@ -102,51 +94,26 @@ nav {
   color:var(--text); margin-bottom:20px; letter-spacing:-0.01em;
 }
 .headline em { color:var(--amber); font-style:italic; }
-.subhead {
-  font-family:var(--serif); font-weight:400;
-  font-size:clamp(20px,2.2vw,28px); color:var(--text);
-  margin:64px 0 20px; line-height:1.2;
-}
-.subhead em { color:var(--amber); font-style:italic; }
 .lead {
   font-weight:300; font-size:clamp(15px,1.5vw,17px);
   line-height:1.75; color:var(--text-mid);
   max-width:700px; margin-bottom:32px;
 }
 .body-text {
-  font-size:14.5px; color:var(--text-mid); line-height:1.75;
-  font-weight:300; max-width:720px; margin-bottom:20px;
+  font-size:15px; color:var(--text-mid); line-height:1.8;
+  font-weight:300; margin-bottom:24px;
 }
 .body-text strong { color:var(--text); }
 .divider { width:48px; height:1px; background:var(--amber); margin:32px 0; }
-canvas { display:block; width:100%; }
-/* ── INSIGHT BOX ── */
-.insight-box {
-  background:rgba(212,98,26,0.04);
-  border:1px solid rgba(212,98,26,0.2);
-  border-left:3px solid var(--amber);
-  padding:28px 32px; margin:40px 0;
+/* ── PART MARKER ── */
+.part-marker {
+  font-family:var(--mono); font-size:10px;
+  letter-spacing:0.2em; text-transform:uppercase;
+  color:var(--amber-dim); margin-bottom:12px;
+  padding-bottom:12px; border-bottom:1px solid var(--border);
+  display:inline-block;
 }
-.insight-box p { font-size:14px; color:var(--text-mid); line-height:1.7; font-weight:300; }
-.insight-box .red, .red { color:var(--red); }
-.insight-box strong { color:var(--text); }
-
-/* ── BIG STAT CALLOUT ── */
-.big-stat {
-  font-family:var(--serif); font-style:italic;
-  font-size:clamp(60px,8vw,120px);
-  color:var(--amber); line-height:1; letter-spacing:-0.03em;
-}
-.stat-context {
-  font-family:var(--mono); font-size:12px;
-  color:var(--text-dim); letter-spacing:0.1em;
-  text-transform:uppercase; margin-top:8px;
-}
-.stat-detail {
-  font-size:14px; color:var(--text-mid); line-height:1.65;
-  font-weight:300; margin-top:12px; max-width:520px;
-}
-/* ── HERO SECTION ── */
+/* ── HERO ── */
 #hero {
   min-height:100vh; display:flex; flex-direction:column;
   justify-content:center; position:relative;
@@ -165,884 +132,215 @@ canvas { display:block; width:100%; }
   animation:pulse 2s ease-in-out infinite;
 }
 @keyframes pulse { 0%,100%{opacity:0.3;} 50%{opacity:0.8;} }
-/* ── G7 COUNTRY ROWS ── */
-.country-grid { display:flex; flex-direction:column; gap:2px; }
-.country-row {
-  display:grid; grid-template-columns:160px 1fr 200px;
-  background:var(--bg2); border:1px solid var(--border);
-  border-bottom:none; position:relative; overflow:hidden;
+/* ── INSIGHT BOX ── */
+.insight-box {
+  background:rgba(212,98,26,0.04);
+  border:1px solid rgba(212,98,26,0.2);
+  border-left:3px solid var(--amber);
+  padding:28px 32px; margin:40px 0;
 }
-.country-row:last-child { border-bottom:1px solid var(--border); }
-.country-row.sovereign { border-left:3px solid var(--green); }
-.country-row.centralized { border-left:3px solid var(--red); background:var(--red-dim); }
-.col-name {
-  padding:20px; display:flex; flex-direction:column; justify-content:center;
-  border-right:1px solid var(--border);
-}
-.flag-label { font-family:var(--serif); font-size:18px; line-height:1.2; }
-.country-row.sovereign .flag-label { color:var(--green); }
-.country-row.centralized .flag-label { color:var(--red); }
-.arch-tag {
-  font-family:var(--mono); font-size:8px; letter-spacing:0.12em;
-  text-transform:uppercase; margin-top:4px;
-  padding:2px 6px; display:inline-block; width:fit-content;
-}
-.arch-tag.sovereign { color:var(--green); background:var(--green-dim); border:1px solid rgba(76,175,114,0.2); }
-.arch-tag.centralized { color:var(--red); background:var(--red-dim); border:1px solid rgba(192,57,43,0.2); }
-.col-body { padding:18px 22px; display:flex; flex-direction:column; justify-content:center; }
-.investment { font-family:var(--mono); font-size:12px; color:var(--text); margin-bottom:4px; letter-spacing:0.02em; }
-.description { font-size:12px; color:var(--text-dim); line-height:1.5; font-weight:300; }
-.col-signal {
-  padding:18px 22px; border-left:1px solid var(--border);
-  display:flex; flex-direction:column; justify-content:center;
-}
-.signal-label { font-family:var(--mono); font-size:8px; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-dim); margin-bottom:4px; }
-.signal-text { font-family:var(--serif); font-style:italic; font-size:12px; color:var(--text-mid); line-height:1.4; }
-/* Summary bar */
-.summary-bar {
-  display:grid; grid-template-columns:1fr 1fr; gap:1px;
-  background:var(--border); border:1px solid var(--border); margin:40px 0;
-}
-.summary-cell { background:var(--bg2); padding:28px 24px; }
-.summary-num { font-family:var(--serif); font-size:48px; line-height:1; margin-bottom:8px; }
-.summary-label { font-family:var(--mono); font-size:10px; letter-spacing:0.15em; text-transform:uppercase; }
-.summary-detail { font-size:12px; color:var(--text-dim); margin-top:8px; line-height:1.5; font-weight:300; }
-
+.insight-box p { font-size:14px; color:var(--text-mid); line-height:1.7; font-weight:300; }
+.insight-box strong { color:var(--text); }
 /* ── SECTION BACKGROUNDS ── */
-#thesis-body {
-  background:radial-gradient(ellipse at 70% 30%, rgba(212,98,26,0.04) 0%, transparent 50%);
+#part-1 {
+  background:radial-gradient(ellipse at 70% 30%, rgba(192,57,43,0.04) 0%, transparent 50%);
 }
-#geometry {
-  background:radial-gradient(ellipse at 50% 50%, rgba(76,175,114,0.04) 0%, transparent 50%),
-    linear-gradient(var(--bg) 0%, #060606 100%);
-}
-#capture {
-  background:radial-gradient(ellipse at 30% 60%, rgba(192,57,43,0.05) 0%, transparent 50%);
-}
-#landscape {
+#part-2 {
   background:var(--bg2);
   border-top:1px solid var(--border); border-bottom:1px solid var(--border);
 }
-#autonomaton {
-  background:radial-gradient(ellipse at 50% 20%, rgba(212,98,26,0.06) 0%, transparent 50%);
+#part-3 {
+  background:radial-gradient(ellipse at 30% 60%, rgba(76,175,114,0.04) 0%, transparent 50%);
 }
-#foundation {
+#part-4 {
+  background:radial-gradient(ellipse at 50% 50%, rgba(212,98,26,0.04) 0%, transparent 50%);
+}
+#identity {
   background:var(--bg2); border-top:1px solid var(--border);
 }
-
-/* ── STATS GRID ── */
-.stats { display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--border); border:1px solid var(--border); margin:32px 0; }
-.stat { background:var(--bg2); padding:24px; }
-.stat-label-color { font-family:var(--mono); font-size:10px; letter-spacing:0.15em; text-transform:uppercase; margin-bottom:12px; }
-.stat-pair { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
-.stat-item-label { font-size:12px; color:var(--text-dim); margin-bottom:4px; }
-.stat-item-value { font-family:var(--serif); font-size:26px; line-height:1; }
-
-/* ── SLIDER ── */
-.slider-row { display:flex; align-items:center; gap:20px; margin-bottom:10px; }
-.slider-label { font-family:var(--mono); font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-dim); white-space:nowrap; }
-.slider-val { font-family:var(--serif); font-size:32px; color:var(--amber); min-width:56px; text-align:right; line-height:1; }
-.slider-hint { font-family:var(--mono); font-size:10px; color:var(--text-dim); margin-bottom:40px; letter-spacing:0.04em; }
-input[type="range"] { -webkit-appearance:none; appearance:none; width:100%; height:2px; background:var(--border-light); outline:none; cursor:pointer; }
-input[type="range"]::-webkit-slider-thumb { -webkit-appearance:none; width:16px; height:16px; border-radius:50%; background:var(--amber); border:2px solid var(--bg); cursor:pointer; }
-/* ── REVEAL ANIMATION ── */
-.reveal { opacity:0; transform:translateY(24px); transition:opacity 0.7s ease, transform 0.7s ease; }
-.reveal.visible { opacity:1; transform:translateY(0); }
-.reveal-delay-1 { transition-delay:0.1s; }
-.reveal-delay-2 { transition-delay:0.2s; }
-.reveal-delay-3 { transition-delay:0.3s; }
-
-/* ── SCOREBOARD ── */
-.board { border:1px solid var(--border); margin-bottom:32px; }
-.board-header { display:grid; grid-template-columns:36px 2fr 1fr 1.2fr 48px; padding:10px 20px; border-bottom:1px solid var(--border); font-family:var(--mono); font-size:9px; letter-spacing:0.15em; text-transform:uppercase; color:var(--amber); align-items:center; }
-.srow { display:grid; grid-template-columns:36px 2fr 1fr 1.2fr 48px; padding:0 20px; align-items:center; min-height:56px; border-bottom:1px solid rgba(37,37,37,0.6); cursor:pointer; transition:background 0.15s; }
-.srow:last-child { border-bottom:none; }
-.srow:hover { background:var(--bg3); }
-.srow.expanded { background:var(--bg3); }
-.srow.sovereignty { border-left:3px solid var(--green); }
-.srow.dependency { border-left:3px solid var(--red); }
-.srow.hybrid { border-left:3px solid var(--yellow); }
-.s-rank { font-family:var(--mono); font-size:13px; color:var(--text-dim); text-align:center; }
-.s-name { font-family:var(--serif); font-size:16px; color:var(--text); }
-.s-cat { font-family:var(--mono); font-size:8px; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-dim); margin-top:1px; }
-.s-score { font-family:var(--mono); font-size:15px; font-weight:600; text-align:center; }
-.s-tier { font-family:var(--mono); font-size:9px; letter-spacing:0.06em; padding:4px 10px; text-align:center; white-space:nowrap; display:inline-block; }
-.t-ac { background:rgba(212,98,26,0.1); color:var(--amber); border:1px solid rgba(212,98,26,0.3); }
-.t-sc { background:rgba(212,160,23,0.1); color:var(--yellow); border:1px solid rgba(212,160,23,0.3); }
-.t-si { background:rgba(192,57,43,0.08); color:var(--red); border:1px solid rgba(192,57,43,0.25); }
-.s-dir { font-size:16px; text-align:center; font-weight:600; }
-.d-up { color:var(--green); } .d-dn { color:var(--red); } .d-fl { color:var(--text-dim); }
-.s-detail { display:none; padding:16px 20px 16px 56px; border-bottom:1px solid var(--border); background:rgba(15,15,15,0.8); }
-.s-detail.open { display:block; }
-.s-detail-grid { display:grid; grid-template-columns:repeat(5,1fr); gap:12px; margin-bottom:12px; }
-.sdv { text-align:center; }
-.sdv-l { font-family:var(--mono); font-size:8px; letter-spacing:0.12em; color:var(--text-dim); margin-bottom:2px; }
-.sdv-v { font-family:var(--serif); font-size:22px; }
-.sdv-v.exp { color:var(--amber); }
-.s-insight { font-size:12px; color:var(--text-dim); line-height:1.6; border-left:2px solid var(--border); padding-left:14px; }
-
-/* ── FORMULA ── */
-.formula-box { background:var(--bg3); border:1px solid var(--border); padding:28px; text-align:center; margin:24px 0; }
-.formula { font-family:var(--serif); font-style:italic; font-size:clamp(22px,2.8vw,34px); color:var(--text); }
-.formula .dm { color:var(--amber); }
-.var-strip { display:grid; grid-template-columns:repeat(5,1fr); gap:1px; background:var(--border); border:1px solid var(--border); margin-bottom:20px; }
-.var-cell { background:var(--bg2); padding:14px; text-align:center; }
-.var-sym { font-family:var(--serif); font-style:italic; font-size:20px; margin-bottom:3px; }
-.var-sym.exp { color:var(--amber); }
-.var-nm { font-family:var(--mono); font-size:8px; letter-spacing:0.15em; text-transform:uppercase; color:var(--text-dim); margin-bottom:4px; }
-.var-ds { font-size:10px; color:var(--text-dim); line-height:1.4; }
-/* ── PROFILES ── */
-.profiles { display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--border); border:1px solid var(--border); margin:24px 0; }
-.prof { background:var(--bg2); padding:24px; }
-.prof-label { font-family:var(--mono); font-size:10px; letter-spacing:0.15em; text-transform:uppercase; margin-bottom:10px; }
-.prof-desc { font-size:13px; color:var(--text-mid); line-height:1.6; font-weight:300; }
-.prof-members { font-family:var(--mono); font-size:10px; color:var(--text-dim); margin-top:10px; letter-spacing:0.04em; }
-.prof-kick { font-size:13px; margin-top:10px; line-height:1.5; font-weight:400; }
-
-/* ── INTEGRITY ── */
-.integrity { background:rgba(212,98,26,0.04); border:1px solid rgba(212,98,26,0.2); padding:24px 28px; margin:32px 0; }
-.integrity p { font-size:14px; color:var(--text-mid); line-height:1.7; font-weight:300; }
-
-/* ── PIPELINE ── */
-.pipe-diagram {
-  display:flex; align-items:center; justify-content:center;
-  gap:0; margin:32px 0 12px; flex-wrap:wrap;
+/* ── IDENTITY BLOCK ── */
+.identity-statement {
+  max-width:620px;
 }
-.pipe-stage {
-  background:var(--bg3); border:1px solid var(--border);
-  padding:18px 22px; text-align:center; min-width:130px;
-  position:relative;
+.identity-statement p {
+  font-family:var(--serif); font-size:clamp(18px,2vw,22px);
+  line-height:1.6; color:var(--text); font-weight:400;
+  margin-bottom:20px;
 }
-.pipe-stage::after {
-  content:''; position:absolute; top:0; left:0; right:0;
-  height:2px; background:linear-gradient(90deg, var(--amber-dim), var(--amber));
-  opacity:0.6;
+.identity-statement p em { color:var(--amber); font-style:italic; }
+.identity-meta {
+  font-family:var(--mono); font-size:10px; color:var(--text-dim);
+  letter-spacing:0.1em; margin-top:32px;
 }
-.pipe-num { font-family:var(--mono); font-size:9px; color:var(--amber-dim); letter-spacing:0.15em; margin-bottom:4px; }
-.pipe-name { font-family:var(--serif); font-size:16px; color:var(--text); }
-.pipe-arrow { font-family:var(--mono); font-size:14px; color:var(--border-light); padding:0 6px; }
-
-/* ── UNLOCK GRID ── */
-.unlock-grid {
-  display:grid; grid-template-columns:1fr 1fr 1fr;
-  gap:1px; background:var(--border); border:1px solid var(--border); margin:24px 0;
-}
-.unlock-cell { background:var(--bg3); padding:24px; }
-.unlock-label { font-family:var(--mono); font-size:10px; color:var(--amber); letter-spacing:0.15em; text-transform:uppercase; margin-bottom:10px; }
-.unlock-body { font-size:13px; color:var(--text-mid); line-height:1.65; }
-.unlock-body strong { color:var(--text); }
-
-/* ── ZONE MODEL ── */
-.zone-strip {
-  display:grid; grid-template-columns:1fr 1fr 1fr;
-  gap:1px; background:var(--border); border:1px solid var(--border); margin:24px 0;
-}
-.zone-cell { background:var(--bg3); padding:24px; }
-.zone-cell.green { border-top:3px solid var(--green); }
-.zone-cell.yellow { border-top:3px solid var(--yellow); }
-.zone-cell.red-zone { border-top:3px solid var(--red); }
-.zone-name { font-family:var(--mono); font-size:11px; letter-spacing:0.12em; text-transform:uppercase; margin-bottom:8px; }
-.zone-title { font-family:var(--serif); font-size:17px; color:var(--text); margin-bottom:6px; }
-.zone-body { font-size:12px; color:var(--text-dim); line-height:1.6; }
-/* ── RATCHET / GUARANTEE ── */
-.tapestry-row {
-  display:grid; grid-template-columns:1fr 1fr;
-  gap:1px; background:var(--border); border:1px solid var(--border); margin:24px 0;
-}
-.tapestry-cell { background:var(--bg3); padding:24px; }
-.tapestry-label { font-family:var(--mono); font-size:10px; color:var(--amber); letter-spacing:0.15em; text-transform:uppercase; margin-bottom:10px; }
-.tapestry-body { font-size:13px; color:var(--text-mid); line-height:1.65; }
-.tapestry-body strong { color:var(--text); }
-
-/* ── CTA BOX ── */
-.cta-box {
-  margin-top:40px; padding:28px 32px;
-  border:1px solid var(--amber-dim); background:rgba(212,98,26,0.03);
-}
-.cta-label { font-family:var(--mono); font-size:11px; color:var(--amber); letter-spacing:0.15em; margin-bottom:12px; text-transform:uppercase; }
-.cta-body { font-size:14px; color:var(--text-mid); line-height:1.65; }
-.cta-contact { font-family:var(--mono); font-size:10px; color:var(--text-dim); margin-top:12px; letter-spacing:0.06em; }
-
-/* ── SECTION DIVIDERS ── */
-.section-break {
+/* ── SECTION SEPARATOR ── */
+.section-sep {
   height:1px; background:var(--border); position:relative; z-index:1;
 }
-
-/* ── PERSISTENT SCORECARD ── */
-.scorecard {
-  position:fixed; top:72px; right:24px; z-index:90;
-  width:220px; background:rgba(15,15,15,0.94);
-  backdrop-filter:blur(12px);
-  border:1px solid var(--border); padding:18px;
-  opacity:0; transform:translateY(-8px);
-  transition:opacity 0.4s, transform 0.4s;
-  pointer-events:none;
-}
-.scorecard.visible { opacity:1; transform:translateY(0); pointer-events:all; }
-.scorecard-label {
-  font-family:var(--mono); font-size:8px; letter-spacing:0.18em;
-  text-transform:uppercase; color:var(--amber); margin-bottom:12px;
-}
-.sc-share-row {
-  display:flex; justify-content:space-between; align-items:baseline;
-  margin-bottom:6px;
-}
-.sc-share-pct {
-  font-family:var(--mono); font-size:22px; line-height:1;
-  letter-spacing:-0.02em;
-}
-.sc-share-label {
-  font-family:var(--mono); font-size:8px; letter-spacing:0.12em;
-  text-transform:uppercase;
-}
-.sc-bar {
-  height:6px; display:flex; gap:1px; margin:10px 0 8px;
-  border-radius:1px; overflow:hidden;
-}
-.sc-bar-sov { background:var(--green); flex:83; }
-.sc-bar-con { background:var(--red); flex:17; }
-.sc-tension {
-  font-size:10px; color:var(--text-dim); line-height:1.45;
-  margin:10px 0 0; padding-top:10px;
-  border-top:1px solid var(--border);
-}
-.sc-timestamp {
-  font-family:var(--mono); font-size:8px; color:var(--text-dim);
-  letter-spacing:0.08em; margin-top:10px;
-}
-@media(max-width:1100px) { .scorecard { display:none; } }
+/* ── REVEAL ── */
+.reveal { opacity:0; transform:translateY(24px); transition:opacity 0.7s ease, transform 0.7s ease; }
+.reveal.visible { opacity:1; transform:translateY(0); }
 /* ── RESPONSIVE ── */
-@media(max-width:900px) {
-  .country-row { grid-template-columns:1fr; }
-  .col-name { border-right:none; border-bottom:1px solid var(--border); padding:14px 18px; }
-  .col-signal { border-left:none; border-top:1px solid var(--border); }
-  .summary-bar { grid-template-columns:1fr; }
-}
 @media(max-width:768px) {
   nav { padding:0 20px; }
   .nav-links { gap:16px; }
   .nav-links a { font-size:9px; }
-  .section-inner, .section-wide { padding:80px 20px 60px; }
+  .section-inner { padding:80px 24px 60px; }
   #hero .section-inner { padding-top:60px; }
-  .stats,.profiles,.tapestry-row { grid-template-columns:1fr; }
-  .unlock-grid, .zone-strip { grid-template-columns:1fr; }
-  .board-header,.srow { grid-template-columns:28px 2fr 1fr 44px; }
-  .board-header > :nth-child(4),.srow > :nth-child(4) { display:none; }
-  .s-detail { padding-left:20px; }
-  .s-detail-grid { grid-template-columns:repeat(3,1fr); }
-  .var-strip { grid-template-columns:repeat(3,1fr); }
-  .pipe-diagram { flex-direction:column; align-items:stretch; }
-  .pipe-arrow { transform:rotate(90deg); text-align:center; padding:4px 0; }
-  .display { font-size:clamp(32px,8vw,52px); }
 }
 </style>
 </head>
 <body>
-
-<!-- ══════ PERSISTENT SCORECARD ══════ -->
-<div class="scorecard" id="scorecard" onclick="document.getElementById('landscape').scrollIntoView({behavior:'smooth'})" style="cursor:pointer;">
-  <div class="scorecard-label">Structural Share</div>
-  <div class="sc-share-row">
-    <div><div class="sc-share-pct" style="color:var(--green);">83%</div><div class="sc-share-label" style="color:var(--green);">Sovereign</div></div>
-    <div style="text-align:right;"><div class="sc-share-pct" style="color:var(--red);">17%</div><div class="sc-share-label" style="color:var(--red);">Concentrated</div></div>
-  </div>
-  <div class="sc-bar"><div class="sc-bar-sov"></div><div class="sc-bar-con"></div></div>
-  <div class="sc-share-label" style="color:var(--text-dim); margin-bottom:0;">Structural share by &Lambda; score</div>
-  <div class="sc-tension">Structural viability favors sovereignty &mdash; but regulatory pressure and headline power favor concentration.</div>
-  <div class="sc-timestamp">March 2026 &middot; 8 patterns scored</div>
-</div>
 <!-- ══════ NAVIGATION ══════ -->
 <nav>
   <div class="nav-logo">The Grove Foundation</div>
   <div class="nav-links">
-    <a href="#hero" class="active">Why Policy Fails</a>
-    <a href="#geometry">The Math</a>
-    <a href="#capture">Implications</a>
-    <a href="#landscape">Viability</a>
-    <a href="#autonomaton">Open Standard 001</a>
-    <a href="#foundation">About</a>
+    <a href="/observations">Observations</a>
+    <a href="/standards/001">Open Standards</a>
     <a href="https://the-grove.ai/autonomaton" target="_blank" rel="noopener noreferrer" class="nav-ext">Playground &nearr;</a>
+    <a href="/about">About</a>
   </div>
 </nav>
 
 <!-- ═══════════════════════════════════════════════════
-     SECTION 1A: HERO — THE ARCHITECTURE IS THE POLICY
-     Full-viewport opening. Headline as the first visual moment.
+     HERO
 ════════════════════════════════════════════════════ -->
 <section class="section" id="hero">
   <div class="section-inner">
     <div class="eyebrow">The Grove Foundation</div>
-    <h1 class="display">The architecture<br><em>is the policy.</em></h1>
-    <p class="lead">Six of seven G7 nations are building sovereign AI infrastructure. The United States is the only one consolidating toward four vendors. That&rsquo;s not a policy difference. It&rsquo;s an architectural one.</p>
+    <h1 class="display">Policy enforceability is an<br><em>architectural property.</em></h1>
+    <p class="lead">A rule enforced by a prompt is not a constraint. It is a suggestion. The difference between a lock and a suggestion is the difference between architecture and aspiration. The AI industry has chosen aspiration. We publish the architecture.</p>
     <div class="divider"></div>
-    <p class="hero-meta">Open standards for distributed AI architecture &middot; CC BY 4.0</p>
+    <p class="hero-meta">Open standards for distributed AI governance &middot; CC BY 4.0</p>
   </div>
-  <div class="scroll-cue">&darr; Scroll</div>
+  <div class="scroll-cue">&darr;</div>
 </section>
 <!-- ═══════════════════════════════════════════════════
-     SECTION 1B: THESIS BODY — G7 TABLE + ARGUMENTS
+     PART I: THE ILLUSION OF POLICY AS ENGINEERING
 ════════════════════════════════════════════════════ -->
-<section class="section" id="thesis-body">
-  <div class="section-wide reveal">
-
-    <!-- SECTION FRAMING -->
-    <div class="eyebrow">The Divergence</div>
-    <h1 class="headline">You can&rsquo;t regulate what you <em>can&rsquo;t inspect.</em></h1>
-    <p class="lead">Top-down AI regulation assumes the vendor will comply. But centralized architectures are black boxes &mdash; proprietary weights, opaque inference, no audit trail. Policy without architectural enforcement is a press release. Six G7 nations reached this conclusion independently. One didn&rsquo;t.</p>
-    <div class="divider"></div>
-
-    <!-- G7 SUMMARY BAR -->
-    <div class="summary-bar">
-      <div class="summary-cell">
-        <div class="summary-num" style="color:var(--green);">6</div>
-        <div class="summary-label" style="color:var(--green);">Building sovereign</div>
-        <div class="summary-detail">France, Germany, Japan, Canada, UK, Italy are investing in domestic AI infrastructure, open-weight models, and architectural independence from US vendors.</div>
-      </div>
-      <div class="summary-cell">
-        <div class="summary-num" style="color:var(--red);">1</div>
-        <div class="summary-label" style="color:var(--red);">Consolidating centralized</div>
-        <div class="summary-detail">The United States is preempting state regulation, taking equity stakes in vendors, and framing deregulation of four companies as national AI strategy.</div>
-      </div>
-    </div>
-
-    <!-- G7 COUNTRY TABLE -->
-    <div class="country-grid">
-      <div class="country-row sovereign">
-        <div class="col-name"><div class="flag-label">France</div><div class="arch-tag sovereign">Sovereign + Open-Weight</div></div>
-        <div class="col-body"><div class="investment"><a href="https://cepa.org/article/france-pursues-an-ai-third-way/" target="_blank" rel="noopener" style="color:var(--text); text-decoration:none; border-bottom:1px solid var(--border-light);">&euro;109B AI infrastructure</a> &middot; Mistral &euro;2.8B raised</div><div class="description">Open-weight models (Apache 2.0) deployed on French-controlled servers. Military eliminated US cloud dependencies. Framework agreements with Germany for public administration AI.</div></div>
-        <div class="col-signal"><div class="signal-label">Key signal</div><div class="signal-text">&ldquo;This is our fight for sovereignty, for strategic autonomy.&rdquo; &mdash; Macron</div></div>
-      </div>
-      <div class="country-row sovereign">
-        <div class="col-name"><div class="flag-label">Germany</div><div class="arch-tag sovereign">Sovereign + EU-Aligned</div></div>
-        <div class="col-body"><div class="investment">100,000 GPUs via Nvidia / Deutsche Telekom by 2027</div><div class="description">Joint Digital Sovereignty Summit with France. Partnered with SAP and Mistral for sovereign AI stack for public administration.</div></div>
-        <div class="col-signal"><div class="signal-label">Key signal</div><div class="signal-text">GPU deployment is &ldquo;an important step toward digital sovereignty.&rdquo;</div></div>
-      </div>
-      <div class="country-row sovereign">
-        <div class="col-name"><div class="flag-label">Japan</div><div class="arch-tag sovereign">Sovereign + Domestic Models</div></div>
-        <div class="col-body"><div class="investment">&yen;1T ($6.4B) five-year plan &middot; $5.5B AI infra market 2026</div><div class="description">First National AI Basic Plan. Fujitsu manufacturing sovereign AI servers. METI joint venture for domestic foundation models.</div></div>
-        <div class="col-signal"><div class="signal-label">Key signal</div><div class="signal-text">Domestic foundation models, sovereign hardware, AI as national security.</div></div>
-      </div>
-      <div class="country-row sovereign">
-        <div class="col-name"><div class="flag-label">Canada</div><div class="arch-tag sovereign">Sovereign Compute + Open Source</div></div>
-        <div class="col-body"><div class="investment">C$2B Sovereign AI Compute Strategy</div><div class="description">Open source identified as &ldquo;third path&rdquo; between building walls and accepting subordination.</div></div>
-        <div class="col-signal"><div class="signal-label">Key signal</div><div class="signal-text">&ldquo;Shared standards reduce fragmentation.&rdquo; &mdash; PM Carney</div></div>
-      </div>
-      <div class="country-row sovereign">
-        <div class="col-name"><div class="flag-label">United Kingdom</div><div class="arch-tag sovereign">Trending Sovereign</div></div>
-        <div class="col-body"><div class="investment">&pound;500M Sovereign AI Unit &middot; &pound;18B infrastructure</div><div class="description">Sovereign AI Unit launched April 2026. Innovate UK funding distributed and decentralized systems.</div></div>
-        <div class="col-signal"><div class="signal-label">Key signal</div><div class="signal-text">&ldquo;An AI maker, not an AI taker.&rdquo;</div></div>
-      </div>
-      <div class="country-row sovereign">
-        <div class="col-name"><div class="flag-label">Italy</div><div class="arch-tag sovereign">Institutional Capacity</div></div>
-        <div class="col-body"><div class="investment">AI4Industry &euro;20M/yr &middot; 8 Competence Centers</div><div class="description">G7 2024 Presidency launched AI Code of Conduct. Standards and governance as national contribution.</div></div>
-        <div class="col-signal"><div class="signal-label">Key signal</div><div class="signal-text">Institutional infrastructure over model competition.</div></div>
-      </div>
-      <div class="country-row centralized">
-        <div class="col-name"><div class="flag-label">United States</div><div class="arch-tag centralized">Centralized + Vendor Consolidation</div></div>
-        <div class="col-body"><div class="investment">$500B Stargate (announced) &middot; $8.9B Intel equity stake</div><div class="description"><a href="https://www.whitehouse.gov/presidential-actions/2025/12/eliminating-state-law-obstruction-of-national-artificial-intelligence-policy/" target="_blank" rel="noopener" style="color:var(--text-dim); border-bottom:1px solid var(--border-light);">Federal preemption of state AI laws</a>. DOJ mobilized against state regulation. AI strategy routes through four companies. Flagship campus failed first winter stress test.</div></div>
-        <div class="col-signal"><div class="signal-label">Key signal</div><div class="signal-text"><a href="https://www.whitehouse.gov/presidential-actions/2025/12/eliminating-state-law-obstruction-of-national-artificial-intelligence-policy/" target="_blank" rel="noopener" style="color:var(--text-mid); text-decoration:none; border-bottom:1px solid var(--border-light);">&ldquo;US AI companies must be free to innovate without cumbersome regulation.&rdquo;</a></div></div>
-      </div>
-    </div><!-- /country-grid -->
-  </div><!-- /section-wide -->
-</section>
-
-<!-- ── THESIS ARGUMENTS ── -->
-<section class="section" id="thesis-args" style="background:radial-gradient(ellipse at 80% 40%, rgba(212,98,26,0.04) 0%, transparent 50%);">
+<section class="section" id="part-1">
   <div class="section-inner reveal">
-    <h2 class="subhead" style="margin-top:0;">Centralized architectures are <em>bad computer science.</em></h2>
-    <p class="body-text">Every query in a centralized architecture round-trips to a remote inference layer. That means increased latency, increased cost, and a single point of failure. Black-box parameters mean there is no way to audit what the system returns.</p>
-    <p class="body-text">The dependency runs deeper than performance. In February 2026, <a href="https://openai.com/index/retiring-gpt-4o-and-older-models/" target="_blank" rel="noopener" style="color:var(--amber); text-decoration:none; border-bottom:1px solid var(--amber-dim);">OpenAI retired GPT-4o, GPT-4.1, GPT-4.1 mini, and o4-mini in the same window</a> &mdash; giving developers roughly three months to migrate production systems. The <a href="https://developers.openai.com/api/docs/deprecations" target="_blank" rel="noopener" style="color:var(--amber); text-decoration:none; border-bottom:1px solid var(--amber-dim);">Assistants API</a>, which entire product architectures were built on, was deprecated with an August 2026 shutdown. The migration wasn&rsquo;t a version upgrade. It was a forced rebuild.</p>
-    <p class="body-text">Every organization building on a centralized API is building on rented ground &mdash; and the landlord can renovate your apartment while you&rsquo;re living in it.</p>
+    <div class="part-marker">Part I</div>
+    <h2 class="headline">The illusion of policy<br><em>as engineering.</em></h2>
+    <div class="divider"></div>
+
+    <p class="body-text">The current generation of AI safety infrastructure rests on two mechanisms: reinforcement learning from human feedback and system-level instructions. Both are presented as engineering solutions. Neither qualifies.</p>
+
+    <p class="body-text">RLHF is preference optimization. It adjusts the probability distribution of model outputs to favor responses that human evaluators rated as acceptable. This makes harmful outputs <strong>statistically less likely.</strong> It does not make them <strong>impossible.</strong> The distinction matters. A lock that usually works is not a lock. It is a weighted coin.</p>
+
+    <p class="body-text">System prompts are more revealing. They are strings. They are sent alongside user input, in the same channel, processed by the same weights. The model does not distinguish between &ldquo;the user wants X&rdquo; and &ldquo;the system forbids X&rdquo; at an architectural level. It processes both as tokens. Every jailbreak ever published is empirical proof of this: the architecture does not enforce the policy. It merely prefers compliance when compliance is convenient.</p>
+    <div class="insight-box">
+      <p>This is the equivalent of securing a bank vault with a sign that reads <strong>&ldquo;Authorized Personnel Only.&rdquo;</strong> The sign works when everyone obeys it. It provides zero resistance when someone doesn&rsquo;t.</p>
+    </div>
+
+    <p class="body-text">And yet this is what the industry presents as its safety architecture: output-layer filtering on a black-box probabilistic engine. A behavioral veneer applied to a system that has no structural concept of the behavior being requested.</p>
+
+    <p class="body-text">The deeper problem is not that these mechanisms are weak. It is that they are <strong>unverifiable.</strong> The vendor can change the model weights, modify the system prompt, alter the RLHF training set, or redefine the policy&mdash;at any time, server-side, without disclosure. The system you evaluated yesterday is not necessarily the system running today. You cannot audit what you cannot inspect. You cannot govern what you cannot see.</p>
+
+    <p class="body-text">This is not governance. It is faith in a vendor&rsquo;s continued good intentions, applied to infrastructure that the vendor can silently modify. In any other regulated domain&mdash;aviation, pharmaceuticals, nuclear energy, financial systems&mdash;this would be considered not merely insufficient but negligent. A pharmaceutical company that said &ldquo;trust us, we test our drugs&rdquo; without submitting to independent verification would not receive FDA approval. It would receive a subpoena.</p>
+
+    <p class="body-text">And yet this is precisely the governance model that the world&rsquo;s most capitalized AI companies are asking regulators, enterprises, and the public to accept.</p>
   </div>
 </section>
-<!-- ── STARGATE DATA CALLOUT ── -->
-<section class="section" style="background:radial-gradient(ellipse at 40% 50%, rgba(192,57,43,0.05) 0%, transparent 45%);">
-  <div class="section-inner reveal" style="display:grid; grid-template-columns:auto 1fr; gap:48px; align-items:start;">
-    <div>
-      <div class="big-stat">2%</div>
-      <div class="stat-context">of promised Stargate capacity exists</div>
-    </div>
-    <div>
-      <h2 class="subhead" style="margin-top:0;">The physics don&rsquo;t <em>cooperate.</em></h2>
-      <p class="body-text">The flagship project of the centralized strategy &mdash; <a href="https://www.bloomberg.com/news/articles/2026-03-06/oracle-and-openai-end-plans-to-expand-flagship-data-center" target="_blank" rel="noopener" style="color:var(--amber); text-decoration:none; border-bottom:1px solid var(--amber-dim);">Stargate</a> &mdash; promised $500 billion and ten gigawatts from the White House in January 2025. Fourteen months later, <a href="https://www.datacenterdynamics.com/en/news/oracleopenai-drop-plans-to-expand-flagship-abilene-stargate-site-meta-in-talks-to-pick-up-crusoe-capacity-with-nvidias-help/" target="_blank" rel="noopener" style="color:var(--amber); text-decoration:none; border-bottom:1px solid var(--amber-dim);">2% of the promised capacity exists</a>. The Abilene, Texas campus couldn&rsquo;t survive one West Texas winter. A <a href="https://www.tomshardware.com/tech-industry/oracle-and-openai-scrap-planned-600mw-abilene-expansion" target="_blank" rel="noopener" style="color:var(--amber); text-decoration:none; border-bottom:1px solid var(--amber-dim);">cold weather event knocked multiple buildings offline</a> for days. The financing collapsed. The operator <a href="https://www.datacenterdynamics.com/en/news/oracleopenai-drop-plans-to-expand-flagship-abilene-stargate-site-meta-in-talks-to-pick-up-crusoe-capacity-with-nvidias-help/" target="_blank" rel="noopener" style="color:var(--amber); text-decoration:none; border-bottom:1px solid var(--amber-dim);">came from cryptocurrency mining</a>.</p>
-      <p class="body-text"><a href="https://www.tomshardware.com/tech-industry/oracle-and-openai-scrap-planned-600mw-abilene-expansion" target="_blank" rel="noopener" style="color:var(--amber); text-decoration:none; border-bottom:1px solid var(--amber-dim);">Oracle is carrying over $100 billion in debt</a> with negative free cash flow. <a href="https://www.utilitydive.com/news/texas-law-gives-grid-operator-power-to-disconnect-data-centers-during-crisi/751587/" target="_blank" rel="noopener" style="color:var(--amber); text-decoration:none; border-bottom:1px solid var(--amber-dim);">Texas is passing laws</a> to cut data centers off the grid in emergencies. <a href="https://bridgemi.com/michigan-environment-watch/michigan-regulators-approve-contract-for-michigans-first-hyperscale-data-center/" target="_blank" rel="noopener" style="color:var(--amber); text-decoration:none; border-bottom:1px solid var(--amber-dim);">Michigan requires Stargate to be curtailed first</a> in any shortage &mdash; and <a href="https://www.wkar.org/wkar-news/2026-02-27/michigan-data-center-tracker-moratoria-legislation-and-grid-impact" target="_blank" rel="noopener" style="color:var(--amber); text-decoration:none; border-bottom:1px solid var(--amber-dim);">27 communities have enacted moratoria</a> on new data center construction. The communities hosting these facilities are writing contracts that treat them as the most expendable load on the system.</p>
-      <p class="body-text">Gigawatt-scale centralized infrastructure concentrates strategic risk with no redundancy. Distributed architectures don&rsquo;t have a single address.</p>
-    </div>
-  </div>
-</section>
-<!-- ── TELEMETRY SIGNAL + THESIS CLOSE ── -->
-<section class="section" style="background:radial-gradient(ellipse at 60% 60%, rgba(212,98,26,0.04) 0%, transparent 50%);">
+<!-- ═══════════════════════════════════════════════════
+     PART II: REGULATORY CAPTURE AS SUBSTITUTE ARCHITECTURE
+════════════════════════════════════════════════════ -->
+<section class="section" id="part-2">
   <div class="section-inner reveal">
-    <h2 class="subhead" style="margin-top:0;">Architecture constrains what policy <em>can achieve.</em></h2>
-    <p class="body-text">No regulation will make a centralized inference layer auditable if the model weights are proprietary. No data protection law will prevent a vendor from changing pricing or deprecating APIs. And no data retention clause addresses the most valuable thing a centralized provider extracts &mdash; because most enterprises aren&rsquo;t negotiating for it.</p>
-    <p class="body-text">Every interaction generates telemetry: what you asked, how you refined it, what you accepted. Enterprises negotiate data retention. They almost never negotiate the right to the <strong>patterns</strong> &mdash; the aggregate signal that reveals which capabilities their industry needs, which workflows are failing, which knowledge gaps exist. That signal trains the vendor&rsquo;s product roadmap. <strong>The data retention policy covers the content. Nobody covers the signal.</strong></p>
+    <div class="part-marker">Part II</div>
+    <h2 class="headline">Regulatory capture as<br><em>substitute architecture.</em></h2>
+    <div class="divider"></div>
+
+    <p class="body-text">When an engineering problem cannot be solved architecturally, it must be solved politically. This is the operating logic of centralized AI governance in 2026.</p>
+
+    <p class="body-text">The apex AI vendors&mdash;four companies controlling the vast majority of frontier model inference&mdash;have committed capital expenditures measured in hundreds of billions of dollars. These investments are premised on market dominance. The models must be adopted at scale. The inference must be centralized. The revenue must justify the infrastructure. This is not speculation; it is the stated financial thesis of every major AI company&rsquo;s investor communications.</p>
+
+    <p class="body-text">The problem: the models cannot be made safe through architecture. The output-layer controls described in Part I are demonstrably insufficient. Every red-team exercise, every jailbreak disclosure, every internal safety memo that surfaces confirms the same finding: the safety mechanisms are not structural. They are decorative.</p>
+    <p class="body-text">This creates a business problem. If safety cannot be guaranteed architecturally, it must be guaranteed some other way&mdash;or the market will eventually demand alternatives. The solution these companies have converged on is regulatory capture: lobbying for compliance frameworks so expensive and so complex that only organizations with existing billion-dollar infrastructure can participate.</p>
+
     <div class="insight-box">
-      <p>The rest of the G7 understood this. They&rsquo;re not just writing better AI policy. They&rsquo;re building different AI architecture &mdash; sovereign, distributed, inspectable, and structurally resistant to the dependencies that centralized systems create by design.</p>
+      <p>When the only entities capable of complying with a proposed regulatory framework are the four entities being regulated, the regulation is not a safety standard. <strong>It is a moat with a safety label.</strong></p>
     </div>
+
+    <p class="body-text">Meanwhile, the governance structures these companies build internally tell a different story. Internal kill switches. Audit trails. Approval gates. Tiered access controls. Deployment review boards. These are real architectural constraints&mdash;the kind that actually qualify as enforceable. The companies know what structural governance looks like. They have built it. For themselves.</p>
+
+    <p class="body-text">The question is why that architecture has not been made available as an open standard for the organizations and individuals consuming these models.</p>
+
+    <p class="body-text">The answer is that structural governance at the edge would eliminate the dependency that justifies centralized inference. If an enterprise can govern AI behavior locally&mdash;routing decisions through deterministic pipelines, enforcing zone-based approval, caching confirmed patterns&mdash;then the value proposition of centralized model access diminishes. The vendor becomes a commodity. The governance layer becomes the product. This is the inversion that the current market structure is designed to prevent.</p>
+    <p class="body-text">Recent reporting has made the stakes of this arrangement concrete. When the people closest to a company&rsquo;s leadership compile seventy pages of documentation alleging a consistent pattern of deception about safety protocols&mdash;when the company&rsquo;s own chief scientist concludes that leadership cannot be trusted with the technology&mdash;the question is no longer whether the individual is trustworthy. The question is why the architecture requires anyone to be.</p>
+
+    <p class="body-text">A system in which one person&rsquo;s candor is the only mechanism preventing the circumvention of a safety protocol is not a governance system. It is a single point of failure with a title. The fact that this failure mode has now been documented&mdash;by the company&rsquo;s own scientists, in its own internal memos&mdash;does not make the case for better leaders. It makes the case for architecture that renders leadership character irrelevant to safety outcomes.</p>
   </div>
 </section>
-
-<div class="section-break"></div>
 <!-- ═══════════════════════════════════════════════════
-     SECTION 2: THE GEOMETRY OF KNOWLEDGE
-     Dark-on-darker. Sphere gets breathing room.
+     PART III: THE BREAKER BOX PARADIGM
 ════════════════════════════════════════════════════ -->
-<section class="section" id="geometry">
-  <div class="section-wide reveal">
-    <div class="eyebrow">The Math</div>
-    <h1 class="display">The geometry of <em>knowledge.</em></h1>
-    <p class="lead">As our knowledge grows, so does our awareness of what we don&rsquo;t know. What happens when you apply the geometry of knowledge to network architecture?</p>
-    <div class="divider"></div>
-    <div class="slider-row">
-      <span class="slider-label">Nodes in the network</span>
-      <input type="range" min="1" max="150" value="6" step="1" id="nodeDriver">
-      <span class="slider-val" id="nodeOut">6</span>
-    </div>
-    <div class="slider-hint">There are effectively infinite domains of knowledge. How much frontier surface area does each architecture expose?</div>
-  </div>
-</section>
-<!-- Sphere canvas — full-width dark environment -->
-<div style="background:#060606; padding:0 0 0; position:relative; z-index:1;">
-  <div style="max-width:1140px; margin:0 auto; padding:0 48px;">
-    <canvas id="sphereCanvas"></canvas>
-  </div>
-</div>
-
-<!-- Stats panel below canvas -->
-<section class="section" style="background:linear-gradient(#060606 0%, var(--bg) 100%);">
-  <div class="section-wide reveal">
-    <div class="stats">
-      <div class="stat">
-        <div class="stat-label-color" style="color:var(--green);">Distributed AI Architecture</div>
-        <div class="stat-pair">
-          <div><div class="stat-item-label">Frontier surface area</div><div class="stat-item-value" style="color:var(--green);" id="distSA">6&times;</div></div>
-          <div><div class="stat-item-label">Exploration surfaces</div><div class="stat-item-value" style="color:var(--text);" id="distOwner">6 nodes</div></div>
-        </div>
-        <p style="font-size:12px; color:var(--text-dim); margin-top:12px; line-height:1.5;">Each node creates additional frontier surface area. Reduces dependency with each node added.</p>
-        <p style="font-size:11px; color:var(--green); margin-top:10px; line-height:1.5; padding:8px 12px; background:rgba(76,175,114,0.06); border-left:2px solid rgba(76,175,114,0.3);">Each sovereign node requires its own governance, its own telemetry, its own approval gates &mdash; architectural sovereignty, not just network topology.</p>
-      </div>
-      <div class="stat">
-        <div class="stat-label-color" style="color:var(--red);">Centralized AI Vendor</div>
-        <div class="stat-pair">
-          <div><div class="stat-item-label">Frontier surface area</div><div class="stat-item-value" style="color:var(--red);" id="centSA">1&times;</div></div>
-          <div><div class="stat-item-label">Exploration surfaces</div><div class="stat-item-value" style="color:var(--red);" id="centOwner">1 vendor</div></div>
-        </div>
-        <p style="font-size:12px; color:var(--text-dim); margin-top:12px; line-height:1.5;">The exploration surface is internal to the vendor. Vendor controls model, pricing, TOS, and deprecation timeline.</p>
-      </div>
-    </div>
-    <div class="insight-box"><p id="geoInsight"></p></div>
-  </div>
-</section>
-<div class="section-break"></div>
-
-<!-- ═══════════════════════════════════════════════════
-     SECTION 3: WHEN YOU BECOME THE KNOWLEDGE SURFACE
-     Reveal after the math. Emotional peak.
-════════════════════════════════════════════════════ -->
-<section class="section" id="capture">
-  <div class="section-wide reveal">
-    <div class="eyebrow">The Implication</div>
-    <h1 class="display">When you become <em>the knowledge surface.</em></h1>
-    <p class="lead">In the distributed model, each node&rsquo;s frontier faces outward &mdash; toward undiscovered knowledge. In the centralized model, the exploration surface is internal to the vendor. <strong>Its users provide the knowledge surface area for the vendor to explore.</strong></p>
-    <div class="divider"></div>
-    <canvas id="captureCanvas"></canvas>
-    <div class="stats" style="margin-top:32px;">
-      <div class="stat">
-        <div class="stat-label-color" style="color:var(--green);">Distributed AI Architecture</div>
-        <p style="font-size:14px; color:var(--text-mid); line-height:1.7; margin-top:8px;">Your queries expand <strong style="color:var(--green);">your own</strong> frontier. Each node maintains sovereignty over its exploration surface &mdash; its own governance, its own telemetry, its own approval gates. The network gets smarter. So do you.</p>
-      </div>
-      <div class="stat">
-        <div class="stat-label-color" style="color:var(--red);">Centralized AI Vendor</div>
-        <p style="font-size:14px; color:var(--text-mid); line-height:1.7; margin-top:8px;">Every query gives the vendor new surfaces to explore:</p>
-        <div style="margin-top:10px; font-family:var(--mono); font-size:12px; line-height:2.2; color:var(--text);">
-          <div><span style="color:var(--red);">&bull;</span> What you asked</div>
-          <div><span style="color:var(--red);">&bull;</span> What you don&rsquo;t know</div>
-          <div><span style="color:var(--red);">&bull;</span> What you&rsquo;re researching</div>
-          <div><span style="color:var(--red);">&bull;</span> What your industry needs next</div>
-        </div>
-        <p style="font-size:13px; color:var(--red); margin-top:12px; line-height:1.6;">Your telemetry trains the vendor&rsquo;s product roadmap. The data retention policy covers the content. Nobody covers the signal.</p>
-      </div>
-    </div>
-    <div class="insight-box" style="margin-top:32px;">
-      <p>We watched what happened when a handful of companies captured the social graph. We watched what happened when they captured search intent. <strong class="red">Centralized AI captures the cognitive frontier itself.</strong> The most valuable thing about a thinking person isn&rsquo;t what they know. It&rsquo;s what they&rsquo;re trying to figure out. <strong>This is the architecture of thought, and right now, four companies are building it as a star graph.</strong></p>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════════════════════
-     SECTION 4: Λ LANDSCAPE
-     Background shift. Scoreboard as instrument panel.
-════════════════════════════════════════════════════ -->
-<section class="section" id="landscape">
-  <div class="section-wide reveal">
-    <div class="eyebrow">State of the Architecture &mdash; Live Standings</div>
-    <h1 class="headline">Which patterns would survive <em>without the money?</em></h1>
-    <p class="lead">Every major analyst framework measures how many people are using an AI platform today. The Grove Foundation measures whether they&rsquo;d keep using it if nobody subsidized it. Can the pattern survive on its own, or does it need a benefactor?</p>
-    <p style="font-family:var(--mono); font-size:11px; color:var(--text-dim); letter-spacing:0.08em; margin-bottom:32px;">Last scored: <span style="color:var(--amber);">March 2026</span> &middot; Next update: <span style="color:var(--amber);">June 2026</span> &middot; Quarterly for public &middot; Monthly for members</p>
-
-    <div class="board">
-      <div class="board-header">
-        <div>#</div><div>Pattern</div><div style="text-align:right;">&Lambda;</div><div style="text-align:center;">Tier</div><div style="text-align:center;">Trend</div>
-      </div>
-      <div id="standings"></div>
-    </div>
-    <p style="font-family:var(--mono); font-size:10px; color:var(--text-dim); margin-top:-20px; margin-bottom:32px; letter-spacing:0.04em;">Click any row to see sub-scores and structural analysis</p>
-    <!-- Formula -->
-    <div class="formula-box">
-      <div class="formula">&Lambda; = (S &times; R &times; V) / (1 + (<span class="dm">&beta; &middot; F<sub>c</sub></span>)&sup2;)</div>
-    </div>
-    <div class="var-strip">
-      <div class="var-cell"><div class="var-sym">S</div><div class="var-nm">Spreadability</div><div class="var-ds">How freely replicated</div></div>
-      <div class="var-cell"><div class="var-sym">R</div><div class="var-nm">Rails</div><div class="var-ds">Infrastructure fit</div></div>
-      <div class="var-cell"><div class="var-sym">V</div><div class="var-nm">Validation</div><div class="var-ds">Theory discount</div></div>
-      <div class="var-cell"><div class="var-sym exp">F<sub>c</sub></div><div class="var-nm">Friction</div><div class="var-ds">Squared. Dominates.</div></div>
-      <div class="var-cell"><div class="var-sym exp">&beta;</div><div class="var-nm">Incentive</div><div class="var-ds">Geo mean of 3 forces</div></div>
-    </div>
-
-    <!-- Profiles -->
-    <h2 class="subhead">Dependency compounds. <em>Sovereignty compounds.</em></h2>
-    <div class="profiles">
-      <div class="prof">
-        <div class="prof-label" style="color:var(--red);">Dependency Profile</div>
-        <div class="prof-desc">Easy to integrate, hard to leave. Each quarter accumulates switching costs &mdash; proprietary weights, vendor-controlled deprecation, captured telemetry.</div>
-        <div class="prof-members">OpenAI &middot; Google &middot; Microsoft &middot; Anthropic</div>
-        <div class="prof-kick" style="color:var(--red);">Every quarter on a centralized API is another quarter of vendor leverage.</div>
-      </div>
-      <div class="prof">
-        <div class="prof-label" style="color:var(--green);">Sovereignty Profile</div>
-        <div class="prof-desc">Harder to adopt, easier to leave. Each quarter builds structural independence &mdash; open weights, portable architecture, sovereign telemetry.</div>
-        <div class="prof-members">Mistral / DeepSeek &middot; Autonomaton</div>
-        <div class="prof-kick" style="color:var(--green);">Every quarter on an open architecture is another quarter of independence.</div>
-      </div>
-    </div>
-    <!-- Integrity -->
-    <div class="integrity">
-      <p><strong style="color:var(--amber);">Conflict of interest disclosure.</strong> The Grove Foundation publishes this framework and champions the Autonomaton architecture. The Autonomaton is scored using the same methodology applied to all other patterns. It scores last &mdash; &Lambda; = 0.0001, Structurally Inert, V = 0.2. We built a methodology that crushed our own entry and published the results.</p>
-    </div>
-    <p style="font-family:var(--mono); font-size:10px; color:var(--text-dim); letter-spacing:0.08em;">96 sources &middot; 8 patterns &middot; 4 historical calibrations &middot; CC BY 4.0</p>
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════════════════════
-     SECTION 5: THE AUTONOMATON PATTERN
-     Reveal deck treatment. Radial glow. Specification feel.
-════════════════════════════════════════════════════ -->
-<section class="section" id="autonomaton">
-  <div class="section-wide reveal">
-    <div class="eyebrow">Open Standard 001</div>
-    <h1 class="display">The Autonomaton <em>Pattern.</em></h1>
-    <p class="lead">A complete architectural specification for self-authoring software systems. Model-independent. Stack-agnostic. Governance and auditability by design.</p>
+<section class="section" id="part-3">
+  <div class="section-inner reveal">
+    <div class="part-marker">Part III</div>
+    <h2 class="headline">The breaker box<br><em>paradigm.</em></h2>
     <div class="divider"></div>
 
-    <!-- THE STRUCTURAL ABSENCE -->
-    <p class="body-text">Every company working on AI governance has investors. Every one of them is trying to build a moat, capture a market, or get a piece of a $650 billion infrastructure bet. There is no IEEE for AI operations. No W3C for cognitive architecture. No open standard has emerged &mdash; and the industry has no incentive to let one emerge.</p>
-    <p class="body-text">TCP/IP was not built by AT&amp;T. Shipping containers were not designed by a shipping line. The entities that benefit most from proprietary infrastructure never build the open standard that replaces it. The Autonomaton Pattern is that standard &mdash; published under CC BY 4.0. No license fees. No vendor. No cap table.</p>
-    <!-- THE PIPELINE -->
-    <h2 class="subhead">One invariant shape. <em>That&rsquo;s the whole design.</em></h2>
-    <p class="body-text">The Autonomaton is a five-stage pipeline for cognitive work. Every instance shares the same shape &mdash; not as a suggestion, but as a structural constraint. That constraint is what makes everything else possible.</p>
+    <p class="body-text">We do not trust the power company to protect your house from a surge. We build a breaker box in your basement.</p>
 
-    <div class="pipe-diagram">
-      <div class="pipe-stage"><div class="pipe-num">01</div><div class="pipe-name">Telemetry</div></div>
-      <div class="pipe-arrow">&rarr;</div>
-      <div class="pipe-stage"><div class="pipe-num">02</div><div class="pipe-name">Recognition</div></div>
-      <div class="pipe-arrow">&rarr;</div>
-      <div class="pipe-stage"><div class="pipe-num">03</div><div class="pipe-name">Compilation</div></div>
-      <div class="pipe-arrow">&rarr;</div>
-      <div class="pipe-stage"><div class="pipe-num">04</div><div class="pipe-name">Approval</div></div>
-      <div class="pipe-arrow">&rarr;</div>
-      <div class="pipe-stage"><div class="pipe-num">05</div><div class="pipe-name">Execution</div></div>
-    </div>
+    <p class="body-text">This is not because the power company is malicious. It is because the power company cannot know what is happening at the edge of its network. It does not know which outlet you have plugged into, what load your house is drawing, or which circuit is about to trip. The governance must be local because the <strong>context is local.</strong> No centralized authority, however well-intentioned, can make decisions that require information it does not have.</p>
 
-    <!-- THREE UNLOCKS -->
-    <div class="unlock-grid">
-      <div class="unlock-cell">
-        <div class="unlock-label">Tiered Routing</div>
-        <div class="unlock-body">Confirmed patterns resolve locally at zero cost. The expensive frontier pipe only opens for genuine novelty. <strong>Privacy by architecture</strong> &mdash; routine work never leaves the premises.</div>
-      </div>
-      <div class="unlock-cell">
-        <div class="unlock-label">Composability</div>
-        <div class="unlock-body">The output of one Autonomaton feeds directly into the telemetry of the next. <strong>No adapter code.</strong> Teams that have never spoken build Autonomatons that compose perfectly &mdash; same pipeline shape, not same codebase.</div>
-      </div>
-      <div class="unlock-cell">
-        <div class="unlock-label">Model Independence</div>
-        <div class="unlock-body">Governance sits above the model layer. <strong>Swap providers without rewriting governance.</strong> Your routing rules, zone policies, and audit trails belong to you.</div>
-      </div>
-    </div>
-    <!-- ZONES -->
-    <h2 class="subhead">It learns. It improves. <em>You hold the keys.</em></h2>
-    <div class="zone-strip">
-      <div class="zone-cell green">
-        <div class="zone-name" style="color:var(--green);">Green Zone</div>
-        <div class="zone-title">Autonomous routine</div>
-        <div class="zone-body">Confirmed skills execute without asking. The system handles what it has proven it can handle.</div>
-      </div>
-      <div class="zone-cell yellow">
-        <div class="zone-name" style="color:var(--yellow);">Yellow Zone</div>
-        <div class="zone-title">Supervised proposals</div>
-        <div class="zone-body">The system can propose. It cannot execute. A human reviews, approves, or rejects. Every time.</div>
-      </div>
-      <div class="zone-cell red-zone">
-        <div class="zone-name" style="color:var(--red);">Red Zone</div>
-        <div class="zone-title">Human-only</div>
-        <div class="zone-body">Structural changes, access control, zone boundaries. The cognitive layer can surface information. It cannot act.</div>
-      </div>
-    </div>
-
-    <!-- RATCHET + GUARANTEE -->
-    <div class="tapestry-row">
-      <div class="tapestry-cell">
-        <div class="tapestry-label">The Ratchet</div>
-        <div class="tapestry-body"><strong>Every approved skill expands the Green zone.</strong> What required supervision yesterday runs autonomously tomorrow. Every migration down the tier stack simultaneously improves cost, privacy, latency, and sovereignty.</div>
-      </div>
-      <div class="tapestry-cell">
-        <div class="tapestry-label">The Guarantee</div>
-        <div class="tapestry-body">The cognitive layer <strong>cannot override the operator.</strong> Not by policy. By architecture &mdash; the way a hardware interlock on a press brake prevents operation without two hands on the controls.</div>
-      </div>
-    </div>
+    <p class="body-text">The same constraint applies to AI systems. The vendor does not know your domain. It does not know your risk tolerance, your compliance requirements, your data sensitivity, your regulatory obligations, or your operational context. A healthcare system, a financial trading desk, a municipal government, and a solo practitioner all consume the same model through the same API&mdash;and all require fundamentally different governance. The vendor cannot provide this. Not because it lacks the will, but because it lacks the information.</p>
     <div class="insight-box">
-      <p>The Autonomaton unlocks what centralized AI cannot: <strong>human-driven exploration that gets smarter over time, permanently under human control.</strong> Not because we promise safety through alignment. Because <em style="color:var(--amber); font-style:italic;">design is philosophy expressed through constraint.</em></p>
+      <p>This is not a policy argument. It is an engineering constraint. <strong>Governance must live where context lives.</strong></p>
     </div>
 
-    <!-- INTERACTIVE LINK -->
-    <div style="margin-top:32px; padding:20px 28px; border:1px solid var(--border); background:var(--bg3); display:flex; justify-content:space-between; align-items:center;">
-      <div>
-        <div style="font-family:var(--mono); font-size:10px; color:var(--amber); letter-spacing:0.15em; margin-bottom:6px;">INTERACTIVE SPECIFICATION</div>
-        <div style="font-size:14px; color:var(--text-mid); line-height:1.5;">Explore the live pipeline, zone model, and tiered routing in the browser. No install. No login.</div>
-      </div>
-      <a href="https://the-grove.ai/autonomaton" target="_blank" rel="noopener noreferrer" style="font-family:var(--mono); font-size:11px; color:var(--amber); text-decoration:none; border:1px solid var(--amber-dim); padding:10px 20px; white-space:nowrap; transition:all 0.2s; letter-spacing:0.08em;" onmouseover="this.style.background='rgba(212,98,26,0.1)'" onmouseout="this.style.background='transparent'">OPEN PLAYGROUND &rarr;</a>
-    </div>
+    <p class="body-text">Enforcement must be structural, not promissory. And the standards that define that enforcement must be open&mdash;not because openness is virtuous, but because closed governance standards are definitionally unverifiable.</p>
 
-    <!-- CALL FOR REVIEWERS -->
-    <div class="cta-box">
-      <div class="cta-label">Call for Reviewers</div>
-      <div class="cta-body">We are seeking technical reviewers from distributed systems, AI architecture, and enterprise governance backgrounds. The full specification &mdash; including reference schemas, zone model, and cognitive routing &mdash; will be published under CC BY 4.0.</div>
-      <div class="cta-contact">Contact: hello@the-grove.ai</div>
-    </div>
+    <p class="body-text">The Grove Foundation publishes open architectural standards for AI governance. The first is the <strong>Autonomaton Pattern</strong>: a model-independent, domain-agnostic governance architecture that moves enforcement from the vendor&rsquo;s black box to the local edge.</p>
+
+    <p class="body-text">In a Grove-standardized system, a &ldquo;policy&rdquo; is not a PDF maintained by a legal department. It is a deterministic gateway&mdash;an auditable, inspectable routing decision that structurally prevents non-compliant actions regardless of what the underlying model attempts to generate. The operator defines the zones. The operator defines the approval thresholds. The operator defines what runs autonomously, what requires human review, and what is prohibited entirely. The model is the engine. The governance is the architecture. They are separate concerns, and they must be separately controlled.</p>
+
+    <p class="body-text">This is the breaker box. It does not replace the power plant. It does not compete with the power plant. It ensures that the power plant&rsquo;s failures do not burn down your house.</p>
   </div>
 </section>
 <!-- ═══════════════════════════════════════════════════
-     SECTION 6: THE FOUNDATION
-     Short, centered, institutional. Footer energy.
+     PART IV: THE PRECEDENT
 ════════════════════════════════════════════════════ -->
-<section class="section" id="foundation">
-  <div class="section-inner reveal" style="text-align:center; max-width:700px; margin:0 auto;">
-    <div class="eyebrow">The Institution</div>
-    <h1 class="headline" style="margin-bottom:16px;">Not a startup. Not a think tank. <em>A standards body.</em></h1>
-    <p style="font-family:var(--serif); font-style:italic; font-size:18px; color:var(--text-mid); line-height:1.6; margin-bottom:32px;">The Linux Foundation didn&rsquo;t build Linux. It ensured that Linux couldn&rsquo;t be captured. The Grove Foundation doesn&rsquo;t build cognitive tools. It ensures that the architecture for cognitive sovereignty remains open, inspectable, and structurally resistant to capture.</p>
-    <div style="width:48px; height:1px; background:var(--amber); margin:0 auto 40px;"></div>
-    <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:24px; text-align:center; margin-bottom:56px;">
-      <div>
-        <div style="font-family:var(--mono); font-size:10px; color:var(--amber); letter-spacing:0.15em; margin-bottom:8px;">ACT I</div>
-        <div style="font-family:var(--serif); font-size:18px; color:var(--text); margin-bottom:4px;">Autonomaton</div>
-        <div style="font-size:12px; color:var(--text-dim);">Individual AI governance</div>
-      </div>
-      <div>
-        <div style="font-family:var(--mono); font-size:10px; color:var(--amber); letter-spacing:0.15em; margin-bottom:8px;">ACT II</div>
-        <div style="font-family:var(--serif); font-size:18px; color:var(--text); margin-bottom:4px;">Trellis</div>
-        <div style="font-size:12px; color:var(--text-dim);">Domain-scale knowledge</div>
-      </div>
-      <div>
-        <div style="font-family:var(--mono); font-size:10px; color:var(--amber); letter-spacing:0.15em; margin-bottom:8px;">ACT III</div>
-        <div style="font-family:var(--serif); font-size:18px; color:var(--text); margin-bottom:4px;">Knowledge Commons</div>
-        <div style="font-size:12px; color:var(--text-dim);">Civilization-scale cognition</div>
-      </div>
-    </div>
-    <div style="font-family:var(--serif); font-style:italic; font-size:15px; color:var(--text-dim); margin-bottom:8px;">&ldquo;Design is philosophy expressed through constraint.&rdquo;</div>
-    <div style="font-family:var(--mono); font-size:10px; color:var(--amber-dim); letter-spacing:0.15em;">THE GROVE FOUNDATION &middot; INDIANAPOLIS &middot; CC BY 4.0</div>
+<section class="section" id="part-4">
+  <div class="section-inner reveal">
+    <div class="part-marker">Part IV</div>
+    <h2 class="headline">The<br><em>precedent.</em></h2>
+    <div class="divider"></div>
+
+    <p class="body-text">This transition has happened before. It happens in every high-stakes domain that matures beyond its initial growth phase.</p>
+
+    <p class="body-text">Financial systems moved from &ldquo;trust the bank&rdquo; to Basel III capital requirements, mark-to-market accounting, and mandatory stress testing. These are not policy suggestions. They are architectural constraints&mdash;mathematical formulas that structurally prevent institutions from taking positions their capital cannot support. The transition was not voluntary. It was forced by catastrophic failure: the 2008 financial crisis proved that institutional trust, absent structural verification, was a fiction.</p>
+
+    <p class="body-text">Aviation moved from &ldquo;trust the pilot&rdquo; to black-box flight recorders, redundant hydraulic systems, mandatory checklists, and crew resource management protocols. These are not guidelines. They are engineering requirements&mdash;physical systems that prevent single points of failure from producing catastrophic outcomes.</p>
+    <p class="body-text">In every domain where the stakes eventually became high enough&mdash;pharmaceuticals, nuclear energy, automotive safety, food production&mdash;the market demanded the same thing: structural proof over institutional promises. Not &ldquo;we test our products.&rdquo; But &ldquo;here is the independently verifiable architecture that prevents failure regardless of our intentions.&rdquo;</p>
+
+    <p class="body-text">AI has not reached this transition yet. The current market accepts vendor promises as governance. That acceptance is sustained by three factors: the technology is new enough that most buyers lack the expertise to demand more, the vendors are politically connected enough to shape the regulatory environment, and no open alternative has existed.</p>
+
+    <p class="body-text">The first two factors are temporary. The third is what the Grove Foundation exists to resolve.</p>
   </div>
 </section>
+<!-- ═══════════════════════════════════════════════════
+     IDENTITY BLOCK
+════════════════════════════════════════════════════ -->
+<section class="section" id="identity">
+  <div class="section-inner">
+    <div class="identity-statement">
+      <div class="eyebrow">The Grove Foundation</div>
+      <div class="divider"></div>
+      <p>The Grove Foundation publishes open architectural standards for AI governance under <em>CC BY 4.0.</em></p>
+      <p>The Autonomaton Pattern is the first.</p>
+      <p>We do not build products. We publish the thinking that makes better products <em>structurally possible.</em></p>
+      <div class="identity-meta">Indianapolis &middot; 501(c)(6) &middot; the-grove.ai</div>
+    </div>
+  </div>
+</section>
+<!-- ══════ SCRIPTS ══════ -->
 <script>
-// ══════════════════════════════════════
-// SPHERE VISUALIZATION
-// ══════════════════════════════════════
-var sc = document.getElementById('sphereCanvas');
-var sctx = sc.getContext('2d');
-var sW, sH, sDpr;
-function sizeSphere() {
-  sDpr = window.devicePixelRatio || 1;
-  sW = sc.parentElement.offsetWidth;
-  sH = Math.min(520, sW * 0.58);
-  sc.style.height = sH + 'px';
-  sc.width = sW * sDpr; sc.height = sH * sDpr;
-  sctx.setTransform(sDpr, 0, 0, sDpr, 0, 0);
-}
-sizeSphere();
-
-function drawSpheres() {
-  var n = parseInt(document.getElementById('nodeDriver').value);
-  document.getElementById('nodeOut').textContent = n;
-  document.getElementById('distSA').textContent = n + '\u00D7';
-  document.getElementById('distOwner').textContent = n + ' nodes';
-  sctx.clearRect(0, 0, sW, sH);
-  sctx.fillStyle = '#060606'; sctx.fillRect(0, 0, sW, sH);
-  var midX = sW / 2, leftCx = sW * 0.25, rightCx = sW * 0.75, cy = sH * 0.5;
-  var maxR = Math.min(sH * 0.4, sW * 0.2);
-  var showDots = Math.min(n, 28);
-  var distR = Math.min(maxR, 14 + Math.sqrt(n) * (maxR * 0.13));
-  var distRingW = Math.min(maxR * 0.1, 1.5 + Math.sqrt(n) * 1.8);
-  var starR = Math.min(maxR * 0.38, 14 + Math.log2(Math.max(1, n)) * (maxR * 0.04));
-  var starRingW = Math.min(4, 1 + Math.log2(Math.max(1, n)) * 0.45);
-  // Divider
-  sctx.strokeStyle='#1a1a1a'; sctx.lineWidth=1; sctx.setLineDash([3,5]);
-  sctx.beginPath(); sctx.moveTo(midX,8); sctx.lineTo(midX,sH-8); sctx.stroke(); sctx.setLineDash([]);
-  // Distributed glow + sphere
-  var dGrad=sctx.createRadialGradient(leftCx,cy,distR*0.2,leftCx,cy,distR+distRingW+40);
-  dGrad.addColorStop(0,'rgba(76,175,114,0.10)'); dGrad.addColorStop(0.5,'rgba(76,175,114,0.04)'); dGrad.addColorStop(1,'transparent');
-  sctx.fillStyle=dGrad; sctx.beginPath(); sctx.arc(leftCx,cy,distR+distRingW+40,0,Math.PI*2); sctx.fill();
-  sctx.fillStyle='rgba(76,175,114,0.06)'; sctx.beginPath(); sctx.arc(leftCx,cy,distR,0,Math.PI*2); sctx.fill();
-  sctx.strokeStyle='rgba(76,175,114,0.55)'; sctx.lineWidth=distRingW;
-  sctx.beginPath(); sctx.arc(leftCx,cy,distR+distRingW/2,0,Math.PI*2); sctx.stroke();
-  // Nodes inside distributed sphere
-  var pts=[];
-  for(var i=0;i<showDots;i++){var a=(2*Math.PI*i/showDots)-Math.PI/2;var jr=0.25+((i*7+3)%11)/22;pts.push({x:distR*jr*Math.cos(a+i*0.15),y:distR*jr*Math.sin(a+i*0.15)});}
-  for(var i=0;i<showDots;i++){for(var j=i+1;j<showDots;j++){sctx.strokeStyle='rgba(76,175,114,'+Math.max(0.015,0.06-showDots*0.002)+')';sctx.lineWidth=0.4;sctx.beginPath();sctx.moveTo(leftCx+pts[i].x,cy+pts[i].y);sctx.lineTo(leftCx+pts[j].x,cy+pts[j].y);sctx.stroke();}}
-  for(var i=0;i<showDots;i++){sctx.fillStyle='#4CAF72';sctx.globalAlpha=0.6;sctx.beginPath();sctx.arc(leftCx+pts[i].x,cy+pts[i].y,2,0,Math.PI*2);sctx.fill();sctx.globalAlpha=1;}
-  // Centralized sphere
-  var sGrad=sctx.createRadialGradient(rightCx,cy,starR*0.2,rightCx,cy,starR+starRingW+20);
-  sGrad.addColorStop(0,'rgba(192,57,43,0.07)'); sGrad.addColorStop(0.6,'rgba(192,57,43,0.02)'); sGrad.addColorStop(1,'transparent');
-  sctx.fillStyle=sGrad; sctx.beginPath(); sctx.arc(rightCx,cy,starR+starRingW+20,0,Math.PI*2); sctx.fill();
-  sctx.fillStyle='rgba(192,57,43,0.05)'; sctx.beginPath(); sctx.arc(rightCx,cy,starR,0,Math.PI*2); sctx.fill();
-  sctx.strokeStyle='rgba(192,57,43,0.4)'; sctx.lineWidth=starRingW;
-  sctx.beginPath(); sctx.arc(rightCx,cy,starR+starRingW/2,0,Math.PI*2); sctx.stroke();
-  // Ghost nodes orbiting centralized
-  var orbitR=starR+starRingW+35+Math.min(55,n*0.5);
-  for(var i=0;i<showDots;i++){var a=(2*Math.PI*i/showDots)-Math.PI/2;var px=rightCx+orbitR*Math.cos(a),py=cy+orbitR*Math.sin(a);var dx=rightCx-px,dy=cy-py;var dist=Math.sqrt(dx*dx+dy*dy);var nx=dx/dist,ny=dy/dist;
-    sctx.strokeStyle='rgba(192,57,43,0.12)';sctx.lineWidth=0.6;sctx.beginPath();sctx.moveTo(px,py);sctx.lineTo(rightCx-nx*(starR+starRingW+6),cy-ny*(starR+starRingW+6));sctx.stroke();
-    sctx.fillStyle='#555';sctx.globalAlpha=0.3;sctx.beginPath();sctx.arc(px,py,2,0,Math.PI*2);sctx.fill();sctx.globalAlpha=1;}
-  // Labels
-  sctx.font='500 14px DM Sans,sans-serif'; sctx.textAlign='center';
-  sctx.fillStyle='#4CAF72'; sctx.fillText('Distributed AI Architecture',leftCx,24);
-  sctx.fillStyle='#C0392B'; sctx.fillText('Centralized AI Vendor',rightCx,24);
-  sctx.font='11px Fragment Mono,monospace'; sctx.fillStyle='#7A736A';
-  sctx.fillText(n+' sovereign nodes \u2192 '+n+' frontiers',leftCx,42);
-  sctx.fillText(n+' dependent nodes \u2192 1 frontier',rightCx,42);
-  sctx.fillStyle='#C0392B'; sctx.font='500 11px Fragment Mono,monospace';
-  sctx.fillText('vendor',rightCx,cy-10);
-  sctx.fillStyle='#7A736A'; sctx.font='10px Fragment Mono,monospace';
-  sctx.fillText('controls model, pricing,',rightCx,cy+4);
-  sctx.fillText('TOS, and deprecation',rightCx,cy+16);
-  sctx.font='12px DM Sans,sans-serif';
-  sctx.fillStyle='#4CAF72'; sctx.fillText('Each node: sovereign governance, sovereign telemetry',leftCx,sH-14);
-  sctx.fillStyle='#C0392B'; sctx.fillText('All nodes: rented inference, captured telemetry',rightCx,sH-14);
-  if(n>1){sctx.font='300 13px DM Sans,sans-serif';sctx.fillStyle='#B0A898';sctx.fillText(n+'\u00D7 more frontier surface area',leftCx,sH-36);}
-  // Insight text
-  var ins=document.getElementById('geoInsight');
-  if(n===1){ins.innerHTML='One node. Both architectures are identical. Add more.';}
-  else if(n<=10){ins.innerHTML='There are effectively infinite domains of knowledge. <strong>In a distributed architecture, '+n+' nodes explore '+n+' different slices of that space simultaneously.</strong> Route them through a single vendor and you get one entity\u2019s version of what matters.';}
-  else if(n<=50){ins.innerHTML='<strong>'+n+' independent nodes probing the unknown from '+n+' positions.</strong> Each node expands the total frontier in directions no central authority would prioritize. The vendor\u2019s sphere gets <em style="color:var(--text-mid);font-style:italic;">denser</em>. It does not get <em style="color:var(--text-mid);font-style:italic;">wider</em>. <strong class="red">That\u2019s the architecture working as intended.</strong><br><br><span style="color:var(--green);">Each sovereign node requires its own governance, its own telemetry, its own approval gates. Without architectural sovereignty, distributed is just centralized with extra steps.</span>';}
-  else{ins.innerHTML='<strong>'+n+' nodes. Look at the difference.</strong> Every new node pushes the frontier outward into territory the vendor will never reach. It has one vantage point. One set of priorities about what counts as knowledge.<br><br>In the centralized model, your questions map your areas of ignorance. <strong class="red">That signal is worth more than the answers.</strong> It trains the vendor\u2019s product roadmap. The data retention policy covers the content. Nobody covers the signal.';}
-}
-document.getElementById('nodeDriver').addEventListener('input',drawSpheres);
-// ══════════════════════════════════════
-// CAPTURE CANVAS
-// ══════════════════════════════════════
-var cc=document.getElementById('captureCanvas'); var cctx=cc.getContext('2d'); var cW,cH;
-function sizeCapture(){var d=window.devicePixelRatio||1;cW=cc.parentElement.offsetWidth;cH=Math.min(400,cW*0.5);cc.style.height=cH+'px';cc.width=cW*d;cc.height=cH*d;cctx.setTransform(d,0,0,d,0,0);}
-sizeCapture();
-function drawCapture(){
-  cctx.clearRect(0,0,cW,cH); cctx.fillStyle='#0a0a0a'; cctx.fillRect(0,0,cW,cH);
-  var midX=cW/2,leftCx=cW*0.25,rightCx=cW*0.75,cy=cH*0.48;
-  cctx.strokeStyle='#1a1a1a';cctx.lineWidth=1;cctx.setLineDash([3,5]);cctx.beginPath();cctx.moveTo(midX,8);cctx.lineTo(midX,cH-8);cctx.stroke();cctx.setLineDash([]);
-  cctx.font='500 14px DM Sans,sans-serif';cctx.textAlign='center';
-  cctx.fillStyle='#4CAF72';cctx.fillText('Distributed AI Architecture',leftCx,24);
-  cctx.fillStyle='#C0392B';cctx.fillText('Centralized AI Vendor',rightCx,24);
-  // Distributed: you at center with domain nodes
-  var domains=['medicine','law','engineering','ecology','philosophy','local knowledge'];
-  var domainR=Math.min(110,cW*0.11);var dpts=[];
-  for(var i=0;i<6;i++){var a=(2*Math.PI*i/6)-Math.PI/2;dpts.push({x:leftCx+domainR*Math.cos(a),y:cy+domainR*Math.sin(a)});}
-  for(var i=0;i<6;i++){for(var j=i+1;j<6;j++){cctx.strokeStyle='rgba(76,175,114,0.08)';cctx.lineWidth=0.5;cctx.beginPath();cctx.moveTo(dpts[i].x,dpts[i].y);cctx.lineTo(dpts[j].x,dpts[j].y);cctx.stroke();}}
-  for(var i=0;i<6;i++){cctx.strokeStyle='rgba(76,175,114,0.25)';cctx.lineWidth=1;cctx.beginPath();cctx.moveTo(leftCx,cy);cctx.lineTo(dpts[i].x,dpts[i].y);cctx.stroke();}
-  for(var i=0;i<6;i++){cctx.fillStyle='rgba(76,175,114,0.12)';cctx.beginPath();cctx.arc(dpts[i].x,dpts[i].y,20,0,Math.PI*2);cctx.fill();cctx.strokeStyle='rgba(76,175,114,0.35)';cctx.lineWidth=1.5;cctx.beginPath();cctx.arc(dpts[i].x,dpts[i].y,20,0,Math.PI*2);cctx.stroke();cctx.font='8px Fragment Mono,monospace';cctx.fillStyle='#4CAF72';cctx.textAlign='center';cctx.fillText(domains[i],dpts[i].x,dpts[i].y+3);}
-  cctx.strokeStyle='rgba(76,175,114,0.5)';cctx.lineWidth=4;cctx.beginPath();cctx.arc(leftCx,cy,30,0,Math.PI*2);cctx.stroke();
-  cctx.fillStyle='#4CAF72';cctx.beginPath();cctx.arc(leftCx,cy,12,0,Math.PI*2);cctx.fill();
-  cctx.font='500 9px Fragment Mono,monospace';cctx.fillStyle='#080808';cctx.fillText('you',leftCx,cy+3);
-  cctx.font='11px Fragment Mono,monospace';cctx.fillStyle='#4CAF72';cctx.fillText('you explore \u2192 you keep the map',leftCx,cH-16);
-  // Centralized: you → vendor
-  var youX=rightCx-100,provX=rightCx+35,provR=55;
-  cctx.strokeStyle='rgba(192,57,43,0.3)';cctx.lineWidth=2;cctx.beginPath();cctx.moveTo(youX+14,cy);cctx.lineTo(provX-provR-4,cy);cctx.stroke();
-  cctx.fillStyle='#7A736A';cctx.beginPath();cctx.arc(youX,cy,12,0,Math.PI*2);cctx.fill();
-  cctx.font='500 9px Fragment Mono,monospace';cctx.fillStyle='#E8E2D9';cctx.fillText('you',youX,cy+3);
-  cctx.strokeStyle='rgba(122,115,106,0.2)';cctx.lineWidth=1;cctx.setLineDash([3,4]);cctx.beginPath();cctx.arc(youX,cy,30,0,Math.PI*2);cctx.stroke();cctx.setLineDash([]);
-  cctx.fillStyle='rgba(192,57,43,0.08)';cctx.beginPath();cctx.arc(provX,cy,provR,0,Math.PI*2);cctx.fill();
-  cctx.strokeStyle='rgba(192,57,43,0.4)';cctx.lineWidth=3;cctx.beginPath();cctx.arc(provX,cy,provR,0,Math.PI*2);cctx.stroke();
-  cctx.font='500 11px Fragment Mono,monospace';cctx.fillStyle='#C0392B';cctx.fillText('AI vendor',provX,cy-6);
-  cctx.font='9px Fragment Mono,monospace';cctx.fillStyle='#7A736A';cctx.fillText('maps your ignorance',provX,cy+8);
-  cctx.font='11px Fragment Mono,monospace';cctx.fillStyle='#C0392B';cctx.fillText('you explore \u2192 vendor keeps the map',rightCx,cH-16);
-}
-// ══════════════════════════════════════
-// SCOREBOARD
-// ══════════════════════════════════════
-var SD=[
-  {r:1,n:'Mistral / DeepSeek',c:'Open Weight (Int\u2019l)',S:.80,R:.60,V:1,Fc:6,b:.630,l:.0314,t:'ac',p:'sovereignty',d:'up',i:'Balanced incentive structure. Apache 2.0. \u20AC830M infrastructure raise. France and Germany government contracts. Only pattern with \u03B2 < 1.0.'},
-  {r:2,n:'Meta Llama',c:'Open Weight (US)',S:.70,R:.70,V:1,Fc:5,b:1.357,l:.0104,t:'sc',p:'sovereignty',d:'down',i:'Geometric mean exposes structural fragility. Avocado closed-source pivot and Llama 4 EU geofencing signal tightening. If Meta fully closes licensing, score collapses.'},
-  {r:3,n:'Apple Intelligence',c:'On-Device',S:.20,R:.57,V:1,Fc:2,b:1.710,l:.0090,t:'sc',p:'hybrid',d:'flat',i:'Lowest friction (Fc=2.0) \u2014 ships pre-installed. But lowest spreadability (S=0.20) \u2014 locked to Apple hardware. A walled garden with good fences.'},
-  {r:4,n:'Anthropic Claude',c:'Centralized API',S:.47,R:.80,V:1,Fc:5,b:1.587,l:.0059,t:'sc',p:'dependency',d:'flat',i:'Strong capability but structurally dependent on the API model. High R + low S = classic Dependency Profile.'},
-  {r:5,n:'OpenAI GPT',c:'Centralized API',S:.47,R:.93,V:1,Fc:6,b:2.924,l:.0014,t:'si',p:'dependency',d:'flat',i:'Highest rail compatibility (R=0.93). But geometric mean \u03B2 = 2.924 because regulatory and ideological incentives are weak. Market dominance without structural propagation.'},
-  {r:6,n:'Google Gemini',c:'Platform Bundle',S:.30,R:.80,V:1,Fc:5,b:2.924,l:.0011,t:'si',p:'dependency',d:'flat',i:'Platform bundling drives adoption through distribution power, not structural merit. Unbundle it and the pattern collapses.'},
-  {r:7,n:'Microsoft Copilot',c:'Platform Bundle',S:.30,R:.80,V:1,Fc:8,b:5.000,l:.0002,t:'si',p:'dependency',d:'down',i:'Highest friction (Fc=8.0). 450M Office seats at $30/user/month. This adoption is subsidy-driven, not structural.'},
-  {r:8,n:'Autonomaton',c:'Sovereign Open',S:.93,R:.83,V:.2,Fc:6,b:6.300,l:.0001,t:'si',p:'sovereignty',d:'flat',i:'Highest S and R in the landscape. V=0.2 (pre-deployment) and \u03B2=6.3 crush the score. By design. Grove publishes its own score honestly.'}
-];
-var TN={ac:'Approaching Critical',sc:'Sub-Critical',si:'Structurally Inert'};
-var TC={ac:'t-ac',sc:'t-sc',si:'t-si'};
-var DS={up:'\u2191',down:'\u2193',flat:'\u2192'};
-var DC={up:'d-up',down:'d-dn',flat:'d-fl'};
-function renderBoard(){
-  var el=document.getElementById('standings'),h='';
-  SD.forEach(function(d,i){
-    var sc=d.t==='ac'?'var(--amber)':d.t==='sc'?'var(--yellow)':'var(--red)';
-    h+='<div class="srow '+d.p+'" onclick="stoggle('+i+')" id="sr-'+i+'">';
-    h+='<div class="s-rank">'+d.r+'</div>';
-    h+='<div><div class="s-name">'+d.n+'</div><div class="s-cat">'+d.c+'</div></div>';
-    h+='<div class="s-score" style="color:'+sc+'">'+d.l.toFixed(4)+'</div>';
-    h+='<div style="text-align:center"><span class="s-tier '+TC[d.t]+'">'+TN[d.t]+'</span></div>';
-    h+='<div class="s-dir '+DC[d.d]+'">'+DS[d.d]+'</div></div>';
-    h+='<div class="s-detail" id="sd-'+i+'"><div class="s-detail-grid">';
-    h+='<div class="sdv"><div class="sdv-l">S</div><div class="sdv-v">'+d.S.toFixed(2)+'</div></div>';
-    h+='<div class="sdv"><div class="sdv-l">R</div><div class="sdv-v">'+d.R.toFixed(2)+'</div></div>';
-    h+='<div class="sdv"><div class="sdv-l">V</div><div class="sdv-v"'+(d.V<1?' style="color:var(--red)"':'')+'>'+d.V.toFixed(1)+'</div></div>';
-    h+='<div class="sdv"><div class="sdv-l">Fc</div><div class="sdv-v exp">'+d.Fc.toFixed(1)+'</div></div>';
-    h+='<div class="sdv"><div class="sdv-l">\u03B2</div><div class="sdv-v exp">'+d.b.toFixed(3)+'</div></div>';
-    h+='</div><div class="s-insight">'+d.i+'</div></div>';
-  });
-  el.innerHTML=h;
-}
-function stoggle(i){var p=document.getElementById('sd-'+i),r=document.getElementById('sr-'+i),o=p.classList.contains('open');document.querySelectorAll('.s-detail').forEach(function(x){x.classList.remove('open')});document.querySelectorAll('.srow').forEach(function(x){x.classList.remove('expanded')});if(!o){p.classList.add('open');r.classList.add('expanded');}}
-// ══════════════════════════════════════
-// SCROLL REVEAL + NAV
-// ══════════════════════════════════════
-var reveals=document.querySelectorAll('.reveal');
-var ro=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');ro.unobserve(e.target);}});},{threshold:0.08,rootMargin:'0px 0px -40px 0px'});
-reveals.forEach(function(el){ro.observe(el);});
-
-// Nav active state
-var sections=document.querySelectorAll('section[id]');
-var navLinks=document.querySelectorAll('.nav-links a');
-var navObs=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){navLinks.forEach(function(a){a.classList.remove('active');if(a.getAttribute('href')==='#'+e.target.id)a.classList.add('active');});}});},{threshold:0.15,rootMargin:'-56px 0px -50% 0px'});
-sections.forEach(function(s){navObs.observe(s);});
-
-// Hide scroll cue on scroll
-var scrollCue=document.querySelector('.scroll-cue');
-if(scrollCue){window.addEventListener('scroll',function(){if(window.scrollY>100){scrollCue.style.opacity='0';scrollCue.style.transition='opacity 0.5s';}},{ once:true });}
-
-// Persistent scorecard — appears after hero, hides in foundation
-var scorecard=document.getElementById('scorecard');
-function updateScorecard(){
-  var y=window.scrollY;
-  var heroBottom=document.getElementById('hero').offsetTop+document.getElementById('hero').offsetHeight;
-  var foundTop=document.getElementById('foundation').offsetTop-200;
-  if(y>heroBottom && y<foundTop){scorecard.classList.add('visible');}
-  else{scorecard.classList.remove('visible');}
-}
-window.addEventListener('scroll',updateScorecard,{passive:true});
-updateScorecard();
-
-// ══════════════════════════════════════
-// INIT
-// ══════════════════════════════════════
-sizeSphere(); drawSpheres();
-sizeCapture(); drawCapture();
-renderBoard();
-window.addEventListener('resize',function(){sizeSphere();drawSpheres();sizeCapture();drawCapture();});
+// Reveal on scroll
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 </script>
 </body>
 </html>
