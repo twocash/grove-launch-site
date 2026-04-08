@@ -1,4 +1,4 @@
 @echo off
 cd /d C:\GitHub\grove-launch-site
 git add -A
-git commit -m "Add /standards index page; update nav across all pages to point to /standards"
+git commit -m "Update NEXT-SESSION-PROMPT: about page, footer consistency, email opt-in"
