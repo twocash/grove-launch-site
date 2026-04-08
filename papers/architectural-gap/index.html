@@ -95,9 +95,11 @@ footer a:hover { color:var(--amber-bright); }
 
     <p class="body-text">And yet this is what the industry presents as its safety architecture: output-layer filtering on a black-box probabilistic engine. A behavioral veneer applied to a system that has no structural concept of the behavior being requested.</p>
 
-    <p class="body-text">The deeper problem is not that these mechanisms are weak. It is that they are <strong>unverifiable.</strong> The vendor can change the model weights, modify the system prompt, alter the RLHF training set, or redefine the policy &mdash; at any time, server-side, without disclosure. The system you evaluated yesterday is not necessarily the system running today. You cannot audit what you cannot inspect. You cannot govern what you cannot see.</p>
+    <p class="body-text" style="font-size:14px;">For the operational evidence &mdash; forced API migrations, physical infrastructure failures, and the G7&rsquo;s independent response &mdash; see <a href="/observations" style="color:var(--amber); text-decoration:none; border-bottom:1px solid var(--amber-dim);">Observations &rarr;</a></p>
 
-    <p class="body-text">This is not governance. It is faith in a vendor&rsquo;s continued good intentions, applied to infrastructure that the vendor can silently modify. In any other regulated domain &mdash; aviation, pharmaceuticals, nuclear energy, financial systems &mdash; this would be considered not merely insufficient but negligent. A pharmaceutical company that said &ldquo;trust us, we test our drugs&rdquo; without submitting to independent verification would not receive FDA approval. It would receive a subpoena.</p>
+    <p class="body-text">The deeper problem is not that these mechanisms are weak. It is that they are <strong>unverifiable.</strong> The vendor can change the model weights, modify the system prompt, alter the RLHF training set, or redefine the policy &mdash; at any time, server-side, without disclosure. The system you evaluated this morning can be fundamentally altered by lunchtime, server-side, with no audit trail. You cannot govern what you cannot inspect.</p>
+
+    <p class="body-text">This is not governance. It is faith in a vendor&rsquo;s continued good intentions, applied to infrastructure that the vendor can silently modify. In any other regulated domain &mdash; aviation, pharmaceuticals, nuclear energy, financial systems &mdash; this would be considered not merely insufficient but negligent. A pharmaceutical company that said &ldquo;trust us, we test our drugs&rdquo; without submitting to independent verification would not receive FDA approval. It would receive a subpoena. And yet in AI, the vendor is the lab, the regulator, and the pharmacist &mdash; and the patient has no right to the formula.</p>
 
     <p class="body-text">And yet this is precisely the governance model that the world&rsquo;s most capitalized AI companies are asking regulators, enterprises, and the public to accept.</p>
 
@@ -126,9 +128,7 @@ footer a:hover { color:var(--amber-bright); }
 
     <p class="body-text">The answer is that structural governance at the edge would eliminate the dependency that justifies centralized inference. If an enterprise can govern AI behavior locally &mdash; routing decisions through deterministic pipelines, enforcing zone-based approval, caching confirmed patterns &mdash; then the value proposition of centralized model access diminishes. The vendor becomes a commodity. The governance layer becomes the product. This is the inversion that the current market structure is designed to prevent.</p>
 
-    <p class="body-text">Recent reporting has made the stakes of this arrangement concrete. When the people closest to a company&rsquo;s leadership compile seventy pages of documentation alleging a consistent pattern of deception about safety protocols &mdash; when the company&rsquo;s own chief scientist concludes that leadership cannot be trusted with the technology &mdash; the question is no longer whether the individual is trustworthy. The question is why the architecture requires anyone to be.</p>
-
-    <p class="body-text">A system in which one person&rsquo;s candor is the only mechanism preventing the circumvention of a safety protocol is not a governance system. It is a single point of failure with a title. The fact that this failure mode has now been documented &mdash; by the company&rsquo;s own scientists, in its own internal memos &mdash; does not make the case for better leaders. It makes the case for architecture that renders leadership character irrelevant to safety outcomes.</p>
+    <p class="body-text">Recent history has made the stakes of this arrangement concrete. When a vendor&rsquo;s own leadership team must rely on internal coups to prevent the circumvention of safety protocols, it proves the architecture is broken. A system in which one executive&rsquo;s candor is the only mechanism preventing failure is not a governance system. It is a single point of failure with a title. The fact that this failure mode has now been documented &mdash; by the companies&rsquo; own scientists, in their own internal memos &mdash; does not make the case for better leaders. It makes the case for architecture that renders leadership character irrelevant to safety outcomes.</p>
 
     <hr class="section-divider">
   </div>
@@ -151,9 +151,11 @@ footer a:hover { color:var(--amber-bright); }
 
     <p class="body-text">The Grove Foundation publishes open architectural standards for AI governance. The first is the <strong>Autonomaton Pattern</strong>: a model-independent, domain-agnostic governance architecture that moves enforcement from the vendor&rsquo;s black box to the local edge.</p>
 
-    <p class="body-text">In a Grove-standardized system, a &ldquo;policy&rdquo; is not a PDF maintained by a legal department. It is a deterministic gateway &mdash; an auditable, inspectable routing decision that structurally prevents non-compliant actions regardless of what the underlying model attempts to generate. The operator defines the zones. The operator defines the approval thresholds. The operator defines what runs autonomously, what requires human review, and what is prohibited entirely. The model is the engine. The governance is the architecture. They are separate concerns, and they must be separately controlled.</p>
+    <p class="body-text">In a Grove-standardized system, a &ldquo;policy&rdquo; is not a PDF maintained by a legal department. It is a deterministic gateway &mdash; an auditable, inspectable routing decision that structurally prevents non-compliant actions regardless of what the underlying model attempts to generate. The operator defines the zones. The operator defines the approval thresholds. The operator defines what runs autonomously, what requires human review, and what is prohibited entirely. Routine queries never leave the premises. Your proprietary context never trains the vendor&rsquo;s model. The power plant provides the raw compute; the breaker box protects your intellectual property. The model is the engine. The governance is the architecture. They are separate concerns, and they must be separately controlled.</p>
 
     <p class="body-text">This is the breaker box. It does not replace the power plant. It does not compete with the power plant. It ensures that the power plant&rsquo;s failures do not burn down your house.</p>
+
+    <p class="body-text">The full architectural specification &mdash; the five-stage pipeline, the zone model, the cognitive router &mdash; is published as <a href="/standards/001" style="color:var(--amber); text-decoration:none; border-bottom:1px solid var(--amber-dim);">Open Standard 001</a> under CC BY 4.0.</p>
 
     <hr class="section-divider">
   </div>
@@ -174,7 +176,7 @@ footer a:hover { color:var(--amber-bright); }
 
     <p class="body-text">AI has not reached this transition yet. The current market accepts vendor promises as governance. That acceptance is sustained by three factors: the technology is new enough that most buyers lack the expertise to demand more, the vendors are politically connected enough to shape the regulatory environment, and no open alternative has existed.</p>
 
-    <p class="body-text">The first two factors are temporary. The third is what the Grove Foundation exists to resolve.</p>
+    <p class="body-text">The first two factors are temporary. The third is what the Grove Foundation exists to resolve. The current market accepts vendor promises as governance because no open alternative has existed. The <a href="/standards/001" style="color:var(--amber); text-decoration:none; border-bottom:1px solid var(--amber-dim);">Autonomaton Pattern</a> is that alternative. Stop trusting the power company. Build the breaker box.</p>
   </div>
 </section>
 

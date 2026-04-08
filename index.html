@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Grove Foundation — Infrastructure Makes Policy Real</title>
+<title>The Grove Foundation — Stop Building on Rented Ground</title>
 <meta name="description" content="AI is becoming part of how we think. If a few companies control that system, they shape how people think. The Grove Foundation publishes open architectural standards for AI governance.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -148,6 +148,35 @@ nav {
   font-family:var(--mono); font-size:12px;
   line-height:1.6; color:var(--text-dim);
 }
+/* ── STANDINGS TABLE ── */
+.standings-table {
+  width:100%; border-collapse:collapse; margin:32px 0;
+  font-family:var(--mono); font-size:12px;
+}
+.standings-table th {
+  text-align:left; color:var(--amber); font-weight:400;
+  letter-spacing:0.1em; text-transform:uppercase;
+  padding:10px 12px; border-bottom:1px solid var(--border-light);
+}
+.standings-table td {
+  padding:10px 12px; color:var(--text-mid);
+  border-bottom:1px solid var(--border);
+}
+.standings-table td strong { color:var(--text); font-weight:500; font-size:14px; }
+.standings-table tr { cursor:pointer; transition:background 0.2s; }
+.standings-table tbody tr:hover { background:var(--bg3); }
+.standings-table tbody tr:hover td { color:var(--text); }
+/* ── FEATURE LIST ── */
+.feature-list { list-style:none; padding:0; margin:32px 0; }
+.feature-list li {
+  font-size:17px; color:var(--text-mid); line-height:1.85;
+  font-weight:300; margin-bottom:16px; padding-left:24px;
+  position:relative;
+}
+.feature-list li::before {
+  content:''; position:absolute; left:0; top:12px;
+  width:8px; height:1px; background:var(--amber);
+}
 /* ── SCROLL CUE ── */
 .scroll-cue {
   position:absolute; bottom:36px; left:50%; transform:translateX(-50%);
@@ -204,15 +233,13 @@ footer a:hover { color:var(--amber-bright); }
 <section class="section" id="hero">
   <div class="section-inner">
     <div class="eyebrow">The Grove Foundation</div>
-    <h1 class="display">Infrastructure makes<br>policy <em>real.</em></h1>
+    <h1 class="display">Stop Building on<br><em>Rented Ground.</em></h1>
 
-    <p class="body-text">AI is becoming part of how we think. Not just a tool we use, but something we rely on to process ideas and make decisions.</p>
+    <p class="body-text">Every organization building on a centralized AI API is at the mercy of a landlord who can renovate the building while you&rsquo;re living in it.</p>
 
-    <p class="body-text">If a few companies control that system, they shape how people think. If it is built in a distributed way, more people have visibility and control. That choice matters. It will decide whether thinking stays open or becomes <em>limited and manipulated.</em></p>
+    <p class="body-text">You can&rsquo;t regulate a black box, and you can&rsquo;t build a permanent enterprise strategy on an API that gets deprecated with <em>90 days&rsquo; notice.</em></p>
 
-    <p class="body-text">Rules written into prompts are not real limits. They can be ignored. Real limits come from how the architecture is built. That is the difference between <strong>intention and reality.</strong></p>
-
-    <p class="body-text">Right now, most of the AI industry is built on intention. That will not hold. The market will demand architecture where rules are built in and provable &mdash; not just promised.</p>
+    <p class="body-text"><strong>The architecture is the policy.</strong> The Grove Foundation builds <a href="/standards" style="color:var(--amber-bright); text-decoration:none; border-bottom:1px solid var(--amber-dim);">open standards</a> for sovereign, distributed AI.</p>
 
     <div style="width:48px; height:1px; background:var(--amber); margin:32px 0;"></div>
     <p class="hero-meta">Open standards for distributed AI governance &middot; CC BY 4.0</p>
@@ -220,31 +247,94 @@ footer a:hover { color:var(--amber-bright); }
   <div class="scroll-cue" style="cursor:pointer;" onclick="this.parentElement.nextElementSibling.scrollIntoView({behavior:'smooth'})"><span>Scroll</span><svg width="16" height="10" viewBox="0 0 16 10" fill="none"><path d="M1 1L8 8L15 1" stroke="#8B3D10" stroke-width="1.5"/></svg></div>
 </section>
 <!-- ═══════════════════════════════════════════════════
-     WHAT WE DO
+     THE GLOBAL REALITY
 ════════════════════════════════════════════════════ -->
 <section class="section" style="border-top:1px solid var(--border);">
   <div class="section-inner">
-    <h2 class="headline">We publish that architecture<br>as <em>open standards.</em></h2>
+    <div class="eyebrow">The Global Reality</div>
+    <h2 class="headline">Six Nations Get It.<br><em>One Doesn&rsquo;t.</em></h2>
 
-    <p class="body-text">The Grove Foundation builds open architectural standards for AI governance. Not products. Not platforms. The structural blueprints that make governance provable &mdash; available to anyone, under a Creative Commons license.</p>
+    <p class="body-text">France, Germany, Japan, Canada, the UK, and Italy are investing heavily in domestic infrastructure and open-weight models. They recognized independently that relying on centralized vendors is an architectural failure disguised as innovation.</p>
 
-    <p class="body-text">Our first standard is the <strong>Autonomaton Pattern</strong>: a model-independent governance architecture that moves enforcement from the vendor&rsquo;s black box to the local edge &mdash; where the context actually lives.</p>
+    <p class="body-text">The United States is the only G7 nation consolidating its national strategy around <em>four massive, opaque vendors.</em></p>
 
-    <p class="body-text">In a Grove-standardized system, a &ldquo;policy&rdquo; is not a document maintained by a legal team. It is a deterministic gateway &mdash; an auditable routing decision that structurally prevents non-compliant actions regardless of what the underlying model attempts. The operator defines the rules. The architecture enforces them. The model is the engine. The governance is the structure. They are separate concerns, and they must be separately controlled.</p>
+    <p class="body-text">Centralized architectures are bad computer science. They create single points of failure, massive latency, and un-auditable outputs. <strong>It is time for a backup plan.</strong></p>
+
+    <p class="body-text" style="font-size:15px;"><a href="/papers/architectural-gap" style="color:var(--amber); text-decoration:none; border-bottom:1px solid var(--amber-dim);">Read the full thesis: The Architectural Gap &rarr;</a></p>
   </div>
 </section>
 <!-- ═══════════════════════════════════════════════════
-     BREAKER BOX
+     THE TELEMETRY TRAP
 ════════════════════════════════════════════════════ -->
 <section class="section" style="border-top:1px solid var(--border);">
   <div class="section-inner">
-    <div class="breaker-quote">We do not trust the power company to protect your house from a surge. We build a breaker box in your basement.</div>
+    <div class="eyebrow">The Telemetry Trap</div>
+    <h2 class="headline">You Are Paying to Train<br>Your <em>Replacement.</em></h2>
 
-    <p class="body-text">The power company cannot know what is happening inside your house. It does not know which outlets you are using, what load you are drawing, or which circuit is about to trip. The governance has to be local because the context is local.</p>
+    <p class="body-text">Centralized architectures extract your most valuable asset: <strong>your cognitive frontier.</strong></p>
 
-    <p class="body-text">The same constraint applies to AI. The vendor does not know your domain, your risk tolerance, your compliance requirements, or your operational context. A healthcare system and a solo practitioner consume the same model through the same API &mdash; and require fundamentally different governance. The vendor cannot provide this. Not because it lacks the will, but because it lacks the information.</p>
+    <p class="body-text">When you route your entire enterprise through a single vendor, they don&rsquo;t just see your data. They see what your industry is asking, where your workflows are failing, and what your smartest people are trying to figure out.</p>
 
-    <p class="body-text">This is not a policy argument. It is an engineering constraint. <strong>Governance must live where context lives.</strong></p>
+    <p class="body-text">Your telemetry trains the vendor&rsquo;s product roadmap. You negotiate enterprise agreements to protect your content, but <em>nobody is protecting the aggregate signal.</em></p>
+
+    <p class="body-text">In a distributed, sovereign model, your queries expand your own frontier. The network gets smarter, and <strong>you keep the keys.</strong></p>
+
+    <p class="body-text" style="font-size:15px;"><a href="/papers/telemetry-trap" style="color:var(--amber); text-decoration:none; border-bottom:1px solid var(--amber-dim);">CIO Alert: The Telemetry Trap &rarr;</a></p>
+  </div>
+</section>
+<!-- ═══════════════════════════════════════════════════
+     STATE OF THE ARCHITECTURE
+════════════════════════════════════════════════════ -->
+<section class="section" style="border-top:1px solid var(--border);">
+  <div class="section-inner">
+    <div class="eyebrow">State of the Architecture</div>
+    <h2 class="headline">The <em>Subsidy Illusion.</em></h2>
+
+    <p class="body-text">Every major analyst framework measures how many people are using an AI platform today. The Grove Foundation measures whether they&rsquo;d keep using it if <em>nobody subsidized it.</em></p>
+
+    <p class="body-text">We track the live standings of the industry&rsquo;s architectural patterns. We don&rsquo;t care about the hype; <strong>we care about the math.</strong> Which of these patterns actually has the structural viability to survive on its own?</p>
+
+    <table class="standings-table">
+      <thead><tr><th>#</th><th>Pattern</th><th>&Lambda;</th><th>Tier</th><th>Trend</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td><strong>Mistral / DeepSeek</strong><br><span style="font-size:10px;color:var(--text-dim);letter-spacing:0.1em;">OPEN WEIGHT (INT&rsquo;L)</span></td><td style="color:var(--amber-bright);font-weight:500;">0.0314</td><td style="color:var(--amber);">Approaching Critical</td><td style="color:#4CAF50;">&uarr;</td></tr>
+        <tr><td>2</td><td><strong>Apple Intelligence</strong><br><span style="font-size:10px;color:var(--text-dim);letter-spacing:0.1em;">ON-DEVICE</span></td><td style="color:#C4A748;font-weight:500;">0.0090</td><td>Sub-Critical</td><td>&rarr;</td></tr>
+        <tr><td>3</td><td><strong>Anthropic Claude</strong><br><span style="font-size:10px;color:var(--text-dim);letter-spacing:0.1em;">CENTRALIZED API</span></td><td style="color:#C4A748;font-weight:500;">0.0058</td><td>Sub-Critical</td><td>&rarr;</td></tr>
+        <tr><td>4</td><td><strong>Meta Llama</strong><br><span style="font-size:10px;color:var(--text-dim);letter-spacing:0.1em;">OPEN WEIGHT (US)</span></td><td style="color:#C44848;font-weight:500;">0.0031</td><td style="color:#C44848;">Structurally Inert</td><td style="color:#C44848;">&darr;</td></tr>
+        <tr><td>5</td><td><strong>OpenAI GPT</strong><br><span style="font-size:10px;color:var(--text-dim);letter-spacing:0.1em;">CENTRALIZED API</span></td><td style="color:#C44848;font-weight:500;">0.0014</td><td style="color:#C44848;">Structurally Inert</td><td>&rarr;</td></tr>
+        <tr><td>6</td><td><strong>Google Gemini</strong><br><span style="font-size:10px;color:var(--text-dim);letter-spacing:0.1em;">PLATFORM BUNDLE</span></td><td style="color:#C44848;font-weight:500;">0.0011</td><td style="color:#C44848;">Structurally Inert</td><td>&rarr;</td></tr>
+        <tr><td>7</td><td><strong>Microsoft Copilot</strong><br><span style="font-size:10px;color:var(--text-dim);letter-spacing:0.1em;">PLATFORM BUNDLE</span></td><td style="color:#C44848;font-weight:500;">0.0001</td><td style="color:#C44848;">Structurally Inert</td><td style="color:#C44848;">&darr;</td></tr>
+        <tr><td>8</td><td><strong>Autonomaton</strong><br><span style="font-size:10px;color:var(--text-dim);letter-spacing:0.1em;">SOVEREIGN OPEN</span></td><td style="color:#C44848;font-weight:500;">0.0001</td><td style="color:#C44848;">Structurally Inert</td><td>&rarr;</td></tr>
+      </tbody>
+    </table>
+    <p class="body-text" style="font-size:13px; color:var(--text-dim); margin-top:8px;">Click any row to see sub-scores and structural analysis.</p>
+
+    <p class="body-text" style="font-size:14px;"><a href="/lambda" style="color:var(--amber); text-decoration:none; border-bottom:1px solid var(--amber-dim);">Explore the full &Lambda; Standings &rarr;</a></p>
+  </div>
+</section>
+<!-- ═══════════════════════════════════════════════════
+     THE SOLUTION
+════════════════════════════════════════════════════ -->
+<section class="section" style="border-top:1px solid var(--border);">
+  <div class="section-inner">
+    <div class="eyebrow">The Solution</div>
+    <h2 class="headline">TCP/IP Wasn&rsquo;t Built<br>by <em>AT&amp;T.</em></h2>
+
+    <p class="body-text">Shipping containers weren&rsquo;t designed by a single shipping line. The entities that benefit most from proprietary infrastructure will never build the open standard that replaces it.</p>
+
+    <p class="body-text"><strong>Enter the Autonomaton Pattern</strong> (Open Standard 001). This is not a startup. This is not a product. It is a complete architectural specification for self-authoring software systems.</p>
+
+    <ul class="feature-list">
+      <li><strong>Governed by Design.</strong> Tiered routing ensures routine work stays local. The expensive &ldquo;frontier pipe&rdquo; only opens for genuine novelty.</li>
+      <li><strong>Vendor Agnostic.</strong> Governance sits above the model layer. Swap providers overnight without rewriting your routing rules or audit trails.</li>
+      <li><strong>Permanent Sovereignty.</strong> Published under CC BY 4.0. No license fees. No vendor. No cap table.</li>
+    </ul>
+
+    <p class="body-text">Centralized AI captured the cognitive frontier. The Grove Foundation ensures the architecture to take it back remains <em>open and inspectable.</em></p>
+
+    <div style="margin-top:40px;">
+      <a href="/standards/001" style="display:inline-block; font-family:var(--mono); font-size:11px; letter-spacing:0.15em; text-transform:uppercase; color:var(--amber); border:1px solid var(--amber); padding:12px 28px; text-decoration:none; transition:all 0.2s;">Explore the Autonomaton Specification &rarr;</a>
+    </div>
   </div>
 </section>
 <!-- ═══════════════════════════════════════════════════
@@ -313,6 +403,9 @@ var scrollCue=document.querySelector('.scroll-cue');
 if(scrollCue){window.addEventListener('scroll',function(){if(window.scrollY>100){scrollCue.style.opacity='0';scrollCue.style.transition='opacity 0.5s';}},{ once:true });}
 // Keyboard section navigation
 (function(){
+  // Make standings table rows clickable
+  var rows = document.querySelectorAll('.standings-table tbody tr');
+  rows.forEach(function(r){ r.addEventListener('click', function(){ window.location.href='/lambda'; }); });
   var sections = Array.from(document.querySelectorAll('.section'));
   document.addEventListener('keydown', function(e){
     if (e.key !== 'ArrowDown' && e.key !== 'ArrowUp') return;
