@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TCP/IP for the Cognitive Layer — The Grove Foundation</title>
+<meta name="description" content="The Autonomaton Pattern as Open Protocol: architectural foundations for composable, sovereign, and economically self-optimizing cognitive systems. GRV-002, CC BY 4.0.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fragment+Mono:ital@0;1&family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --amber:#D4621A; --amber-bright:#F07030; --amber-dim:#8B3D10;
+  --amber-glow:rgba(212,98,26,0.12);
+  --bg:#080808; --bg2:#0f0f0f; --bg3:#161616; --bg4:#1a1a1a;
+  --border:#252525; --border-light:#333;
+  --text:#E8E2D9; --text-dim:#7A736A; --text-mid:#B0A898;
+  --green:#4CAF72; --green-dim:rgba(76,175,114,0.08);
+  --red:#C0392B; --red-dim:rgba(192,57,43,0.06);
+  --yellow:#D4A017;
+  --mono:'Fragment Mono', monospace;
+  --serif:'Instrument Serif', Georgia, serif;
+  --sans:'DM Sans', sans-serif;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body { background:var(--bg); color:var(--text); font-family:var(--sans); -webkit-font-smoothing:antialiased; overflow-x:hidden; line-height:1.6; }
+strong { color:var(--text); font-weight:500; }
+body::before { content:''; position:fixed; inset:0; background-image:linear-gradient(var(--border) 1px, transparent 1px),linear-gradient(90deg, var(--border) 1px, transparent 1px); background-size:40px 40px; opacity:0.15; pointer-events:none; z-index:0; }
+nav { position:fixed; top:0; left:0; right:0; z-index:100; padding:0 48px; height:56px; display:flex; justify-content:space-between; align-items:center; background:rgba(8,8,8,0.94); backdrop-filter:blur(16px); border-bottom:1px solid rgba(37,37,37,0.5); }
+.nav-logo { font-family:var(--mono); font-size:11px; letter-spacing:0.2em; text-transform:uppercase; color:var(--amber-dim); text-decoration:none; }
+.nav-links { display:flex; gap:32px; }
+.nav-links a { font-family:var(--mono); font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-dim); text-decoration:none; padding:4px 0; border-bottom:1px solid transparent; transition:all 0.2s; }
+.nav-links a:hover, .nav-links a.active { color:var(--amber); border-bottom-color:var(--amber); }
+.nav-links a.nav-ext { color:var(--amber-dim); border:1px solid var(--amber-dim); padding:3px 10px; margin-left:8px; border-bottom:1px solid var(--amber-dim); }
+.nav-links a.nav-ext:hover { color:var(--amber); border-color:var(--amber); background:rgba(212,98,26,0.08); }
+.section { position:relative; z-index:1; }
+.section-inner { max-width:760px; margin:0 auto; padding:120px 48px 100px; }
+.section-wide { max-width:1040px; margin:0 auto; padding:120px 48px 100px; }
+.eyebrow { font-family:var(--mono); font-size:11px; letter-spacing:0.25em; text-transform:uppercase; color:var(--amber); margin-bottom:20px; }
+.display { font-family:var(--serif); font-weight:400; font-size:clamp(44px,5.5vw,72px); line-height:1.06; color:var(--text); margin-bottom:24px; letter-spacing:-0.02em; }
+.display em { color:var(--amber); font-style:italic; }
+.headline { font-family:var(--serif); font-weight:400; font-size:clamp(28px,3.5vw,44px); line-height:1.12; color:var(--text); margin-bottom:20px; letter-spacing:-0.01em; }
+.headline em { color:var(--amber); font-style:italic; }
+.subhead { font-family:var(--serif); font-weight:400; font-size:clamp(20px,2.2vw,28px); color:var(--text); margin:64px 0 20px; line-height:1.2; }
+.subhead em { color:var(--amber); font-style:italic; }
+.lead { font-weight:300; font-size:clamp(15px,1.5vw,17px); line-height:1.75; color:var(--text-mid); max-width:700px; margin-bottom:32px; }
+.body-text { font-weight:300; font-size:15px; line-height:1.75; color:var(--text-mid); margin-bottom:20px; }
+.divider { width:48px; height:1px; background:var(--amber); margin:32px 0; }
+.reveal { opacity:0; transform:translateY(24px); transition:opacity 0.7s ease, transform 0.7s ease; }
+.reveal.visible { opacity:1; transform:translateY(0); }
+.section-num { font-family:var(--mono); font-size:11px; letter-spacing:0.2em; color:var(--amber-dim); margin-bottom:6px; }
+.pullquote { border-left:3px solid var(--amber); background:rgba(212,98,26,0.04); padding:24px 28px; margin:32px 0; font-family:var(--serif); font-style:italic; font-size:17px; color:var(--text); line-height:1.55; }
+/* ── PRINCIPLE CARDS ── */
+.principle-grid { display:grid; gap:1px; background:var(--border); border:1px solid var(--border); margin:28px 0; }
+.principle-card { display:grid; grid-template-columns:64px 1fr; background:var(--bg2); }
+.principle-num { display:flex; align-items:flex-start; justify-content:center; padding-top:20px; font-family:var(--serif); font-size:28px; color:var(--amber); background:rgba(212,98,26,0.04); border-right:1px solid var(--border); }
+.principle-body { padding:20px 24px; }
+.principle-title { font-family:var(--serif); font-size:17px; color:var(--text); margin-bottom:6px; }
+.principle-desc { font-size:13px; color:var(--text-mid); line-height:1.6; font-weight:300; }
+.principle-test { font-family:var(--mono); font-size:11px; color:var(--amber-dim); margin-top:8px; font-style:italic; }
+/* ── COMPARISON TABLE ── */
+.compare-table { width:100%; border-collapse:collapse; border:1px solid var(--border); margin:28px 0; }
+.compare-table th { font-family:var(--mono); font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--amber); background:var(--bg3); padding:14px 16px; text-align:left; border-bottom:1px solid var(--border); font-weight:400; }
+.compare-table td { font-size:13px; color:var(--text-mid); padding:14px 16px; background:var(--bg2); border-bottom:1px solid var(--border); line-height:1.5; vertical-align:top; }
+.compare-table td:first-child { font-family:var(--serif); font-size:14px; color:var(--text); font-weight:400; white-space:nowrap; }
+/* ── COMPOSITION CARDS ── */
+.comp-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:1px; background:var(--border); border:1px solid var(--border); margin:28px 0; }
+.comp-card { background:var(--bg2); padding:24px; }
+.comp-name { font-family:var(--serif); font-size:17px; color:var(--text); margin-bottom:8px; }
+.comp-desc { font-size:12px; color:var(--text-dim); line-height:1.6; }
+/* ── DOWNLOAD BAR ── */
+.download-bar { display:flex; align-items:center; gap:16px; border:1px solid var(--border); background:var(--bg3); padding:16px 24px; margin:24px 0; }
+.download-bar a { font-family:var(--mono); font-size:11px; letter-spacing:0.1em; color:var(--amber); text-decoration:none; border:1px solid var(--amber-dim); padding:6px 16px; transition:all 0.2s; }
+.download-bar a:hover { background:rgba(212,98,26,0.12); border-color:var(--amber); }
+.download-meta { font-family:var(--mono); font-size:10px; color:var(--text-dim); letter-spacing:0.06em; }
+/* ── HERO ── */
+#hero { min-height:80vh; display:flex; flex-direction:column; justify-content:center; position:relative; background:radial-gradient(ellipse at 30% 80%, rgba(212,98,26,0.08) 0%, transparent 50%), radial-gradient(ellipse at 70% 20%, rgba(212,98,26,0.04) 0%, transparent 50%); }
+#hero .section-inner { padding-top:100px; padding-bottom:80px; }
+.hero-meta { font-family:var(--mono); font-size:10px; color:var(--text-dim); letter-spacing:0.1em; margin-top:24px; }
+.ref-list { list-style:none; padding:0; counter-reset:ref; }
+.ref-list li { font-size:12px; color:var(--text-dim); line-height:1.6; margin-bottom:8px; padding-left:28px; position:relative; }
+.ref-list li::before { counter-increment:ref; content:'[' counter(ref) ']'; position:absolute; left:0; font-family:var(--mono); font-size:10px; color:var(--amber-dim); }
+/* ── RESPONSIVE ── */
+@media(max-width:900px) { .comp-grid { grid-template-columns:1fr; } .compare-table { font-size:12px; } }
+@media(max-width:768px) { nav { padding:0 20px; } .nav-links { gap:16px; } .nav-links a { font-size:9px; } .section-inner,.section-wide { padding:80px 24px 60px; } .principle-card { grid-template-columns:48px 1fr; } }
+</style>
+</head>
+<body>
+<nav>
+  <a href="/" class="nav-logo">The Grove Foundation</a>
+  <div class="nav-links">
+    <a href="/">Thesis</a>
+    <a href="/observations">Observations</a>
+    <a href="/lambda">Standings</a>
+    <a href="/standards/001" class="active">Open Standards</a>
+    <a href="/papers/telemetry-trap">Papers</a>
+    <a href="https://the-grove.ai/autonomaton" target="_blank" rel="noopener noreferrer" class="nav-ext">Playground &nearr;</a>
+    <a href="/about">About</a>
+  </div>
+</nav>
+
+<!-- ═══════════════════════════════════════
+     HERO
+══════════════════════════════════════════ -->
+<section class="section" id="hero">
+  <div class="section-inner">
+    <div class="eyebrow">Open Standard &middot; GRV-002 &middot; CC BY 4.0</div>
+    <h1 class="display">TCP/IP for the <em>Cognitive Layer</em></h1>
+    <p class="lead">Architectural Foundations for Composable, Sovereign, and Economically Self-Optimizing Cognitive Systems</p>
+    <div class="divider"></div>
+    <p class="body-text">This paper argues that the Autonomaton Pattern occupies the same structural position for distributed cognition that TCP/IP occupied for distributed networking. We demonstrate structural equivalence across six dimensions: the hourglass invariant, the end-to-end argument, fate-sharing, layered independence, protocol-over-implementation philosophy, and economic self-optimization.</p>
+    <p class="body-text">The centralized AI buildout assumes that whoever controls the frontier controls cognition. TCP/IP proved that assumption wrong for information. The Autonomaton Pattern makes the same bet for intelligence.</p>
+    <p class="hero-meta">Jim Calhoun &middot; The Grove Foundation &middot; Working Draft &middot; March 2026</p>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     I. THE MISSING PROTOCOL
+══════════════════════════════════════════ -->
+<section class="section" style="background:var(--bg2); border-top:1px solid var(--border); border-bottom:1px solid var(--border);">
+  <div class="section-inner reveal">
+    <div class="section-num">I</div>
+    <h2 class="headline">The Missing <em>Protocol</em></h2>
+    <p class="body-text">In 1988, David D. Clark published a paper that changed how an industry thought about infrastructure. &ldquo;The Design Philosophy of the DARPA Internet Protocols&rdquo; did not propose new technology. It articulated the architectural reasoning behind technology that already existed&mdash;and in doing so, gave the networking community a shared intellectual framework that enabled decades of composable innovation.</p>
+    <p class="body-text">We are at an equivalent inflection point in cognitive computing. The technology exists. Large language models, local inference engines, retrieval-augmented generation, agentic frameworks&mdash;the raw capabilities are proliferating faster than the architectures to govern them. What&rsquo;s missing is not capability. What&rsquo;s missing is the protocol layer: the shared set of architectural commitments that allows independently developed cognitive systems to compose, interoperate, and self-optimize without centralized coordination.</p>
+    <p class="body-text">The parallel is not metaphorical. It is structural. TCP/IP succeeded not because it was the most capable networking protocol&mdash;OSI was arguably more comprehensive&mdash;but because its design principles created the conditions for a distributed network that no single entity could capture. The Autonomaton Pattern makes the same architectural bet for cognition.</p>
+    <div class="pullquote">&ldquo;Keep it simple. When in doubt during design, choose the simplest solution.&rdquo;<br><span style="font-size:13px; color:var(--text-dim); font-style:normal;">&mdash; RFC 1958, Architectural Principles of the Internet (1996)</span></div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     II. THE SIX PRINCIPLES
+══════════════════════════════════════════ -->
+<section class="section">
+  <div class="section-inner reveal">
+    <div class="section-num">II</div>
+    <h2 class="headline">The Design Principles That Made TCP/IP <em>Universal</em></h2>
+    <p class="body-text">TCP/IP&rsquo;s dominance over competing protocols&mdash;OSI, SNA, DECnet, XNS&mdash;was not predetermined. It emerged from a specific set of design principles, documented across three foundational texts: Clark&rsquo;s 1988 SIGCOMM paper, the Saltzer-Reed-Clark end-to-end arguments paper, and RFC 1958, later extended by RFC 3439. These principles were not implementation details. They were philosophical commitments that determined what the protocol could become.</p>
+  </div>
+</section>
+<section class="section">
+  <div class="section-wide reveal">
+    <div class="principle-grid">
+      <div class="principle-card">
+        <div class="principle-num">1</div>
+        <div class="principle-body">
+          <div class="principle-title">The Hourglass Invariant</div>
+          <div class="principle-desc">The IP layer is the thin waist of the hourglass. Ethernet, Wi-Fi, fiber, satellite&mdash;all converge at IP. HTTP, SMTP, FTP, SSH&mdash;all diverge from it. The invariant is deliberately minimal. It does one thing: route packets. This minimalism is the source of the architecture&rsquo;s composability.</div>
+        </div>
+      </div>
+      <div class="principle-card">
+        <div class="principle-num">2</div>
+        <div class="principle-body">
+          <div class="principle-title">The End-to-End Argument</div>
+          <div class="principle-desc">Functions required by applications should be implemented at the endpoints, not inside the network. The network should be simple. Intelligence belongs at the edges. End-to-end is a freedom guarantee disguised as a performance optimization.</div>
+        </div>
+      </div>
+      <div class="principle-card">
+        <div class="principle-num">3</div>
+        <div class="principle-body">
+          <div class="principle-title">Fate-Sharing</div>
+          <div class="principle-desc">The state required for a communication session should be stored at the endpoints, not in the network. If a node fails, only its own sessions fail&mdash;the rest of the network continues. The network has no single point of failure because the network holds no state.</div>
+        </div>
+      </div>
+      <div class="principle-card">
+        <div class="principle-num">4</div>
+        <div class="principle-body">
+          <div class="principle-title">Layered Independence</div>
+          <div class="principle-desc">TCP/IP separates transport, internetworking, and link-layer concerns into independent layers. Each layer can evolve without disrupting the others. Postel&rsquo;s 1978 decision to split the original Transmission Control Program into IP and TCP created the independence that allowed innovation at each layer to proceed without coordination.</div>
+        </div>
+      </div>
+      <div class="principle-card">
+        <div class="principle-num">5</div>
+        <div class="principle-body">
+          <div class="principle-title">Protocol Over Implementation</div>
+          <div class="principle-desc">TCP/IP specifies a protocol, not an implementation. Any hardware, any operating system, any programming language can implement it. The specification is open. Compliance is testable. TCP/IP runs on devices its designers never imagined, from thermostats to satellites.</div>
+        </div>
+      </div>
+      <div class="principle-card">
+        <div class="principle-num">6</div>
+        <div class="principle-body">
+          <div class="principle-title">Simplicity as Scaling Strategy</div>
+          <div class="principle-desc">Complexity is the primary mechanism that impedes efficient scaling. TCP/IP won not by having more features than OSI, but by having fewer. The network does one thing&mdash;deliver packets&mdash;and does it at planetary scale.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     III. SAME PRINCIPLES, COGNITIVE DOMAIN
+══════════════════════════════════════════ -->
+<section class="section" style="background:var(--bg2); border-top:1px solid var(--border);">
+  <div class="section-inner reveal">
+    <div class="section-num">III</div>
+    <h2 class="headline">Same Principles, <em>Cognitive Domain</em></h2>
+    <p class="body-text">Each TCP/IP design principle maps directly to an Autonomaton architectural commitment. The following sections demonstrate structural equivalence&mdash;not analogy, but the same architectural reasoning applied to a different substrate.</p>
+
+    <h3 class="subhead">The Hourglass: The Five-Stage Pipeline as <em>Invariant</em></h3>
+    <p class="body-text">In TCP/IP, IP is the thin waist of the hourglass. In the Autonomaton, the five-stage pipeline&mdash;Telemetry &rarr; Recognition &rarr; Compilation &rarr; Approval &rarr; Execution&mdash;is the thin waist of the cognitive hourglass. Below it: any data source, any sensor, any user interface. Above it: any cognitive model, any skill library, any output surface. The pipeline is deliberately minimal. It specifies that every cognitive interaction must pass through the same five stages in the same order&mdash;and that each stage produces a structured trace.</p>
+    <p class="body-text">A customer service bot and a pharmaceutical research assistant use different models, different skill libraries, different zone configurations&mdash;but the same pipeline. They produce structurally compatible telemetry. They can be composed into larger systems without custom integration, for the same reason HTTP and SMTP can share the same IP network: they share the invariant.</p>
+
+    <h3 class="subhead">End-to-End: The Zone Model as <em>Sovereignty Guarantee</em></h3>
+    <p class="body-text">The Green/Yellow/Red zone governance model is the end-to-end argument applied to cognitive systems. Governance functions belong at the endpoints&mdash;with the human operator&mdash;not inside the cognitive layer. The cognitive engine cannot impose policy on the operator. Governance is an endpoint function. The operator defines the zones. The system respects them.</p>
+    <p class="body-text">The sovereignty implication is the same one Saltzer, Reed, and Clark identified in 1984, transposed to the cognitive domain: by keeping governance at the endpoints, the cognitive infrastructure cannot capture the operator. No API provider can restrict what the operator has classified as Green. No model vendor can require human approval for what the operator has classified as autonomous. The zone model is a freedom guarantee expressed as architecture.</p>
+
+    <h3 class="subhead">Fate-Sharing: Sovereign State at the <em>Node</em></h3>
+    <p class="body-text">Each Autonomaton maintains its own state: routing configuration, zone schema, telemetry log, skill cache, learned patterns. No external service holds this state. If a cloud API goes down, the Autonomaton continues operating on its local tiers. If another Autonomaton in a composed system fails, only its sessions are affected. The network of Autonomatons has no single point of failure because no node depends on another node&rsquo;s state.</p>
+
+    <h3 class="subhead">Layered Independence: Cognition as a <em>Swappable Dependency</em></h3>
+    <p class="body-text">The governance layer (zone model) is independent of the cognitive layer (model selection). The cognitive layer is independent of the execution layer (actions taken). The telemetry layer is independent of all three. Swap Claude for Llama&mdash;the governance layer doesn&rsquo;t change. Add a new output surface&mdash;the cognitive routing doesn&rsquo;t change. This creates model agnosticism as an architectural guarantee, not a marketing claim.</p>
+
+    <h3 class="subhead">Protocol Over Implementation: Three Files and a <em>Loop</em></h3>
+    <p class="body-text">The minimum viable Autonomaton is three files and a loop: routing.config, zones.schema, and telemetry.log. Any language, any stack, any model. The test for compliance is architectural, not technological&mdash;exactly as TCP/IP compliance is testable against the specification, not against a reference implementation. The two billion personal computers already deployed worldwide can each run an Autonomaton. No new infrastructure required.</p>
+
+    <h3 class="subhead">Simplicity as Scaling Strategy: <em>Declarative Governance</em></h3>
+    <p class="body-text">Zone classifications are config entries, not code branches. Routing rules are key-value mappings, not decision trees. Most enterprise AI deployments embed governance in application code&mdash;guardrails hardcoded, routing logic procedural, audit trails afterthoughts. This is the OSI mistake repeated for the cognitive era: feature richness at the protocol level that impedes composability. The Autonomaton makes the opposite bet. The governance layer is minimal and declarative. Complexity lives in the skills and the models&mdash;above the thin waist&mdash;not in the pipeline itself.</p>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     IV. COMPOSITION PRIMITIVES
+══════════════════════════════════════════ -->
+<section class="section">
+  <div class="section-inner reveal">
+    <div class="section-num">IV</div>
+    <h2 class="headline">Composition <em>Primitives</em></h2>
+    <p class="body-text">TCP/IP&rsquo;s design principles did not merely enable the internet. They enabled patterns of composition&mdash;client-server, peer-to-peer, publish-subscribe, mesh networking&mdash;that the protocol designers did not anticipate. The protocol created the conditions; the ecosystem discovered the configurations.</p>
+    <p class="body-text">The Autonomaton Pattern&rsquo;s protocol properties create equivalent composition primitives for cognitive systems. Because the pipeline is invariant, the telemetry format is structured, the zone model is declarative, and the Cognitive Router is tiered, independently developed Autonomatons can compose without custom integration.</p>
+  </div>
+</section>
+<section class="section">
+  <div class="section-wide reveal">
+    <div class="comp-grid">
+      <div class="comp-card">
+        <div class="comp-name">Chain Composition</div>
+        <div class="comp-desc">Autonomaton A&rsquo;s execution output becomes Autonomaton B&rsquo;s telemetry input. Each node maintains independent zone governance. The chain extends indefinitely because the pipeline shape is invariant.</div>
+      </div>
+      <div class="comp-card">
+        <div class="comp-name">Branch / Fan-Out</div>
+        <div class="comp-desc">A single recognition event triggers multiple parallel Autonomatons. Zone inheritance propagates downward: Yellow propagates, Red always propagates. Governance composability&mdash;the zone model scales from single node to fleet without changing its specification.</div>
+      </div>
+      <div class="comp-card">
+        <div class="comp-name">Supervisor / Worker</div>
+        <div class="comp-desc">A master Autonomaton classifies and dispatches; workers execute. The master runs on Tier 0/Tier 1. Workers fire expensive models only when needed. The orchestration layer costs nearly nothing; inference is precisely targeted.</div>
+      </div>
+      <div class="comp-card">
+        <div class="comp-name">Peer Mesh / Swarm</div>
+        <div class="comp-desc">Autonomous nodes sharing a common telemetry bus, self-selecting into work that matches their routing configuration. No hierarchy. No central dispatcher. Emergent specialization&mdash;the routing configs create the division of labor.</div>
+      </div>
+      <div class="comp-card">
+        <div class="comp-name">Hierarchical Zone Nesting</div>
+        <div class="comp-desc">Enterprise-level zone boundaries constrain all child Autonomatons beneath them. The CTO sets the outer boundary, team leads set inner boundaries, practitioners set the innermost. Regulatory compliance expressed as one architectural property.</div>
+      </div>
+      <div class="comp-card">
+        <div class="comp-name">Federation</div>
+        <div class="comp-desc">Independent organizations share specific skill caches or telemetry streams across organizational boundaries. Skills flow across the network. Data does not. The open-source model applied to cognitive infrastructure.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     V. THE REVERSE TAX
+══════════════════════════════════════════ -->
+<section class="section" style="background:var(--bg2); border-top:1px solid var(--border); border-bottom:1px solid var(--border);">
+  <div class="section-inner reveal">
+    <div class="section-num">V</div>
+    <h2 class="headline">The Reverse <em>Tax</em></h2>
+    <p class="body-text">TCP/IP did not merely enable distributed networking. It made distributed networking cheaper than centralized alternatives. The end-to-end principle pushed complexity to the edges, where Moore&rsquo;s Law continuously reduced the cost of endpoint intelligence. The network stayed simple and cheap. The endpoints got more capable for free.</p>
+    <p class="body-text">The Autonomaton creates an equivalent economic dynamic. The Cognitive Router&rsquo;s tiered compute model is structurally incentivized to push work downward&mdash;from Tier 3 (expensive frontier models) toward Tier 0 (local pattern cache, zero marginal cost). Every confirmed skill in the Skill Flywheel represents a query that never needs to call an API again. The system gets cheaper as it gets smarter.</p>
+    <p class="body-text">At fleet scale, the Reverse Tax compounds. A supervisor Autonomaton notices that 80% of a worker&rsquo;s requests hit Tier 1. It proposes migrating those patterns to Tier 0&mdash;local execution, zero API cost. Multiply by a hundred workers. The fleet&rsquo;s aggregate cost declines with every learning cycle.</p>
+    <div class="pullquote">Centralized AI providers need users to keep calling the API. The Autonomaton Pattern is architecturally incentivized to reduce API calls to zero. The centralized model&rsquo;s revenue is the distributed model&rsquo;s waste.</div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     VI. THE GOVERNANCE INNOVATION
+══════════════════════════════════════════ -->
+<section class="section">
+  <div class="section-inner reveal">
+    <div class="section-num">VI</div>
+    <h2 class="headline">The Governance <em>Innovation</em></h2>
+    <p class="body-text">The parallel between TCP/IP and the Autonomaton Pattern is structural, not total. TCP/IP famously omitted security from its original design priorities. Clark&rsquo;s 1988 paper acknowledged this gap, and the internet has spent decades retrofitting security as an afterthought&mdash;TLS, firewalls, NAT traversal, certificate authorities&mdash;all bolted onto an architecture that was not designed for adversarial environments.</p>
+    <p class="body-text">The Autonomaton Pattern includes governance as a first-class architectural commitment, not an afterthought. The zone model is not a feature. It is part of the pipeline invariant. Every interaction traverses it. Every action is classified. Every trace is auditable.</p>
+    <p class="body-text">This is the TCP/IP lesson applied forward: the principle you omit from the protocol becomes the problem the ecosystem spends decades compensating for. TCP/IP omitted security. The current generation of AI systems omits governance. The Autonomaton Pattern treats governance the way TCP/IP should have treated security&mdash;as a structural commitment baked into the invariant, not a policy layer bolted on later.</p>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     VII. STRUCTURAL CORRESPONDENCE
+══════════════════════════════════════════ -->
+<section class="section" style="background:var(--bg2); border-top:1px solid var(--border); border-bottom:1px solid var(--border);">
+  <div class="section-inner reveal">
+    <div class="section-num">VII</div>
+    <h2 class="headline">Structural <em>Correspondence</em></h2>
+    <p class="body-text">The following table summarizes the principle-by-principle mapping between TCP/IP and the Autonomaton Pattern.</p>
+  </div>
+</section>
+<section class="section" style="background:var(--bg2);">
+  <div class="section-wide reveal">
+    <table class="compare-table">
+      <thead>
+        <tr><th>Design Principle</th><th>TCP/IP</th><th>Autonomaton</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Hourglass Invariant</td><td>IP layer: minimal packet routing that all traffic traverses</td><td>Five-stage pipeline: all cognitive interactions traverse same stages</td></tr>
+        <tr><td>End-to-End Argument</td><td>Intelligence at endpoints, not in the network</td><td>Zone Model governance at the operator, not in the cognitive engine</td></tr>
+        <tr><td>Fate-Sharing</td><td>Session state at endpoints; no centralized state</td><td>Config, skills, and telemetry maintained locally; no external dependency</td></tr>
+        <tr><td>Layered Independence</td><td>Transport, internetwork, and link layers evolve independently</td><td>Governance, cognition, and execution layers evolve independently</td></tr>
+        <tr><td>Protocol Over Implementation</td><td>Specification, not product; any hardware, OS, or language</td><td>Pattern, not framework; three files and a loop; any stack, any model</td></tr>
+        <tr><td>Simplicity Principle</td><td>Minimal network core; OSI lost by having more features</td><td>Declarative governance; complexity in skills and models, not the pipeline</td></tr>
+        <tr><td style="color:var(--amber);">Governance (added)</td><td>Omitted; retrofitted via TLS, firewalls, CAs over decades</td><td>First-class commitment; Zone Model is part of the pipeline invariant</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     VIII. IMPLICATIONS
+══════════════════════════════════════════ -->
+<section class="section">
+  <div class="section-inner reveal">
+    <div class="section-num">VIII</div>
+    <h2 class="headline">Implications and Open <em>Questions</em></h2>
+
+    <h3 class="subhead">For the <em>Industry</em></h3>
+    <p class="body-text">If the Autonomaton Pattern&rsquo;s protocol properties hold, the $650 billion centralized AI infrastructure buildout faces the same structural challenge that mainframe computing faced in the 1980s. The internet did not beat mainframes by being more powerful. It beat them by being architecturally uncontrollable.</p>
+
+    <h3 class="subhead">For Standards <em>Bodies</em></h3>
+    <p class="body-text">The Autonomaton Pattern is published under CC BY 4.0 because the thesis requires it. Distributed cognition that depends on a single vendor&rsquo;s implementation is not distributed. RFC 1958 established the precedent: nothing gets standardized until there are multiple instances of running code. The pattern awaits its second and third independent implementations.</p>
+
+    <h3 class="subhead">For <em>Practitioners</em></h3>
+    <p class="body-text">The pattern asks for three files and a loop. A practitioner can build a compliant Autonomaton in a weekend. The composition primitives emerge from the protocol properties without additional tooling. Chain two Autonomatons by connecting one&rsquo;s execution output to another&rsquo;s telemetry input. The governance, provenance, and interoperability come from the structure, not from a dependency.</p>
+
+    <h3 class="subhead">Open <em>Questions</em></h3>
+    <p class="body-text"><strong>Formal verification:</strong> Can the pipeline invariant and zone model be formally verified for safety properties in composed configurations?</p>
+    <p class="body-text"><strong>Telemetry schema standardization:</strong> What is the minimal telemetry schema sufficient for cross-node composition?</p>
+    <p class="body-text"><strong>Economic modeling:</strong> How does the Reverse Tax compound across different network topologies and workload distributions?</p>
+    <p class="body-text"><strong>Trust federation:</strong> What are the minimum requirements for cross-organizational skill sharing with provenance integrity?</p>
+    <p class="body-text">These questions invite exactly the kind of distributed, independent investigation that made the IETF&rsquo;s RFC process successful: rough consensus and running code.</p>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     IX. CONCLUSION
+══════════════════════════════════════════ -->
+<section class="section" style="background:var(--bg2); border-top:1px solid var(--border);">
+  <div class="section-inner reveal">
+    <div class="section-num">IX</div>
+    <h2 class="headline">The Same Bet, <em>Different Substrate</em></h2>
+    <p class="body-text">Christopher Alexander published <em>A Pattern Language</em> in 1977&mdash;253 patterns for designing the built environment. The patterns were not instructions. They were philosophical positions with structural implications. Alexander&rsquo;s work directly inspired the software design patterns movement, the Wiki itself, and a tradition of thinking about architecture as philosophy expressed through constraint.</p>
+    <p class="body-text">The Autonomaton Pattern is a direct descendant of that tradition. It specifies a set of architectural commitments&mdash;a pipeline, a router, a zone model, a flywheel, and a telemetry stream&mdash;that together create the conditions for software systems that are self-authoring, self-optimizing, sovereignty-preserving, and composable.</p>
+    <p class="body-text">TCP/IP did the same thing for networking. It specified a protocol&mdash;not a product&mdash;and the protocol&rsquo;s design principles created the conditions for a global network that no single entity could capture.</p>
+
+    <div class="pullquote">The centralized AI buildout assumes that whoever controls the frontier controls cognition. TCP/IP proved that assumption wrong for information. The Autonomaton Pattern makes the same bet for intelligence.</div>
+
+    <h3 class="subhead" style="margin-top:48px;">References</h3>
+    <ol class="ref-list">
+      <li>D. D. Clark, &ldquo;The Design Philosophy of the DARPA Internet Protocols,&rdquo; <em>Proc. ACM SIGCOMM &rsquo;88</em>, Vol. 18, No. 4, August 1988.</li>
+      <li>J. H. Saltzer, D. P. Reed, and D. D. Clark, &ldquo;End-to-End Arguments in System Design,&rdquo; <em>ACM Transactions on Computer Systems</em>, Vol. 2, No. 4, November 1984.</li>
+      <li>B. Carpenter, Ed., &ldquo;Architectural Principles of the Internet,&rdquo; RFC 1958, Internet Architecture Board, June 1996.</li>
+      <li>R. Bush and D. Meyer, &ldquo;Some Internet Architectural Guidelines and Philosophy,&rdquo; RFC 3439, December 2002.</li>
+      <li>V. Cerf and R. Kahn, &ldquo;A Protocol for Packet Network Intercommunication,&rdquo; <em>IEEE Trans. on Communications</em>, Vol. COM-22, No. 5, May 1974.</li>
+      <li>METR, &ldquo;AI Capability Trajectory Analysis,&rdquo; Frontier Model Forum Technical Report, 2025.</li>
+      <li>IBM, &ldquo;Autonomic Computing: IBM&rsquo;s Perspective on the State of Information Technology,&rdquo; October 2001.</li>
+      <li>J. O. Kephart and D. M. Chess, &ldquo;The Vision of Autonomic Computing,&rdquo; <em>IEEE Computer</em>, Vol. 36, No. 1, January 2003.</li>
+      <li>C. Alexander, S. Ishikawa, and M. Silverstein, <em>A Pattern Language</em>. New York: Oxford University Press, 1977.</li>
+      <li>E. Gamma, R. Helm, R. Johnson, and J. Vlissides, <em>Design Patterns</em>. Reading, MA: Addison-Wesley, 1994.</li>
+      <li>W. Cunningham and K. Beck, &ldquo;Using Pattern Languages for Object-Oriented Programs,&rdquo; OOPSLA &rsquo;87, 1987.</li>
+      <li>J. Calhoun, &ldquo;The Grove Autonomaton Pattern,&rdquo; The Grove Foundation, Draft 1.4, February 2026. CC BY 4.0.</li>
+    </ol>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     FOOTER
+══════════════════════════════════════════ -->
+<section class="section" style="border-top:1px solid var(--border); background:var(--bg2);">
+  <div class="section-inner">
+    <div class="download-bar">
+      <a href="/standards/001">GRV-001: The Pattern</a>
+      <span class="download-meta">GRV-002 &middot; Working Draft &middot; March 2026 &middot; CC BY 4.0</span>
+    </div>
+    <p class="body-text" style="font-size:13px; margin-top:32px;">This document is published under <a href="https://creativecommons.org/licenses/by/4.0/" style="color:var(--amber); text-decoration:none; border-bottom:1px solid var(--amber-dim);" target="_blank" rel="noopener noreferrer">Creative Commons Attribution 4.0 International (CC BY 4.0)</a>. You are free to share, adapt, and build upon this work for any purpose, provided you give appropriate credit.</p>
+    <p class="body-text" style="font-size:13px;">Jim Calhoun &middot; The Grove Foundation &middot; Indianapolis &middot; <a href="mailto:jim@the-grove.ai" style="color:var(--amber); text-decoration:none; border-bottom:1px solid var(--amber-dim);">jim@the-grove.ai</a></p>
+    <p class="body-text" style="font-size:11px; color:var(--text-dim); margin-top:24px; font-family:var(--mono);">the-grove.ai &middot; &copy; 2026 The Grove Foundation</p>
+  </div>
+</section>
+
+<script>
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+}, { threshold: 0.12 });
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
