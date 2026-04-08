@@ -32,14 +32,8 @@ Added six new sections to transform a scoreboard into the full methodology page:
 
 ## What needs to happen next session
 
-### 1. Push to GitHub (blocked)
-The repo has no remote configured. `gh` CLI is authenticated under `understory-ip` which lacks CreateRepository permissions.
-**Action:** Either create `twocash/grove-launch-site` manually on GitHub, or re-auth `gh` under the twocash account. Then:
-```
-cd /d C:\GitHub\grove-launch-site
-git remote add origin https://github.com/twocash/grove-launch-site.git
-git push -u origin master
-```
+### 1. GitHub repo
+Pushed to `understory-ip/grove-launch-site` (the formal IP-holding entity, to be assigned to the Grove Foundation once founded). Remote: `https://github.com/understory-ip/grove-launch-site.git`
 
 ### 2. Build `/standards/001` — The Autonomaton Pattern publication
 This is the "school of thought" document — the anchor asset of the entire GTM plan. Nav link already exists but currently 404s.
