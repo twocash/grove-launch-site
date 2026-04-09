@@ -80,3 +80,23 @@
 - Claude Code leak (Axios): https://www.axios.com/2026/03/31/anthropic-leaked-source-code-ai
 - Claude Code analysis (VentureBeat): https://venturebeat.com/technology/claude-codes-source-code-appears-to-have-leaked-heres-what-we-know
 - Georgetown CSET: https://cset.georgetown.edu/article/beyond-corporate-promises/
+
+
+## $650B CAPEX — Four companies, one year
+- CANONICAL (Quartz): https://qz.com/big-tech-ai-capex-amazon-microsoft-meta-google
+  (Feb 6, 2026: Amazon $200B, Alphabet $175-185B, Meta $115-135B, Microsoft ~$105B = ~$650B)
+- Bloomberg (paywalled): https://www.bloomberg.com/news/articles/2026-02-06/how-much-is-big-tech-spending-on-ai-computing-a-staggering-650-billion-in-2026
+- Yahoo Finance (Bloomberg reprint): https://finance.yahoo.com/news/big-tech-spend-650-billion-012716850.html
+
+## FRONTIER-TO-LOCAL PROPAGATION — Capability lag data
+- Epoch AI (CANONICAL): https://epoch.ai/data-insights/consumer-gpu-model-gap/
+  (Aug 2025: 6-12 month lag for consumer GPU models to match frontier)
+- UK AISI Frontier AI Trends: https://www.aisi.gov.uk/frontier-ai-trends-report
+  (4-month gap on AA Index, 8-month gap on METR benchmarks)
+- METR homepage + Time Horizon 1.1: https://metr.org/
+  (Jan 2026: post-2023 doubling time = 130.8 days / 4.3 months)
+- NOTE: Previous "21-month" figure in Grove decks is outdated. Current data supports 6-12 months.
+
+## 2 BILLION PCs WORLDWIDE
+- jorgep.com (IDC/Gartner/Canalys sourced): https://jorgep.com/blog/2025-global-pc-scale-and-distribution-worldwide/
+- Worldometers (Forrester): https://www.worldometers.info/computers/
