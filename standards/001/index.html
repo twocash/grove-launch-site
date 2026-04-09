@@ -169,6 +169,39 @@ nav { position:fixed; top:0; left:0; right:0; z-index:100; padding:0 48px; heigh
   </div>
 </section>
 
+<!-- ── EVALUATE THE PATTERN ── -->
+<section class="section" style="border-top:1px solid var(--border);">
+  <div class="section-inner reveal">
+    <div class="eyebrow">Evaluate the Autonomaton Pattern</div>
+
+    <div class="lens-tabs">
+      <button class="lens-tab active" data-target="lens-engineer">Build Systems, Not Wrappers</button>
+      <button class="lens-tab" data-target="lens-architect">Govern the Context</button>
+      <button class="lens-tab" data-target="lens-operator">Scale with Trust</button>
+    </div>
+
+    <div class="lens-content">
+      <div id="lens-engineer" class="lens-panel">
+        <div class="lens-eyebrow">Engineer&rsquo;s Lens</div>
+        <div class="lens-headline">Stop building fragile infrastructure on top of rented APIs.</div>
+        <p class="lens-body">The Autonomaton Pattern treats LLMs as interchangeable compute, not structural dependencies. By isolating the cognitive router from the inference engine, you can swap out models&mdash;from GPT-4 to a local open-weight instance&mdash;without rewriting your application logic. You stop building API wrappers and start building <strong>sovereign, resilient software.</strong></p>
+      </div>
+
+      <div id="lens-architect" class="lens-panel" style="display:none;">
+        <div class="lens-eyebrow">Architect&rsquo;s Lens</div>
+        <div class="lens-headline">Commoditize the compute; protect the intellectual property.</div>
+        <p class="lens-body">Centralized architecture leaks your telemetry to the vendor. The Autonomaton&rsquo;s Zone Model keeps your proprietary context entirely on-premises. Routine and sensitive workflows are executed locally, and only heavily sanitized, anonymized tasks are routed to frontier models. <strong>You are building your own IP, not the vendor&rsquo;s roadmap.</strong></p>
+      </div>
+
+      <div id="lens-operator" class="lens-panel" style="display:none;">
+        <div class="lens-eyebrow">Operator&rsquo;s Lens</div>
+        <div class="lens-headline">Human-in-the-loop governance that accelerates over time.</div>
+        <p class="lens-body">Enterprise AI fails because operators don&rsquo;t trust black boxes. The Autonomaton solves this with the Cognitive Ratchet. The system defaults to human supervision (the Yellow Zone) for new workflows. As the operator approves actions, the system writes deterministic rules, shifting that workflow to autonomous execution (the Green Zone). <strong>It builds trust by earning it.</strong></p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ═══════════════════════════════════════
      II. THE LINEAGE
 ══════════════════════════════════════════ -->
@@ -373,39 +406,6 @@ nav { position:fixed; top:0; left:0; right:0; z-index:100; padding:0 48px; heigh
       <div class="fly-step"><div class="fly-num">05</div><div class="fly-name">Execute</div><div class="fly-desc">Confirmed skill handles future matches autonomously. Usage data refines the pattern or deprecates it.</div></div>
     </div>
     <p class="body-text" style="text-align:center; font-family:var(--mono); font-size:11px; color:var(--amber-dim);">The ratchet: T3 &rarr; T2 &rarr; T1 &rarr; T0. Skills migrate toward deterministic execution through confirmed use. The system gets cheaper as a structural consequence of operation.</p>
-  </div>
-</section>
-
-<!-- ── RATCHET LENSES ── -->
-<section class="section">
-  <div class="section-inner reveal">
-    <h3 class="subhead" style="margin-top:0;">How the Ratchet solves your <em>biggest bottleneck.</em></h3>
-
-    <div class="lens-tabs">
-      <button class="lens-tab active" data-target="lens-engineer">Sprint Velocity</button>
-      <button class="lens-tab" data-target="lens-architect">Vendor Lock-in</button>
-      <button class="lens-tab" data-target="lens-operator">Workflow Automation</button>
-    </div>
-
-    <div class="lens-content">
-      <div id="lens-engineer" class="lens-panel">
-        <div class="lens-eyebrow">Engineer&rsquo;s Lens</div>
-        <div class="lens-headline">The human is a compiler for trust, not a permanent speed bump.</div>
-        <p class="lens-body">Centralized AI forces a false choice: move fast blindly, or move slow safely. The Autonomaton breaks the compromise. Every time a human approves a workflow in the Yellow Zone, the system proposes and writes a new deterministic rule. The Ratchet clicks forward; <strong>governance compounds.</strong> What required supervision yesterday runs entirely autonomously in the Green Zone tomorrow. You don&rsquo;t sacrifice sprint velocity for governance&mdash;you build a system that accelerates <em style="color:var(--amber); font-style:normal;">because</em> it is governed.</p>
-      </div>
-
-      <div id="lens-architect" class="lens-panel" style="display:none;">
-        <div class="lens-eyebrow">Architect&rsquo;s Lens</div>
-        <div class="lens-headline">Stop paying an API to train your replacement.</div>
-        <p class="lens-body">With an API vendor, every query makes their model smarter while your infrastructure remains permanently dependent. The Autonomaton reverses the ratchet. Every edge case your team resolves pushes the boundary of your local Green Zone outward. <strong>Human supervision isn&rsquo;t a tax&mdash;it is the exact mechanism that captures your institutional intelligence on-premises.</strong> The more you use it, the less you need the frontier models.</p>
-      </div>
-
-      <div id="lens-operator" class="lens-panel" style="display:none;">
-        <div class="lens-eyebrow">Operator&rsquo;s Lens</div>
-        <div class="lens-headline">The circuit breaker is a training wheel, not a stop sign.</div>
-        <p class="lens-body">When you introduce an Autonomaton to a new workflow, it asks for permission. As it learns your exact preferences, tolerances, and edge cases, the need for permission evaporates. The system gets faster, the governance gets tighter, and the human operator is elevated from a micromanager to a <strong>high-level supervisor.</strong> The system handles the scale; you just handle the exceptions.</p>
-      </div>
-    </div>
   </div>
 </section>
 
