@@ -122,6 +122,24 @@ nav { position:fixed; top:0; left:0; right:0; z-index:100; padding:0 48px; heigh
     <p style="font-family:var(--sans); font-size:11px; color:var(--text-dim); font-weight:300; line-height:1.6; margin-top:24px; padding-top:20px; border-top:1px solid var(--border);">The Grove Foundation Inc. is a not-for-profit business league within the meaning of Section 501(c)(6) of the Internal Revenue Code of 1986, as amended.</p>
   </div>
 </footer>
+<script>
+(function(){
+  var sections = Array.from(document.querySelectorAll('.section'));
+  document.addEventListener('keydown', function(e){
+    if (e.key !== 'ArrowDown' && e.key !== 'ArrowUp') return;
+    var tag = document.activeElement.tagName;
+    if (tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT') return;
+    e.preventDefault();
+    var scrollY = window.scrollY + 80;
+    var i;
+    if (e.key === 'ArrowDown') {
+      for (i = 0; i < sections.length; i++) { if (sections[i].offsetTop > scrollY + 10) { sections[i].scrollIntoView({behavior:'smooth',block:'start'}); return; } }
+    } else {
+      for (i = sections.length - 1; i >= 0; i--) { if (sections[i].offsetTop < scrollY - 10) { sections[i].scrollIntoView({behavior:'smooth',block:'start'}); return; } }
+    }
+  });
+})();
+</script>
 
 </body>
 </html>
