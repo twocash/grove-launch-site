@@ -37,6 +37,8 @@ nav { position:fixed; top:0; left:0; right:0; z-index:100; padding:0 48px; heigh
 .section { position:relative; z-index:1; }
 .section-inner { max-width:760px; margin:0 auto; padding:80px 48px 24px; }
 .section-wide { max-width:1040px; margin:0 auto; padding:24px 48px 80px; }
+.section-wide + .section-inner, .section-inner + .section-inner { padding-top:24px; }
+.section-inner + .section-wide { padding-top:0; }
 .eyebrow { font-family:var(--mono); font-size:11px; letter-spacing:0.25em; text-transform:uppercase; color:var(--amber); margin-bottom:20px; }
 .display { font-family:var(--serif); font-weight:400; font-size:clamp(44px,5.5vw,72px); line-height:1.06; color:var(--text); margin-bottom:24px; letter-spacing:-0.02em; }
 .display em { color:var(--amber); font-style:italic; }
