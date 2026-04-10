@@ -35,10 +35,8 @@ nav { position:fixed; top:0; left:0; right:0; z-index:100; padding:0 48px; heigh
 .nav-links a.nav-ext { color:var(--amber-dim); border:1px solid var(--amber-dim); padding:3px 10px; margin-left:8px; border-bottom:1px solid var(--amber-dim); }
 .nav-links a.nav-ext:hover { color:var(--amber); border-color:var(--amber); background:rgba(212,98,26,0.08); }
 .section { position:relative; z-index:1; }
-.section-inner { max-width:760px; margin:0 auto; padding:60px 48px 32px; }
-.section-wide { max-width:1040px; margin:0 auto; padding:40px 48px 32px; }
-.section-inner.flush { padding-top:0; }
-.section-wide.flush { padding-top:0; }
+.section-inner { max-width:760px; margin:0 auto; padding:80px 48px 24px; }
+.section-wide { max-width:1040px; margin:0 auto; padding:24px 48px 80px; }
 .eyebrow { font-family:var(--mono); font-size:11px; letter-spacing:0.25em; text-transform:uppercase; color:var(--amber); margin-bottom:20px; }
 .display { font-family:var(--serif); font-weight:400; font-size:clamp(44px,5.5vw,72px); line-height:1.06; color:var(--text); margin-bottom:24px; letter-spacing:-0.02em; }
 .display em { color:var(--amber); font-style:italic; }
@@ -122,7 +120,7 @@ nav { position:fixed; top:0; left:0; right:0; z-index:100; padding:0 48px; heigh
 .hero-meta { font-family:var(--mono); font-size:10px; color:var(--text-dim); letter-spacing:0.1em; margin-top:24px; }
 /* ── RESPONSIVE ── */
 @media(max-width:900px) { .pipeline,.tier-grid,.flywheel { grid-template-columns:1fr; } .zone-grid,.lineage-grid { grid-template-columns:1fr; } .gov-cols { grid-template-columns:1fr !important; } }
-@media(max-width:768px) { nav { padding:0 20px; } .nav-links { gap:16px; } .nav-links a { font-size:9px; } .section-inner,.section-wide { padding:80px 24px 60px; } .principle-card { grid-template-columns:48px 1fr; } }
+@media(max-width:768px) { nav { padding:0 20px; } .nav-links { gap:16px; } .nav-links a { font-size:9px; } .section-inner { padding:60px 24px 20px; } .section-wide { padding:20px 24px 60px; } .principle-card { grid-template-columns:48px 1fr; } }
 </style>
 </head>
 <body>
@@ -219,9 +217,7 @@ nav { position:fixed; top:0; left:0; right:0; z-index:100; padding:0 48px; heigh
     <p class="body-text">The Autonomaton Pattern is not novel. It is a synthesis of established ideas from computer science, industrial engineering, and the PC revolution&rsquo;s deepest architectural insight: that coherent products are expressions of coherent worldviews.</p>
     <p class="body-text">The generation that built the personal computer understood something the AI industry has forgotten. Wigginton, Kare, Mok&mdash;they understood that design is philosophy expressed through constraint. The Macintosh wasn&rsquo;t a collection of features. It was a worldview rendered in silicon and software. That tradition went underground when the industry shifted to platform scale. The Autonomaton Pattern is its return in the AI era.</p>
   </div>
-</section>
-<section class="section">
-  <div class="section-wide flush reveal">
+  <div class="section-wide reveal">
     <div class="lineage-grid">
       <div class="lineage-card">
         <div class="lineage-year">IBM, 2001</div>
@@ -250,16 +246,14 @@ nav { position:fixed; top:0; left:0; right:0; z-index:100; padding:0 48px; heigh
 <!-- ═══════════════════════════════════════
      III. THE PATTERN
 ══════════════════════════════════════════ -->
-<section class="section" style="background:var(--bg2); border-top:1px solid var(--border);">
+<section class="section" style="background:var(--bg2); border-top:1px solid var(--border); border-bottom:1px solid var(--border);">
   <div class="section-inner reveal">
     <div class="section-num">III</div>
     <h2 class="headline">The <em>Pattern</em></h2>
     <p class="body-text">Every Autonomaton instance traverses the same five stages, regardless of domain, model, or provider. The pipeline is not a suggestion. It is an invariant. Nothing runs alongside it. No sub-pipelines. No bypasses. No exceptions.</p>
     <p class="body-text">This constraint is the source of every property that matters: auditability, composability, portability, and the structural guarantee that every action can be traced to a governance decision a human can read.</p>
   </div>
-</section>
-<section class="section" style="background:var(--bg2);">
-  <div class="section-wide flush reveal">
+  <div class="section-wide reveal">
     <div class="pipeline">
       <div class="pipe-stage"><div class="pipe-num">01</div><div class="pipe-name">Telemetry</div><div class="pipe-desc">Capture interaction data. Structured, inspectable, owned by the operator. Every interaction produces a trace&mdash;this is the system&rsquo;s primary output.</div></div>
       <div class="pipe-stage"><div class="pipe-num">02</div><div class="pipe-name">Recognition</div><div class="pipe-desc">Classify intent, assess confidence, determine risk. The Cognitive Router dispatches to the cheapest tier capable of handling the request.</div></div>
@@ -268,16 +262,11 @@ nav { position:fixed; top:0; left:0; right:0; z-index:100; padding:0 48px; heigh
       <div class="pipe-stage"><div class="pipe-num">05</div><div class="pipe-name">Execution</div><div class="pipe-desc">Action fires. Output becomes telemetry for the next cycle. Audit trail generated as byproduct, not afterthought.</div></div>
     </div>
   </div>
-</section>
-
-<section class="section" style="background:var(--bg2);">
   <div class="section-inner reveal">
     <h3 class="subhead">The Cognitive <em>Router</em></h3>
     <p class="body-text">At Stage 02, the Cognitive Router classifies each request and dispatches it to the cheapest tier capable of handling it. This is the mechanism that makes the system structurally cheaper over time&mdash;as patterns are confirmed, they migrate downward through the tiers. The LLM is the brain. Keywords are the bootstrap cache. Confirmed patterns become deterministic rules.</p>
   </div>
-</section>
-<section class="section" style="background:var(--bg2); border-bottom:1px solid var(--border);">
-  <div class="section-wide flush reveal">
+  <div class="section-wide reveal">
     <div class="tier-grid">
       <div class="tier-card">
         <div class="tier-num">T0</div>
@@ -317,9 +306,7 @@ nav { position:fixed; top:0; left:0; right:0; z-index:100; padding:0 48px; heigh
     <h2 class="headline">The <em>Principles</em></h2>
     <p class="body-text">The Autonomaton Pattern implements the DEX (Declarative Exploration) standard&mdash;a set of architectural principles that separate exploration logic from execution capability. These are not guidelines. They are structural constraints. A system that violates them may work, but it is not an Autonomaton.</p>
   </div>
-</section>
-<section class="section">
-  <div class="section-wide flush reveal">
+  <div class="section-wide reveal">
     <div class="principle-grid">
       <div class="principle-card">
         <div class="principle-num">I</div>
@@ -360,15 +347,13 @@ nav { position:fixed; top:0; left:0; right:0; z-index:100; padding:0 48px; heigh
 <!-- ═══════════════════════════════════════
      V. THE ZONE MODEL
 ══════════════════════════════════════════ -->
-<section class="section" style="background:var(--bg2); border-top:1px solid var(--border);">
+<section class="section" style="background:var(--bg2); border-top:1px solid var(--border); border-bottom:1px solid var(--border);">
   <div class="section-inner reveal">
     <div class="section-num">V</div>
     <h2 class="headline">The Zone <em>Model</em></h2>
     <p class="body-text">Every action traversing the pipeline passes through Stage 04: Approval. The Zone Model determines what happens there. It is the structural guarantee that the system respects human authority&mdash;not through prompting, but through architectural constraint.</p>
   </div>
-</section>
-<section class="section" style="background:var(--bg2); border-bottom:1px solid var(--border);">
-  <div class="section-wide flush reveal">
+  <div class="section-wide reveal">
     <div class="zone-grid">
       <div class="zone-card" style="border-top:3px solid var(--green);">
         <div class="zone-label" style="color:var(--green);">Green Zone</div>
@@ -402,9 +387,7 @@ nav { position:fixed; top:0; left:0; right:0; z-index:100; padding:0 48px; heigh
     <p class="body-text">The mechanism is structural, not statistical. Every skill is a readable specification&mdash;not an opaque weight adjustment. Delete a skill and the behavior stops. Add a skill and the behavior starts. The operator can inspect, edit, version, and audit every piece of learned behavior the system accumulates.</p>
     <p class="body-text">The LLM is the brain. Keywords are the bootstrap cache. Confirmed patterns become deterministic rules. The ratchet only turns in one direction: toward cheaper, faster, more private execution&mdash;unless the operator explicitly resets it.</p>
   </div>
-</section>
-<section class="section">
-  <div class="section-wide flush reveal">
+  <div class="section-wide reveal">
     <div class="flywheel">
       <div class="fly-step"><div class="fly-num">01</div><div class="fly-name">Observe</div><div class="fly-desc">Telemetry captures interaction patterns. The system watches what the operator actually does.</div></div>
       <div class="fly-step"><div class="fly-num">02</div><div class="fly-name">Detect</div><div class="fly-desc">Recognition identifies recurring patterns that cross a confidence threshold.</div></div>
@@ -425,9 +408,7 @@ nav { position:fixed; top:0; left:0; right:0; z-index:100; padding:0 48px; heigh
     <h2 class="headline">Reference <em>Schemas</em></h2>
     <p class="body-text">The Autonomaton Pattern is implemented through structured data&mdash;not proprietary APIs. The following schemas are illustrative, not exhaustive. They show enough structure that a developer can say &ldquo;I could build this&rdquo; and enough constraint that an architect can say &ldquo;I can audit this.&rdquo;</p>
   </div>
-</section>
-<section class="section" style="background:var(--bg2);">
-  <div class="section-wide flush reveal">
+  <div class="section-wide reveal">
     <div class="schema-block">
       <div class="schema-label">Telemetry Entry</div>
 <pre>{
@@ -513,11 +494,6 @@ nav { position:fixed; top:0; left:0; right:0; z-index:100; padding:0 48px; heigh
 
     <h3 class="subhead">Sovereign <em>Computing</em></h3>
     <p class="body-text">The operator owns the telemetry. The operator owns the configuration. The operator owns the skills. The behavioral intelligence the system accumulates belongs to the person who generated it&mdash;not to the model provider, not to the platform, not to the infrastructure vendor. Switch providers without losing institutional knowledge. Inspect your own data without filing a request. Delete a skill and know it is gone.</p>
-  </div>
-</section>
-
-<section class="section">
-  <div class="section-inner reveal">
     <h3 class="subhead">The <em>Vision</em></h3>
     <p class="body-text">The Autonomaton Pattern is Act One of a three-act architecture.</p>
     <p class="body-text"><strong>Act One: The Autonomaton.</strong> The transistor. A single node&mdash;one person, one cognitive engine, one knowledge store&mdash;that authors its own improvement through the invariant pipeline. This document.</p>
