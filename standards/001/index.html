@@ -119,7 +119,7 @@ nav { position:fixed; top:0; left:0; right:0; z-index:100; padding:0 48px; heigh
 #hero .section-inner { padding-top:100px; padding-bottom:80px; }
 .hero-meta { font-family:var(--mono); font-size:10px; color:var(--text-dim); letter-spacing:0.1em; margin-top:24px; }
 /* ── RESPONSIVE ── */
-@media(max-width:900px) { .pipeline,.tier-grid,.flywheel { grid-template-columns:1fr; } .zone-grid,.lineage-grid { grid-template-columns:1fr; } }
+@media(max-width:900px) { .pipeline,.tier-grid,.flywheel { grid-template-columns:1fr; } .zone-grid,.lineage-grid { grid-template-columns:1fr; } .gov-cols { grid-template-columns:1fr !important; } }
 @media(max-width:768px) { nav { padding:0 20px; } .nav-links { gap:16px; } .nav-links a { font-size:9px; } .section-inner,.section-wide { padding:80px 24px 60px; } .principle-card { grid-template-columns:48px 1fr; } }
 </style>
 </head>
@@ -145,7 +145,7 @@ nav { position:fixed; top:0; left:0; right:0; z-index:100; padding:0 48px; heigh
     <h1 class="display">The Autonomaton <em>Pattern</em></h1>
     <p class="lead">Toward Self-Authoring Software Systems</p>
     <div class="divider"></div>
-    <p class="body-text">A design philosophy for software systems that learn from use, govern themselves through declarative configuration, and make human sovereignty an architectural property&mdash;not a policy aspiration. The pattern is model-agnostic, domain-agnostic, and published under CC BY 4.0 for anyone to implement.</p>
+    <p class="body-text">The Autonomaton is a <strong>self-authoring engine</strong>: it converts metered cloud dependencies into permanent, <strong>zero-marginal-cost institutional assets</strong> that get smarter, cheaper, and more private with every human interaction.</p>
     <p class="body-text">Three files and a loop. A routing config, a zones schema, a structured telemetry log, and a pipeline that traverses them in order. That is the entire architecture. Everything else is implication.</p>
     <p class="hero-meta">Jim Calhoun &middot; The Grove Foundation &middot; v1.0 &middot; March 2026</p>
   </div>
@@ -169,35 +169,40 @@ nav { position:fixed; top:0; left:0; right:0; z-index:100; padding:0 48px; heigh
   </div>
 </section>
 
-<!-- ── EVALUATE THE PATTERN ── -->
+<!-- ── ARCHITECTURAL GOVERNANCE ── -->
 <section class="section" style="border-top:1px solid var(--border);">
-  <div class="section-inner reveal">
-    <div class="eyebrow">Evaluate the Autonomaton Pattern</div>
-
-    <div class="lens-tabs">
-      <button class="lens-tab active" data-target="lens-engineer">Build Systems, Not Wrappers</button>
-      <button class="lens-tab" data-target="lens-architect">Govern the Context</button>
-      <button class="lens-tab" data-target="lens-operator">Scale with Trust</button>
+  <div class="section-wide reveal">
+    <div style="max-width:760px; margin:0 auto; padding-bottom:40px;">
+      <div class="eyebrow">Architectural Governance</div>
+      <p style="font-family:var(--serif); font-weight:400; font-size:clamp(24px,3vw,34px); line-height:1.25; color:var(--text); letter-spacing:-0.01em;">The Autonomaton is a <strong>self-authoring engine</strong>: it converts metered cloud dependencies into <strong>permanent, zero-marginal-cost institutional assets</strong> that get smarter, cheaper, and more private with use.</p>
     </div>
 
-    <div class="lens-content">
-      <div id="lens-engineer" class="lens-panel">
-        <div class="lens-eyebrow">Engineer&rsquo;s Lens</div>
-        <div class="lens-headline">Stop building fragile infrastructure on top of rented APIs.</div>
-        <p class="lens-body">The Autonomaton Pattern treats LLMs as interchangeable compute, not structural dependencies. By isolating the cognitive router from the inference engine, you can swap out models&mdash;from GPT-4 to a local open-weight instance&mdash;without rewriting your application logic. You stop building API wrappers and start building <strong>sovereign, resilient software.</strong></p>
+    <div class="gov-cols" style="display:grid; grid-template-columns:1fr 1fr; gap:40px;">
+      <!-- LEFT COLUMN -->
+      <div>
+        <div style="font-family:var(--mono); font-size:10px; letter-spacing:0.2em; text-transform:uppercase; color:var(--amber); margin-bottom:12px;">Operational Resilience</div>
+        <p style="font-size:16px; line-height:1.65; color:var(--text-mid); font-weight:300;">A model-agnostic, <strong style="color:var(--text);">five-stage invariant pipeline</strong> that decouples business logic from the LLM provider.</p>
+        <div style="margin-top:16px; background:var(--bg2); border:1px solid var(--border); border-left:2px solid var(--green); padding:20px 24px;">
+          <div style="font-family:var(--mono); font-size:10px; letter-spacing:0.15em; text-transform:uppercase; color:var(--green); margin-bottom:8px;">The Skill Flywheel</div>
+          <p style="font-size:13px; color:var(--text-mid); line-height:1.6;">Observation &rarr; Human Approval &rarr; Local YAML Asset. As the system &ldquo;learns&rdquo; your team&rsquo;s judgment patterns, it authors its own deterministic code.</p>
+        </div>
       </div>
+      <!-- RIGHT COLUMN -->
+      <div>
+        <div style="font-family:var(--mono); font-size:10px; letter-spacing:0.2em; text-transform:uppercase; color:var(--amber); margin-bottom:12px;">The Economic Ratchet</div>
+        <div style="background:var(--bg2); border:1px solid var(--border); padding:20px 24px; margin-bottom:16px;">
+          <div style="font-family:var(--serif); font-size:15px; color:var(--text); margin-bottom:6px;">TCO Optimization: T3 &rarr; T0</div>
+          <p style="font-size:13px; color:var(--text-mid); line-height:1.6;">The <strong style="color:var(--text);">Cognitive Router</strong> demotes expensive frontier calls (T3) to local, deterministic rules (T0) as patterns confirm. <strong style="color:var(--text);">Your ROI compounds as your API costs collapse.</strong></p>
+        </div>
+        <div style="background:var(--bg2); border:1px solid var(--border); padding:20px 24px;">
+          <div style="font-family:var(--serif); font-size:15px; color:var(--text); margin-bottom:6px;">Config Over Code</div>
+          <p style="font-size:13px; color:var(--text-mid); line-height:1.6;">Governance is portable and auditable. Change system behavior via <strong style="color:var(--text);">YAML files</strong>&mdash;no vendor re-training or deep-stack development required.</p>
+        </div>
+      </div>
+    </div>
 
-      <div id="lens-architect" class="lens-panel" style="display:none;">
-        <div class="lens-eyebrow">Architect&rsquo;s Lens</div>
-        <div class="lens-headline">Commoditize the compute; protect the intellectual property.</div>
-        <p class="lens-body">Centralized architecture leaks your telemetry to the vendor. The Autonomaton&rsquo;s Zone Model keeps your proprietary context entirely on-premises. Routine and sensitive workflows are executed locally, and only heavily sanitized, anonymized tasks are routed to frontier models. <strong>You are building your own IP, not the vendor&rsquo;s roadmap.</strong></p>
-      </div>
-
-      <div id="lens-operator" class="lens-panel" style="display:none;">
-        <div class="lens-eyebrow">Operator&rsquo;s Lens</div>
-        <div class="lens-headline">Human-in-the-loop governance that accelerates over time.</div>
-        <p class="lens-body">Enterprise AI fails because operators don&rsquo;t trust black boxes. The Autonomaton solves this with the Cognitive Ratchet. The system defaults to human supervision (the Yellow Zone) for new workflows. As the operator approves actions, the system writes deterministic rules, shifting that workflow to autonomous execution (the Green Zone). <strong>It builds trust by earning it.</strong></p>
-      </div>
+    <div style="margin-top:48px; border:1px solid var(--amber-dim); background:rgba(212,98,26,0.06); padding:24px 28px;">
+      <p style="font-size:15px; color:var(--text); line-height:1.65; margin:0;"><strong>The CIO Stake:</strong> <span style="color:var(--text-mid);">Centralized AI is a 100% depreciating OpEx. The Autonomaton creates <strong style="color:var(--text);">Non-Depreciating IP</strong> that stays inside your firewall, regardless of which model provider wins the scale war.</span></p>
     </div>
   </div>
 </section>
@@ -562,15 +567,7 @@ document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
     }
   });
 })();
-// Ratchet Lenses tab switching
-document.querySelectorAll('.lens-tab').forEach(function(btn){
-  btn.addEventListener('click',function(){
-    document.querySelectorAll('.lens-tab').forEach(function(b){b.classList.remove('active');});
-    document.querySelectorAll('.lens-panel').forEach(function(p){p.style.display='none';});
-    btn.classList.add('active');
-    document.getElementById(btn.getAttribute('data-target')).style.display='block';
-  });
-});
+
 </script>
 </body>
 </html>
