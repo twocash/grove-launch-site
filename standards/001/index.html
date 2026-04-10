@@ -35,8 +35,10 @@ nav { position:fixed; top:0; left:0; right:0; z-index:100; padding:0 48px; heigh
 .nav-links a.nav-ext { color:var(--amber-dim); border:1px solid var(--amber-dim); padding:3px 10px; margin-left:8px; border-bottom:1px solid var(--amber-dim); }
 .nav-links a.nav-ext:hover { color:var(--amber); border-color:var(--amber); background:rgba(212,98,26,0.08); }
 .section { position:relative; z-index:1; }
-.section-inner { max-width:760px; margin:0 auto; padding:120px 48px 100px; }
-.section-wide { max-width:1040px; margin:0 auto; padding:120px 48px 100px; }
+.section-inner { max-width:760px; margin:0 auto; padding:60px 48px 32px; }
+.section-wide { max-width:1040px; margin:0 auto; padding:40px 48px 32px; }
+.section-inner.flush { padding-top:0; }
+.section-wide.flush { padding-top:0; }
 .eyebrow { font-family:var(--mono); font-size:11px; letter-spacing:0.25em; text-transform:uppercase; color:var(--amber); margin-bottom:20px; }
 .display { font-family:var(--serif); font-weight:400; font-size:clamp(44px,5.5vw,72px); line-height:1.06; color:var(--text); margin-bottom:24px; letter-spacing:-0.02em; }
 .display em { color:var(--amber); font-style:italic; }
@@ -116,7 +118,7 @@ nav { position:fixed; top:0; left:0; right:0; z-index:100; padding:0 48px; heigh
 .download-meta { font-family:var(--mono); font-size:10px; color:var(--text-dim); letter-spacing:0.06em; }
 /* ── HERO ── */
 #hero { min-height:80vh; display:flex; flex-direction:column; justify-content:center; position:relative; background:radial-gradient(ellipse at 30% 80%, rgba(212,98,26,0.08) 0%, transparent 50%), radial-gradient(ellipse at 70% 20%, rgba(212,98,26,0.04) 0%, transparent 50%); }
-#hero .section-inner { padding-top:100px; padding-bottom:80px; }
+#hero .section-inner { padding-top:100px; padding-bottom:60px; }
 .hero-meta { font-family:var(--mono); font-size:10px; color:var(--text-dim); letter-spacing:0.1em; margin-top:24px; }
 /* ── RESPONSIVE ── */
 @media(max-width:900px) { .pipeline,.tier-grid,.flywheel { grid-template-columns:1fr; } .zone-grid,.lineage-grid { grid-template-columns:1fr; } .gov-cols { grid-template-columns:1fr !important; } }
@@ -219,7 +221,7 @@ nav { position:fixed; top:0; left:0; right:0; z-index:100; padding:0 48px; heigh
   </div>
 </section>
 <section class="section">
-  <div class="section-wide reveal">
+  <div class="section-wide flush reveal">
     <div class="lineage-grid">
       <div class="lineage-card">
         <div class="lineage-year">IBM, 2001</div>
@@ -257,7 +259,7 @@ nav { position:fixed; top:0; left:0; right:0; z-index:100; padding:0 48px; heigh
   </div>
 </section>
 <section class="section" style="background:var(--bg2);">
-  <div class="section-wide reveal">
+  <div class="section-wide flush reveal">
     <div class="pipeline">
       <div class="pipe-stage"><div class="pipe-num">01</div><div class="pipe-name">Telemetry</div><div class="pipe-desc">Capture interaction data. Structured, inspectable, owned by the operator. Every interaction produces a trace&mdash;this is the system&rsquo;s primary output.</div></div>
       <div class="pipe-stage"><div class="pipe-num">02</div><div class="pipe-name">Recognition</div><div class="pipe-desc">Classify intent, assess confidence, determine risk. The Cognitive Router dispatches to the cheapest tier capable of handling the request.</div></div>
@@ -275,7 +277,7 @@ nav { position:fixed; top:0; left:0; right:0; z-index:100; padding:0 48px; heigh
   </div>
 </section>
 <section class="section" style="background:var(--bg2); border-bottom:1px solid var(--border);">
-  <div class="section-wide reveal">
+  <div class="section-wide flush reveal">
     <div class="tier-grid">
       <div class="tier-card">
         <div class="tier-num">T0</div>
@@ -317,7 +319,7 @@ nav { position:fixed; top:0; left:0; right:0; z-index:100; padding:0 48px; heigh
   </div>
 </section>
 <section class="section">
-  <div class="section-wide reveal">
+  <div class="section-wide flush reveal">
     <div class="principle-grid">
       <div class="principle-card">
         <div class="principle-num">I</div>
@@ -366,7 +368,7 @@ nav { position:fixed; top:0; left:0; right:0; z-index:100; padding:0 48px; heigh
   </div>
 </section>
 <section class="section" style="background:var(--bg2); border-bottom:1px solid var(--border);">
-  <div class="section-wide reveal">
+  <div class="section-wide flush reveal">
     <div class="zone-grid">
       <div class="zone-card" style="border-top:3px solid var(--green);">
         <div class="zone-label" style="color:var(--green);">Green Zone</div>
@@ -402,7 +404,7 @@ nav { position:fixed; top:0; left:0; right:0; z-index:100; padding:0 48px; heigh
   </div>
 </section>
 <section class="section">
-  <div class="section-wide reveal">
+  <div class="section-wide flush reveal">
     <div class="flywheel">
       <div class="fly-step"><div class="fly-num">01</div><div class="fly-name">Observe</div><div class="fly-desc">Telemetry captures interaction patterns. The system watches what the operator actually does.</div></div>
       <div class="fly-step"><div class="fly-num">02</div><div class="fly-name">Detect</div><div class="fly-desc">Recognition identifies recurring patterns that cross a confidence threshold.</div></div>
@@ -425,7 +427,7 @@ nav { position:fixed; top:0; left:0; right:0; z-index:100; padding:0 48px; heigh
   </div>
 </section>
 <section class="section" style="background:var(--bg2);">
-  <div class="section-wide reveal">
+  <div class="section-wide flush reveal">
     <div class="schema-block">
       <div class="schema-label">Telemetry Entry</div>
 <pre>{
