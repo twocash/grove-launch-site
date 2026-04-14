@@ -220,6 +220,7 @@ footer a:hover { color:var(--amber-bright); }
 <nav>
   <a href="/" class="nav-logo">The Grove Foundation</a>
   <div class="nav-links">
+    <a href="/ratchet">Ratchet Test</a>
     <a href="/papers">CIO Alerts</a>
     <a href="/observations">Observations</a>
     <a href="/lambda">Standings</a>
@@ -314,6 +315,23 @@ footer a:hover { color:var(--amber-bright); }
   </div>
 </section>
 <!-- ═══════════════════════════════════════════════════
+     MEASURE YOURS — RATCHET TEST BRIDGE
+════════════════════════════════════════════════════ -->
+<section class="section" style="border-top:1px solid var(--border);">
+  <div class="section-inner">
+    <div class="eyebrow">Your Ratchet Direction</div>
+    <h2 class="headline">We Measure the Industry.<br>Now Measure <em>Yours.</em></h2>
+
+    <p class="body-text">The &Lambda; standings track which AI architectural patterns have structural viability at industry scale. The Ratchet Test measures whether <em>your</em> AI deployment compounds in your favor or your provider&rsquo;s.</p>
+
+    <p class="body-text">Nine questions. Four minutes. The score is <strong>structural, not self-reported</strong> &mdash; each answer maps to a single architectural fact about your deployment. The result is a Ratchet Direction Index and a board-ready assessment a CIO can present as-is.</p>
+
+    <div style="margin-top:32px;">
+      <a href="/ratchet" style="display:inline-block; font-family:var(--mono); font-size:12px; letter-spacing:0.12em; text-transform:uppercase; padding:14px 32px; background:transparent; border:1px solid var(--amber); color:var(--amber); text-decoration:none; transition:all 0.2s;" onmouseover="this.style.background='rgba(212,98,26,0.08)'" onmouseout="this.style.background='transparent'">Take the Ratchet Test &rarr;</a>
+    </div>
+  </div>
+</section>
+<!-- ═══════════════════════════════════════════════════
      THE SOLUTION
 ════════════════════════════════════════════════════ -->
 <section class="section" style="border-top:1px solid var(--border);">
@@ -388,6 +406,7 @@ footer a:hover { color:var(--amber-bright); }
       CC BY 4.0 &middot; &copy; 2026 The Grove Foundation
     </div>
     <div style="display:flex; gap:24px; margin-top:20px; flex-wrap:wrap;">
+      <a href="/ratchet" style="font-family:var(--mono); font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-dim); text-decoration:none;">Ratchet Test</a>
       <a href="/papers" style="font-family:var(--mono); font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-dim); text-decoration:none;">CIO Alerts</a>
       <a href="/observations" style="font-family:var(--mono); font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-dim); text-decoration:none;">Observations</a>
       <a href="/lambda" style="font-family:var(--mono); font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-dim); text-decoration:none;">Standings</a>
@@ -423,5 +442,6 @@ if(scrollCue){window.addEventListener('scroll',function(){if(window.scrollY>100)
   });
 })();
 </script>
+<script defer src="/_vercel/insights/script.js"></script>
 </body>
 </html>
