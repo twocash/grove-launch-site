@@ -645,6 +645,17 @@ nav.site-nav {
   text-align:center; line-height:1.6;
   opacity:0.8;
 }
+.bs-print-link {
+  font-family:var(--mono); font-size:10px;
+  letter-spacing:0.05em;
+  background:transparent; border:none;
+  color:var(--amber);
+  text-decoration:underline;
+  text-underline-offset:2px;
+  cursor:pointer; padding:0;
+  transition:color 0.2s ease;
+}
+.bs-print-link:hover { color:var(--amber-bright); }
 
 @media(max-width:900px) {
   .board-slide { padding:32px 24px 28px; }
@@ -930,7 +941,9 @@ footer.site-footer {
     <div class="results-container" id="results-container"></div>
     <div class="board-slide-wrap" id="board-slide-wrap" aria-hidden="true"></div>
     <div class="bs-instructions" id="bs-instructions" style="display:none;">
-      Screenshot this slide for your board deck. The frame above is self-contained &mdash; captures cleanly on Mac (&#8984;+Shift+4), Windows (Snip &amp; Sketch), or browser full-page capture.
+      Screenshot this slide to keep the color (&#8984;+Shift+4 on Mac, Snip &amp; Sketch on Windows, or browser full-page capture) &mdash; or
+      <button type="button" class="bs-print-link" onclick="printBoard()">Print to PDF</button>
+      for a board-printable black-and-white version.
     </div>
   </div>
 </main>
