@@ -703,12 +703,19 @@ footer.site-footer {
 }
 
 /* ══════════════════════════════════════════════════════
-   PRINT — dark-on-light inversion for board-ready export
+   PRINT — single-page board-ready export
+   Print ONLY the board slide; force color rendering.
 ══════════════════════════════════════════════════════ */
 @media print {
-  @page { size: letter portrait; margin: 0.4in; }
+  @page { size: letter portrait; margin: 0.35in; }
 
-  /* Force white background, dark text everywhere */
+  /* Force colors to render (Chrome/Edge/Firefox). Critical for the ratchet band. */
+  *, *::before, *::after {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    color-adjust: exact !important;
+  }
+
   html, body {
     background: #ffffff !important;
     color: #111111 !important;
@@ -716,12 +723,13 @@ footer.site-footer {
   }
   body::before { display: none !important; }
 
-  /* Hide everything that isn't the results artifact */
+  /* Hide everything that isn't the board slide — interactive results, chrome, buttons */
   nav.site-nav,
   footer.site-footer,
   #screen-intro,
   #screen-questions,
   #progress-bar,
+  .results-container,
   .r-cta,
   .r-cta-actions,
   .r-cta-btn,
@@ -736,118 +744,126 @@ footer.site-footer {
     min-height: 0 !important;
     padding: 0 !important;
   }
-  .results-container, .board-slide-wrap {
+  .board-slide-wrap, .board-slide-wrap.revealed {
+    display: block !important;
     max-width: 100% !important;
     margin: 0 !important;
     padding: 0 !important;
   }
-
-  /* Results container — print-safe recolor */
-  .results-header { margin-bottom: 24px !important; }
-  .results-overline { color: #b55618 !important; }
-  .results-title { color: #111111 !important; }
-  .results-date { color: #555555 !important; }
-
-  /* Ratchet direction band (keep the visual — it's the primary cue) */
-  .r-band { height: 48px !important; }
-  .r-track { background: #cccccc !important; }
-  .r-tooth { background: #dddddd !important; box-shadow: none !important; }
-  .r-tooth.on        { background: #a02818 !important; }  /* danger */
-  .r-tooth.on.warn   { background: #b55618 !important; }  /* amber */
-  .r-tooth.on.sov    { background: #1a5a3c !important; }  /* sovereign */
-  .r-diamond { border-color: #ffffff !important; box-shadow: none !important; }
-  .r-arrow { animation: none !important; }
-  .r-pole-label.prov { color: #a02818 !important; }
-  .r-pole-label.ent  { color: #1a5a3c !important; }
-
-  /* RDI block */
-  .rdi-block {
-    border-color: #cccccc !important;
-    padding: 20px !important;
-    margin-bottom: 24px !important;
-    break-inside: avoid;
-  }
-  .rdi-label { color: #555555 !important; }
-  .rdi-of { color: #555555 !important; }
-
-  /* Axis cards */
-  .r-axes { margin-bottom: 24px !important; break-inside: avoid; }
-  .r-axis {
-    border-color: #cccccc !important;
-    break-inside: avoid;
-    padding: 16px 14px !important;
-  }
-  .r-axis-num { color: #555555 !important; }
-  .r-axis-name { color: #111111 !important; }
-  .r-axis-max { color: #555555 !important; }
-  .r-bar { background: #eeeeee !important; }
-  .r-axis-finding { color: #333333 !important; font-size: 11px !important; }
-
-  /* Interpretation block */
-  .r-interp {
-    break-inside: avoid;
-    background: #fafafa !important;
-    padding: 18px 22px !important;
-    margin-bottom: 24px !important;
-  }
-  .r-interp-text { color: #333333 !important; font-size: 12px !important; }
-  .r-interp-text strong { color: #111111 !important; }
-
-  /* Board slide — if generated, print on a fresh page for clean framing */
-  .board-slide-wrap.revealed {
-    display: block !important;
-    margin-top: 24px !important;
-    break-before: page;
-  }
   .board-slide {
     background: #ffffff !important;
-    border-color: #cccccc !important;
-    padding: 24px !important;
+    border: 1px solid #cccccc !important;
+    padding: 20px 22px !important;
+    break-inside: avoid;
   }
   .board-slide::before { display: none !important; }
-  .bs-header { border-color: #cccccc !important; }
-  .bs-header-left .bs-eyebrow { color: #b55618 !important; }
-  .bs-header-left .bs-title { color: #111111 !important; }
-  .bs-header-right { color: #555555 !important; }
+
+  /* Header */
+  .bs-header {
+    border-color: #cccccc !important;
+    padding-bottom: 12px !important;
+    margin-bottom: 18px !important;
+  }
+  .bs-header-left .bs-eyebrow { color: #b55618 !important; margin-bottom: 4px !important; }
+  .bs-header-left .bs-title { color: #111111 !important; font-size: 22px !important; }
+  .bs-header-right { color: #555555 !important; font-size: 10px !important; }
+
+  /* Direction band — this is the primary visual */
+  .bs-band-wrap { margin-bottom: 18px !important; }
+  .bs-band { height: 44px !important; }
+  .bs-band .r-track {
+    background: #999999 !important;
+    height: 2px !important;
+  }
+  .bs-band .r-teeth-wrap {
+    height: 24px !important;
+    padding: 0 12px !important;
+  }
+  .bs-band .r-tooth {
+    width: 2px !important;
+    background: #d0d0d0 !important;
+    box-shadow: none !important;
+  }
+  .bs-band .r-tooth.on        { background: #a02818 !important; }
+  .bs-band .r-tooth.on.warn   { background: #b55618 !important; }
+  .bs-band .r-tooth.on.sov    { background: #1a5a3c !important; }
+  .bs-band .r-diamond {
+    border-color: #ffffff !important;
+    box-shadow: none !important;
+  }
+  .bs-band .r-arrow { animation: none !important; }
+  .bs-pole-label.prov { color: #a02818 !important; }
+  .bs-pole-label.ent  { color: #1a5a3c !important; }
+
+  /* Score + classification */
   .bs-score-row {
     background: #fafafa !important;
     border-color: #cccccc !important;
+    padding: 16px 20px !important;
+    margin-bottom: 18px !important;
+    break-inside: avoid;
+    gap: 20px !important;
+  }
+  .bs-score-cell {
+    border-color: #cccccc !important;
+    padding-right: 20px !important;
+  }
+  .bs-score-label, .bs-class-label { color: #555555 !important; }
+  .bs-score-number { font-size: 48px !important; }
+  .bs-score-of { color: #555555 !important; }
+  .bs-class-name { font-size: 28px !important; }
+
+  /* Axes — FORCE 3-column in print regardless of viewport width */
+  .bs-axes {
+    grid-template-columns: 1fr 1fr 1fr !important;
+    gap: 12px !important;
+    margin-bottom: 18px !important;
     break-inside: avoid;
   }
-  .bs-score-cell { border-color: #cccccc !important; }
-  .bs-score-label, .bs-class-label { color: #555555 !important; }
-  .bs-score-of { color: #555555 !important; }
-  .bs-axes { break-inside: avoid; }
   .bs-axis {
     border-color: #cccccc !important;
+    padding: 14px 12px !important;
     break-inside: avoid;
   }
   .bs-axis-num, .bs-axis-max { color: #555555 !important; }
-  .bs-axis-name { color: #111111 !important; }
-  .bs-bar { background: #eeeeee !important; }
-  .bs-axis-finding { color: #333333 !important; }
-  .bs-interp-label { color: #b55618 !important; }
+  .bs-axis-name { color: #111111 !important; font-size: 14px !important; margin-bottom: 10px !important; }
+  .bs-axis-score { font-size: 22px !important; }
+  .bs-bar { background: #eeeeee !important; margin-bottom: 10px !important; }
+  .bs-axis-finding { color: #333333 !important; font-size: 10px !important; line-height: 1.5 !important; }
+
+  /* Interpretation */
+  .bs-interp-wrap { margin-bottom: 16px !important; }
+  .bs-interp-label { color: #b55618 !important; margin-bottom: 8px !important; }
   .bs-interp {
     background: #fafafa !important;
     color: #333333 !important;
+    padding: 14px 18px !important;
+    font-size: 11px !important;
+    line-height: 1.65 !important;
     break-inside: avoid;
   }
   .bs-interp strong { color: #111111 !important; }
-  .bs-footer { border-color: #cccccc !important; color: #555555 !important; }
+
+  /* Footer */
+  .bs-footer {
+    border-color: #cccccc !important;
+    color: #555555 !important;
+    padding-top: 12px !important;
+    font-size: 9px !important;
+  }
   .bs-footer-right { color: #b55618 !important; }
 
-  /* Classification color remapping — swap dark-bg colors for print-safe dark tones.
-     Use attribute selectors on inline color so dynamic classification colors print. */
-  [style*="color: var(--danger)"]       { color: #a02818 !important; }
-  [style*="color: var(--amber)"]        { color: #b55618 !important; }
-  [style*="color: var(--amber-bright)"] { color: #d85820 !important; }
-  [style*="color: var(--sovereign)"]    { color: #1a5a3c !important; }
-  [style*="background: var(--danger)"]       { background: #a02818 !important; }
-  [style*="background: var(--amber)"]        { background: #b55618 !important; }
-  [style*="background: var(--amber-bright)"] { background: #d85820 !important; }
-  [style*="background: var(--sovereign)"]    { background: #1a5a3c !important; }
+  /* Classification color remapping — the board-slide inline styles use var(--*)
+     which resolves to dark-mode values. Remap to print-safe dark tones. */
+  [style*="color: var(--danger)"]        { color: #a02818 !important; }
+  [style*="color: var(--amber)"]         { color: #b55618 !important; }
+  [style*="color: var(--amber-bright)"]  { color: #d85820 !important; }
+  [style*="color: var(--sovereign)"]     { color: #1a5a3c !important; }
+  [style*="background: var(--danger)"]        { background: #a02818 !important; }
+  [style*="background: var(--amber)"]         { background: #b55618 !important; }
+  [style*="background: var(--amber-bright)"]  { background: #d85820 !important; }
+  [style*="background: var(--sovereign)"]     { background: #1a5a3c !important; }
 
-  /* Any anchor links that slipped through */
   a { color: #b55618 !important; text-decoration: none !important; }
 }
 </style>
