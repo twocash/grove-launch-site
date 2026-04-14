@@ -1382,7 +1382,7 @@ function showResults() {
       </div>
       <div class="r-cta-actions">
         <button class="r-cta-btn" id="btn-generate-board" onclick="generateBoard()">Generate Board Assessment</button>
-        <button class="r-cta-btn" id="btn-print-board" onclick="window.print()" style="display:none;">Print Board-Ready Report</button>
+        <button class="r-cta-btn" id="btn-print-board" onclick="printBoard()" style="display:none;">Print Board-Ready Report</button>
         <button class="r-cta-btn" onclick="window.open('https://the-grove.ai/standards/001', '_blank', 'noopener,noreferrer')">Read the Autonomaton Pattern</button>
         <button class="r-cta-btn secondary" onclick="location.reload()">Retake Diagnostic</button>
       </div>
@@ -1397,6 +1397,13 @@ function showResults() {
       <div><a href="https://the-grove.ai/ratchet">the-grove.ai/ratchet</a></div>
     </div>
   `;
+}
+
+// window.print() is synchronous and blocks the main thread while the browser
+// generates the print preview. Deferring with setTimeout lets the click handler
+// return immediately, so INP (input-to-next-paint) stays under ~16ms.
+function printBoard() {
+  setTimeout(() => window.print(), 0);
 }
 
 function generateBoard() {
