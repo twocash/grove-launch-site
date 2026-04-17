@@ -1,0 +1,1081 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The AI Market Runs on Subsidy, Not Structure — The Grove Foundation</title>
+<meta name="description" content="The 2026 AI Pattern Benchmark. Eight deployment patterns, one equation, 96 cited sources. The Grove Foundation.">
+<link href="https://fonts.googleapis.com/css2?family=Fragment+Mono&family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --amber:#D4621A; --amber-bright:#F07030; --amber-dim:#8B3D10;
+    --bg:#080808; --bg2:#0f0f0f; --bg3:#161616;
+    --border:#252525; --border-light:#333;
+    --text:#E8E2D9; --text-dim:#7A736A; --text-mid:#B0A898;
+    --green:#4CAF72; --yellow:#D4A017; --red:#C0392B;
+    --mono:'Fragment Mono',monospace;
+    --serif:'Instrument Serif',Georgia,serif;
+    --sans:'DM Sans',sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--bg);color:var(--text);font-family:var(--sans);font-weight:300;-webkit-font-smoothing:antialiased;line-height:1.6;}
+  body::before{content:'';position:fixed;inset:0;background-image:linear-gradient(rgba(212,98,26,0.02) 1px,transparent 1px),linear-gradient(90deg,rgba(212,98,26,0.02) 1px,transparent 1px);background-size:48px 48px;pointer-events:none;z-index:0;}
+
+  /* Top nav */
+  nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 48px;height:56px;display:flex;justify-content:space-between;align-items:center;background:rgba(8,8,8,0.94);backdrop-filter:blur(16px);border-bottom:1px solid rgba(37,37,37,0.5);}
+  .nav-logo{font-family:var(--mono);font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--amber-dim);text-decoration:none;}
+  .nav-links{display:flex;gap:32px;}
+  .nav-links a{font-family:var(--mono);font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-dim);text-decoration:none;padding:4px 0;border-bottom:1px solid transparent;transition:all 0.2s;}
+  .nav-links a:hover,.nav-links a.active{color:var(--amber);border-bottom-color:var(--amber);}
+  .nav-links a.nav-ext{color:var(--amber-dim);border:1px solid var(--amber-dim);padding:3px 10px;margin-left:8px;border-bottom:1px solid var(--amber-dim);}
+  .nav-links a.nav-ext:hover{color:var(--amber);border-color:var(--amber);background:rgba(212,98,26,0.08);}
+  .progress-bar{position:fixed;top:0;left:0;height:2px;background:var(--amber);z-index:101;transition:width 0.1s;}
+
+  /* Layout */
+  .container{max-width:1100px;margin:0 auto;padding:0 40px;position:relative;z-index:1;}
+  .container-reading{max-width:720px;margin:0 auto;padding:0 40px;position:relative;z-index:1;}
+  section{padding:120px 0;position:relative;}
+  section.tight{padding:80px 0;}
+
+  /* Typography */
+  .eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:0.22em;text-transform:uppercase;color:var(--amber);margin-bottom:28px;}
+  h1.hero-headline{font-family:var(--serif);font-size:clamp(44px,6vw,84px);line-height:1.04;letter-spacing:-0.02em;color:var(--text);margin-bottom:24px;font-weight:400;}
+  h1.hero-headline em{font-style:italic;color:var(--amber);}
+  h2.section-headline{font-family:var(--serif);font-size:clamp(32px,4vw,52px);line-height:1.08;letter-spacing:-0.02em;color:var(--text);margin-bottom:32px;font-weight:400;}
+  h2.section-headline em{font-style:italic;color:var(--amber);}
+  h3.sub-headline{font-family:var(--serif);font-size:clamp(22px,2.4vw,28px);line-height:1.2;color:var(--text);margin-bottom:16px;font-weight:400;}
+  .subhead{font-family:var(--serif);font-style:italic;font-size:clamp(18px,2vw,24px);line-height:1.4;color:var(--text-mid);max-width:760px;margin-bottom:40px;}
+  p{font-family:var(--sans);font-weight:300;font-size:17px;line-height:1.7;color:var(--text-mid);margin-bottom:20px;}
+  p strong{color:var(--text);font-weight:500;}
+  p em{font-style:italic;color:var(--text);}
+  a{color:var(--amber);text-decoration:none;border-bottom:1px solid rgba(212,98,26,0.3);transition:border-color 0.2s;}
+  a:hover{border-color:var(--amber);}
+  .divider{width:56px;height:1px;background:var(--amber);margin:36px 0;}
+  .lede{font-family:var(--serif);font-size:clamp(20px,2.2vw,26px);line-height:1.45;color:var(--text);font-style:italic;max-width:760px;margin-bottom:40px;}
+
+  /* Hero section */
+  .hero{min-height:100vh;display:flex;align-items:center;padding-top:80px;padding-bottom:80px;}
+  .hero-meta{font-family:var(--mono);font-size:11px;letter-spacing:0.22em;text-transform:uppercase;color:var(--text-dim);margin-bottom:60px;display:flex;gap:24px;flex-wrap:wrap;}
+  .hero-meta span.divider-dot{color:var(--amber);}
+  .hero-subhead{font-family:var(--serif);font-style:italic;font-size:clamp(20px,2.4vw,28px);line-height:1.4;color:var(--text-mid);max-width:780px;margin-top:32px;}
+  .hero-license{margin-top:80px;font-family:var(--mono);font-size:10px;letter-spacing:0.18em;color:var(--text-dim);text-transform:uppercase;}
+
+  /* The finding hero */
+  .finding-hero{display:grid;grid-template-columns:auto 1fr;gap:80px;align-items:center;margin:40px 0;}
+  .big-lambda{font-family:var(--serif);font-style:italic;font-size:clamp(120px,16vw,220px);line-height:0.9;color:var(--amber);letter-spacing:-0.04em;}
+  .big-lambda-label{font-family:var(--mono);font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--amber);margin-top:16px;}
+  .pattern-bars{display:flex;flex-direction:column;gap:10px;}
+  .pattern-bar{display:grid;grid-template-columns:200px 1fr 70px;gap:16px;align-items:center;font-size:13px;}
+  .pattern-bar .pb-name{color:var(--text-mid);font-family:var(--sans);}
+  .pattern-bar .pb-track{height:18px;background:var(--bg3);position:relative;overflow:hidden;}
+  .pattern-bar .pb-fill{height:100%;background:var(--amber);}
+  .pattern-bar .pb-fill.sub{background:rgba(212,98,26,0.6);}
+  .pattern-bar .pb-fill.inert{background:rgba(122,115,106,0.35);}
+  .pattern-bar .pb-val{color:var(--text-dim);font-family:var(--mono);font-size:12px;text-align:right;}
+  .pattern-bar.top .pb-name{color:var(--amber);font-weight:400;}
+  .pattern-bar.top .pb-val{color:var(--amber);}
+
+  /* Equation block */
+  .equation-block{text-align:center;margin:60px 0;padding:60px 40px;border:1px solid var(--border);background:var(--bg2);}
+  .equation{font-family:var(--serif);font-style:italic;font-size:clamp(22px,3.2vw,36px);color:var(--text);line-height:1.4;letter-spacing:0.02em;margin-bottom:12px;}
+  .equation .amber{color:var(--amber);}
+  .equation-label{font-family:var(--mono);font-size:10px;letter-spacing:0.18em;color:var(--text-dim);text-transform:uppercase;}
+  .variable-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px;margin-top:48px;}
+  .variable{padding:20px;border-left:2px solid var(--amber-dim);}
+  .variable .var-name{font-family:var(--serif);font-style:italic;font-size:18px;color:var(--amber);margin-bottom:6px;}
+  .variable .var-desc{font-size:13px;color:var(--text-mid);line-height:1.5;}
+
+  /* Calibration visualization — REBUILT */
+  .cal-viz{margin:80px 0 40px;}
+  .cal-plot{position:relative;height:160px;margin:0 40px;}
+  .cal-track{position:absolute;left:0;right:0;top:50%;height:2px;background:var(--border-light);transform:translateY(-50%);}
+  .cal-point{position:absolute;top:50%;width:18px;height:18px;border-radius:50%;background:var(--amber);border:3px solid var(--bg2);transform:translate(-50%,-50%);z-index:3;box-shadow:0 0 0 1px var(--amber);}
+  .cal-point.inert{background:var(--red);box-shadow:0 0 0 1px var(--red);}
+  .cal-label{position:absolute;transform:translateX(-50%);text-align:center;white-space:nowrap;}
+  .cal-label.above{bottom:calc(50% + 22px);}
+  .cal-label.below{top:calc(50% + 22px);}
+  .cal-label .cl-name{font-family:var(--serif);font-size:15px;color:var(--text);line-height:1.2;}
+  .cal-label .cl-lambda{font-family:var(--mono);font-size:11px;color:var(--amber);margin-top:3px;}
+  .cal-label.inert .cl-name{color:var(--text-mid);}
+  .cal-label.inert .cl-lambda{color:var(--red);}
+  .cal-bands{display:flex;margin:24px 40px 0;height:14px;border-radius:2px;overflow:hidden;}
+  .cal-band{height:100%;min-width:0;}
+  .cal-band.inert{background:rgba(192,57,43,0.35);}
+  .cal-band.sub{background:rgba(212,161,23,0.35);}
+  .cal-band.approaching{background:rgba(212,98,26,0.45);}
+  .cal-band.critical{background:rgba(76,175,114,0.35);}
+  .cal-scale{display:flex;justify-content:space-between;margin:10px 40px 0;font-family:var(--mono);font-size:9px;letter-spacing:0.12em;color:var(--text-dim);text-transform:uppercase;}
+  .cal-legend{display:flex;flex-wrap:wrap;gap:24px;margin:32px 40px 0;justify-content:center;}
+  .cal-legend-item{display:flex;align-items:center;gap:8px;font-family:var(--mono);font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-mid);}
+  .cal-swatch{display:inline-block;width:12px;height:12px;border-radius:2px;}
+  .cal-swatch.inert{background:rgba(192,57,43,0.5);}
+  .cal-swatch.sub{background:rgba(212,161,23,0.5);}
+  .cal-swatch.approaching{background:rgba(212,98,26,0.6);}
+  .cal-swatch.critical{background:rgba(76,175,114,0.5);}
+
+  /* Gemma 4 callout */
+  .alert-callout{margin:80px 0;padding:36px 40px;border:1px solid rgba(212,98,26,0.3);border-left:4px solid var(--amber);background:rgba(212,98,26,0.04);}
+  .alert-callout .ac-label{font-family:var(--mono);font-size:10px;letter-spacing:0.22em;color:var(--amber);text-transform:uppercase;margin-bottom:6px;}
+  .alert-callout .ac-title{font-family:var(--serif);font-size:22px;color:var(--text);margin-bottom:20px;}
+  .alert-callout p{font-family:var(--serif);font-style:italic;font-size:16px;line-height:1.65;color:var(--text-mid);margin-bottom:16px;}
+  .alert-callout p:last-child{margin-bottom:0;}
+  .alert-callout a{color:var(--amber);font-style:normal;}
+
+  /* Landscape table */
+  .landscape-table{width:100%;border-collapse:collapse;margin:20px 0;font-size:13px;}
+  .landscape-table th{font-family:var(--mono);font-size:10px;letter-spacing:0.12em;color:var(--amber-dim);text-transform:uppercase;padding:14px 12px;border-bottom:2px solid var(--amber);text-align:left;white-space:nowrap;font-weight:400;}
+  .landscape-table th.num{text-align:center;}
+  .landscape-table td{padding:14px 12px;border-bottom:1px solid var(--border);color:var(--text-mid);vertical-align:middle;}
+  .landscape-table td.num{text-align:center;font-family:var(--mono);font-size:13px;}
+  .landscape-table td.pattern-name{color:var(--text);font-weight:400;white-space:nowrap;}
+  .landscape-table td.lambda{font-family:var(--mono);font-size:15px;font-weight:500;text-align:center;}
+  .landscape-table td.lambda.top{color:var(--amber);}
+  .landscape-table td.lambda.mid{color:var(--text-mid);}
+  .landscape-table td.lambda.low{color:var(--text-dim);}
+  .landscape-table td.lambda.zero{color:var(--border-light);}
+  .landscape-table tr.top-row td{background:rgba(212,98,26,0.05);}
+  .cat-tag{font-family:var(--mono);font-size:9px;letter-spacing:0.08em;padding:3px 9px;border:1px solid var(--border);color:var(--text-dim);display:inline-block;text-transform:uppercase;}
+  .cat-tag.open{border-color:rgba(76,175,114,0.3);color:var(--green);}
+  .cat-tag.closed{border-color:rgba(192,57,43,0.3);color:var(--red);}
+  .cat-tag.device{border-color:rgba(212,161,23,0.3);color:var(--yellow);}
+  .cat-tag.arch{border-color:rgba(212,98,26,0.4);color:var(--amber);}
+  .tier-tag{font-family:var(--mono);font-size:9px;letter-spacing:0.08em;padding:3px 9px;display:inline-block;text-transform:uppercase;border:1px solid;}
+  .tier-tag.approaching{border-color:rgba(212,98,26,0.4);color:var(--amber);}
+  .tier-tag.sub{border-color:rgba(176,168,152,0.3);color:var(--text-mid);}
+  .tier-tag.inert{border-color:rgba(122,115,106,0.3);color:var(--text-dim);}
+
+  /* Cluster matrix — REBUILT */
+  .cluster-wrapper{display:grid;grid-template-columns:1.15fr 1fr;gap:60px;align-items:center;margin:40px 0;}
+  .cluster-matrix-frame{position:relative;padding:24px 40px 60px 80px;}
+  .cluster-matrix{position:relative;aspect-ratio:1;border:1px solid var(--border);background:var(--bg2);width:100%;}
+  .cluster-quadrant{position:absolute;width:50%;height:50%;pointer-events:none;}
+  .cluster-quadrant.sovereignty{left:0;top:0;background:rgba(212,98,26,0.05);}
+  .cluster-quadrant.dependency{right:0;bottom:0;background:rgba(192,57,43,0.06);}
+  .cluster-quad-label{position:absolute;font-family:var(--mono);font-size:9px;letter-spacing:0.16em;text-transform:uppercase;z-index:1;}
+  .cluster-quad-label.sov{top:14px;left:14px;color:var(--amber);}
+  .cluster-quad-label.dep{bottom:14px;right:14px;color:var(--red);}
+  .cluster-axis-x-low{position:absolute;bottom:-28px;left:0;font-family:var(--mono);font-size:9px;letter-spacing:0.14em;color:var(--text-dim);text-transform:uppercase;}
+  .cluster-axis-x-high{position:absolute;bottom:-28px;right:0;font-family:var(--mono);font-size:9px;letter-spacing:0.14em;color:var(--text-dim);text-transform:uppercase;}
+  .cluster-axis-x-title{position:absolute;bottom:-50px;left:50%;transform:translateX(-50%);font-family:var(--mono);font-size:10px;letter-spacing:0.18em;color:var(--amber-dim);text-transform:uppercase;white-space:nowrap;}
+  .cluster-axis-y-high{position:absolute;top:0;left:-28px;font-family:var(--mono);font-size:9px;letter-spacing:0.14em;color:var(--text-dim);text-transform:uppercase;writing-mode:vertical-rl;transform:rotate(180deg);}
+  .cluster-axis-y-low{position:absolute;bottom:0;left:-28px;font-family:var(--mono);font-size:9px;letter-spacing:0.14em;color:var(--text-dim);text-transform:uppercase;writing-mode:vertical-rl;transform:rotate(180deg);}
+  .cluster-axis-y-title{position:absolute;top:50%;left:-64px;transform:translateY(-50%) rotate(-90deg);transform-origin:center;font-family:var(--mono);font-size:10px;letter-spacing:0.18em;color:var(--amber-dim);text-transform:uppercase;white-space:nowrap;}
+  .cluster-point{position:absolute;width:12px;height:12px;border-radius:50%;background:var(--amber);transform:translate(-50%,-50%);z-index:3;}
+  .cluster-point.dep{background:var(--red);}
+  .cluster-point.sov{background:var(--amber);}
+  .cluster-point.device{background:var(--yellow);}
+  .cluster-point.auto{background:var(--amber);border:2px solid var(--text);width:16px;height:16px;}
+  .cluster-label{position:absolute;font-family:var(--sans);font-size:11px;color:var(--text-mid);white-space:nowrap;z-index:2;pointer-events:none;}
+  .cluster-pullquote{font-family:var(--serif);font-style:italic;font-size:clamp(20px,2.4vw,28px);line-height:1.4;color:var(--text);border-left:3px solid var(--amber);padding-left:24px;}
+  .cluster-pullquote strong{font-style:normal;color:var(--amber);}
+
+  /* Pattern cards */
+  .pattern-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--border);border:1px solid var(--border);margin:40px 0;}
+  .pattern-card{background:var(--bg2);padding:36px 32px;}
+  .pattern-card .pc-name{font-family:var(--serif);font-size:26px;color:var(--text);margin-bottom:6px;font-weight:400;}
+  .pattern-card.top .pc-name{color:var(--amber);}
+  .pattern-card .pc-score{font-family:var(--mono);font-size:11px;letter-spacing:0.1em;color:var(--amber);margin-bottom:20px;text-transform:uppercase;}
+  .pattern-card.top .pc-score{color:var(--amber-bright);}
+  .pattern-card.inert .pc-score{color:var(--text-dim);}
+  .pattern-card .pc-diagnostic{font-family:var(--sans);font-size:15px;line-height:1.65;color:var(--text-mid);margin-bottom:20px;}
+  .pattern-card .pc-pullquote{font-family:var(--serif);font-style:italic;font-size:16px;line-height:1.5;color:var(--text);border-left:2px solid var(--amber);padding-left:14px;margin-top:20px;}
+
+  /* Sensitivity analysis */
+  .sensitivity-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:32px;margin:40px 0;}
+  .sens-block{padding:28px;border:1px solid var(--border);background:var(--bg2);}
+  .sens-block .sb-name{font-family:var(--serif);font-size:20px;color:var(--text);margin-bottom:4px;}
+  .sens-block .sb-current{font-family:var(--mono);font-size:11px;color:var(--amber);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:20px;}
+  .scenario{display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center;padding:8px 0;border-bottom:1px solid var(--border);font-size:13px;}
+  .scenario:last-child{border-bottom:none;}
+  .scenario .sc-name{color:var(--text-mid);line-height:1.3;}
+  .scenario .sc-lambda{font-family:var(--mono);font-size:13px;color:var(--text-dim);white-space:nowrap;}
+  .scenario.worse .sc-lambda{color:var(--red);}
+  .scenario.better .sc-lambda{color:var(--green);}
+  .scenario.same .sc-lambda{color:var(--text-dim);}
+
+  /* Displacement sequence */
+  .displace-flow{display:grid;grid-template-columns:1fr auto 1fr auto 1fr auto 1fr;gap:0;align-items:stretch;margin:40px 0;}
+  .displace-box{border:1px solid var(--border);padding:28px 20px;background:var(--bg2);text-align:center;}
+  .displace-box.final{border-color:var(--amber);background:rgba(212,98,26,0.06);}
+  .displace-box .d-phase{font-family:var(--mono);font-size:10px;letter-spacing:0.15em;color:var(--text-dim);margin-bottom:14px;text-transform:uppercase;}
+  .displace-box .d-name{font-family:var(--serif);font-size:20px;color:var(--text);margin-bottom:10px;}
+  .displace-box .d-desc{font-size:12px;color:var(--text-mid);line-height:1.5;}
+  .displace-box.final .d-name{color:var(--amber);}
+  .displace-arrow{font-family:var(--mono);color:var(--amber-dim);font-size:20px;display:flex;align-items:center;justify-content:center;padding:0 4px;}
+
+  /* Operator's brief */
+  .directives{margin:40px 0;}
+  .directive{display:grid;grid-template-columns:140px 1fr;gap:48px;align-items:start;padding:56px 0;border-bottom:1px solid var(--border);}
+  .directive:last-child{border-bottom:none;}
+  .directive .d-num{font-family:var(--mono);font-size:48px;color:var(--amber);letter-spacing:0;line-height:1;}
+  .directive .d-content{max-width:640px;}
+  .directive .d-claim{font-family:var(--serif);font-size:clamp(24px,2.8vw,32px);line-height:1.2;color:var(--text);margin-bottom:20px;font-weight:400;}
+  .directive .d-claim em{font-style:italic;color:var(--amber);}
+  .directive p{font-size:16px;line-height:1.7;}
+  .directive-pullquote{font-family:var(--serif);font-style:italic;font-size:clamp(19px,2.2vw,24px);line-height:1.45;color:var(--text);border-left:3px solid var(--amber);padding-left:24px;margin:28px 0;max-width:640px;}
+  .directive-pullquote em{font-style:italic;color:var(--amber);}
+
+  /* Specification gap */
+  .spec-columns{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--border);border:1px solid var(--border);margin:40px 0;}
+  .spec-col{background:var(--bg2);padding:32px 24px;}
+  .spec-col .sc-label{font-family:var(--mono);font-size:10px;letter-spacing:0.12em;color:var(--amber);text-transform:uppercase;margin-bottom:24px;padding-bottom:12px;border-bottom:1px solid var(--border);}
+  .spec-col.empty .sc-label{color:var(--amber-bright);}
+  .spec-col ul{list-style:none;padding:0;}
+  .spec-col li{font-family:var(--mono);font-size:13px;color:var(--text-mid);padding:8px 0;border-bottom:1px dotted var(--border);}
+  .spec-col li:last-child{border-bottom:none;}
+  .spec-col li a{color:inherit;border-bottom:none;transition:color 0.2s;}
+  .spec-col li a:hover{color:var(--amber);}
+  .spec-col.empty li.auto{color:var(--amber);font-family:var(--serif);font-size:16px;font-style:italic;}
+  .spec-col.empty li.needed{color:var(--text-dim);font-style:italic;padding-top:16px;}
+
+  /* Conflict disclosure */
+  .conflict-box{border:1px solid var(--border-light);padding:48px 40px;margin:40px 0;background:var(--bg2);}
+  .conflict-box .cb-label{font-family:var(--mono);font-size:10px;letter-spacing:0.2em;color:var(--amber);margin-bottom:20px;text-transform:uppercase;}
+  .conflict-box p{font-family:var(--mono);font-size:14px;color:var(--text-mid);line-height:1.7;margin-bottom:16px;}
+  .conflict-box p:last-child{margin-bottom:0;}
+  .conflict-box p strong{color:var(--text);font-weight:400;}
+
+  /* About research (two columns) */
+  .about-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:80px;margin:40px 0;}
+  .about-cta{padding:36px;border:1px solid var(--amber-dim);background:rgba(212,98,26,0.03);}
+  .about-cta .ac-label{font-family:var(--mono);font-size:10px;letter-spacing:0.2em;color:var(--amber);text-transform:uppercase;margin-bottom:16px;}
+  .about-cta .ac-head{font-family:var(--serif);font-size:24px;color:var(--text);margin-bottom:16px;line-height:1.3;}
+  .about-cta p{font-size:15px;line-height:1.65;margin-bottom:16px;}
+  .about-cta .cta-link{display:inline-block;margin-top:12px;font-family:var(--mono);font-size:11px;letter-spacing:0.15em;color:var(--amber);text-transform:uppercase;border-bottom:1px solid var(--amber);padding-bottom:2px;}
+
+  /* Footer */
+  footer{padding:80px 40px 60px;border-top:1px solid var(--border);margin-top:60px;text-align:center;}
+  footer .wordmark{font-family:var(--serif);font-size:24px;color:var(--text);margin-bottom:12px;}
+  footer .lodestar{font-family:var(--serif);font-style:italic;font-size:16px;color:var(--text-mid);margin-bottom:24px;}
+  footer .license{font-family:var(--mono);font-size:10px;letter-spacing:0.18em;color:var(--text-dim);text-transform:uppercase;}
+
+  /* Scroll reveal animation */
+  .reveal{opacity:0;transform:translateY(20px);transition:opacity 0.8s ease,transform 0.8s ease;}
+  .reveal.visible{opacity:1;transform:translateY(0);}
+
+  /* Site scroll-cue (replaces scroll-hint) */
+  .scroll-cue{position:absolute;bottom:36px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:6px;}
+  .scroll-cue span{font-family:var(--mono);font-size:9px;color:var(--amber-dim);letter-spacing:0.2em;text-transform:uppercase;}
+  .scroll-cue svg{opacity:0.6;}
+
+  /* Responsive */
+  @media(max-width:900px){
+    .finding-hero{grid-template-columns:1fr;gap:40px;}
+    .cluster-wrapper{grid-template-columns:1fr;gap:40px;}
+    .pattern-grid{grid-template-columns:1fr;}
+    .displace-flow{grid-template-columns:1fr;gap:12px;}
+    .displace-arrow{transform:rotate(90deg);padding:4px 0;}
+    .sensitivity-grid{grid-template-columns:1fr;}
+    .directive{grid-template-columns:1fr;gap:16px;padding:40px 0;}
+    .spec-columns{grid-template-columns:1fr;}
+    .about-grid{grid-template-columns:1fr;gap:40px;}
+    .container,.container-reading{padding:0 24px;}
+    nav{padding:0 20px;}
+    .nav-links{gap:16px;}
+    .nav-links a{font-size:9px;}
+    section{padding:80px 0;}
+    .pattern-bar{grid-template-columns:120px 1fr 60px;font-size:12px;}
+    .pattern-bar .pb-name{font-size:12px;}
+  }
+  @media(max-width:600px){
+    .equation-block{padding:40px 20px;}
+    .chrome-brand-full{display:none;}
+    .pattern-bar{grid-template-columns:100px 1fr 56px;}
+  }
+</style>
+</head>
+<body>
+
+<div class="progress-bar" id="progressBar"></div>
+
+<nav>
+  <a href="/" class="nav-logo">The Grove Foundation</a>
+  <div class="nav-links">
+    <a href="/ratchet">Ratchet Test</a>
+    <a href="/papers" class="active">CIO Alerts</a>
+    <a href="/observations">Observations</a>
+    <a href="/lambda">Standings</a>
+    <a href="/standards">Open Standards</a>
+    <a href="https://the-grove.ai/autonomaton" target="_blank" rel="noopener noreferrer" class="nav-ext">Run the Pattern &nearr;</a>
+    <a href="/about">About</a>
+  </div>
+</nav>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-meta reveal">
+      <span>The Grove Foundation</span>
+      <span class="divider-dot">·</span>
+      <span>AI Pattern Benchmark</span>
+      <span class="divider-dot">·</span>
+      <span>March 2026</span>
+      <span class="divider-dot">·</span>
+      <span>Issue 003</span>
+    </div>
+    <h1 class="hero-headline reveal">The AI Market Runs on <em>Subsidy,</em> Not Structure.</h1>
+    <p class="hero-subhead reveal">Seven of eight deployment patterns cannot propagate without continuous external subsidy. The Λ benchmark scores the 2026 landscape — eight patterns, one equation, 96 cited sources.</p>
+    <div class="hero-license reveal">CC BY 4.0 · 96 sources · 8 patterns · 4 historical calibrations</div>
+  </div>
+  <div class="scroll-cue"><span>Scroll</span><svg width="16" height="10" viewBox="0 0 16 10" fill="none"><path d="M1 1L8 8L15 1" stroke="#8B3D10" stroke-width="1.5"/></svg></div>
+</section>
+
+<!-- ═══ WHAT THIS MEASURES ═══ -->
+<section>
+  <div class="container-reading">
+    <div class="eyebrow reveal">What this benchmark measures</div>
+    <h2 class="section-headline reveal">A question the analyst frameworks don't ask.</h2>
+    <p class="reveal">Gartner measures market momentum. Forrester measures vendor capability. IDC measures competitive positioning. None of them asks the question that determines whether a technology wins the 36-month race: does the pattern propagate on its own structural merits, or does it require continuous external subsidy to sustain adoption?</p>
+    <p class="reveal">The Λ framework measures that question directly. It treats adoption as a structural mechanics problem. Capital can accelerate inferior architectures for three to five years. Distribution power can sustain them inside an installed base. Neither subsidy survives the displacement pressure that accumulates once cognitive friction drops and an alternative becomes structurally accessible.</p>
+    <p class="reveal">Eight AI deployment patterns. One equation. Observable data only — legal frameworks, deployment economics, regulatory exposure, cognitive load. Ninety-six cited sources. No vendor narratives.</p>
+  </div>
+</section>
+
+<!-- ═══ THE FINDING ═══ -->
+<section style="background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
+  <div class="container">
+    <div class="eyebrow reveal">The finding</div>
+    <h2 class="section-headline reveal">One pattern propagates. <em>Seven do not.</em></h2>
+    <div class="finding-hero reveal">
+      <div>
+        <div class="big-lambda">0.0314</div>
+        <div class="big-lambda-label">Mistral / DeepSeek · Approaching Critical</div>
+      </div>
+      <div class="pattern-bars">
+        <div class="pattern-bar top">
+          <div class="pb-name">Mistral / DeepSeek</div>
+          <div class="pb-track"><div class="pb-fill" style="width:100%;"></div></div>
+          <div class="pb-val">0.0314</div>
+        </div>
+        <div class="pattern-bar">
+          <div class="pb-name">Meta Llama</div>
+          <div class="pb-track"><div class="pb-fill sub" style="width:33%;"></div></div>
+          <div class="pb-val">0.0104</div>
+        </div>
+        <div class="pattern-bar">
+          <div class="pb-name">Apple Intelligence</div>
+          <div class="pb-track"><div class="pb-fill sub" style="width:29%;"></div></div>
+          <div class="pb-val">0.0090</div>
+        </div>
+        <div class="pattern-bar">
+          <div class="pb-name">Anthropic Claude</div>
+          <div class="pb-track"><div class="pb-fill sub" style="width:19%;"></div></div>
+          <div class="pb-val">0.0059</div>
+        </div>
+        <div class="pattern-bar">
+          <div class="pb-name">OpenAI GPT</div>
+          <div class="pb-track"><div class="pb-fill inert" style="width:5%;"></div></div>
+          <div class="pb-val">0.0014</div>
+        </div>
+        <div class="pattern-bar">
+          <div class="pb-name">Google Gemini</div>
+          <div class="pb-track"><div class="pb-fill inert" style="width:4%;"></div></div>
+          <div class="pb-val">0.0011</div>
+        </div>
+        <div class="pattern-bar">
+          <div class="pb-name">Microsoft Copilot</div>
+          <div class="pb-track"><div class="pb-fill inert" style="width:1%;"></div></div>
+          <div class="pb-val">0.0002</div>
+        </div>
+        <div class="pattern-bar">
+          <div class="pb-name">Autonomaton</div>
+          <div class="pb-track"><div class="pb-fill inert" style="width:0.5%;min-width:3px;"></div></div>
+          <div class="pb-val">0.0001</div>
+        </div>
+      </div>
+    </div>
+    <div class="container-reading" style="padding:0;max-width:760px;">
+      <p class="reveal">One pattern is Approaching Critical: Mistral/DeepSeek at Λ = 0.0314. Two patterns sit Sub-Critical. Five patterns — including all three platform-bundle and centralized-API incumbents — are Structurally Inert.</p>
+      <p class="reveal">The $650 billion AI infrastructure buildout is structurally suppressed. It propagates on venture capital, enterprise distribution power, and accumulated contractual lock-in. Remove the subsidy and the propagation stalls or reverses.</p>
+      <p class="reveal lede">That is the finding. The rest of this paper shows the math.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ THE EQUATION ═══ -->
+<section>
+  <div class="container">
+    <div class="container-reading" style="padding:0;">
+      <div class="eyebrow reveal">The equation</div>
+      <h2 class="section-headline reveal">One formula. <em>Five variables.</em></h2>
+    </div>
+    <div class="equation-block reveal">
+      <div class="equation">Λ = (S × R × V) · <span class="amber">[</span> 1 / (1 + (β · F<sub>c</sub>)²) <span class="amber">]</span></div>
+      <div class="equation-label">The Λ Propagation Framework · Methodology 2.0</div>
+      <div class="variable-grid">
+        <div class="variable">
+          <div class="var-name">Spreadability (S)</div>
+          <div class="var-desc">How freely the pattern copies. Licensing permissiveness, network topology, replication cost. Range 0 to 1.</div>
+        </div>
+        <div class="variable">
+          <div class="var-name">Standardized Rails (R)</div>
+          <div class="var-desc">How easily the pattern integrates with existing infrastructure. Protocol compatibility, deployment tooling maturity, ecosystem support. Range 0 to 1.</div>
+        </div>
+        <div class="variable">
+          <div class="var-name">Validation (V)</div>
+          <div class="var-desc">Discount applied to theoretical architectures without deployment data. Range 0.2 (pre-publication) to 1.0 (validated at enterprise scale).</div>
+        </div>
+        <div class="variable">
+          <div class="var-name">Cognitive Friction (F<sub>c</sub>)</div>
+          <div class="var-desc">Resistance to adoption. Documentation length, UI complexity, paradigm-shift demands, operational process changes. Range 0 to 10.</div>
+        </div>
+        <div class="variable">
+          <div class="var-name">Exogenous Incentive (β)</div>
+          <div class="var-desc">External forcing functions. Geometric mean of financial, regulatory, and ideological sub-scores. Lower = stronger. Range 0.1 to 10.</div>
+        </div>
+      </div>
+    </div>
+    <div class="container-reading" style="padding:0;">
+      <p class="reveal">The equation establishes that base structural strength (S × R × V) is necessary but not sufficient. Friction and incentive dominate whenever their product becomes large. A pattern with excellent rails and poor incentives does not propagate. A pattern with moderate rails and powerful incentives — Bitcoin is the canonical historical case — can overcome extreme friction.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ HISTORICAL CALIBRATION ═══ -->
+<section style="background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
+  <div class="container">
+    <div class="container-reading" style="padding:0;">
+      <div class="eyebrow reveal">Calibration</div>
+      <h2 class="section-headline reveal">The framework is not arbitrary.</h2>
+      <p class="reveal">Calibrated against four well-documented technology adoptions, the Λ framework reproduces recognizable outcomes. Each case passes the intuition test. The math produces the history.</p>
+    </div>
+    <div class="cal-viz reveal">
+      <div class="cal-plot">
+        <div class="cal-track"></div>
+
+        <!-- US Metric at 0.6% of axis (Λ=0.003 / 0.5) -->
+        <div class="cal-point inert" style="left:0.6%;"></div>
+        <div class="cal-label above inert" style="left:0.6%;transform:translate(0,0);">
+          <div class="cl-name">US Metric System</div>
+          <div class="cl-lambda">Λ = 0.003</div>
+        </div>
+
+        <!-- Bitcoin at 24.4% (Λ=0.122 / 0.5) -->
+        <div class="cal-point" style="left:24.4%;"></div>
+        <div class="cal-label above" style="left:24.4%;">
+          <div class="cl-name">Bitcoin</div>
+          <div class="cl-lambda">Λ = 0.122</div>
+        </div>
+
+        <!-- ISO Shipping Container at 76% (Λ=0.380 / 0.5) - label below to avoid TCP/IP -->
+        <div class="cal-point" style="left:76%;"></div>
+        <div class="cal-label below" style="left:76%;">
+          <div class="cl-name">ISO Shipping Container</div>
+          <div class="cl-lambda">Λ = 0.380</div>
+        </div>
+
+        <!-- TCP/IP at 90.4% (Λ=0.452 / 0.5) -->
+        <div class="cal-point" style="left:90.4%;"></div>
+        <div class="cal-label above" style="left:90.4%;transform:translate(-85%,0);">
+          <div class="cl-name">TCP/IP vs. OSI</div>
+          <div class="cl-lambda">Λ = 0.452</div>
+        </div>
+      </div>
+      <div class="cal-bands">
+        <div class="cal-band inert" style="flex:1;"></div>
+        <div class="cal-band sub" style="flex:5;"></div>
+        <div class="cal-band approaching" style="flex:14;"></div>
+        <div class="cal-band critical" style="flex:80;"></div>
+      </div>
+      <div class="cal-scale">
+        <span>Λ 0</span>
+        <span>0.1</span>
+        <span>0.2</span>
+        <span>0.3</span>
+        <span>0.4</span>
+        <span>0.5</span>
+      </div>
+      <div class="cal-legend">
+        <div class="cal-legend-item"><span class="cal-swatch inert"></span>Structurally Inert &lt; 0.005</div>
+        <div class="cal-legend-item"><span class="cal-swatch sub"></span>Sub-Critical 0.005–0.029</div>
+        <div class="cal-legend-item"><span class="cal-swatch approaching"></span>Approaching Critical 0.03–0.099</div>
+        <div class="cal-legend-item"><span class="cal-swatch critical"></span>Critical Mass ≥ 0.10</div>
+      </div>
+    </div>
+    <div class="container-reading" style="padding:0;">
+      <p class="reveal">TCP/IP propagated at Λ = 0.452 — open standard, permissive replication, powerful interconnection incentive overcoming moderate technical friction. The ISO Shipping Container propagated at Λ = 0.380 — near-zero cognitive friction, immediate operational compatibility. Bitcoin propagated at Λ = 0.122 despite F<sub>c</sub> = 7.0, counterweighted by β = 0.20, an unprecedented speculative financial incentive. The US Metric System has remained Λ = 0.003 — Structurally Inert — in the American consumer market for 150 years. Maximum cognitive switching cost, no external forcing function.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ GEMMA 4 ALERT ═══ -->
+<section class="tight">
+  <div class="container">
+    <div class="alert-callout reveal">
+      <div class="ac-label">April Structural Shift</div>
+      <div class="ac-title">Note on Gemma 4 and Open-Weight Dynamics</div>
+      <p>The data and Λ scoring in this March 2026 benchmark were finalized prior to the early April release of Gemma 4 under an Apache license. The release represents a significant advancement on the open-weight front and materially alters the structural mechanics of the landscape.</p>
+      <p>Specifically, the introduction of a highly capable, Apache-licensed frontier model shifts the baseline Spreadability (S) calculations across the Sovereignty Profile and introduces new, compounding Exogenous Incentives (β) against the current Dependency Profile incumbents. The Λ framework is currently running against this new deployment reality. Full mathematical impact will be reflected in the Q2 landscape update, scheduled for late June.</p>
+      <p>Organizations providing financial support to The Grove Foundation receive priority, continuous visibility into emerging mid-cycle structural phase changes before public quarterly release. <a href="#about">Membership inquiries →</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ THE LANDSCAPE TABLE ═══ -->
+<section>
+  <div class="container">
+    <div class="eyebrow reveal">The 2026 Landscape</div>
+    <h2 class="section-headline reveal">Eight patterns, <em>scored.</em></h2>
+    <table class="landscape-table reveal">
+      <thead>
+        <tr>
+          <th>Pattern</th>
+          <th>Category</th>
+          <th class="num">S</th>
+          <th class="num">R</th>
+          <th class="num">V</th>
+          <th class="num">F<sub>c</sub></th>
+          <th class="num">β<sub>geo</sub></th>
+          <th class="num">Λ</th>
+          <th>Tier</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="top-row">
+          <td class="pattern-name">Mistral / DeepSeek</td>
+          <td><span class="cat-tag open">Open-Weight</span></td>
+          <td class="num">0.80</td>
+          <td class="num">0.60</td>
+          <td class="num">1.0</td>
+          <td class="num">6.0</td>
+          <td class="num">0.630</td>
+          <td class="lambda top">0.0314</td>
+          <td><span class="tier-tag approaching">Approaching</span></td>
+        </tr>
+        <tr>
+          <td class="pattern-name">Meta Llama</td>
+          <td><span class="cat-tag open">Open-Weight</span></td>
+          <td class="num">0.70</td>
+          <td class="num">0.70</td>
+          <td class="num">1.0</td>
+          <td class="num">5.0</td>
+          <td class="num">1.357</td>
+          <td class="lambda mid">0.0104</td>
+          <td><span class="tier-tag sub">Sub-Critical</span></td>
+        </tr>
+        <tr>
+          <td class="pattern-name">Apple Intelligence</td>
+          <td><span class="cat-tag device">On-Device</span></td>
+          <td class="num">0.20</td>
+          <td class="num">0.57</td>
+          <td class="num">1.0</td>
+          <td class="num">2.0</td>
+          <td class="num">1.710</td>
+          <td class="lambda mid">0.0090</td>
+          <td><span class="tier-tag sub">Sub-Critical</span></td>
+        </tr>
+        <tr>
+          <td class="pattern-name">Anthropic Claude</td>
+          <td><span class="cat-tag closed">Centralized API</span></td>
+          <td class="num">0.47</td>
+          <td class="num">0.80</td>
+          <td class="num">1.0</td>
+          <td class="num">5.0</td>
+          <td class="num">1.587</td>
+          <td class="lambda mid">0.0059</td>
+          <td><span class="tier-tag sub">Sub-Critical</span></td>
+        </tr>
+        <tr>
+          <td class="pattern-name">OpenAI GPT</td>
+          <td><span class="cat-tag closed">Centralized API</span></td>
+          <td class="num">0.47</td>
+          <td class="num">0.93</td>
+          <td class="num">1.0</td>
+          <td class="num">6.0</td>
+          <td class="num">2.924</td>
+          <td class="lambda low">0.0014</td>
+          <td><span class="tier-tag inert">Inert</span></td>
+        </tr>
+        <tr>
+          <td class="pattern-name">Google Gemini</td>
+          <td><span class="cat-tag closed">Platform-Bundle</span></td>
+          <td class="num">0.30</td>
+          <td class="num">0.80</td>
+          <td class="num">1.0</td>
+          <td class="num">5.0</td>
+          <td class="num">2.924</td>
+          <td class="lambda low">0.0011</td>
+          <td><span class="tier-tag inert">Inert</span></td>
+        </tr>
+        <tr>
+          <td class="pattern-name">Microsoft Copilot</td>
+          <td><span class="cat-tag closed">Platform-Bundle</span></td>
+          <td class="num">0.30</td>
+          <td class="num">0.80</td>
+          <td class="num">1.0</td>
+          <td class="num">8.0</td>
+          <td class="num">5.000</td>
+          <td class="lambda zero">0.0002</td>
+          <td><span class="tier-tag inert">Inert</span></td>
+        </tr>
+        <tr>
+          <td class="pattern-name">Autonomaton</td>
+          <td><span class="cat-tag arch">Architecture</span></td>
+          <td class="num">0.93</td>
+          <td class="num">0.83</td>
+          <td class="num">0.2</td>
+          <td class="num">6.0</td>
+          <td class="num">6.300</td>
+          <td class="lambda zero">0.0001</td>
+          <td><span class="tier-tag inert">Inert</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ═══ TWO STRUCTURAL CLUSTERS ═══ -->
+<section style="background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
+  <div class="container">
+    <div class="eyebrow reveal">Structural Clusters</div>
+    <h2 class="section-headline reveal">The landscape splits <em>cleanly in two.</em></h2>
+    <div class="cluster-wrapper">
+      <div class="cluster-matrix-frame reveal">
+        <div class="cluster-matrix">
+          <div class="cluster-quadrant sovereignty"></div>
+          <div class="cluster-quadrant dependency"></div>
+          <div class="cluster-quad-label sov">Sovereignty Profile</div>
+          <div class="cluster-quad-label dep">Dependency Profile</div>
+
+          <!-- Autonomaton: S=0.93, R=0.83 -> top-right area, label below-left -->
+          <div class="cluster-point auto" style="left:83%;top:7%;"></div>
+          <div class="cluster-label" style="left:83%;top:12%;transform:translateX(-50%);">Autonomaton</div>
+
+          <!-- Mistral/DeepSeek: S=0.80, R=0.60 -> label below -->
+          <div class="cluster-point sov" style="left:60%;top:20%;"></div>
+          <div class="cluster-label" style="left:60%;top:25%;transform:translateX(-50%);">Mistral / DeepSeek</div>
+
+          <!-- Meta Llama: S=0.70, R=0.70 -> label below -->
+          <div class="cluster-point sov" style="left:70%;top:30%;"></div>
+          <div class="cluster-label" style="left:70%;top:35%;transform:translateX(-50%);">Meta Llama</div>
+
+          <!-- Anthropic Claude: S=0.47, R=0.80 -> label ABOVE to avoid OpenAI -->
+          <div class="cluster-point dep" style="left:80%;top:53%;"></div>
+          <div class="cluster-label" style="left:80%;top:46%;transform:translateX(-50%);">Anthropic Claude</div>
+
+          <!-- OpenAI GPT: S=0.47, R=0.93 -> label BELOW, anchored left to stay in frame -->
+          <div class="cluster-point dep" style="left:93%;top:53%;"></div>
+          <div class="cluster-label" style="left:93%;top:58%;transform:translateX(-90%);">OpenAI GPT</div>
+
+          <!-- Google Gemini: S=0.30, R=0.80 -> identical coords as Copilot, offset slightly left -->
+          <div class="cluster-point dep" style="left:77%;top:70%;"></div>
+          <div class="cluster-label" style="left:77%;top:76%;transform:translateX(-50%);">Google Gemini</div>
+
+          <!-- MS Copilot: S=0.30, R=0.80 -> offset slightly right of Gemini, label above -->
+          <div class="cluster-point dep" style="left:84%;top:71%;"></div>
+          <div class="cluster-label" style="left:84%;top:64%;transform:translateX(-50%);">Microsoft Copilot</div>
+
+          <!-- Apple Intelligence: S=0.20, R=0.57 -> label below -->
+          <div class="cluster-point device" style="left:57%;top:80%;"></div>
+          <div class="cluster-label" style="left:57%;top:86%;transform:translateX(-50%);">Apple Intelligence</div>
+        </div>
+
+        <!-- Axis labels positioned outside matrix -->
+        <div class="cluster-axis-y-high" style="left:56px;">S High</div>
+        <div class="cluster-axis-y-low" style="left:56px;">S Low</div>
+        <div class="cluster-axis-y-title" style="left:24px;">Spreadability</div>
+        <div class="cluster-axis-x-low" style="left:80px;">R Low</div>
+        <div class="cluster-axis-x-high" style="right:40px;">R High</div>
+        <div class="cluster-axis-x-title" style="left:calc(50% + 20px);">Standardized Rails</div>
+      </div>
+      <div class="cluster-pullquote reveal">
+        <strong>Dependency Profile</strong> patterns are easier to adopt and harder to leave.<br><br>
+        <strong>Sovereignty Profile</strong> patterns are harder to adopt and easier to leave.
+      </div>
+    </div>
+    <div class="container-reading" style="padding:0;max-width:760px;margin-top:60px;">
+      <p class="reveal"><strong>The Dependency Profile</strong> combines high Standardized Rails with low Spreadability. OpenAI GPT, Google Gemini, and Microsoft Copilot sit in this cluster. These patterns integrate easily — SDK support is universal, documentation is extensive, procurement paths are well-paved. Proprietary constraints suppress the transferability of anything the organization learns. Fine-tuning rights are restricted. Model weights are unavailable. Prompt architectures tuned for one vendor are worthless on another. Each quarter accumulates switching cost, not structural leverage.</p>
+      <p class="reveal"><strong>The Sovereignty Profile</strong> combines high Spreadability with variable Cognitive Friction. Mistral/DeepSeek, Meta Llama, and the Autonomaton pattern sit in this cluster. The capability builds inside the organization rather than inside the vendor. The cost is initial friction — specialized engineering talent, paradigm shifts. The tradeoff is transferable competence.</p>
+      <p class="reveal">Which profile wins depends on how quickly friction falls. It is falling fast.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ PATTERN BY PATTERN ═══ -->
+<section>
+  <div class="container">
+    <div class="eyebrow reveal">Pattern by Pattern</div>
+    <h2 class="section-headline reveal">Eight reads. <em>No softening.</em></h2>
+    <div class="pattern-grid">
+      <div class="pattern-card inert reveal">
+        <div class="pc-name">OpenAI GPT</div>
+        <div class="pc-score">Λ = 0.0014 · Structurally Inert</div>
+        <div class="pc-diagnostic">Highest Standardized Rails in the landscape (R = 0.93). Universal ecosystem support. Structurally Inert anyway. Cognitive friction compounds under deprecation events — GPT-4o <a href="https://openai.com/index/retiring-gpt-4o-and-older-models/" target="_blank" rel="noopener">retired February 13, 2026 with three months' notice</a>. Enterprises discovered the logic they had tuned was rented, not owned.</div>
+        <div class="pc-pullquote">Rails without sovereignty is a trap, not an advantage.</div>
+      </div>
+      <div class="pattern-card reveal">
+        <div class="pc-name">Anthropic Claude</div>
+        <div class="pc-score">Λ = 0.0059 · Sub-Critical</div>
+        <div class="pc-diagnostic">Lower cognitive friction through ISO 42001 certification and cleaner enterprise onboarding. The structural pattern is identical: a rented, centralized dependency. AWS Bedrock integration deepens infrastructural lock-in each quarter. The vulnerability surface is the same shape as OpenAI's, moved forward one step on the trust curve.</div>
+        <div class="pc-pullquote">A cleaner compliance wrapper on the same structural trap as OpenAI — with more advanced self-evolving capabilities. The harness architecture echoes the Autonomaton pattern, locked to Claude's proprietary surface.</div>
+      </div>
+      <div class="pattern-card inert reveal">
+        <div class="pc-name">Microsoft Copilot</div>
+        <div class="pc-score">Λ = 0.0002 · Structurally Inert</div>
+        <div class="pc-diagnostic">The lowest-scoring pattern in the landscape. <a href="https://news.alphastreet.com/microsofts-16m-copilot-seats-milestone-enterprise-adoption-or-shelfware-risk/" target="_blank" rel="noopener">3.3% paid conversion across 450 million commercial seats</a>. CFOs demanding profit-and-loss accountability for the $30-per-seat monthly upgrade are not finding it. The denominator math: F<sub>c</sub> = 8.0 × β = 5.0 = 40, squared to 1,600.</div>
+        <div class="pc-pullquote">A sales motion sustained by Microsoft 365 distribution power, not a structural pattern.</div>
+      </div>
+      <div class="pattern-card inert reveal">
+        <div class="pc-name">Google Gemini</div>
+        <div class="pc-score">Λ = 0.0011 · Structurally Inert</div>
+        <div class="pc-diagnostic">Embedded into BigQuery and Drive data gravity — creates exit friction once adopted. The path to adoption is fragmented. Procurement officers confront Gemini, Vertex AI, AI Studio, and Agent Builder with no coherent signal about which deployment path to choose. Fragmentation compresses base rails below infrastructural strength.</div>
+        <div class="pc-pullquote">A fragmented adoption maze leading to an inescapable data-gravity trap. <em>Gemma 4 not considered in this analysis — to be incorporated in the June update.</em></div>
+      </div>
+      <div class="pattern-card reveal">
+        <div class="pc-name">Apple Intelligence</div>
+        <div class="pc-score">Λ = 0.0090 · Sub-Critical</div>
+        <div class="pc-diagnostic">The lowest Cognitive Friction score in the landscape (F<sub>c</sub> = 2.0). Full system integration, no engineering lift. Spreadability is crushed (S = 0.20) by the closed hardware requirement. The friction advantage cannot compound into architectural spreadability.</div>
+        <div class="pc-pullquote">The organization does not build transferable capability. It builds Apple-shaped capability.</div>
+      </div>
+      <div class="pattern-card reveal">
+        <div class="pc-name">Meta Llama</div>
+        <div class="pc-score">Λ = 0.0104 · Sub-Critical</div>
+        <div class="pc-diagnostic">Previously the landscape leader under 1.0's min() β aggregation. The 2.0 geometric mean reveals structural fragility the earlier math masked. Strong financial incentive offset by weak regulatory alignment. Two signals confirm the fragility: <a href="https://www.llama.com/llama4/use-policy/" target="_blank" rel="noopener">Llama 4 EU geofencing (April 2025)</a>, Avocado closed-source transition (December 2025). 700M MAU commercial cap remains.</div>
+        <div class="pc-pullquote">The illusion of open sovereignty, bounded by commercial caps and regulatory walls. <em>The "Avocado" closed-source transition is expected to further suppress this score in the Q2 update.</em></div>
+      </div>
+      <div class="pattern-card top reveal">
+        <div class="pc-name">Mistral / DeepSeek</div>
+        <div class="pc-score">Λ = 0.0314 · Approaching Critical</div>
+        <div class="pc-diagnostic"><em>Two separate vendors — Mistral (France) and DeepSeek (China) — grouped here for a shared go-to-market pattern, not corporate affiliation.</em> The only pattern above the 0.03 threshold. Leadership rests on balanced incentive structure: financial, regulatory, and ideological forces pulling in concert. The geometric mean rewards this balance. β = 0.630 is the landscape's strongest. The structural vulnerability is geopolitical — US/EU bans would collapse composite β toward 1.0.</div>
+        <div class="pc-pullquote">The next 18 months will determine whether geopolitical pressure or tooling maturation moves faster.</div>
+      </div>
+      <div class="pattern-card inert reveal">
+        <div class="pc-name">Autonomaton</div>
+        <div class="pc-score">Λ = 0.0001 · Structurally Inert</div>
+        <div class="pc-diagnostic">Highest structural base in the landscape (S × R = 0.77) — 57% higher than the nearest competitor. CC BY 4.0 licensing. Model-agnostic architecture. Pre-publication status (V = 0.2). No exogenous forcing function yet (β = 6.3). Specification at <a href="https://the-grove.ai/standards/001">the-grove.ai/standards/001</a>.</div>
+        <div class="pc-pullquote">The score does not flatter the sponsoring organization. The pattern became publicly available in April 2026 — structurally inert until commercial adoption begins.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SENSITIVITY ═══ -->
+<section style="background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
+  <div class="container">
+    <div class="eyebrow reveal">Sensitivity</div>
+    <h2 class="section-headline reveal">What would move <em>these scores.</em></h2>
+    <p class="reveal" style="max-width:760px;">The current landscape is not stable. Scores shift meaningfully under realistic scenarios. The sensitivity analysis establishes what operators in each position would have to believe to justify their current trajectory.</p>
+    <div class="sensitivity-grid">
+      <div class="sens-block reveal">
+        <div class="sb-name">Mistral / DeepSeek</div>
+        <div class="sb-current">Current: Λ 0.0314 · Approaching Critical</div>
+        <div class="scenario worse">
+          <div class="sc-name">Western bans intensify (β → 1.0)</div>
+          <div class="sc-lambda">Λ 0.0130 ↓</div>
+        </div>
+        <div class="scenario better">
+          <div class="sc-name">Tooling improves (F<sub>c</sub> → 4.5)</div>
+          <div class="sc-lambda">Λ 0.0531 ↑</div>
+        </div>
+        <div class="scenario same">
+          <div class="sc-name">Bans + better tooling (simultaneous)</div>
+          <div class="sc-lambda">Λ 0.0226</div>
+        </div>
+      </div>
+      <div class="sens-block reveal">
+        <div class="sb-name">Meta Llama</div>
+        <div class="sb-current">Current: Λ 0.0104 · Sub-Critical</div>
+        <div class="scenario worse">
+          <div class="sc-name">License tightening (β_ideo → 5.0)</div>
+          <div class="sc-lambda">Λ 0.0023 ↓</div>
+        </div>
+        <div class="scenario same">
+          <div class="sc-name">Tooling only (F<sub>c</sub> → 3.5)</div>
+          <div class="sc-lambda">Λ 0.0208</div>
+        </div>
+        <div class="scenario better">
+          <div class="sc-name">Tooling + financial (F<sub>c</sub> 3.5, β 0.8)</div>
+          <div class="sc-lambda">Λ 0.0554 ↑</div>
+        </div>
+      </div>
+      <div class="sens-block reveal">
+        <div class="sb-name">Microsoft Copilot</div>
+        <div class="sb-current">Current: Λ 0.0002 · Structurally Inert</div>
+        <div class="scenario same">
+          <div class="sc-name">Pricing cut alone (β → 2.92)</div>
+          <div class="sc-lambda">Λ 0.0004</div>
+        </div>
+        <div class="scenario same">
+          <div class="sc-name">Pricing + friction drop (F<sub>c</sub> 5.0)</div>
+          <div class="sc-lambda">Λ 0.0011</div>
+        </div>
+        <div class="scenario better">
+          <div class="sc-name">Drastic improvement (F<sub>c</sub> 4.0, β 1.0)</div>
+          <div class="sc-lambda">Λ 0.0141 ↑</div>
+        </div>
+      </div>
+      <div class="sens-block reveal">
+        <div class="sb-name">Autonomaton</div>
+        <div class="sb-current">Current: Λ 0.0001 · Structurally Inert</div>
+        <div class="scenario same">
+          <div class="sc-name">Tooling only (F<sub>c</sub> → 4.3)</div>
+          <div class="sc-lambda">Λ 0.0002</div>
+        </div>
+        <div class="scenario better">
+          <div class="sc-name">Tooling + strong shock (β 0.8)</div>
+          <div class="sc-lambda">Λ 0.0228 ↑</div>
+        </div>
+        <div class="scenario better">
+          <div class="sc-name">Full validation (V 1.0, β 0.8)</div>
+          <div class="sc-lambda">Λ 0.1142 ↑↑</div>
+        </div>
+      </div>
+    </div>
+    <div class="container-reading" style="padding:0;margin-top:60px;">
+      <p class="reveal">The centralized API vendors would have to believe no pricing crisis, no regulatory enforcement, and no catastrophic vendor lock-in event will materialize over the next 24 months. The historical base rate on that kind of bet is unfavorable.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ DISPLACEMENT SEQUENCE ═══ -->
+<section>
+  <div class="container">
+    <div class="eyebrow reveal">The Prediction</div>
+    <h2 class="section-headline reveal">The displacement <em>sequence.</em></h2>
+    <p class="reveal" style="max-width:760px;">The data suggests a four-stage displacement over 36 to 48 months as capabilities commoditize.</p>
+    <div class="displace-flow reveal">
+      <div class="displace-box">
+        <div class="d-phase">Now</div>
+        <div class="d-name">Centralized APIs</div>
+        <div class="d-desc">Rented inference. Ephemeral models. Unpriced deprecation risk. Budget fatigue building.</div>
+      </div>
+      <div class="displace-arrow">→</div>
+      <div class="displace-box">
+        <div class="d-phase">12–18 mo</div>
+        <div class="d-name">Platform Bundles</div>
+        <div class="d-desc">Consolidated billing. AI as a renewal line-item. Procurement convenience, not advantage.</div>
+      </div>
+      <div class="displace-arrow">→</div>
+      <div class="displace-box">
+        <div class="d-phase">18–30 mo</div>
+        <div class="d-name">Open-Weight</div>
+        <div class="d-desc">Self-hosting economics decisive at scale. 80–90% savings. Data sovereignty compounds.</div>
+      </div>
+      <div class="displace-arrow">→</div>
+      <div class="displace-box final">
+        <div class="d-phase">30–48 mo</div>
+        <div class="d-name">Distributed Sovereign</div>
+        <div class="d-desc">Model-agnostic governance. Swappable cognition. 89-day upgrade cycle owned by the operator.</div>
+      </div>
+    </div>
+    <div class="container-reading" style="padding:0;margin-top:60px;">
+      <p class="reveal">The centralization of AI is a temporary artifact of industrial-scale infrastructure costs. The mathematical trajectory favors decentralized, sovereign architectures once the cognitive friction of their implementation resolves. METR capability data proves intelligence is commoditizing.</p>
+      <p class="reveal lede">The endgame is architectural spreadability, not model intelligence.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ OPERATOR'S BRIEF ═══ -->
+<section style="background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
+  <div class="container">
+    <div class="eyebrow reveal">The Operator's Brief</div>
+    <h2 class="section-headline reveal">Four directives. <em>Each against a default the math no longer supports.</em></h2>
+    <div class="directives">
+      <div class="directive reveal">
+        <div class="d-num">01</div>
+        <div class="d-content">
+          <div class="d-claim">Stop <em>renting your cognition.</em></div>
+          <p>Relying on centralized APIs for core enterprise workflows is not buying capability. It is renting logic the vendor retires on the vendor's schedule. The <a href="https://openai.com/index/retiring-gpt-4o-and-older-models/" target="_blank" rel="noopener">GPT-4o deprecation in February 2026</a> broke production workflows at every enterprise that had tuned prompt architectures to that specific model. That class of event will recur. Each occurrence punishes the organizations that invested in vendor-specific customization and rewards the organizations that built model-agnostic pipelines. Customization against proprietary surfaces accumulates switching cost, not capability. Build against abstractions that outlive any single model.</p>
+        </div>
+      </div>
+      <div class="directive reveal">
+        <div class="d-num">02</div>
+        <div class="d-content">
+          <div class="d-claim">Freeze the <em>per-seat AI upgrade.</em></div>
+          <p>Microsoft Copilot is the lowest-scoring deployment pattern in the landscape for a measurable reason. <a href="https://news.alphastreet.com/microsofts-16m-copilot-seats-milestone-enterprise-adoption-or-shelfware-risk/" target="_blank" rel="noopener">3.3% paid conversion across 450 million commercial seats</a> is what happens when AI is layered onto rigid legacy interfaces at $30-per-seat monthly. The pattern produces friction, not transformation. CFOs are correct to refuse the expense without profit-and-loss accountability. If the AI seat does not produce a defensible return, it does not belong in the renewal. The same logic applies to Gemini Enterprise additions and to any AI functionality priced as an upgrade to an existing subscription. The pattern is an upsell motion, not an operational advantage.</p>
+        </div>
+      </div>
+      <div class="directive reveal">
+        <div class="d-num">03</div>
+        <div class="d-content">
+          <div class="d-claim">Pivot toward sovereignty <em>before the economics force it.</em></div>
+          <p>Self-hosting economics are already decisive at sustained inference volume. At 2 million daily tokens or higher, running open-weight models produces 80 to 90 percent cost savings against the centralized APIs. <a href="https://metr.org/blog/2026-1-29-time-horizon-1-1/" target="_blank" rel="noopener">METR's 89-day capability doubling time</a> is compressing frontier performance onto commodity hardware faster than any enterprise procurement cycle can track.</p>
+          <div class="directive-pullquote">The organizations that deploy specialized engineering talent now — to prove out self-hosting, fine-tuning on proprietary data, and open-weight deployment patterns — will be <em>18 months ahead</em> of peers who wait for the economics to force the move.</div>
+          <p>The initial friction is the investment. The capability stays inside the organization instead of inside the vendor.</p>
+        </div>
+      </div>
+      <div class="directive reveal">
+        <div class="d-num">04</div>
+        <div class="d-content">
+          <div class="d-claim">Build the middleware, <em>not the model commitment.</em></div>
+          <p>Model capabilities are commoditizing. Intelligence is compressing into a layer that swaps cleanly when a better layer appears. The CTO's architectural responsibility is no longer to pick the winning model — it is to build the middleware that makes any given model replaceable. Governance pipelines, telemetry ownership, approval gates, and declarative skill compilation belong to the organization, not the model. If the middleware is right, Mistral today, Llama tomorrow, and whatever open-weight frontier model arrives in nine months are interchangeable within the same operational surface. The Autonomaton pattern at <a href="https://the-grove.ai/standards/001">the-grove.ai/standards/001</a> is one published specification for this middleware class. Others are needed.</p>
+        </div>
+      </div>
+    </div>
+    <div class="container-reading" style="padding:0;margin-top:40px;">
+      <p class="reveal lede">The underlying math favors open, decentralized, and sovereign architecture. Capital and distribution power are artificially sustaining the closed-source and platform-bundle patterns. The closed-source era is not ending because the vendors will change. It is ending because the structural mechanics of propagation no longer permit the current arrangement to sustain itself at scale.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SPECIFICATION GAP ═══ -->
+<section>
+  <div class="container">
+    <div class="eyebrow reveal">The Specification Gap</div>
+    <h2 class="section-headline reveal">An absence worth <em>naming.</em></h2>
+    <p class="reveal" style="max-width:760px;">No CC BY 4.0 pattern specification currently exists for composable, model-agnostic, governance-first self-authoring software. The landscape is populated by code frameworks with governance baked in, or by vendor-locked pattern catalogues. The third column is nearly empty.</p>
+    <div class="spec-columns reveal">
+      <div class="spec-col">
+        <div class="sc-label">OSS Code Frameworks</div>
+        <ul>
+          <li><a href="https://github.com/langchain-ai/langchain" target="_blank" rel="noopener">LangChain</a></li>
+          <li><a href="https://github.com/langchain-ai/langgraph" target="_blank" rel="noopener">LangGraph</a></li>
+          <li><a href="https://github.com/microsoft/autogen" target="_blank" rel="noopener">AutoGen</a></li>
+          <li><a href="https://github.com/microsoft/semantic-kernel" target="_blank" rel="noopener">Semantic Kernel</a></li>
+          <li><a href="https://github.com/crewAIInc/crewAI" target="_blank" rel="noopener">CrewAI</a></li>
+          <li><a href="https://github.com/Significant-Gravitas/AutoGPT" target="_blank" rel="noopener">AutoGPT</a></li>
+          <li><a href="https://github.com/openai/swarm" target="_blank" rel="noopener">OpenAI Swarm</a></li>
+          <li><a href="https://github.com/deepset-ai/haystack" target="_blank" rel="noopener">Haystack</a></li>
+          <li><a href="https://github.com/run-llama/llama_index" target="_blank" rel="noopener">LlamaIndex</a></li>
+        </ul>
+      </div>
+      <div class="spec-col">
+        <div class="sc-label">Vendor Pattern Catalogues</div>
+        <ul>
+          <li><a href="https://google.github.io/adk-docs/" target="_blank" rel="noopener">Google Agent Design Patterns (ADK-locked)</a></li>
+          <li><a href="https://architect.salesforce.com/fundamentals/enterprise-agentic-architecture" target="_blank" rel="noopener">Salesforce Agentforce (platform-locked)</a></li>
+          <li><a href="https://modelcontextprotocol.io" target="_blank" rel="noopener">Anthropic MCP (narrow scope: context only)</a></li>
+          <li><a href="https://google.github.io/A2A/" target="_blank" rel="noopener">Agent2Agent Protocol (Google)</a></li>
+        </ul>
+      </div>
+      <div class="spec-col empty">
+        <div class="sc-label">CC BY 4.0 Specifications</div>
+        <ul>
+          <li class="auto"><a href="https://the-grove.ai/standards/001" target="_blank" rel="noopener">The Autonomaton Pattern</a></li>
+          <li class="needed">— and others needed —</li>
+        </ul>
+      </div>
+    </div>
+    <div class="container-reading" style="padding:0;margin-top:40px;">
+      <p class="reveal">Every existing open-source framework requires the adopting organization to accept both the framework's implementation choices and its implicit architectural opinions. The vendor catalogues solve a different problem — each is locked to its issuing vendor's platform or narrow in scope.</p>
+      <p class="reveal">The empty category is the highest-leverage intervention point: a pattern specification independent of any specific model or code framework, published under a license that permits derivative works, describing governance-first architecture that wraps rather than replaces existing infrastructure.</p>
+      <p class="reveal">The Autonomaton is one attempt to fill this category. There should be others. Each additional CC BY 4.0 specification increases landscape-wide Spreadability and reduces friction against sovereign architecture adoption.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CONFLICT OF INTEREST ═══ -->
+<section class="tight">
+  <div class="container-reading">
+    <div class="conflict-box reveal">
+      <div class="cb-label">Conflict of Interest Disclosure</div>
+      <p>The Grove Foundation publishes this framework and champions the Autonomaton architecture. The Autonomaton pattern is scored within this report using the same methodology applied to all other deployment patterns. Readers should independently evaluate whether the scoring reflects that institutional affiliation and are encouraged to challenge the provided input variables.</p>
+      <p>The Autonomaton currently scores <strong>Λ = 0.0001</strong> — the lowest in the landscape. Structurally Inert. The V = 0.2 discount reflects pre-publication status honestly. The β = 6.3 reflects the absence of exogenous incentive honestly. If Grove were tilting the methodology to favor the pattern it publishes, that score would not appear in the table.</p>
+      <p>Every input variable and sub-score is cited to source. The methodology is CC BY 4.0. Independent practitioners are encouraged to re-score the landscape against their own judgment and publish the differences.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ ABOUT THIS RESEARCH ═══ -->
+<section id="about" style="background:var(--bg2);border-top:1px solid var(--border);">
+  <div class="container">
+    <div class="eyebrow reveal">About This Research</div>
+    <h2 class="section-headline reveal">Quarterly, open, <em>under CC BY 4.0.</em></h2>
+    <div class="about-grid">
+      <div class="reveal">
+        <p>The Grove Foundation publishes structural analysis of AI infrastructure adoption under Creative Commons Attribution 4.0. This is the first quarterly Λ landscape audit. Ninety-six sources cited. Eight patterns. Four historical calibrations. Full methodology disclosure at <a href="https://the-grove.ai/standards">the-grove.ai/standards</a>.</p>
+        <p>Member organizations strengthen the methodology and shape what the framework measures. Members receive earlier visibility into emerging structural phase changes as they develop between quarterly publications — movements in incentive dimensions, friction-reduction breakthroughs, regulatory developments that shift scoring. <strong>Members do not shape the scores themselves. That separation is the credibility boundary.</strong></p>
+        <p>The next issue examines a contractual blind spot. Every enterprise AI contract contains "telemetry" language, but the word is undefined terrain. Vendors read it narrowly — error logs, performance signals, basic usage metrics. The actual asset is broader: interaction patterns, decision points, authorization flows, and the expressions of human judgment captured at scale. From those patterns come the models sold back to the organizations that generated them. AI vendor contracts signed in the summer of 2026 without a fulsome definition of telemetry are not subscriptions. They are permanent transfers of behavioral intelligence to the vendor that captured it under terminology that was never nailed down.</p>
+      </div>
+      <div class="about-cta reveal">
+        <div class="ac-label">Related Issue · 002</div>
+        <div class="ac-head"><a href="/papers/telemetry-trap" style="color:var(--text);border-bottom:1px solid rgba(232,226,217,0.2);">The Telemetry Trap</a></div>
+        <p>Why "telemetry" in your AI vendor contract is the most important contract term to negotiate in excruciating detail — and what a fulsome definition has to include to keep behavioral intelligence on your balance sheet.</p>
+        <p style="margin-top:20px;"><em>Members receive Q2 &Lambda; updates and pre-publication briefings on structural market movements.</em></p>
+        <a href="#" class="cta-link">Membership inquiries &rarr;</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ DOWNLOAD ═══ -->
+<section style="padding:60px 0;">
+  <div class="container-reading">
+    <div style="display:flex;align-items:center;gap:16px;border:1px solid var(--border);background:var(--bg3);padding:16px 24px;flex-wrap:wrap;">
+      <a href="/docs/the-ai-deployment-pattern-benchmark-grove-white-paper.pdf" download style="font-family:var(--mono);font-size:11px;letter-spacing:0.1em;color:var(--amber);text-decoration:none;border:1px solid var(--amber-dim);padding:6px 16px;transition:all 0.2s;">Download PDF</a>
+      <a href="/docs/the-ai-deployment-pattern-benchmark-grove-white-paper.docx" download style="font-family:var(--mono);font-size:11px;letter-spacing:0.1em;color:var(--amber);text-decoration:none;border:1px solid var(--amber-dim);padding:6px 16px;transition:all 0.2s;">Download DOCX</a>
+      <span style="font-family:var(--mono);font-size:10px;color:var(--text-dim);letter-spacing:0.06em;">CC BY 4.0 &middot; March 2026 &middot; The Grove Foundation &middot; 96 sources</span>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer style="position:relative;z-index:1;border-top:1px solid var(--border);margin-top:0;padding:0;text-align:left;">
+  <div style="max-width:760px;margin:0 auto;padding:48px 48px 40px;">
+    <div style="font-family:var(--serif);font-size:20px;color:var(--text);margin-bottom:8px;">The Grove Foundation</div>
+    <div style="font-family:var(--serif);font-style:italic;font-size:14px;color:var(--text-mid);margin-bottom:28px;">"Design is philosophy expressed through constraint."</div>
+    <div style="border:1px solid var(--amber-dim);padding:24px 28px;margin-bottom:32px;display:flex;align-items:center;gap:20px;flex-wrap:wrap;">
+      <div style="font-family:var(--mono);font-size:11px;letter-spacing:0.15em;text-transform:uppercase;color:var(--amber);white-space:nowrap;">Follow the pattern</div>
+      <form style="display:flex;gap:8px;flex:1;min-width:240px;" action="https://formspree.io/f/xqegowyj" method="POST">
+        <input type="email" name="email" placeholder="your@email.com" required style="flex:1;background:var(--bg);border:1px solid var(--border-light);color:var(--text);font-family:var(--mono);font-size:12px;padding:8px 12px;outline:none;">
+        <button type="submit" style="background:var(--amber);color:var(--bg);font-family:var(--mono);font-size:10px;letter-spacing:0.12em;text-transform:uppercase;border:none;padding:8px 20px;cursor:pointer;">Subscribe</button>
+      </form>
+    </div>
+    <div style="font-family:var(--mono);font-size:11px;color:var(--text-dim);line-height:2;">
+      The Grove Foundation &middot; Indianapolis<br>
+      <a href="https://the-grove.ai" style="color:var(--amber);text-decoration:none;border-bottom:1px solid var(--amber-dim);">the-grove.ai</a><br>
+      CC BY 4.0 &middot; March 2026 &middot; Issue 003 &middot; &copy; 2026 The Grove Foundation
+    </div>
+    <div style="display:flex;gap:24px;margin-top:20px;flex-wrap:wrap;">
+      <a href="/ratchet" style="font-family:var(--mono);font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-dim);text-decoration:none;border-bottom:none;">Ratchet Test</a>
+      <a href="/papers" style="font-family:var(--mono);font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-dim);text-decoration:none;border-bottom:none;">CIO Alerts</a>
+      <a href="/observations" style="font-family:var(--mono);font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-dim);text-decoration:none;border-bottom:none;">Observations</a>
+      <a href="/lambda" style="font-family:var(--mono);font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-dim);text-decoration:none;border-bottom:none;">Standings</a>
+      <a href="/standards" style="font-family:var(--mono);font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-dim);text-decoration:none;border-bottom:none;">Open Standards</a>
+      <a href="/about" style="font-family:var(--mono);font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-dim);text-decoration:none;border-bottom:none;">About</a>
+    </div>
+    <p style="font-family:var(--sans);font-size:11px;color:var(--text-dim);font-weight:300;line-height:1.6;margin-top:24px;padding-top:20px;border-top:1px solid var(--border);">The Grove Foundation Inc. is a not-for-profit business league within the meaning of Section 501(c)(6) of the Internal Revenue Code of 1986, as amended.</p>
+  </div>
+</footer>
+
+<script>
+  // Scroll progress
+  const progressBar = document.getElementById('progressBar');
+  window.addEventListener('scroll', () => {
+    const h = document.documentElement;
+    const scrolled = (h.scrollTop / (h.scrollHeight - h.clientHeight)) * 100;
+    progressBar.style.width = scrolled + '%';
+  });
+
+  // Scroll reveal
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -80px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // Site scroll-cue fade
+  const scrollCue = document.querySelector('.scroll-cue');
+  if (scrollCue) {
+    window.addEventListener('scroll', function(){
+      if (window.scrollY > 100) { scrollCue.style.opacity = '0'; scrollCue.style.transition = 'opacity 0.5s'; }
+    }, { once: true });
+  }
+
+  // Keyboard section navigation (ArrowDown / ArrowUp)
+  (function(){
+    var sections = Array.from(document.querySelectorAll('section'));
+    document.addEventListener('keydown', function(e){
+      if (e.key !== 'ArrowDown' && e.key !== 'ArrowUp') return;
+      var tag = document.activeElement.tagName;
+      if (tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT') return;
+      e.preventDefault();
+      var scrollY = window.scrollY + 80;
+      var i;
+      if (e.key === 'ArrowDown') {
+        for (i = 0; i < sections.length; i++) { if (sections[i].offsetTop > scrollY + 10) { sections[i].scrollIntoView({behavior:'smooth',block:'start'}); return; } }
+      } else {
+        for (i = sections.length - 1; i >= 0; i--) { if (sections[i].offsetTop < scrollY - 10) { sections[i].scrollIntoView({behavior:'smooth',block:'start'}); return; } }
+      }
+    });
+  })();
+</script>
+<script defer src="/_vercel/insights/script.js"></script>
+
+</body>
+</html>
