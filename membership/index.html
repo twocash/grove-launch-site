@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Membership — The Grove Foundation</title>
+<meta name="description" content="The Grove Foundation is a 501(c)(6) standards body publishing the open governance stack for distributed AI. Membership inquiries from software companies, research institutions, and capital allocators.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fragment+Mono:ital@0;1&family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --amber:#D4621A; --amber-bright:#F07030; --amber-dim:#8B3D10;
+  --amber-glow:rgba(212,98,26,0.12);
+  --bg:#080808; --bg2:#0f0f0f; --bg3:#161616; --bg4:#1a1a1a;
+  --border:#252525; --border-light:#333;
+  --text:#E8E2D9; --text-dim:#7A736A; --text-mid:#B0A898;
+  --green:#4CAF72; --green-dim:rgba(76,175,114,0.08);
+  --red:#C0392B; --red-dim:rgba(192,57,43,0.06);
+  --yellow:#D4A017;
+  --mono:'Fragment Mono', monospace;
+  --serif:'Instrument Serif', Georgia, serif;
+  --sans:'DM Sans', sans-serif;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body { background:var(--bg); color:var(--text); font-family:var(--sans); -webkit-font-smoothing:antialiased; overflow-x:hidden; line-height:1.6; }
+strong { color:var(--text); font-weight:500; }
+body::before { content:''; position:fixed; inset:0; background-image:linear-gradient(var(--border) 1px, transparent 1px),linear-gradient(90deg, var(--border) 1px, transparent 1px); background-size:40px 40px; opacity:0.15; pointer-events:none; z-index:0; }
+/* ── NAV ── */
+nav { position:fixed; top:0; left:0; right:0; z-index:100; padding:0 48px; height:56px; display:flex; justify-content:space-between; align-items:center; background:rgba(8,8,8,0.94); backdrop-filter:blur(16px); border-bottom:1px solid rgba(37,37,37,0.5); }
+.nav-logo { font-family:var(--mono); font-size:11px; letter-spacing:0.2em; text-transform:uppercase; color:var(--amber-dim); text-decoration:none; }
+.nav-links { display:flex; gap:32px; }
+.nav-links a { font-family:var(--mono); font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-dim); text-decoration:none; padding:4px 0; border-bottom:1px solid transparent; transition:all 0.2s; }
+.nav-links a:hover, .nav-links a.active { color:var(--amber); border-bottom-color:var(--amber); }
+.nav-links a.nav-ext { color:var(--amber-dim); border:1px solid var(--amber-dim); padding:3px 10px; margin-left:8px; border-bottom:1px solid var(--amber-dim); }
+.nav-links a.nav-ext:hover { color:var(--amber); border-color:var(--amber); background:rgba(212,98,26,0.08); }
+/* ── LAYOUT ── */
+.section { position:relative; z-index:1; }
+.section-inner { max-width:760px; margin:0 auto; padding:120px 48px 100px; }
+.section-wide { max-width:1040px; margin:0 auto; padding:120px 48px 100px; }
+.eyebrow { font-family:var(--mono); font-size:11px; letter-spacing:0.25em; text-transform:uppercase; color:var(--amber); margin-bottom:20px; }
+.display { font-family:var(--serif); font-weight:400; font-size:clamp(44px,5.5vw,72px); line-height:1.06; color:var(--text); margin-bottom:24px; letter-spacing:-0.02em; }
+.display em { color:var(--amber); font-style:italic; }
+.headline { font-family:var(--serif); font-weight:400; font-size:clamp(28px,3.5vw,44px); line-height:1.12; color:var(--text); margin-bottom:20px; letter-spacing:-0.01em; }
+.headline em { color:var(--amber); font-style:italic; }
+.subhead { font-family:var(--serif); font-weight:400; font-size:clamp(20px,2.2vw,28px); color:var(--text); margin:64px 0 20px; line-height:1.2; }
+.subhead em { color:var(--amber); font-style:italic; }
+.lead { font-weight:300; font-size:clamp(15px,1.5vw,17px); line-height:1.75; color:var(--text-mid); max-width:700px; margin-bottom:32px; }
+.body-text { font-weight:300; font-size:15px; line-height:1.75; color:var(--text-mid); margin-bottom:20px; }
+.body-text a { color:var(--amber); text-decoration:none; border-bottom:1px solid var(--amber-dim); }
+.body-text a:hover { color:var(--amber-bright); border-bottom-color:var(--amber-bright); }
+.divider { width:48px; height:1px; background:var(--amber); margin:32px 0; }
+.reveal { opacity:0; transform:translateY(24px); transition:opacity 0.7s ease, transform 0.7s ease; }
+.reveal.visible { opacity:1; transform:translateY(0); }
+.section-num { font-family:var(--mono); font-size:11px; letter-spacing:0.2em; color:var(--amber-dim); margin-bottom:6px; }
+.pullquote { border-left:3px solid var(--amber); background:rgba(212,98,26,0.04); padding:24px 28px; margin:32px 0; font-family:var(--serif); font-style:italic; font-size:17px; color:var(--text); line-height:1.55; }
+/* ── HERO ── */
+#hero { min-height:80vh; display:flex; flex-direction:column; justify-content:center; position:relative; background:radial-gradient(ellipse at 30% 80%, rgba(192,57,43,0.08) 0%, transparent 50%), radial-gradient(ellipse at 70% 20%, rgba(212,98,26,0.06) 0%, transparent 50%); }
+#hero .section-inner { padding-top:100px; padding-bottom:80px; }
+.hero-meta { font-family:var(--mono); font-size:10px; color:var(--text-dim); letter-spacing:0.1em; margin-top:24px; }
+.hero-meta a { color:var(--amber-dim); text-decoration:none; border-bottom:1px solid rgba(139,61,16,0.5); }
+.hero-meta a:hover { color:var(--amber); border-bottom-color:var(--amber); }
+/* ── TRACK CARDS ── */
+.tracks { display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--border); border:1px solid var(--border); margin:32px 0; }
+.track-card { background:var(--bg2); padding:28px 28px 32px; }
+.track-label { font-family:var(--mono); font-size:10px; letter-spacing:0.18em; text-transform:uppercase; color:var(--amber); margin-bottom:14px; }
+.track-name { font-family:var(--serif); font-size:24px; color:var(--text); margin-bottom:8px; line-height:1.15; }
+.track-name em { color:var(--amber); font-style:italic; }
+.track-audience { font-family:var(--mono); font-size:11px; color:var(--text-dim); letter-spacing:0.06em; margin-bottom:18px; }
+.track-body { font-size:14px; color:var(--text-mid); line-height:1.65; font-weight:300; }
+.track-body strong { color:var(--text); font-weight:500; }
+/* ── FORM ── */
+.form-block { border:1px solid var(--border); background:var(--bg2); padding:40px 40px 36px; margin:24px 0 0; }
+.form-row { display:grid; gap:22px; margin-bottom:26px; }
+.form-row.two { grid-template-columns:1fr 1fr; }
+.form-field label { display:block; font-family:var(--mono); font-size:10px; letter-spacing:0.14em; text-transform:uppercase; color:var(--amber); margin-bottom:10px; }
+.form-field label .req { color:var(--amber-bright); margin-left:3px; }
+.form-field input, .form-field select, .form-field textarea { width:100%; background:var(--bg); border:1px solid var(--border-light); color:var(--text); font-family:var(--mono); font-size:13px; padding:11px 13px; outline:none; transition:border-color 0.15s; }
+.form-field textarea { font-family:var(--sans); font-size:14px; min-height:100px; resize:vertical; line-height:1.55; }
+.form-field input:focus, .form-field select:focus, .form-field textarea:focus { border-color:var(--amber); }
+.form-field select { -webkit-appearance:none; appearance:none; background-image:linear-gradient(45deg, transparent 50%, var(--amber-dim) 50%), linear-gradient(135deg, var(--amber-dim) 50%, transparent 50%); background-position:calc(100% - 18px) 50%, calc(100% - 13px) 50%; background-size:5px 5px; background-repeat:no-repeat; padding-right:36px; }
+.checkboxes { display:flex; flex-direction:column; gap:10px; }
+.form-field label.check-row { display:grid; grid-template-columns:auto 1fr; grid-template-rows:auto auto; column-gap:14px; row-gap:4px; cursor:pointer; padding:18px 22px; border:1px solid var(--border); transition:all 0.15s; text-transform:none; letter-spacing:normal; color:var(--text-mid); font-family:var(--sans); font-size:inherit; margin-bottom:0; }
+.form-field label.check-row:hover { border-color:var(--amber-dim); background:rgba(212,98,26,0.03); }
+.form-field label.check-row input[type="checkbox"] { grid-column:1; grid-row:1 / span 2; align-self:start; appearance:none; -webkit-appearance:none; width:14px; height:14px; border:1px solid var(--border-light); background:var(--bg); margin-top:3px; cursor:pointer; position:relative; }
+.form-field label.check-row input[type="checkbox"]:checked { background:var(--amber); border-color:var(--amber); }
+.form-field label.check-row input[type="checkbox"]:checked::after { content:'✓'; position:absolute; top:-3px; left:1px; color:var(--bg); font-size:12px; font-weight:bold; }
+.check-title { grid-column:2; grid-row:1; font-family:var(--sans); font-size:14px; font-weight:500; color:var(--text); line-height:1.4; text-transform:none; letter-spacing:normal; }
+.check-sub { grid-column:2; grid-row:2; font-family:var(--sans); font-size:13px; font-weight:300; color:var(--text-mid); line-height:1.5; text-transform:none; letter-spacing:normal; }
+.submit-btn { background:var(--amber); color:var(--bg); font-family:var(--mono); font-size:11px; letter-spacing:0.14em; text-transform:uppercase; border:none; padding:15px 36px; cursor:pointer; font-weight:500; transition:background 0.15s; margin-top:8px; }
+.submit-btn:hover { background:var(--amber-bright); }
+.submit-btn:disabled { opacity:0.5; cursor:not-allowed; }
+.form-status { margin-top:18px; font-family:var(--mono); font-size:12px; padding:12px 16px; display:none; }
+.form-status.success { display:block; background:rgba(76,175,114,0.08); border-left:3px solid var(--green); color:var(--green); }
+.form-status.error { display:block; background:rgba(192,57,43,0.06); border-left:3px solid var(--red); color:var(--red); }
+.form-note { font-family:var(--mono); font-size:10px; color:var(--text-dim); letter-spacing:0.06em; margin-top:14px; line-height:1.6; }
+/* ── RESPONSIVE ── */
+@media(max-width:900px) { .tracks { grid-template-columns:1fr; } .form-row.two { grid-template-columns:1fr; } }
+@media(max-width:768px) { nav { padding:0 20px; } .nav-links { gap:14px; } .nav-links a { font-size:9px; } .section-inner,.section-wide { padding:80px 24px 60px; } .form-block { padding:24px 22px; } }
+</style>
+</head>
+<body>
+<nav>
+  <a href="/" class="nav-logo">The Grove Foundation</a>
+  <div class="nav-links">
+    <a href="/ratchet">Ratchet Test</a>
+    <a href="/papers">CIO Alerts</a>
+    <a href="/observations">Observations</a>
+    <a href="/lambda">Standings</a>
+    <a href="/standards">Open Standards</a>
+    <a href="/membership" class="active">Membership</a>
+    <a href="https://the-grove.ai/autonomaton" target="_blank" rel="noopener noreferrer" class="nav-ext">Run the Pattern &nearr;</a>
+    <a href="/about">About</a>
+  </div>
+</nav>
+
+<!-- ═══════════════════════════════════════
+     HERO
+══════════════════════════════════════════ -->
+<section class="section" id="hero">
+  <div class="section-inner">
+    <div class="eyebrow">Membership Inquiry &middot; April 2026</div>
+    <h1 class="display">Centralization is no longer a <em>fait accompli</em>.</h1>
+    <p class="lead"><a href="https://blog.google/innovation-and-ai/technology/developers-tools/gemma-4/" target="_blank" rel="noopener noreferrer" style="color:var(--amber); text-decoration:none; border-bottom:1px solid var(--amber-dim);">Gemma 4 shipped Apache 2.0 in April</a> &mdash; a 31-billion parameter open model that matches proprietary systems twenty times its size. <a href="https://metr.org/blog/2026-1-29-time-horizon-1-1/" target="_blank" rel="noopener noreferrer" style="color:var(--amber); text-decoration:none; border-bottom:1px solid var(--amber-dim);">METR&rsquo;s updated time-horizon methodology</a> now shows AI capability doubling every 89 days since 2024. Truly open, <a href="/standards/001" style="color:var(--amber); text-decoration:none; border-bottom:1px solid var(--amber-dim);">self-evolving agent harnesses are here</a>.</p>
+    <div class="divider"></div>
+    <p class="body-text">The $650 billion concentration thesis rests on assumptions that no longer hold the way they did eighteen months ago &mdash; and the infrastructure bets placed on those assumptions are starting to show it. <a href="https://www.technologyreview.com/2026/02/05/1132254/this-is-the-most-misunderstood-graph-in-ai/" target="_blank" rel="noopener noreferrer">MIT Technology Review</a> is now writing about what most capital allocators still haven&rsquo;t internalized.</p>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     I. WHAT GROVE IS
+══════════════════════════════════════════ -->
+<section class="section" style="background:var(--bg2); border-top:1px solid var(--border); border-bottom:1px solid var(--border);">
+  <div class="section-inner reveal">
+    <div class="section-num">I</div>
+    <h2 class="headline">What <em>The Grove</em> is.</h2>
+    <p class="body-text">The Grove Foundation is a 501(c)(6) standards body publishing the open governance stack for distributed AI. The methodology is <a href="/standards">CC BY 4.0</a>. The measurement framework &mdash; <a href="/lambda">&Lambda;</a> &mdash; quantifies which AI architectural deployment patterns show structural viability.</p>
+    <p class="body-text">The <strong>Autonomaton Pattern</strong> is the first published standard, with a detailed open source roadmap available to members. The thesis remains the same: the infrastructure future is more open, more distributed, and more contested than the headline-grabbing $650 billion bet assumes.</p>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     II. THE TWO TRACKS
+══════════════════════════════════════════ -->
+<section class="section">
+  <div class="section-wide reveal">
+    <div class="section-num">II</div>
+    <h2 class="headline">Two <em>tracks</em>.</h2>
+    <div class="tracks">
+      <div class="track-card">
+        <div class="track-label">Track 01</div>
+        <div class="track-name">Alliance <em>Members</em></div>
+        <div class="track-audience">Software companies &middot; Research institutions &middot; Practitioners</div>
+        <div class="track-body">Shape the open protocol stack as it&rsquo;s authored. Participate in working groups for future standards in active development. Get implementation guidance for what&rsquo;s already shipped. Certification pathway for conforming products. The Linux Foundation model, applied to distributed AI governance. Members shape the roadmap. The window to influence the spec closes once it ships.</div>
+      </div>
+      <div class="track-card">
+        <div class="track-label">Track 02</div>
+        <div class="track-name">Research <em>Members</em></div>
+        <div class="track-audience">Investment firms &middot; Allocators &middot; Strategy teams</div>
+        <div class="track-body">Quarterly &Lambda; benchmark briefings. Pre-publication alerts when the methodology detects a structural phase change in the AI landscape. Custom sponsored research on specific pattern evaluations or industry verticals. Independent, CC BY 4.0 methodology. The S&amp;P Global model: an institutional research publisher whose signal is valuable precisely because it isn&rsquo;t being sold by anyone with a position in the trade.</div>
+      </div>
+    </div>
+    <div class="pullquote">Members do not shape the scores themselves. That separation is the credibility boundary &mdash; and the reason institutional capital should pay attention to what the methodology produces.</div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     III. INQUIRY FORM
+══════════════════════════════════════════ -->
+<section class="section" style="background:var(--bg2); border-top:1px solid var(--border);">
+  <div class="section-inner reveal">
+    <div class="section-num">III</div>
+    <h2 class="headline">We&rsquo;d love to <em>hear from you</em>.</h2>
+    <div class="form-block">
+      <form id="membership-form" novalidate>
+        <div class="form-row two">
+          <div class="form-field">
+            <label for="m-name">Name<span class="req">*</span></label>
+            <input type="text" id="m-name" name="name" required autocomplete="name">
+          </div>
+          <div class="form-field">
+            <label for="m-email">Email<span class="req">*</span></label>
+            <input type="email" id="m-email" name="email" required autocomplete="email">
+          </div>
+        </div>
+        <div class="form-row two">
+          <div class="form-field">
+            <label for="m-org">Organization<span class="req">*</span></label>
+            <input type="text" id="m-org" name="organization" required autocomplete="organization">
+          </div>
+          <div class="form-field">
+            <label for="m-role">Role / Title<span class="req">*</span></label>
+            <input type="text" id="m-role" name="role" required autocomplete="organization-title">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-field">
+            <label for="m-orgtype">Organization type<span class="req">*</span></label>
+            <select id="m-orgtype" name="org_type" required>
+              <option value="">— select —</option>
+              <option value="software_vendor">Software company / technology vendor</option>
+              <option value="investment_firm">Investment firm / fund / allocator</option>
+              <option value="research_institution">Research institution / academic</option>
+              <option value="enterprise_strategy">Enterprise in-house strategy</option>
+              <option value="press_media">Press / media</option>
+              <option value="analyst_consulting">Analyst / consulting firm</option>
+              <option value="government_policy">Government / policy</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-field">
+            <label>Primary interest</label>
+            <div class="checkboxes">
+              <label class="check-row">
+                <input type="checkbox" name="interests" value="standards">
+                <div class="check-title">Standards participation</div>
+                <div class="check-sub">Help shape Grove&rsquo;s open protocol stack.</div>
+              </label>
+              <label class="check-row">
+                <input type="checkbox" name="interests" value="research">
+                <div class="check-title">Research and intelligence</div>
+                <div class="check-sub">Structural signal on the AI landscape.</div>
+              </label>
+              <label class="check-row">
+                <input type="checkbox" name="interests" value="other">
+                <div class="check-title">Other</div>
+                <div class="check-sub">Tell us more below.</div>
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-field">
+            <label for="m-heard">How did you hear about Grove?</label>
+            <input type="text" id="m-heard" name="how_heard" placeholder="Optional">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-field">
+            <label for="m-message">Tell us more</label>
+            <textarea id="m-message" name="message" placeholder="What prompted you to reach out? What would you want from a Grove membership? (optional)"></textarea>
+          </div>
+        </div>
+        <button type="submit" class="submit-btn" id="m-submit">Submit Inquiry</button>
+        <div class="form-status" id="m-status"></div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     FOOTER
+══════════════════════════════════════════ -->
+<footer style="position:relative; z-index:1; border-top:1px solid var(--border);">
+  <div style="max-width:760px; margin:0 auto; padding:48px 48px 40px;">
+    <div style="border:1px solid var(--amber-dim); padding:24px 28px; margin-bottom:32px; display:flex; align-items:center; gap:20px; flex-wrap:wrap;">
+      <div style="font-family:var(--mono); font-size:11px; letter-spacing:0.15em; text-transform:uppercase; color:var(--amber); white-space:nowrap;">Follow the pattern</div>
+      <form style="display:flex; gap:8px; flex:1; min-width:240px;" action="https://formspree.io/f/xqegowyj" method="POST">
+        <input type="email" name="email" placeholder="your@email.com" required style="flex:1; background:var(--bg); border:1px solid var(--border-light); color:var(--text); font-family:var(--mono); font-size:12px; padding:8px 12px; outline:none;">
+        <button type="submit" style="background:var(--amber); color:var(--bg); font-family:var(--mono); font-size:10px; letter-spacing:0.12em; text-transform:uppercase; border:none; padding:8px 20px; cursor:pointer;">Subscribe</button>
+      </form>
+    </div>
+    <div style="font-family:var(--mono); font-size:11px; color:var(--text-dim); line-height:2;">
+      The Grove Foundation &middot; Indianapolis<br>
+      <a href="https://the-grove.ai" style="color:var(--amber); text-decoration:none; border-bottom:1px solid var(--amber-dim);">the-grove.ai</a><br>
+      CC BY 4.0 &middot; &copy; 2026 The Grove Foundation
+    </div>
+    <div style="display:flex; gap:24px; margin-top:20px; flex-wrap:wrap;">
+      <a href="/ratchet" style="font-family:var(--mono); font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-dim); text-decoration:none;">Ratchet Test</a>
+      <a href="/papers" style="font-family:var(--mono); font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-dim); text-decoration:none;">CIO Alerts</a>
+      <a href="/observations" style="font-family:var(--mono); font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-dim); text-decoration:none;">Observations</a>
+      <a href="/lambda" style="font-family:var(--mono); font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-dim); text-decoration:none;">Standings</a>
+      <a href="/standards" style="font-family:var(--mono); font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-dim); text-decoration:none;">Open Standards</a>
+      <a href="/membership" style="font-family:var(--mono); font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:var(--amber); text-decoration:none;">Membership</a>
+      <a href="/about" style="font-family:var(--mono); font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-dim); text-decoration:none;">About</a>
+    </div>
+    <p style="font-family:var(--sans); font-size:11px; color:var(--text-dim); font-weight:300; line-height:1.6; margin-top:24px; padding-top:20px; border-top:1px solid var(--border);">The Grove Foundation Inc. is a not-for-profit business league within the meaning of Section 501(c)(6) of the Internal Revenue Code of 1986, as amended.</p>
+  </div>
+</footer>
+
+<script>
+// ── Reveal on scroll ──
+var ro = new IntersectionObserver(function(entries){
+  entries.forEach(function(e){
+    if (e.isIntersecting) { e.target.classList.add('visible'); ro.unobserve(e.target); }
+  });
+},{threshold:0.08});
+document.querySelectorAll('.reveal').forEach(function(el){ ro.observe(el); });
+
+// ── Form submission ──
+(function(){
+  var SUPABASE_URL = 'https://cntzzxqgqsjzsvscunsp.supabase.co';
+  var SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNudHp6eHFncXNqenN2c2N1bnNwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjY3OTI3NDMsImV4cCI6MjA4MjM2ODc0M30.wF994l8N7Np1TAFZCryK-5fjPi5ToXrsc5ICiDUeQxg';
+  var FORMSPREE = 'https://formspree.io/f/xqewqglz';
+
+  var form = document.getElementById('membership-form');
+  var btn = document.getElementById('m-submit');
+  var statusEl = document.getElementById('m-status');
+
+  form.addEventListener('submit', async function(e){
+    e.preventDefault();
+    statusEl.className = 'form-status';
+    statusEl.textContent = '';
+    btn.disabled = true;
+    btn.textContent = 'Submitting...';
+
+    var fd = new FormData(form);
+    var interests = fd.getAll('interests');
+    var payload = {
+      name: fd.get('name'),
+      email: fd.get('email'),
+      organization: fd.get('organization'),
+      role: fd.get('role'),
+      org_type: fd.get('org_type'),
+      interests: interests,
+      how_heard: fd.get('how_heard') || null,
+      message: fd.get('message') || null,
+      user_agent: navigator.userAgent,
+      referrer: document.referrer || null
+    };
+
+    try {
+      var res = await fetch(SUPABASE_URL + '/rest/v1/membership_inquiries', {
+        method: 'POST',
+        headers: {
+          'apikey': SUPABASE_KEY,
+          'Authorization': 'Bearer ' + SUPABASE_KEY,
+          'Content-Type': 'application/json',
+          'Prefer': 'return=minimal'
+        },
+        body: JSON.stringify(payload)
+      });
+      if (!res.ok) throw new Error('Submission failed (' + res.status + ')');
+
+      // Fire-and-forget Formspree notification
+      fetch(FORMSPREE, {
+        method: 'POST',
+        headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      }).catch(function(){});
+
+      statusEl.className = 'form-status success';
+      statusEl.textContent = 'Inquiry received. The Grove Foundation will respond directly.';
+      form.reset();
+      btn.textContent = 'Submitted';
+    } catch (err) {
+      statusEl.className = 'form-status error';
+      statusEl.textContent = 'Submission failed. Please retry or write to jim@the-grove.ai.';
+      btn.disabled = false;
+      btn.textContent = 'Submit Inquiry';
+    }
+  });
+})();
+
+// ── Keyboard section navigation ──
+(function(){
+  var sections = Array.from(document.querySelectorAll('.section'));
+  document.addEventListener('keydown', function(e){
+    if (e.key !== 'ArrowDown' && e.key !== 'ArrowUp') return;
+    var tag = document.activeElement.tagName;
+    if (tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT') return;
+    e.preventDefault();
+    // Defer scroll to next frame — keeps keydown handler short (addresses INP)
+    requestAnimationFrame(function(){
+      var scrollY = window.scrollY + 80;
+      var i;
+      if (e.key === 'ArrowDown') {
+        for (i = 0; i < sections.length; i++) { if (sections[i].offsetTop > scrollY + 10) { sections[i].scrollIntoView({behavior:'smooth',block:'start'}); return; } }
+      } else {
+        for (i = sections.length - 1; i >= 0; i--) { if (sections[i].offsetTop < scrollY - 10) { sections[i].scrollIntoView({behavior:'smooth',block:'start'}); return; } }
+      }
+    });
+  });
+})();
+</script>
+<script defer src="/_vercel/insights/script.js"></script>
+</body>
+</html>
