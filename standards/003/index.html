@@ -745,7 +745,7 @@ flowchart LR
   <div class="section-inner reveal">
     <div class="section-num">&sect; 10</div>
     <h2 class="headline">Composition <em>Interfaces</em></h2>
-    <p class="body-text">The claim that autonomatons compose without adapter code requires a specification of the interfaces that make this true. This section specifies the four composition interfaces that every Autonomaton in a learning composition must implement, and the consent and provenance mechanisms that govern their use.</p>
+    <p class="body-text">The claim that autonomatons compose without adapter code requires a specification of the interfaces that make this true. This section specifies the five composition interfaces &mdash; telemetry, retrieval, consent, provenance, and endorsement &mdash; that every Autonomaton in a learning composition must implement.</p>
     <h3 class="subhead">10.1 The <em>Telemetry</em> Interface (inbound)</h3>
     <p class="body-text">Every Autonomaton exposes a telemetry-ingestion interface that accepts structured events from any other pipeline-compatible Autonomaton. Events are JSON-Lines; their schema is the canonical Autonomaton telemetry schema (intent, source node, consent scope, provenance chain, pipeline stage outputs, timestamp, integrity hash). A node consuming telemetry from another node does not need to know anything about the source node's internal implementation. It only needs to know the shared schema.</p>
     <h3 class="subhead">10.2 The <em>Retrieval</em> Interface (outbound, grounded)</h3>
@@ -761,6 +761,60 @@ flowchart LR
     <p class="body-text"><strong>Aggregation composition.</strong> Multiple nodes feed aggregate (not individual) telemetry to a supervisory node. Consenting student nodes feed cohort-scope telemetry to a teacher node; the teacher node sees patterns, never individuals.</p>
     <p class="body-text"><strong>Federation composition.</strong> A set of peer nodes share a bounded telemetry and retrieval space for a defined purpose and duration. A thesis cohort federates their literature-review docks for six months; at dissolution, each student's individual dock retains its own contributions and the cohort space sunsets.</p>
     <p class="body-text">These patterns are not exotic. They are the natural consequence of the shared pipeline shape. A university's institutional computing team does not need to write adapters between nodes; the composability is structural.</p>
+    <h3 class="subhead">10.6 The <em>Co-Sign</em> Protocol</h3>
+    <p class="body-text">The four interfaces specified in &sect;10.1 through &sect;10.4 describe how autonomatons exchange telemetry, retrieval, consent, and provenance. This subsection specifies a fifth: how they exchange <em>endorsement</em> &mdash; the protocol by which a node declares what classifications it is willing to lend its standing to when another node invokes its name. This is the mechanism that makes institution-attestation (&sect;9.9) operational without introducing a new architectural construct.</p>
+    <p class="body-text">The protocol introduces no new file. The composition thesis in &sect;5 holds that every node runs the same invariant pipeline and maintains the same three files. The zones.schema of a learner's node classifies submission actions, data-sharing acts, and tier mutations. The zones.schema of an institutional node classifies the same primitive categories applied to a different input surface &mdash; including co-sign requests arriving from learner nodes whose credentials will reference the institution's name. The zone model applies directly, and what v0.9 left implicit becomes explicit: every node's zones.schema governs an input class of <em>co-sign requests from other nodes</em>, and the Green/Yellow/Red semantics apply as specified.</p>
+    <p class="body-text">A department autonomaton receiving a co-sign request for a student's tier mutation evaluates it against its own zones.schema:</p>
+    <p class="body-text"><strong>Green.</strong> The request meets pre-declared criteria. Co-sign is automatic. The department's faculty-governance body has, through whatever deliberative mechanism the department uses, already approved the class of co-signs this request falls into. The pipeline resolves without human halt at the institutional node. This is the scalable form of &ldquo;the department endorses this kind of competency attestation under these specific conditions&rdquo; &mdash; declared once, evaluated deterministically at every subsequent request.</p>
+    <p class="body-text"><strong>Yellow.</strong> The request falls outside the declared auto-co-sign criteria but inside the department's scope. The pipeline halts at the institutional node; the department's governance body reviews; co-sign is issued or declined through the department's existing deliberative process. This is the institutional counterpart to Stage 4 human review at the learner's node &mdash; the department's equivalent of &ldquo;a human at this node must approve before endorsement is lent.&rdquo; Exposed as a zone-classified event rather than buried in per-mutation ad hoc review.</p>
+    <p class="body-text"><strong>Red.</strong> The request is outside the department's scope entirely &mdash; a co-sign claim the department has no authority over. Refused structurally. The department's zones.schema lacks the classification that would permit co-sign; the pipeline is incapable of producing one. Not <em>will not</em>. <em>Cannot</em>. A biology department autonomaton asked to co-sign a literary-analysis competency has no zone under which that request resolves.</p>
+    <p class="body-text">A department's zones.schema governing co-sign might read like the illustration below. The specific criteria are for illustration; the declarative form is what matters, and is chosen to be readable by the same faculty-governance body that will approve it.</p>
+    <div class="code-caption">zones.schema &middot; applied-statistics department autonomaton, co-sign classifications</div>
+<pre class="code-block" aria-label="Illustrative zones.schema entries for institutional co-sign behavior">
+# zones.schema — Purdue applied-statistics department autonomaton
+# Co-sign classifications. Human-readable; approved once by faculty governance.
+# Evaluated deterministically at every incoming co-sign request.
+
+cosign:
+  # Auto-co-sign — green zone
+  regression_assumptions:
+    scope: canonical_corpus
+    zone: green
+    requires:
+      attestation_tier: institution
+      challenge_events: 3
+      provenance_sources_must_include: purdue-stat-dept-corpus
+    delegates_to:
+      - stat-301-teacher-node     # in-course authority, fall/spring only
+      - stat-302-teacher-node
+
+  model_selection:
+    scope: canonical_corpus
+    zone: green
+    requires:
+      attestation_tier: institution
+      challenge_events: 2
+      provenance_sources_must_include: purdue-stat-dept-corpus
+
+  # Governance review — yellow zone
+  novel_statistical_methods:
+    scope: frontier_of_field
+    zone: yellow
+    review_body: department_curriculum_committee
+    note: "methods not yet in canonical corpus require committee review"
+
+  # Refused structurally — red zone
+  literary_interpretation:
+    scope: out_of_domain
+    zone: red
+    note: "outside the department's scope; no co-sign issued under any conditions"
+</pre>
+    <p class="body-text">Three properties of this form are worth naming.</p>
+    <p class="body-text"><strong>Institutional sovereignty.</strong> The department owns its co-sign criteria. No other node dictates what the department is willing to endorse. A learner's Ratchet may propose any tier mutation, and the learner's Stage 4 may approve it for their own sovereign use &mdash; but whether the mutation can claim departmental provenance is determined entirely by the department's own zones.schema. Sovereignty at every node, including the institutional ones.</p>
+    <p class="body-text"><strong>Delegation chains.</strong> A department may delegate in-course authority to teacher nodes within declared scope. The teacher's zones.schema declares what it is willing to co-sign within the department's grant. A TA's zones.schema declares within the teacher's grant. Each level can only delegate what was delegated to it. At co-sign time, the pipeline evaluates the delegation chain and hashes into provenance <em>which node actually co-signed under what delegated authority</em>. Structurally the same pattern as certificate authority chains in TLS &mdash; a well-understood primitive applied to a new domain.</p>
+    <p class="body-text"><strong>The envelope is visible.</strong> When a learner's tier mutation cannot be co-signed &mdash; because the pattern falls outside the institution's declared envelope, because no institutional node has the authority, or because the learner is exploring in a direction no institution yet endorses &mdash; the mutation still commits at the learner's discretion through Stage 4. What changes is the credential view: the competency resolves at sovereign tier, but with attestation tier <em>self</em> or <em>autonomaton</em>, with no institutional validating node recorded. The learner retains the knowledge; the credential honestly reports the absence of institutional backing. Self-trained sovereign competency is first-class, and the credential makes its backing condition explicit rather than obscure.</p>
+    <p class="body-text">The protocol above is specified for the learner-institution composition because that is this specification's domain. A generalized version of the protocol &mdash; how any autonomaton node formats zones-schema entries to govern co-sign behavior with any other node &mdash; is the natural subject of a future Grove composition-semantics standard. GRV-003 is forward-compatible with that generalization by construction: the zone-classification primitive, the delegation pattern, and the declarative format specified here are domain-invariant, and can be absorbed into a broader specification without reinterpretation of the learner-institution case.</p>
+    <p class="body-text">With this, the four properties specified in &sect;10.1 through &sect;10.4 &mdash; telemetry, retrieval, consent, provenance &mdash; are joined by a fifth: <em>endorsement</em>. Together they constitute the full set of interfaces by which autonomatons compose in a learning environment. Every other mechanism specified in this document is built from some combination of these five.</p>
   </div>
 </section>
 <!-- ═══════════════════════════════════════
