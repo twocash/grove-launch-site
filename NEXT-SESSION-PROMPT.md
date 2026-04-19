@@ -1,5 +1,51 @@
 # Grove Launch Site — Session Continuation
 
+## Most recent session (April 19, 2026) — GRV-003 v0.8 polish pass
+
+### Shipped
+
+GRV-003 is live at `the-grove.ai/standards/003`. Tonight's session shipped the AI-readability pass driven by Gemini feedback, plus a mobile fix.
+
+- **Code-block mobile fix** — `font-size:11px` + reduced padding at 768px for the routing.config YAML in §11 (commit `ac3a72f`).
+- **Item D — Architectural Guarantee box in §4** — new `.guarantee-box` component pairs each zone (Green / Yellow / Red) with its named enforcement mechanism (prior approval / pipeline halt / OS permission level). Amber-bordered, mono-headed, sits between the zone model paragraph and the "Stage 4 is always human" subhead (commit `ac3a72f`).
+- **Item B — Tier numerals + Data Residency Invariant in §7** — six tier subheads now prepend `Tier N · ` with Sovereign deterministic = Tier 0 counting up to Commercial apex = Tier 5. Numbering encodes the ratchet direction (lower number = higher sovereignty). New "Data Residency Invariant" paragraph at end of §7 names the residency property explicitly (commit `781b3e3`).
+- **Item C — Flywheel/Atrophy inversion comparison table in §9.1** — new `.compare-table` component, five-row two-column contrast showing that both architectures capture the same artifact (authorized human judgment) and diverge on direction of flow, what compounds, effect on capability, and tradable asset class. Placed at top of §9.1 ("The Inversion") rather than top of §9 as originally spec'd, because §9's rhetorical build to the pullquote shouldn't be interrupted (commit `04f3265`).
+- **Item A — Mermaid five-stage pipeline diagram in §4** — closed-loop flowchart showing Stage 1 → 2 → 3 → 4 → 5 with a dotted feedback arrow from Stage 5 back to Stage 1 labeled `memorialized judgment`. Renders via Mermaid ES module CDN, themed to match the amber/dark design tokens. Follow-up paragraph names the feedback arrow as the load-bearing property (commit `049b795`).
+- **Item E — §15 lede promotion** — title changed from "The Federated Expertise Economy" to "The Federated Expertise Economy and the Provenance Arc as *Asset*". The "tradable object" sentence from §15.1 moved to top of §15 as the lede, removed from §15.1 to avoid duplication (commit `049b795`).
+
+### Key design decisions worth remembering
+
+- `.compare-table` was ported with fresh CSS because GRV-002's version has no custom styling. The GRV-003 version is the canonical styled version — backport to GRV-002 if Jim wants visual parity there.
+- `.guarantee-box` is a new component distinct from `.pullquote`. Pullquote = italic rhetorical claim. Guarantee box = structured architectural assertion with zone rows. The two should not be conflated going forward.
+- Mermaid is loaded as ES module from `cdn.jsdelivr.net` in the script block at the bottom of the body, right before the intersection-observer script. `startOnLoad: true` handles DOM-ready. Theme variables override the `base` theme to match the Grove palette.
+- Tier 0 = Sovereign convention was confirmed with Jim and Erik. The Ratchet's structural direction is always toward lower tier numbers (inward, toward the learner). This is consistent with the "cloud is up" intuition Erik uses for the Ratchet visualization.
+
+### Outstanding from the GRV-003 continuation prompt
+
+- **Eyeball pass — still needs Jim's visual verification.** Specifically: (a) the `Tier N · ` prefix reading balanced in the serif subhead (mixing arabic numeral with em-italic concept word), (b) the `.compare-table` columns reading clearly distinct (platform dim, autonomaton normal), (c) the Mermaid diagram rendering correctly against the dark bg (watch for any Mermaid default styling bleeding through), (d) the guarantee-box rgba amber tint on §4's bg2 backdrop.
+- **Footer audit** — `NEXT-SESSION-PROMPT.md` from prior sessions flagged this as outstanding site-wide. The GRV-003 footer was built to match the GRV-002 pattern (cross-link to 001 + 002, CC BY 4.0 meta line, contact, 501(c)(6) boilerplate). Spot-check confirmation needed; full site audit still queued.
+- **Optional canonical PDF** — `Desktop Commander:write_pdf` from the v0.8 Markdown source to `standards/003/learner-autonomaton-v0.8.pdf`, add download link to footer download bar. Jim didn't greenlight tonight. Take-it-or-leave-it.
+- **Gemini's kill-switch question** — unresolved design question worth Jim's consideration for v0.9 or a §10.6 addition: *"If you were to implement a Kill Switch for the flywheel — where a user could instantly purge the last hour of local telemetry — how would you architect that to ensure it doesn't break the long-term provenance arc required for the degree?"* The §9.7 Reversibility Property addresses preservation-as-default but doesn't specifically answer the partial-purge case. Recommend surfacing as a candidate v0.9 edit, not adding to v0.8 without Jim's greenlight.
+
+### Commits landed in this session
+
+| Commit | Description |
+|---|---|
+| `ac3a72f` | Code-block mobile fix + Item D (guarantee box) |
+| `781b3e3` | Item B (tier numerals + data residency invariant) |
+| `04f3265` | Item C (Flywheel/Atrophy comparison table) |
+| `049b795` | Items A + E (Mermaid pipeline + §15 Provenance Arc lede) |
+
+All four commits pushed to `origin/master`. All four Vercel deploys completed successfully.
+
+---
+
+## Prior-sessions content below — may be stale
+
+The content below was written before GRV-003 was built. Several queued items (the /about page, email opt-in component, some footer work) have since been completed and integrated into the live site. Triage against current reality before acting on anything below.
+
+---
+
 ## What happened last session
 
 ### `/standards/001` — The Autonomaton Pattern — COMPLETE
