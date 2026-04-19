@@ -4,6 +4,7 @@
 
 - **Trellis fast-follow piece** — pending NotebookLM steered read + Clement brief. Sequencing is: steered read through NotebookLM first, then the brief to Clement; piece drafts off both.
 - **GRV-003 v1.0 naive-URL QA results** — pending. Live at `the-grove.ai/standards/003`. Awaiting results of a naive-URL pass (fresh browser, no context, click/scroll/read the whole thing) to surface anything the architectural edits missed.
+- **NEXT-SESSION-PROMPT.md hygiene** — body section still references v0.8 / unresolved continuation items that are now shipped at v1.0. Cleanup pass needed: rewrite the most-recent-session block to reflect v1.0 ship state and clear resolved items from the outstanding list.
 
 ---
 
