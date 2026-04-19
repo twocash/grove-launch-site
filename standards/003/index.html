@@ -171,6 +171,18 @@ blockquote.epigraph cite { display:block; font-family:var(--sans); font-style:no
 .code-caption { font-family:var(--mono); font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--amber-dim); margin-top:-12px; margin-bottom:8px; }
 /* ── CREDENTIAL ASCII BOX ── */
 .credential-box { font-family:var(--mono); font-size:11px; line-height:1.5; color:var(--text-mid); background:var(--bg); border:1px solid var(--amber-dim); padding:24px 20px; margin:24px 0; overflow-x:auto; white-space:pre; }
+/* ── ARCHITECTURAL GUARANTEE BOX ── */
+.guarantee-box { border:1px solid var(--amber-dim); background:rgba(212,98,26,0.05); margin:32px 0; }
+.guarantee-box-header { font-family:var(--mono); font-size:10px; letter-spacing:0.2em; text-transform:uppercase; color:var(--amber); padding:14px 24px; border-bottom:1px solid var(--amber-dim); }
+.guarantee-row { display:grid; grid-template-columns:130px 1fr; gap:0; padding:16px 24px; border-bottom:1px solid var(--border); }
+.guarantee-row:last-child { border-bottom:none; }
+.guarantee-zone { font-family:var(--mono); font-size:11px; letter-spacing:0.14em; text-transform:uppercase; padding-top:2px; }
+.guarantee-zone.green { color:var(--green); }
+.guarantee-zone.yellow { color:var(--yellow); }
+.guarantee-zone.red { color:var(--red); }
+.guarantee-mechanism { font-size:14px; color:var(--text-mid); font-weight:300; line-height:1.6; }
+.guarantee-mechanism strong { color:var(--text); font-weight:400; }
+.guarantee-mechanism em { color:var(--amber); font-style:italic; }
 /* ── NODE CARDS (Section 6) ── */
 .node-block { background:var(--bg2); border:1px solid var(--border); padding:24px 28px; margin-bottom:1px; }
 .node-name { font-family:var(--serif); font-size:20px; color:var(--text); margin-bottom:14px; }
@@ -193,6 +205,8 @@ blockquote.epigraph cite { display:block; font-family:var(--sans); font-style:no
   .principle-card { grid-template-columns:48px 1fr; }
   .lifecycle-table td:first-child { width:auto; white-space:normal; }
   .node-field strong { display:block; min-width:0; margin-bottom:2px; }
+  .code-block { font-size:11px; padding:16px 18px; }
+  .guarantee-row { grid-template-columns:1fr; gap:8px; padding:14px 18px; }
 }
 </style>
 </head>
@@ -426,6 +440,21 @@ blockquote.epigraph cite { display:block; font-family:var(--sans); font-style:no
     <p class="body-text"><code>routing.config</code> declares what the system knows how to handle and where. <code>zones.schema</code> declares where human approval is required. <code>telemetry.jsonl</code> records everything that ever happened. The sovereign state of the system lives in three inspectable files the learner owns.</p>
     <h3 class="subhead">The zone <em>model</em></h3>
     <p class="body-text">Green zone is autonomous. Yellow zone requires the learner's review before acting. <dfn>Red zone</dfn> is the learner's alone — the system surfaces context but never composes or submits. <strong>The code governing Red actions lacks the permissions to execute them. Not <em>will not</em>. <em>Cannot</em>.</strong> Red-zone boundaries are declarative and structurally enforced: the pipeline halts at Red, surfaces full context, and requires synchronous human resolution. The system is physically incapable of crossing a Red boundary on its own.</p>
+    <aside class="guarantee-box" aria-label="Architectural enforcement of zone boundaries">
+      <div class="guarantee-box-header">Architectural Guarantee &middot; Zone Enforcement</div>
+      <div class="guarantee-row">
+        <div class="guarantee-zone green">Green</div>
+        <div class="guarantee-mechanism"><strong>Enforced by prior approval.</strong> The pattern's promotion to Green was itself a memorialized Stage-4 decision. Subsequent execution runs against an already-approved record, with full provenance back to the approval event.</div>
+      </div>
+      <div class="guarantee-row">
+        <div class="guarantee-zone yellow">Yellow</div>
+        <div class="guarantee-mechanism"><strong>Enforced by pipeline halt.</strong> The pipeline reaches Stage 4 and stops. Full context surfaces. Execution waits for synchronous human review. There is no runtime path that bypasses the halt.</div>
+      </div>
+      <div class="guarantee-row">
+        <div class="guarantee-zone red">Red</div>
+        <div class="guarantee-mechanism"><strong>Enforced at the operating-system permission level.</strong> The code lacks the credentials to invoke the action. The pipeline is structurally incapable of crossing the boundary. Not <em>will not</em>. <em>Cannot</em>.</div>
+      </div>
+    </aside>
     <h3 class="subhead">Stage 4 is always <em>human</em></h3>
     <p class="body-text">The system never approves its own actions. The learner is the sovereignty gate. The Ratchet proposes config mutations. The learner approves them. The system executes what was approved. No runtime promotion. No runtime demotion. Trajectory is approved mutation, never fallback. <dfn>Stage 4</dfn> is also the capture mechanism specified in &sect;9 — the single gate through which all memorialization flows.</p>
     <h3 class="subhead">Config over <em>code</em></h3>
