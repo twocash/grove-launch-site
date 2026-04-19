@@ -195,6 +195,9 @@ blockquote.epigraph cite { display:block; font-family:var(--sans); font-style:no
 .compare-table td.col-autonomaton { color:var(--text-mid); }
 .compare-table td em { color:var(--amber); font-style:italic; }
 .compare-table tr:last-child td { border-bottom:none; }
+/* ── MERMAID DIAGRAM ── */
+.mermaid { text-align:center; margin:28px 0; font-family:var(--mono); font-size:12px; color:var(--text-mid); overflow-x:auto; }
+.mermaid svg { max-width:100%; height:auto; background:transparent !important; }
 /* ── NODE CARDS (Section 6) ── */
 .node-block { background:var(--bg2); border:1px solid var(--border); padding:24px 28px; margin-bottom:1px; }
 .node-name { font-family:var(--serif); font-size:20px; color:var(--text); margin-bottom:14px; }
@@ -450,6 +453,16 @@ blockquote.epigraph cite { display:block; font-family:var(--sans); font-style:no
     <p class="body-text">Before describing what the Learner Autonomaton adds, this section names what is unchanged. These are the architectural non-negotiables of any Autonomaton, inherited whole from GRV-001. A Learner Autonomaton is one instantiation of the Autonomaton pattern. It is not a new pattern. Variance is permitted in configuration and landscape. <strong>Compliance is required in pipeline, files, zones, and human approval.</strong></p>
     <h3 class="subhead">The five-stage <em>pipeline</em></h3>
     <p class="body-text">Telemetry &rarr; Recognition &rarr; Compilation &rarr; Approval &rarr; Execution. Every cognitive operation traverses all five stages, in order, every time. No bypasses. No parallel paths. No runtime fallback cascades. One operator input equals one pipeline traversal. At any given moment, a pattern resolves to exactly one execution path.</p>
+    <div class="code-caption">Five-stage pipeline &middot; closed loop</div>
+<pre class="mermaid" aria-label="Five-stage Autonomaton pipeline: Telemetry to Recognition to Compilation to Approval to Execution, with a dotted feedback arrow labeled memorialized judgment running from Execution back to Telemetry">
+flowchart LR
+  S1["1. Telemetry"] --&gt; S2["2. Recognition"]
+  S2 --&gt; S3["3. Compilation"]
+  S3 --&gt; S4["4. Approval"]
+  S4 --&gt; S5["5. Execution"]
+  S5 -.memorialized judgment.-&gt; S1
+</pre>
+    <p class="body-text">The feedback arrow is the load-bearing property. Stage 5 execution does not terminate the pipeline — it produces telemetry that re-enters Stage 1, carrying forward the memorialized judgment captured at Stage 4. The loop is closed. The system learns the learner through the learner's own approved history, not through background inference the learner does not see.</p>
     <h3 class="subhead">The three <em>files</em></h3>
     <p class="body-text"><code>routing.config</code> declares what the system knows how to handle and where. <code>zones.schema</code> declares where human approval is required. <code>telemetry.jsonl</code> records everything that ever happened. The sovereign state of the system lives in three inspectable files the learner owns.</p>
     <h3 class="subhead">The zone <em>model</em></h3>
@@ -894,11 +907,11 @@ peer_study_group_discussion:
 <section class="section" id="federated-expertise-economy" style="background:var(--bg2); border-top:1px solid var(--border);">
   <div class="section-inner reveal">
     <div class="section-num">&sect; 15</div>
-    <h2 class="headline">The Federated Expertise <em>Economy</em></h2>
+    <h2 class="headline">The Federated Expertise Economy and the Provenance Arc as <em>Asset</em></h2>
+    <p class="body-text">The tradable object in the federated expertise economy is not the conclusion. It is the arc that produced the conclusion.</p>
     <p class="body-text">What the sovereign credential makes possible, once it is held by enough graduates, is an economy that does not presently exist: a federated market for validated expertise whose economic primitives are cryptographically provable cognitive capability.</p>
     <p class="body-text">The architecture of this market is a structural implication of everything above. A graduate leaving a university with a sovereign node carries a validated, inspectable, federation-ready cognitive capability — and, crucially, the <em>provenance arc</em> that produced it. The next subsection specifies what is actually traded.</p>
     <h3 class="subhead">15.1 The Provenance Arc as <em>Asset</em></h3>
-    <p class="body-text">The tradable object in the federated expertise economy is not the conclusion. It is the arc that produced the conclusion.</p>
     <p class="body-text">A conclusion can be copied. A conclusion, stripped of provenance, is indistinguishable from every other claim in a market full of claims. A conclusion without the arc that produced it is opinion. But the arc — the inspectable record of how a specific learner came to hold a specific validated competency, the sources they grounded against, the challenges they passed, the neighboring hypotheses they explored and rejected — is irreplicable. No one else produced this arc. No one else can reconstruct it after the fact. The arc is the learner's unique asset.</p>
     <p class="body-text">Two architectural properties make the arc tradable in a way no prior credential has been:</p>
     <p class="body-text"><strong>Full-life provenance is the default, queried as needed.</strong> The learner does not curate arcs for release. They expose a queryable surface over their full provenance, under the consent schema they control, and federation participants query into it on the terms the learner sets. A specialty federation interested in a learner's validated regression work queries the arc scoped to regression. A different federation interested in the same learner's policy-analysis arc queries that scope. Neither receives anything the learner has not consented to expose. The market determines which arcs have value through the pattern of queries. What turns out not to matter fades from query traffic but is not discarded — because yesterday's trivia is tomorrow's signal, and the architecture cannot know in advance which is which. How societies and markets choose to use this queryable surface will be worked out through debate and experimentation; the architecture's commitment is to preserve the surface, not to dictate its use.</p>
@@ -1133,6 +1146,24 @@ peer_study_group_discussion:
     <p style="font-family:var(--sans); font-size:11px; color:var(--text-dim); font-weight:300; line-height:1.6; margin-top:20px; padding-top:16px; border-top:1px solid var(--border);">The Grove Foundation Inc. is a not-for-profit business league within the meaning of Section 501(c)(6) of the Internal Revenue Code of 1986, as amended.</p>
   </div>
 </footer>
+<script type="module">
+  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+  mermaid.initialize({
+    startOnLoad: true,
+    theme: 'base',
+    themeVariables: {
+      background: '#080808',
+      primaryColor: '#161616',
+      primaryTextColor: '#E8E2D9',
+      primaryBorderColor: '#D4621A',
+      lineColor: '#D4621A',
+      secondaryColor: '#0f0f0f',
+      tertiaryColor: '#080808',
+      fontFamily: 'Fragment Mono, monospace',
+      fontSize: '13px'
+    }
+  });
+</script>
 <script>
 const obs = new IntersectionObserver((entries) => {
   entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
