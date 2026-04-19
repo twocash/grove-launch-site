@@ -95,7 +95,7 @@ strong { color:var(--text); font-weight:500; }
 em { font-style:italic; }
 dfn { font-style:normal; color:var(--text); border-bottom:1px dotted var(--amber-dim); }
 body::before { content:''; position:fixed; inset:0; background-image:linear-gradient(var(--border) 1px, transparent 1px),linear-gradient(90deg, var(--border) 1px, transparent 1px); background-size:40px 40px; opacity:0.15; pointer-events:none; z-index:0; }
-nav { position:fixed; top:0; left:0; right:0; z-index:100; padding:0 48px; height:56px; display:flex; justify-content:space-between; align-items:center; background:rgba(8,8,8,0.94); backdrop-filter:blur(16px); border-bottom:1px solid rgba(37,37,37,0.5); }
+body > nav { position:fixed; top:0; left:0; right:0; z-index:100; padding:0 48px; height:56px; display:flex; justify-content:space-between; align-items:center; background:rgba(8,8,8,0.94); backdrop-filter:blur(16px); border-bottom:1px solid rgba(37,37,37,0.5); }
 .nav-logo { font-family:var(--mono); font-size:11px; letter-spacing:0.2em; text-transform:uppercase; color:var(--amber-dim); text-decoration:none; }
 .nav-links { display:flex; gap:32px; }
 .nav-links a { font-family:var(--mono); font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-dim); text-decoration:none; padding:4px 0; border-bottom:1px solid transparent; transition:all 0.2s; }
