@@ -183,6 +183,18 @@ blockquote.epigraph cite { display:block; font-family:var(--sans); font-style:no
 .guarantee-mechanism { font-size:14px; color:var(--text-mid); font-weight:300; line-height:1.6; }
 .guarantee-mechanism strong { color:var(--text); font-weight:400; }
 .guarantee-mechanism em { color:var(--amber); font-style:italic; }
+/* ── COMPARISON TABLE ── */
+.compare-table { width:100%; border-collapse:collapse; border:1px solid var(--border); margin:32px 0; }
+.compare-table th { font-family:var(--mono); font-size:10px; letter-spacing:0.14em; text-transform:uppercase; background:var(--bg3); padding:14px 16px; text-align:left; border-bottom:1px solid var(--border); font-weight:400; vertical-align:bottom; }
+.compare-table th:first-child { color:var(--amber-dim); }
+.compare-table th.col-platform { color:var(--text-dim); }
+.compare-table th.col-autonomaton { color:var(--amber); }
+.compare-table td { font-size:13px; padding:16px; background:var(--bg2); border-bottom:1px solid var(--border); line-height:1.55; vertical-align:top; font-weight:300; }
+.compare-table td:first-child { font-family:var(--mono); font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:var(--text); width:170px; padding-top:18px; }
+.compare-table td.col-platform { color:var(--text-dim); }
+.compare-table td.col-autonomaton { color:var(--text-mid); }
+.compare-table td em { color:var(--amber); font-style:italic; }
+.compare-table tr:last-child td { border-bottom:none; }
 /* ── NODE CARDS (Section 6) ── */
 .node-block { background:var(--bg2); border:1px solid var(--border); padding:24px 28px; margin-bottom:1px; }
 .node-name { font-family:var(--serif); font-size:20px; color:var(--text); margin-bottom:14px; }
@@ -207,6 +219,8 @@ blockquote.epigraph cite { display:block; font-family:var(--sans); font-style:no
   .node-field strong { display:block; min-width:0; margin-bottom:2px; }
   .code-block { font-size:11px; padding:16px 18px; }
   .guarantee-row { grid-template-columns:1fr; gap:8px; padding:14px 18px; }
+  .compare-table td { font-size:12px; padding:12px; }
+  .compare-table td:first-child { width:auto; font-size:9px; padding-top:12px; }
 }
 </style>
 </head>
@@ -607,6 +621,42 @@ blockquote.epigraph cite { display:block; font-family:var(--sans); font-style:no
     <div class="pullquote">The architecture memorializes authorized human judgment so that human attention can keep rising.</div>
     <p class="body-text">This is not a side benefit of the design. It is the design. Each of the previous sections describes a mechanism; this section describes what the mechanisms are for.</p>
     <h3 class="subhead">9.1 The <em>Inversion</em></h3>
+    <table class="compare-table" aria-label="Structural comparison of cognitive platform and Learner Autonomaton">
+      <thead>
+        <tr>
+          <th scope="col"></th>
+          <th scope="col" class="col-platform">Cognitive platform</th>
+          <th scope="col" class="col-autonomaton">Learner Autonomaton</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>What gets captured</td>
+          <td class="col-platform">Authorized human judgment</td>
+          <td class="col-autonomaton">Authorized human judgment</td>
+        </tr>
+        <tr>
+          <td>Direction of flow</td>
+          <td class="col-platform">Outward, to the vendor</td>
+          <td class="col-autonomaton">Inward, to the learner</td>
+        </tr>
+        <tr>
+          <td>What compounds</td>
+          <td class="col-platform">The vendor's training data</td>
+          <td class="col-autonomaton">The learner's routing config</td>
+        </tr>
+        <tr>
+          <td>Effect on user capability</td>
+          <td class="col-platform"><em>Atrophies</em> with use</td>
+          <td class="col-autonomaton"><em>Elevates</em> with use</td>
+        </tr>
+        <tr>
+          <td>Tradable asset class</td>
+          <td class="col-platform">The vendor's next model</td>
+          <td class="col-autonomaton">The learner's provenance arc</td>
+        </tr>
+      </tbody>
+    </table>
     <p class="body-text">A centralized cognitive platform also records human judgment. Every query, every iteration, every accepted answer is captured, structured, and retained. The platform's business case is built on that capture. Patterns of authorized judgment — what the user classified as correct, what they rejected, what they refined, how they weighted competing framings — are the training data for the platform's next model and the competitive intelligence for its product roadmap. The user is, paradoxically, paying a recurring fee to fund the automation of their own judgment.</p>
     <p class="body-text">The Learner Autonomaton captures the identical artifact. The structural form is the same: authorized patterns, approved classifications, refined routing decisions, validated groundings. What is different is where the capture lands and what it does once captured.</p>
     <p class="body-text">In the centralized architecture, the capture flows outward. It refines the vendor. It trains the vendor's next product. It compounds the vendor's asset. The user's own capability, meanwhile, atrophies — because every time the user's judgment is externalized to the platform, the incentive to internalize it weakens. The platform becomes smarter. The user becomes more dependent.</p>
