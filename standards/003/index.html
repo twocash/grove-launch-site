@@ -35,6 +35,12 @@
   "@type": "TechArticle",
   "headline": "The Learner Autonomaton",
   "alternativeHeadline": "A Lifelong Cognitive Router in a Composable University",
+  "alternateName": ["Learner Autonomaton (pronounced auto-NAH-muh-tawn)", "Learner Autonomaton /ɔːˈtɒnəmətɒn/"],
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": [".display", ".lead", ".pronunciation"],
+    "xpath": ["//span[@class='pronunciation']"]
+  },
   "url": "https://the-grove.ai/standards/003",
   "identifier": "GRV-003",
   "version": "0.8",
@@ -94,6 +100,9 @@ body { background:var(--bg); color:var(--text); font-family:var(--sans); -webkit
 strong { color:var(--text); font-weight:500; }
 em { font-style:italic; }
 dfn { font-style:normal; color:var(--text); border-bottom:1px dotted var(--amber-dim); }
+.pronunciation { font-family:var(--mono); font-size:0.82em; color:var(--text-dim); font-style:normal; letter-spacing:0.02em; white-space:nowrap; }
+.pronunciation::before { content:"("; }
+.pronunciation::after { content:")"; }
 body::before { content:''; position:fixed; inset:0; background-image:linear-gradient(var(--border) 1px, transparent 1px),linear-gradient(90deg, var(--border) 1px, transparent 1px); background-size:40px 40px; opacity:0.15; pointer-events:none; z-index:0; }
 body > nav { position:fixed; top:0; left:0; right:0; z-index:100; padding:0 48px; height:56px; display:flex; justify-content:space-between; align-items:center; background:rgba(8,8,8,0.94); backdrop-filter:blur(16px); border-bottom:1px solid rgba(37,37,37,0.5); }
 .nav-logo { font-family:var(--mono); font-size:11px; letter-spacing:0.2em; text-transform:uppercase; color:var(--amber-dim); text-decoration:none; }
@@ -248,7 +257,7 @@ blockquote.epigraph cite { display:block; font-family:var(--sans); font-style:no
     <h1 class="display">The Learner <em>Autonomaton</em></h1>
     <p class="lead">A Lifelong Cognitive Router in a Composable University</p>
     <div class="divider"></div>
-    <p class="body-text">A <dfn>Learner Autonomaton</dfn> is a structural answer to a structural problem. A small number of centralized providers are converting human cognition into a platform business — and installing that arrangement in universities right now under the banner of &ldquo;AI for education.&rdquo; This specification describes the architecture that refuses the arrangement: a sovereign cognitive router that sits between an individual learner and a heterogeneous landscape of compute, governed by the inviolable five-stage Autonomaton pipeline (GRV-001) and composing with other sovereign nodes — teachers, departments, libraries, advisors, peer cohorts — to constitute a university's cognitive substrate.</p>
+    <p class="body-text">A <dfn>Learner Autonomaton</dfn> <span class="pronunciation" title="IPA: /ɔːˈtɒnəmətɒn/">pronounced auto-NAH-muh-tawn</span> is a structural answer to a structural problem. A small number of centralized providers are converting human cognition into a platform business — and installing that arrangement in universities right now under the banner of &ldquo;AI for education.&rdquo; This specification describes the architecture that refuses the arrangement: a sovereign cognitive router that sits between an individual learner and a heterogeneous landscape of compute, governed by the inviolable five-stage Autonomaton pipeline (GRV-001) and composing with other sovereign nodes — teachers, departments, libraries, advisors, peer cohorts — to constitute a university's cognitive substrate.</p>
     <p class="body-text">The architecture <dfn>memorializes authorized human judgment</dfn> so that human attention can keep rising. A cognitive platform extracts the identical artifact and routes it outward, refining the vendor. The autonomaton pulls it inward, refining the learner. The two architectures do the same thing with the same structural object; the architecture decides who benefits.</p>
     <p class="body-text">Released under Creative Commons Attribution 4.0. The specification responds to the Lumina Foundation's Credentials of Value framework by giving its four claims an architecture rather than a policy, and is grounded in the regional terroir of central Indiana — particularly the 150-year Purdue–Lilly institutional pipeline — that pressure-tested the design before it was generalized to education.</p>
     <div class="epigraph-stack">
@@ -453,16 +462,19 @@ blockquote.epigraph cite { display:block; font-family:var(--sans); font-style:no
     <p class="body-text">Before describing what the Learner Autonomaton adds, this section names what is unchanged. These are the architectural non-negotiables of any Autonomaton, inherited whole from GRV-001. A Learner Autonomaton is one instantiation of the Autonomaton pattern. It is not a new pattern. Variance is permitted in configuration and landscape. <strong>Compliance is required in pipeline, files, zones, and human approval.</strong></p>
     <h3 class="subhead">The five-stage <em>pipeline</em></h3>
     <p class="body-text">Telemetry &rarr; Recognition &rarr; Compilation &rarr; Approval &rarr; Execution. Every cognitive operation traverses all five stages, in order, every time. No bypasses. No parallel paths. No runtime fallback cascades. One operator input equals one pipeline traversal. At any given moment, a pattern resolves to exactly one execution path.</p>
-    <div class="code-caption">Five-stage pipeline &middot; closed loop</div>
-<pre class="mermaid" aria-label="Five-stage Autonomaton pipeline: Telemetry to Recognition to Compilation to Approval to Execution, with a dotted feedback arrow labeled memorialized judgment running from Execution back to Telemetry">
+    <div class="code-caption">Five-stage pipeline &middot; closed loop with config ratchet</div>
+<pre class="mermaid" aria-label="Five-stage Autonomaton pipeline: Telemetry, Recognition, Compilation, Approval, Execution. Stage 4 Approval has a dotted arrow rewriting the routing.config store, which itself feeds forward dotted to Stage 5 Execution, indicating that settled patterns route directly to execution on subsequent invocations. A dotted feedback arrow labeled memorialized judgment runs from Execution back to Telemetry.">
 flowchart LR
   S1["1. Telemetry"] --&gt; S2["2. Recognition"]
   S2 --&gt; S3["3. Compilation"]
   S3 --&gt; S4["4. Approval"]
   S4 --&gt; S5["5. Execution"]
+  S4 -.rewrites.-&gt; CFG[("routing.config")]
+  CFG -.settled patterns route direct.-&gt; S5
   S5 -.memorialized judgment.-&gt; S1
 </pre>
-    <p class="body-text">The feedback arrow is the load-bearing property. Stage 5 execution does not terminate the pipeline — it produces telemetry that re-enters Stage 1, carrying forward the memorialized judgment captured at Stage 4. The loop is closed. The system learns the learner through the learner's own approved history, not through background inference the learner does not see.</p>
+    <p class="body-text">Two properties make the pipeline compound rather than bottleneck. First, Stage 4 approval does two things at once: it authorizes the immediate execution <em>and</em> it rewrites the routing config so that the next invocation of that same pattern no longer requires the same deliberation. The human approval is amortized across every subsequent use of the pattern. Second, Stage 5 execution produces telemetry that re-enters Stage 1, carrying forward the memorialized judgment the learner has rendered — the loop is closed. The system learns the learner through the learner's own approved history, not through background inference the learner does not see.</p>
+    <p class="body-text">This is the same pattern Claude Code, modern shell harnesses, and production agent frameworks already use at enterprise scale. A developer approves a set of tool permissions once; the agent then operates autonomously within those permissions until it encounters a boundary that requires fresh human judgment. The approval is scoped to the pattern, not to the invocation. The boundary is structural, not rate-limited. What makes the Autonomaton pattern different is not the shape of the loop — the shape is already what serious operators converge on — but where the memorialization lands. In the commercial agent case, the approved patterns compound into the vendor's training signal. In the Autonomaton case, they compound into the learner's routing config. Same loop. Opposite direction of capture. The architecture decides who benefits.</p>
     <h3 class="subhead">The three <em>files</em></h3>
     <p class="body-text"><code>routing.config</code> declares what the system knows how to handle and where. <code>zones.schema</code> declares where human approval is required. <code>telemetry.jsonl</code> records everything that ever happened. The sovereign state of the system lives in three inspectable files the learner owns.</p>
     <h3 class="subhead">The zone <em>model</em></h3>
