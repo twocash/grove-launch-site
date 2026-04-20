@@ -257,7 +257,9 @@ blockquote.epigraph cite { display:block; font-family:var(--sans); font-style:no
     <h1 class="display">The Learner <em>Autonomaton</em></h1>
     <p class="lead">A Lifelong Cognitive Router in a Composable University</p>
     <div class="divider"></div>
-    <p class="body-text">A <dfn>Learner Autonomaton</dfn> <span class="pronunciation">pronounced auto-NAHM-uh-tawn &middot; /ɔːˈtɒnəmətɒn/</span> is a structural answer to a structural problem. A small number of centralized providers are converting human cognition into a platform business — and installing that arrangement in universities right now under the banner of &ldquo;AI for education.&rdquo; This specification describes the architecture that refuses the arrangement: a sovereign cognitive router that sits between an individual learner and a heterogeneous landscape of compute, governed by the inviolable five-stage Autonomaton pipeline (GRV-001) and composing with other sovereign nodes — teachers, departments, libraries, advisors, peer cohorts — to constitute a university's cognitive substrate.</p>
+    <p class="body-text">If you've used Claude Code, Cursor, or Cowork, you already know this loop. Approve a pattern once; the system runs autonomously within it until it hits a boundary that needs fresh judgment.</p>
+    <p class="body-text">The architectural difference is where the compounding lands. In those commercial tools, the approved patterns compound into the vendor's training signal and the user's platform dependency. In a Learner Autonomaton, the same loop compounds into the learner's own routing config &mdash; portable, inspectable, theirs.</p>
+    <p class="body-text">A <dfn>Learner Autonomaton</dfn> <span class="pronunciation">pronounced auto-NAHM-uh-tawn &middot; /ɔːˈtɒnəmətɒn/</span> is a sovereign cognitive router that sits between a learner and whatever compute serves a given task. Same proven UX. Flipped beneficiary.</p>
     <p class="body-text">The architecture <dfn>memorializes authorized human judgment</dfn> so that human attention can keep rising. A cognitive platform extracts the identical artifact and routes it outward, refining the vendor. The autonomaton pulls it inward, refining the learner. The two architectures do the same thing with the same structural object; the architecture decides who benefits.</p>
     <p class="body-text">Released under Creative Commons Attribution 4.0. The specification responds to the Lumina Foundation's Credentials of Value framework by giving its four claims an architecture rather than a policy, and is grounded in the regional terroir of central Indiana — particularly the 150-year Purdue–Lilly institutional pipeline — that pressure-tested the design before it was generalized to education.</p>
     <div class="epigraph-stack">
@@ -333,6 +335,14 @@ blockquote.epigraph cite { display:block; font-family:var(--sans); font-style:no
         <dd>The compliance-heavy regional industries — pharma, banking, insurance, agtech — whose constraints shaped the architecture before it was generalized to education. &sect;17.</dd>
       </dl>
     </div>
+  </div>
+</section>
+<section class="section">
+  <div class="section-inner">
+    <div class="eyebrow">How it moves</div>
+    <h2 class="headline">The loop you already know &mdash; <em>flipped</em></h2>
+    <p class="body-text">The loop will feel familiar. September: a sophomore meets regression assumptions for the first time. Her router sends the pattern to the Purdue applied-statistics department's node. Department-grounded answer, cited and logged. December: after three challenge-verified events, Kaizen &mdash; the system's continuous-improvement loop &mdash; proposes demoting the pattern to her own dock. She approves. The pattern now resolves locally at filesystem latency. No cloud call. No vendor. No cost. Provenance preserved back to the department.</p>
+    <p class="body-text">The routing table evolved across fifteen weeks of her approved decisions &mdash; the same loop Claude Code, Cursor, and Cowork already use. The difference is where the compounding lands: in her config, not a vendor's training data.</p>
   </div>
 </section>
 <!-- ═══════════════════════════════════════
@@ -498,7 +508,6 @@ flowchart LR
   S5 -.memorialized judgment.-&gt; S1
 </pre>
     <p class="body-text">Two properties make the pipeline compound rather than bottleneck. First, Stage 4 approval does two things at once: it authorizes the immediate execution <em>and</em> it rewrites the routing config so that the next invocation of that same pattern no longer requires the same deliberation. The human approval is amortized across every subsequent use of the pattern. Second, Stage 5 execution produces telemetry that re-enters Stage 1, carrying forward the memorialized judgment the learner has rendered — the loop is closed. The system learns the learner through the learner's own approved history, not through background inference the learner does not see.</p>
-    <p class="body-text">This is the same pattern Claude Code, modern shell harnesses, and production agent frameworks already use at enterprise scale. A developer approves a set of tool permissions once; the agent then operates autonomously within those permissions until it encounters a boundary that requires fresh human judgment. The approval is scoped to the pattern, not to the invocation. The boundary is structural, not rate-limited. What makes the Autonomaton pattern different is not the shape of the loop — the shape is already what serious operators converge on — but where the memorialization lands. In the commercial agent case, the approved patterns compound into the vendor's training signal. In the Autonomaton case, they compound into the learner's routing config. Same loop. Opposite direction of capture. The architecture decides who benefits.</p>
     <h3 class="subhead">The three <em>files</em></h3>
     <p class="body-text"><code>routing.config</code> declares what the system knows how to handle and where. <code>zones.schema</code> declares where human approval is required. <code>telemetry.jsonl</code> records everything that ever happened. The sovereign state of the system lives in three inspectable files the learner owns.</p>
     <h3 class="subhead">The zone <em>model</em></h3>
