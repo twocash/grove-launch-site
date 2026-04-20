@@ -221,7 +221,7 @@ footer a:hover { color:var(--amber-bright); }
   <a href="/" class="nav-logo">The Grove Foundation</a>
   <div class="nav-links">
     <a href="/ratchet">Ratchet Test</a>
-    <a href="/papers">CIO Alerts</a>
+    <a href="/alerts">CIO Alerts<span class="nav-new-bug" aria-hidden="true"></span></a>
     <a href="/observations">Observations</a>
     <a href="/lambda">Standings</a>
     <a href="/standards">Open Standards</a>
@@ -245,7 +245,7 @@ footer a:hover { color:var(--amber-bright); }
     <p class="body-text">In software, architecture determines whether governance is a guarantee or a promise. The Grove Foundation publishes the <a href="/standards" style="color:var(--amber-bright); text-decoration:none; border-bottom:1px solid var(--amber-dim);">open standards</a> that make governance a <em>guarantee</em> &mdash; standards that put <em>you</em> in control of AI.</p>
 
     <div style="width:48px; height:1px; background:var(--amber); margin:32px 0;"></div>
-    <p class="hero-meta">CC BY 4.0 &middot; <a href="/papers/telemetry-trap" style="color:var(--amber-dim); text-decoration:none; border-bottom:1px solid var(--amber-dim);">Your telemetry is the product &rarr;</a></p>
+    <p class="hero-meta">CC BY 4.0 &middot; <a href="/alerts/telemetry-trap" style="color:var(--amber-dim); text-decoration:none; border-bottom:1px solid var(--amber-dim);">Your telemetry is the product &rarr;</a></p>
   </div>
   <div class="scroll-cue" style="cursor:pointer;" onclick="this.parentElement.nextElementSibling.scrollIntoView({behavior:'smooth'})"><span>Scroll</span><svg width="16" height="10" viewBox="0 0 16 10" fill="none"><path d="M1 1L8 8L15 1" stroke="#8B3D10" stroke-width="1.5"/></svg></div>
 </section>
@@ -263,7 +263,7 @@ footer a:hover { color:var(--amber-bright); }
 
     <p class="body-text">Centralized architectures are bad computer science (not to mention easy military targets). They create single points of failure, massive latency, and un-auditable outputs. It is beyond time for the marketplace of ideas to enter the chat.</p>
 
-    <p class="body-text" style="font-size:15px;"><a href="/papers/architectural-gap" style="color:var(--amber); text-decoration:none; border-bottom:1px solid var(--amber-dim);">Read the full thesis: The Architectural Gap &rarr;</a></p>
+    <p class="body-text" style="font-size:15px;"><a href="/alerts/architectural-gap" style="color:var(--amber); text-decoration:none; border-bottom:1px solid var(--amber-dim);">Read the full thesis: The Architectural Gap &rarr;</a></p>
   </div>
 </section>
 <!-- ═══════════════════════════════════════════════════
@@ -282,7 +282,7 @@ footer a:hover { color:var(--amber-bright); }
 
     <p class="body-text">In a distributed, sovereign model, your proprietary context never leaves the premises. Your queries build your own intellectual property, not a vendor&rsquo;s roadmap. The system gets smarter, but a human sets the thresholds and permanently holds the <em>circuit breaker.</em></p>
 
-    <p class="body-text" style="font-size:15px;"><a href="/papers/telemetry-trap" style="color:var(--amber); text-decoration:none; border-bottom:1px solid var(--amber-dim);">CIO Alert: The Telemetry Trap &rarr;</a></p>
+    <p class="body-text" style="font-size:15px;"><a href="/alerts/telemetry-trap" style="color:var(--amber); text-decoration:none; border-bottom:1px solid var(--amber-dim);">CIO Alert: The Telemetry Trap &rarr;</a></p>
   </div>
 </section>
 <!-- ═══════════════════════════════════════════════════
@@ -364,11 +364,11 @@ footer a:hover { color:var(--amber-bright); }
   <div class="section-inner">
     <div class="explore-label">Go deeper</div>
     <div class="explore-grid">
-      <a class="explore-card" href="/papers/architectural-gap">
+      <a class="explore-card" href="/alerts/architectural-gap">
         <h3>The Architectural Gap</h3>
         <p>Why AI policy can't trump architectural reality. The full technical thesis.</p>
       </a>
-      <a class="explore-card" href="/papers/telemetry-trap">
+      <a class="explore-card" href="/alerts/telemetry-trap">
         <h3>The Telemetry Trap</h3>
         <p>What CIOs need to know about AI vendor lock-in &mdash; now.</p>
       </a>
@@ -408,7 +408,7 @@ footer a:hover { color:var(--amber-bright); }
     </div>
     <div style="display:flex; gap:24px; margin-top:20px; flex-wrap:wrap;">
       <a href="/ratchet" style="font-family:var(--mono); font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-dim); text-decoration:none;">Ratchet Test</a>
-      <a href="/papers" style="font-family:var(--mono); font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-dim); text-decoration:none;">CIO Alerts</a>
+      <a href="/alerts" style="font-family:var(--mono); font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-dim); text-decoration:none;">CIO Alerts</a>
       <a href="/observations" style="font-family:var(--mono); font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-dim); text-decoration:none;">Observations</a>
       <a href="/lambda" style="font-family:var(--mono); font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-dim); text-decoration:none;">Standings</a>
       <a href="/standards" style="font-family:var(--mono); font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-dim); text-decoration:none;">Open Standards</a>
@@ -445,5 +445,8 @@ if(scrollCue){window.addEventListener('scroll',function(){if(window.scrollY>100)
 })();
 </script>
 <script defer src="/_vercel/insights/script.js"></script>
+<!-- cio-alert-01: NEW bug, self-expires 2026-04-27 -->
+<style>.nav-new-bug{display:inline-block;width:6px;height:6px;border-radius:50%;background:#F07030;margin-left:6px;vertical-align:top;margin-top:2px;animation:nav-new-pulse 2.4s ease-in-out infinite;}@keyframes nav-new-pulse{0%,100%{opacity:1;}50%{opacity:0.35;}}</style>
+<script>(function(){var e=new Date('2026-04-27T00:00:00Z').getTime();if(Date.now()>=e){document.querySelectorAll('.nav-new-bug').forEach(function(n){n.style.display='none';});}})();</script>
 </body>
 </html>

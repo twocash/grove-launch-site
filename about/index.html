@@ -83,7 +83,7 @@ nav { position:fixed; top:0; left:0; right:0; z-index:100; padding:0 48px; heigh
   <a href="/" class="nav-logo">The Grove Foundation</a>
   <div class="nav-links">
     <a href="/ratchet">Ratchet Test</a>
-    <a href="/papers">CIO Alerts</a>
+    <a href="/alerts">CIO Alerts<span class="nav-new-bug" aria-hidden="true"></span></a>
     <a href="/observations">Observations</a>
     <a href="/lambda">Standings</a>
     <a href="/standards">Open Standards</a>
@@ -202,7 +202,7 @@ nav { position:fixed; top:0; left:0; right:0; z-index:100; padding:0 48px; heigh
 
     <div class="footer-nav">
       <a href="/ratchet">Ratchet Test</a>
-      <a href="/papers">CIO Alerts</a>
+      <a href="/alerts">CIO Alerts</a>
       <a href="/observations">Observations</a>
       <a href="/lambda">Standings</a>
       <a href="/standards">Open Standards</a>
@@ -239,5 +239,8 @@ nav { position:fixed; top:0; left:0; right:0; z-index:100; padding:0 48px; heigh
 </script>
 
 <script defer src="/_vercel/insights/script.js"></script>
+<!-- cio-alert-01: NEW bug, self-expires 2026-04-27 -->
+<style>.nav-new-bug{display:inline-block;width:6px;height:6px;border-radius:50%;background:#F07030;margin-left:6px;vertical-align:top;margin-top:2px;animation:nav-new-pulse 2.4s ease-in-out infinite;}@keyframes nav-new-pulse{0%,100%{opacity:1;}50%{opacity:0.35;}}</style>
+<script>(function(){var e=new Date('2026-04-27T00:00:00Z').getTime();if(Date.now()>=e){document.querySelectorAll('.nav-new-bug').forEach(function(n){n.style.display='none';});}})();</script>
 </body>
 </html>

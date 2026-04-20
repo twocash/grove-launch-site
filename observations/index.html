@@ -199,7 +199,7 @@ input[type="range"]::-webkit-slider-thumb { -webkit-appearance:none; width:16px;
   <a href="/" class="nav-logo">The Grove Foundation</a>
   <div class="nav-links">
     <a href="/ratchet">Ratchet Test</a>
-    <a href="/papers">CIO Alerts</a>
+    <a href="/alerts">CIO Alerts<span class="nav-new-bug" aria-hidden="true"></span></a>
     <a href="/observations" class="active">Observations</a>
     <a href="/lambda">Standings</a>
     <a href="/standards">Open Standards</a>
@@ -232,7 +232,7 @@ input[type="range"]::-webkit-slider-thumb { -webkit-appearance:none; width:16px;
     <p class="body-text">In February 2026, <a href="https://openai.com/index/retiring-gpt-4o-and-older-models/" target="_blank" rel="noopener" style="color:var(--amber); text-decoration:none; border-bottom:1px solid var(--amber-dim);">OpenAI retired GPT-4o, GPT-4.1, GPT-4.1 mini, and o4-mini in the same window</a> &mdash; giving developers roughly three months to migrate production systems. The <a href="https://developers.openai.com/api/docs/deprecations" target="_blank" rel="noopener" style="color:var(--amber); text-decoration:none; border-bottom:1px solid var(--amber-dim);">Assistants API</a>, which entire product architectures were built on, was deprecated with an August 2026 shutdown.</p>
     <p class="body-text">This wasn&rsquo;t a version upgrade. <strong>It was a forced rebuild.</strong> Every organization building on a centralized API is at the mercy of a landlord who can renovate the building while you&rsquo;re living in it.</p>
     <div class="insight-box">
-      <p>You can&rsquo;t regulate a black box, and you can&rsquo;t build a permanent enterprise strategy on an API that gets deprecated with 90 days&rsquo; notice. <a href="/papers/architectural-gap" style="color:var(--amber); text-decoration:none; border-bottom:1px solid var(--amber-dim);">Read the full thesis &rarr;</a></p>
+      <p>You can&rsquo;t regulate a black box, and you can&rsquo;t build a permanent enterprise strategy on an API that gets deprecated with 90 days&rsquo; notice. <a href="/alerts/architectural-gap" style="color:var(--amber); text-decoration:none; border-bottom:1px solid var(--amber-dim);">Read the full thesis &rarr;</a></p>
     </div>
   </div>
 </section>
@@ -426,7 +426,7 @@ input[type="range"]::-webkit-slider-thumb { -webkit-appearance:none; width:16px;
     </div>
     <div style="display:flex; gap:24px; margin-top:20px; flex-wrap:wrap;">
       <a href="/ratchet" style="font-family:var(--mono); font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-dim); text-decoration:none;">Ratchet Test</a>
-      <a href="/papers" style="font-family:var(--mono); font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-dim); text-decoration:none;">CIO Alerts</a>
+      <a href="/alerts" style="font-family:var(--mono); font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-dim); text-decoration:none;">CIO Alerts</a>
       <a href="/observations" style="font-family:var(--mono); font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-dim); text-decoration:none;">Observations</a>
       <a href="/lambda" style="font-family:var(--mono); font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-dim); text-decoration:none;">Standings</a>
       <a href="/standards" style="font-family:var(--mono); font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-dim); text-decoration:none;">Open Standards</a>
@@ -608,5 +608,8 @@ sizeCapture(); drawCapture();
 window.addEventListener('resize',function(){sizeSphere();drawSpheres();sizeCapture();drawCapture();});
 </script>
 <script defer src="/_vercel/insights/script.js"></script>
+<!-- cio-alert-01: NEW bug, self-expires 2026-04-27 -->
+<style>.nav-new-bug{display:inline-block;width:6px;height:6px;border-radius:50%;background:#F07030;margin-left:6px;vertical-align:top;margin-top:2px;animation:nav-new-pulse 2.4s ease-in-out infinite;}@keyframes nav-new-pulse{0%,100%{opacity:1;}50%{opacity:0.35;}}</style>
+<script>(function(){var e=new Date('2026-04-27T00:00:00Z').getTime();if(Date.now()>=e){document.querySelectorAll('.nav-new-bug').forEach(function(n){n.style.display='none';});}})();</script>
 </body>
 </html>
