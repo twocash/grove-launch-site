@@ -4,7 +4,7 @@
 
 **Posting target:** Operator (Jim Calhoun) posts manually, 0–2 hours after deploy.
 
-**Link target:** `https://the-grove.ai/alerts/open-weights-wont-be-enough`
+**Link target:** `https://the-grove.ai/alerts/sovereignty-is-all-you-need`
 
 ---
 
@@ -22,7 +22,7 @@ The WSJ piece missed a $30–40 billion stranded venture opportunity: the revers
 
 Open weights are necessary. Sovereignty primitives are what make them sufficient.
 
-Full response: https://the-grove.ai/alerts/open-weights-wont-be-enough
+Full response: https://the-grove.ai/alerts/sovereignty-is-all-you-need
 
 — Jim
 

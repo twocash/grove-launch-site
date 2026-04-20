@@ -14,6 +14,16 @@
       "source": "/papers/:path*",
       "destination": "/alerts/:path*",
       "permanent": true
+    },
+    {
+      "source": "/alerts/open-weights-wont-be-enough",
+      "destination": "/alerts/sovereignty-is-all-you-need",
+      "permanent": true
+    },
+    {
+      "source": "/alerts/open-weights-wont-be-enough/:path*",
+      "destination": "/alerts/sovereignty-is-all-you-need/:path*",
+      "permanent": true
     }
   ],
   "rewrites": [
