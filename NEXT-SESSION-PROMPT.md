@@ -1,10 +1,35 @@
 # Grove Launch Site — Session Continuation
 
+## Most recent session (2026-04-20) — CIO Alert 01 shipped on branch `cio-alert-01`
+
+Sprint `cio-alert-01` executed per `sprints/cio-alert-01/SPEC.md` + `CONTRACT.md` + `EXECUTION_PROMPT.md`. Work lives on branch `cio-alert-01` in worktree `../grove-cio-alert`; not yet merged to master.
+
+**Commits on the branch** (newest first): see `git log cio-alert-01` for the run; each commit is scoped to one logical change.
+
+**What shipped:**
+- `/papers/` renamed to `/alerts/` (directory rename preserving git history). Existing three alerts (001 architectural-gap, 002 ai-deployment-pattern-benchmark, 003 telemetry-trap) now live under `/alerts/`. Their internal content (head blocks, bodies, footers) was NOT modified per sprint directive — stale `/papers/...` references inside those three alerts are covered by the 301 redirect rule added to `vercel.json`. Queue a follow-up sprint to normalize their internal links, canonical URLs, and footer.
+- New inaugural Alert 004: `/alerts/open-weights-wont-be-enough/` — full response op-ed to Ramaswamy and Perault (WSJ, April 17, 2026), with AI-first rich markup (JSON-LD Article with `isBasedOn` chain to GRV-003/GRV-001/Telemetry Trap, Dublin Core, citation meta, Open Graph, Twitter Card, `speakable` spec, `<dfn>` semantic markup on canonical terms, seven anchored references into GRV-003 fragments).
+- OG image placeholder at `/alerts/open-weights-wont-be-enough/og.png` (1200×630, Grove-themed, generated via Pillow). Jim can replace with final artwork if desired.
+- Featured-alert module injected on root `/index.html` between hero and "The Global Reality" section; self-expires 2026-04-27 via inline JS.
+- NEW-bug treatment (amber pulsing dot, 6px) on the CIO ALERTS nav link across all 14 nav-bearing pages; self-expires 2026-04-27.
+- `vercel.json` gained `redirects` block: `/papers/:path*` → `/alerts/:path*` (permanent 301).
+- LinkedIn companion draft at `sprints/cio-alert-01/linkedin-companion.md` — 240 words, seed-corn frame, operator to post manually 0–2 hours after deploy.
+- Notion thread-keeper `348780a78eef81d69ad7edfc38635e6e` updated: Phase 3 → COMPLETE, Phase 4 → READY.
+
+**Operator action items (in order):**
+1. Visually review the local render in the worktree `../grove-cio-alert`. Confirm hero, featured-alert strip, nav NEW bug, Alert page, OG image, Evidence Ledger subordinate treatment.
+2. Merge `cio-alert-01` → `master` when satisfied.
+3. Deploy: `npx vercel --prod --yes` from `C:\GitHub\grove-launch-site`.
+4. Post LinkedIn companion from `sprints/cio-alert-01/linkedin-companion.md`.
+5. 24 hours post-publication, contingent on signal: send the pre-drafted Phase 4 Jai DM from Notion page `348780a78eef81d69ad7edfc38635e6e`.
+
 ## Open threads carried forward
 
-- **Trellis fast-follow piece** — pending NotebookLM steered read + Clement brief. Sequencing is: steered read through NotebookLM first, then the brief to Clement; piece drafts off both.
+- **Stale `/papers` references in existing alerts' internal content** — covered by 301 redirect but should be normalized in a follow-up sprint. Files: `alerts/architectural-gap/index.html` (body back-link + footer + head-block canonical), `alerts/ai-deployment-pattern-benchmark/index.html` (inline citation + footer + canonical), `alerts/telemetry-trap/index.html` (footer + canonical).
+- **SESSION-STATE.md refresh** — file is stale (snapshot from 2026-04-07). A refresh pass would benefit the next session opener. Kept out of scope for `cio-alert-01` per Rule 3.
+- **Trellis fast-follow piece** — pending NotebookLM steered read + Clement brief. Sequencing: steered read through NotebookLM first, then the brief to Clement; piece drafts off both.
 - **GRV-003 v1.0 naive-URL QA results** — pending. Live at `the-grove.ai/standards/003`. Awaiting results of a naive-URL pass (fresh browser, no context, click/scroll/read the whole thing) to surface anything the architectural edits missed.
-- **NEXT-SESSION-PROMPT.md hygiene** — body section still references v0.8 / unresolved continuation items that are now shipped at v1.0. Cleanup pass needed: rewrite the most-recent-session block to reflect v1.0 ship state and clear resolved items from the outstanding list.
+- **NEXT-SESSION-PROMPT.md hygiene** — body section below still references v0.8 / unresolved continuation items that are now shipped at v1.2. Cleanup pass needed: rewrite the prior "most recent session" block to reflect v1.2 ship state and clear resolved items from the outstanding list.
 - **v1.1 canonical artifact drift (pronunciation respelling)** — HTML + v1.1 .md carry the corrected `auto-NAHM-uh-tawn` respelling and the inline-IPA pronunciation treatment. `grv-003-v1.1-learner-autonomaton.docx` and `.pdf` were NOT regenerated for this fix and still carry `auto-NAH-muh-tawn`. Reconcile at the next full Google-Docs export round (or any other trigger that regenerates the canonical artifacts).
 
 ---

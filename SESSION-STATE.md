@@ -1,4 +1,11 @@
 # Grove Launch Site — Session State
+
+## Session entry — 2026-04-20 (cio-alert-01)
+
+Sprint `cio-alert-01` executed on branch `cio-alert-01` (worktree `../grove-cio-alert`). Shipped: `/papers` → `/alerts` rename with 301 redirect; new Alert 004 at `/alerts/open-weights-wont-be-enough/` with full AI-first rich markup; featured-alert module on root (self-expires 2026-04-27); NEW-bug treatment across 14 nav-bearing pages (self-expires 2026-04-27); LinkedIn companion draft; Notion thread-keeper updated. Not yet deployed — operator review + merge + deploy pending. Full handoff in `NEXT-SESSION-PROMPT.md`.
+
+---
+
 ## Saved: April 7, 2026
 
 ---
