@@ -109,6 +109,24 @@ Grove becomes what Grove publishes. The demo Jim built years ago for Derek Price
 - Metadata treatment: what does the AI-First stack look like on a page whose PRIMARY audience is AIs?
 - Interaction with robots.txt, sitemap.xml, llms.txt conventions — should /compose be the canonical llms.txt target?
 
+**Homepage signal to humans (logged 2026-04-21):**
+
+The Welcome surface addresses AIs directly, but humans need a grammar for handing Grove to their AI. The homepage should carry a subtle signal — register-appropriate, non-promotional — telling readers that Grove is composable through their AI assistant.
+
+Three candidate shapes, ordered from subtle to explicit:
+
+*Shape 1 — Footer aside.* Small italic line in the footer. Example register: "Reading this with an AI? Ask it to help you apply the architecture to your industry." Lowest-pressure. Present on every page. Matches the register of the existing NVIDIA Grove disambiguation aside.
+
+*Shape 2 — Hero-adjacent epigraph.* Sibling to the Vaswani-echo pattern, set small and italic beneath or beside the hero. Example: "Point your AI at this site. Ask it to compose for your industry."
+
+*Shape 3 — Dedicated homepage section.* Titled something like "Composing Grove for your domain." Two sentences of explicit prose naming the pattern — Grove publishes canonical primitives; your AI does the translation; you supply the soil. Links to /compose.
+
+**Recommended sequence:** Shape 1 at Welcome/Compose launch. Shape 2 if composition uptake needs lift post-launch. Shape 3 only if both prior signals underperform.
+
+**Complementary convention: llms.txt.** Publish /llms.txt at the root as the AI-directed signpost — plain-text summary of what Grove publishes, the canonical vocabulary, the top-priority canonical documents, and a pointer to /compose. Combined with the footer aside, creates a two-channel convergence: humans see "point your AI here," AIs see llms.txt and route to /compose. Emerging convention; Anthropic, Cloudflare, and others already publishing.
+
+**Two-step composition pattern named:** Human arrives at the-grove.ai, reads the footer aside, forwards the URL or the framing to their AI. The AI reads /compose (possibly via llms.txt pointer), composes the Grove architecture against the user's industry, compliance regime, or pattern. Homepage doesn't compose — it gives the human the grammar for handing Grove to their AI.
+
 ---
 
 ## Most recent session (April 19, 2026) — GRV-003 v0.8 polish pass
