@@ -1,12 +1,12 @@
 {
   "pattern": "The Autonomaton Pattern",
   "identifier": "GRV-001",
-  "version": "1.1",
+  "version": "1.2",
   "license": "CC BY 4.0",
   "publisher": "The Grove Foundation",
   "canonical_url": "https://the-grove.ai/standards/001",
   "date_published": "2026-03-01",
-  "date_modified": "2026-04-20",
+  "date_modified": "2026-04-21",
   "tagline": "Toward Self-Authoring Software Systems",
   "summary": "Three files and a loop. A routing config, a zones schema, a structured telemetry log, and a pipeline that traverses them in order. That is the entire architecture. Everything else is implication.",
 
@@ -162,6 +162,7 @@
   ],
 
   "version_history": [
+    {"version": "1.2", "date": "2026-04-21", "changes": "Adds canonical Grove Terms of Art (Cognitive platforming, Judgment extraction, Lien on thinking, Cultivation architecture) to Section VIII as the base-pattern citation home for downstream standards. Recalibrates closing positioning to the capital-asymmetry investment thesis and swaps the CIO Stake card firewall framing for substrate-ownership language. Refreshes Lineage section to tense-neutral architectural history; adds Atkinson to design-authorship credit on HyperCard / self-authoring-software grounds."},
     {"version": "1.1", "date": "2026-04-20", "changes": "Adds Composability as fifth Autonomaton invariant. No other body-prose changes; full AI-First Publication Standard conformance landed in same release."},
     {"version": "1.0", "date": "2026-03-01", "changes": "Initial publication. Four invariants: Declarative Sovereignty, Capability Agnosticism, Provenance as Infrastructure, Human-AI Symbiosis."}
   ],
