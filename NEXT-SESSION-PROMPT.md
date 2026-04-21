@@ -1,6 +1,52 @@
 # Grove Launch Site — Session Continuation
 
-## Most recent session (2026-04-20) — CIO Alert 01 shipped on branch `cio-alert-01`
+## Most recent session (2026-04-20) — Hospitable Graph Sprint 1 SHIPPED on branch `hg01-foundation`
+
+Sprint `hospitable-graph-01-foundation` executed per `sprints/hospitable-graph-01-foundation/SPEC.md` + `CONTRACT.md` + `EXECUTION_PROMPT.md`. Work lives on branch `hg01-foundation` in worktree `../grove-hg01-foundation`; not yet merged to master.
+
+**What shipped:**
+
+- **GRV-001 v1.1** at `standards/001/index.html` — full AI-First Publication Standard conformance: Dublin Core + citation + Open Graph + Twitter Card meta stacks; JSON-LD TechArticle with 6-entry `isBasedOn` lineage chain (Kephart/Chess, B.C. Smith, Ohno, Alexander, Cunningham/Beck, Gamma et al.), 5-entry `citation[]`, 9-entry `mentions[]`, 9-entry `hasPart` covering every section, `speakable` specification; FAQPage JSON-LD with 5 cruxes.
+- **Composability as the fifth Autonomaton invariant** — Gate-1-ratified text, verbatim — shipped in §IV at anchor `#composability`. Load-bearing for Sprint 2's interlock-closure work. Principle card structure mirrors I–IV exactly.
+- **22 stable semantic anchor IDs** on every major section and key subsection, including the three optional §VIII subsection IDs (`#governance-by-architecture`, `#auditability-byproduct`, `#sovereign-computing`) shipped at executor's discretion.
+- **21 `<dfn>` tags** on canonical-term first mentions (hero Autonomaton + self-authoring engine, lineage card titles, principle card titles, zone labels, five-stage invariant pipeline, Cognitive Router, Skill Flywheel, DEX, Zone Model, ratchet, three-act architecture).
+- **Pronunciation span** on first "Autonomaton" in hero (IPA + respelling, inline per GRV-003 precedent).
+- `rel="external"` on the Creative Commons footer link.
+- **`/standards/GRV-001.json`** — JSON manifest exposing the pattern as structured data. 5 invariants (with test fields), 5 pipeline stages, 3 zones, 4 tiers, three-act architecture, six-parent lineage array, version history. Linked from the HTML page via `<link rel="alternate">` and from the footer download bar.
+- **`/standards/001/og.png`** — 1200×630 Grove-themed placeholder (Pillow-generated). Operator may replace with final artwork post-ship.
+- **Hero meta and footer download bar** bump from v1.0 · March 2026 to v1.1 · April 20, 2026. Specific-day convention: GRV-001 v1.1 ships the same day the White House invokes DPA §303 to underwrite the centralized hyperscale architecture's energy buildout.
+- **Gate-2 vocabulary ratifications — all 12 entries** committed to `docs/grove-canonical-vocabulary.md`. Three new coinages (three-act architecture, DEX, self-authoring engine); seven new architectural-canon entries (Composability, Skill Flywheel, Tier landscape, Declarative Sovereignty, Capability Agnosticism, Provenance as Infrastructure, Human-AI Symbiosis); one Grove-adjacent entry (Telemetry-Driven Development); five pipeline stage sub-entries folded into the existing five-stage pipeline entry. Composability entry revised per operator correction to restore the full *Variance of substrate, of domain, of scale* phrase and add the explicit `cultivation-architecture` cross-reference.
+- **Authoring docs committed to version control alongside the sprint:** `docs/grove-canonical-vocabulary.md`, `docs/ai-first-publication-standard.md`, `docs/content-audits/grove-content-audit-2026-04-20.md`, `docs/epics/hospitable-graph-epic.md`, and the `sprints/hospitable-graph-01-foundation/` SPEC + CONTRACT + EXECUTION_PROMPT. These were previously untracked working-copy files in the main repo; committing them to the branch makes Sprint 2/3 references resolvable in git history.
+
+**Gate 1 (Composability text):** Ratified by operator at planning session; re-confirmed at execution-session open. Ships verbatim.
+
+**Gate 2 (vocabulary):** Operator approved entries 1–6, 8–12 as-drafted. Entry 7 (Composability) revised per operator correction: (a) full three-dimension *Variance of substrate, of domain, of scale* phrase restored; (b) explicit `cultivation-architecture` Markdown link added inline. All 12 entries written.
+
+**What's queued for Sprint 2** (per audit § Sprint 2 — Graph): five pages brought to AI-First Publication Standard conformance — GRV-002, GRV-003 (lifted to Alert #04 baseline: `isBasedOn`, `mentions[]`, `article:*` taxonomy, `og:image`), Telemetry Trap, Architectural Gap, AI Deployment Pattern Benchmark. Deep-linking pass closes the composability interlock: every prose mention of *compose*, *composition*, *federate*, *interface* wraps in an anchor link to `standards/001#composability`, `standards/002#composition-primitives`, or `standards/003#composition-interfaces`. Legacy `/papers/` link repair across three papers. Alert #04's stale `/papers/telemetry-trap` `isBasedOn` URL repair. JSON manifests for GRV-002 and GRV-003. Λ landscape published as structured data. Second round of vocabulary ratification (Sprint-2-sourced terms).
+
+**Flagged-followup items:**
+
+- **Principle card V (Composability) word balance.** Card V description is ~170 words; cards I–IV are ~50–70 words. The visual weight is heavier. Gate-1 text is locked and ships verbatim; the imbalance is a direct consequence of the invariant's explanatory depth, not a transcription error. Operator may iterate the card text post-ship if the on-page rhythm reads off against the existing four. Not a ship blocker.
+- **OG image** (`standards/001/og.png`) is a Pillow placeholder. Operator may replace with brand-polished artwork; OG meta URL stays at the same path.
+- **Pronunciation span** uses the same inline-IPA format as Alert #04's post-fix state (no `title` attribute fallback).
+- **`<cite>` wraps: zero applied** per Gate-1 sweep approval. The `<cite>` CSS rule shipped for future use; no external work titles appear by name in GRV-001 body prose.
+- **`cio-alert-01` NEW-bug script at end of GRV-001 body** preserved as-is per CONTRACT §1 (self-expires 2026-04-27). Not Sprint 1's concern.
+- **Prior "hg01-foundation PLANNING (scaffolding only)" block** that lived at the top of NEXT-SESSION-PROMPT.md in the main repo working tree is superseded by this SHIPPED block. If the main repo has an untracked planning-state version of NEXT-SESSION-PROMPT.md at merge time, merge will overwrite with this committed sprint-close version.
+
+**Commit hash:** see `git log hg01-foundation -1 --oneline` for the sprint tip.
+
+**Operator action items (in order):**
+
+1. Visually review local render. Load `C:\GitHub\grove-hg01-foundation\standards\001\index.html` in a browser. Confirm: hero renders with pronunciation span; principle card V (Composability) renders identically to I–IV; OG image loads; footer shows v1.1 · April 20, 2026; all 22 anchor IDs resolve when appended as URL fragments.
+2. Validate JSON-LD at https://validator.schema.org/ (paste the two LD blocks separately). Report any errors.
+3. Merge `hg01-foundation` → `master` when satisfied.
+4. Deploy: `npx vercel --prod --yes` from `C:\GitHub\grove-launch-site`.
+
+**Sprint 2 does not begin until this sprint's anchor IDs — especially `#composability` — are live in production.**
+
+---
+
+## Previous session (2026-04-20) — CIO Alert 01 shipped on branch `cio-alert-01`
 
 Sprint `cio-alert-01` executed per `sprints/cio-alert-01/SPEC.md` + `CONTRACT.md` + `EXECUTION_PROMPT.md`. Work lives on branch `cio-alert-01` in worktree `../grove-cio-alert`; not yet merged to master.
 

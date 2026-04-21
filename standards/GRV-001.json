@@ -1,0 +1,175 @@
+{
+  "pattern": "The Autonomaton Pattern",
+  "identifier": "GRV-001",
+  "version": "1.1",
+  "license": "CC BY 4.0",
+  "publisher": "The Grove Foundation",
+  "canonical_url": "https://the-grove.ai/standards/001",
+  "date_published": "2026-03-01",
+  "date_modified": "2026-04-20",
+  "tagline": "Toward Self-Authoring Software Systems",
+  "summary": "Three files and a loop. A routing config, a zones schema, a structured telemetry log, and a pipeline that traverses them in order. That is the entire architecture. Everything else is implication.",
+
+  "invariants": [
+    {
+      "id": "declarative-sovereignty",
+      "number": "I",
+      "title": "Declarative Sovereignty",
+      "description": "Domain expertise belongs in configuration, not code. Every behavior rule is externalized in files a non-technical domain expert can read, edit, and version. Change the config, the behavior changes. Audit the config, the behavior is explained. No separate \"explainability layer\" required.",
+      "test": "Can a domain expert alter system behavior by editing a YAML file, without a deploy?"
+    },
+    {
+      "id": "capability-agnosticism",
+      "number": "II",
+      "title": "Capability Agnosticism",
+      "description": "The architecture never assumes specific model capabilities. Today's frontier model is tomorrow's local script. The Cognitive Router dispatches to tiers, not to specific models. Swap providers without rewriting governance. Architecture should make modest capability sufficient.",
+      "test": "If the model hallucinates, does the architecture contain it without breaking?"
+    },
+    {
+      "id": "provenance-as-infrastructure",
+      "number": "III",
+      "title": "Provenance as Infrastructure",
+      "description": "A fact without a root is a weed. Attribution chains are mandatory — the system tracks who collapsed the superposition and when. Every decision, every classification, every skill promotion carries a complete audit trail. Governance and auditability fall out of the architecture for free.",
+      "test": "Can you trace any system action to the config rule and telemetry entry that produced it?"
+    },
+    {
+      "id": "human-ai-symbiosis",
+      "number": "IV",
+      "title": "Human-AI Symbiosis",
+      "description": "AI generates possibilities. Humans apply judgment. The system requires human-in-the-loop for all transitions that cross zone boundaries. Sovereignty is structural: the system earns autonomy through demonstrated reliability and can never unilaterally grant itself new authority.",
+      "test": "Does the system ever act beyond explicitly granted authority, regardless of model capability?"
+    },
+    {
+      "id": "composability",
+      "number": "V",
+      "title": "Composability",
+      "description": "Sovereign Autonomaton nodes compose through declarative interfaces rather than adapter code. The interfaces are structural — pipeline shape, telemetry format, zone semantics — not technological; an Autonomaton cultivated in YAML files, in a Notion database, in a Python service, or in text files and a shell script all compose identically, because they share architecture rather than code. This is cultivation architecture at work: the structural commitments create conditions for composition; the composition itself emerges when the commitments hold. Variance of substrate, of domain, of scale is the property the architecture relies on — the rich topology of a federated Autonomaton network is what grows from correct cultivation, not what gets engineered on top of it.",
+      "test": "Can two independently developed Autonomatons — cultivated in different substrates, at different scales, by operators who have never met — compose into a working system by sharing only the pipeline shape, the telemetry format, and the zone semantics?",
+      "introduced_in_version": "1.1"
+    }
+  ],
+
+  "pipeline": [
+    {
+      "stage": 1,
+      "id": "telemetry",
+      "name": "Telemetry",
+      "description": "Capture interaction data. Structured, inspectable, owned by the operator. Every interaction produces a trace — this is the system's primary output."
+    },
+    {
+      "stage": 2,
+      "id": "recognition",
+      "name": "Recognition",
+      "description": "Classify intent, assess confidence, determine risk. The Cognitive Router dispatches to the cheapest tier capable of handling the request."
+    },
+    {
+      "stage": 3,
+      "id": "compilation",
+      "name": "Compilation",
+      "description": "Assemble context from local knowledge, historical patterns, domain expertise, and operator configuration. Build the response."
+    },
+    {
+      "stage": 4,
+      "id": "approval",
+      "name": "Approval",
+      "description": "Zone-governed human checkpoint. Green = autonomous. Yellow = supervised. Red = human-only. The system never acts beyond its granted authority.",
+      "gate": true
+    },
+    {
+      "stage": 5,
+      "id": "execution",
+      "name": "Execution",
+      "description": "Action fires. Output becomes telemetry for the next cycle. Audit trail generated as byproduct, not afterthought."
+    }
+  ],
+
+  "zones": [
+    {
+      "id": "green",
+      "name": "Green Zone",
+      "semantics": "autonomous",
+      "description": "Routine operations the system handles without human intervention. These are actions the system has earned the right to perform through repeated confirmation — known patterns, low risk, high confidence. The operator defines the boundary."
+    },
+    {
+      "id": "yellow",
+      "name": "Yellow Zone",
+      "semantics": "supervised",
+      "description": "The system proposes, the human approves. Novel patterns, moderate risk, or insufficient confidence. The system presents its recommendation with full context. The human decides. Every approval or rejection trains the next cycle."
+    },
+    {
+      "id": "red",
+      "name": "Red Zone",
+      "semantics": "human-only",
+      "description": "The system does not act. It may provide context, but the decision and execution belong entirely to the human. High-stakes, irreversible, or ethically sensitive operations. The system cannot promote itself out of the Red Zone."
+    }
+  ],
+
+  "tiers": [
+    {
+      "id": "T0",
+      "ordinal": 0,
+      "name": "Deterministic",
+      "description": "Hardcoded rules, regex matches, keyword lookups. Zero inference cost.",
+      "cost": "$0"
+    },
+    {
+      "id": "T1",
+      "ordinal": 1,
+      "name": "Local Model",
+      "description": "On-device inference. Private, fast, no network dependency.",
+      "cost": "~$0"
+    },
+    {
+      "id": "T2",
+      "ordinal": 2,
+      "name": "Cloud (Fast)",
+      "description": "Lightweight cloud models. Quick classification and routine generation.",
+      "cost": "Low"
+    },
+    {
+      "id": "T3",
+      "ordinal": 3,
+      "name": "Cloud (Frontier)",
+      "description": "Frontier models for novel, complex, or high-stakes requests.",
+      "cost": "High"
+    }
+  ],
+
+  "ratchet": {
+    "description": "The Skill Flywheel migrates confirmed patterns toward cheaper, faster, more private execution tiers. The ratchet only turns in one direction: T3 → T2 → T1 → T0 — unless the operator explicitly resets it.",
+    "flywheel_steps": [
+      {"step": 1, "name": "Observe", "description": "Telemetry captures interaction patterns. The system watches what the operator actually does."},
+      {"step": 2, "name": "Detect", "description": "Recognition identifies recurring patterns that cross a confidence threshold."},
+      {"step": 3, "name": "Propose", "description": "Compilation generates a skill specification — a declarative rule the operator can read and approve."},
+      {"step": 4, "name": "Approve", "description": "Human reviews, edits, or rejects the proposed skill. Nothing enters the system without consent."},
+      {"step": 5, "name": "Execute", "description": "Confirmed skill handles future matches autonomously. Usage data refines the pattern or deprecates it."}
+    ]
+  },
+
+  "three_act_architecture": [
+    {"act": 1, "name": "The Autonomaton", "metaphor": "The transistor", "description": "A single node — one person, one cognitive engine, one knowledge store — that authors its own improvement through the invariant pipeline. This document."},
+    {"act": 2, "name": "The Trellis", "metaphor": "The integrated circuit", "description": "A domain-scale knowledge architecture that organizes what individual Autonomaton nodes produce — making expertise navigable, refinable, and composable across an organization or discipline."},
+    {"act": 3, "name": "The Knowledge Commons", "metaphor": "The network", "description": "A distributed economy where Autonomaton nodes share refined knowledge with provenance, attribution, and market pricing intact. Not a database. A protocol for sovereign expertise exchange."}
+  ],
+
+  "lineage": [
+    {"year": "2003", "name": "Autonomic Computing", "work": "The Vision of Autonomic Computing", "authors": ["Jeffrey O. Kephart", "David M. Chess"], "publisher": "IEEE Computer Society"},
+    {"year": "1982", "name": "Computational Reflection", "work": "Reflection and Semantics in a Procedural Language", "authors": ["Brian Cantwell Smith"], "publisher": "MIT"},
+    {"year": "1988", "name": "Toyota Production System / Jidoka", "work": "Toyota Production System: Beyond Large-Scale Production", "authors": ["Taiichi Ohno"], "publisher": "Productivity Press"},
+    {"year": "1977", "name": "A Pattern Language", "work": "A Pattern Language: Towns, Buildings, Construction", "authors": ["Christopher Alexander", "Sara Ishikawa", "Murray Silverstein"], "publisher": "Oxford University Press"},
+    {"year": "1987", "name": "Pattern Languages in Software", "work": "Using Pattern Languages for Object-Oriented Programs", "authors": ["Ward Cunningham", "Kent Beck"], "publisher": "OOPSLA"},
+    {"year": "1994", "name": "Design Patterns Catalog", "work": "Design Patterns: Elements of Reusable Object-Oriented Software", "authors": ["Erich Gamma", "Richard Helm", "Ralph Johnson", "John Vlissides"], "publisher": "Addison-Wesley"}
+  ],
+
+  "version_history": [
+    {"version": "1.1", "date": "2026-04-20", "changes": "Adds Composability as fifth Autonomaton invariant. No other body-prose changes; full AI-First Publication Standard conformance landed in same release."},
+    {"version": "1.0", "date": "2026-03-01", "changes": "Initial publication. Four invariants: Declarative Sovereignty, Capability Agnosticism, Provenance as Infrastructure, Human-AI Symbiosis."}
+  ],
+
+  "schema_context": "This manifest is the standard's machine-readable form, published alongside the HTML narrative at the same canonical URL root. It is the form in which the standard would be ingested by an Autonomaton implementation that needed to verify conformance. The HTML at /standards/001 is the reader-facing view; this JSON is the implementer-facing view. They are the same standard.",
+
+  "related_standards": {
+    "grv_002": "https://the-grove.ai/standards/002",
+    "grv_003": "https://the-grove.ai/standards/003"
+  }
+}

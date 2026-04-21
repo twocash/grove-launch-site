@@ -4,7 +4,258 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>The Autonomaton Pattern — The Grove Foundation</title>
-<meta name="description" content="Toward Self-Authoring Software Systems. An open architectural standard for AI governance published under CC BY 4.0 by the Grove Foundation.">
+<meta name="description" content="Toward Self-Authoring Software Systems. An open architectural standard for AI governance published under CC BY 4.0 by the Grove Foundation. GRV-001 v1.1 adds Composability as the fifth Autonomaton invariant.">
+<meta name="author" content="Jim Calhoun">
+<link rel="canonical" href="https://the-grove.ai/standards/001">
+
+<!-- ── Open Graph ── -->
+<meta property="og:title" content="The Autonomaton Pattern">
+<meta property="og:description" content="Toward Self-Authoring Software Systems. An open architectural standard for AI governance. GRV-001 v1.1 adds Composability as the fifth Autonomaton invariant. Published under CC BY 4.0.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://the-grove.ai/standards/001">
+<meta property="og:site_name" content="The Grove Foundation">
+<meta property="og:image" content="https://the-grove.ai/standards/001/og.png">
+<meta property="article:published_time" content="2026-03-01">
+<meta property="article:modified_time" content="2026-04-20">
+<meta property="article:author" content="Jim Calhoun">
+<meta property="article:section" content="Open Standard">
+<meta property="article:tag" content="AI governance">
+<meta property="article:tag" content="Autonomaton Pattern">
+<meta property="article:tag" content="open standard">
+<meta property="article:tag" content="cognitive architecture">
+
+<!-- ── Twitter Card ── -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The Autonomaton Pattern — GRV-001">
+<meta name="twitter:description" content="Toward Self-Authoring Software Systems. Open architectural standard for AI governance, CC BY 4.0.">
+<meta name="twitter:image" content="https://the-grove.ai/standards/001/og.png">
+
+<!-- ── Dublin Core ── -->
+<meta name="DC.title" content="The Autonomaton Pattern: Toward Self-Authoring Software Systems">
+<meta name="DC.creator" content="Jim Calhoun">
+<meta name="DC.publisher" content="The Grove Foundation">
+<meta name="DC.date" content="2026-04-20">
+<meta name="DC.type" content="Text">
+<meta name="DC.format" content="text/html">
+<meta name="DC.identifier" content="https://the-grove.ai/standards/001">
+<meta name="DC.rights" content="CC BY 4.0">
+<meta name="DC.subject" content="AI governance, Autonomaton, cognitive architecture, five-stage pipeline, zone model, Cognitive Router, Skill Flywheel, Declarative Sovereignty, Capability Agnosticism, Provenance as Infrastructure, Human-AI Symbiosis, Composability, self-authoring software, Declarative Exploration, open standard">
+<meta name="DC.relation" content="https://the-grove.ai/standards/002">
+<meta name="DC.relation" content="https://the-grove.ai/standards/003">
+
+<!-- ── Citation metadata ── -->
+<meta name="citation_title" content="The Autonomaton Pattern: Toward Self-Authoring Software Systems">
+<meta name="citation_author" content="Jim Calhoun">
+<meta name="citation_publication_date" content="2026-03-01">
+<meta name="citation_publisher" content="The Grove Foundation">
+<meta name="citation_fulltext_html_url" content="https://the-grove.ai/standards/001">
+
+<!-- ══════════════════════════════════════════════════════════════════
+     JSON-LD — TechArticle
+     isBasedOn chains GRV-001 to its six architectural lineage parents
+     (Kephart/Chess 2003 · Smith 1982 · Ohno 1988 · Alexander 1977 ·
+     Cunningham/Beck 1987 · Gamma et al. 1994). Any AI ingesting this
+     page picks up the canonical parent graph automatically.
+══════════════════════════════════════════════════════════════════ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "The Autonomaton Pattern",
+  "alternativeHeadline": "Toward Self-Authoring Software Systems",
+  "url": "https://the-grove.ai/standards/001",
+  "identifier": "GRV-001",
+  "version": "1.1",
+  "datePublished": "2026-03-01",
+  "dateModified": "2026-04-20",
+  "inLanguage": "en",
+  "articleSection": "Open Standard",
+  "author": {
+    "@type": "Person",
+    "name": "Jim Calhoun",
+    "affiliation": {"@type": "Organization", "name": "The Grove Foundation", "url": "https://the-grove.ai"},
+    "email": "jim@the-grove.ai"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "The Grove Foundation",
+    "url": "https://the-grove.ai",
+    "address": {"@type": "PostalAddress", "addressLocality": "Indianapolis", "addressRegion": "IN", "addressCountry": "US"}
+  },
+  "license": "https://creativecommons.org/licenses/by/4.0/",
+  "isPartOf": {"@type": "PublicationSeries", "name": "Grove Open Standards", "url": "https://the-grove.ai/standards"},
+  "isBasedOn": [
+    {
+      "@type": "ScholarlyArticle",
+      "name": "The Vision of Autonomic Computing",
+      "author": [
+        {"@type": "Person", "name": "Jeffrey O. Kephart"},
+        {"@type": "Person", "name": "David M. Chess"}
+      ],
+      "datePublished": "2003-01",
+      "publisher": {"@type": "Organization", "name": "IEEE Computer Society"}
+    },
+    {
+      "@type": "ScholarlyArticle",
+      "name": "Reflection and Semantics in a Procedural Language",
+      "author": {"@type": "Person", "name": "Brian Cantwell Smith"},
+      "datePublished": "1982",
+      "publisher": {"@type": "Organization", "name": "Massachusetts Institute of Technology"},
+      "identifier": "MIT-LCS-TR-272"
+    },
+    {
+      "@type": "Book",
+      "name": "Toyota Production System: Beyond Large-Scale Production",
+      "author": {"@type": "Person", "name": "Taiichi Ohno"},
+      "datePublished": "1988",
+      "publisher": {"@type": "Organization", "name": "Productivity Press"}
+    },
+    {
+      "@type": "Book",
+      "name": "A Pattern Language: Towns, Buildings, Construction",
+      "author": [
+        {"@type": "Person", "name": "Christopher Alexander"},
+        {"@type": "Person", "name": "Sara Ishikawa"},
+        {"@type": "Person", "name": "Murray Silverstein"}
+      ],
+      "datePublished": "1977",
+      "publisher": {"@type": "Organization", "name": "Oxford University Press"}
+    },
+    {
+      "@type": "ScholarlyArticle",
+      "name": "Using Pattern Languages for Object-Oriented Programs",
+      "author": [
+        {"@type": "Person", "name": "Ward Cunningham"},
+        {"@type": "Person", "name": "Kent Beck"}
+      ],
+      "datePublished": "1987",
+      "publisher": {"@type": "Organization", "name": "OOPSLA"}
+    },
+    {
+      "@type": "Book",
+      "name": "Design Patterns: Elements of Reusable Object-Oriented Software",
+      "author": [
+        {"@type": "Person", "name": "Erich Gamma"},
+        {"@type": "Person", "name": "Richard Helm"},
+        {"@type": "Person", "name": "Ralph Johnson"},
+        {"@type": "Person", "name": "John Vlissides"}
+      ],
+      "datePublished": "1994",
+      "publisher": {"@type": "Organization", "name": "Addison-Wesley"}
+    }
+  ],
+  "citation": [
+    {"@type": "ScholarlyArticle", "name": "The Vision of Autonomic Computing", "author": [{"@type": "Person", "name": "Jeffrey O. Kephart"}, {"@type": "Person", "name": "David M. Chess"}], "datePublished": "2003-01"},
+    {"@type": "ScholarlyArticle", "name": "Reflection and Semantics in a Procedural Language", "author": {"@type": "Person", "name": "Brian Cantwell Smith"}, "datePublished": "1982"},
+    {"@type": "Book", "name": "Toyota Production System: Beyond Large-Scale Production", "author": {"@type": "Person", "name": "Taiichi Ohno"}, "datePublished": "1988"},
+    {"@type": "Book", "name": "A Pattern Language: Towns, Buildings, Construction", "author": {"@type": "Person", "name": "Christopher Alexander"}, "datePublished": "1977"},
+    {"@type": "Book", "name": "Design Patterns: Elements of Reusable Object-Oriented Software", "author": [{"@type": "Person", "name": "Erich Gamma"}, {"@type": "Person", "name": "Richard Helm"}, {"@type": "Person", "name": "Ralph Johnson"}, {"@type": "Person", "name": "John Vlissides"}], "datePublished": "1994"}
+  ],
+  "mentions": [
+    {"@type": "Organization", "name": "IBM", "url": "https://www.ibm.com/"},
+    {"@type": "Organization", "name": "Toyota Motor Corporation", "url": "https://global.toyota/"},
+    {"@type": "Person", "name": "Christopher Alexander"},
+    {"@type": "Person", "name": "Brian Cantwell Smith"},
+    {"@type": "Person", "name": "Randy Wigginton"},
+    {"@type": "Person", "name": "Susan Kare"},
+    {"@type": "Person", "name": "Clement Mok"},
+    {"@type": "Organization", "name": "Apple Inc.", "url": "https://www.apple.com/"},
+    {"@type": "Organization", "name": "Anthropic", "url": "https://www.anthropic.com/"}
+  ],
+  "about": [
+    "AI governance",
+    "Autonomaton Pattern",
+    "cognitive architecture",
+    "Declarative Exploration (DEX)",
+    "five-stage pipeline",
+    "zone model",
+    "Cognitive Router",
+    "Skill Flywheel",
+    "Composability",
+    "Declarative Sovereignty",
+    "Capability Agnosticism",
+    "Provenance as Infrastructure",
+    "Human-AI Symbiosis",
+    "sovereign computing",
+    "self-authoring software",
+    "three-act architecture",
+    "open standard"
+  ],
+  "keywords": "Autonomaton, AI governance, cognitive architecture, DEX, five-stage pipeline, zone model, Cognitive Router, Skill Flywheel, Ratchet, Composability, Declarative Sovereignty, Capability Agnosticism, Provenance as Infrastructure, Human-AI Symbiosis, Digital Jidoka, Autonomic Computing, Computational Reflection, Telemetry-Driven Development, three-act architecture, self-authoring engine, Grove Foundation, open standard, CC BY 4.0",
+  "hasPart": [
+    {"@type": "WebPageElement", "name": "I. The Problem", "url": "https://the-grove.ai/standards/001#problem", "description": "The dominant reactive paradigm for AI-assisted software has no memory, no governance, and no mechanism for improvement. The consequences are structural: no learning, no governance, no sovereignty."},
+    {"@type": "WebPageElement", "name": "I. Architectural Governance", "url": "https://the-grove.ai/standards/001#governance", "description": "The Autonomaton as self-authoring engine converts metered cloud dependencies into permanent, zero-marginal-cost institutional assets that get smarter, cheaper, and more private with use. Operational resilience plus the economic ratchet."},
+    {"@type": "WebPageElement", "name": "II. The Lineage", "url": "https://the-grove.ai/standards/001#lineage", "description": "Synthesis of Autonomic Computing (IBM/Kephart-Chess), Computational Reflection (Smith), Digital Jidoka (Toyota/Ohno), and Telemetry-Driven Development. The PC-revolution insight: coherent products express coherent worldviews."},
+    {"@type": "WebPageElement", "name": "III. The Pattern", "url": "https://the-grove.ai/standards/001#pattern", "description": "Every Autonomaton instance traverses the same five stages: Telemetry, Recognition, Compilation, Approval, Execution. The pipeline is invariant. The Cognitive Router dispatches to the cheapest tier capable. Tier landscape T0 through T3 orders cost and capability."},
+    {"@type": "WebPageElement", "name": "IV. The Principles", "url": "https://the-grove.ai/standards/001#principles", "description": "The five Autonomaton invariants: Declarative Sovereignty, Capability Agnosticism, Provenance as Infrastructure, Human-AI Symbiosis, and Composability. Each carries a conformance test. v1.1 adds Composability as the fifth invariant."},
+    {"@type": "WebPageElement", "name": "V. The Zone Model", "url": "https://the-grove.ai/standards/001#zone-model", "description": "Green, Yellow, Red zones enforce authority boundaries at Stage 4 Approval. The system never acts beyond its granted authority. Zone boundaries are declarative, not hardcoded — same architecture, domain-specific governance."},
+    {"@type": "WebPageElement", "name": "VI. The Flywheel", "url": "https://the-grove.ai/standards/001#flywheel", "description": "The Skill Flywheel (Observe, Detect, Propose, Approve, Execute) is a ratchet that turns interaction data into reusable skills and migrates them toward cheaper execution tiers through confirmed use. The ratchet only turns toward cheaper, faster, more private."},
+    {"@type": "WebPageElement", "name": "VII. Reference Schemas", "url": "https://the-grove.ai/standards/001#reference-schemas", "description": "Illustrative JSON schemas for Telemetry Entry, Intent Classification, Skill Specification, and Routing Configuration. Enough structure to build; enough constraint to audit."},
+    {"@type": "WebPageElement", "name": "VIII. The Implications", "url": "https://the-grove.ai/standards/001#implications", "description": "Governance by Architecture, Auditability as Byproduct, Sovereign Computing, and the three-act architecture: Autonomaton (transistor), Trellis (integrated circuit), Knowledge Commons (network). Same architectural DNA at every scale."}
+  ],
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": [".lead", ".pullquote", ".eyebrow", ".display"]
+  }
+}
+</script>
+
+<!-- ══════════════════════════════════════════════════════════════════
+     JSON-LD — FAQPage
+     Five cruxes the Autonomaton Pattern answers. Each acceptedAnswer
+     keys to existing GRV-001 body prose; no new claims invented.
+══════════════════════════════════════════════════════════════════ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Why is policy insufficient for AI governance?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Policy documents describe what systems should do. Architecture determines what systems can do. The Autonomaton makes governance structural: the Zone Model enforces authority boundaries at Stage 4 Approval, the five-stage pipeline enforces sequencing, and declarative configuration makes every governance decision inspectable. You do not need a compliance team to audit an Autonomaton — you read the config."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What does \"three files and a loop\" actually mean?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A routing configuration (zone boundaries and tier preferences), a zones schema (operation classifications), and a structured telemetry log (interaction history) — these are the three files. The five-stage pipeline (Telemetry, Recognition, Compilation, Approval, Execution) traverses them every cycle. That is the entire architecture. Everything else — auditability, composability, portability, the Skill Flywheel — is implication of this constraint."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How is this different from existing agent frameworks?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Agent frameworks orchestrate model calls; the Autonomaton governs them. The pipeline is invariant — nothing runs alongside it, no sub-pipelines, no bypasses. The Zone Model is the consent boundary: Green is autonomous, Yellow is supervised, Red is human-only. The Skill Flywheel ratchets confirmed patterns toward cheaper execution tiers over time. No existing agent framework specifies all three as structural invariants."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What does it mean to own memorialized judgment?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The behavioral intelligence the system accumulates — your patterns, your preferences, your decision-making cadence — lives at the operator endpoint, not in vendor infrastructure. Telemetry is structured and inspectable. Configuration is YAML a non-technical operator can read. Confirmed skills are exportable and portable. Delete a skill and the behavior stops. This is what sovereign computing means in practice."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is this compatible with enterprise compliance?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Auditability is a byproduct of the pipeline. Every action traces back to a telemetry entry, a classification decision, a skill specification, a zone boundary, and an approval record. The Red Zone is enforced structurally — the system cannot promote itself out of it. Compliance teams audit the configuration instead of interrogating the system at runtime. Governance becomes inspectable by design."
+      }
+    }
+  ]
+}
+</script>
+
+<link rel="alternate" type="application/json" href="/standards/GRV-001.json" title="GRV-001 as structured data manifest">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fragment+Mono:ital@0;1&family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -26,6 +277,11 @@
 html { scroll-behavior:smooth; }
 body { background:var(--bg); color:var(--text); font-family:var(--sans); -webkit-font-smoothing:antialiased; overflow-x:hidden; line-height:1.6; }
 strong { color:var(--text); font-weight:500; }
+dfn { font-style:normal; color:var(--text); border-bottom:1px dotted var(--amber-dim); }
+cite { font-style:italic; color:var(--text); }
+.pronunciation { font-family:var(--mono); font-size:0.82em; color:var(--text-dim); font-style:normal; letter-spacing:0.02em; white-space:nowrap; }
+.pronunciation::before { content:"("; }
+.pronunciation::after { content:")"; }
 body::before { content:''; position:fixed; inset:0; background-image:linear-gradient(var(--border) 1px, transparent 1px),linear-gradient(90deg, var(--border) 1px, transparent 1px); background-size:40px 40px; opacity:0.15; pointer-events:none; z-index:0; }
 nav { position:fixed; top:0; left:0; right:0; z-index:100; padding:0 48px; height:56px; display:flex; justify-content:space-between; align-items:center; background:rgba(8,8,8,0.94); backdrop-filter:blur(16px); border-bottom:1px solid rgba(37,37,37,0.5); }
 .nav-logo { font-family:var(--mono); font-size:11px; letter-spacing:0.2em; text-transform:uppercase; color:var(--amber-dim); text-decoration:none; }
@@ -151,16 +407,16 @@ nav { position:fixed; top:0; left:0; right:0; z-index:100; padding:0 48px; heigh
     <h1 class="display">The Autonomaton <em>Pattern</em></h1>
     <p class="lead">Toward Self-Authoring Software Systems</p>
     <div class="divider"></div>
-    <p class="body-text">The Autonomaton is a <strong>self-authoring engine</strong>: it converts metered cloud dependencies into permanent, <strong>zero-marginal-cost institutional assets</strong> that get smarter, cheaper, and more private with every human interaction.</p>
+    <p class="body-text">The <dfn>Autonomaton</dfn> <span class="pronunciation" title="IPA: /ɔːˈtɒnəmətɒn/">pronounced auto-NAHM-uh-tawn · /ɔːˈtɒnəmətɒn/</span> is a <dfn><strong>self-authoring engine</strong></dfn>: it converts metered cloud dependencies into permanent, <strong>zero-marginal-cost institutional assets</strong> that get smarter, cheaper, and more private with every human interaction.</p>
     <p class="body-text">Three files and a loop. A routing config, a zones schema, a structured telemetry log, and a pipeline that traverses them in order. That is the entire architecture. Everything else is implication.</p>
-    <p class="hero-meta">Jim Calhoun &middot; The Grove Foundation &middot; v1.0 &middot; March 2026</p>
+    <p class="hero-meta">Jim Calhoun &middot; The Grove Foundation &middot; v1.1 &middot; April 20, 2026</p>
   </div>
 </section>
 
 <!-- ═══════════════════════════════════════
      I. THE PROBLEM
 ══════════════════════════════════════════ -->
-<section class="section" style="background:var(--bg2); border-top:1px solid var(--border); border-bottom:1px solid var(--border);">
+<section class="section" id="problem" style="background:var(--bg2); border-top:1px solid var(--border); border-bottom:1px solid var(--border);">
   <div class="section-inner reveal">
     <div class="section-num">I</div>
     <h2 class="headline">The <em>Problem</em></h2>
@@ -176,7 +432,7 @@ nav { position:fixed; top:0; left:0; right:0; z-index:100; padding:0 48px; heigh
 </section>
 
 <!-- ── ARCHITECTURAL GOVERNANCE ── -->
-<section class="section" style="border-top:1px solid var(--border);">
+<section class="section" id="governance" style="border-top:1px solid var(--border);">
   <div class="section-wide reveal">
     <div style="max-width:760px; margin:0 auto; padding-bottom:40px;">
       <div class="eyebrow">Architectural Governance</div>
@@ -187,9 +443,9 @@ nav { position:fixed; top:0; left:0; right:0; z-index:100; padding:0 48px; heigh
       <!-- LEFT COLUMN -->
       <div>
         <div style="font-family:var(--mono); font-size:10px; letter-spacing:0.2em; text-transform:uppercase; color:var(--amber); margin-bottom:12px;">Operational Resilience</div>
-        <p style="font-size:16px; line-height:1.65; color:var(--text-mid); font-weight:300;">A model-agnostic, <strong style="color:var(--text);">five-stage invariant pipeline</strong> that decouples business logic from the LLM provider.</p>
+        <p style="font-size:16px; line-height:1.65; color:var(--text-mid); font-weight:300;">A model-agnostic, <dfn><strong style="color:var(--text);">five-stage invariant pipeline</strong></dfn> that decouples business logic from the LLM provider.</p>
         <div style="margin-top:16px; background:var(--bg2); border:1px solid var(--border); border-left:2px solid var(--green); padding:20px 24px;">
-          <div style="font-family:var(--mono); font-size:10px; letter-spacing:0.15em; text-transform:uppercase; color:var(--green); margin-bottom:8px;">The Skill Flywheel</div>
+          <div style="font-family:var(--mono); font-size:10px; letter-spacing:0.15em; text-transform:uppercase; color:var(--green); margin-bottom:8px;"><dfn>The Skill Flywheel</dfn></div>
           <p style="font-size:13px; color:var(--text-mid); line-height:1.6;">Observation &rarr; Human Approval &rarr; Local YAML Asset. As the system &ldquo;learns&rdquo; your team&rsquo;s judgment patterns, it authors its own deterministic code.</p>
         </div>
       </div>
@@ -198,7 +454,7 @@ nav { position:fixed; top:0; left:0; right:0; z-index:100; padding:0 48px; heigh
         <div style="font-family:var(--mono); font-size:10px; letter-spacing:0.2em; text-transform:uppercase; color:var(--amber); margin-bottom:12px;">The Economic Ratchet</div>
         <div style="background:var(--bg2); border:1px solid var(--border); padding:20px 24px; margin-bottom:16px;">
           <div style="font-family:var(--serif); font-size:15px; color:var(--text); margin-bottom:6px;">TCO Optimization: T3 &rarr; T0</div>
-          <p style="font-size:13px; color:var(--text-mid); line-height:1.6;">The <strong style="color:var(--text);">Cognitive Router</strong> demotes expensive frontier calls (T3) to local, deterministic rules (T0) as patterns confirm. <strong style="color:var(--text);">Your ROI compounds as your API costs collapse.</strong></p>
+          <p style="font-size:13px; color:var(--text-mid); line-height:1.6;">The <dfn><strong style="color:var(--text);">Cognitive Router</strong></dfn> demotes expensive frontier calls (T3) to local, deterministic rules (T0) as patterns confirm. <strong style="color:var(--text);">Your ROI compounds as your API costs collapse.</strong></p>
         </div>
         <div style="background:var(--bg2); border:1px solid var(--border); padding:20px 24px;">
           <div style="font-family:var(--serif); font-size:15px; color:var(--text); margin-bottom:6px;">Config Over Code</div>
@@ -216,7 +472,7 @@ nav { position:fixed; top:0; left:0; right:0; z-index:100; padding:0 48px; heigh
 <!-- ═══════════════════════════════════════
      II. THE LINEAGE
 ══════════════════════════════════════════ -->
-<section class="section">
+<section class="section" id="lineage">
   <div class="section-inner reveal">
     <div class="section-num">II</div>
     <h2 class="headline">The <em>Lineage</em></h2>
@@ -227,22 +483,22 @@ nav { position:fixed; top:0; left:0; right:0; z-index:100; padding:0 48px; heigh
     <div class="lineage-grid">
       <div class="lineage-card">
         <div class="lineage-year">IBM, 2001</div>
-        <div class="lineage-name">Autonomic Computing</div>
+        <div class="lineage-name"><dfn>Autonomic Computing</dfn></div>
         <div class="lineage-desc">Self-managing systems that configure, heal, optimize, and protect themselves. The Autonomaton extends this to the cognitive layer&mdash;systems that govern their own AI decision-making.</div>
       </div>
       <div class="lineage-card">
         <div class="lineage-year">CS Theory, 1982+</div>
-        <div class="lineage-name">Computational Reflection</div>
+        <div class="lineage-name"><dfn>Computational Reflection</dfn></div>
         <div class="lineage-desc">Systems that inspect and alter their own execution. The Skill Flywheel is a reflective mechanism: the system observes its own behavior, proposes optimizations, and rewrites its routing table.</div>
       </div>
       <div class="lineage-card">
         <div class="lineage-year">Toyota, 1960s</div>
-        <div class="lineage-name">Digital Jidoka</div>
+        <div class="lineage-name"><dfn>Digital Jidoka</dfn></div>
         <div class="lineage-desc">Machines detect abnormalities and stop the line. Humans diagnose and approve the fix. The Zone Model is Jidoka applied to AI: the system detects risk, escalates appropriately, and never acts beyond its authority.</div>
       </div>
       <div class="lineage-card">
         <div class="lineage-year">Industry Practice, 2010s</div>
-        <div class="lineage-name">Telemetry-Driven Development</div>
+        <div class="lineage-name"><dfn>Telemetry-Driven Development</dfn></div>
         <div class="lineage-desc">User behavior IS the feature request. The Autonomaton&rsquo;s feed-first telemetry makes interaction data the primary input to the improvement cycle, not an afterthought.</div>
       </div>
     </div>
@@ -252,14 +508,14 @@ nav { position:fixed; top:0; left:0; right:0; z-index:100; padding:0 48px; heigh
 <!-- ═══════════════════════════════════════
      III. THE PATTERN
 ══════════════════════════════════════════ -->
-<section class="section" style="background:var(--bg2); border-top:1px solid var(--border); border-bottom:1px solid var(--border);">
+<section class="section" id="pattern" style="background:var(--bg2); border-top:1px solid var(--border); border-bottom:1px solid var(--border);">
   <div class="section-inner reveal">
     <div class="section-num">III</div>
     <h2 class="headline">The <em>Pattern</em></h2>
     <p class="body-text">Every Autonomaton instance traverses the same five stages, regardless of domain, model, or provider. The pipeline is not a suggestion. It is an invariant. Nothing runs alongside it. No sub-pipelines. No bypasses. No exceptions.</p>
     <p class="body-text">This constraint is the source of every property that matters: auditability, composability, portability, and the structural guarantee that every action can be traced to a governance decision a human can read.</p>
   </div>
-  <div class="section-wide reveal">
+  <div class="section-wide reveal" id="pipeline">
     <div class="pipeline">
       <div class="pipe-stage"><div class="pipe-num">01</div><div class="pipe-name">Telemetry</div><div class="pipe-desc">Capture interaction data. Structured, inspectable, owned by the operator. Every interaction produces a trace&mdash;this is the system&rsquo;s primary output.</div></div>
       <div class="pipe-stage"><div class="pipe-num">02</div><div class="pipe-name">Recognition</div><div class="pipe-desc">Classify intent, assess confidence, determine risk. The Cognitive Router dispatches to the cheapest tier capable of handling the request.</div></div>
@@ -268,11 +524,11 @@ nav { position:fixed; top:0; left:0; right:0; z-index:100; padding:0 48px; heigh
       <div class="pipe-stage"><div class="pipe-num">05</div><div class="pipe-name">Execution</div><div class="pipe-desc">Action fires. Output becomes telemetry for the next cycle. Audit trail generated as byproduct, not afterthought.</div></div>
     </div>
   </div>
-  <div class="section-inner reveal">
+  <div class="section-inner reveal" id="cognitive-router">
     <h3 class="subhead">The Cognitive <em>Router</em></h3>
     <p class="body-text">At Stage 02, the Cognitive Router classifies each request and dispatches it to the cheapest tier capable of handling it. This is the mechanism that makes the system structurally cheaper over time&mdash;as patterns are confirmed, they migrate downward through the tiers. The LLM is the brain. Keywords are the bootstrap cache. Confirmed patterns become deterministic rules.</p>
   </div>
-  <div class="section-wide reveal">
+  <div class="section-wide reveal" id="tiers">
     <div class="tier-grid">
       <div class="tier-card">
         <div class="tier-num">T0</div>
@@ -306,44 +562,52 @@ nav { position:fixed; top:0; left:0; right:0; z-index:100; padding:0 48px; heigh
 <!-- ═══════════════════════════════════════
      IV. THE PRINCIPLES
 ══════════════════════════════════════════ -->
-<section class="section">
+<section class="section" id="principles">
   <div class="section-inner reveal">
     <div class="section-num">IV</div>
     <h2 class="headline">The <em>Principles</em></h2>
-    <p class="body-text">The Autonomaton Pattern implements the DEX (Declarative Exploration) standard&mdash;a set of architectural principles that separate exploration logic from execution capability. These are not guidelines. They are structural constraints. A system that violates them may work, but it is not an Autonomaton.</p>
+    <p class="body-text">The Autonomaton Pattern implements the <dfn>DEX (Declarative Exploration)</dfn> standard&mdash;a set of architectural principles that separate exploration logic from execution capability. These are not guidelines. They are structural constraints. A system that violates them may work, but it is not an Autonomaton.</p>
   </div>
   <div class="section-wide reveal">
     <div class="principle-grid">
-      <div class="principle-card">
+      <div class="principle-card" id="declarative-sovereignty">
         <div class="principle-num">I</div>
         <div class="principle-body">
-          <div class="principle-title">Declarative Sovereignty</div>
+          <div class="principle-title"><dfn>Declarative Sovereignty</dfn></div>
           <div class="principle-desc">Domain expertise belongs in configuration, not code. Every behavior rule is externalized in files a non-technical domain expert can read, edit, and version. Change the config, the behavior changes. Audit the config, the behavior is explained. No separate &ldquo;explainability layer&rdquo; required.</div>
           <div class="principle-test">The test: can a domain expert alter system behavior by editing a YAML file, without a deploy?</div>
         </div>
       </div>
-      <div class="principle-card">
+      <div class="principle-card" id="capability-agnosticism">
         <div class="principle-num">II</div>
         <div class="principle-body">
-          <div class="principle-title">Capability Agnosticism</div>
+          <div class="principle-title"><dfn>Capability Agnosticism</dfn></div>
           <div class="principle-desc">The architecture never assumes specific model capabilities. Today&rsquo;s frontier model is tomorrow&rsquo;s local script. The Cognitive Router dispatches to tiers, not to specific models. Swap providers without rewriting governance. Architecture should make modest capability sufficient.</div>
           <div class="principle-test">The test: if the model hallucinates, does the architecture contain it without breaking?</div>
         </div>
       </div>
-      <div class="principle-card">
+      <div class="principle-card" id="provenance-as-infrastructure">
         <div class="principle-num">III</div>
         <div class="principle-body">
-          <div class="principle-title">Provenance as Infrastructure</div>
+          <div class="principle-title"><dfn>Provenance as Infrastructure</dfn></div>
           <div class="principle-desc">A fact without a root is a weed. Attribution chains are mandatory&mdash;the system tracks who collapsed the superposition and when. Every decision, every classification, every skill promotion carries a complete audit trail. Governance and auditability fall out of the architecture for free.</div>
           <div class="principle-test">The test: can you trace any system action to the config rule and telemetry entry that produced it?</div>
         </div>
       </div>
-      <div class="principle-card">
+      <div class="principle-card" id="human-ai-symbiosis">
         <div class="principle-num">IV</div>
         <div class="principle-body">
-          <div class="principle-title">Human-AI Symbiosis</div>
+          <div class="principle-title"><dfn>Human-AI Symbiosis</dfn></div>
           <div class="principle-desc">AI generates possibilities. Humans apply judgment. The system requires human-in-the-loop for all transitions that cross zone boundaries. Sovereignty is structural: the system earns autonomy through demonstrated reliability and can never unilaterally grant itself new authority.</div>
           <div class="principle-test">The test: does the system ever act beyond explicitly granted authority, regardless of model capability?</div>
+        </div>
+      </div>
+      <div class="principle-card" id="composability">
+        <div class="principle-num">V</div>
+        <div class="principle-body">
+          <div class="principle-title"><dfn>Composability</dfn></div>
+          <div class="principle-desc">Sovereign Autonomaton nodes compose through declarative interfaces rather than adapter code. The interfaces are structural &mdash; pipeline shape, telemetry format, zone semantics &mdash; not technological; an Autonomaton cultivated in YAML files, in a Notion database, in a Python service, or in text files and a shell script all compose identically, because they share architecture rather than code. This is cultivation architecture at work: the structural commitments create conditions for composition; the composition itself emerges when the commitments hold. Variance of substrate, of domain, of scale is the property the architecture relies on &mdash; the rich topology of a federated Autonomaton network is what grows from correct cultivation, not what gets engineered on top of it.</div>
+          <div class="principle-test">The test: can two independently developed Autonomatons &mdash; cultivated in different substrates, at different scales, by operators who have never met &mdash; compose into a working system by sharing only the pipeline shape, the telemetry format, and the zone semantics?</div>
         </div>
       </div>
     </div>
@@ -353,26 +617,26 @@ nav { position:fixed; top:0; left:0; right:0; z-index:100; padding:0 48px; heigh
 <!-- ═══════════════════════════════════════
      V. THE ZONE MODEL
 ══════════════════════════════════════════ -->
-<section class="section" style="background:var(--bg2); border-top:1px solid var(--border); border-bottom:1px solid var(--border);">
+<section class="section" id="zone-model" style="background:var(--bg2); border-top:1px solid var(--border); border-bottom:1px solid var(--border);">
   <div class="section-inner reveal">
     <div class="section-num">V</div>
     <h2 class="headline">The Zone <em>Model</em></h2>
-    <p class="body-text">Every action traversing the pipeline passes through Stage 04: Approval. The Zone Model determines what happens there. It is the structural guarantee that the system respects human authority&mdash;not through prompting, but through architectural constraint.</p>
+    <p class="body-text">Every action traversing the pipeline passes through Stage 04: Approval. The <dfn>Zone Model</dfn> determines what happens there. It is the structural guarantee that the system respects human authority&mdash;not through prompting, but through architectural constraint.</p>
   </div>
   <div class="section-wide reveal">
     <div class="zone-grid">
       <div class="zone-card" style="border-top:3px solid var(--green);">
-        <div class="zone-label" style="color:var(--green);">Green Zone</div>
+        <div class="zone-label" style="color:var(--green);"><dfn>Green Zone</dfn></div>
         <div class="zone-name">Autonomous</div>
         <div class="zone-desc">Routine operations the system handles without human intervention. These are actions the system has earned the right to perform through repeated confirmation&mdash;known patterns, low risk, high confidence. The operator defines the boundary.</div>
       </div>
       <div class="zone-card" style="border-top:3px solid var(--yellow);">
-        <div class="zone-label" style="color:var(--yellow);">Yellow Zone</div>
+        <div class="zone-label" style="color:var(--yellow);"><dfn>Yellow Zone</dfn></div>
         <div class="zone-name">Supervised</div>
         <div class="zone-desc">The system proposes, the human approves. Novel patterns, moderate risk, or insufficient confidence. The system presents its recommendation with full context. The human decides. Every approval or rejection trains the next cycle.</div>
       </div>
       <div class="zone-card" style="border-top:3px solid var(--red);">
-        <div class="zone-label" style="color:var(--red);">Red Zone</div>
+        <div class="zone-label" style="color:var(--red);"><dfn>Red Zone</dfn></div>
         <div class="zone-name">Human-Only</div>
         <div class="zone-desc">The system does not act. It may provide context, but the decision and execution belong entirely to the human. High-stakes, irreversible, or ethically sensitive operations. The system cannot promote itself out of the Red Zone.</div>
       </div>
@@ -385,11 +649,11 @@ nav { position:fixed; top:0; left:0; right:0; z-index:100; padding:0 48px; heigh
 <!-- ═══════════════════════════════════════
      VI. THE FLYWHEEL
 ══════════════════════════════════════════ -->
-<section class="section">
+<section class="section" id="flywheel">
   <div class="section-inner reveal">
     <div class="section-num">VI</div>
     <h2 class="headline">The <em>Flywheel</em></h2>
-    <p class="body-text">The Autonomaton is not a static system. It is a self-reinforcing improvement loop&mdash;a ratchet that turns interaction data into reusable skills and migrates those skills toward cheaper execution tiers through confirmed use.</p>
+    <p class="body-text">The Autonomaton is not a static system. It is a self-reinforcing improvement loop&mdash;a <dfn>ratchet</dfn> that turns interaction data into reusable skills and migrates those skills toward cheaper execution tiers through confirmed use.</p>
     <p class="body-text">The mechanism is structural, not statistical. Every skill is a readable specification&mdash;not an opaque weight adjustment. Delete a skill and the behavior stops. Add a skill and the behavior starts. The operator can inspect, edit, version, and audit every piece of learned behavior the system accumulates.</p>
     <p class="body-text">The LLM is the brain. Keywords are the bootstrap cache. Confirmed patterns become deterministic rules. The ratchet only turns in one direction: toward cheaper, faster, more private execution&mdash;unless the operator explicitly resets it.</p>
   </div>
@@ -408,7 +672,7 @@ nav { position:fixed; top:0; left:0; right:0; z-index:100; padding:0 48px; heigh
 <!-- ═══════════════════════════════════════
      VII. REFERENCE SCHEMAS
 ══════════════════════════════════════════ -->
-<section class="section" style="background:var(--bg2); border-top:1px solid var(--border);">
+<section class="section" id="reference-schemas" style="background:var(--bg2); border-top:1px solid var(--border);">
   <div class="section-inner reveal">
     <div class="section-num">VII</div>
     <h2 class="headline">Reference <em>Schemas</em></h2>
@@ -486,22 +750,22 @@ nav { position:fixed; top:0; left:0; right:0; z-index:100; padding:0 48px; heigh
 <!-- ═══════════════════════════════════════
      VIII. IMPLICATIONS
 ══════════════════════════════════════════ -->
-<section class="section">
+<section class="section" id="implications">
   <div class="section-inner reveal">
     <div class="section-num">VIII</div>
     <h2 class="headline">The <em>Implications</em></h2>
     <p class="body-text">The Autonomaton Pattern is not a product. It is a set of structural constraints that produce properties the industry currently treats as features&mdash;governance, auditability, sovereignty, cost reduction&mdash;as architectural byproducts. The implications extend beyond any single implementation.</p>
 
-    <h3 class="subhead">Governance by <em>Architecture</em></h3>
+    <h3 class="subhead" id="governance-by-architecture">Governance by <em>Architecture</em></h3>
     <p class="body-text">Policy documents describe what systems should do. Architecture determines what systems can do. The Autonomaton makes governance structural: the Zone Model enforces authority boundaries, the pipeline enforces sequencing, and declarative configuration makes every governance decision inspectable. You do not need a compliance team to audit an Autonomaton. You read the config.</p>
 
-    <h3 class="subhead">Auditability as <em>Byproduct</em></h3>
+    <h3 class="subhead" id="auditability-byproduct">Auditability as <em>Byproduct</em></h3>
     <p class="body-text">The five-stage pipeline produces a complete audit trail as a consequence of normal operation&mdash;not as an additional feature bolted on after the fact. Every action traces back to a telemetry entry, a classification decision, a skill specification, a zone boundary, and an approval record. The question &ldquo;why did the system do that?&rdquo; always has a readable answer.</p>
 
-    <h3 class="subhead">Sovereign <em>Computing</em></h3>
+    <h3 class="subhead" id="sovereign-computing">Sovereign <em>Computing</em></h3>
     <p class="body-text">The operator owns the telemetry. The operator owns the configuration. The operator owns the skills. The behavioral intelligence the system accumulates belongs to the person who generated it&mdash;not to the model provider, not to the platform, not to the infrastructure vendor. Switch providers without losing institutional knowledge. Inspect your own data without filing a request. Delete a skill and know it is gone.</p>
-    <h3 class="subhead">The <em>Vision</em></h3>
-    <p class="body-text">The Autonomaton Pattern is Act One of a three-act architecture.</p>
+    <h3 class="subhead" id="vision">The <em>Vision</em></h3>
+    <p class="body-text">The Autonomaton Pattern is Act One of a <dfn>three-act architecture</dfn>.</p>
     <p class="body-text"><strong>Act One: The Autonomaton.</strong> The transistor. A single node&mdash;one person, one cognitive engine, one knowledge store&mdash;that authors its own improvement through the invariant pipeline. This document.</p>
     <p class="body-text"><strong>Act Two: The Trellis.</strong> The integrated circuit. A domain-scale knowledge architecture that organizes what individual Autonomaton nodes produce&mdash;making expertise navigable, refinable, and composable across an organization or discipline.</p>
     <p class="body-text"><strong>Act Three: The Knowledge Commons.</strong> The network. A distributed economy where Autonomaton nodes share refined knowledge with provenance, attribution, and market pricing intact. Not a database. A protocol for sovereign expertise exchange.</p>
@@ -520,10 +784,11 @@ nav { position:fixed; top:0; left:0; right:0; z-index:100; padding:0 48px; heigh
   <div class="section-inner">
     <div class="download-bar">
       <a href="/docs/the-autonomaton-pattern-grv-001.pdf">PDF</a>
+      <a href="/standards/GRV-001.json">JSON Manifest</a>
       <a href="/standards/002">GRV-002: TCP/IP Paper</a>
-      <span class="download-meta">GRV-001 &middot; v1.0 &middot; March 2026 &middot; CC BY 4.0</span>
+      <span class="download-meta">GRV-001 &middot; v1.1 &middot; April 20, 2026 &middot; CC BY 4.0</span>
     </div>
-    <p class="body-text" style="font-size:13px; margin-top:32px;">This document is published under <a href="https://creativecommons.org/licenses/by/4.0/" style="color:var(--amber); text-decoration:none; border-bottom:1px solid var(--amber-dim);" target="_blank" rel="noopener noreferrer">Creative Commons Attribution 4.0 International (CC BY 4.0)</a>. You are free to share, adapt, and build upon this work for any purpose, provided you give appropriate credit.</p>
+    <p class="body-text" style="font-size:13px; margin-top:32px;">This document is published under <a href="https://creativecommons.org/licenses/by/4.0/" style="color:var(--amber); text-decoration:none; border-bottom:1px solid var(--amber-dim);" target="_blank" rel="external noopener noreferrer">Creative Commons Attribution 4.0 International (CC BY 4.0)</a>. You are free to share, adapt, and build upon this work for any purpose, provided you give appropriate credit.</p>
     <p class="body-text" style="font-size:13px;">Jim Calhoun &middot; The Grove Foundation &middot; Indianapolis &middot; <a href="mailto:jim@the-grove.ai" style="color:var(--amber); text-decoration:none; border-bottom:1px solid var(--amber-dim);">jim@the-grove.ai</a></p>
     <p class="body-text" style="font-size:11px; color:var(--text-dim); margin-top:24px; font-family:var(--mono);">the-grove.ai &middot; &copy; 2026 The Grove Foundation</p>
   </div>
