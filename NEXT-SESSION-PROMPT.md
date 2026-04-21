@@ -131,23 +131,27 @@ Three candidate shapes, ordered from subtle to explicit:
 
 Lead paragraph / early body prose in /alerts/telemetry-trap/index.html frames the thesis as "the lock-in is about telemetry." About page Lineage citation frames it as "the structural condition where default AI consumption patterns extract operator judgment back to the model layer" with three component mechanisms. Compatible framings, but not explicitly bridged. Opportunity: insert one bridging sentence that names the canonical vocabulary (cognitive platforming, judgment extraction, lien on thinking) in the lead or early body. Non-blocking — citations resolve cleanly. Polish-tier.
 
-### Polarity-harmonization audit (micro-sprint candidate, logged 2026-04-21)
+### Polarity-and-ratchet framing (workstream, logged 2026-04-21)
 
-During Cluster E preview (Sovereignty alert regulator-translation insertion), operator caught "reverse ratchet" vocabulary on line 372 of /alerts/sovereignty-is-all-you-need/index.html:
+During Cluster E preview (Sovereignty alert regulator-translation insertion), operator surfaced "reverse ratchet" vocabulary on line 372 of /alerts/sovereignty-is-all-you-need/index.html:
 
 "Ignore the reverse ratchet and we win the model-weight war while quietly losing the cognition one."
 
-This is pre-polarity vocabulary sitting in the closing arc of the canonical prototype calibration file. The vocabulary we published as canonical via llms.txt in commit b63f2f5 centers the polarity reframe ("We reverse polarity" + "Govern the substrate, commoditize the compute") over the ratchet framing. Cluster E scope was deliberately preserved surgical (regulator-translation insertion only); polarity harmonization deferred to dedicated sprint.
+**Framing clarification (operator, 2026-04-21):** Polarity is not a replacement for the ratchet. The ratchet was the first-emerging pattern and remains canonical. Polarity is a more accessible register for the same phenomenon — an elegant human-facing framing that operator's read of AI reception (Gemini, Eric conversation) suggests lands more immediately than mechanical ratchet language. The two are not in conflict: the ratchet describes the mechanism; polarity describes the human intuition.
 
-**Scope for harmonization sprint:**
-- findstr audit across full repo for "reverse ratchet", "ratchet", "ratcheting", and related pre-polarity register
-- file-by-file review of each hit: is this pre-polarity language that needs rewriting, or canonical-antecedent reference that stays (e.g., "The Ratchet" as named historical term in some contexts)?
-- surgical rewrites per finding, batched into a single tone: sprint
-- update cross-references in other canonical documents as needed
+**Position as standards body:** Grove does not unilaterally migrate canonical vocabulary. The ratchet stays named. Polarity is introduced alongside as colloquial companion. Over time, if polarity holds in member discourse and external reception, the language migrates naturally. If the ratchet retains primacy for operational specification, it remains primary. Member input is invited to refine the framing. This is the cultivation architecture applied to Grove's own language — patterns emerge; terminology migrates; the standards body curates, it does not dictate.
 
-**Sibling consideration:** combine with Telemetry Trap canonical-vocabulary bridge micro-sprint? Both are post-trinity body-prose polish passes; both are canonical-vocabulary harmonization. Single post-trinity "canonical-vocabulary harmonization sweep" sprint may have scoping economy.
+**Scope for future work:**
+- findstr audit across repo for ratchet-family vocabulary ("reverse ratchet", "ratchet", "ratcheting")
+- file-by-file review: does the passage benefit from adding polarity alongside ratchet (accessible register), or does the ratchet stand cleanly on its own in context?
+- where both frames serve, author connective tissue that names the relationship explicitly ("the ratchet — the polarity operator's intuition recognizes as — ...")
+- document the ratchet/polarity relationship as a canonical vocabulary entry in the forthcoming style-guide artifact, so that future authoring knows when to use which register
 
-**Priority:** Medium. Does not block any trinity work. Opportunistic sprint when corpus hygiene cycle comes up.
+**Sibling consideration:** combines cleanly with Telemetry Trap canonical-vocabulary bridge micro-sprint and the style-guide artifact. Possible scoping as a single "canonical-vocabulary curation sweep" sprint that produces (a) the style-guide artifact, (b) the polarity/ratchet relationship entry, (c) surgical audits of existing corpus for both terms.
+
+**Priority:** Medium. Does not block any trinity work. Becomes valuable once member body begins to form and feedback on terminology begins flowing.
+
+**Invited reviewers when live:** Clement Mok (design authority, will catch whether polarity lands as accessible or as marketing), Randy Wigginton (technical reviewer, will catch whether the relationship between the frames is operationally clean), David Mariani (seeds-vs-soil conversation partner, may surface adjacent vocabulary from the semantic-layer register), and whoever emerges as the first member-body cohort.
 
 ---
 
