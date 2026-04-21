@@ -127,6 +127,10 @@ Three candidate shapes, ordered from subtle to explicit:
 
 **Two-step composition pattern named:** Human arrives at the-grove.ai, reads the footer aside, forwards the URL or the framing to their AI. The AI reads /compose (possibly via llms.txt pointer), composes the Grove architecture against the user's industry, compliance regime, or pattern. Homepage doesn't compose — it gives the human the grammar for handing Grove to their AI.
 
+### Telemetry Trap canonical-vocabulary bridge (micro-sprint candidate, logged 2026-04-21)
+
+Lead paragraph / early body prose in /alerts/telemetry-trap/index.html frames the thesis as "the lock-in is about telemetry." About page Lineage citation frames it as "the structural condition where default AI consumption patterns extract operator judgment back to the model layer" with three component mechanisms. Compatible framings, but not explicitly bridged. Opportunity: insert one bridging sentence that names the canonical vocabulary (cognitive platforming, judgment extraction, lien on thinking) in the lead or early body. Non-blocking — citations resolve cleanly. Polish-tier.
+
 ---
 
 ## Most recent session (April 19, 2026) — GRV-003 v0.8 polish pass
