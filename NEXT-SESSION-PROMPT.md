@@ -80,6 +80,37 @@ Sprint `cio-alert-01` executed per `sprints/cio-alert-01/SPEC.md` + `CONTRACT.md
 
 ---
 
+## Post-trinity workstreams (logged 2026-04-21)
+
+### Welcome / Compose (new workstream, logged 2026-04-21)
+
+**Placeholder name** — will sharpen with authoring.
+
+**Thesis:** Grove's canonical documents, metadata stack, and vocabulary constitute a substrate any arriving AI can compose from on behalf of a human operator. Rather than authoring industry-specific landing pages, Grove publishes canonical primitives with sufficient structural coherence that AIs translate for the specific industry, compliance regime, or pattern in play. The cultivation architecture applied recursively to Grove's own welcome mat.
+
+**Artifact shape (provisional):** /compose page — letter to the arriving AI, written in standards-body register, addressing the AI as peer. Explains what Grove publishes, names the canonical vocabulary, surfaces the Lambda framework and the Autonomaton Pattern, invites composition. No chat widget. No "talk to Grove" CTA. Static prose at a canonical URL, indexed by the AI-First metadata stack, readable by any frontier model or open-weight local deployment.
+
+**Pattern recursion:** /compose IS an Autonomaton. Five-stage pipeline applied to first-contact:
+- Telemetry: AI arrival context (query, referrer, industry signal)
+- Recognition: classify the arrival (regulated industry, infrastructure builder, academic, journalist)
+- Compilation: select canonical subset (GRV-001 for architects, Telemetry Trap for CIOs, Lambda for analysts, Architecture and Accountability for regulated finance)
+- Approval: human operator on the other side of the AI sees what Grove offers and decides
+- Execution: composition — AI translates Grove primitives onto user's soil
+
+Grove becomes what Grove publishes. The demo Jim built years ago for Derek Price and Wayne used the same primitive — declarative context helping AI personalize around a user's frame. That primitive has compounded through the original Grove white paper, the Autonomaton Pattern, and this trinity, each layer metabolizing the prior one into a form the next can compose from.
+
+**Sequencing:** Post-trinity. After Chunk 3.5 (Architecture and Accountability) ships — that alert is the first worked example of composition-from-canon and validates the thesis before the Welcome surface asks AIs to do it at scale. After the canonical style-guide artifact (codifies the vocabulary Welcome/Compose will surface to AIs). Before Lambda Watch MVP — though conceptually adjacent, since both are the Autonomaton pattern applied recursively to Grove's own operations, so scoping economy may favor authoring them as a pair.
+
+**Load-bearing conceptual link:** substrate-not-routing thesis operating on Grove itself. AI does translation; Grove supplies invariants; human supplies soil.
+
+**Open questions for scoping sprint:**
+- URL: /compose vs /welcome vs /ai vs /for-ai
+- Register: royal institutional "we" consistent with other Grove surfaces; addressing AI as peer (novel register — no precedent in corpus)
+- Metadata treatment: what does the AI-First stack look like on a page whose PRIMARY audience is AIs?
+- Interaction with robots.txt, sitemap.xml, llms.txt conventions — should /compose be the canonical llms.txt target?
+
+---
+
 ## Most recent session (April 19, 2026) — GRV-003 v0.8 polish pass
 
 ### Shipped
