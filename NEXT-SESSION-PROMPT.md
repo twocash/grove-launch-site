@@ -131,6 +131,24 @@ Three candidate shapes, ordered from subtle to explicit:
 
 Lead paragraph / early body prose in /alerts/telemetry-trap/index.html frames the thesis as "the lock-in is about telemetry." About page Lineage citation frames it as "the structural condition where default AI consumption patterns extract operator judgment back to the model layer" with three component mechanisms. Compatible framings, but not explicitly bridged. Opportunity: insert one bridging sentence that names the canonical vocabulary (cognitive platforming, judgment extraction, lien on thinking) in the lead or early body. Non-blocking — citations resolve cleanly. Polish-tier.
 
+### Polarity-harmonization audit (micro-sprint candidate, logged 2026-04-21)
+
+During Cluster E preview (Sovereignty alert regulator-translation insertion), operator caught "reverse ratchet" vocabulary on line 372 of /alerts/sovereignty-is-all-you-need/index.html:
+
+"Ignore the reverse ratchet and we win the model-weight war while quietly losing the cognition one."
+
+This is pre-polarity vocabulary sitting in the closing arc of the canonical prototype calibration file. The vocabulary we published as canonical via llms.txt in commit b63f2f5 centers the polarity reframe ("We reverse polarity" + "Govern the substrate, commoditize the compute") over the ratchet framing. Cluster E scope was deliberately preserved surgical (regulator-translation insertion only); polarity harmonization deferred to dedicated sprint.
+
+**Scope for harmonization sprint:**
+- findstr audit across full repo for "reverse ratchet", "ratchet", "ratcheting", and related pre-polarity register
+- file-by-file review of each hit: is this pre-polarity language that needs rewriting, or canonical-antecedent reference that stays (e.g., "The Ratchet" as named historical term in some contexts)?
+- surgical rewrites per finding, batched into a single tone: sprint
+- update cross-references in other canonical documents as needed
+
+**Sibling consideration:** combine with Telemetry Trap canonical-vocabulary bridge micro-sprint? Both are post-trinity body-prose polish passes; both are canonical-vocabulary harmonization. Single post-trinity "canonical-vocabulary harmonization sweep" sprint may have scoping economy.
+
+**Priority:** Medium. Does not block any trinity work. Opportunistic sprint when corpus hygiene cycle comes up.
+
 ---
 
 ## Most recent session (April 19, 2026) — GRV-003 v0.8 polish pass
