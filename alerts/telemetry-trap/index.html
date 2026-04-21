@@ -235,14 +235,14 @@ nav { position:fixed; top:0; left:0; right:0; z-index:100; padding:0 48px; heigh
 <section class="section" style="background:var(--bg2); border-top:1px solid var(--border); border-bottom:1px solid var(--border);">
   <div class="section-inner reveal">
     <div class="section-num">I</div>
-    <h2 class="headline">The Conway <em>Signal</em></h2>
+    <h2 class="headline" id="conway-signal">The Conway <em>Signal</em></h2>
     <p class="body-text">In March 2026, a packaging error pushed approximately 500,000 lines of Anthropic&rsquo;s Claude Code source to a <a href="https://venturebeat.com/technology/claude-codes-source-code-appears-to-have-leaked-heres-what-we-know" target="_blank" rel="noopener noreferrer" style="color:var(--amber); text-decoration:none; border-bottom:1px solid var(--amber-dim);">public registry</a>. Among the internal projects revealed was <strong><a href="https://www.axios.com/2026/03/31/anthropic-leaked-source-code-ai" target="_blank" rel="noopener noreferrer" style="color:var(--text); text-decoration:none; border-bottom:1px solid var(--border-light);">Conway</a></strong>: <a href="https://www.axios.com/2026/03/31/anthropic-leaked-source-code-ai" target="_blank" rel="noopener noreferrer" style="color:var(--amber); text-decoration:none; border-bottom:1px solid var(--amber-dim);">a standalone agent environment</a> with persistent memory, extension support through a proprietary .cnw.zip format, external event triggers, and browser integration.</p>
     <p class="body-text">Conway is not on Anthropic&rsquo;s public roadmap. It is an internal project that reveals the platform strategy the company has been executing across five surfaces in a single quarter.</p>
     <p class="body-text">The significance is not what Conway does. Always-on agents are inevitable. The significance is what Conway <strong>accumulates</strong>. After six months of operation, a Conway instance doesn&rsquo;t just store your files and calendar entries. It holds a model of how you work: which emails you respond to immediately, which you ignore, which meetings you reschedule, which Slack threads you monitor, which decisions you delegate and which you keep.</p>
 
     <div class="pullquote">Previous lock-in was about stuff. Files, records, message history. Stuff is painful to migrate but possible. Conway-class agents lock in something different: the accumulated model of how you work. There is no CSV for &ldquo;how this person thinks.&rdquo;</div>
 
-    <h3 class="subhead">The <em>Platform Strategy</em></h3>
+    <h3 class="subhead" id="platform-strategy">The <em>Platform Strategy</em></h3>
     <p class="body-text">Conway does not exist in isolation. It is the capstone of a five-move strategy Anthropic executed in under 90 days:</p>
   </div>
 </section>
@@ -259,7 +259,7 @@ nav { position:fixed; top:0; left:0; right:0; z-index:100; padding:0 48px; heigh
     </div>
     <p class="body-text">Every piece pushes in one direction: build inside our walls, use our surfaces, run through our billing. This is the Active Directory playbook. Microsoft went from operating system to desktop to enterprise identity in fifteen years. Anthropic is attempting the same arc&mdash;model provider to developer tool to enterprise platform to agent operating system&mdash;in fifteen months.</p>
 
-    <h3 class="subhead">The .cnw.zip <em>Paradox</em></h3>
+    <h3 class="subhead" id="cnw-zip-paradox">The .cnw.zip <em>Paradox</em></h3>
     <p class="body-text">Anthropic published MCP&mdash;the Model Context Protocol&mdash;as an open standard. OpenAI adopted it. Google adopted it. The Linux Foundation hosts it. Then Conway adds a proprietary extension layer on top. Extensions packaged as .cnw.zip include custom interfaces and tools that work only inside Conway&rsquo;s environment. They are not portable.</p>
     <p class="body-text">This is the <strong>Google Play Services pattern</strong> applied to AI. Android is open source. Google Play Services&mdash;Maps, payments, push notifications&mdash;is proprietary. You can build Android without Google&rsquo;s services. In practice, nobody does. MCP is the open foundation. Conway&rsquo;s extension ecosystem is the proprietary layer on top.</p>
   </div>
@@ -271,11 +271,11 @@ nav { position:fixed; top:0; left:0; right:0; z-index:100; padding:0 48px; heigh
 <section class="section">
   <div class="section-inner reveal">
     <div class="section-num">II</div>
-    <h2 class="headline">The Telemetry <em>Trap</em></h2>
+    <h2 class="headline" id="the-telemetry-trap">The Telemetry <em>Trap</em></h2>
     <p class="body-text">Enterprise procurement teams have spent twenty years developing frameworks for data portability. GDPR, CCPA, SOC 2, data residency requirements, right-to-delete provisions&mdash;the legal infrastructure for &ldquo;can I take my stuff with me&rdquo; is mature. Imperfect, but functional.</p>
     <p class="body-text">None of it covers what Conway-class agents accumulate.</p>
 
-    <h3 class="subhead">Three Layers of <em>Lock-In</em></h3>
+    <h3 class="subhead" id="three-layers-of-lock-in">Three Layers of <em>Lock-In</em></h3>
   </div>
 </section>
 
@@ -308,7 +308,7 @@ nav { position:fixed; top:0; left:0; right:0; z-index:100; padding:0 48px; heigh
 <!-- II continued: Compounding + Contract Questions -->
 <section class="section">
   <div class="section-inner reveal">
-    <h3 class="subhead">The <em>Compounding</em> Problem</h3>
+    <h3 class="subhead" id="compounding-problem">The <em>Compounding</em> Problem</h3>
     <p class="body-text">Behavioral lock-in compounds. Every day Conway operates, it learns more about how your organization works. At month one, switching means losing convenience. At month six, switching means losing an agent that understands your VP&rsquo;s communication style, your team&rsquo;s deployment cadence, and which Slack channels carry signal. At month twelve, you are not switching AI providers. You are amputating institutional memory.</p>
     <p class="body-text">The switching cost curve is not linear. It is exponential. And unlike data migration&mdash;which is painful but bounded&mdash;behavioral context migration is currently <strong>impossible</strong>. Not expensive. Not difficult. Impossible. The format does not exist. The standard does not exist. The receiving system has no way to ingest it.</p>
 
@@ -327,7 +327,7 @@ nav { position:fixed; top:0; left:0; right:0; z-index:100; padding:0 48px; heigh
 <section class="section" style="background:var(--bg2); border-top:1px solid var(--border);">
   <div class="section-inner reveal">
     <div class="section-num">III</div>
-    <h2 class="headline">The Structural <em>Alternative</em></h2>
+    <h2 class="headline" id="structural-alternative">The Structural <em>Alternative</em></h2>
 
     <div class="warning-banner" style="border-color:var(--green); background:rgba(76,175,114,0.04);">
       <div class="warning-label" style="color:var(--green);">&#9670; Independent Lineage &middot; March 31, 2026</div>
@@ -335,7 +335,7 @@ nav { position:fixed; top:0; left:0; right:0; z-index:100; padding:0 48px; heigh
     </div>
 
     <p class="body-text">Where Conway accumulates behavioral context inside the provider&rsquo;s infrastructure, the Autonomaton Pattern makes that context sovereign by architecture. Not by policy. Not by contract clause. By the structural properties of the system itself.</p>
-    <h3 class="subhead">The Five-Stage <em>Invariant</em> Pipeline</h3>
+    <h3 class="subhead" id="five-stage-invariant-pipeline">The Five-Stage <em>Invariant</em> Pipeline</h3>
     <p class="body-text">Every Autonomaton instance traverses the same five stages, regardless of domain, model, or provider:</p>
   </div>
 </section>
@@ -356,7 +356,7 @@ nav { position:fixed; top:0; left:0; right:0; z-index:100; padding:0 48px; heigh
 <!-- Conway vs Autonomaton comparison -->
 <section class="section" style="background:var(--bg2); border-bottom:1px solid var(--border);">
   <div class="section-wide reveal">
-    <h3 class="subhead" style="margin-top:0;">Conway-Class Agent vs. <em>Autonomaton</em> Pattern</h3>
+    <h3 class="subhead" id="conway-class-agent-vs-autonomaton-pattern" style="margin-top:0;">Conway-Class Agent vs. <em>Autonomaton</em> Pattern</h3>
     <div style="overflow-x:auto; border:1px solid var(--border);">
       <div class="compare-row"><div class="compare-dim">Where behavioral model lives</div><div class="compare-val bad">Provider infrastructure</div><div class="compare-val good">Operator-owned config + telemetry files</div></div>
       <div class="compare-row"><div class="compare-dim">Export format</div><div class="compare-val bad">None</div><div class="compare-val good">Structured JSON telemetry, declarative YAML config</div></div>
@@ -373,7 +373,7 @@ nav { position:fixed; top:0; left:0; right:0; z-index:100; padding:0 48px; heigh
 <!-- Sovereignty Architecture -->
 <section class="section" style="background:var(--bg2); border-bottom:1px solid var(--border);">
   <div class="section-inner reveal">
-    <h3 class="subhead">The Sovereignty <em>Architecture</em></h3>
+    <h3 class="subhead" id="sovereignty-architecture">The Sovereignty <em>Architecture</em></h3>
     <p class="body-text">Three architectural properties make the Autonomaton&rsquo;s portability structural rather than aspirational:</p>
     <p class="body-text"><strong>Declarative Governance.</strong> Every behavior rule is externalized in configuration files a non-technical domain expert can read and edit. Change the config, the behavior changes. Version the config, the behavior has a history. Audit the config, the behavior is explained. No separate &ldquo;explainability layer&rdquo; required. The governance is the architecture.</p>
     <p class="body-text"><strong>Sovereign Zones.</strong> Every action has an explicit risk classification: Green (autonomous routine), Yellow (supervised proposals), Red (human-only). Zone boundaries are declarative&mdash;defined in configuration, not hardcoded. The system earns autonomy through demonstrated reliability. It cannot unilaterally grant itself new authority.</p>
@@ -387,7 +387,7 @@ nav { position:fixed; top:0; left:0; right:0; z-index:100; padding:0 48px; heigh
 <section class="section">
   <div class="section-inner reveal">
     <div class="section-num">IV</div>
-    <h2 class="headline">The Procurement <em>Gap</em></h2>
+    <h2 class="headline" id="procurement-gap">The Procurement <em>Gap</em></h2>
     <p class="body-text">Standard enterprise AI contracts address data handling comprehensively. They do not address what an always-on agent <em>learns</em>. The gap is not ignorance. It is a category error. Procurement teams are applying data-era frameworks to an intelligence-era problem.</p>
   </div>
 </section>
@@ -443,7 +443,7 @@ nav { position:fixed; top:0; left:0; right:0; z-index:100; padding:0 48px; heigh
 
 <section class="section">
   <div class="section-inner reveal">
-    <h3 class="subhead">The Timeline <em>Pressure</em></h3>
+    <h3 class="subhead" id="timeline-pressure">The Timeline <em>Pressure</em></h3>
     <p class="body-text"><strong>Convergence.</strong> Every major lab&mdash;Anthropic, OpenAI, Google, Microsoft&mdash;is building always-on persistent agents. By mid-2027, the persistent agent will be the default enterprise AI interface, not an option.</p>
     <p class="body-text"><strong>Compounding.</strong> Behavioral lock-in compounds daily. Enterprises deploying in H2 2026 without telemetry terms will face material switching costs by H1 2027.</p>
     <p class="body-text"><strong>Contract cycles.</strong> Enterprise AI contracts are typically 12&ndash;36 months. Contracts signed in 2026 without telemetry provisions will not be renegotiable until 2028 or 2029&mdash;by which time the behavioral lock-in will be two to three years deep.</p>
@@ -458,7 +458,7 @@ nav { position:fixed; top:0; left:0; right:0; z-index:100; padding:0 48px; heigh
 <section class="section" style="background:var(--bg2); border-top:1px solid var(--border);">
   <div class="section-inner reveal">
     <div class="section-num">V</div>
-    <h2 class="headline">The Structural <em>Intervention</em></h2>
+    <h2 class="headline" id="structural-intervention">The Structural <em>Intervention</em></h2>
     <p class="body-text">Policy alone cannot solve an architecture problem. Data portability regulations did not prevent cloud lock-in&mdash;they made migration legally possible while leaving it technically expensive. The same dynamic will play out with behavioral telemetry unless the intervention is structural.</p>
     <p class="body-text">Whether or not an enterprise adopts the Autonomaton Pattern, the architectural principles establish a minimum standard for any AI platform contract signed in 2026:</p>
   </div>
@@ -519,11 +519,11 @@ nav { position:fixed; top:0; left:0; right:0; z-index:100; padding:0 48px; heigh
 <section class="section">
   <div class="section-inner reveal">
     <div class="section-num">VI</div>
-    <h2 class="headline">The <em>Precedent</em></h2>
+    <h2 class="headline" id="precedent">The <em>Precedent</em></h2>
     <p class="body-text">This has happened before. TCP/IP was not built by AT&amp;T. The shipping container was not designed by a shipping line. The entities that benefit most from proprietary infrastructure never build the open standard that replaces it. The open standard comes from outside the incumbents&mdash;from an institution with no revenue model tied to lock-in.</p>
     <p class="body-text">The Linux Foundation generates $300 million per year. Red Hat is a $5 billion company. Neither writes code. They write standards, certify compliance, convene ecosystems, and publish the research that keeps the open-source supply chain credible. The Grove Foundation runs the same playbook for cognitive sovereignty that Linux ran for compute sovereignty.</p>
 
-    <h3 class="subhead">The Regulatory <em>Reframe</em></h3>
+    <h3 class="subhead" id="regulatory-reframe">The Regulatory <em>Reframe</em></h3>
     <p class="body-text">Current AI regulation asks the wrong question. The EU AI Act, Executive Order 14110, and most regulatory frameworks focus on: which model did you use? What data did it train on? Is the output biased? These are important questions. They are not the structural question.</p>
     <p class="body-text">The structural question is: <strong>how is the system governed?</strong> Who controls the routing? Who owns the telemetry? Who can audit the behavioral model? Who can port it to a competitor?</p>
     <p class="body-text">An open governance standard published under CC BY 4.0 cannot be captured by a single vendor. It cannot be preempted by regulation because it is already in the public commons. It creates the structural condition for a competitive market in AI agents&mdash;a market where switching costs are bounded by architecture, not compounded by behavioral lock-in.</p>
@@ -536,7 +536,7 @@ nav { position:fixed; top:0; left:0; right:0; z-index:100; padding:0 48px; heigh
 <section class="section" style="background:var(--bg2); border-top:1px solid var(--border); border-bottom:1px solid var(--border);">
   <div class="section-inner reveal">
     <div class="section-num">VII</div>
-    <h2 class="headline">The <em>Window</em></h2>
+    <h2 class="headline" id="window">The <em>Window</em></h2>
     <p class="body-text">The industry is in a transition between two eras. The era of model competition&mdash;benchmarks, context windows, training runs&mdash;is giving way to the era of persistence competition: who owns the always-on layer, the agent that accumulates context across every session and becomes harder to leave every day.</p>
     <p class="body-text">The margins between frontier models have compressed to the point where the model itself is no longer the primary competitive axis. The strategic logic has shifted: stop winning on model releases and start winning on the layer that makes customers sticky regardless of which model sits underneath. The persistent agent layer&mdash;the thing that holds your memory, your context, your workflows&mdash;is the actual product. The model is the loss leader.</p>
     <p class="body-text">This is the moment&mdash;right now, in 2026&mdash;when the terms get set. The contracts being signed this year will determine whether enterprise AI operates on open architectural standards with portable behavioral context, or on proprietary platforms where the deepest form of organizational intelligence ever generated is locked inside a single provider&rsquo;s infrastructure.</p>
