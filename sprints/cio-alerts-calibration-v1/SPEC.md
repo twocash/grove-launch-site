@@ -5,9 +5,9 @@
 **Prototype baseline:** `/alerts/sovereignty-is-all-you-need/` (sovereignty-alert-tonal-revision-v1, closed 2026-04-21). Structure, JSON-LD pattern, and metadata conventions replicate from this file.
 
 **Status at sprint open:**
-- 3 alerts need metadata stacks (`alerts/index.html`, `architectural-gap`, `architectural-gap` body clean)
+- 2 alerts need metadata stack only — body prose clean (`alerts/index.html`, `architectural-gap`)
 - 1 alert needs body calibration + metadata + legacy URL fix (`ai-deployment-pattern-benchmark`)
-- 1 alert needs alignment verification + metadata upgrade to ScholarlyArticle (`telemetry-trap`)
+- 1 alert needs alignment verification + ScholarlyArticle metadata upgrade (`telemetry-trap`)
 - 1 alert (Sovereignty) receives load-bearing regulator-translation insertion
 
 ## Cluster structure
