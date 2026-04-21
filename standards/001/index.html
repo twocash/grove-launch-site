@@ -756,6 +756,17 @@ nav { position:fixed; top:0; left:0; right:0; z-index:100; padding:0 48px; heigh
     <h2 class="headline">The <em>Implications</em></h2>
     <p class="body-text">The Autonomaton Pattern is not a product. It is a set of structural constraints that produce properties the industry currently treats as features&mdash;governance, auditability, sovereignty, cost reduction&mdash;as architectural byproducts. The implications extend beyond any single implementation.</p>
 
+    <h3 class="subhead" id="terms-of-art">Terms of <em>Art</em></h3>
+    <p class="body-text">The Autonomaton Pattern names four structural conditions that recur across AI deployments and that the architecture is designed to address or to produce. These terms are introduced here as canonical Grove terms; downstream standards (including GRV-003) cite them by reference.</p>
+
+    <p class="body-text"><strong><dfn>Cognitive platforming</dfn>.</strong> The structural condition in which the architectural drift of an AI deployment concentrates judgment, telemetry, and decision-context at the platform tier rather than at the operator&rsquo;s node. Cognitive platforming is the consumption-layer analog of platform-side data lock-in: the same dynamic, applied to the substrate of human reasoning. The Autonomaton Pattern is an explicit countermeasure.</p>
+
+    <p class="body-text"><strong><dfn>Judgment extraction</dfn>.</strong> The flow of operator decision patterns, approval cadences, and discrimination criteria from the consumption layer back to the model provider, where they become inputs to the next training cycle. Distinct from telemetry extraction (which describes behavioral data flow); judgment extraction specifically describes the cognitive patterns the operator brings to evaluating model outputs. Extraction creates a recurring obligation; the architecture&rsquo;s substrate-ownership constraint is what discharges it.</p>
+
+    <p class="body-text"><strong><dfn>Lien on thinking</dfn>.</strong> The accumulating dependency that results when an operator&rsquo;s reasoning patterns are routed through a platform that retains them. Each interaction expands the lien; switching providers does not discharge it. The Autonomaton Pattern&rsquo;s substrate-ownership constraint is the architectural mechanism for keeping the lien at zero.</p>
+
+    <p class="body-text"><strong><dfn>Cultivation architecture</dfn>.</strong> The architectural posture in which structural commitments&mdash;pipeline shape, telemetry format, zone semantics, substrate ownership&mdash;create the conditions for emergent properties such as composability, federation, and cross-substrate cooperation, rather than engineering those properties directly. Cultivation architecture treats variance of substrate, of domain, and of scale as the property the architecture relies on, not as a problem to solve. The <a href="#composability">Composability principle</a> (Section IV.V) is cultivation architecture at work.</p>
+
     <h3 class="subhead" id="governance-by-architecture">Governance by <em>Architecture</em></h3>
     <p class="body-text">Policy documents describe what systems should do. Architecture determines what systems can do. The Autonomaton makes governance structural: the Zone Model enforces authority boundaries, the pipeline enforces sequencing, and declarative configuration makes every governance decision inspectable. You do not need a compliance team to audit an Autonomaton. You read the config.</p>
 
