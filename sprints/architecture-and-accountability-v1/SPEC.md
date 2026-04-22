@@ -206,7 +206,7 @@ CC populates SHA column inline during execution. Each commit lands with SHA reco
 | 3 | `feat:` | lead section (eyebrow + headline + dek + byline + lead graf) + §I | 58ac58e |
 | 3a | `docs:` | SPEC amended to declare register-note <aside> pattern (post-polarity-canonicalization-v1 close at 7dc4d53; A&A first instantiation in Commit 4) | 8ad0c07 |
 | 4 | `feat:` | §II + opening pullquote (instantiates register-note pattern for first polarity use) | 84a4143 |
-| 5 | `feat:` | §III | — |
+| 5 | `feat:` | §III | 1fcc0e8 |
 | 6 | `feat:` | §IV | — |
 | 7 | `feat:` | §V + closing pullquote | — |
 | 8 | `feat:` | §VI + close section (h3 + subscribe + Further Reading) | — |
