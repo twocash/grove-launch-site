@@ -66,6 +66,19 @@ Protocol: spec &rarr; preview &rarr; confirm &rarr; **fire** &rarr; SHA &rarr; n
 - Anchor IDs: kebab-case lowercase, derived from section subject; insert as `id="..."` after class attribute
 - JSON-LD @id graph: site-wide entities `https://the-grove.ai/#organization`, `#website`; page-specific `https://the-grove.ai/alerts/architecture-and-accountability#article`
 
+**Register-note <aside> pattern (NEW, A&A is first instantiation).** Canonical Grove terms appearing for the first time in body prose may carry an inline register-note <aside> defining the term in 1–3 sentences, anchored adjacent to the first use. Markup pattern:
+
+```html
+<aside class="register-note" id="register-note-{term-kebab-slug}">
+  <div class="register-note-label">{Term in title case}</div>
+  <div class="register-note-body">{1–3 sentence definition, em-dash entities, plain prose}</div>
+</aside>
+```
+
+Placement: immediately after the closing `</p>` of the body paragraph containing the first-use term. Visual rendering: side-anchored or inset block; CSS lands at first instantiation per existing CSS-mirroring discipline. Authoring CC defines the CSS rules at first instantiation (Commit 4) by reading existing Sovereignty `aside` patterns or, if none exist, mirroring the visual weight of the existing `pullquote` class but with definitional rather than rhetorical register (smaller type, lighter border, no italic).
+
+**Harmonization promise (forward-resolving).** When `/vocabulary/` HTML page ships in the canonical-vocabulary curation sprint, all register-note asides across the corpus get swapped via global `str_replace` for inline canonical fragment links of the form `<a href="https://the-grove.ai/vocabulary#{term-kebab-slug}">{term}</a>`. The register-note pattern is therefore transitional infrastructure, not permanent. Logged in §11 out-of-scope as queued harmonization work.
+
 ## 4. Structural outline — full body arc
 
 **Shell:** single `<article>` wrapping three `<section class="section">` blocks — lead / body / close. Sovereignty shell inherited verbatim. No evidence-ledger section.
@@ -190,8 +203,9 @@ CC populates SHA column inline during execution. Each commit lands with SHA reco
 | 1 | `docs:` | SPEC authored and committed | f1ae826 |
 | 1a | `docs:` | SPEC amended to integrate OpenClaw as bounded reference (§II, §III, Further Reading) | 6f5a920 |
 | 2 | `feat:` | page shell + head metadata stack + canonical + skeleton section scaffolding | b80e72d |
-| 3 | `feat:` | lead section (eyebrow + headline + dek + byline + lead graf) + §I | — |
-| 4 | `feat:` | §II + opening pullquote | — |
+| 3 | `feat:` | lead section (eyebrow + headline + dek + byline + lead graf) + §I | 58ac58e |
+| 3a | `docs:` | SPEC amended to declare register-note <aside> pattern (post-polarity-canonicalization-v1 close at 7dc4d53; A&A first instantiation in Commit 4) | — |
+| 4 | `feat:` | §II + opening pullquote (instantiates register-note pattern for first polarity use) | — |
 | 5 | `feat:` | §III | — |
 | 6 | `feat:` | §IV | — |
 | 7 | `feat:` | §V + closing pullquote | — |
@@ -257,12 +271,17 @@ Per-target curl, local CMD, no `web_fetch`. CC populates Result column inline du
 | 17 | OpenClaw strangler-fig reference in §III | python grep for "OpenClaw" or "capability-swap" in §III body | &ge;1 hit | — |
 | 18 | OpenClaw GitHub link in Further Reading | python grep for "github.com/openclaw" | 1 hit | — |
 | 19 | OpenClaw register stays bounded | python grep for "OpenClaw" total in published page | 3–5 hits total (no runaway) | — |
+| 20 | Register-note <aside> for polarity present in §II | python grep for `class="register-note"` and `id="register-note-knowledge-polarity"` | 1 hit each | — |
+| 21 | Register-note CSS rules defined | python grep page CSS for `.register-note` selector | 1+ hits | — |
+| 22 | No broken canonical-vocabulary fragment links | python grep for `vocabulary#knowledge-polarity` and `vocabulary#` substring | 0 hits each (inline-defined in this commit; harmonized later) | — |
 
 ## 10. Working-artifact discipline
 
 SPEC §6 commit table and §9 verification matrix are living ledgers maintained **in place during execution**. CC updates SHA column at each commit land. CC updates verification Result column at Phase 6. DEVLOG reflects already-populated tables at close; does not reconstruct them.
 
 Mid-sprint corrective commits: log to §6 as added rows with SHA at land. Not a bug — institutional discipline for catching register and disambiguation issues before deploy.
+
+**Line-count threshold convention (caught Commit 2 polarity-canon, recurred Commit 3a A&A).** SPEC files use one-physical-line-per-paragraph markdown convention. Pure SPEC amendment commits with bulleted prose + code blocks produce smaller line-count deltas than soft-wrapped estimates suggest. Future verification matrix entries for SPEC line-count delta should anchor to actual file convention (typically +20 to +30 for amendment-style commits, not +30 to +50). Apply when authoring future verification thresholds.
 
 ## 11. Out-of-scope and boundary calls
 
@@ -274,6 +293,7 @@ Mid-sprint corrective commits: log to §6 as added rows with SHA at land. Not a 
 - **No Substack / distribution comms** — this sprint is on-site only. Cross-surface comms queued post-close.
 - **No OG image redesign** — reuse Sovereignty's image asset pattern; custom OG image deferred.
 - **OpenClaw bounded reference only.** Three sentences across §II and §III plus one Further Reading link. Full case-study treatment, primitive-by-primitive mapping, and strangler-fig walkthrough are scoped to Sprint B (`primitive-autonomaton-walkthrough-v1`). If §II or §III prose drifts toward expanded OpenClaw treatment during authoring, stop and confirm before continuing.
+- **Register-note → canonical-link harmonization.** Register-note <aside> instantiations in this alert (and any future alert authored before /vocabulary/ HTML ships) get swapped for canonical fragment links via global str_replace once the canonical-vocabulary curation sprint lands /vocabulary/. A&A's polarity register-note in §II is the first such instantiation. Queued.
 
 ## 12. Handoff notes to CC
 
@@ -288,6 +308,15 @@ Mid-sprint corrective commits: log to §6 as added rows with SHA at land. Not a 
 - Commit cadence: one commit = one structural beat; preview-confirm-fire per cluster
 - No `web_fetch` for verification; `curl` only, local CMD
 - Stop after Commit 1 (`docs:` SPEC) and report SHA for next-phase greenlight
+
+**Register-note authoring guidance** (for CC at Commit 4 §II and any future first-use-of-canonical-term):
+
+- Pattern: see §3 substrate conventions, "Register-note <aside> pattern" subsection
+- Term-slug derivation: kebab-case the canonical term as it appears in `docs/grove-canonical-vocabulary.md` heading; for "Knowledge polarity" the slug is `knowledge-polarity`
+- Definition source: pull verbatim or near-verbatim from the canonical entry in `docs/grove-canonical-vocabulary.md`; do not improvise definitional prose at the alert layer
+- For Knowledge polarity at A&A Commit 4: definition should land the three-terminal model (ground / positive / negative) in 2–3 sentences max
+- CSS placement: at first instantiation, define `.register-note`, `.register-note-label`, `.register-note-body` selectors in the page's inline `<style>` block, mirroring the visual weight pattern of `.pullquote` but with definitional rather than rhetorical register (smaller type, lighter border, no italic, no large quotation marks)
+- Confirm Sovereignty does NOT already use a `.register-note` class before authoring; if it does, mirror exactly. If not, A&A defines the class.
 
 **OpenClaw factsheet** (for CC reference during Commit 4 §II prose and Commit 5 §III prose):
 - Built by Peter Steinberger (Austrian, ex-PSPDFKit founder, sold 2021, retired five years, came back)
