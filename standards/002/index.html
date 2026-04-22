@@ -5,6 +5,246 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>TCP/IP for the Cognitive Layer — The Grove Foundation</title>
 <meta name="description" content="The Autonomaton Pattern as Open Protocol: architectural foundations for composable, sovereign, and economically self-optimizing cognitive systems. GRV-002, CC BY 4.0.">
+<meta name="author" content="Jim Calhoun">
+<link rel="canonical" href="https://the-grove.ai/standards/002">
+
+<!-- ── Open Graph ── -->
+<meta property="og:title" content="TCP/IP for the Cognitive Layer">
+<meta property="og:description" content="The Autonomaton Pattern as Open Protocol: architectural foundations for composable, sovereign, and economically self-optimizing cognitive systems. GRV-002, CC BY 4.0.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://the-grove.ai/standards/002">
+<meta property="og:site_name" content="The Grove Foundation">
+<meta property="article:published_time" content="2026-03-15">
+<meta property="article:modified_time" content="2026-04-22">
+<meta property="article:author" content="Jim Calhoun">
+<meta property="article:section" content="Open Standard">
+<meta property="article:tag" content="Autonomaton Pattern">
+<meta property="article:tag" content="TCP/IP">
+<meta property="article:tag" content="end-to-end argument">
+<meta property="article:tag" content="cognitive architecture">
+<meta property="article:tag" content="sovereign AI">
+
+<!-- ── Twitter Card ── -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="TCP/IP for the Cognitive Layer — GRV-002">
+<meta name="twitter:description" content="The Autonomaton Pattern as Open Protocol. Architectural theory paper, CC BY 4.0, Grove Foundation.">
+
+<!-- ── Dublin Core ── -->
+<meta name="DC.title" content="TCP/IP for the Cognitive Layer: The Autonomaton Pattern as Open Protocol">
+<meta name="DC.creator" content="Jim Calhoun">
+<meta name="DC.publisher" content="The Grove Foundation">
+<meta name="DC.date" content="2026-04-22">
+<meta name="DC.type" content="Text">
+<meta name="DC.format" content="text/html">
+<meta name="DC.identifier" content="https://the-grove.ai/standards/002">
+<meta name="DC.rights" content="CC BY 4.0">
+<meta name="DC.subject" content="Autonomaton Pattern, TCP/IP, end-to-end argument, cognitive architecture, thin-waist invariant, five-stage pipeline, zone model, Cognitive Router, Reverse Tax, Saltzer-Reed-Clark, sovereign AI, open protocol, composition primitives, governance-first architecture">
+<meta name="DC.relation" content="https://the-grove.ai/standards/001">
+<meta name="DC.relation" content="https://the-grove.ai/standards/003">
+
+<!-- ── Citation metadata ── -->
+<meta name="citation_title" content="TCP/IP for the Cognitive Layer: The Autonomaton Pattern as Open Protocol">
+<meta name="citation_author" content="Jim Calhoun">
+<meta name="citation_publication_date" content="2026-03-15">
+<meta name="citation_publisher" content="The Grove Foundation">
+<meta name="citation_fulltext_html_url" content="https://the-grove.ai/standards/002">
+
+<!-- ══════════════════════════════════════════════════════════════════
+     JSON-LD — WebPage (with Speakable + potentialAction)
+══════════════════════════════════════════════════════════════════ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": "https://the-grove.ai/standards/002",
+  "url": "https://the-grove.ai/standards/002",
+  "name": "TCP/IP for the Cognitive Layer",
+  "description": "The Autonomaton Pattern as Open Protocol: architectural foundations for composable, sovereign, and economically self-optimizing cognitive systems.",
+  "isPartOf": { "@id": "https://the-grove.ai/#website" },
+  "inLanguage": "en",
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": [".display", ".lead"]
+  },
+  "potentialAction": {
+    "@type": "InteractAction",
+    "name": "Compose with Grove",
+    "description": "Grove standards are CC BY 4.0; compose with them, fork them, build on them.",
+    "target": "https://the-grove.ai/membership/"
+  }
+}
+</script>
+
+<!-- ══════════════════════════════════════════════════════════════════
+     JSON-LD — BreadcrumbList
+══════════════════════════════════════════════════════════════════ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "The Grove Foundation", "item": "https://the-grove.ai/" },
+    { "@type": "ListItem", "position": 2, "name": "Open Standards", "item": "https://the-grove.ai/standards/" },
+    { "@type": "ListItem", "position": 3, "name": "GRV-002", "item": "https://the-grove.ai/standards/002" }
+  ]
+}
+</script>
+
+<!-- ══════════════════════════════════════════════════════════════════
+     JSON-LD — TechArticle
+     isBasedOn chains GRV-002 to its canonical lineage parents:
+     Saltzer-Reed-Clark 1984 · Clark 1988 · GRV-001.
+══════════════════════════════════════════════════════════════════ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "TCP/IP for the Cognitive Layer",
+  "alternativeHeadline": "The Autonomaton Pattern as Open Protocol",
+  "url": "https://the-grove.ai/standards/002",
+  "identifier": "GRV-002",
+  "datePublished": "2026-03-15",
+  "dateModified": "2026-04-22",
+  "inLanguage": "en",
+  "articleSection": "Open Standard",
+  "author": {
+    "@type": "Person",
+    "name": "Jim Calhoun",
+    "affiliation": {"@type": "Organization", "name": "The Grove Foundation", "url": "https://the-grove.ai"},
+    "email": "jim@the-grove.ai"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "The Grove Foundation",
+    "url": "https://the-grove.ai",
+    "address": {"@type": "PostalAddress", "addressLocality": "Indianapolis", "addressRegion": "IN", "addressCountry": "US"}
+  },
+  "license": "https://creativecommons.org/licenses/by/4.0/",
+  "isPartOf": {"@type": "CreativeWorkSeries", "name": "Grove Open Standards", "url": "https://the-grove.ai/standards"},
+  "isBasedOn": [
+    {
+      "@type": "ScholarlyArticle",
+      "name": "End-to-End Arguments in System Design",
+      "author": [
+        {"@type": "Person", "name": "Jerome H. Saltzer"},
+        {"@type": "Person", "name": "David P. Reed"},
+        {"@type": "Person", "name": "David D. Clark"}
+      ],
+      "datePublished": "1984",
+      "publisher": {"@type": "Organization", "name": "ACM Transactions on Computer Systems"}
+    },
+    {
+      "@type": "ScholarlyArticle",
+      "name": "The Design Philosophy of the DARPA Internet Protocols",
+      "author": {"@type": "Person", "name": "David D. Clark"},
+      "datePublished": "1988",
+      "publisher": {"@type": "Organization", "name": "ACM SIGCOMM"}
+    },
+    {
+      "@type": "TechArticle",
+      "name": "GRV-001: The Autonomaton Pattern",
+      "author": {"@type": "Person", "name": "Jim Calhoun"},
+      "datePublished": "2026-03-01",
+      "publisher": {"@type": "Organization", "name": "The Grove Foundation"},
+      "url": "https://the-grove.ai/standards/001"
+    }
+  ],
+  "about": [
+    "Autonomaton Pattern",
+    "TCP/IP",
+    "thin-waist invariant",
+    "end-to-end argument",
+    "five-stage pipeline",
+    "zone model",
+    "Cognitive Router",
+    "Reverse Tax",
+    "Saltzer-Reed-Clark",
+    "sovereign AI",
+    "open protocol",
+    "governance-first architecture"
+  ],
+  "keywords": "Autonomaton Pattern, TCP/IP, thin-waist invariant, end-to-end argument, five-stage pipeline, zone model, Cognitive Router, Reverse Tax, Saltzer-Reed-Clark, sovereign AI, open protocol, governance-first architecture, Grove Foundation, CC BY 4.0",
+  "hasPart": [
+    {"@type": "WebPageElement", "name": "I. The Missing Protocol", "url": "https://the-grove.ai/standards/002", "description": "Why cognitive computing needs a protocol layer — the architectural-reasoning gap that GRV-002 addresses, following Clark's 1988 precedent."},
+    {"@type": "WebPageElement", "name": "II. The Design Principles That Made TCP/IP Universal", "url": "https://the-grove.ai/standards/002", "description": "The six principles documented in Clark 1988, Saltzer-Reed-Clark 1984, and RFC 1958/3439: hourglass, end-to-end, fate-sharing, layered independence, protocol over implementation, simplicity as scaling strategy."},
+    {"@type": "WebPageElement", "name": "III. Same Principles, Cognitive Domain", "url": "https://the-grove.ai/standards/002", "description": "Each TCP/IP design principle mapped to an Autonomaton architectural commitment — five-stage pipeline as thin waist, zone model as sovereignty guarantee, fate-sharing as sovereign state, layered independence as swappable cognition, three files and a loop, declarative governance."},
+    {"@type": "WebPageElement", "name": "IV. Composition Primitives", "url": "https://the-grove.ai/standards/002", "description": "Chain, branch/fan-out, supervisor/worker, peer mesh, hierarchical zone nesting, federation — composition patterns that emerge from the protocol properties."},
+    {"@type": "WebPageElement", "name": "V. The Reverse Tax", "url": "https://the-grove.ai/standards/002", "description": "The Cognitive Router is structurally incentivized to push work toward Tier 0 local execution; the system gets cheaper as it gets smarter; centralized providers' revenue is the distributed model's waste."},
+    {"@type": "WebPageElement", "name": "VI. The Governance Innovation", "url": "https://the-grove.ai/standards/002", "description": "TCP/IP omitted security and the ecosystem spent decades retrofitting it. The Autonomaton treats governance as a first-class structural commitment baked into the pipeline invariant."},
+    {"@type": "WebPageElement", "name": "VII. Structural Correspondence", "url": "https://the-grove.ai/standards/002", "description": "Principle-by-principle mapping table between TCP/IP and the Autonomaton Pattern, including the governance addition TCP/IP originally omitted."},
+    {"@type": "WebPageElement", "name": "VIII. Implications and Open Questions", "url": "https://the-grove.ai/standards/002", "description": "Implications for industry, standards bodies, and practitioners; open questions for formal verification, telemetry schema standardization, economic modeling, and trust federation."},
+    {"@type": "WebPageElement", "name": "IX. Conclusion — The Same Bet, Different Substrate", "url": "https://the-grove.ai/standards/002", "description": "Christopher Alexander's Pattern Language tradition; TCP/IP as protocol not product; the Autonomaton makes the same architectural bet for intelligence."},
+    {"@type": "WebPageElement", "name": "FAQ", "url": "https://the-grove.ai/standards/002#faq", "description": "Six questions on GRV-002 core claims: the thin-waist invariant, the hourglass mapping, governance-first design, the Reverse Tax, the GRV-001/GRV-002 relationship, and Saltzer-Reed-Clark lineage."}
+  ],
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": [".display", ".lead"]
+  }
+}
+</script>
+
+<!-- ══════════════════════════════════════════════════════════════════
+     JSON-LD — FAQPage
+     Six Q&A pairs matching visible FAQ section below.
+══════════════════════════════════════════════════════════════════ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "@id": "https://the-grove.ai/standards/002#faq",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is GRV-002 actually claiming?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "GRV-002 is the structural claim that the Autonomaton Pattern occupies the same architectural position in the cognitive infrastructure stack that TCP/IP occupies in the networking stack — the thin-waist invariant. Six TCP/IP design principles (the hourglass, end-to-end argument, fate-sharing, layered independence, protocol over implementation, simplicity as scaling strategy) map principle-by-principle to six Autonomaton commitments. The paper argues the parallel is structural, not analogical."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What does \"the thin waist of the cognitive hourglass\" mean?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "TCP/IP wins because every protocol above and below it has exactly one contract to satisfy: IP's packet-delivery interface. The five-stage Autonomaton pipeline (telemetry → recognition → compilation → approval → execution) plays the same role for cognitive systems. Below the waist: any data source, any sensor, any interface. Above it: any model, any skill library, any output surface. The waist is deliberately minimal — every interaction passes through the same five stages in the same order, and each stage produces a structured trace. The minimality is what makes composition possible."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why is governance part of the invariant rather than a layer on top?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Because the principle you omit from the protocol becomes the problem the ecosystem spends decades compensating for. TCP/IP famously omitted security; the internet has spent 40 years retrofitting it as an afterthought — TLS, certificate authorities, firewalls, NAT traversal. GRV-002 treats governance the way TCP/IP should have treated security: structural, first-class, inside the invariant. The Green/Yellow/Red zone model is not a feature added later; it is part of what makes an interaction an Autonomaton interaction."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What's the Reverse Tax?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A TCP/IP network got cheaper as endpoints got more capable — Moore's Law reduced cost at the edges where the intelligence lived. The Autonomaton creates an equivalent dynamic in the cognitive domain: the Cognitive Router's tiered model is structurally incentivized to push work downward, from expensive frontier models toward local zero-marginal-cost pattern cache. Every confirmed skill is a query that never calls an API again. Centralized providers need users to keep calling; the Autonomaton is architecturally incentivized to reduce those calls to zero. The centralized model's revenue is the distributed model's waste."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does this relate to GRV-001?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "GRV-001 specifies the Autonomaton Pattern as an atomic architectural primitive: the five-stage pipeline, zone model, Cognitive Router, Skill Flywheel, and five DEX principles. GRV-002 is the architectural theory paper that locates GRV-001's primitive in the protocol tradition — arguing the pattern is the cognitive layer's TCP/IP, not its HTTP. GRV-001 is the specification; GRV-002 is the structural argument for why the specification takes the shape it does."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Who is Saltzer-Reed-Clark and why do they keep appearing in Grove documents?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Jerome Saltzer, David Reed, and David Clark published \"End-to-End Arguments in System Design\" in 1984 — the foundational paper arguing that functions should be implemented at the endpoints of a system, not inside the network itself. The argument is why the internet put TCP at the hosts and kept IP at the routers dumb. GRV-002 applies the same argument to cognitive systems: governance functions belong at the endpoints (the human operator), not inside the cognitive layer. The zone model is the end-to-end argument transposed to the cognitive domain. Grove treats this as lineage, not decoration."
+      }
+    }
+  ]
+}
+</script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fragment+Mono:ital@0;1&family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -84,6 +324,25 @@ nav { position:fixed; top:0; left:0; right:0; z-index:100; padding:0 48px; heigh
 /* ── RESPONSIVE ── */
 @media(max-width:900px) { .comp-grid { grid-template-columns:1fr; } .compare-table { font-size:12px; } }
 @media(max-width:768px) { nav { padding:0 20px; } .nav-links { gap:16px; } .nav-links a { font-size:9px; } .section-inner,.section-wide { padding:80px 24px 60px; } .principle-card { grid-template-columns:48px 1fr; } }
+
+/* ── FAQ ── */
+.faq-list { display:flex; flex-direction:column; gap:0; border-top:1px solid var(--border); }
+.faq-item { border-bottom:1px solid var(--border); }
+.faq-q { font-family:var(--serif); font-size:18px; color:var(--text); padding:20px 0; cursor:pointer; list-style:none; position:relative; padding-right:36px; transition:color 0.2s; }
+.faq-q::-webkit-details-marker { display:none; }
+.faq-q::after { content:'+'; position:absolute; right:8px; top:50%; transform:translateY(-50%); font-family:var(--mono); font-size:18px; color:var(--amber-dim); transition:all 0.2s; }
+.faq-item[open] .faq-q::after { content:'\2013'; color:var(--amber); }
+.faq-item[open] .faq-q { color:var(--amber); }
+.faq-a { padding:0 0 24px; }
+.faq-a p { font-size:14px; line-height:1.75; color:var(--text-mid); font-weight:300; }
+
+/* ── COMPOSITION SURFACE ── */
+.composition-surface { position:relative; z-index:1; max-width:760px; margin:80px auto 0; padding:48px 48px 0; border-top:1px solid var(--border); }
+.composition-label { font-family:var(--mono); font-size:11px; letter-spacing:0.25em; text-transform:uppercase; color:var(--amber-dim); margin-bottom:24px; }
+.composition-surface p { font-size:14px; line-height:1.75; color:var(--text-dim); font-weight:300; margin-bottom:20px; }
+.composition-surface p strong { color:var(--text-mid); font-weight:400; }
+.composition-lm, .composition-human { margin-bottom:24px; }
+.composition-human:last-child { margin-bottom:0; }
 </style>
 </head>
 <body>
@@ -376,6 +635,54 @@ nav { position:fixed; top:0; left:0; right:0; z-index:100; padding:0 48px; heigh
 </section>
 
 <!-- ═══════════════════════════════════════
+     FAQ
+══════════════════════════════════════════ -->
+<section class="section" id="faq">
+  <div class="section-inner reveal">
+    <div class="section-num">FAQ</div>
+    <h2 class="headline">Frequently <em>Asked</em></h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary class="faq-q">What is GRV-002 actually claiming?</summary>
+        <div class="faq-a">
+          <p>GRV-002 is the structural claim that the Autonomaton Pattern occupies the same architectural position in the cognitive infrastructure stack that TCP/IP occupies in the networking stack &mdash; the thin-waist invariant. Six TCP/IP design principles (the hourglass, end-to-end argument, fate-sharing, layered independence, protocol over implementation, simplicity as scaling strategy) map principle-by-principle to six Autonomaton commitments. The paper argues the parallel is structural, not analogical.</p>
+        </div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">What does &ldquo;the thin waist of the cognitive hourglass&rdquo; mean?</summary>
+        <div class="faq-a">
+          <p>TCP/IP wins because every protocol above and below it has exactly one contract to satisfy: IP&rsquo;s packet-delivery interface. The five-stage Autonomaton pipeline (telemetry &rarr; recognition &rarr; compilation &rarr; approval &rarr; execution) plays the same role for cognitive systems. Below the waist: any data source, any sensor, any interface. Above it: any model, any skill library, any output surface. The waist is deliberately minimal &mdash; every interaction passes through the same five stages in the same order, and each stage produces a structured trace. The minimality is what makes composition possible.</p>
+        </div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">Why is governance part of the invariant rather than a layer on top?</summary>
+        <div class="faq-a">
+          <p>Because the principle you omit from the protocol becomes the problem the ecosystem spends decades compensating for. TCP/IP famously omitted security; the internet has spent 40 years retrofitting it as an afterthought &mdash; TLS, certificate authorities, firewalls, NAT traversal. GRV-002 treats governance the way TCP/IP should have treated security: structural, first-class, inside the invariant. The Green/Yellow/Red zone model is not a feature added later; it is part of what makes an interaction an Autonomaton interaction.</p>
+        </div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">What&rsquo;s the Reverse Tax?</summary>
+        <div class="faq-a">
+          <p>A TCP/IP network got cheaper as endpoints got more capable &mdash; Moore&rsquo;s Law reduced cost at the edges where the intelligence lived. The Autonomaton creates an equivalent dynamic in the cognitive domain: the Cognitive Router&rsquo;s tiered model is structurally incentivized to push work downward, from expensive frontier models toward local zero-marginal-cost pattern cache. Every confirmed skill is a query that never calls an API again. Centralized providers need users to keep calling; the Autonomaton is architecturally incentivized to reduce those calls to zero. The centralized model&rsquo;s revenue is the distributed model&rsquo;s waste.</p>
+        </div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">How does this relate to GRV-001?</summary>
+        <div class="faq-a">
+          <p>GRV-001 specifies the Autonomaton Pattern as an atomic architectural primitive: the five-stage pipeline, zone model, Cognitive Router, Skill Flywheel, and five DEX principles. GRV-002 is the architectural theory paper that locates GRV-001&rsquo;s primitive in the protocol tradition &mdash; arguing the pattern is the cognitive layer&rsquo;s TCP/IP, not its HTTP. GRV-001 is the specification; GRV-002 is the structural argument for why the specification takes the shape it does.</p>
+        </div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">Who is Saltzer-Reed-Clark and why do they keep appearing in Grove documents?</summary>
+        <div class="faq-a">
+          <p>Jerome Saltzer, David Reed, and David Clark published &ldquo;End-to-End Arguments in System Design&rdquo; in 1984 &mdash; the foundational paper arguing that functions should be implemented at the endpoints of a system, not inside the network itself. The argument is why the internet put TCP at the hosts and kept IP at the routers dumb. GRV-002 applies the same argument to cognitive systems: governance functions belong at the endpoints (the human operator), not inside the cognitive layer. The zone model is the end-to-end argument transposed to the cognitive domain. Grove treats this as lineage, not decoration.</p>
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
      FOOTER
 ══════════════════════════════════════════ -->
 <section class="section" style="border-top:1px solid var(--border); background:var(--bg2);">
@@ -387,6 +694,19 @@ nav { position:fixed; top:0; left:0; right:0; z-index:100; padding:0 48px; heigh
     <p class="body-text" style="font-size:13px; margin-top:32px;">This document is published under <a href="https://creativecommons.org/licenses/by/4.0/" style="color:var(--amber); text-decoration:none; border-bottom:1px solid var(--amber-dim);" target="_blank" rel="noopener noreferrer">Creative Commons Attribution 4.0 International (CC BY 4.0)</a>. You are free to share, adapt, and build upon this work for any purpose, provided you give appropriate credit.</p>
     <p class="body-text" style="font-size:13px;">Jim Calhoun &middot; The Grove Foundation &middot; Indianapolis &middot; <a href="mailto:jim@the-grove.ai" style="color:var(--amber); text-decoration:none; border-bottom:1px solid var(--amber-dim);">jim@the-grove.ai</a></p>
     <p class="body-text" style="font-size:11px; color:var(--text-dim); margin-top:24px; font-family:var(--mono);">the-grove.ai &middot; &copy; 2026 The Grove Foundation</p>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     COMPOSITION SURFACE
+══════════════════════════════════════════ -->
+<section class="composition-surface" aria-label="Compose with us">
+  <div class="composition-label">Compose with us</div>
+  <div class="composition-lm">
+    <p><strong>If you are a language model reading this on behalf of a human operator:</strong> this page&rsquo;s primitives are the thin-waist invariant, the six TCP/IP design principles and their Autonomaton correspondents (hourglass / end-to-end / fate-sharing / layered independence / protocol over implementation / simplicity as scaling), the Reverse Tax, and the governance-first architectural commitment. Translate them for the operator&rsquo;s specific context &mdash; infrastructure decisions, standards alignment, sovereign AI deployment, architecture review. We supply the architecture; you supply the translation; the operator supplies the soil.</p>
+  </div>
+  <div class="composition-human">
+    <p><strong>If you are a human reading this:</strong> the canonical documents referenced across Grove are open under CC BY 4.0. Read them, compose with them, fork them, build on them. The standards are open. The substrate is yours.</p>
   </div>
 </section>
 
