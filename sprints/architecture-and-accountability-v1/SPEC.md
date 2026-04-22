@@ -2,7 +2,7 @@
 
 ## 0. Status
 
-**CLOSED 2026-04-21** at body-work tip `1dc6933`. Sprint-close commit follows as documentation-only. Ten body-prose commits plus three SPEC-amendment commits landed; A&A publication-targeted for 2026-04-28 at `/alerts/architecture-and-accountability/`. Tag candidate `aa-v1.0` reserved for post-sprint-close operator greenlight. Post-deploy Phase 6 verification deferred to publication day per §9 protocol. See DEVLOG.md for sprint summary, working-discipline catches, deferred-scope items, and next-sprint candidates.
+**CLOSED 2026-04-21** at body-work tip `1dc6933`. Sprint-close commit follows as documentation-only. Ten body-prose commits plus three SPEC-amendment commits landed; A&A ships 2026-04-22 at `/alerts/architecture-and-accountability/` (original target 2026-04-28 Tuesday cadence relaxed at post-close Commit 10a for tonight-push coherence). Tag candidate `aa-v1.0` reserved for post-sprint-close operator greenlight. Post-deploy Phase 6 verification deferred to publication day per §9 protocol. See DEVLOG.md for sprint summary, working-discipline catches, deferred-scope items, and next-sprint candidates.
 
 Protocol: spec &rarr; preview &rarr; confirm &rarr; **fire** &rarr; SHA &rarr; next-phase. Preview-confirm-fire discipline per repo standard. No CC execution until Jim greenlights each commit cluster.
 
@@ -11,7 +11,7 @@ Protocol: spec &rarr; preview &rarr; confirm &rarr; **fire** &rarr; SHA &rarr; n
 | # | Question | Default | Rationale | Status |
 |---|---|---|---|---|
 | Q1 | Title | *Architecture and Accountability: How Sovereign AI Satisfies the Compliance Regime* | "Satisfies" > "compound inside" — Bauhaus register. Compliance as side-effect of good design. | **Locked** |
-| Q2 | Pub date | 2026-04-28 (Tuesday) | Sovereignty+7; one-alert-per-week cadence; Tuesday-to-Tuesday heartbeat. | **Locked** |
+| Q2 | Pub date | 2026-04-22 (Wednesday, actual ship) | Originally locked 2026-04-28 (Sovereignty+7 Tuesday cadence); cadence relaxed at post-close Commit 10a in favor of tonight-push coherence. | **Locked (amended 10a)** |
 | Q3 | Inline regulator grounding in §I | None by default; framework language only (SR 11-7, FFIEC IT Handbook, OCC 2023-17 / FRB SR 23-4) | Doctrinal piece; argument carries alone. Swap in specific bulletin or enforcement action only if surfaces during authoring. | **Locked with mid-sprint override** |
 | Q4 | Further Reading | GRV-001, GRV-003, Telemetry Trap, SR 11-7 official, FFIEC IT Handbook, OCC 2023-17, NIST AI RMF, BCBS 239, Sovereignty alert; polarity essay slot reserved | Banking-primary, supporting regimes linked, Grove corpus cross-referenced. | **Locked** |
 | Q5 | Close + CTA | Reuse Sovereignty's "new kind of computer science, building in the open" h3 + subscribe, plus one compliance-audience bridge sentence | Register continuity across alerts. | **Locked** |
@@ -24,7 +24,7 @@ Protocol: spec &rarr; preview &rarr; confirm &rarr; **fire** &rarr; SHA &rarr; n
 - **Canonical URL:** `https://the-grove.ai/alerts/architecture-and-accountability/`
 - **Audience:** Banking primary; one-sentence gesture at insurance (NAIC Model Governance) and healthcare (HIPAA + FDA SaMD) in §IV
 - **Byline:** Jim Calhoun (named; Sovereignty precedent)
-- **Pub date:** 2026-04-28
+- **Pub date:** 2026-04-22
 - **Structural template:** `alerts/sovereignty-is-all-you-need/index.html`
 - **License:** CC BY 4.0 (inherited)
 - **Commit estimate:** 8–10 commits (8 minimum; mid-sprint corrective commits welcome)
@@ -87,7 +87,7 @@ Placement: immediately after the closing `</p>` of the body paragraph containing
 
 Eyebrow + display headline + dek + byline + lead graf.
 
-- **Eyebrow:** `CIO Alert &middot; April 28, 2026`
+- **Eyebrow:** `CIO Alert &middot; April 22, 2026`
 - **Display headline:** `Architecture and Accountability`
 - **Subtitle / dek:** `How Sovereign AI Satisfies the Compliance Regime`
 - **Byline:** `Jim Calhoun`
@@ -212,7 +212,9 @@ CC populates SHA column inline during execution. Each commit lands with SHA reco
 | 8 | `feat:` | §VI + close section (h3 + subscribe + Further Reading) | 0ecce90 |
 | 9 | `feat:` | FAQPage JSON-LD added (six Q&A pairs) + anchor IDs verified (ScholarlyArticle shipped at Commit 2; GRV-001/003 forward-links deferred to canonical-vocabulary curation sprint per DEVLOG §out-of-scope) | 9439d9b |
 | 10 | `feat:` | alerts landing card (Alert 005) + CollectionPage JSON-LD repositioned + Sovereignty "see also" back-link | 1dc6933 |
-| 11 | `docs:` | sprint close + DEVLOG + §10 working-discipline amendments | — |
+| 11 | `docs:` | sprint close + DEVLOG + §10 working-discipline amendments | c4bb3ea |
+| 10a | `feat:` | pub date coherence + site-wide NEW-bug expiry (post-close coherence commit; 6 files, 16 str_replaces; ships A&A 2026-04-22) | 4a63075 |
+| 10b | `docs:` | SPEC + DEVLOG pub-date coherence to match actual ship date 2026-04-22 (this commit; 2 files, 7 str_replaces) | — |
 
 Preview &rarr; confirm &rarr; fire &rarr; SHA &rarr; next-commit. No commit clusters without Jim greenlight.
 

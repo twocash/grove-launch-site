@@ -2,7 +2,7 @@
 
 ## Sprint summary
 
-Ten body-prose commits plus three SPEC-amendment commits authored 2026-04-21. Goal: ship A&A as the doctrinal CIO Alert mapping Grove's Autonomaton primitives onto the prudential compliance regime (SR 11-7, FFIEC, OCC, BCBS 239), publication-targeted for 2026-04-28. Tip: `1dc6933`. Page deployable; tag candidate `aa-v1.0`.
+Ten body-prose commits plus three SPEC-amendment commits authored 2026-04-21. Goal: ship A&A as the doctrinal CIO Alert mapping Grove's Autonomaton primitives onto the prudential compliance regime (SR 11-7, FFIEC, OCC, BCBS 239), shipped 2026-04-22 (original target 2026-04-28 Tuesday cadence relaxed at post-close Commit 10a). Body-work tip: `1dc6933`. Post-close coherence tips: `4a63075` (10a: page metadata) + this commit (10b: SPEC/DEVLOG doc coherence). Page deployable; tag candidate `aa-v1.0`.
 
 The alert lands six structural arguments:
 
@@ -36,7 +36,7 @@ Sprint closes at body-work tip `1dc6933`. Sprint-close commit (this commit) foll
 
 ## Verification summary
 
-All in-sprint verification PASS or surfaced-and-resolved per Option (a) precedent. Final post-deploy verification (SPEC §9 matrix) deferred to publication day 2026-04-28 per Phase 6 protocol.
+All in-sprint verification PASS or surfaced-and-resolved per Option (a) precedent. Final post-deploy verification (SPEC §9 matrix) deferred to publication day 2026-04-22 per Phase 6 protocol.
 
 In-sprint flag resolutions (all proceeded under Option (a) with discipline-amendment queueing):
 
@@ -113,6 +113,6 @@ Ranked by informal urgency:
 
 ## Handoff to publication
 
-A&A is ready to publish at `/alerts/architecture-and-accountability/` on 2026-04-28. Push and Vercel deploy can fire from tip post-this-commit at operator greenlight.
+A&A ships at `/alerts/architecture-and-accountability/` on 2026-04-22 (original target 2026-04-28 relaxed at post-close Commit 10a for tonight-push coherence). Push and Vercel deploy can fire from this commit's tip at operator greenlight.
 
 Tag operation `aa-v1.0` is a separate post-commit step at operator greenlight.
