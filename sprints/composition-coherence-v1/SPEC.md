@@ -174,8 +174,9 @@ Every page gets all seven:
 
 | Phase | Artifact                              | SHA | Date |
 |-------|---------------------------------------|-----|------|
-| 0     | SPEC committed                        | TBD | TBD  |
-| 0.5   | /content/* audit + cleanup            | TBD | TBD  |
+| 0     | SPEC + Phase 0.5 prompts committed    | 90a05ca | 2026-04-22 |
+| 0.5a  | /content/* audit report               | f265d9e | 2026-04-22 |
+| 0.5b  | /content/* cleanup executed           | a8a1059 | 2026-04-22 |
 | 1     | llms.txt v2                           | TBD | TBD  |
 | 2     | /lambda Tier A + composition surface  | TBD | TBD  |
 | 3a    | /standards/002 Tier A                 | TBD | TBD  |
