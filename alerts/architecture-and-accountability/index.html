@@ -114,6 +114,64 @@
   "license": "https://creativecommons.org/licenses/by/4.0/"
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "@id": "https://the-grove.ai/alerts/architecture-and-accountability#faq",
+  "isPartOf": { "@id": "https://the-grove.ai/alerts/architecture-and-accountability#article" },
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What does the regulator actually ask about AI deployments?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Three architecturally orthogonal questions: who owns the substrate of the institution's decisions, where the institution can interrogate the model's reasoning, and how human accountability is demonstrable at named points in the decision chain. Federal Reserve SR 11-7, FFIEC IT examination authority, and OCC Bulletin 2023-17 each pose one or more of these. The question every regulator is converging on is structural rather than capability-based."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What changes when AI deployment moves to a vendor's model layer?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "When the substrate of the institution's decisions accumulates at a node the institution does not own or govern, the artifacts the regulator needs are produced and held by the third party rather than the institution. The compliance regime still applies; the risk profile shifts. Cognitive platforming is the mechanism — judgment extraction is the consequence."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What architectural mechanism lets institutions actually answer the regulator's question?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The Autonomaton Pattern — a five-stage invariant pipeline (telemetry, recognition, compilation, approval, execution) plus the Zone Model (Green/Yellow/Red) plus the provenance arc each stage produces. Together these primitives map directly onto SR 11-7's effective challenge requirement, FFIEC's human accountability requirement, and OCC's information access requirement."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are the architectural pattern and the compliance regime competing or complementary?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Stacked, not competing. The compliance regime answers how control is governed; the architectural pattern answers how control is implemented. Each is incomplete without the other. The architecture is piping that routes knowledge current with provenance, isolation, and measurable properties at every node."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does the architecture pay for itself over time?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Sovereign architecture inverts the linear-or-superlinear compliance-cost curve by producing audit artifacts as byproducts of operating. What was sunk cost becomes balance-sheet asset; what was overhead becomes infrastructure. The institution is not paying for compliance — it is investing in the capacity to demonstrate compliance at decreasing cost over time."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does this pattern apply beyond banking?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The same complementarity holds across NAIC model governance in insurance, HIPAA paired with FDA Software-as-a-Medical-Device guidance in healthcare, NYDFS Part 500 in cybersecurity, the EU AI Act in cross-jurisdictional model governance, and SEC AI disclosure rules in capital-markets risk reporting. Each warrants its own treatment; the structural conclusion is the same."
+      }
+    }
+  ]
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fragment+Mono:ital@0;1&family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
