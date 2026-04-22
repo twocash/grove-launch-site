@@ -189,7 +189,7 @@ CC populates SHA column inline during execution. Each commit lands with SHA reco
 |---|---|---|---|
 | 1 | `docs:` | SPEC authored and committed | f1ae826 |
 | 1a | `docs:` | SPEC amended to integrate OpenClaw as bounded reference (§II, §III, Further Reading) | 6f5a920 |
-| 2 | `feat:` | page shell + head metadata stack + canonical + skeleton section scaffolding | — |
+| 2 | `feat:` | page shell + head metadata stack + canonical + skeleton section scaffolding | b80e72d |
 | 3 | `feat:` | lead section (eyebrow + headline + dek + byline + lead graf) + §I | — |
 | 4 | `feat:` | §II + opening pullquote | — |
 | 5 | `feat:` | §III | — |
@@ -210,7 +210,7 @@ Inherited from Chunk 3 / Sovereignty alert. File-local precedent confirmed at au
 - **Open Graph (13 tags):** og:title, og:description, og:type=article, og:url, og:site_name, og:image, article:published_time, article:author, article:section (CIO Alert), article:tag &times; 4 (AI governance, sovereign cognition, compliance, banking)
   - og:title strips the " &mdash; The Grove Foundation" suffix per Sovereignty precedent
 - **Twitter Card (4 tags):** summary_large_image variant
-- **Dublin Core (7 fields):** DC.title, DC.creator, DC.publisher, DC.rights=CC BY 4.0, DC.date, DC.type, DC.language
+- **Dublin Core (10 fields, doctrinal-piece variant):** DC.title, DC.creator, DC.publisher, DC.date, DC.type, DC.format, DC.identifier, DC.rights=CC BY 4.0, DC.subject, DC.relation. No DC.source (this is a doctrinal piece, not a response-to-source like Sovereignty). No DC.language (omitted per Sovereignty file-local precedent for doctrinal alerts).
 - **Citation metadata (5 fields):** citation_title, citation_author, citation_publication_date, citation_publisher, citation_fulltext_html_url
 - **JSON-LD ScholarlyArticle:**
   - Person author with Organization affiliation (Jim Calhoun / The Grove Foundation)
