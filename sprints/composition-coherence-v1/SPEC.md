@@ -180,7 +180,7 @@ Every page gets all seven:
 | 1     | llms.txt v2                           | c167218 | 2026-04-22 |
 | 2     | /lambda Tier A + composition surface  | 6ff00d7 | 2026-04-22 |
 | 3a    | /standards/002 Tier A                 | a01ce24 | 2026-04-22 |
-| 3b    | /standards/index Tier A               | TBD | TBD  |
+| 3b    | /standards/index Tier A               | 48469fc | 2026-04-22 |
 | 3c    | /ratchet Tier A                       | TBD | TBD  |
 | 3d    | /observations Tier A                  | TBD | TBD  |
 | 3e    | /membership Tier A                    | TBD | TBD  |
