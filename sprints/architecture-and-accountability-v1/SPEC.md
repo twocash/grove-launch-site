@@ -188,7 +188,7 @@ CC populates SHA column inline during execution. Each commit lands with SHA reco
 | # | Type | Subject | SHA |
 |---|---|---|---|
 | 1 | `docs:` | SPEC authored and committed | f1ae826 |
-| 1a | `docs:` | SPEC amended to integrate OpenClaw as bounded reference (§II, §III, Further Reading) | — |
+| 1a | `docs:` | SPEC amended to integrate OpenClaw as bounded reference (§II, §III, Further Reading) | 6f5a920 |
 | 2 | `feat:` | page shell + head metadata stack + canonical + skeleton section scaffolding | — |
 | 3 | `feat:` | lead section (eyebrow + headline + dek + byline + lead graf) + §I | — |
 | 4 | `feat:` | §II + opening pullquote | — |
