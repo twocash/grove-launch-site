@@ -178,7 +178,7 @@ Every page gets all seven:
 | 0.5a  | /content/* audit report               | f265d9e | 2026-04-22 |
 | 0.5b  | /content/* cleanup executed           | a8a1059 | 2026-04-22 |
 | 1     | llms.txt v2                           | c167218 | 2026-04-22 |
-| 2     | /lambda Tier A + composition surface  | TBD | TBD  |
+| 2     | /lambda Tier A + composition surface  | 6ff00d7 | 2026-04-22 |
 | 3a    | /standards/002 Tier A                 | TBD | TBD  |
 | 3b    | /standards/index Tier A               | TBD | TBD  |
 | 3c    | /ratchet Tier A                       | TBD | TBD  |
