@@ -204,7 +204,7 @@ CC populates SHA column inline during execution. Each commit lands with SHA reco
 | 1a | `docs:` | SPEC amended to integrate OpenClaw as bounded reference (§II, §III, Further Reading) | 6f5a920 |
 | 2 | `feat:` | page shell + head metadata stack + canonical + skeleton section scaffolding | b80e72d |
 | 3 | `feat:` | lead section (eyebrow + headline + dek + byline + lead graf) + §I | 58ac58e |
-| 3a | `docs:` | SPEC amended to declare register-note <aside> pattern (post-polarity-canonicalization-v1 close at 7dc4d53; A&A first instantiation in Commit 4) | — |
+| 3a | `docs:` | SPEC amended to declare register-note <aside> pattern (post-polarity-canonicalization-v1 close at 7dc4d53; A&A first instantiation in Commit 4) | 8ad0c07 |
 | 4 | `feat:` | §II + opening pullquote (instantiates register-note pattern for first polarity use) | — |
 | 5 | `feat:` | §III | — |
 | 6 | `feat:` | §IV | — |

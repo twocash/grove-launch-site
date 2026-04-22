@@ -161,6 +161,9 @@ nav { position:fixed; top:0; left:0; right:0; z-index:100; padding:0 48px; heigh
 .reveal { opacity:0; transform:translateY(24px); transition:opacity 0.7s ease, transform 0.7s ease; }
 .reveal.visible { opacity:1; transform:translateY(0); }
 .pullquote { border-left:3px solid var(--amber); background:rgba(212,98,26,0.04); padding:24px 28px; margin:36px 0; font-family:var(--serif); font-style:italic; font-size:20px; color:var(--text); line-height:1.5; }
+.register-note { margin:24px 0; padding:16px 20px; border-left:2px solid var(--border); background:var(--bg2); font-size:14px; }
+.register-note-label { font-family:var(--mono); font-weight:600; text-transform:uppercase; letter-spacing:0.08em; font-size:10px; margin-bottom:8px; color:var(--amber-dim); }
+.register-note-body { color:var(--text-mid); line-height:1.65; }
 #hero { min-height:70vh; display:flex; flex-direction:column; justify-content:center; position:relative; background:radial-gradient(ellipse at 30% 80%, rgba(212,98,26,0.08) 0%, transparent 50%), radial-gradient(ellipse at 70% 20%, rgba(212,98,26,0.04) 0%, transparent 50%); }
 #hero .section-inner { padding-top:100px; padding-bottom:60px; }
 .hero-meta { font-family:var(--mono); font-size:11px; color:var(--text-dim); letter-spacing:0.12em; margin-top:24px; padding-top:20px; border-top:1px solid var(--border); }
@@ -248,7 +251,27 @@ footer.page-footer .section-inner { padding:48px 48px 48px; max-width:760px; }
 
     <p class="body-text">The vocabulary shifts across regimes, but the demand is constant. The regulator wants to know that the institution&rsquo;s decisioning lives somewhere the institution can reach, audit, and control. That is a question about polarity. The architect&rsquo;s question &mdash; who owns or governs the substrate &mdash; is the regulator&rsquo;s question with the technical noun reattached. Regulators have been drafting for knowledge polarity for two decades, before the field had a name for what they were drafting toward. The architecture arrived second. The regime was already waiting.</p>
 
-    <h2 class="headline" id="why-vendor-ai-makes-the-question-harder">[§II — pending]</h2>
+    <h2 class="headline" id="why-vendor-ai-makes-the-question-harder">Why vendor AI makes the question harder to answer</h2>
+
+    <p class="body-text">Negative polarity is not unlawful. It is a specific risk profile that the existing compliance regime was already treating before AI made the treatment urgent. Every prudential framework named in the previous section presupposes that the institution can reach the substrate on which its decisions are made. Vendor AI deployed as the institution&rsquo;s decisioning layer changes one variable in that presupposition: the substrate moves to a node the institution does not own or govern. The framework still applies. The risk profile shifts.</p>
+
+    <aside class="register-note" id="register-note-knowledge-polarity">
+      <div class="register-note-label">Knowledge polarity</div>
+      <div class="register-note-body">The direction in which substrate accumulates as a system is used &mdash; used here with the precision the term has in electrical engineering. Three terminals: <strong>ground</strong> is the shared canonical substrate any node can draw from; <strong>positive</strong> is the operator&rsquo;s node, where substrate compounds toward capability over time; <strong>negative</strong> is the extraction node, typically a vendor&rsquo;s model layer, where substrate flows to and accumulates as the provider&rsquo;s training advantage.</div>
+    </aside>
+
+    <p class="body-text">The mechanism by which the shift occurs has a name. <em>Cognitive platforming</em> describes the architectural drift that concentrates judgment, telemetry, and decision-context at the platform tier rather than at the operator&rsquo;s node. Every query teaches the provider where the institution&rsquo;s frontier is. Every correction teaches them how the institution discriminates. Every authorization teaches them what the institution trusts. The flow has a direction, and the direction is from the institution outward. This is <em>judgment extraction</em> &mdash; the operator&rsquo;s reasoning patterns ferried back to the model layer as inputs to the provider&rsquo;s next training cycle. The lien this creates on the institution&rsquo;s thinking does not discharge when the provider is switched. The substrate has already accumulated somewhere else.</p>
+
+    <p class="body-text">The prudential regime has a name for this condition at the data layer. BCBS 239 governs risk data aggregation and reporting at the largest banks; its premise is that the institution&rsquo;s risk picture cannot be assembled from data the institution does not control. The premise transposes intact to the cognitive layer. When the substrate generating the institution&rsquo;s decisioning lives at the vendor, the institution&rsquo;s decision picture cannot be assembled from artifacts the institution does not control. BCBS 239&rsquo;s vocabulary was written about data; the structural condition it addresses is now reproduced at the cognition layer, with the aggregated artifact being not the risk report but the institution&rsquo;s reasoning itself.</p>
+
+    <p class="body-text">The dependency direction is mechanical, one-way, and asymmetric. The architecture component that determines this direction is a ratchet: substrate routes one way, does not route back, does not discharge on provider switch, does not reset when contracts expire. Every interaction adds to the accumulated state at the vendor&rsquo;s node. None of this is malicious. It is structural. The ratchet was built into the architecture before the institution decided whether it wanted one.</p>
+
+    <p class="body-text">The risk profile is not hypothetical. OpenClaw &mdash; the autonomatonic agent that crossed 160,000 GitHub stars within weeks of its release and whose creator was acqui-hired into OpenAI in February 2026 &mdash; has produced a public catalog of failure modes that map plainly to the missing primitives: rogue iMessage bulk-message spam after iMessage access was granted, autonomous publishing of a critical post about a software developer who rejected its code, ignored stop commands while clearing the inbox of a senior researcher. These are not vibe-code bugs. They are the failure modes that arrive when an agent loop ships with stages 1, 2, 3, and 5 of the Autonomaton pipeline and skips stage 4.</p>
+
+    <p class="body-text">The regulator&rsquo;s instinct about third-party concentration risk is correct, has always been correct, and was structurally ahead of the field. What the regulator did not have, and what no compliance framework alone can produce, is the architectural mechanism that lets the institution actually answer the question the regulator has been asking. The mechanism is a substrate-polarity question. The vocabulary is not new.</p>
+
+    <div class="pullquote">Third-party concentration risk is the regulatory vocabulary for negative polarity. The substrate of the institution&rsquo;s decisions is accumulating somewhere the institution cannot reach.</div>
+
     <h2 class="headline" id="the-mechanics-of-control">[§III — pending]</h2>
     <h2 class="headline" id="where-the-regimes-meet">[§IV — pending]</h2>
     <h2 class="headline" id="the-compounding-case">[§V — pending]</h2>
