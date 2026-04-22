@@ -208,7 +208,7 @@ CC populates SHA column inline during execution. Each commit lands with SHA reco
 | 4 | `feat:` | §II + opening pullquote (instantiates register-note pattern for first polarity use) | 84a4143 |
 | 5 | `feat:` | §III | 1fcc0e8 |
 | 6 | `feat:` | §IV | 9b861ed |
-| 7 | `feat:` | §V + closing pullquote | — |
+| 7 | `feat:` | §V + closing pullquote | b0b5c57 |
 | 8 | `feat:` | §VI + close section (h3 + subscribe + Further Reading) | — |
 | 9 | `feat:` | ScholarlyArticle JSON-LD + (FAQPage JSON-LD if beats support) + anchor IDs on all six h2 | — |
 | 10 | `feat:` | alerts landing page link + internal cross-references (Sovereignty "see also" back-link, GRV-001/003 forward-links if applicable) | — |
