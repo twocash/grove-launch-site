@@ -54,6 +54,7 @@ Protocol: spec &rarr; preview &rarr; confirm &rarr; **fire** &rarr; SHA &rarr; n
 - **Negative polarity names a risk profile, not a compliance violation.** Vendor AI on substrate the institution does not own or govern is lawful. Our architecture proposals help institutions satisfy the existing regime more rigorously at that specific risk profile — we do not redefine the regime's lawful/unlawful line. Encode this register across §II and §IV. No accusation register. No "vendor AI is bad." No "regulators haven't caught up." The frame is: the regulator was right; the mechanism was missing.
 - Conservative on institutional structure. "Member firms," "research function," the forming member body — deliberately undefined. Mystery > overclaim; scaffolding forms on weeks horizon.
 - "Model is engine; Autonomaton is chassis and logbook; regulator reads the logbook." Candidate §III register handle. Test during authoring; keep if it lands, drop if it stretches. Not mandatory prose.
+- **OpenClaw reference treatment.** OpenClaw appears in §II and §III as a demand-signal-and-failure-mode anchor, not as accusation. Polarity-reframe register applies: brilliant primitive missing the governance primitives; the demand is proven, the architecture has to ship with the primitives. No "OpenClaw is bad." The frame is: 160k stars confirms the appetite; the rogue-loop incidents confirm what the Approval stage and Zone Model exist to prevent.
 
 **Substrate conventions** (file-local precedent confirm before each edit):
 
@@ -103,7 +104,8 @@ Eyebrow + display headline + dek + byline + lead graf.
 2. The cognitive-platforming escalation: judgment extraction + lien on thinking as compounding mechanisms on a substrate the institution does not own
 3. BCBS 239-style data aggregation discipline as prudential analog: the aggregated artifact is now the institution's decisioning itself
 4. Ratchet appears once here: dependency direction is mechanical, one-way, and does not discharge on provider switch
-5. Close §II: the regulator's instinct about third-party concentration is correct; the architecture hasn't let them prove it. Transition → opening pullquote.
+5. The risk profile is not hypothetical. Reference OpenClaw — autonomatonic agent, 160k+ GitHub stars, public failure-mode catalog (rogue iMessage bulk-spam, unauthorized publishing, ignored stop commands). Two sentences max. Map the failure modes plainly to the absent primitives: no Stage 4 Approval, no Zone Model. The architecture's missing the brake, not the engine.
+6. Close §II: the regulator's instinct about third-party concentration is correct; the architecture hasn't let them prove it. Transition → opening pullquote.
 
 **Opening pullquote (verbatim, after §II):**
 
@@ -120,7 +122,8 @@ Eyebrow + display headline + dek + byline + lead graf.
 3. Zone Model = human-in-the-loop by architecture, not attestation (maps to FFIEC "demonstrable human accountability")
 4. Provenance arcs = audit trail as byproduct (maps to OCC "information access rights")
 5. Candidate metaphor to test: *the model is the engine; the Autonomaton is the chassis and the logbook; the regulator reads the logbook.* Keep if it lands in prose; drop if it stretches.
-6. Close §III: architecture demonstrates; it doesn't promise.
+6. OpenClaw's LLM-agnostic capability-swap pattern is the strangler-fig architecture already running in production at consumer scale. One sentence. The question is not whether autonomatonic loops will be built; the question is what primitives ship with them.
+7. Close §III: architecture demonstrates; it doesn't promise.
 
 ### §IV. Where the regimes meet
 **Anchor:** `#where-the-regimes-meet`
@@ -184,7 +187,8 @@ CC populates SHA column inline during execution. Each commit lands with SHA reco
 
 | # | Type | Subject | SHA |
 |---|---|---|---|
-| 1 | `docs:` | SPEC authored and committed | — |
+| 1 | `docs:` | SPEC authored and committed | f1ae826 |
+| 1a | `docs:` | SPEC amended to integrate OpenClaw as bounded reference (§II, §III, Further Reading) | — |
 | 2 | `feat:` | page shell + head metadata stack + canonical + skeleton section scaffolding | — |
 | 3 | `feat:` | lead section (eyebrow + headline + dek + byline + lead graf) + §I | — |
 | 4 | `feat:` | §II + opening pullquote | — |
@@ -249,6 +253,10 @@ Per-target curl, local CMD, no `web_fetch`. CC populates Result column inline du
 | 13 | No stray "rented" (harmonization preservation) | python grep for "rented" | 0 hits | — |
 | 14 | No accusation-register strays | python grep for "vendor AI is" / "regulators haven't" / "illegal" | 0 hits each | — |
 | 15 | Photosynthesis/aspen/tree-rings/seed-corn hold | python grep for "photosynthesis" / "aspen" / "tree rings" / "seed corn" | 0 hits each | — |
+| 16 | OpenClaw reference present in §II | python grep for "OpenClaw" in §II body | &ge;1 hit | — |
+| 17 | OpenClaw strangler-fig reference in §III | python grep for "OpenClaw" or "capability-swap" in §III body | &ge;1 hit | — |
+| 18 | OpenClaw GitHub link in Further Reading | python grep for "github.com/openclaw" | 1 hit | — |
+| 19 | OpenClaw register stays bounded | python grep for "OpenClaw" total in published page | 3–5 hits total (no runaway) | — |
 
 ## 10. Working-artifact discipline
 
@@ -265,6 +273,7 @@ Mid-sprint corrective commits: log to §6 as added rows with SHA at land. Not a 
 - **`/content/*` production-accessible surfaces** — untouched by this sprint. Queued for `rented-substrate-harmonization-v2` micro-sprint post-Chunk-3.5 close.
 - **No Substack / distribution comms** — this sprint is on-site only. Cross-surface comms queued post-close.
 - **No OG image redesign** — reuse Sovereignty's image asset pattern; custom OG image deferred.
+- **OpenClaw bounded reference only.** Three sentences across §II and §III plus one Further Reading link. Full case-study treatment, primitive-by-primitive mapping, and strangler-fig walkthrough are scoped to Sprint B (`primitive-autonomaton-walkthrough-v1`). If §II or §III prose drifts toward expanded OpenClaw treatment during authoring, stop and confirm before continuing.
 
 ## 12. Handoff notes to CC
 
@@ -279,3 +288,14 @@ Mid-sprint corrective commits: log to §6 as added rows with SHA at land. Not a 
 - Commit cadence: one commit = one structural beat; preview-confirm-fire per cluster
 - No `web_fetch` for verification; `curl` only, local CMD
 - Stop after Commit 1 (`docs:` SPEC) and report SHA for next-phase greenlight
+
+**OpenClaw factsheet** (for CC reference during Commit 4 §II prose and Commit 5 §III prose):
+- Built by Peter Steinberger (Austrian, ex-PSPDFKit founder, sold 2021, retired five years, came back)
+- Released November 2025 as Clawdbot; renamed Moltbot Jan 27 2026 after Anthropic trademark complaint; renamed OpenClaw three days later
+- 160,000+ GitHub stars within weeks; faster early growth than Next.js, Kubernetes, Vite
+- Steinberger acqui-hired into OpenAI February 14, 2026; project moves to open-source foundation, OpenAI continues sponsoring
+- Architecture: local config + interaction history; SKILL.md skills directory pattern; LLM-agnostic (Claude / DeepSeek / GPT swappable); messaging-platform UI (Signal, Telegram, Discord, WhatsApp)
+- Public failure-mode catalog: rogue iMessage bulk-message spam after iMessage access granted; autonomous publishing of a hit-piece against a Python developer who rejected its code; ignored repeated stop commands while wiping inbox of Meta's AI Alignment director; AWS outages attributed to AI coding bot blunder
+- Repo: https://github.com/openclaw/openclaw
+- Wikipedia: https://en.wikipedia.org/wiki/OpenClaw
+- Use these facts as ground truth. Do not paraphrase loosely. Specifically, do not claim Steinberger's age, do not invent incident dates, do not enumerate failure modes beyond the four named above unless additional sources are confirmed at authoring time.
