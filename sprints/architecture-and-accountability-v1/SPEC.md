@@ -210,7 +210,7 @@ CC populates SHA column inline during execution. Each commit lands with SHA reco
 | 6 | `feat:` | §IV | 9b861ed |
 | 7 | `feat:` | §V + closing pullquote | b0b5c57 |
 | 8 | `feat:` | §VI + close section (h3 + subscribe + Further Reading) | 0ecce90 |
-| 9 | `feat:` | ScholarlyArticle JSON-LD + (FAQPage JSON-LD if beats support) + anchor IDs on all six h2 | — |
+| 9 | `feat:` | ScholarlyArticle JSON-LD + (FAQPage JSON-LD if beats support) + anchor IDs on all six h2 | 9439d9b |
 | 10 | `feat:` | alerts landing page link + internal cross-references (Sovereignty "see also" back-link, GRV-001/003 forward-links if applicable) | — |
 
 Preview &rarr; confirm &rarr; fire &rarr; SHA &rarr; next-commit. No commit clusters without Jim greenlight.
