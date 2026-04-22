@@ -2,7 +2,7 @@
 
 ## 0. Status
 
-**DRAFT authored 2026-04-21** post-harmonization (tip `6e375a4`). Overwrites paused-status stub. Preview reviewed by Jim + Gemini focus-group lens; amendments integrated. Fire given 2026-04-21. Ready for Commit 1 (`docs:` SPEC).
+**CLOSED 2026-04-21** at body-work tip `1dc6933`. Sprint-close commit follows as documentation-only. Ten body-prose commits plus three SPEC-amendment commits landed; A&A publication-targeted for 2026-04-28 at `/alerts/architecture-and-accountability/`. Tag candidate `aa-v1.0` reserved for post-sprint-close operator greenlight. Post-deploy Phase 6 verification deferred to publication day per §9 protocol. See DEVLOG.md for sprint summary, working-discipline catches, deferred-scope items, and next-sprint candidates.
 
 Protocol: spec &rarr; preview &rarr; confirm &rarr; **fire** &rarr; SHA &rarr; next-phase. Preview-confirm-fire discipline per repo standard. No CC execution until Jim greenlights each commit cluster.
 
@@ -210,8 +210,9 @@ CC populates SHA column inline during execution. Each commit lands with SHA reco
 | 6 | `feat:` | §IV | 9b861ed |
 | 7 | `feat:` | §V + closing pullquote | b0b5c57 |
 | 8 | `feat:` | §VI + close section (h3 + subscribe + Further Reading) | 0ecce90 |
-| 9 | `feat:` | ScholarlyArticle JSON-LD + (FAQPage JSON-LD if beats support) + anchor IDs on all six h2 | 9439d9b |
-| 10 | `feat:` | alerts landing page link + internal cross-references (Sovereignty "see also" back-link, GRV-001/003 forward-links if applicable) | — |
+| 9 | `feat:` | FAQPage JSON-LD added (six Q&A pairs) + anchor IDs verified (ScholarlyArticle shipped at Commit 2; GRV-001/003 forward-links deferred to canonical-vocabulary curation sprint per DEVLOG §out-of-scope) | 9439d9b |
+| 10 | `feat:` | alerts landing card (Alert 005) + CollectionPage JSON-LD repositioned + Sovereignty "see also" back-link | 1dc6933 |
+| 11 | `docs:` | sprint close + DEVLOG + §10 working-discipline amendments | — |
 
 Preview &rarr; confirm &rarr; fire &rarr; SHA &rarr; next-commit. No commit clusters without Jim greenlight.
 
@@ -282,6 +283,14 @@ SPEC §6 commit table and §9 verification matrix are living ledgers maintained 
 Mid-sprint corrective commits: log to §6 as added rows with SHA at land. Not a bug — institutional discipline for catching register and disambiguation issues before deploy.
 
 **Line-count threshold convention (caught Commit 2 polarity-canon, recurred Commit 3a A&A).** SPEC files use one-physical-line-per-paragraph markdown convention. Pure SPEC amendment commits with bulleted prose + code blocks produce smaller line-count deltas than soft-wrapped estimates suggest. Future verification matrix entries for SPEC line-count delta should anchor to actual file convention (typically +20 to +30 for amendment-style commits, not +30 to +50). Apply when authoring future verification thresholds.
+
+**Concept-coverage over literal-word-frequency (caught Commit 6 complementarity, recurred Commit 8 forward-infrastructure).** Verification matrix entries that assert &ge;N literal-word-count for a concept routinely flag false-positive when the concept is established via adjacent vocabulary in early paragraphs and named explicitly later. Future verification thresholds targeting a canonical term's presence in body prose should anchor to concept-coverage (named at least once, carried through paragraph) rather than raw word-frequency. Apply when authoring future verification matrix rows for any canonical term carried across a multi-paragraph section.
+
+**String-match patterns account for natural verb/noun conjugation (caught Commit 8 own/govern).** Literal grep patterns like `"own or govern"` miss natural conjugated forms like `"owns or governs"` in prose. Future verification string-match patterns for compound verb phrases should account for conjugation via regex or disjunctive literal patterns (e.g., `"own\|owns"` with `"govern\|governs"`). Apply when authoring future verification matrix rows for compound canonical phrases.
+
+**Body-prose verification scope excludes nav, footer, and Further Reading (caught Commit 5 ratchet, recurred Commit 9 OpenClaw Further-Reading).** Page-wide grep for canonical terms counts nav/footer/Further-Reading link labels and site-chrome product names toward body-prose thresholds, producing false-positive over-scope flags. Future verification matrix entries targeting body-prose canonical-term frequency should scope to `<section>` body elements and exclude nav `<header>`, site `<footer>`, and Further Reading `<ul>` regions. Apply when authoring body-prose grep thresholds for any canonical term that also appears in nav, footer, or Further Reading labels.
+
+**Fresh-context CC handoff discipline (caught across Commits 6 and 10).** Every chat-to-CC handoff is a fresh-context handoff regardless of operator confidence in continuity. Proceed-signals without full sprint/commit prompts (e.g., "Roll on Commit N" or "Commit N greenlight") are insufficient for preview-confirm-fire discipline; CC must stop and request the full prompt before firing. Apply at every commit handoff in every sprint. The discipline is not operator-dependent; it is substrate-dependent.
 
 ## 11. Out-of-scope and boundary calls
 
