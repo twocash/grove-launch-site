@@ -25,12 +25,13 @@ Protocol: spec &rarr; preview &rarr; confirm &rarr; **fire** &rarr; SHA &rarr; n
 - No agrarian metaphor (photosynthesis / aspen / tree-rings). Held for `/essays/polarity` standalone publication.
 - No Reverse Tax expansion, no memorialized-judgment expansion. Both have their own canonical entries; polarity entry references neither directly.
 - Existing entries' silent-on-coiner convention preserved (no attribution byline in entry).
+- **File convention discipline:** `docs/grove-canonical-vocabulary.md` uses one-physical-line-per-paragraph markdown (no soft-wrap inside paragraphs) and one blank line between entries. Mirror exactly. Caught at Commit 2 verification when CC flagged trailing-spacing deviation against my overspecified instruction; resolved by fixing instruction to match file convention.
 
 ## 3. Commit ledger (living)
 
 | # | Type | Subject | SHA |
 |---|---|---|---|
-| 1 | `docs:` | SPEC authored | — |
+| 1 | `docs:` | SPEC authored | 7b647da |
 | 2 | `docs:` | Knowledge Polarity entry added to `docs/grove-canonical-vocabulary.md`, slotted between The Ratchet and Substrate (cognitive) | — |
 | 3 | `docs:` | `llms.txt` updated — replace single verb-form sentence with definitional block | — |
 
@@ -81,7 +82,7 @@ Knowledge polarity is the direction in which substrate accumulates as a system i
 | 9 | llms.txt definitional block landed | python grep `llms.txt` for "Knowledge polarity is the direction in which substrate accumulates" | 1 hit | — |
 | 10 | llms.txt verb-form sentence removed | python grep `llms.txt` for "We reverse polarity" | 0 hits | — |
 | 11 | llms.txt three-terminal model present | python grep `llms.txt` for "Three terminals" + "ground" + "positive" + "negative" | all hits | — |
-| 12 | Total file integrity | line count of canonical vocab doc post-edit; expect ~+30 lines (entry size) | within +25 to +35 | — |
+| 12 | Total file integrity | line count of canonical vocab doc post-edit; expect +18 lines (entry size — file uses one-physical-line-per-paragraph markdown convention) | within +15 to +20 | — |
 
 ## 7. Out-of-scope (boundary calls)
 

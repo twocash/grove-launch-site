@@ -138,6 +138,22 @@ In GRV-003, the Ratchet carries a second sense: *the Ratchet as learning traject
 
 Grove also uses *the dependency Ratchet* in its commercial writing to name the inverse phenomenon in cognitive-platforming arrangements: the architecture by which vendor dependency compounds over time. When unmodified, *the Ratchet* refers to the autonomaton mechanism; *dependency Ratchet* or *the Ratchet (in platform architectures)* distinguishes the opposed case.
 
+### Knowledge polarity
+
+**Valence:** Grove canon
+**Primary document:** [GRV-001: The Autonomaton Pattern](https://the-grove.ai/standards/001)
+**Fragment URL:** `https://the-grove.ai/vocabulary#knowledge-polarity`
+**Coined:** 2026-04-21
+**Canonicalized:** 2026-04-21
+
+Knowledge polarity is the direction in which substrate accumulates as a system is used. Grove uses *polarity* with the precision the term has in electrical engineering: directional flow across a circuit between terminals referenced to a common ground. The vocabulary is not metaphorical. The same structural-isomorphism posture that lets the Autonomaton inherit the PLC scan cycle, the Zone Model inherit hardwired emergency stops, and the Cognitive Router inherit FPGA synthesis lets knowledge polarity inherit its meaning from electrical engineering intact. This is convergent solution to the same problem — directional flow under sovereignty constraint — arrived at independently in two engineering disciplines separated by decades.
+
+Three terminals in the circuit. **Ground** is the shared canonical substrate: published standards, open literature, common vocabulary, the CC-licensed primitives any node can draw from without diminishing the pool. Ground is neutral and reachable to all nodes equally. **Positive polarity** describes substrate compounding at the operator's node: every interaction with the system thickens the operator's context, sharpens the operator's judgment, and increases the operator's capability over time. The substrate accumulates where the operator stands. **Negative polarity** describes substrate flowing to an extraction node, typically a vendor's model layer: every query teaches the provider where the operator's frontier is, every correction teaches them how the operator discriminates, every authorization teaches them what the operator trusts. The substrate accumulates somewhere the operator cannot reach.
+
+Polarity is paired with [the Ratchet](#the-ratchet) but distinct from it. The ratchet is the mechanism — the dependency-direction component that permits substrate to flow one way and not the other; precise, mechanical, operationally exact, the right vocabulary for the standards work. Polarity is the felt sense of the ratchet's action — what an operator intuitively recognizes when substrate they expected to accumulate at their node accumulates at the vendor's instead, the right vocabulary for the conversation with the operator. Ratchet describes the machine. Polarity describes what the machine does to the field it operates in.
+
+The continental electrical grid is the worked-example for polarity at scale. Generating stations, substations, and consumers are nodes. Ground is the shared planetary reference. Current flows from sources to sinks and back as conditions change, with [Stage 4 (human approval)](#stage-4-human-approval) implemented at the physical layer as circuit breakers, with [Digital Jidoka](#digital-jidoka) implemented as protective relaying that holds local trip logic and survives SCADA failure, and with [composition interfaces](#composition-interfaces) implemented as substations that compose nodes into federated infrastructure. The Eastern Interconnection — synchronous AC across two-thirds of a continent — is autonomatonic federation for electrons. It does not work because someone built a centralized dispatcher. It works because each node maintains its own protective logic, each substation respects local sovereignty, and the federation composes into infrastructure that survives the failure of any single coordinating point. The cognitive grid Grove proposes inherits the same pattern at the same scale.
+
 ### Substrate (cognitive)
 
 **Valence:** Grove canon
