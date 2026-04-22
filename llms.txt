@@ -4,7 +4,7 @@ The Grove Foundation is a 501(c)(6) standards body publishing architectural stan
 
 ## Core framing
 
-We reverse polarity. Centralized AI architectures extract operator judgment back to the model layer. Sovereign AI architectures compound capability, context, and judgment at the operator's own node. The same primitive — knowledge accumulated through use — flows in opposite directions depending on how the substrate is governed.
+Knowledge polarity is the direction in which substrate accumulates as a system is used — used here with the precision the term has in electrical engineering. Three terminals: ground is the shared canonical substrate any node can draw from; positive is the operator's node, where substrate compounds toward capability over time; negative is the extraction node, typically a vendor's model layer, where substrate flows to and accumulates as the provider's training advantage. Centralized AI architectures default to negative polarity at the cognitive layer. Sovereign architectures restore positive polarity at the operator's node, with the commons (ground) intact.
 
 Govern the substrate, commoditize the compute.
 
