@@ -33,7 +33,7 @@ Protocol: spec &rarr; preview &rarr; confirm &rarr; **fire** &rarr; SHA &rarr; n
 |---|---|---|---|
 | 1 | `docs:` | SPEC authored | 7b647da |
 | 2 | `docs:` | Knowledge Polarity entry added to `docs/grove-canonical-vocabulary.md`, slotted between The Ratchet and Substrate (cognitive) | f6a0414 |
-| 3 | `docs:` | `llms.txt` updated — replace single verb-form sentence with definitional block | — |
+| 3 | `docs:` | `llms.txt` updated — replace single verb-form sentence with definitional block | 1450e65 |
 
 ## 4. Canonical entry — verbatim (Commit 2 lands this)
 
