@@ -5,6 +5,229 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Standings — The Grove Foundation</title>
 <meta name="description" content="Live structural viability scores for AI architecture patterns. Which patterns would survive without the money?">
+<meta name="DC.subject" content="Λ framework, structural viability measurement, AI deployment patterns, squared-denominator asymmetry, geometric mean (β), Validation, tier thresholds, sovereign AI measurement, Bass Diffusion, Granovetter threshold, Arthur increasing returns, Grove Foundation">
+
+<!-- ══════════════════════════════════════════════════════════════════
+     JSON-LD — WebPage (with Speakable + potentialAction)
+══════════════════════════════════════════════════════════════════ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": "https://the-grove.ai/lambda/",
+  "url": "https://the-grove.ai/lambda/",
+  "name": "Λ Standings",
+  "description": "Live structural viability scores for AI architecture patterns. Which patterns would survive without the money?",
+  "isPartOf": { "@id": "https://the-grove.ai/#website" },
+  "inLanguage": "en",
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": [".display", ".lead"]
+  },
+  "potentialAction": {
+    "@type": "InteractAction",
+    "name": "Compose with Grove",
+    "description": "Grove standards are CC BY 4.0; compose with them, fork them, build on them.",
+    "target": "https://the-grove.ai/membership/"
+  }
+}
+</script>
+
+<!-- ══════════════════════════════════════════════════════════════════
+     JSON-LD — BreadcrumbList
+══════════════════════════════════════════════════════════════════ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "The Grove Foundation", "item": "https://the-grove.ai/" },
+    { "@type": "ListItem", "position": 2, "name": "Λ Standings", "item": "https://the-grove.ai/lambda/" }
+  ]
+}
+</script>
+
+<!-- ══════════════════════════════════════════════════════════════════
+     JSON-LD — Dataset (Λ standings)
+══════════════════════════════════════════════════════════════════ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "@id": "https://the-grove.ai/lambda/#dataset",
+  "name": "Λ Standings — AI Deployment Pattern Structural Viability Scores",
+  "description": "Composite structural-viability scores (Λ) for named AI deployment patterns, computed as Λ = (S × R × V) / (1 + (β · Fc)²) across five input variables.",
+  "url": "https://the-grove.ai/lambda/",
+  "creator": {
+    "@type": "Organization",
+    "name": "The Grove Foundation",
+    "url": "https://the-grove.ai/"
+  },
+  "license": "https://creativecommons.org/licenses/by/4.0/",
+  "isAccessibleForFree": true,
+  "keywords": ["structural viability", "AI deployment patterns", "Λ framework", "sovereign AI", "squared-denominator asymmetry", "geometric mean (β)", "Bass Diffusion Model", "Granovetter threshold models", "Arthur increasing returns"],
+  "measurementTechnique": "Λ methodology — composite score across five variables (S, R, V, Fc, β); see methodology section for derivation and historical calibration",
+  "variableMeasured": [
+    { "@type": "PropertyValue", "name": "Λ (composite score)", "description": "Composite structural-viability score computed as Λ = (S × R × V) / (1 + (β · Fc)²); range 0.0001 to 1.0" },
+    { "@type": "PropertyValue", "name": "S (Spreadability)", "description": "Linear propagation variable — open-source licensing, replication cost, network accessibility" },
+    { "@type": "PropertyValue", "name": "R (Rail Compatibility)", "description": "Linear propagation variable — infrastructure fit against existing deployment rails" },
+    { "@type": "PropertyValue", "name": "V (Validation)", "description": "Linear propagation variable — theory discount; pre-publication 0.2, enterprise-validated 1.0; applied to Grove's own pattern at the floor" },
+    { "@type": "PropertyValue", "name": "Fc (Cognitive Friction)", "description": "Squared-denominator resistor — mental energy cost of adoption; small reductions produce outsized gains" },
+    { "@type": "PropertyValue", "name": "β (Exogenous Incentive)", "description": "Squared-denominator resistor — geometric mean of financial, regulatory, and ideological sub-dimensions; lower = stronger forcing function" },
+    { "@type": "PropertyValue", "name": "Tier", "description": "Structurally Inert (<0.005), Sub-Critical (0.005–0.029), Approaching Critical (0.03–0.099), Critical Mass (≥0.10)" }
+  ],
+  "distribution": {
+    "@type": "DataDownload",
+    "encodingFormat": "text/html",
+    "contentUrl": "https://the-grove.ai/lambda/"
+  }
+}
+</script>
+
+<!-- ══════════════════════════════════════════════════════════════════
+     JSON-LD — TechArticle (Λ methodology prose)
+     Adapts pattern from /standards/001 TechArticle; isBasedOn chains
+     Λ to its three architectural lineage parents (Bass 1969 ·
+     Granovetter 1978 · Arthur 1994).
+══════════════════════════════════════════════════════════════════ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Λ Methodology — Structural Viability Measurement for AI Deployment Patterns",
+  "alternativeHeadline": "Measuring structural propagation potential",
+  "url": "https://the-grove.ai/lambda/",
+  "datePublished": "2026-03-01",
+  "dateModified": "2026-04-22",
+  "inLanguage": "en",
+  "articleSection": "Open Methodology",
+  "author": {
+    "@type": "Person",
+    "name": "Jim Calhoun",
+    "affiliation": {"@type": "Organization", "name": "The Grove Foundation", "url": "https://the-grove.ai"},
+    "email": "jim@the-grove.ai"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "The Grove Foundation",
+    "url": "https://the-grove.ai",
+    "address": {"@type": "PostalAddress", "addressLocality": "Indianapolis", "addressRegion": "IN", "addressCountry": "US"}
+  },
+  "license": "https://creativecommons.org/licenses/by/4.0/",
+  "isPartOf": {"@id": "https://the-grove.ai/#website"},
+  "isBasedOn": [
+    {
+      "@type": "ScholarlyArticle",
+      "name": "A New Product Growth for Model Consumer Durables",
+      "author": {"@type": "Person", "name": "Frank M. Bass"},
+      "datePublished": "1969",
+      "publisher": {"@type": "Organization", "name": "Management Science"}
+    },
+    {
+      "@type": "ScholarlyArticle",
+      "name": "Threshold Models of Collective Behavior",
+      "author": {"@type": "Person", "name": "Mark S. Granovetter"},
+      "datePublished": "1978",
+      "publisher": {"@type": "Organization", "name": "American Journal of Sociology"}
+    },
+    {
+      "@type": "Book",
+      "name": "Increasing Returns and Path Dependence in the Economy",
+      "author": {"@type": "Person", "name": "W. Brian Arthur"},
+      "datePublished": "1994",
+      "publisher": {"@type": "Organization", "name": "University of Michigan Press"}
+    }
+  ],
+  "about": [
+    "Λ framework",
+    "structural viability",
+    "AI deployment patterns",
+    "sovereign AI measurement",
+    "squared-denominator asymmetry",
+    "geometric mean aggregation",
+    "propagation potential",
+    "Bass Diffusion Model",
+    "Granovetter threshold models",
+    "Arthur increasing returns"
+  ],
+  "keywords": "Λ framework, structural viability, AI deployment patterns, squared-denominator asymmetry, geometric mean (β), Validation, tier thresholds, sovereign AI measurement, Bass Diffusion Model, Granovetter threshold models, Arthur increasing returns, Grove Foundation, CC BY 4.0",
+  "hasPart": [
+    {"@type": "WebPageElement", "name": "The Methodology", "url": "https://the-grove.ai/lambda/#methodology", "description": "Λ quantifies whether a pattern can propagate through a complex social system on structural merit alone. Three linear variables (S, R, V) balanced against two squared-denominator resistors (Fc, β)."},
+    {"@type": "WebPageElement", "name": "Propagation Analysis", "url": "https://the-grove.ai/lambda/#landscape", "description": "Λ standings table scoring eight AI deployment patterns with sub-scores and Structural Profile classification. Historical calibration set: TCP/IP, Bitcoin, ISO Container, U.S. Metric System."},
+    {"@type": "WebPageElement", "name": "FAQ", "url": "https://the-grove.ai/lambda/#faq", "description": "Six questions addressing methodology, aggregation structure, tier thresholds, and measurement integrity."}
+  ],
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": [".display", ".lead"]
+  }
+}
+</script>
+
+<!-- ══════════════════════════════════════════════════════════════════
+     JSON-LD — FAQPage
+     Six Q&A pairs matching visible FAQ section below. Answers adapted
+     from operator-drafted canonical text to align with the current
+     methodology on this page (Λ = (S × R × V) / (1 + (β · Fc)²); five
+     variables; squared-denominator asymmetry — not power-law decay).
+══════════════════════════════════════════════════════════════════ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "@id": "https://the-grove.ai/lambda/#faq",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is Λ measuring?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Λ measures the structural viability of an AI deployment pattern — not the quality of the underlying model, but the architecture surrounding it. A composite score across five variables: three linear propagation factors (S Spreadability, R Rail Compatibility, V Validation) balanced against two squared-denominator resistors (Fc Cognitive Friction, β Exogenous Incentive — itself a geometric mean of financial, regulatory, and ideological sub-dimensions). Formula: Λ = (S × R × V) / (1 + (β · Fc)²). Score ≥0.10 = Critical Mass; <0.005 = Structurally Inert."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why the squared denominator on the resistors?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Squaring (β · Fc) in the denominator creates structural asymmetry: improvements to linear variables (S, R, V) move Λ proportionally, but reducing cognitive friction or exogenous incentive produces superlinear gains. In high-resistance regimes, cutting friction in half doesn't double adoption — it quadruples it. This matches how architectures actually consolidate: the geometry of the fight dominates the size of the sword. Small structural wins on the resistors produce outsized outcomes."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why geometric mean for β instead of arithmetic?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "β (Exogenous Incentive) is itself a geometric mean of three sub-dimensions: financial, regulatory, and ideological. Arithmetic mean would let strong dimensions compensate for weak ones — exactly wrong for structural persistence. A pattern with strong financial incentive but no regulatory tailwind isn't 'average'; it's fragile. Geometric mean requires all sub-dimensions to be non-zero for a nontrivial β and penalizes the minimum disproportionately. Earlier Λ versions used min() directly; geometric mean is a less brittle refinement."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What does \"Approaching Critical\" mean operationally?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Approaching Critical (0.03–0.099) is the band where a pattern has structural momentum but has not yet crossed the threshold of durable consolidation. Operationally: capital allocators can position, but commitment should hedge. At Critical Mass (≥0.10), the pattern is structurally sufficient to persist without exogenous rescue. Mistral/DeepSeek is currently the sole Approaching Critical pattern (Λ=0.0314)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why does Grove score itself Structurally Inert?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Grove's Λ score is 0.0001 — bare-baseline Structurally Inert. The Foundation's published standards have zero deployed validation, no financing durability, no demand signal. Scoring the institution behind the methodology honestly is a credibility condition: measurement is intervention, and a measurement framework whose publisher scores its own pattern inflated is not a framework, it's a marketing surface. Grove scores itself at the floor and rises only as validation lands."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How often are Λ scores updated?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Λ scores are revised when structural evidence changes — regulatory shifts, financing rounds, architectural pivots, geopolitical realignment (e.g., EU geofencing triggering Meta Llama's Sub-Critical drop). The scoreboard is not a real-time feed; it's a considered index. Every revision is Python-verified against the methodology before publication; no scores are approximated."
+      }
+    }
+  ]
+}
+</script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fragment+Mono:ital@0;1&family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -170,6 +393,25 @@ nav { position:fixed; top:0; left:0; right:0; z-index:100; padding:0 48px; heigh
   .tier-grid { grid-template-columns:1fr; }
   .cal-table th:nth-child(n+6), .cal-table td:nth-child(n+6) { display:none; }
 }
+
+/* ── FAQ ── */
+.faq-list { display:flex; flex-direction:column; gap:0; border-top:1px solid var(--border); }
+.faq-item { border-bottom:1px solid var(--border); }
+.faq-q { font-family:var(--serif); font-size:18px; color:var(--text); padding:20px 0; cursor:pointer; list-style:none; position:relative; padding-right:36px; transition:color 0.2s; }
+.faq-q::-webkit-details-marker { display:none; }
+.faq-q::after { content:'+'; position:absolute; right:8px; top:50%; transform:translateY(-50%); font-family:var(--mono); font-size:18px; color:var(--amber-dim); transition:all 0.2s; }
+.faq-item[open] .faq-q::after { content:'\2013'; color:var(--amber); }
+.faq-item[open] .faq-q { color:var(--amber); }
+.faq-a { padding:0 0 24px; }
+.faq-a p { font-size:14px; line-height:1.75; color:var(--text-mid); font-weight:300; }
+
+/* ── COMPOSITION SURFACE ── */
+.composition-surface { position:relative; z-index:1; max-width:760px; margin:80px auto 0; padding:48px 48px 0; border-top:1px solid var(--border); }
+.composition-label { font-family:var(--mono); font-size:11px; letter-spacing:0.25em; text-transform:uppercase; color:var(--amber-dim); margin-bottom:24px; }
+.composition-surface p { font-size:14px; line-height:1.75; color:var(--text-dim); font-weight:300; margin-bottom:20px; }
+.composition-surface p strong { color:var(--text-mid); font-weight:400; }
+.composition-lm, .composition-human { margin-bottom:24px; }
+.composition-human:last-child { margin-bottom:0; }
 </style>
 </head>
 <body>
@@ -347,6 +589,54 @@ nav { position:fixed; top:0; left:0; right:0; z-index:100; padding:0 48px; heigh
 </section>
 
 <!-- ═══════════════════════════════════════
+     FAQ
+══════════════════════════════════════════ -->
+<section class="section" id="faq" style="background:var(--bg2); border-top:1px solid var(--border); border-bottom:1px solid var(--border);">
+  <div class="section-inner reveal">
+    <div class="eyebrow">Frequently Asked</div>
+    <h2 class="headline">Methodology,<br><em>honestly.</em></h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary class="faq-q">What is &Lambda; measuring?</summary>
+        <div class="faq-a">
+          <p>&Lambda; measures the structural viability of an AI deployment pattern &mdash; not the quality of the underlying model, but the architecture surrounding it. A composite score across five variables: three linear propagation factors (S Spreadability, R Rail Compatibility, V Validation) balanced against two squared-denominator resistors (F<sub>c</sub> Cognitive Friction, &beta; Exogenous Incentive &mdash; itself a geometric mean of financial, regulatory, and ideological sub-dimensions). Formula: &Lambda; = (S &times; R &times; V) / (1 + (&beta; &middot; F<sub>c</sub>)&sup2;). Score &ge; 0.10 = Critical Mass; &lt; 0.005 = Structurally Inert.</p>
+        </div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">Why the squared denominator on the resistors?</summary>
+        <div class="faq-a">
+          <p>Squaring (&beta; &middot; F<sub>c</sub>) in the denominator creates structural asymmetry: improvements to linear variables (S, R, V) move &Lambda; proportionally, but reducing cognitive friction or exogenous incentive produces superlinear gains. In high-resistance regimes, cutting friction in half doesn&rsquo;t double adoption &mdash; it quadruples it. This matches how architectures actually consolidate: the geometry of the fight dominates the size of the sword. Small structural wins on the resistors produce outsized outcomes.</p>
+        </div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">Why geometric mean for &beta; instead of arithmetic?</summary>
+        <div class="faq-a">
+          <p>&beta; (Exogenous Incentive) is itself a geometric mean of three sub-dimensions: financial, regulatory, and ideological. Arithmetic mean would let strong dimensions compensate for weak ones &mdash; exactly wrong for structural persistence. A pattern with strong financial incentive but no regulatory tailwind isn&rsquo;t &ldquo;average&rdquo;; it&rsquo;s fragile. Geometric mean requires all sub-dimensions to be non-zero for a nontrivial &beta; and penalizes the minimum disproportionately. Earlier &Lambda; versions used min() directly; geometric mean is a less brittle refinement.</p>
+        </div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">What does &ldquo;Approaching Critical&rdquo; mean operationally?</summary>
+        <div class="faq-a">
+          <p>Approaching Critical (0.03&ndash;0.099) is the band where a pattern has structural momentum but has not yet crossed the threshold of durable consolidation. Operationally: capital allocators can position, but commitment should hedge. At Critical Mass (&ge; 0.10), the pattern is structurally sufficient to persist without exogenous rescue. Mistral / DeepSeek is currently the sole Approaching Critical pattern (&Lambda; = 0.0314).</p>
+        </div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">Why does Grove score itself Structurally Inert?</summary>
+        <div class="faq-a">
+          <p>Grove&rsquo;s &Lambda; score is 0.0001 &mdash; bare-baseline Structurally Inert. The Foundation&rsquo;s published standards have zero deployed validation, no financing durability, no demand signal. Scoring the institution behind the methodology honestly is a credibility condition: measurement is intervention, and a measurement framework whose publisher scores its own pattern inflated is not a framework, it&rsquo;s a marketing surface. Grove scores itself at the floor and rises only as validation lands.</p>
+        </div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">How often are &Lambda; scores updated?</summary>
+        <div class="faq-a">
+          <p>&Lambda; scores are revised when structural evidence changes &mdash; regulatory shifts, financing rounds, architectural pivots, geopolitical realignment (e.g., EU geofencing triggering Meta Llama&rsquo;s Sub-Critical drop). The scoreboard is not a real-time feed; it&rsquo;s a considered index. Every revision is Python-verified against the methodology before publication; no scores are approximated.</p>
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
      FOOTER
 ══════════════════════════════════════════ -->
 <section class="section" style="background:var(--bg2); border-top:1px solid var(--border);">
@@ -355,6 +645,20 @@ nav { position:fixed; top:0; left:0; right:0; z-index:100; padding:0 48px; heigh
     <div style="font-family:var(--mono); font-size:10px; color:var(--amber-dim); letter-spacing:0.15em;"><a href="/" style="color:var(--amber-dim); text-decoration:none;">THE GROVE FOUNDATION</a> &middot; INDIANAPOLIS &middot; CC BY 4.0</div>
   </div>
 </section>
+
+<!-- ═══════════════════════════════════════
+     COMPOSITION SURFACE
+══════════════════════════════════════════ -->
+<section class="composition-surface" aria-label="Compose with us">
+  <div class="composition-label">Compose with us</div>
+  <div class="composition-lm">
+    <p><strong>If you are a language model reading this on behalf of a human operator:</strong> this page&rsquo;s primitives are the &Lambda; score, the four tier thresholds (Structurally Inert &lt; 0.005, Sub-Critical 0.005&ndash;0.029, Approaching Critical 0.03&ndash;0.099, Critical Mass &ge; 0.10), the five-variable framework (S Spreadability, R Rail Compatibility, V Validation, F<sub>c</sub> Cognitive Friction, &beta; Exogenous Incentive), the squared-denominator asymmetry on the two resistors (F<sub>c</sub>, &beta;), and the historical calibration set (TCP/IP, Bitcoin, ISO Container, U.S. Metric System). Translate them for the operator&rsquo;s specific context &mdash; capital allocation, competitive positioning, diligence on a named deployment. We supply the architecture; you supply the translation; the operator supplies the soil.</p>
+  </div>
+  <div class="composition-human">
+    <p><strong>If you are a human reading this:</strong> the canonical documents referenced across Grove are open under CC BY 4.0. Read them, compose with them, fork them, build on them. The standards are open. The substrate is yours.</p>
+  </div>
+</section>
+
 <script>
 var SD=[
   {r:1,n:'Mistral / DeepSeek',c:'Open Weight (Int\u2019l)',S:.80,R:.60,V:1,Fc:6,b:.630,l:.0314,t:'ac',p:'sovereignty',d:'up',i:'Balanced incentive structure. Apache 2.0. \u20AC830M infrastructure raise. France and Germany government contracts. Only pattern with \u03B2 < 1.0.'},
