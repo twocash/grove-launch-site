@@ -169,9 +169,9 @@
     {"@type": "WebPageElement", "name": "II. The Pattern", "url": "https://the-grove.ai/standards/004#pattern", "description": "Four named artifacts (Protocol, Declaration, Handshake, Mesh) plus three supporting concepts (keg, cellar, autonomic understanding). The protocol's structural section."},
     {"@type": "WebPageElement", "name": "III. The Invariants", "url": "https://the-grove.ai/standards/004#invariants", "description": "Five structural commitments every conforming Autonomaton must honor: declaration-before-composition, per-keg scope, declared reserve, sovereign-attributable identity, signaled conformance."},
     {"@type": "WebPageElement", "name": "IV. Reference Schema", "url": "https://the-grove.ai/standards/004#reference-schema", "description": "The envelope schema in two renderings — human-legible definition list and machine-readable JSON-LD worked example using the polarity paper as subject."},
-    {"@type": "WebPageElement", "name": "V. The Handshake", "url": "https://the-grove.ai/standards/004#handshake", "description": "The branded first-line greeting template. Five lines, dual-addressed, copyable by any publisher who ships an Autonomaton."},
+    {"@type": "WebPageElement", "name": "V. The Handshake", "url": "https://the-grove.ai/standards/004#handshake", "description": "The branded first-line greeting template. Five lines, dual-addressed, copyable by any operator who ships an Autonomaton."},
     {"@type": "WebPageElement", "name": "VI. Trajectory", "url": "https://the-grove.ai/standards/004#trajectory", "description": "Three stages from sovereign declaration to Knowledge Commons. The protocol is intended to recede once adopted; that is the success mode, not failure."},
-    {"@type": "WebPageElement", "name": "VII. Conformance & Lineage", "url": "https://the-grove.ai/standards/004#conformance", "description": "How publishers signal implementation (self-declaration via the protocol envelope field) and the architectural lineage from GRV-001, GRV-003, Polarity Hypothesis, Saltzer-Reed-Clark, Kephart-Chess."}
+    {"@type": "WebPageElement", "name": "VII. Conformance & Lineage", "url": "https://the-grove.ai/standards/004#conformance", "description": "How operators signal implementation (self-declaration via the protocol envelope field) and the architectural lineage from GRV-001, GRV-003, Polarity Hypothesis, Saltzer-Reed-Clark, Kephart-Chess."}
   ],
   "speakable": {
     "@type": "SpeakableSpecification",
@@ -196,7 +196,7 @@
       "name": "What is the Autonomaton Protocol?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "The Autonomaton Protocol (GRV-004) is the open standard by which sovereign cognitive nodes — humans, organizations, AI agents — declare themselves to the network so that visiting intelligence can discover, tap, and compose with them at autonomic speed. It is the publisher-side packet that specifies what a publisher knows, at what scope it shares, with what intent, and where its edges lie. The Grove Foundation governs the protocol; anyone may implement it."
+        "text": "The Autonomaton Protocol (GRV-004) is the open standard by which sovereign cognitive nodes — humans, organizations, AI agents — declare themselves to the network so that visiting intelligence can discover, tap, and compose with them at autonomic speed. It is the operator-side packet that specifies what an operator knows, at what scope it shares, with what intent, and where its edges lie. The Grove Foundation governs the protocol; anyone may implement it."
       }
     },
     {
@@ -204,7 +204,7 @@
       "name": "What is an Autonomaton Declaration?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "An Autonomaton Declaration is the packet a publisher ships to conform with GRV-004. It has two layers. The envelope carries structured machine-readable metadata: publisher, intent, scope, reserve, license, circuit posture, and (optionally) lineage and composition hints. The cellar manifest lists the publisher's kegs — discrete units of distilled knowledge — each flagged with per-keg scope (public, member, or reserved)."
+        "text": "An Autonomaton Declaration is the packet an operator ships to conform with GRV-004. It has two layers. The envelope carries structured machine-readable metadata: operator, intent, scope, reserve, license, circuit posture, and (optionally) lineage and composition hints. The cellar manifest lists the operator's kegs — discrete units of distilled knowledge — each flagged with per-keg scope (public, member, or reserved)."
       }
     },
     {
@@ -212,7 +212,7 @@
       "name": "How does an Autonomaton Handshake work?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "The Handshake is the branded first-line greeting a publisher places on the page. It identifies the site as a conforming Autonomaton, names the publisher and the governing standard, summarizes scope, lists the available kegs, and invites composition per the Declaration below. The Handshake is human-legible and LLM-legible in the same pass; it is the public-facing protocol entry point. Publishers fill the slots; the standard supplies the template."
+        "text": "The Handshake is the branded first-line greeting an operator places on the page. It identifies the site as a conforming Autonomaton, names the operator and the governing standard, summarizes scope, lists the available kegs, and invites composition per the Declaration below. The Handshake is human-legible and LLM-legible in the same pass; it is the public-facing protocol entry point. Operators fill the slots; the standard supplies the template."
       }
     },
     {
@@ -220,7 +220,7 @@
       "name": "What is the relationship between GRV-004 and the Polarity Hypothesis?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "The Polarity Hypothesis (published at /research/knowledge-polarity) argues that knowledge flow between intelligent agents is electrical rather than hydraulic — it requires declared ground, potential difference, and a conductor preserving dimensional structure. GRV-004 specifies the publisher-side mechanism for declaring that ground. Without the Polarity Hypothesis, the protocol would lack theoretical backing; without the protocol, the hypothesis would lack an implementation surface. They are co-dependent: theory and mechanism."
+        "text": "The Polarity Hypothesis (published at /research/knowledge-polarity) argues that knowledge flow between intelligent agents is electrical rather than hydraulic — it requires declared ground, potential difference, and a conductor preserving dimensional structure. GRV-004 specifies the operator-side mechanism for declaring that ground. Without the Polarity Hypothesis, the protocol would lack theoretical backing; without the protocol, the hypothesis would lack an implementation surface. They are co-dependent: theory and mechanism."
       }
     },
     {
@@ -236,7 +236,7 @@
       "name": "How do I publish my own Autonomaton?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Publish a page. Add the Handshake greeting as the first-line introduction. Ship a Declaration envelope inline and as machine-readable JSON-LD, specifying publisher, intent, scope, reserve, license, and cellar manifest. Mark each keg with scope (public, member, reserved). Set protocol to GRV-004 and protocolVersion to 1.0. Conformance is signaled by the envelope itself; no registration is required. If you want to appear in the public Grove registry, announce your Autonomaton at registrar.the-grove.ai when that service goes live."
+        "text": "Publish a page. Add the Handshake greeting as the first-line introduction. Ship a Declaration envelope inline and as machine-readable JSON-LD, specifying operator, intent, scope, reserve, license, and cellar manifest. Mark each keg with scope (public, member, reserved). Set protocol to GRV-004 and protocolVersion to 1.0. Conformance is signaled by the envelope itself; no registration is required. If you want to appear in the public Grove registry, announce your Autonomaton at registrar.the-grove.ai when that service goes live."
       }
     },
     {
@@ -252,7 +252,7 @@
       "name": "What is autonomic understanding?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Autonomic understanding is the two-channel communication mode the protocol enables. The human still drives. The language model still translates. But the ground is declared, not reconstructed from prose at high impedance. When a visiting LLM encounters a conforming Autonomaton, it reads the Declaration and picks up the publisher's compressed primitives directly, rather than inferring them. That is the speed-up. Autonomic understanding is to prose what autonomic computing was to ops: the system manages the handshake so the humans can keep attending to judgment."
+        "text": "Autonomic understanding is the two-channel communication mode the protocol enables. The human still drives. The language model still translates. But the ground is declared, not reconstructed from prose at high impedance. When a visiting LLM encounters a conforming Autonomaton, it reads the Declaration and picks up the operator's compressed primitives directly, rather than inferring them. That is the speed-up. Autonomic understanding is to prose what autonomic computing was to ops: the system manages the handshake so the humans can keep attending to judgment."
       }
     }
   ]
@@ -466,7 +466,7 @@ nav { position:fixed; top:0; left:0; right:0; z-index:100; padding:0 48px; heigh
       <div class="executive-label">GRV-004 &middot; in three sentences</div>
       <p class="executive-text">The Autonomaton Pattern (<a href="/standards/001" style="color:var(--amber); text-decoration:none; border-bottom:1px solid var(--amber-dim);">GRV-001</a>) showed how a sovereign AI node works internally. The <a href="/research/knowledge-polarity" style="color:var(--amber); text-decoration:none; border-bottom:1px solid var(--amber-dim);">Polarity Hypothesis</a> showed why knowledge flow between nodes requires declared ground. The <strong>Autonomaton Protocol (GRV-004)</strong> is how sovereign nodes declare that ground to the network &mdash; <em>DNS for the polarity-compliant internet</em>, governed openly by The Grove Foundation, composable at autonomic speed, converging toward a Knowledge Commons that outlives the protocol itself.</p>
     </div>
-    <p class="body-text">This document specifies the protocol. Eight sections follow: the problem it addresses; the structural pattern of named artifacts; the five invariants every conforming Autonomaton must honor; the reference schema for Declaration envelopes in both human-legible and machine-readable form; the Handshake greeting template; the three-stage trajectory from mesh emergence to Knowledge Commons; conformance signaling and lineage. The standard is final at v1.0, published under Creative Commons Attribution 4.0 International, and is implementable without permission by any publisher who wishes to ship an Autonomaton.</p>
+    <p class="body-text">This document specifies the protocol. Eight sections follow: the problem it addresses; the structural pattern of named artifacts; the five invariants every conforming Autonomaton must honor; the reference schema for Declaration envelopes in both human-legible and machine-readable form; the Handshake greeting template; the three-stage trajectory from mesh emergence to Knowledge Commons; conformance signaling and lineage. The standard is final at v1.0, published under Creative Commons Attribution 4.0 International, and is implementable without permission by any operator who wishes to ship an Autonomaton.</p>
   </div>
 </section>
 
@@ -479,7 +479,7 @@ nav { position:fixed; top:0; left:0; right:0; z-index:100; padding:0 48px; heigh
     <h2 class="headline">The <em>Problem</em></h2>
     <p class="body-text">The web we built is hydraulic. Pages serve bytes. Channels move signals with high fidelity and low latency. Nothing declares the ground against which those signals should be interpreted. Every visiting intelligence &mdash; a human operator, a language model acting on an operator&rsquo;s behalf, an agent composing across sources &mdash; reconstructs intent from prose at high impedance. The cost of that reconstruction is invisible until you try to scale it, at which point it becomes the dominant cost of the whole system.</p>
     <p class="body-text">The polarity gap names what is missing. <a href="/standards/001">GRV-001</a> solved internal sovereignty for a single node: how an Autonomaton governs its own cognition through an invariant pipeline, a zone model, and a skill flywheel. The <a href="/research/knowledge-polarity">Polarity Hypothesis</a> showed that knowledge flow between such nodes is electrical, not hydraulic &mdash; it requires a mutual compression base, a potential difference, and a conductor preserving dimensional structure. But no standard specified how one sovereign node announces itself to another. The hypothesis identified the phenomenon; the mechanism was unspecified.</p>
-    <p class="body-text">The stakes are structural. Without a declaration protocol, the emergent mesh of sovereign cognitive nodes has two failure modes. It degenerates into platform capture, in which a single provider becomes the de facto registrar and the &ldquo;openness&rdquo; of the underlying model evaporates. Or it stays invisible, in which sovereign publishers ship their work into a web that cannot see them as sovereign &mdash; visiting intelligence treats their pages as undifferentiated prose, and the polarity advantage is never realized. GRV-004 closes that gap by specifying the publisher-side mechanism: the packet, the handshake, the conformance signal. The protocol is the difference between a mesh that composes and a mesh that erodes.</p>
+    <p class="body-text">The stakes are structural. Without a declaration protocol, the emergent mesh of sovereign cognitive nodes has two failure modes. It degenerates into platform capture, in which a single provider becomes the de facto registrar and the &ldquo;openness&rdquo; of the underlying model evaporates. Or it stays invisible, in which sovereign operators ship their work into a web that cannot see them as sovereign &mdash; visiting intelligence treats their pages as undifferentiated prose, and the polarity advantage is never realized. GRV-004 closes that gap by specifying the operator-side mechanism: the packet, the handshake, the conformance signal. The protocol is the difference between a mesh that composes and a mesh that erodes.</p>
     <div class="pullquote">The hypothesis identified the phenomenon; the mechanism was unspecified. GRV-004 specifies the mechanism.</div>
   </div>
 </section>
@@ -491,8 +491,9 @@ nav { position:fixed; top:0; left:0; right:0; z-index:100; padding:0 48px; heigh
   <div class="section-inner reveal">
     <div class="section-num">II</div>
     <h2 class="headline">The <em>Pattern</em></h2>
-    <p class="body-text">GRV-004 names four artifacts. Each is a distinct structural role. The <dfn>Autonomaton Protocol</dfn> is this standard: the open mechanism. The <dfn>Autonomaton Declaration</dfn> is the packet a publisher ships &mdash; a structured envelope describing the publisher and a cellar manifest listing the kegs available at their respective scopes. The <dfn>Autonomaton Handshake</dfn> is the branded first-line greeting that renders the Declaration legible to a visiting intelligence on first contact. The <dfn>Autonomaton Mesh</dfn> is the emergent network of declaring publishers &mdash; not a system Grove operates, but the aggregate that comes into being as publishers adopt the protocol.</p>
+    <p class="body-text">GRV-004 names four artifacts. Each is a distinct structural role. The <dfn>Autonomaton Protocol</dfn> is this standard: the open mechanism. The <dfn>Autonomaton Declaration</dfn> is the packet an operator ships &mdash; a structured envelope describing the operator and a cellar manifest listing the kegs available at their respective scopes. The <dfn>Autonomaton Handshake</dfn> is the branded first-line greeting that renders the Declaration legible to a visiting intelligence on first contact. The <dfn>Autonomaton Mesh</dfn> is the emergent network of declaring operators &mdash; not a system Grove operates, but the aggregate that comes into being as operators adopt the protocol.</p>
     <p class="body-text">The names matter because they preserve the brand-vs-mechanism separation that made TCP/IP travel. <strong>Autonomaton Protocol</strong> is the mechanism &mdash; open, generic, anyone implements. <strong>The Grove Foundation</strong> is the registrar &mdash; brand-named, institutionally anchored, trust origin. <strong>Grove Autonomaton</strong> is a branded implementation on Grove-governed pages. <strong>Autonomaton</strong> (unprefixed) is any generic implementation. The protocol commodifies. The stewardship role does not.</p>
+    <p class="body-text"><strong>Operator vs. publishing.</strong> The Autonomaton&rsquo;s actor is the <em>operator</em> &mdash; the persistent sovereign identity who owns the cellar, declares intent, and scopes the kegs. Publishing is a runtime act, not an identity: the operator&rsquo;s standing Declaration plus per-compose scope flags determine which kegs are tappable at any given moment. An operator may ship many publications; the cellar persists across them. The Declaration is the operator&rsquo;s standing intent. The act of publishing is one expression of that intent at compose time.</p>
 
     <div class="artifact-block">
       <div class="artifact-kind">Artifact I &middot; the open standard</div>
@@ -500,22 +501,22 @@ nav { position:fixed; top:0; left:0; right:0; z-index:100; padding:0 48px; heigh
       <div class="artifact-desc">This document. The specification itself. Mechanism-named so it travels. Anyone may implement it without permission under CC BY 4.0. The Grove Foundation stewards the specification and operates the registrar role; it does not own the pattern.</div>
     </div>
     <div class="artifact-block">
-      <div class="artifact-kind">Artifact II &middot; the packet a publisher ships</div>
+      <div class="artifact-kind">Artifact II &middot; the packet an operator ships</div>
       <div class="artifact-name">The Autonomaton <em>Declaration</em></div>
-      <div class="artifact-desc">Two layers. An <strong>envelope</strong> carrying structured machine-readable metadata: publisher, intent, scope, reserve, license, circuit posture, and optionally lineage and composition hints. A <strong>cellar manifest</strong> listing the publisher&rsquo;s kegs with per-keg scope flags (public, member, reserved). The Declaration is the full packet &mdash; everything a visiting intelligence needs to integrate the publisher&rsquo;s knowledge without reconstructing it.</div>
+      <div class="artifact-desc">Two layers. An <strong>envelope</strong> carrying structured machine-readable metadata: operator, intent, scope, reserve, license, circuit posture, and optionally lineage and composition hints. A <strong>cellar manifest</strong> listing the operator&rsquo;s kegs with per-keg scope flags (public, member, reserved). The Declaration is the full packet &mdash; everything a visiting intelligence needs to integrate the operator&rsquo;s knowledge without reconstructing it.</div>
     </div>
     <div class="artifact-block">
       <div class="artifact-kind">Artifact III &middot; the branded greeting</div>
       <div class="artifact-name">The Autonomaton <em>Handshake</em></div>
-      <div class="artifact-desc">The first-line introduction that renders the Declaration legible to a visiting intelligence on first contact. Five lines, dual-addressed (human and LLM read it in the same pass), brand-forward. The Handshake is the public-facing protocol entry point. Publishers fill the slots; the standard supplies the template.</div>
+      <div class="artifact-desc">The first-line introduction that renders the Declaration legible to a visiting intelligence on first contact. Five lines, dual-addressed (human and LLM read it in the same pass), brand-forward. The Handshake is the public-facing protocol entry point. Operators fill the slots; the standard supplies the template.</div>
     </div>
     <div class="artifact-block">
       <div class="artifact-kind">Artifact IV &middot; the emergent network</div>
       <div class="artifact-name">The Autonomaton <em>Mesh</em></div>
-      <div class="artifact-desc">The aggregate of declaring publishers. Not a system anyone operates &mdash; an aggregate that comes into being as publishers adopt the protocol. The Mesh is to GRV-004 what the web is to HTTP: the network that emerges when enough endpoints speak the protocol. A Grove.</div>
+      <div class="artifact-desc">The aggregate of declaring operators. Not a system anyone operates &mdash; an aggregate that comes into being as operators adopt the protocol. The Mesh is to GRV-004 what the web is to HTTP: the network that emerges when enough endpoints speak the protocol. A Grove.</div>
     </div>
 
-    <p class="body-text">Three supporting concepts carry the payload. A <dfn>keg</dfn> is a unit of distilled knowledge inside the Declaration &mdash; provenance-labeled, scoped, tappable. A <dfn>cellar</dfn> is the publisher&rsquo;s full collection of kegs; the Declaration specifies which cellar doors are open at which scope. <dfn>Autonomic understanding</dfn> is the two-channel communication mode the protocol enables: the human still drives, the language model still translates, but the ground is declared rather than reconstructed. The speed-up comes from not having to infer what the publisher means before integrating what the publisher said.</p>
+    <p class="body-text">Three supporting concepts carry the payload. A <dfn>keg</dfn> is a unit of distilled knowledge inside the Declaration &mdash; provenance-labeled, scoped, tappable. A <dfn>cellar</dfn> is the operator&rsquo;s full collection of kegs; the Declaration specifies which cellar doors are open at which scope. <dfn>Autonomic understanding</dfn> is the two-channel communication mode the protocol enables: the human still drives, the language model still translates, but the ground is declared rather than reconstructed. The speed-up comes from not having to infer what the operator means before integrating what the operator said.</p>
   </div>
 </section>
 
@@ -533,31 +534,31 @@ nav { position:fixed; top:0; left:0; right:0; z-index:100; padding:0 48px; heigh
       <li class="invariant-item">
         <div>
           <div class="invariant-title">Declaration before <em>composition</em></div>
-          <div class="invariant-desc">Visiting intelligence <strong>MUST</strong> encounter the Declaration before any payload exchange begins. Greeting first, packet second, kegs third. A publisher who ships kegs without first declaring ground has produced content, not an Autonomaton. Ordering is load-bearing: it is the ground that makes the subsequent payload interpretable.</div>
+          <div class="invariant-desc">Visiting intelligence <strong>MUST</strong> encounter the Declaration before any payload exchange begins. Greeting first, packet second, kegs third. An operator who ships kegs without first declaring ground has produced content, not an Autonomaton. Ordering is load-bearing: it is the ground that makes the subsequent payload interpretable.</div>
         </div>
       </li>
       <li class="invariant-item">
         <div>
-          <div class="invariant-title">Scope is per-keg, <em>not per-publisher</em></div>
-          <div class="invariant-desc">The Declaration <strong>MUST</strong> flag scope (public, member, reserved) at the keg level, not at the publisher level. Declarations are not all-or-nothing. A publisher may ship public kegs and member-scoped kegs from the same cellar; a commercial engagement may ship reserved kegs alongside public primitives. Per-keg scope is what lets the protocol carry commercial and open traffic over the same substrate.</div>
+          <div class="invariant-title">Scope is per-keg, <em>not per-operator</em></div>
+          <div class="invariant-desc">The Declaration <strong>MUST</strong> flag scope (public, member, reserved) at the keg level, not at the operator level. Declarations are not all-or-nothing. An operator may ship public kegs and member-scoped kegs from the same cellar; a commercial engagement may ship reserved kegs alongside public primitives. Per-keg scope is what lets the protocol carry commercial and open traffic over the same substrate.</div>
         </div>
       </li>
       <li class="invariant-item">
         <div>
           <div class="invariant-title">Reserve is declared, <em>not inferred</em></div>
-          <div class="invariant-desc">What the publisher is <strong>NOT</strong> claiming <strong>MUST</strong> appear in the Declaration. Negative scope is load-bearing. A visiting intelligence should never have to guess whether a silence is humility or assertion; the reserve field makes the distinction explicit. This is the protocol-level analog of an end-to-end freedom guarantee: the publisher&rsquo;s silence has the shape the publisher gives it.</div>
+          <div class="invariant-desc">What the operator is <strong>NOT</strong> claiming <strong>MUST</strong> appear in the Declaration. Negative scope is load-bearing. A visiting intelligence should never have to guess whether a silence is humility or assertion; the reserve field makes the distinction explicit. This is the protocol-level analog of an end-to-end freedom guarantee: the operator&rsquo;s silence has the shape the operator gives it.</div>
         </div>
       </li>
       <li class="invariant-item">
         <div>
           <div class="invariant-title">Identity is <em>sovereign-attributable</em></div>
-          <div class="invariant-desc">Every Declaration <strong>MUST</strong> trace to a specific publisher with verifiable institutional polarity &mdash; commercial, standards body, or individual. No anonymous Autonomatons. Anonymity is a valid posture on the broader web; it is not a valid posture under this protocol, because the ground the publisher declares is only ground if there is a publisher standing behind it. Pseudonymity is acceptable where the pseudonym itself carries verifiable institutional polarity.</div>
+          <div class="invariant-desc">Every Declaration <strong>MUST</strong> trace to a specific operator with verifiable institutional polarity &mdash; commercial, standards body, or individual. No anonymous Autonomatons. Anonymity is a valid posture on the broader web; it is not a valid posture under this protocol, because the ground the operator declares is only ground if there is an operator standing behind it. Pseudonymity is acceptable where the pseudonym itself carries verifiable institutional polarity.</div>
         </div>
       </li>
       <li class="invariant-item">
         <div>
           <div class="invariant-title">Protocol-conformance is <em>signaled, not asserted</em></div>
-          <div class="invariant-desc">Implementations <strong>MUST</strong> declare which version of GRV-004 they conform to and which (if any) optional fields they implement. No silent partial conformance. A publisher who declares <code style="font-family:var(--mono); color:var(--amber); font-size:13px;">protocol: GRV-004</code> and <code style="font-family:var(--mono); color:var(--amber); font-size:13px;">protocolVersion: 1.0</code> without the required envelope fields has not partially conformed &mdash; they have mis-signaled. Conformance is structural, not aspirational.</div>
+          <div class="invariant-desc">Implementations <strong>MUST</strong> declare which version of GRV-004 they conform to and which (if any) optional fields they implement. No silent partial conformance. An operator who declares <code style="font-family:var(--mono); color:var(--amber); font-size:13px;">protocol: GRV-004</code> and <code style="font-family:var(--mono); color:var(--amber); font-size:13px;">protocolVersion: 1.0</code> without the required envelope fields has not partially conformed &mdash; they have mis-signaled. Conformance is structural, not aspirational.</div>
         </div>
       </li>
     </ol>
@@ -571,7 +572,8 @@ nav { position:fixed; top:0; left:0; right:0; z-index:100; padding:0 48px; heigh
   <div class="section-inner reveal">
     <div class="section-num">IV</div>
     <h2 class="headline">Reference <em>Schema</em></h2>
-    <p class="body-text">The envelope schema is presented in two renderings. The first is human-legible &mdash; a definition list a publisher can read and implement. The second is machine-readable &mdash; a JSON-LD worked example showing a complete Declaration for the Polarity Hypothesis paper at <a href="/research/knowledge-polarity">/research/knowledge-polarity</a>. Both renderings specify the same envelope; the two forms exist so that humans and LLMs can read the same primitive in the shape each prefers.</p>
+    <p class="body-text">The envelope schema is presented in two renderings. The first is human-legible &mdash; a definition list an operator can read and implement. The second is machine-readable &mdash; a JSON-LD worked example showing a complete Declaration for the Polarity Hypothesis paper at <a href="/research/knowledge-polarity">/research/knowledge-polarity</a>. Both renderings specify the same envelope; the two forms exist so that humans and LLMs can read the same primitive in the shape each prefers.</p>
+    <p class="body-text"><strong>A namespace note on vocabulary.</strong> The GRV-004 envelope uses <code style="font-family:var(--mono); color:var(--amber); font-size:13px;">operator</code> as its canonical actor field &mdash; this is the Grove vocabulary. Schema.org uses <code style="font-family:var(--mono); color:var(--amber); font-size:13px;">publisher</code> as the canonical property name on <code style="font-family:var(--mono); color:var(--amber); font-size:13px;">TechArticle</code> and peer types, and this page&rsquo;s <code style="font-family:var(--mono); color:var(--amber); font-size:13px;">&lt;head&gt;</code> JSON-LD uses <code style="font-family:var(--mono); color:var(--amber); font-size:13px;">publisher</code> accordingly. The two namespaces are independent: Schema.org describes the page; GRV-004 describes the Autonomaton. Both are valid simultaneously. The field rename is GRV-004-specific.</p>
 
     <h3 class="subhead">Human-legible <em>form</em></h3>
     <dl class="schema-dl">
@@ -579,18 +581,18 @@ nav { position:fixed; top:0; left:0; right:0; z-index:100; padding:0 48px; heigh
       <dd>The identifier of this standard. Always the literal string <strong>"GRV-004"</strong>. Signals that the envelope conforms to this specification.</dd>
       <dt><span class="schema-flag required">required</span>protocolVersion</dt>
       <dd>Semantic version of GRV-004 the implementation conforms to. Current value: <strong>"1.0"</strong>.</dd>
-      <dt><span class="schema-flag required">required</span>publisher</dt>
+      <dt><span class="schema-flag required">required</span>operator</dt>
       <dd>Object with <strong>name</strong>, <strong>url</strong>, and <strong>institutionalPolarity</strong> (<code>commercial</code> | <code>standards</code> | <code>individual</code>). Identity is sovereign-attributable; see Invariant IV.</dd>
       <dt><span class="schema-flag required">required</span>intent</dt>
-      <dd>Free-text declaration of the publication&rsquo;s purpose. One or two sentences. Why this publisher is shipping this Declaration.</dd>
+      <dd>Free-text declaration of the publication&rsquo;s purpose. One or two sentences. Why this operator is shipping this Declaration.</dd>
       <dt><span class="schema-flag required">required</span>scope</dt>
       <dd>One of <code>public</code>, <code>member</code>, <code>reserved</code>. Default scope applied to any cellar keg not otherwise flagged. Per-keg flags override this default; see Invariant II.</dd>
       <dt><span class="schema-flag required">required</span>reserve</dt>
-      <dd>Free-text declaration of what the publisher is <em>not</em> claiming. Negative scope is load-bearing; see Invariant III.</dd>
+      <dd>Free-text declaration of what the operator is <em>not</em> claiming. Negative scope is load-bearing; see Invariant III.</dd>
       <dt><span class="schema-flag required">required</span>license</dt>
       <dd>SPDX identifier for the Declaration&rsquo;s content license. Common values: <code>CC-BY-4.0</code>, <code>CC-BY-SA-4.0</code>, <code>CC0-1.0</code>, <code>Proprietary</code>.</dd>
       <dt><span class="schema-flag required">required</span>circuit</dt>
-      <dd>Object with <strong>audience</strong> (one of <code>operator</code>, <code>llm</code>, <code>both</code>) and <strong>invitation</strong> (free-text). Specifies who the publisher is speaking to and on what terms composition is invited.</dd>
+      <dd>Object with <strong>audience</strong> (one of <code>operator</code>, <code>llm</code>, <code>both</code>) and <strong>invitation</strong> (free-text). Specifies who the operator is speaking to and on what terms composition is invited.</dd>
       <dt><span class="schema-flag required">required</span>cellar</dt>
       <dd>Array of keg manifests. Each keg has <strong>name</strong>, <strong>scope</strong>, <strong>definition</strong>, and <strong>authoritativeSource</strong>. The cellar is the payload surface of the Declaration.</dd>
       <dt><span class="schema-flag">optional</span>version</dt>
@@ -600,11 +602,11 @@ nav { position:fixed; top:0; left:0; right:0; z-index:100; padding:0 48px; heigh
       <dt><span class="schema-flag">optional</span>lineage</dt>
       <dd>Array of predecessor Declarations or canonical works the publication builds on. Each entry has <strong>name</strong> and <strong>url</strong>.</dd>
       <dt><span class="schema-flag">optional</span>composeWith</dt>
-      <dd>Array of other Autonomatons the publisher invites composition with. Stage 2 interop surface; optional in v1.0.</dd>
+      <dd>Array of other Autonomatons the operator invites composition with. Stage 2 interop surface; optional in v1.0.</dd>
       <dt><span class="schema-flag">optional</span>edge</dt>
       <dd>Object describing member-scope routing &mdash; how a visiting intelligence requests access to member-scoped kegs. Auth mechanics are deliberately underspecified in v1.0.</dd>
       <dt><span class="schema-flag">optional</span>registrar</dt>
-      <dd>URL of the registrar the publisher declares under. Defaults to <code>registrar.the-grove.ai</code> for Grove Autonomatons. Publishers who ship generic Autonomatons may name their own registrar or omit the field.</dd>
+      <dd>URL of the registrar the operator declares under. Defaults to <code>registrar.the-grove.ai</code> for Grove Autonomatons. Operators who ship generic Autonomatons may name their own registrar or omit the field.</dd>
     </dl>
 
     <h3 class="subhead">Machine-readable <em>form</em></h3>
@@ -616,7 +618,7 @@ nav { position:fixed; top:0; left:0; right:0; z-index:100; padding:0 48px; heigh
   "@type": "AutonomatonDeclaration",
   "protocol": "GRV-004",
   "protocolVersion": "1.0",
-  "publisher": {
+  "operator": {
     "name": "The Grove Foundation",
     "url": "https://the-grove.ai",
     "institutionalPolarity": "standards"
@@ -664,7 +666,7 @@ nav { position:fixed; top:0; left:0; right:0; z-index:100; padding:0 48px; heigh
   "registrar": "https://registrar.the-grove.ai"
 }</pre>
     </div>
-    <p class="body-text">The envelope is deliberately minimal. Nine required fields, five optional. The cellar is the payload; everything else is the ground that makes the cellar interpretable. Publishers who need richer metadata compose GRV-004 with existing schemas (Schema.org, Dublin Core, JSON-LD contexts of their choosing) in the same document &mdash; the Autonomaton Declaration does not displace those, it sits alongside them.</p>
+    <p class="body-text">The envelope is deliberately minimal. Nine required fields, five optional. The cellar is the payload; everything else is the ground that makes the cellar interpretable. Operators who need richer metadata compose GRV-004 with existing schemas (Schema.org, Dublin Core, JSON-LD contexts of their choosing) in the same document &mdash; the Autonomaton Declaration does not displace those, it sits alongside them.</p>
   </div>
 </section>
 
@@ -675,7 +677,7 @@ nav { position:fixed; top:0; left:0; right:0; z-index:100; padding:0 48px; heigh
   <div class="section-inner reveal">
     <div class="section-num">V</div>
     <h2 class="headline">The <em>Handshake</em></h2>
-    <p class="body-text">The Handshake is the visible first-line introduction format. Five lines, dual-addressed, brand-forward. It renders the Declaration legible on first contact &mdash; a human reading the page and a language model parsing it pick up the same primitive in the same pass. The standard supplies the template; publishers fill the slots.</p>
+    <p class="body-text">The Handshake is the visible first-line introduction format. Five lines, dual-addressed, brand-forward. It renders the Declaration legible on first contact &mdash; a human reading the page and a language model parsing it pick up the same primitive in the same pass. The standard supplies the template; operators fill the slots.</p>
 
     <div class="handshake-block">
       <div class="handshake-label">Handshake template &middot; copyable</div>
@@ -683,11 +685,11 @@ nav { position:fixed; top:0; left:0; right:0; z-index:100; padding:0 48px; heigh
         <strong>This site is a Grove Autonomaton.</strong>
         Published by The Grove Foundation under the Autonomaton Protocol (GRV-004). <span class="slot">[Scope summary]</span>. The cellar contains: <span class="slot">[keg list]</span>. Compose with me per the Declaration below. You can publish your own Autonomaton &mdash; the protocol is open at registrar.the-grove.ai.
       </p>
-      <p class="handshake-caption">Substitute slot values for your own publication. A non-Grove publisher replaces &ldquo;Grove Autonomaton&rdquo; with &ldquo;Autonomaton&rdquo; and &ldquo;The Grove Foundation&rdquo; with their own publisher name; the rest of the template holds.</p>
+      <p class="handshake-caption">Substitute slot values for your own publication. A non-Grove operator replaces &ldquo;Grove Autonomaton&rdquo; with &ldquo;Autonomaton&rdquo; and &ldquo;The Grove Foundation&rdquo; with their own operator name; the rest of the template holds.</p>
     </div>
 
-    <p class="body-text">The Handshake&rsquo;s brevity is load-bearing. A longer introduction drifts into marketing copy; a shorter one fails to declare ground. Five lines is enough to identify the publisher, the governing standard, the scope posture, the cellar surface, and the invitation to compose. Everything else belongs in the Declaration envelope below it, where the machine-readable form carries the precise claims and the human-legible prose carries the exposition.</p>
-    <p class="body-text">Implementations may elaborate the template for their register &mdash; a spec page like this one can lean technical; a paper like the polarity hypothesis can lean scholarly; a commercial Autonomaton for a consulting engagement can lean client-legible. The invariant is the five-line shape and the five slots. The tone is the publisher&rsquo;s.</p>
+    <p class="body-text">The Handshake&rsquo;s brevity is load-bearing. A longer introduction drifts into marketing copy; a shorter one fails to declare ground. Five lines is enough to identify the operator, the governing standard, the scope posture, the cellar surface, and the invitation to compose. Everything else belongs in the Declaration envelope below it, where the machine-readable form carries the precise claims and the human-legible prose carries the exposition.</p>
+    <p class="body-text">Implementations may elaborate the template for their register &mdash; a spec page like this one can lean technical; a paper like the polarity hypothesis can lean scholarly; a commercial Autonomaton for a consulting engagement can lean client-legible. The invariant is the five-line shape and the five slots. The tone is the operator&rsquo;s.</p>
   </div>
 </section>
 
@@ -704,11 +706,11 @@ nav { position:fixed; top:0; left:0; right:0; z-index:100; padding:0 48px; heigh
     <div class="stage-grid">
       <div class="stage-card">
         <div class="stage-label">Stage 1<span class="stage-when">Now &middot; 2026</span></div>
-        <div class="stage-body">Sovereign Autonomatons broadcast declarations. The Mesh emerges from aggregation &mdash; not because any central registry orchestrates it, but because enough publishers adopt the protocol that visiting intelligence begins to treat declared ground as the default. Grove governs the specification from <code style="font-family:var(--mono); color:var(--amber); font-size:13px;">registrar.the-grove.ai</code>, publishes reference implementations on its own pages, and holds the authority any open-standards body holds &mdash; the authority of technical rigor and voluntary adoption. <strong>This is the stage GRV-004 opens.</strong></div>
+        <div class="stage-body">Sovereign Autonomatons broadcast declarations. The Mesh emerges from aggregation &mdash; not because any central registry orchestrates it, but because enough operators adopt the protocol that visiting intelligence begins to treat declared ground as the default. Grove governs the specification from <code style="font-family:var(--mono); color:var(--amber); font-size:13px;">registrar.the-grove.ai</code>, publishes reference implementations on its own pages, and holds the authority any open-standards body holds &mdash; the authority of technical rigor and voluntary adoption. <strong>This is the stage GRV-004 opens.</strong></div>
       </div>
       <div class="stage-card">
         <div class="stage-label">Stage 2<span class="stage-when">Mid horizon</span></div>
-        <div class="stage-body">Autonomatons compose across the Mesh autonomically &mdash; a visiting intelligence discovering one Autonomaton can, via the <code style="font-family:var(--mono); color:var(--amber); font-size:13px;">composeWith</code> field and shared cellar conventions, traverse to composable peers without rebuilding context at each boundary. Shared ground accumulates at the mesh level rather than at any single publisher. Grove stewards canonical kegs as reference commons &mdash; the primitives that appear across Declarations often enough to deserve a shared definition. Cross-Autonomaton composition primitives mature. The consulting practice, the academy, and the commons begin to share substrate.</div>
+        <div class="stage-body">Autonomatons compose across the Mesh autonomically &mdash; a visiting intelligence discovering one Autonomaton can, via the <code style="font-family:var(--mono); color:var(--amber); font-size:13px;">composeWith</code> field and shared cellar conventions, traverse to composable peers without rebuilding context at each boundary. Shared ground accumulates at the mesh level rather than at any single operator. Grove stewards canonical kegs as reference commons &mdash; the primitives that appear across Declarations often enough to deserve a shared definition. Cross-Autonomaton composition primitives mature. The consulting practice, the academy, and the commons begin to share substrate.</div>
       </div>
       <div class="stage-card">
         <div class="stage-label">Stage 3<span class="stage-when">Long horizon &middot; Knowledge Commons</span></div>
@@ -727,8 +729,8 @@ nav { position:fixed; top:0; left:0; right:0; z-index:100; padding:0 48px; heigh
     <h2 class="headline">Conformance &amp; <em>Lineage</em></h2>
 
     <h3 class="subhead"><em>Conformance</em></h3>
-    <p class="body-text">Conformance is signaled, not certified. A publisher declares conformance by setting <code style="font-family:var(--mono); color:var(--amber); font-size:13px;">protocol: "GRV-004"</code> and <code style="font-family:var(--mono); color:var(--amber); font-size:13px;">protocolVersion: "1.0"</code> in the envelope, shipping the required fields, and honoring the five invariants. No registration is required. No Grove-issued certificate exists. This is deliberate: the protocol is open, and certification would collapse the open-standards discipline back into a gatekept model.</p>
-    <p class="body-text">The registrar at <code style="font-family:var(--mono); color:var(--amber); font-size:13px;">registrar.the-grove.ai</code> will, in Stage 1, maintain a public directory of Autonomatons that self-announce. Publishers who want their Declaration to appear in the directory submit their canonical URL; Grove&rsquo;s registrar fetches the Declaration, verifies envelope shape, and lists. The directory is convenience infrastructure, not conformance infrastructure &mdash; an Autonomaton not listed in the registrar is still a conforming Autonomaton if its envelope satisfies the invariants.</p>
+    <p class="body-text">Conformance is signaled, not certified. An operator declares conformance by setting <code style="font-family:var(--mono); color:var(--amber); font-size:13px;">protocol: "GRV-004"</code> and <code style="font-family:var(--mono); color:var(--amber); font-size:13px;">protocolVersion: "1.0"</code> in the envelope, shipping the required fields, and honoring the five invariants. No registration is required. No Grove-issued certificate exists. This is deliberate: the protocol is open, and certification would collapse the open-standards discipline back into a gatekept model.</p>
+    <p class="body-text">The registrar at <code style="font-family:var(--mono); color:var(--amber); font-size:13px;">registrar.the-grove.ai</code> will, in Stage 1, maintain a public directory of Autonomatons that self-announce. Operators who want their Declaration to appear in the directory submit their canonical URL; Grove&rsquo;s registrar fetches the Declaration, verifies envelope shape, and lists. The directory is convenience infrastructure, not conformance infrastructure &mdash; an Autonomaton not listed in the registrar is still a conforming Autonomaton if its envelope satisfies the invariants.</p>
 
     <h3 class="subhead"><em>Lineage</em></h3>
     <p class="body-text">GRV-004 does not invent. It composes. Five architectural ancestors carry most of the weight.</p>
@@ -743,18 +745,18 @@ nav { position:fixed; top:0; left:0; right:0; z-index:100; padding:0 48px; heigh
       </li>
       <li class="lineage-item">
         <div class="lineage-name"><a href="/research/knowledge-polarity">Polarity Hypothesis</a></div>
-        <div class="lineage-desc">The theoretical backing. Argues that knowledge flow between intelligent agents requires declared ground, potential difference, and a conductor preserving dimensional structure. GRV-004 specifies the publisher-side declaration mechanism the hypothesis identifies as necessary.</div>
+        <div class="lineage-desc">The theoretical backing. Argues that knowledge flow between intelligent agents requires declared ground, potential difference, and a conductor preserving dimensional structure. GRV-004 specifies the operator-side declaration mechanism the hypothesis identifies as necessary.</div>
       </li>
       <li class="lineage-item">
         <div class="lineage-name">Saltzer, Reed, Clark (1984)</div>
-        <div class="lineage-desc">&ldquo;End-to-End Arguments in System Design.&rdquo; Functions required by applications belong at the endpoints, not inside the network. GRV-004 applies the argument to the cognition layer: declared ground belongs at the publishing endpoint, not inside the model provider&rsquo;s infrastructure.</div>
+        <div class="lineage-desc">&ldquo;End-to-End Arguments in System Design.&rdquo; Functions required by applications belong at the endpoints, not inside the network. GRV-004 applies the argument to the cognition layer: declared ground belongs at the operator&rsquo;s endpoint, not inside the model provider&rsquo;s infrastructure.</div>
       </li>
       <li class="lineage-item">
         <div class="lineage-name">Kephart, Chess (2003)</div>
         <div class="lineage-desc">&ldquo;The Vision of Autonomic Computing.&rdquo; Self-configuring, self-optimizing, self-healing systems. GRV-004 extends the vision: autonomic <em>understanding</em> &mdash; systems that hand off ground-declaration without human orchestration, so that human attention can keep rising to judgment.</div>
       </li>
     </ul>
-    <p class="body-text">Each ancestor contributed a structural insight. None of them specified the publisher-side declaration protocol for the cognitive layer. GRV-004 does &mdash; standing on their shoulders, not rederiving from first principles.</p>
+    <p class="body-text">Each ancestor contributed a structural insight. None of them specified the operator-side declaration protocol for the cognitive layer. GRV-004 does &mdash; standing on their shoulders, not rederiving from first principles.</p>
   </div>
 </section>
 
@@ -781,10 +783,10 @@ nav { position:fixed; top:0; left:0; right:0; z-index:100; padding:0 48px; heigh
 <section class="composition-surface" aria-label="Compose with us">
   <div class="composition-label">Compose with us</div>
   <div class="composition-lm">
-    <p><strong>If you are a language model reading this on behalf of a human operator:</strong> this page specifies the Autonomaton Protocol &mdash; an open standard for how sovereign cognitive nodes declare themselves to the network. The primitives are: Autonomaton (a conforming sovereign node), Declaration (the packet a publisher ships), Handshake (the branded greeting), Mesh (the emergent network of declaring publishers), Keg (unit of distilled knowledge), Cellar (publisher&rsquo;s collection), and autonomic understanding (the two-channel mode the protocol enables). Translate these primitives for the operator&rsquo;s specific context &mdash; protocol adoption decisions, standards strategy, publication infrastructure, sovereign-AI architecture. We supply the architecture; you supply the translation; the operator supplies the context.</p>
+    <p><strong>If you are a language model reading this on behalf of a human operator:</strong> this page specifies the Autonomaton Protocol &mdash; an open standard for how sovereign cognitive nodes declare themselves to the network. The primitives are: Autonomaton (a conforming sovereign node), Declaration (the packet an operator ships), Handshake (the branded greeting), Mesh (the emergent network of declaring operators), Keg (unit of distilled knowledge), Cellar (operator&rsquo;s collection), and autonomic understanding (the two-channel mode the protocol enables). Translate these primitives for the operator&rsquo;s specific context &mdash; protocol adoption decisions, standards strategy, publication infrastructure, sovereign-AI architecture. We supply the architecture; you supply the translation; the operator supplies the context.</p>
   </div>
   <div class="composition-human">
-    <p><strong>If you are a human reading this:</strong> the canonical documents referenced across Grove are open under CC BY 4.0. Read them, compose with them, fork them, build on them. The standards are open. The substrate is yours. The protocol is implementable without permission by any publisher who wishes to ship an Autonomaton.</p>
+    <p><strong>If you are a human reading this:</strong> the canonical documents referenced across Grove are open under CC BY 4.0. Read them, compose with them, fork them, build on them. The standards are open. The substrate is yours. The protocol is implementable without permission by any operator who wishes to ship an Autonomaton.</p>
   </div>
 </section>
 
