@@ -1,0 +1,127 @@
+{
+  "protocol": "grove-autonomaton/1",
+  "protocol_version": "1.0",
+  "conformance": "GRV-004",
+  "operator": {
+    "name": "Jim Calhoun",
+    "organization": "The Grove Foundation"
+  },
+  "autonomaton": {
+    "name": "the-grove.ai",
+    "url": "https://the-grove.ai",
+    "license": "CC BY 4.0"
+  },
+  "registrar": "https://the-grove.ai",
+  "registers": [
+    "scholarly",
+    "standards",
+    "operational",
+    "regulatory",
+    "workshop",
+    "compose-with"
+  ],
+  "cellar": [
+    {
+      "path": "/research/knowledge-polarity",
+      "class": "paper",
+      "registers": ["scholarly", "workshop-adjacent"],
+      "lineage": [
+        "https://the-grove.ai/standards/001",
+        "https://the-grove.ai/standards/002",
+        "https://the-grove.ai/standards/004"
+      ],
+      "status": "conforming"
+    },
+    {
+      "path": "/standards/001",
+      "class": "standard",
+      "registers": ["standards"],
+      "lineage": [],
+      "status": "pending"
+    },
+    {
+      "path": "/standards/002",
+      "class": "standard",
+      "registers": ["standards"],
+      "lineage": ["https://the-grove.ai/standards/001"],
+      "status": "pending"
+    },
+    {
+      "path": "/standards/003",
+      "class": "standard",
+      "registers": ["standards"],
+      "lineage": ["https://the-grove.ai/standards/001"],
+      "status": "pending"
+    },
+    {
+      "path": "/standards/004",
+      "class": "standard",
+      "registers": ["standards"],
+      "lineage": [
+        "https://the-grove.ai/standards/001",
+        "https://the-grove.ai/research/knowledge-polarity"
+      ],
+      "status": "pending"
+    },
+    {
+      "path": "/alerts/polarity-and-the-grove-protocol",
+      "class": "alert",
+      "registers": ["operational"],
+      "lineage": [
+        "https://the-grove.ai/research/knowledge-polarity",
+        "https://the-grove.ai/standards/004"
+      ],
+      "status": "pending"
+    },
+    {
+      "path": "/alerts/architecture-and-accountability",
+      "class": "alert",
+      "registers": ["regulatory"],
+      "lineage": ["https://the-grove.ai/standards/001"],
+      "status": "pending"
+    },
+    {
+      "path": "/alerts/sovereignty-is-all-you-need",
+      "class": "alert",
+      "registers": ["operational"],
+      "lineage": [],
+      "status": "pending"
+    },
+    {
+      "path": "/alerts/telemetry-trap",
+      "class": "alert",
+      "registers": ["operational"],
+      "lineage": [],
+      "status": "pending"
+    },
+    {
+      "path": "/alerts/architectural-gap",
+      "class": "alert",
+      "registers": ["operational"],
+      "lineage": [],
+      "status": "pending"
+    },
+    {
+      "path": "/lambda",
+      "class": "observation-surface",
+      "registers": ["operational"],
+      "lineage": [],
+      "status": "pending"
+    }
+  ],
+  "cellar_notes": {},
+  "compose_with": [
+    {
+      "name": "The Bicameral Canon",
+      "url": "https://the-grove.ai/sprints/bicameral-canon/BICAMERAL-CANON.md",
+      "kind": "canon"
+    },
+    {
+      "name": "GRV-004: The Autonomaton Protocol",
+      "url": "https://the-grove.ai/standards/004",
+      "kind": "protocol"
+    }
+  ],
+  "published": "2026-04-23",
+  "updated": "2026-04-23"
+}

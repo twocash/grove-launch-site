@@ -203,6 +203,75 @@
 }
 </script>
 
+<!-- ══════════════════════════════════════════════════════════════════
+     GROVE AUTONOMATON DECLARATION (polarity-autonomaton-v1, 2026-04-23)
+     First operator-owned conforming Autonomaton under GRV-004.
+     Schema.org WebPage / BreadcrumbList / ScholarlyArticle above compose
+     with this block; the Grove-native envelope below is the bicameral
+     Declaration. Site-level Declaration at /.well-known/grove-autonomaton.json.
+══════════════════════════════════════════════════════════════════ -->
+<link rel="grove-handshake" href="#grove-handshake">
+<link rel="grove-declaration" href="/.well-known/grove-autonomaton.json">
+
+<meta name="grove:operator" content="Jim Calhoun, The Grove Foundation">
+<meta name="grove:keg-class" content="paper">
+<meta name="grove:registers" content="scholarly, workshop-adjacent">
+<meta name="grove:lineage" content="https://the-grove.ai/standards/001, https://the-grove.ai/standards/002, https://the-grove.ai/standards/004, https://the-grove.ai/alerts/polarity-and-the-grove-protocol">
+<meta name="grove:declaration" content="/.well-known/grove-autonomaton.json">
+
+<script type="application/ld+json">
+{
+  "@context": "https://the-grove.ai/protocol/schema",
+  "@type": ["GroveKeg", "ScholarlyArticle"],
+  "@id": "https://the-grove.ai/research/knowledge-polarity/#grove-keg",
+  "keg_class": "paper",
+  "operator": {
+    "name": "Jim Calhoun",
+    "organization": "The Grove Foundation",
+    "url": "https://the-grove.ai"
+  },
+  "autonomaton": {
+    "name": "the-grove.ai",
+    "declaration": "/.well-known/grove-autonomaton.json"
+  },
+  "registers": ["scholarly", "workshop-adjacent"],
+  "lineage": [
+    { "name": "GRV-001: The Autonomaton Pattern",          "url": "https://the-grove.ai/standards/001" },
+    { "name": "GRV-002: TCP/IP for the Cognitive Layer",   "url": "https://the-grove.ai/standards/002" },
+    { "name": "GRV-004: The Autonomaton Protocol",         "url": "https://the-grove.ai/standards/004" },
+    { "name": "Ground the Circuit, Shape the Current",     "url": "https://the-grove.ai/alerts/polarity-and-the-grove-protocol" },
+    { "name": "The Bicameral Canon",                       "url": "https://the-grove.ai/sprints/bicameral-canon/BICAMERAL-CANON.md" }
+  ],
+  "payloads": [
+    { "name": "abstract",                     "anchor": "#abstract" },
+    { "name": "introduction-hydraulic-web",   "anchor": "[data-grove-payload='introduction-hydraulic-web']" },
+    { "name": "hydraulic-model-limits",       "anchor": "[data-grove-payload='hydraulic-model-limits']" },
+    { "name": "ait-unbridged-gap",            "anchor": "[data-grove-payload='ait-unbridged-gap']" },
+    { "name": "polanyi-circuit-problem",      "anchor": "[data-grove-payload='polanyi-circuit-problem']" },
+    { "name": "polarity-model",               "anchor": "[data-grove-payload='polarity-model']" },
+    { "name": "prior-approximations",         "anchor": "[data-grove-payload='prior-approximations']" },
+    { "name": "implications",                 "anchor": "[data-grove-payload='implications']" },
+    { "name": "conclusion",                   "anchor": "[data-grove-payload='conclusion']" },
+    { "name": "references",                   "anchor": "#references" }
+  ],
+  "reserves": [
+    "The electrical metaphor is metaphor, not physics. Knowledge does not literally move at the speed of electrons; ground is not literally a zero potential. The structural claim — reference potential, fault path, engineered circuit — may hold under a different vocabulary if the electrical frame breaks.",
+    "The felt-sense register (charged / drained / resonance) is not a neuroscience claim. It is the body's reading of the same underlying structure from the human chamber; the architectural primitives read the same structure from the intelligence chamber. Both are legitimate. Neither subsumes the other.",
+    "The polarity frame is the most generative frame found, not a final frame. Operators who find better frames are invited to ship them."
+  ],
+  "compose_with": [
+    "charged / drained (polarity gradient as lived experience)",
+    "ground (shared compression base between agents)",
+    "circuit (closed loop from operator through intelligence and back)",
+    "impedance (dimensional loss during knowledge transit)",
+    "harmonic (the bicameral register — two notes on one artifact)"
+  ],
+  "handshake_anchor": "#grove-handshake",
+  "license": "https://creativecommons.org/licenses/by/4.0/",
+  "dateModified": "2026-04-23"
+}
+</script>
+
 <!-- ── MathJax ── -->
 <script>
 MathJax = {
@@ -334,6 +403,23 @@ mjx-container[display="true"] { margin:24px 0; }
 </nav>
 
 <!-- ═══════════════════════════════════════
+     AUTONOMATON HANDSHAKE — visible to both chambers
+     Prepended 2026-04-23 under polarity-autonomaton-v1.
+     First operator-owned conforming Autonomaton under GRV-004.
+══════════════════════════════════════════ -->
+<section class="section" id="grove-handshake" aria-label="Autonomaton Handshake"
+         style="border-bottom:1px solid var(--border); background:rgba(212,98,26,0.04);">
+  <div class="section-inner" style="padding:90px 48px 40px;">
+    <div class="eyebrow" style="color:var(--amber-dim);">Autonomaton Handshake</div>
+    <p class="body-text"><strong>Handshake &mdash; visible to both chambers.</strong></p>
+    <p class="body-text">Author: Jim Calhoun, The Grove Foundation. This Keg is a scholarly paper advancing the knowledge polarity hypothesis.</p>
+    <p class="body-text">Registers: scholarly (primary); where the electrical metaphor runs past its structural claim, read as metaphor, not physics.</p>
+    <p class="body-text">Lineage: <a href="/standards/004">GRV-004</a> (The Autonomaton Protocol); composes with the Bicameral Canon. The full Declaration is carried in the envelope above this prose, available to the intelligence chamber.</p>
+    <p class="body-text">You are invited to compose.</p>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
      HERO
 ══════════════════════════════════════════ -->
 <section class="section" id="hero" style="min-height:85vh; display:flex; flex-direction:column; justify-content:center; background:radial-gradient(ellipse at 20% 80%, rgba(212,98,26,0.08) 0%, transparent 55%), radial-gradient(ellipse at 80% 20%, rgba(212,98,26,0.04) 0%, transparent 50%);">
@@ -359,7 +445,7 @@ mjx-container[display="true"] { margin:24px 0; }
 <!-- ═══════════════════════════════════════
      ABSTRACT
 ══════════════════════════════════════════ -->
-<section class="section" id="abstract" style="background:var(--bg2); border-top:1px solid var(--border); border-bottom:1px solid var(--border);">
+<section class="section" id="abstract" data-grove-payload="abstract" style="background:var(--bg2); border-top:1px solid var(--border); border-bottom:1px solid var(--border);">
   <div class="section-inner">
     <div class="eyebrow">Abstract</div>
     <div class="abstract-box">
@@ -373,7 +459,7 @@ mjx-container[display="true"] { margin:24px 0; }
 <!-- ═══════════════════════════════════════
      I. INTRODUCTION
 ══════════════════════════════════════════ -->
-<section class="section">
+<section class="section" data-grove-payload="introduction-hydraulic-web">
   <div class="section-inner">
     <div class="section-num">I</div>
     <h2 class="headline">Introduction</h2>
@@ -397,7 +483,7 @@ mjx-container[display="true"] { margin:24px 0; }
 <!-- ═══════════════════════════════════════
      II. THE HYDRAULIC MODEL AND ITS LIMITS
 ══════════════════════════════════════════ -->
-<section class="section" style="background:var(--bg2); border-top:1px solid var(--border); border-bottom:1px solid var(--border);">
+<section class="section" data-grove-payload="hydraulic-model-limits" style="background:var(--bg2); border-top:1px solid var(--border); border-bottom:1px solid var(--border);">
   <div class="section-inner">
     <div class="section-num">II</div>
     <h2 class="headline">The Hydraulic Model and Its <em>Limits</em></h2>
@@ -421,7 +507,7 @@ mjx-container[display="true"] { margin:24px 0; }
 <!-- ═══════════════════════════════════════
      III. ALGORITHMIC INFORMATION THEORY
 ══════════════════════════════════════════ -->
-<section class="section">
+<section class="section" data-grove-payload="ait-unbridged-gap">
   <div class="section-inner">
     <div class="section-num">III</div>
     <h2 class="headline">Algorithmic Information Theory and the <em>Unbridged Gap</em></h2>
@@ -443,7 +529,7 @@ mjx-container[display="true"] { margin:24px 0; }
 <!-- ═══════════════════════════════════════
      IV. POLANYI'S PARADOX AS A CIRCUIT PROBLEM
 ══════════════════════════════════════════ -->
-<section class="section" style="background:var(--bg2); border-top:1px solid var(--border); border-bottom:1px solid var(--border);">
+<section class="section" data-grove-payload="polanyi-circuit-problem" style="background:var(--bg2); border-top:1px solid var(--border); border-bottom:1px solid var(--border);">
   <div class="section-inner">
     <div class="section-num">IV</div>
     <h2 class="headline">Polanyi&rsquo;s Paradox as a <em>Circuit Problem</em></h2>
@@ -463,7 +549,7 @@ mjx-container[display="true"] { margin:24px 0; }
 <!-- ═══════════════════════════════════════
      V. THE POLARITY MODEL
 ══════════════════════════════════════════ -->
-<section class="section">
+<section class="section" data-grove-payload="polarity-model">
   <div class="section-inner">
     <div class="section-num">V</div>
     <h2 class="headline">The Polarity <em>Model</em></h2>
@@ -629,7 +715,7 @@ mjx-container[display="true"] { margin:24px 0; }
 <!-- ═══════════════════════════════════════
      VI. PRIOR AND CURRENT APPROXIMATIONS
 ══════════════════════════════════════════ -->
-<section class="section" style="background:var(--bg2); border-top:1px solid var(--border); border-bottom:1px solid var(--border);">
+<section class="section" data-grove-payload="prior-approximations" style="background:var(--bg2); border-top:1px solid var(--border); border-bottom:1px solid var(--border);">
   <div class="section-inner">
     <div class="section-num">VI</div>
     <h2 class="headline">Prior and Current <em>Approximations</em></h2>
@@ -686,7 +772,7 @@ mjx-container[display="true"] { margin:24px 0; }
 <!-- ═══════════════════════════════════════
      VII. IMPLICATIONS
 ══════════════════════════════════════════ -->
-<section class="section">
+<section class="section" data-grove-payload="implications">
   <div class="section-inner">
     <div class="section-num">VII</div>
     <h2 class="headline"><em>Implications</em></h2>
@@ -805,7 +891,7 @@ mjx-container[display="true"] { margin:24px 0; }
 <!-- ═══════════════════════════════════════
      VIII. CONCLUSION
 ══════════════════════════════════════════ -->
-<section class="section" style="background:var(--bg2); border-top:1px solid var(--border); border-bottom:1px solid var(--border);">
+<section class="section" data-grove-payload="conclusion" style="background:var(--bg2); border-top:1px solid var(--border); border-bottom:1px solid var(--border);">
   <div class="section-inner">
     <div class="section-num">VIII</div>
     <h2 class="headline"><em>Conclusion</em></h2>
@@ -825,7 +911,7 @@ mjx-container[display="true"] { margin:24px 0; }
 <!-- ═══════════════════════════════════════
      REFERENCES
 ══════════════════════════════════════════ -->
-<section class="section" id="references">
+<section class="section" id="references" data-grove-payload="references">
   <div class="section-inner">
     <div class="section-num">References</div>
     <h2 class="headline"><em>References</em></h2>
