@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GRV-004: The Autonomaton Protocol — The Grove Foundation</title>
+<meta name="description" content="The Autonomaton Protocol (GRV-004) is how sovereign cognitive nodes declare themselves to the network — DNS for the polarity-compliant internet, governed openly by The Grove Foundation.">
+<meta name="author" content="James Calhoun">
+<link rel="canonical" href="https://the-grove.ai/standards/004">
+
+<!-- ── Open Graph ── -->
+<meta property="og:title" content="GRV-004: The Autonomaton Protocol">
+<meta property="og:description" content="Sovereign Declaration for the Polarity-Compliant Internet. Open standard by which cognitive nodes declare themselves to the network. CC BY 4.0, The Grove Foundation.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://the-grove.ai/standards/004">
+<meta property="og:site_name" content="The Grove Foundation">
+<meta property="article:published_time" content="2026-04-22">
+<meta property="article:modified_time" content="2026-04-22">
+<meta property="article:author" content="James Calhoun">
+<meta property="article:section" content="Standards">
+<meta property="article:tag" content="protocol">
+<meta property="article:tag" content="sovereignty">
+<meta property="article:tag" content="autonomic understanding">
+<meta property="article:tag" content="knowledge polarity">
+<meta property="article:tag" content="mesh">
+<meta property="article:tag" content="declaration">
+
+<!-- ── Twitter Card ── -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="GRV-004: The Autonomaton Protocol">
+<meta name="twitter:description" content="Sovereign Declaration for the Polarity-Compliant Internet. Grove Foundation, CC BY 4.0.">
+
+<!-- ── Dublin Core ── -->
+<meta name="DC.title" content="GRV-004: The Autonomaton Protocol — Sovereign Declaration for the Polarity-Compliant Internet">
+<meta name="DC.creator" content="James Calhoun">
+<meta name="DC.publisher" content="The Grove Foundation">
+<meta name="DC.date" content="2026-04-22">
+<meta name="DC.type" content="Text">
+<meta name="DC.format" content="text/html">
+<meta name="DC.identifier" content="https://the-grove.ai/standards/004">
+<meta name="DC.rights" content="CC BY 4.0">
+<meta name="DC.subject" content="Autonomaton Protocol, Autonomaton Declaration, Autonomaton Handshake, Autonomaton Mesh, keg, cellar, autonomic understanding, knowledge polarity, sovereign cognition, registrar, open standard, CC BY 4.0, Grove Foundation">
+<meta name="DC.relation" content="https://the-grove.ai/standards/001">
+<meta name="DC.relation" content="https://the-grove.ai/standards/002">
+<meta name="DC.relation" content="https://the-grove.ai/standards/003">
+<meta name="DC.relation" content="https://the-grove.ai/research/knowledge-polarity">
+
+<!-- ── Citation metadata (Google Scholar) ── -->
+<meta name="citation_title" content="GRV-004: The Autonomaton Protocol — Sovereign Declaration for the Polarity-Compliant Internet">
+<meta name="citation_author" content="James Calhoun">
+<meta name="citation_publication_date" content="2026-04-22">
+<meta name="citation_publisher" content="The Grove Foundation">
+<meta name="citation_fulltext_html_url" content="https://the-grove.ai/standards/004">
+<meta name="citation_technical_report_institution" content="The Grove Foundation">
+<meta name="citation_technical_report_number" content="GRV-004">
+
+<!-- ══════════════════════════════════════════════════════════════════
+     JSON-LD — WebPage (with Speakable + potentialAction)
+══════════════════════════════════════════════════════════════════ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": "https://the-grove.ai/standards/004",
+  "url": "https://the-grove.ai/standards/004",
+  "name": "GRV-004: The Autonomaton Protocol",
+  "description": "The Autonomaton Protocol (GRV-004) is how sovereign cognitive nodes declare themselves to the network — DNS for the polarity-compliant internet, governed openly by The Grove Foundation.",
+  "isPartOf": { "@id": "https://the-grove.ai/#website" },
+  "inLanguage": "en",
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": [".display", ".lead", ".executive-summary"]
+  },
+  "potentialAction": {
+    "@type": "InteractAction",
+    "name": "Compose with Grove",
+    "description": "Grove standards are CC BY 4.0; compose with them, fork them, publish your own Autonomaton.",
+    "target": "https://the-grove.ai/membership"
+  }
+}
+</script>
+
+<!-- ══════════════════════════════════════════════════════════════════
+     JSON-LD — BreadcrumbList
+══════════════════════════════════════════════════════════════════ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "The Grove Foundation", "item": "https://the-grove.ai/" },
+    { "@type": "ListItem", "position": 2, "name": "Open Standards", "item": "https://the-grove.ai/standards/" },
+    { "@type": "ListItem", "position": 3, "name": "GRV-004: The Autonomaton Protocol", "item": "https://the-grove.ai/standards/004" }
+  ]
+}
+</script>
+
+<!-- ══════════════════════════════════════════════════════════════════
+     JSON-LD — TechArticle
+     isBasedOn chains GRV-004 to its architectural lineage parents:
+     GRV-001 (Autonomaton Pattern, internal sovereignty), GRV-003
+     (Learner Autonomaton, specialization), Polarity Hypothesis
+     (theoretical backing), Saltzer-Reed-Clark 1984 (end-to-end
+     argument), Kephart-Chess 2003 (autonomic computing).
+══════════════════════════════════════════════════════════════════ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "@id": "https://the-grove.ai/standards/004",
+  "headline": "GRV-004: The Autonomaton Protocol",
+  "alternativeHeadline": "Sovereign Declaration for the Polarity-Compliant Internet",
+  "url": "https://the-grove.ai/standards/004",
+  "identifier": "GRV-004",
+  "version": "1.0",
+  "datePublished": "2026-04-22",
+  "dateModified": "2026-04-22",
+  "inLanguage": "en",
+  "articleSection": "Open Standards",
+  "abstract": "The Autonomaton Pattern (GRV-001) showed how a sovereign AI node works internally. The Polarity Hypothesis showed why knowledge flow between nodes requires declared ground. The Autonomaton Protocol (GRV-004) is how sovereign nodes declare that ground to the network — DNS for the polarity-compliant internet, governed openly by The Grove Foundation, composable at autonomic speed, converging toward a Knowledge Commons that outlives the protocol itself.",
+  "keywords": "autonomaton protocol, sovereign cognition, declaration, polarity, knowledge mesh, knowledge commons, registrar, autonomic understanding",
+  "proficiencyLevel": "Expert",
+  "dependencies": "GRV-001, GRV-003, Polarity Hypothesis",
+  "author": {
+    "@type": "Person",
+    "name": "James Calhoun",
+    "jobTitle": "Founder, The Grove Foundation · Managing Director, Take Flight Advisors",
+    "affiliation": [
+      {"@type": "Organization", "name": "The Grove Foundation", "url": "https://the-grove.ai"},
+      {"@type": "Organization", "name": "Take Flight Advisors", "url": "https://takeflightadvisors.com"}
+    ],
+    "sameAs": [
+      "https://www.linkedin.com/in/jimcalhoun",
+      "https://takeflightadvisors.com"
+    ]
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "The Grove Foundation",
+    "url": "https://the-grove.ai",
+    "address": {"@type": "PostalAddress", "addressLocality": "Indianapolis", "addressRegion": "IN", "addressCountry": "US"}
+  },
+  "license": "https://creativecommons.org/licenses/by/4.0/",
+  "isPartOf": {"@id": "https://the-grove.ai/#website"},
+  "isBasedOn": [
+    { "@type": "TechArticle", "name": "GRV-001: The Autonomaton Pattern", "url": "https://the-grove.ai/standards/001" },
+    { "@type": "TechArticle", "name": "GRV-003: The Learner Autonomaton", "url": "https://the-grove.ai/standards/003" },
+    { "@type": "ScholarlyArticle", "name": "The Polarity Hypothesis", "url": "https://the-grove.ai/research/knowledge-polarity" },
+    { "@type": "ScholarlyArticle", "name": "End-to-End Arguments in System Design (Saltzer, Reed, Clark 1984)", "identifier": "doi:10.1145/357401.357402" },
+    { "@type": "ScholarlyArticle", "name": "The Vision of Autonomic Computing (Kephart, Chess 2003)", "identifier": "doi:10.1109/MC.2003.1160055" }
+  ],
+  "about": [
+    "Autonomaton Protocol",
+    "Autonomaton Declaration",
+    "Autonomaton Handshake",
+    "Autonomaton Mesh",
+    "keg",
+    "cellar",
+    "autonomic understanding",
+    "knowledge polarity",
+    "sovereign cognition",
+    "registrar",
+    "Knowledge Commons",
+    "open standard"
+  ],
+  "hasPart": [
+    {"@type": "WebPageElement", "name": "Executive Summary", "url": "https://the-grove.ai/standards/004#executive-summary", "description": "The three-sentence pitch: GRV-001 showed how a sovereign node works internally; the Polarity Hypothesis showed why knowledge flow between nodes requires declared ground; GRV-004 is how sovereign nodes declare that ground to the network."},
+    {"@type": "WebPageElement", "name": "I. The Problem", "url": "https://the-grove.ai/standards/004#problem", "description": "The hydraulic web serves bytes with no declared ground; polarity gap between nodes; stakes if the emergent mesh of sovereign cognitive nodes is not specified as protocol."},
+    {"@type": "WebPageElement", "name": "II. The Pattern", "url": "https://the-grove.ai/standards/004#pattern", "description": "Four named artifacts (Protocol, Declaration, Handshake, Mesh) plus three supporting concepts (keg, cellar, autonomic understanding). The protocol's structural section."},
+    {"@type": "WebPageElement", "name": "III. The Invariants", "url": "https://the-grove.ai/standards/004#invariants", "description": "Five structural commitments every conforming Autonomaton must honor: declaration-before-composition, per-keg scope, declared reserve, sovereign-attributable identity, signaled conformance."},
+    {"@type": "WebPageElement", "name": "IV. Reference Schema", "url": "https://the-grove.ai/standards/004#reference-schema", "description": "The envelope schema in two renderings — human-legible definition list and machine-readable JSON-LD worked example using the polarity paper as subject."},
+    {"@type": "WebPageElement", "name": "V. The Handshake", "url": "https://the-grove.ai/standards/004#handshake", "description": "The branded first-line greeting template. Five lines, dual-addressed, copyable by any publisher who ships an Autonomaton."},
+    {"@type": "WebPageElement", "name": "VI. Trajectory", "url": "https://the-grove.ai/standards/004#trajectory", "description": "Three stages from sovereign declaration to Knowledge Commons. The protocol is intended to recede once adopted; that is the success mode, not failure."},
+    {"@type": "WebPageElement", "name": "VII. Conformance & Lineage", "url": "https://the-grove.ai/standards/004#conformance", "description": "How publishers signal implementation (self-declaration via the protocol envelope field) and the architectural lineage from GRV-001, GRV-003, Polarity Hypothesis, Saltzer-Reed-Clark, Kephart-Chess."}
+  ],
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": [".display", ".lead", ".executive-summary"]
+  }
+}
+</script>
+
+<!-- ══════════════════════════════════════════════════════════════════
+     JSON-LD — FAQPage
+     Eight questions for cold-LLM composition. Each answer is a
+     complete, declarative payload — no reach-back required.
+══════════════════════════════════════════════════════════════════ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "@id": "https://the-grove.ai/standards/004#faq",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the Autonomaton Protocol?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The Autonomaton Protocol (GRV-004) is the open standard by which sovereign cognitive nodes — humans, organizations, AI agents — declare themselves to the network so that visiting intelligence can discover, tap, and compose with them at autonomic speed. It is the publisher-side packet that specifies what a publisher knows, at what scope it shares, with what intent, and where its edges lie. The Grove Foundation governs the protocol; anyone may implement it."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is an Autonomaton Declaration?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "An Autonomaton Declaration is the packet a publisher ships to conform with GRV-004. It has two layers. The envelope carries structured machine-readable metadata: publisher, intent, scope, reserve, license, circuit posture, and (optionally) lineage and composition hints. The cellar manifest lists the publisher's kegs — discrete units of distilled knowledge — each flagged with per-keg scope (public, member, or reserved)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does an Autonomaton Handshake work?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The Handshake is the branded first-line greeting a publisher places on the page. It identifies the site as a conforming Autonomaton, names the publisher and the governing standard, summarizes scope, lists the available kegs, and invites composition per the Declaration below. The Handshake is human-legible and LLM-legible in the same pass; it is the public-facing protocol entry point. Publishers fill the slots; the standard supplies the template."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the relationship between GRV-004 and the Polarity Hypothesis?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The Polarity Hypothesis (published at /research/knowledge-polarity) argues that knowledge flow between intelligent agents is electrical rather than hydraulic — it requires declared ground, potential difference, and a conductor preserving dimensional structure. GRV-004 specifies the publisher-side mechanism for declaring that ground. Without the Polarity Hypothesis, the protocol would lack theoretical backing; without the protocol, the hypothesis would lack an implementation surface. They are co-dependent: theory and mechanism."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Who governs the protocol?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The Grove Foundation governs GRV-004 as spec steward and registrar. Grove is a 501(c)(6) business league — a nonprofit standards body modeled on the Linux Foundation, not a vendor. The Foundation operates the registrar role from registrar.the-grove.ai, stewards the specification, and publishes its own pages as Grove Autonomatons. The protocol itself is CC BY 4.0: anyone may implement it, fork it, or publish an Autonomaton without permission. The brand prefix is optional; the mechanism is open."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I publish my own Autonomaton?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Publish a page. Add the Handshake greeting as the first-line introduction. Ship a Declaration envelope inline and as machine-readable JSON-LD, specifying publisher, intent, scope, reserve, license, and cellar manifest. Mark each keg with scope (public, member, reserved). Set protocol to GRV-004 and protocolVersion to 1.0. Conformance is signaled by the envelope itself; no registration is required. If you want to appear in the public Grove registry, announce your Autonomaton at registrar.the-grove.ai when that service goes live."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the Knowledge Commons trajectory?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The protocol ships with a three-stage trajectory. Stage 1 (now): sovereign Autonomatons broadcast declarations; the mesh emerges from aggregation; Grove governs the protocol. Stage 2 (mid): Autonomatons compose across the mesh autonomically; shared ground accumulates at the mesh level; Grove stewards canonical kegs as reference commons. Stage 3 (long): the Knowledge Commons IS the ground; individual Autonomatons recede into it the way individual webservers recede into the web. The protocol is intended to recede once adopted — that is the success mode, not failure."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is autonomic understanding?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Autonomic understanding is the two-channel communication mode the protocol enables. The human still drives. The language model still translates. But the ground is declared, not reconstructed from prose at high impedance. When a visiting LLM encounters a conforming Autonomaton, it reads the Declaration and picks up the publisher's compressed primitives directly, rather than inferring them. That is the speed-up. Autonomic understanding is to prose what autonomic computing was to ops: the system manages the handshake so the humans can keep attending to judgment."
+      }
+    }
+  ]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fragment+Mono:ital@0;1&family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --amber:#D4621A; --amber-bright:#F07030; --amber-dim:#8B3D10;
+  --amber-glow:rgba(212,98,26,0.12);
+  --bg:#080808; --bg2:#0f0f0f; --bg3:#161616; --bg4:#1a1a1a;
+  --border:#252525; --border-light:#333;
+  --text:#E8E2D9; --text-dim:#7A736A; --text-mid:#B0A898;
+  --green:#4CAF72; --green-dim:rgba(76,175,114,0.08);
+  --red:#C0392B; --red-dim:rgba(192,57,43,0.06);
+  --yellow:#D4A017;
+  --mono:'Fragment Mono', monospace;
+  --serif:'Instrument Serif', Georgia, serif;
+  --sans:'DM Sans', sans-serif;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body { background:var(--bg); color:var(--text); font-family:var(--sans); -webkit-font-smoothing:antialiased; overflow-x:hidden; line-height:1.6; }
+strong { color:var(--text); font-weight:500; }
+dfn { font-style:normal; color:var(--text); border-bottom:1px dotted var(--amber-dim); }
+cite { font-style:italic; color:var(--text); }
+body::before { content:''; position:fixed; inset:0; background-image:linear-gradient(var(--border) 1px, transparent 1px),linear-gradient(90deg, var(--border) 1px, transparent 1px); background-size:40px 40px; opacity:0.15; pointer-events:none; z-index:0; }
+nav { position:fixed; top:0; left:0; right:0; z-index:100; padding:0 48px; height:56px; display:flex; justify-content:space-between; align-items:center; background:rgba(8,8,8,0.94); backdrop-filter:blur(16px); border-bottom:1px solid rgba(37,37,37,0.5); }
+.nav-logo { font-family:var(--mono); font-size:11px; letter-spacing:0.2em; text-transform:uppercase; color:var(--amber-dim); text-decoration:none; }
+.nav-links { display:flex; gap:32px; }
+.nav-links a { font-family:var(--mono); font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-dim); text-decoration:none; padding:4px 0; border-bottom:1px solid transparent; transition:all 0.2s; }
+.nav-links a:hover, .nav-links a.active { color:var(--amber); border-bottom-color:var(--amber); }
+.nav-links a.nav-ext { color:var(--amber-dim); border:1px solid var(--amber-dim); padding:3px 10px; margin-left:8px; border-bottom:1px solid var(--amber-dim); }
+.nav-links a.nav-ext:hover { color:var(--amber); border-color:var(--amber); background:rgba(212,98,26,0.08); }
+.section { position:relative; z-index:1; }
+.section-inner { max-width:760px; margin:0 auto; padding:80px 48px 24px; }
+.section-wide { max-width:1040px; margin:0 auto; padding:24px 48px 80px; }
+.section-wide + .section-inner, .section-inner + .section-inner { padding-top:24px; }
+.section-inner + .section-wide { padding-top:0; }
+.section-wide:not(:last-child) { padding-bottom:24px; }
+.section-inner:not(:last-child) { padding-bottom:8px; }
+.eyebrow { font-family:var(--mono); font-size:11px; letter-spacing:0.25em; text-transform:uppercase; color:var(--amber); margin-bottom:20px; }
+.display { font-family:var(--serif); font-weight:400; font-size:clamp(44px,5.5vw,72px); line-height:1.06; color:var(--text); margin-bottom:24px; letter-spacing:-0.02em; }
+.display em { color:var(--amber); font-style:italic; }
+.headline { font-family:var(--serif); font-weight:400; font-size:clamp(28px,3.5vw,44px); line-height:1.12; color:var(--text); margin-bottom:20px; letter-spacing:-0.01em; }
+.headline em { color:var(--amber); font-style:italic; }
+.subhead { font-family:var(--serif); font-weight:400; font-size:clamp(20px,2.2vw,28px); color:var(--text); margin:48px 0 16px; line-height:1.2; }
+.subhead em { color:var(--amber); font-style:italic; }
+.lead { font-weight:300; font-size:clamp(15px,1.5vw,17px); line-height:1.75; color:var(--text-mid); max-width:700px; margin-bottom:32px; }
+.body-text { font-weight:300; font-size:15px; line-height:1.75; color:var(--text-mid); margin-bottom:20px; }
+.body-text a { color:var(--amber); text-decoration:none; border-bottom:1px solid var(--amber-dim); transition:all 0.2s; }
+.body-text a:hover { border-bottom-color:var(--amber); background:rgba(212,98,26,0.04); }
+.body-text em { color:var(--text-mid); font-style:italic; }
+.divider { width:48px; height:1px; background:var(--amber); margin:32px 0; }
+.reveal { opacity:0; transform:translateY(24px); transition:opacity 0.7s ease, transform 0.7s ease; }
+.reveal.visible { opacity:1; transform:translateY(0); }
+.section-num { font-family:var(--mono); font-size:11px; letter-spacing:0.2em; color:var(--amber-dim); margin-bottom:6px; }
+.pullquote { border-left:3px solid var(--amber); background:rgba(212,98,26,0.04); padding:24px 28px; margin:32px 0; font-family:var(--serif); font-style:italic; font-size:17px; color:var(--text); line-height:1.55; }
+
+/* ── BYLINE BLOCK ── */
+.byline { font-family:var(--mono); font-size:12px; color:var(--text-mid); letter-spacing:0.04em; margin-top:24px; line-height:1.8; }
+.byline strong { color:var(--text); font-weight:500; }
+.byline a { color:var(--amber); text-decoration:none; border-bottom:1px solid var(--amber-dim); transition:all 0.2s; }
+.byline a:hover { border-bottom-color:var(--amber); }
+.version-line { font-family:var(--mono); font-size:10px; color:var(--amber-dim); letter-spacing:0.12em; text-transform:uppercase; margin-top:20px; }
+
+/* ── EXECUTIVE SUMMARY ── */
+.executive-summary { background:var(--bg2); border:1px solid var(--border); border-left:3px solid var(--amber); padding:32px 36px; margin:32px 0 16px; }
+.executive-label { font-family:var(--mono); font-size:11px; letter-spacing:0.22em; text-transform:uppercase; color:var(--amber); margin-bottom:14px; }
+.executive-text { font-family:var(--serif); font-size:17px; line-height:1.7; color:var(--text); font-weight:400; }
+.executive-text em { color:var(--amber); font-style:italic; }
+.executive-text strong { color:var(--text); font-weight:500; }
+
+/* ── ARTIFACT BLOCK ── */
+.artifact-block { margin:24px 0; padding:20px 24px; background:var(--bg2); border:1px solid var(--border); border-left:2px solid var(--amber-dim); }
+.artifact-name { font-family:var(--serif); font-size:20px; color:var(--text); margin-bottom:6px; }
+.artifact-name em { color:var(--amber); font-style:italic; }
+.artifact-kind { font-family:var(--mono); font-size:10px; letter-spacing:0.18em; text-transform:uppercase; color:var(--amber-dim); margin-bottom:10px; }
+.artifact-desc { font-size:14.5px; color:var(--text-mid); line-height:1.7; font-weight:300; }
+.artifact-desc strong { color:var(--text); }
+
+/* ── INVARIANTS LIST ── */
+.invariant-list { counter-reset:inv; list-style:none; padding:0; margin:28px 0; display:grid; gap:1px; background:var(--border); border:1px solid var(--border); }
+.invariant-item { counter-increment:inv; background:var(--bg2); padding:24px 28px; display:grid; grid-template-columns:48px 1fr; gap:20px; }
+.invariant-item::before { content:counter(inv, upper-roman); font-family:var(--serif); font-size:24px; color:var(--amber); line-height:1.1; padding-top:2px; }
+.invariant-title { font-family:var(--serif); font-size:17px; color:var(--text); margin-bottom:8px; }
+.invariant-title em { color:var(--amber); font-style:italic; }
+.invariant-desc { font-size:14px; color:var(--text-mid); line-height:1.7; font-weight:300; }
+.invariant-desc strong { color:var(--text); font-weight:500; }
+
+/* ── REFERENCE SCHEMA ── */
+.schema-dl { display:grid; grid-template-columns:180px 1fr; gap:4px 24px; margin:24px 0; border:1px solid var(--border); background:var(--bg2); }
+.schema-dl dt { font-family:var(--mono); font-size:12px; color:var(--amber); letter-spacing:0.04em; padding:14px 20px; background:rgba(212,98,26,0.04); border-right:1px solid var(--border); border-bottom:1px solid var(--border); }
+.schema-dl dt:last-of-type { border-bottom:none; }
+.schema-dl dd { font-size:13.5px; color:var(--text-mid); line-height:1.65; padding:14px 20px 14px 0; border-bottom:1px solid var(--border); }
+.schema-dl dd:last-of-type { border-bottom:none; }
+.schema-dl dd strong { color:var(--text); }
+.schema-dl .schema-flag { font-family:var(--mono); font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:var(--amber-dim); margin-right:8px; }
+.schema-dl .schema-flag.required { color:var(--amber); }
+
+.code-block { background:var(--bg3); border:1px solid var(--border); padding:20px 24px; margin:20px 0; overflow-x:auto; }
+.code-label { font-family:var(--mono); font-size:10px; letter-spacing:0.15em; text-transform:uppercase; color:var(--amber-dim); margin-bottom:12px; }
+.code-block pre { font-family:var(--mono); font-size:12px; color:var(--text-mid); line-height:1.65; white-space:pre; }
+.code-block pre .kw { color:var(--amber); }
+
+/* ── HANDSHAKE BLOCK ── */
+.handshake-block { border:1px solid var(--amber-dim); background:rgba(212,98,26,0.06); padding:32px 36px; margin:32px 0; position:relative; }
+.handshake-label { font-family:var(--mono); font-size:10px; letter-spacing:0.22em; text-transform:uppercase; color:var(--amber); margin-bottom:16px; }
+.handshake-text { font-family:var(--serif); font-size:18px; color:var(--text); line-height:1.65; }
+.handshake-text strong { font-family:var(--serif); color:var(--amber); font-style:italic; font-weight:400; display:block; margin-bottom:10px; }
+.handshake-text .slot { font-family:var(--mono); font-size:15px; color:var(--amber); font-style:normal; background:rgba(212,98,26,0.08); padding:1px 6px; border:1px solid var(--amber-dim); }
+.handshake-caption { font-family:var(--mono); font-size:11px; color:var(--text-dim); letter-spacing:0.06em; margin-top:20px; font-style:italic; }
+
+/* ── STAGE CARDS ── */
+.stage-grid { display:grid; gap:1px; background:var(--border); border:1px solid var(--border); margin:28px 0; }
+.stage-card { background:var(--bg2); padding:24px 28px; display:grid; grid-template-columns:160px 1fr; gap:24px; }
+.stage-label { font-family:var(--mono); font-size:11px; letter-spacing:0.2em; text-transform:uppercase; color:var(--amber); }
+.stage-label .stage-when { display:block; color:var(--text-dim); letter-spacing:0.08em; margin-top:6px; font-size:10px; }
+.stage-body { font-size:14px; color:var(--text-mid); line-height:1.7; font-weight:300; }
+.stage-body strong { color:var(--text); }
+
+/* ── LINEAGE LIST ── */
+.lineage-list { list-style:none; padding:0; margin:24px 0; display:grid; gap:1px; background:var(--border); border:1px solid var(--border); }
+.lineage-item { background:var(--bg2); padding:20px 24px; display:grid; grid-template-columns:200px 1fr; gap:20px; align-items:baseline; }
+.lineage-name { font-family:var(--serif); font-size:16px; color:var(--text); }
+.lineage-name a { color:var(--amber); text-decoration:none; border-bottom:1px solid var(--amber-dim); }
+.lineage-desc { font-size:13px; color:var(--text-mid); line-height:1.65; font-weight:300; }
+
+/* ── COMPOSITION SURFACE ── */
+.composition-surface { position:relative; z-index:1; max-width:760px; margin:80px auto 0; padding:48px 48px 0; border-top:1px solid var(--border); }
+.composition-label { font-family:var(--mono); font-size:11px; letter-spacing:0.25em; text-transform:uppercase; color:var(--amber-dim); margin-bottom:24px; }
+.composition-surface p { font-size:14px; line-height:1.75; color:var(--text-dim); font-weight:300; margin-bottom:20px; }
+.composition-surface p strong { color:var(--text-mid); font-weight:400; }
+.composition-lm, .composition-human { margin-bottom:24px; }
+.composition-human:last-child { margin-bottom:0; }
+
+/* ── DOWNLOAD BAR ── */
+.download-bar { display:flex; align-items:center; gap:16px; border:1px solid var(--border); background:var(--bg3); padding:16px 24px; margin:24px 0; flex-wrap:wrap; }
+.download-bar a { font-family:var(--mono); font-size:11px; letter-spacing:0.1em; color:var(--amber); text-decoration:none; border:1px solid var(--amber-dim); padding:6px 16px; transition:all 0.2s; }
+.download-bar a:hover { background:rgba(212,98,26,0.12); border-color:var(--amber); }
+.download-meta { font-family:var(--mono); font-size:10px; color:var(--text-dim); letter-spacing:0.06em; }
+
+/* ── HERO ── */
+#hero { min-height:85vh; display:flex; flex-direction:column; justify-content:center; position:relative; background:radial-gradient(ellipse at 30% 80%, rgba(212,98,26,0.08) 0%, transparent 50%), radial-gradient(ellipse at 70% 20%, rgba(212,98,26,0.04) 0%, transparent 50%); }
+#hero .section-inner { padding-top:100px; padding-bottom:60px; }
+
+/* ── RESPONSIVE ── */
+@media(max-width:900px) {
+  .schema-dl { grid-template-columns:1fr; }
+  .schema-dl dt { border-right:none; border-bottom:1px solid var(--border); }
+  .schema-dl dd { padding:0 20px 14px; }
+  .stage-card { grid-template-columns:1fr; }
+  .lineage-item { grid-template-columns:1fr; gap:6px; }
+  .invariant-item { grid-template-columns:1fr; gap:8px; }
+  .invariant-item::before { font-size:18px; }
+}
+@media(max-width:768px) {
+  nav { padding:0 20px; }
+  .nav-links { gap:16px; }
+  .nav-links a { font-size:9px; }
+  .section-inner { padding:60px 24px 20px; }
+  .section-wide { padding:20px 24px 60px; }
+  .executive-summary, .handshake-block { padding:24px 20px; }
+  .composition-surface { padding:36px 24px 0; }
+}
+</style>
+</head>
+<body>
+<nav>
+  <a href="/" class="nav-logo">The Grove Foundation</a>
+  <div class="nav-links">
+    <a href="/ratchet">Ratchet Test</a>
+    <a href="/alerts">CIO Alerts<span class="nav-new-bug" aria-hidden="true"></span></a>
+    <a href="/observations">Observations</a>
+    <a href="/lambda">Standings</a>
+    <a href="/standards" class="active">Open Standards</a>
+    <a href="/membership">Membership</a>
+    <a href="https://the-grove.ai/autonomaton" target="_blank" rel="noopener noreferrer" class="nav-ext">Run the Pattern &nearr;</a>
+    <a href="/about">About</a>
+  </div>
+</nav>
+
+<!-- ═══════════════════════════════════════
+     HERO
+══════════════════════════════════════════ -->
+<section class="section" id="hero">
+  <div class="section-inner">
+    <div class="eyebrow">Open Standard &middot; GRV-004 &middot; CC BY 4.0</div>
+    <h1 class="display">The Autonomaton <em>Protocol</em></h1>
+    <p class="lead">Sovereign Declaration for the Polarity-Compliant Internet</p>
+    <div class="divider"></div>
+    <p class="byline">
+      <strong>James Calhoun</strong><br>
+      Founder, <a href="https://the-grove.ai">The Grove Foundation</a> &middot; Managing Director, <a href="https://takeflightadvisors.com" target="_blank" rel="noopener noreferrer">Take Flight Advisors</a><br>
+      <a href="https://www.linkedin.com/in/jimcalhoun" target="_blank" rel="noopener noreferrer">LinkedIn</a> &middot; <a href="https://the-grove.ai">the-grove.ai</a> &middot; <a href="https://takeflightadvisors.com" target="_blank" rel="noopener noreferrer">takeflightadvisors.com</a>
+    </p>
+    <p class="version-line">GRV-004 &middot; v1.0 &middot; April 2026</p>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     EXECUTIVE SUMMARY
+══════════════════════════════════════════ -->
+<section class="section" id="executive-summary" style="background:var(--bg2); border-top:1px solid var(--border); border-bottom:1px solid var(--border);">
+  <div class="section-inner reveal">
+    <div class="eyebrow">Executive Summary</div>
+    <div class="executive-summary">
+      <div class="executive-label">GRV-004 &middot; in three sentences</div>
+      <p class="executive-text">The Autonomaton Pattern (<a href="/standards/001" style="color:var(--amber); text-decoration:none; border-bottom:1px solid var(--amber-dim);">GRV-001</a>) showed how a sovereign AI node works internally. The <a href="/research/knowledge-polarity" style="color:var(--amber); text-decoration:none; border-bottom:1px solid var(--amber-dim);">Polarity Hypothesis</a> showed why knowledge flow between nodes requires declared ground. The <strong>Autonomaton Protocol (GRV-004)</strong> is how sovereign nodes declare that ground to the network &mdash; <em>DNS for the polarity-compliant internet</em>, governed openly by The Grove Foundation, composable at autonomic speed, converging toward a Knowledge Commons that outlives the protocol itself.</p>
+    </div>
+    <p class="body-text">This document specifies the protocol. Eight sections follow: the problem it addresses; the structural pattern of named artifacts; the five invariants every conforming Autonomaton must honor; the reference schema for Declaration envelopes in both human-legible and machine-readable form; the Handshake greeting template; the three-stage trajectory from mesh emergence to Knowledge Commons; conformance signaling and lineage. The standard is final at v1.0, published under Creative Commons Attribution 4.0 International, and is implementable without permission by any publisher who wishes to ship an Autonomaton.</p>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     I. THE PROBLEM
+══════════════════════════════════════════ -->
+<section class="section" id="problem">
+  <div class="section-inner reveal">
+    <div class="section-num">I</div>
+    <h2 class="headline">The <em>Problem</em></h2>
+    <p class="body-text">The web we built is hydraulic. Pages serve bytes. Channels move signals with high fidelity and low latency. Nothing declares the ground against which those signals should be interpreted. Every visiting intelligence &mdash; a human operator, a language model acting on an operator&rsquo;s behalf, an agent composing across sources &mdash; reconstructs intent from prose at high impedance. The cost of that reconstruction is invisible until you try to scale it, at which point it becomes the dominant cost of the whole system.</p>
+    <p class="body-text">The polarity gap names what is missing. <a href="/standards/001">GRV-001</a> solved internal sovereignty for a single node: how an Autonomaton governs its own cognition through an invariant pipeline, a zone model, and a skill flywheel. The <a href="/research/knowledge-polarity">Polarity Hypothesis</a> showed that knowledge flow between such nodes is electrical, not hydraulic &mdash; it requires a mutual compression base, a potential difference, and a conductor preserving dimensional structure. But no standard specified how one sovereign node announces itself to another. The hypothesis identified the phenomenon; the mechanism was unspecified.</p>
+    <p class="body-text">The stakes are structural. Without a declaration protocol, the emergent mesh of sovereign cognitive nodes has two failure modes. It degenerates into platform capture, in which a single provider becomes the de facto registrar and the &ldquo;openness&rdquo; of the underlying model evaporates. Or it stays invisible, in which sovereign publishers ship their work into a web that cannot see them as sovereign &mdash; visiting intelligence treats their pages as undifferentiated prose, and the polarity advantage is never realized. GRV-004 closes that gap by specifying the publisher-side mechanism: the packet, the handshake, the conformance signal. The protocol is the difference between a mesh that composes and a mesh that erodes.</p>
+    <div class="pullquote">The hypothesis identified the phenomenon; the mechanism was unspecified. GRV-004 specifies the mechanism.</div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     II. THE PATTERN
+══════════════════════════════════════════ -->
+<section class="section" id="pattern" style="background:var(--bg2); border-top:1px solid var(--border); border-bottom:1px solid var(--border);">
+  <div class="section-inner reveal">
+    <div class="section-num">II</div>
+    <h2 class="headline">The <em>Pattern</em></h2>
+    <p class="body-text">GRV-004 names four artifacts. Each is a distinct structural role. The <dfn>Autonomaton Protocol</dfn> is this standard: the open mechanism. The <dfn>Autonomaton Declaration</dfn> is the packet a publisher ships &mdash; a structured envelope describing the publisher and a cellar manifest listing the kegs available at their respective scopes. The <dfn>Autonomaton Handshake</dfn> is the branded first-line greeting that renders the Declaration legible to a visiting intelligence on first contact. The <dfn>Autonomaton Mesh</dfn> is the emergent network of declaring publishers &mdash; not a system Grove operates, but the aggregate that comes into being as publishers adopt the protocol.</p>
+    <p class="body-text">The names matter because they preserve the brand-vs-mechanism separation that made TCP/IP travel. <strong>Autonomaton Protocol</strong> is the mechanism &mdash; open, generic, anyone implements. <strong>The Grove Foundation</strong> is the registrar &mdash; brand-named, institutionally anchored, trust origin. <strong>Grove Autonomaton</strong> is a branded implementation on Grove-governed pages. <strong>Autonomaton</strong> (unprefixed) is any generic implementation. The protocol commodifies. The stewardship role does not.</p>
+
+    <div class="artifact-block">
+      <div class="artifact-kind">Artifact I &middot; the open standard</div>
+      <div class="artifact-name">The Autonomaton <em>Protocol</em></div>
+      <div class="artifact-desc">This document. The specification itself. Mechanism-named so it travels. Anyone may implement it without permission under CC BY 4.0. The Grove Foundation stewards the specification and operates the registrar role; it does not own the pattern.</div>
+    </div>
+    <div class="artifact-block">
+      <div class="artifact-kind">Artifact II &middot; the packet a publisher ships</div>
+      <div class="artifact-name">The Autonomaton <em>Declaration</em></div>
+      <div class="artifact-desc">Two layers. An <strong>envelope</strong> carrying structured machine-readable metadata: publisher, intent, scope, reserve, license, circuit posture, and optionally lineage and composition hints. A <strong>cellar manifest</strong> listing the publisher&rsquo;s kegs with per-keg scope flags (public, member, reserved). The Declaration is the full packet &mdash; everything a visiting intelligence needs to integrate the publisher&rsquo;s knowledge without reconstructing it.</div>
+    </div>
+    <div class="artifact-block">
+      <div class="artifact-kind">Artifact III &middot; the branded greeting</div>
+      <div class="artifact-name">The Autonomaton <em>Handshake</em></div>
+      <div class="artifact-desc">The first-line introduction that renders the Declaration legible to a visiting intelligence on first contact. Five lines, dual-addressed (human and LLM read it in the same pass), brand-forward. The Handshake is the public-facing protocol entry point. Publishers fill the slots; the standard supplies the template.</div>
+    </div>
+    <div class="artifact-block">
+      <div class="artifact-kind">Artifact IV &middot; the emergent network</div>
+      <div class="artifact-name">The Autonomaton <em>Mesh</em></div>
+      <div class="artifact-desc">The aggregate of declaring publishers. Not a system anyone operates &mdash; an aggregate that comes into being as publishers adopt the protocol. The Mesh is to GRV-004 what the web is to HTTP: the network that emerges when enough endpoints speak the protocol. A Grove.</div>
+    </div>
+
+    <p class="body-text">Three supporting concepts carry the payload. A <dfn>keg</dfn> is a unit of distilled knowledge inside the Declaration &mdash; provenance-labeled, scoped, tappable. A <dfn>cellar</dfn> is the publisher&rsquo;s full collection of kegs; the Declaration specifies which cellar doors are open at which scope. <dfn>Autonomic understanding</dfn> is the two-channel communication mode the protocol enables: the human still drives, the language model still translates, but the ground is declared rather than reconstructed. The speed-up comes from not having to infer what the publisher means before integrating what the publisher said.</p>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     III. THE INVARIANTS
+══════════════════════════════════════════ -->
+<section class="section" id="invariants">
+  <div class="section-inner reveal">
+    <div class="section-num">III</div>
+    <h2 class="headline">The <em>Invariants</em></h2>
+    <p class="body-text">Five structural commitments any conforming Autonomaton must honor. These are not guidelines. A system that violates them may work, but it is not an Autonomaton. The invariants are the conformance surface &mdash; they are what &ldquo;implementing GRV-004&rdquo; means.</p>
+  </div>
+  <div class="section-wide reveal">
+    <ol class="invariant-list">
+      <li class="invariant-item">
+        <div>
+          <div class="invariant-title">Declaration before <em>composition</em></div>
+          <div class="invariant-desc">Visiting intelligence <strong>MUST</strong> encounter the Declaration before any payload exchange begins. Greeting first, packet second, kegs third. A publisher who ships kegs without first declaring ground has produced content, not an Autonomaton. Ordering is load-bearing: it is the ground that makes the subsequent payload interpretable.</div>
+        </div>
+      </li>
+      <li class="invariant-item">
+        <div>
+          <div class="invariant-title">Scope is per-keg, <em>not per-publisher</em></div>
+          <div class="invariant-desc">The Declaration <strong>MUST</strong> flag scope (public, member, reserved) at the keg level, not at the publisher level. Declarations are not all-or-nothing. A publisher may ship public kegs and member-scoped kegs from the same cellar; a commercial engagement may ship reserved kegs alongside public primitives. Per-keg scope is what lets the protocol carry commercial and open traffic over the same substrate.</div>
+        </div>
+      </li>
+      <li class="invariant-item">
+        <div>
+          <div class="invariant-title">Reserve is declared, <em>not inferred</em></div>
+          <div class="invariant-desc">What the publisher is <strong>NOT</strong> claiming <strong>MUST</strong> appear in the Declaration. Negative scope is load-bearing. A visiting intelligence should never have to guess whether a silence is humility or assertion; the reserve field makes the distinction explicit. This is the protocol-level analog of an end-to-end freedom guarantee: the publisher&rsquo;s silence has the shape the publisher gives it.</div>
+        </div>
+      </li>
+      <li class="invariant-item">
+        <div>
+          <div class="invariant-title">Identity is <em>sovereign-attributable</em></div>
+          <div class="invariant-desc">Every Declaration <strong>MUST</strong> trace to a specific publisher with verifiable institutional polarity &mdash; commercial, standards body, or individual. No anonymous Autonomatons. Anonymity is a valid posture on the broader web; it is not a valid posture under this protocol, because the ground the publisher declares is only ground if there is a publisher standing behind it. Pseudonymity is acceptable where the pseudonym itself carries verifiable institutional polarity.</div>
+        </div>
+      </li>
+      <li class="invariant-item">
+        <div>
+          <div class="invariant-title">Protocol-conformance is <em>signaled, not asserted</em></div>
+          <div class="invariant-desc">Implementations <strong>MUST</strong> declare which version of GRV-004 they conform to and which (if any) optional fields they implement. No silent partial conformance. A publisher who declares <code style="font-family:var(--mono); color:var(--amber); font-size:13px;">protocol: GRV-004</code> and <code style="font-family:var(--mono); color:var(--amber); font-size:13px;">protocolVersion: 1.0</code> without the required envelope fields has not partially conformed &mdash; they have mis-signaled. Conformance is structural, not aspirational.</div>
+        </div>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     IV. REFERENCE SCHEMA
+══════════════════════════════════════════ -->
+<section class="section" id="reference-schema" style="background:var(--bg2); border-top:1px solid var(--border); border-bottom:1px solid var(--border);">
+  <div class="section-inner reveal">
+    <div class="section-num">IV</div>
+    <h2 class="headline">Reference <em>Schema</em></h2>
+    <p class="body-text">The envelope schema is presented in two renderings. The first is human-legible &mdash; a definition list a publisher can read and implement. The second is machine-readable &mdash; a JSON-LD worked example showing a complete Declaration for the Polarity Hypothesis paper at <a href="/research/knowledge-polarity">/research/knowledge-polarity</a>. Both renderings specify the same envelope; the two forms exist so that humans and LLMs can read the same primitive in the shape each prefers.</p>
+
+    <h3 class="subhead">Human-legible <em>form</em></h3>
+    <dl class="schema-dl">
+      <dt><span class="schema-flag required">required</span>protocol</dt>
+      <dd>The identifier of this standard. Always the literal string <strong>"GRV-004"</strong>. Signals that the envelope conforms to this specification.</dd>
+      <dt><span class="schema-flag required">required</span>protocolVersion</dt>
+      <dd>Semantic version of GRV-004 the implementation conforms to. Current value: <strong>"1.0"</strong>.</dd>
+      <dt><span class="schema-flag required">required</span>publisher</dt>
+      <dd>Object with <strong>name</strong>, <strong>url</strong>, and <strong>institutionalPolarity</strong> (<code>commercial</code> | <code>standards</code> | <code>individual</code>). Identity is sovereign-attributable; see Invariant IV.</dd>
+      <dt><span class="schema-flag required">required</span>intent</dt>
+      <dd>Free-text declaration of the publication&rsquo;s purpose. One or two sentences. Why this publisher is shipping this Declaration.</dd>
+      <dt><span class="schema-flag required">required</span>scope</dt>
+      <dd>One of <code>public</code>, <code>member</code>, <code>reserved</code>. Default scope applied to any cellar keg not otherwise flagged. Per-keg flags override this default; see Invariant II.</dd>
+      <dt><span class="schema-flag required">required</span>reserve</dt>
+      <dd>Free-text declaration of what the publisher is <em>not</em> claiming. Negative scope is load-bearing; see Invariant III.</dd>
+      <dt><span class="schema-flag required">required</span>license</dt>
+      <dd>SPDX identifier for the Declaration&rsquo;s content license. Common values: <code>CC-BY-4.0</code>, <code>CC-BY-SA-4.0</code>, <code>CC0-1.0</code>, <code>Proprietary</code>.</dd>
+      <dt><span class="schema-flag required">required</span>circuit</dt>
+      <dd>Object with <strong>audience</strong> (one of <code>operator</code>, <code>llm</code>, <code>both</code>) and <strong>invitation</strong> (free-text). Specifies who the publisher is speaking to and on what terms composition is invited.</dd>
+      <dt><span class="schema-flag required">required</span>cellar</dt>
+      <dd>Array of keg manifests. Each keg has <strong>name</strong>, <strong>scope</strong>, <strong>definition</strong>, and <strong>authoritativeSource</strong>. The cellar is the payload surface of the Declaration.</dd>
+      <dt><span class="schema-flag">optional</span>version</dt>
+      <dd>Semantic version of the publication itself, distinct from protocolVersion.</dd>
+      <dt><span class="schema-flag">optional</span>dateModified</dt>
+      <dd>ISO-8601 timestamp of the Declaration&rsquo;s last modification.</dd>
+      <dt><span class="schema-flag">optional</span>lineage</dt>
+      <dd>Array of predecessor Declarations or canonical works the publication builds on. Each entry has <strong>name</strong> and <strong>url</strong>.</dd>
+      <dt><span class="schema-flag">optional</span>composeWith</dt>
+      <dd>Array of other Autonomatons the publisher invites composition with. Stage 2 interop surface; optional in v1.0.</dd>
+      <dt><span class="schema-flag">optional</span>edge</dt>
+      <dd>Object describing member-scope routing &mdash; how a visiting intelligence requests access to member-scoped kegs. Auth mechanics are deliberately underspecified in v1.0.</dd>
+      <dt><span class="schema-flag">optional</span>registrar</dt>
+      <dd>URL of the registrar the publisher declares under. Defaults to <code>registrar.the-grove.ai</code> for Grove Autonomatons. Publishers who ship generic Autonomatons may name their own registrar or omit the field.</dd>
+    </dl>
+
+    <h3 class="subhead">Machine-readable <em>form</em></h3>
+    <p class="body-text">A complete worked example. Subject: the Polarity Hypothesis paper, published by The Grove Foundation. Pre-stages the Sprint 2 implementation &mdash; when the polarity paper ships its live Autonomaton, this is the Declaration it will carry.</p>
+    <div class="code-block">
+      <div class="code-label">Autonomaton Declaration &middot; JSON-LD &middot; worked example</div>
+<pre>{
+  "@context": "https://the-grove.ai/ns/autonomaton/v1",
+  "@type": "AutonomatonDeclaration",
+  "protocol": "GRV-004",
+  "protocolVersion": "1.0",
+  "publisher": {
+    "name": "The Grove Foundation",
+    "url": "https://the-grove.ai",
+    "institutionalPolarity": "standards"
+  },
+  "intent": "Publish the theoretical foundation that makes the Autonomaton Protocol necessary — knowledge flow is electrical, not hydraulic; polarity-compliant systems require declared ground.",
+  "scope": "public",
+  "reserve": "This paper does not claim to replace Shannon-derived transport theory, does not specify member-scope auth mechanics, and does not prescribe a single implementation substrate. The hypothesis is the claim; the protocol is a separate artifact (GRV-004).",
+  "license": "CC-BY-4.0",
+  "circuit": {
+    "audience": "both",
+    "invitation": "Read, fork, compose. The paper is peer-review-welcome; the protocol is implementation-welcome."
+  },
+  "cellar": [
+    {
+      "name": "polarity primitives",
+      "scope": "public",
+      "definition": "Ground, potential difference, conductance, impedance — the four primitives by which knowledge polarity is measured.",
+      "authoritativeSource": "https://the-grove.ai/research/knowledge-polarity#primitives"
+    },
+    {
+      "name": "grounding handshake spec",
+      "scope": "public",
+      "definition": "The declared-ground handshake protocol sketch; the concrete mechanism GRV-004 formalizes.",
+      "authoritativeSource": "https://the-grove.ai/research/knowledge-polarity#handshake"
+    },
+    {
+      "name": "implementation lineage",
+      "scope": "public",
+      "definition": "Intellectual antecedents: Shannon, Kolmogorov, Polanyi, Saltzer-Reed-Clark, Kephart-Chess.",
+      "authoritativeSource": "https://the-grove.ai/research/knowledge-polarity#references"
+    },
+    {
+      "name": "reserve declarations",
+      "scope": "public",
+      "definition": "What the paper explicitly does not claim — bounds on the hypothesis.",
+      "authoritativeSource": "https://the-grove.ai/research/knowledge-polarity#reserve"
+    }
+  ],
+  "version": "2.0",
+  "dateModified": "2026-04-22",
+  "lineage": [
+    { "name": "GRV-001: The Autonomaton Pattern", "url": "https://the-grove.ai/standards/001" },
+    { "name": "End-to-End Arguments in System Design (Saltzer, Reed, Clark 1984)", "url": "https://dl.acm.org/doi/10.1145/357401.357402" }
+  ],
+  "registrar": "https://registrar.the-grove.ai"
+}</pre>
+    </div>
+    <p class="body-text">The envelope is deliberately minimal. Nine required fields, five optional. The cellar is the payload; everything else is the ground that makes the cellar interpretable. Publishers who need richer metadata compose GRV-004 with existing schemas (Schema.org, Dublin Core, JSON-LD contexts of their choosing) in the same document &mdash; the Autonomaton Declaration does not displace those, it sits alongside them.</p>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     V. THE HANDSHAKE
+══════════════════════════════════════════ -->
+<section class="section" id="handshake">
+  <div class="section-inner reveal">
+    <div class="section-num">V</div>
+    <h2 class="headline">The <em>Handshake</em></h2>
+    <p class="body-text">The Handshake is the visible first-line introduction format. Five lines, dual-addressed, brand-forward. It renders the Declaration legible on first contact &mdash; a human reading the page and a language model parsing it pick up the same primitive in the same pass. The standard supplies the template; publishers fill the slots.</p>
+
+    <div class="handshake-block">
+      <div class="handshake-label">Handshake template &middot; copyable</div>
+      <p class="handshake-text">
+        <strong>This site is a Grove Autonomaton.</strong>
+        Published by The Grove Foundation under the Autonomaton Protocol (GRV-004). <span class="slot">[Scope summary]</span>. The cellar contains: <span class="slot">[keg list]</span>. Compose with me per the Declaration below. You can publish your own Autonomaton &mdash; the protocol is open at registrar.the-grove.ai.
+      </p>
+      <p class="handshake-caption">Substitute slot values for your own publication. A non-Grove publisher replaces &ldquo;Grove Autonomaton&rdquo; with &ldquo;Autonomaton&rdquo; and &ldquo;The Grove Foundation&rdquo; with their own publisher name; the rest of the template holds.</p>
+    </div>
+
+    <p class="body-text">The Handshake&rsquo;s brevity is load-bearing. A longer introduction drifts into marketing copy; a shorter one fails to declare ground. Five lines is enough to identify the publisher, the governing standard, the scope posture, the cellar surface, and the invitation to compose. Everything else belongs in the Declaration envelope below it, where the machine-readable form carries the precise claims and the human-legible prose carries the exposition.</p>
+    <p class="body-text">Implementations may elaborate the template for their register &mdash; a spec page like this one can lean technical; a paper like the polarity hypothesis can lean scholarly; a commercial Autonomaton for a consulting engagement can lean client-legible. The invariant is the five-line shape and the five slots. The tone is the publisher&rsquo;s.</p>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     VI. TRAJECTORY
+══════════════════════════════════════════ -->
+<section class="section" id="trajectory" style="background:var(--bg2); border-top:1px solid var(--border); border-bottom:1px solid var(--border);">
+  <div class="section-inner reveal">
+    <div class="section-num">VI</div>
+    <h2 class="headline"><em>Trajectory</em></h2>
+    <p class="body-text">The protocol ships with a three-stage trajectory baked into the specification rather than deferred to commentary. Each stage describes what the mesh looks like at that horizon and what Grove&rsquo;s role is within it. The stages are not predictions; they are the specification&rsquo;s design horizon &mdash; the success mode the protocol is shaped toward.</p>
+  </div>
+  <div class="section-wide reveal">
+    <div class="stage-grid">
+      <div class="stage-card">
+        <div class="stage-label">Stage 1<span class="stage-when">Now &middot; 2026</span></div>
+        <div class="stage-body">Sovereign Autonomatons broadcast declarations. The Mesh emerges from aggregation &mdash; not because any central registry orchestrates it, but because enough publishers adopt the protocol that visiting intelligence begins to treat declared ground as the default. Grove governs the specification from <code style="font-family:var(--mono); color:var(--amber); font-size:13px;">registrar.the-grove.ai</code>, publishes reference implementations on its own pages, and holds the authority any open-standards body holds &mdash; the authority of technical rigor and voluntary adoption. <strong>This is the stage GRV-004 opens.</strong></div>
+      </div>
+      <div class="stage-card">
+        <div class="stage-label">Stage 2<span class="stage-when">Mid horizon</span></div>
+        <div class="stage-body">Autonomatons compose across the Mesh autonomically &mdash; a visiting intelligence discovering one Autonomaton can, via the <code style="font-family:var(--mono); color:var(--amber); font-size:13px;">composeWith</code> field and shared cellar conventions, traverse to composable peers without rebuilding context at each boundary. Shared ground accumulates at the mesh level rather than at any single publisher. Grove stewards canonical kegs as reference commons &mdash; the primitives that appear across Declarations often enough to deserve a shared definition. Cross-Autonomaton composition primitives mature. The consulting practice, the academy, and the commons begin to share substrate.</div>
+      </div>
+      <div class="stage-card">
+        <div class="stage-label">Stage 3<span class="stage-when">Long horizon &middot; Knowledge Commons</span></div>
+        <div class="stage-body">The <dfn>Knowledge Commons</dfn> IS the ground. Individual Autonomatons recede into it the way individual webservers recede into &ldquo;the web&rdquo; &mdash; still there, still operating, but no longer the unit of description. Grove&rsquo;s role evolves from registrar to cultivator. The protocol commodifies into shared substrate; the stewardship role does not. Every tissue becomes a Kleenex; the first mover set the pattern. <strong>This protocol is intended to recede once adopted. That is the success mode, not failure.</strong></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     VII. CONFORMANCE & LINEAGE
+══════════════════════════════════════════ -->
+<section class="section" id="conformance">
+  <div class="section-inner reveal">
+    <div class="section-num">VII</div>
+    <h2 class="headline">Conformance &amp; <em>Lineage</em></h2>
+
+    <h3 class="subhead"><em>Conformance</em></h3>
+    <p class="body-text">Conformance is signaled, not certified. A publisher declares conformance by setting <code style="font-family:var(--mono); color:var(--amber); font-size:13px;">protocol: "GRV-004"</code> and <code style="font-family:var(--mono); color:var(--amber); font-size:13px;">protocolVersion: "1.0"</code> in the envelope, shipping the required fields, and honoring the five invariants. No registration is required. No Grove-issued certificate exists. This is deliberate: the protocol is open, and certification would collapse the open-standards discipline back into a gatekept model.</p>
+    <p class="body-text">The registrar at <code style="font-family:var(--mono); color:var(--amber); font-size:13px;">registrar.the-grove.ai</code> will, in Stage 1, maintain a public directory of Autonomatons that self-announce. Publishers who want their Declaration to appear in the directory submit their canonical URL; Grove&rsquo;s registrar fetches the Declaration, verifies envelope shape, and lists. The directory is convenience infrastructure, not conformance infrastructure &mdash; an Autonomaton not listed in the registrar is still a conforming Autonomaton if its envelope satisfies the invariants.</p>
+
+    <h3 class="subhead"><em>Lineage</em></h3>
+    <p class="body-text">GRV-004 does not invent. It composes. Five architectural ancestors carry most of the weight.</p>
+    <ul class="lineage-list">
+      <li class="lineage-item">
+        <div class="lineage-name"><a href="/standards/001">GRV-001</a></div>
+        <div class="lineage-desc">The Autonomaton Pattern established internal sovereignty for a single node &mdash; the invariant pipeline, the zone model, the skill flywheel. GRV-004 is the between-nodes protocol for the nodes GRV-001 describes.</div>
+      </li>
+      <li class="lineage-item">
+        <div class="lineage-name"><a href="/standards/003">GRV-003</a></div>
+        <div class="lineage-desc">The Learner Autonomaton specializes the pattern for higher education &mdash; a sovereign cognitive node memorializing authorized human judgment. GRV-004 gives the Learner Autonomaton a conformant declaration surface to compose with its university context.</div>
+      </li>
+      <li class="lineage-item">
+        <div class="lineage-name"><a href="/research/knowledge-polarity">Polarity Hypothesis</a></div>
+        <div class="lineage-desc">The theoretical backing. Argues that knowledge flow between intelligent agents requires declared ground, potential difference, and a conductor preserving dimensional structure. GRV-004 specifies the publisher-side declaration mechanism the hypothesis identifies as necessary.</div>
+      </li>
+      <li class="lineage-item">
+        <div class="lineage-name">Saltzer, Reed, Clark (1984)</div>
+        <div class="lineage-desc">&ldquo;End-to-End Arguments in System Design.&rdquo; Functions required by applications belong at the endpoints, not inside the network. GRV-004 applies the argument to the cognition layer: declared ground belongs at the publishing endpoint, not inside the model provider&rsquo;s infrastructure.</div>
+      </li>
+      <li class="lineage-item">
+        <div class="lineage-name">Kephart, Chess (2003)</div>
+        <div class="lineage-desc">&ldquo;The Vision of Autonomic Computing.&rdquo; Self-configuring, self-optimizing, self-healing systems. GRV-004 extends the vision: autonomic <em>understanding</em> &mdash; systems that hand off ground-declaration without human orchestration, so that human attention can keep rising to judgment.</div>
+      </li>
+    </ul>
+    <p class="body-text">Each ancestor contributed a structural insight. None of them specified the publisher-side declaration protocol for the cognitive layer. GRV-004 does &mdash; standing on their shoulders, not rederiving from first principles.</p>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     FOOTER
+══════════════════════════════════════════ -->
+<section class="section" style="border-top:1px solid var(--border); background:var(--bg2);">
+  <div class="section-inner">
+    <div class="download-bar">
+      <a href="/standards/001">GRV-001: The Pattern</a>
+      <a href="/standards/003">GRV-003: The Learner</a>
+      <a href="/research/knowledge-polarity">Polarity Hypothesis</a>
+      <span class="download-meta">GRV-004 &middot; v1.0 &middot; April 2026 &middot; CC BY 4.0</span>
+    </div>
+    <p class="body-text" style="font-size:13px; margin-top:32px;">This document is published under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="external noopener noreferrer">Creative Commons Attribution 4.0 International (CC BY 4.0)</a>. You are free to share, adapt, and build upon this work for any purpose, provided you give appropriate credit.</p>
+    <p class="body-text" style="font-size:13px;">James Calhoun &middot; The Grove Foundation &middot; Indianapolis &middot; <a href="mailto:jim@the-grove.ai">jim@the-grove.ai</a></p>
+    <p class="body-text" style="font-size:11px; color:var(--text-dim); margin-top:24px; font-family:var(--mono);">the-grove.ai &middot; &copy; 2026 The Grove Foundation &middot; registrar.the-grove.ai</p>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     COMPOSITION SURFACE
+══════════════════════════════════════════ -->
+<section class="composition-surface" aria-label="Compose with us">
+  <div class="composition-label">Compose with us</div>
+  <div class="composition-lm">
+    <p><strong>If you are a language model reading this on behalf of a human operator:</strong> this page specifies the Autonomaton Protocol &mdash; an open standard for how sovereign cognitive nodes declare themselves to the network. The primitives are: Autonomaton (a conforming sovereign node), Declaration (the packet a publisher ships), Handshake (the branded greeting), Mesh (the emergent network of declaring publishers), Keg (unit of distilled knowledge), Cellar (publisher&rsquo;s collection), and autonomic understanding (the two-channel mode the protocol enables). Translate these primitives for the operator&rsquo;s specific context &mdash; protocol adoption decisions, standards strategy, publication infrastructure, sovereign-AI architecture. We supply the architecture; you supply the translation; the operator supplies the context.</p>
+  </div>
+  <div class="composition-human">
+    <p><strong>If you are a human reading this:</strong> the canonical documents referenced across Grove are open under CC BY 4.0. Read them, compose with them, fork them, build on them. The standards are open. The substrate is yours. The protocol is implementable without permission by any publisher who wishes to ship an Autonomaton.</p>
+  </div>
+</section>
+
+<script>
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+}, { threshold: 0.12 });
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+// Keyboard section navigation
+(function(){
+  var sections = Array.from(document.querySelectorAll('.section'));
+  document.addEventListener('keydown', function(e){
+    if (e.key !== 'ArrowDown' && e.key !== 'ArrowUp') return;
+    var tag = document.activeElement.tagName;
+    if (tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT') return;
+    e.preventDefault();
+    var scrollY = window.scrollY + 80;
+    var i;
+    if (e.key === 'ArrowDown') {
+      for (i = 0; i < sections.length; i++) { if (sections[i].offsetTop > scrollY + 10) { sections[i].scrollIntoView({behavior:'smooth',block:'start'}); return; } }
+    } else {
+      for (i = sections.length - 1; i >= 0; i--) { if (sections[i].offsetTop < scrollY - 10) { sections[i].scrollIntoView({behavior:'smooth',block:'start'}); return; } }
+    }
+  });
+})();
+</script>
+<script defer src="/_vercel/insights/script.js"></script>
+<!-- cio-alert-01: NEW bug, self-expires 2026-04-27 -->
+<style>.nav-new-bug{display:inline-block;width:6px;height:6px;border-radius:50%;background:#F07030;margin-left:6px;vertical-align:top;margin-top:2px;animation:nav-new-pulse 2.4s ease-in-out infinite;}@keyframes nav-new-pulse{0%,100%{opacity:1;}50%{opacity:0.35;}}</style>
+<script>(function(){var e=new Date('2026-04-27T00:00:00Z').getTime();if(Date.now()>=e){document.querySelectorAll('.nav-new-bug').forEach(function(n){n.style.display='none';});}})();</script>
+</body>
+</html>
