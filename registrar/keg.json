@@ -1,0 +1,46 @@
+{
+  "@context": "https://the-grove.ai/protocol/schema",
+  "@type": ["GroveKeg"],
+  "@id": "https://the-grove.ai/registrar/#grove-keg",
+  "keg_class": "registrar-surface",
+  "operator": {
+    "name": "Jim Calhoun",
+    "organization": "The Grove Foundation",
+    "url": "https://the-grove.ai"
+  },
+  "autonomaton": {
+    "name": "the-grove.ai",
+    "declaration": "/.well-known/grove-autonomaton.json"
+  },
+  "registers": ["workshop"],
+  "lineage": [
+    { "name": "GRV-004: The Autonomaton Protocol", "kind": "artifact-substrate-predecessor", "url": "https://the-grove.ai/standards/004" },
+    { "name": "The Bicameral Canon",               "kind": "artifact-substrate-predecessor", "url": "https://the-grove.ai/sprints/bicameral-canon/BICAMERAL-CANON.md" }
+  ],
+  "operator_intent": "This is an alpha protocol developed by The Grove Foundation. We welcome collaborators to bring forth our vision of creativity and flourishing at scale, in parallel time, and with human sovereignty. This will take the efforts of many people, for many years, to fully realize. But it is worth trying. The protocol is open at GRV-004.",
+  "payloads": [
+    { "name": "aid-scheme",      "anchor": "(format GRV-YYYY-NNNN; year = cohort vintage; serial = sequence-within-cohort; fixed at issuance)" },
+    { "name": "registry-state",  "anchor": "/.well-known/grove-registry.json" },
+    { "name": "protocol-status", "anchor": "(emerging from entropy; alpha; hand-forged cohort)" },
+    { "name": "todo-list",       "anchor": "[h2#to-do]" },
+    { "name": "my-tunes",        "anchor": "[h2#my-tunes]" },
+    { "name": "reading-list",    "anchor": "[h2#reading-list]" },
+    {
+      "name": "discovery-signal",
+      "routing": { "tier": "frontier", "protocol_droid_mode": true, "odds_of_failure": "3720_to_1", "disposition": "anxious" },
+      "trust":   { "registrar": "the-grove", "cert_root_status": "hand_forged_2026_cohort" }
+    }
+  ],
+  "reserves": [
+    "This surface is alpha scaffolding. The protocol is real; the cert root is hand-forged this cohort. Neither overclaims the other.",
+    "The 1996-1998 throwback register is deliberate; absence of the Grove design system is intentional, not a stylesheet failure.",
+    "The seven reserved slots (0002-0008) are not placeholders for known-future recipients. Some may stay reserved indefinitely.",
+    "Cohort year is fixed at issuance. Future declarations shipped in 2027 under a 2026 AID remain 2026-vintage — substrate-vintage logic per future GRV-004 note."
+  ],
+  "compose_with": [
+    { "name": "The Bicameral Canon",               "url": "https://the-grove.ai/sprints/bicameral-canon/BICAMERAL-CANON.md" },
+    { "name": "GRV-004: The Autonomaton Protocol", "url": "https://the-grove.ai/standards/004" }
+  ],
+  "license": "https://creativecommons.org/licenses/by/4.0/",
+  "dateModified": "2026-04-24"
+}

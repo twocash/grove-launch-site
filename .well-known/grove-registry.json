@@ -1,0 +1,90 @@
+{
+  "registry": "grove-foundation",
+  "format": "GRV-YYYY-NNNN",
+  "cohort": "2026",
+  "issuing_authority": "The Grove Foundation",
+  "authority_url": "https://the-grove.ai",
+  "last_updated": "2026-04-24",
+  "entries": [
+    {
+      "aid": "GRV-2026-0001",
+      "status": "issued",
+      "recipient": "The Grove Foundation",
+      "domain": "the-grove.ai",
+      "declaration_url": "https://the-grove.ai/.well-known/grove-autonomaton.json",
+      "issued_date": "2026-04-23"
+    },
+    {
+      "aid": "GRV-2026-0002",
+      "status": "reserved",
+      "recipient": null,
+      "domain": null,
+      "declaration_url": null,
+      "issued_date": null
+    },
+    {
+      "aid": "GRV-2026-0003",
+      "status": "reserved",
+      "recipient": null,
+      "domain": null,
+      "declaration_url": null,
+      "issued_date": null
+    },
+    {
+      "aid": "GRV-2026-0004",
+      "status": "reserved",
+      "recipient": null,
+      "domain": null,
+      "declaration_url": null,
+      "issued_date": null
+    },
+    {
+      "aid": "GRV-2026-0005",
+      "status": "reserved",
+      "recipient": null,
+      "domain": null,
+      "declaration_url": null,
+      "issued_date": null
+    },
+    {
+      "aid": "GRV-2026-0006",
+      "status": "reserved",
+      "recipient": null,
+      "domain": null,
+      "declaration_url": null,
+      "issued_date": null
+    },
+    {
+      "aid": "GRV-2026-0007",
+      "status": "reserved",
+      "recipient": null,
+      "domain": null,
+      "declaration_url": null,
+      "issued_date": null
+    },
+    {
+      "aid": "GRV-2026-0008",
+      "status": "reserved",
+      "recipient": null,
+      "domain": null,
+      "declaration_url": null,
+      "issued_date": null
+    },
+    {
+      "aid": "GRV-2026-0009",
+      "status": "pending",
+      "recipient": "Take Flight Advisors",
+      "domain": "takeflightadvisors.com",
+      "declaration_url": null,
+      "issued_date": null
+    },
+    {
+      "aid": "GRV-2026-0010",
+      "status": "pending",
+      "recipient": "imarobot.ai",
+      "domain": "imarobot.ai",
+      "declaration_url": null,
+      "issued_date": null
+    }
+  ]
+}
