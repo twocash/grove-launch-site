@@ -6,6 +6,14 @@
   "trailingSlash": false,
   "redirects": [
     {
+      "source": "/",
+      "has": [
+        { "type": "host", "value": "registrar.the-grove.ai" }
+      ],
+      "destination": "/registrar",
+      "permanent": false
+    },
+    {
       "source": "/papers",
       "destination": "/alerts",
       "permanent": true
