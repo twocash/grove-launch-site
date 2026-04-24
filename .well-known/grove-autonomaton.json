@@ -2,6 +2,12 @@
   "protocol": "grove-autonomaton/1",
   "protocol_version": "1.0",
   "conformance": "GRV-004",
+  "autonomaton_id": "GRV-2026-0001",
+  "registry": {
+    "issuing_authority": "The Grove Foundation",
+    "registry_url": "https://the-grove.ai/.well-known/grove-registry.json",
+    "human_surface": "https://registrar.the-grove.ai/registrar"
+  },
   "operator": {
     "name": "Jim Calhoun",
     "organization": "The Grove Foundation"
