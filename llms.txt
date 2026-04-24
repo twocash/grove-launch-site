@@ -35,6 +35,7 @@ Every Grove Keg carries declared registers — legitimate modes of address the o
 - operational — CIO-facing, demo-in-the-room, procurement-legible
 - regulatory — compliance-document precision
 - workshop — exploratory, honest about edges, invites skeptical engagement as collaboration
+- memoir — exploratory, personal, attestation-shaped; declares: this is one operator's substrate, offered in first person, not a claim about how the pattern universalizes (provisional; proposed in jim-calhoun-keg-v1)
 - compose-with — intelligence-facing primitives, operator-facing invitation
 
 Register is what Grove Kegs declare. Tone is what web-era pages have. The shift makes the bicameral harmonic possible.
@@ -46,6 +47,10 @@ Conforming (Autonomaton Declaration shipped under GRV-004):
 - The Polarity Hypothesis
   Class: paper. Registers: scholarly, workshop-adjacent.
   https://the-grove.ai/research/knowledge-polarity
+
+- A Letter from Jim Calhoun
+  Class: substrate-declaration. Registers: memoir, workshop.
+  https://the-grove.ai/substrate/jim-calhoun/
 
 Pending (declared in site Cellar; individual Autonomaton Declaration promotion scheduled in mesh-retrofit-v1):
 

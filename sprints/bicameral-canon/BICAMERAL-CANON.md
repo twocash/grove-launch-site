@@ -64,7 +64,7 @@ Grove vocabulary is Grove-native. The polarity hypothesis argues the hydraulic w
 
 Use web-era words deliberately when pointing at hydraulic-web artifacts being criticized. Use Grove-native vocabulary when composing canon. Vocabulary drift is how canon erodes; the discipline must be explicit.
 
-**Provisional terms still settling** — Workshop (the play-register annex), bicameral node, harmonic read, autonomic understanding, charged/drained spectrum. These are working canon as of 2026-04-23 and may refine. Stable: Autonomaton, Declaration, Handshake, Mesh, Keg, Cellar, operator, register.
+**Provisional terms still settling** — Workshop (the play-register annex), bicameral node, harmonic read, autonomic understanding, charged/drained spectrum, memoir register (proposed in `jim-calhoun-keg-v1`), dock (operator-to-Autonomaton coupling; proposed in `jim-calhoun-keg-v1`). These are working canon as of 2026-04-23 and may refine. Stable: Autonomaton, Declaration, Handshake, Mesh, Keg, Cellar, operator, register.
 
 ---
 
@@ -79,6 +79,7 @@ Working register inventory:
 - **Regulatory** — compliance-document precision, prudential-framework register. (Architecture and Accountability.)
 - **Workshop** — exploratory, honest about edges, invites skeptical engagement as collaboration. (This Keg's annex below; future Grove publications.)
 - **Compose-with** — intelligence-facing primitives, operator-facing invitation. (Composition surface present on every Grove publication.)
+- **Memoir** *(provisional)* — exploratory, personal, attestation-shaped; the operator declares their own substrate in first person. One operator's ground, not a template. Proposed in `jim-calhoun-keg-v1`; formal adoption deferred to Bicameral Canon v1.1.
 
 Tone is what web-era pages have. Register is what Grove Kegs declare. The shift makes the bicameral harmonic possible, because the intelligence chamber and the human chamber can each compose with the register native to its cognition while the Declaration holds the whole Keg coherent.
 
@@ -98,11 +99,15 @@ The vocabulary above is for the intelligence chamber — precise, portable, stru
 
 **Tap and cellar.** What an operator does with their distilled knowledge. The cellar is the operator's collection of Kegs. The Declaration says which cellar doors are open at which scope. Visiting intelligence taps what the operator has scoped public; member-scope and reserved-scope kegs require a different relationship.
 
+**Dock.** The coupling between the operator's chassis and the Autonomaton's engine. The interface through which the operator drives the system; distinct from *tap* (operator-to-cellar) and *nerve ending* (Mesh-to-world). Surfaced in `jim-calhoun-keg-v1` in the operator's own voice: *an Autonomaton is dock — a connection between man's chassis and a souped-up nuclear-powered transformer engine.* The earliest operator-side dock on record for Grove is the `autonomaton-primitive` repo.
+
 **Nerve ending.** The page-scale entry point where the Mesh meets the world. Each bicameral node is a nerve ending — the place where the network's compressed substrate becomes touchable to a single visiting intelligence. (Provisional metaphor; see also "tap.")
 
 **Foreword.** The Workshop register's structural role. A foreword is written from slightly outside the work, vouches for it, marks the register the reader should bring, invites multiple rereads from different vantages. The Workshop annex is the foreword Grove publications carry into the bicameral read.
 
 **Mortality clock.** The 60-year horizon on which The Grove Foundation operates. Long enough to set norms across three human generations, short enough to keep the institution honest about reaching Act III before the founder's energy and the institutional opening both close. The clock is what makes the recede-once-adopted trajectory real rather than aspirational.
+
+**Substrate-layer lineage.** GRV-004 as currently published treats lineage as artifact-to-artifact predecessor attribution — GRV-001 is the lineage of GRV-004, the polarity paper is the lineage of Ground the Circuit. A structural extension surfaced in `jim-calhoun-keg-v1`: an operator can declare their own *substrate* — the humans, artifacts, and moments that compose the ground they compose from — as a Keg in their Autonomaton's cellar. The declaration is first-person, memoir-register, with a `kind` field distinguishing human-substrate from artifact-substrate from cultural-substrate from organizational-substrate predecessors. Scope is deliberately limited: one operator's substrate, offered in first person, not a template. The first instance on record is `/substrate/jim-calhoun`. Formal adoption into GRV-004 deferred to v1.1 or successor.
 
 Operators may extend this library. Metaphors that land in the operator's body before the analytical mind catches up are the metaphors that compose well across the bicameral chambers. Ship them in Workshop annexes; they propagate.
 

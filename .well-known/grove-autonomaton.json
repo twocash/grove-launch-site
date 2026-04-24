@@ -107,6 +107,17 @@
       "registers": ["operational"],
       "lineage": [],
       "status": "pending"
+    },
+    {
+      "path": "/substrate/jim-calhoun",
+      "class": "substrate-declaration",
+      "registers": ["memoir", "workshop"],
+      "lineage": [
+        "https://the-grove.ai/standards/001",
+        "https://the-grove.ai/standards/004",
+        "https://the-grove.ai/sprints/bicameral-canon/BICAMERAL-CANON.md"
+      ],
+      "status": "conforming"
     }
   ],
   "cellar_notes": {},
