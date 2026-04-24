@@ -28,6 +28,20 @@
   ],
   "rewrites": [
     {
+      "source": "/.well-known/(.*)",
+      "has": [
+        { "type": "host", "value": "registrar.the-grove.ai" }
+      ],
+      "destination": "/.well-known/$1"
+    },
+    {
+      "source": "/(.*)",
+      "has": [
+        { "type": "host", "value": "registrar.the-grove.ai" }
+      ],
+      "destination": "/registrar/$1"
+    },
+    {
       "source": "/autonomaton/:path*",
       "destination": "https://grove-autonomaton-pattern.vercel.app/:path*"
     },
