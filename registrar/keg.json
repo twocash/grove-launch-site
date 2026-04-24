@@ -25,6 +25,7 @@
     { "name": "todo-list",       "anchor": "[h2#to-do]" },
     { "name": "my-tunes",        "anchor": "[h2#my-tunes]" },
     { "name": "reading-list",    "anchor": "[h2#reading-list]" },
+    { "name": "on-substrate-vintage", "anchor": "[h2#on-substrate-vintage]" },
     {
       "name": "discovery-signal",
       "routing": { "tier": "frontier", "protocol_droid_mode": true, "odds_of_failure": "3720_to_1", "disposition": "anxious" },
