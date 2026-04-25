@@ -39,8 +39,9 @@
     "Cohort year is fixed at issuance. Future declarations shipped in 2027 under a 2026 AID remain 2026-vintage — substrate-vintage logic per future GRV-004 note."
   ],
   "compose_with": [
-    { "name": "The Bicameral Canon",               "url": "https://the-grove.ai/sprints/bicameral-canon/BICAMERAL-CANON.md" },
-    { "name": "GRV-004: The Autonomaton Protocol", "url": "https://the-grove.ai/standards/004" }
+    { "name": "The Bicameral Canon",               "url": "https://the-grove.ai/sprints/bicameral-canon/BICAMERAL-CANON.md", "kind": "canon" },
+    { "name": "GRV-004: The Autonomaton Protocol", "url": "https://the-grove.ai/standards/004",                              "kind": "protocol" },
+    { "name": "Jim Calhoun substrate declaration", "url": "https://the-grove.ai/substrate/jim-calhoun",                      "kind": "operator-substrate" }
   ],
   "license": "https://creativecommons.org/licenses/by/4.0/",
   "dateModified": "2026-04-24"

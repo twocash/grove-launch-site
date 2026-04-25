@@ -137,6 +137,11 @@
       "name": "GRV-004: The Autonomaton Protocol",
       "url": "https://the-grove.ai/standards/004",
       "kind": "protocol"
+    },
+    {
+      "name": "Jim Calhoun substrate declaration",
+      "url": "https://the-grove.ai/substrate/jim-calhoun",
+      "kind": "operator-substrate"
     }
   ],
   "published": "2026-04-23",
