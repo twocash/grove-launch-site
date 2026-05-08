@@ -4,45 +4,75 @@
   "@id": "https://the-grove.ai/registrar/#grove-keg",
   "keg_class": "registrar-surface",
   "operator": {
-    "name": "Jim Calhoun",
-    "organization": "The Grove Foundation",
-    "url": "https://the-grove.ai"
+    "name": "The Grove Foundation",
+    "url": "https://the-grove.ai",
+    "founder": {
+      "name": "James Calhoun",
+      "role": "Founder and Executive Director",
+      "url": "https://www.linkedin.com/in/jimcalhoun"
+    },
+    "address": { "locality": "Indianapolis", "region": "IN", "country": "US" }
   },
   "autonomaton": {
     "name": "the-grove.ai",
     "declaration": "/.well-known/grove-autonomaton.json"
   },
-  "registers": ["workshop"],
+  "registers": ["operator-declaration"],
   "lineage": [
     { "name": "GRV-004: The Autonomaton Protocol", "kind": "artifact-substrate-predecessor", "url": "https://the-grove.ai/standards/004" },
     { "name": "The Bicameral Canon",               "kind": "artifact-substrate-predecessor", "url": "https://the-grove.ai/sprints/bicameral-canon/BICAMERAL-CANON.md" }
   ],
-  "operator_intent": "This is an alpha protocol developed by The Grove Foundation. We welcome collaborators to bring forth our vision of creativity and flourishing at scale, in parallel time, and with human sovereignty. This will take the efforts of many people, for many years, to fully realize. But it is worth trying. The protocol is open at GRV-004.",
+  "intent": "The Registrar is the operator declaration of The Grove Foundation. Cohort-2026 substrate is live; issuance interface arrives here.",
   "payloads": [
-    { "name": "aid-scheme",      "anchor": "(format GRV-YYYY-NNNN; year = cohort vintage; serial = sequence-within-cohort; fixed at issuance)" },
-    { "name": "registry-state",  "anchor": "/.well-known/grove-registry.json" },
-    { "name": "protocol-status", "anchor": "(emerging from entropy; alpha; hand-forged cohort)" },
-    { "name": "todo-list",       "anchor": "[h2#to-do]" },
-    { "name": "my-tunes",        "anchor": "[h2#my-tunes]" },
-    { "name": "reading-list",    "anchor": "[h2#reading-list]" },
-    { "name": "on-substrate-vintage", "anchor": "[h2#on-substrate-vintage]" },
+    { "name": "operator-declaration", "anchor": "[section#declaration]" },
+    { "name": "autonomaton-protocol", "anchor": "[section#protocol]" },
+    { "name": "why-declare",          "anchor": "[section#why-declare]" },
+    { "name": "lineage",              "anchor": "[section#lineage]" },
+    { "name": "compose-with",         "anchor": "[section#compose-with]" },
+    { "name": "reserves-declaration", "anchor": "[section#reserves]" },
+    { "name": "registry-state",       "anchor": "/.well-known/grove-registry.json" }
+  ],
+  "inspirations": [
+    { "name": "Andy Clark & David Chalmers", "url": "https://en.wikipedia.org/wiki/The_Extended_Mind", "register": "intellectual-lineage", "contribution": "The Extended Mind (1998); cognition does not stop at the skull" },
+    { "name": "IBM Autonomic Computing",     "register": "intellectual-lineage", "contribution": "Autonomic Computing (2001); inspectable operations below conscious oversight" },
+    { "name": "Sakichi Toyoda",              "url": "https://en.wikipedia.org/wiki/Sakichi_Toyoda", "register": "intellectual-lineage", "contribution": "jidoka (1924); automation with a human touch — direct ancestor of the Autonomaton zone model" },
+    { "name": "Brian Cantwell Smith",        "url": "https://en.wikipedia.org/wiki/Brian_Cantwell_Smith", "register": "intellectual-lineage", "contribution": "Computational Reflection; 3-Lisp (1982) — systems that inspect and modify their own execution" },
+    { "name": "Pattie Maes",                 "url": "https://en.wikipedia.org/wiki/Pattie_Maes", "register": "intellectual-lineage", "contribution": "Computational Reflection; load-bearing metadata as architectural primitive" },
+    { "name": "Christopher Alexander",       "url": "https://en.wikipedia.org/wiki/A_Pattern_Language", "register": "intellectual-lineage", "contribution": "A Pattern Language (1977); patterns as philosophical positions with structural implications" },
+    { "name": "Marshall McLuhan",            "url": "https://en.wikipedia.org/wiki/Marshall_McLuhan", "register": "intellectual-lineage", "contribution": "Understanding Media (1964); the medium is the message" },
+    { "name": "Susan Kare",                  "url": "https://kare.com/", "register": "intellectual-lineage", "contribution": "original Macintosh icon system and fonts (1983); compression at the moment that converts machine into companion" },
+    { "name": "Burrell Smith",               "url": "https://en.wikipedia.org/wiki/Burrell_Smith", "register": "intellectual-lineage", "contribution": "original Macintosh hardware (1984); minimalism as a discipline of coaxing maximum function from fewer parts" },
+    { "name": "Brewster Kahle",              "url": "https://archive.org/", "register": "intellectual-lineage", "contribution": "Internet Archive (1996); preservation as infrastructure — substrate-vintage made buildable" },
+    { "name": "Kevin Kelly",                 "url": "https://kk.org/", "register": "intellectual-lineage", "contribution": "Out of Control (1994); distributed bottom-up systems beat centralized control at scale" },
+    { "name": "Clement Mok",                 "url": "https://en.wikipedia.org/wiki/Clement_Mok", "register": "personal-friendship-and-co-conspiracy", "contribution": "design philosophy as structural discipline; editorial gate against clever-instead-of-clear" },
+    { "name": "Randy Wigginton",             "url": "https://en.wikipedia.org/wiki/Randy_Wigginton", "register": "personal-friendship-and-co-conspiracy", "contribution": "MacWrite (1984) at twenty-one; demonstration that the platform could carry productivity for ordinary people" }
+  ],
+  "operator_notes": [
     {
-      "name": "discovery-signal",
-      "routing": { "tier": "frontier", "protocol_droid_mode": true, "odds_of_failure": "3720_to_1", "disposition": "anxious" },
-      "trust":   { "registrar": "the-grove", "cert_root_status": "hand_forged_2026_cohort" }
+      "subject": "Avatar — Tsaheylu",
+      "register": "no-judgment",
+      "note": "The Tsaheylu connection in Avatar reads as a bicameral lock — paired symmetric authentication — rather than a generalist information-sharing bus. The bicameral architecture (one surface, two chambers) is structurally closer to this than to traditional pub-sub."
+    },
+    {
+      "subject": "Star Wars — protocol droid",
+      "register": "no-judgment",
+      "note": "The protocol-droid metaphor is useful but incomplete. The Autonomaton Protocol aims at egalitarian circuitry — peer cognition rather than translation up to human authority. Same shape, different politics."
+    },
+    {
+      "subject": "Interstellar — substrate-vintage",
+      "register": "no-judgment",
+      "note": "The time-dilation scene encodes the substrate-vintage logic the Registrar will issue against. Cohort year is fixed at issuance; declarations shipped under a 2026 AID stay 2026-vintage regardless of when they ship. Queued for migration into /standards/ canon when issuance functionality goes live."
     }
   ],
-  "reserves": [
-    "This surface is alpha scaffolding. The protocol is real; the cert root is hand-forged this cohort. Neither overclaims the other.",
-    "The 1996-1998 throwback register is deliberate; absence of the Grove design system is intentional, not a stylesheet failure.",
-    "The seven reserved slots (0002-0008) are not placeholders for known-future recipients. Some may stay reserved indefinitely.",
-    "Cohort year is fixed at issuance. Future declarations shipped in 2027 under a 2026 AID remain 2026-vintage — substrate-vintage logic per future GRV-004 note."
-  ],
+  "reserves": { "declaration": "Issuance interface arrives here. Cohort-2026 substrate is live." },
   "compose_with": [
-    { "name": "The Bicameral Canon",               "url": "https://the-grove.ai/sprints/bicameral-canon/BICAMERAL-CANON.md", "kind": "canon" },
-    { "name": "GRV-004: The Autonomaton Protocol", "url": "https://the-grove.ai/standards/004",                              "kind": "protocol" },
-    { "name": "Jim Calhoun substrate declaration", "url": "https://the-grove.ai/substrate/jim-calhoun",                      "kind": "operator-substrate" }
+    { "name": "GRV-001: Autonomaton Pattern",      "url": "https://the-grove.ai/standards/001",               "kind": "standard" },
+    { "name": "GRV-002: Learner Autonomaton",      "url": "https://the-grove.ai/standards/002",               "kind": "standard" },
+    { "name": "GRV-003: Learner Autonomaton v1.2", "url": "https://the-grove.ai/standards/003",               "kind": "standard" },
+    { "name": "GRV-004: The Autonomaton Protocol", "url": "https://the-grove.ai/standards/004",               "kind": "protocol" },
+    { "name": "The Polarity Hypothesis",           "url": "https://the-grove.ai/research/knowledge-polarity", "kind": "research" },
+    { "name": "The Grove Foundation",              "url": "https://the-grove.ai/",                            "kind": "foundation-root" }
   ],
   "license": "https://creativecommons.org/licenses/by/4.0/",
-  "dateModified": "2026-04-24"
+  "dateModified": "2026-05-08"
 }

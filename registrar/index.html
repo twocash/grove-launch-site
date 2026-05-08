@@ -2,169 +2,445 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>The Grove Foundation Registrar</title>
-<meta name="description" content="AutonomatonID registry for the 2026 cohort. Machine-readable registry at /.well-known/grove-registry.json. The Grove Foundation, Indianapolis.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Grove Foundation Registrar &mdash; Operator Declaration</title>
+<meta name="description" content="The Registrar is the operator declaration of The Grove Foundation, an open standards body for the cognitive layer of computing. Cohort-2026 substrate is live; issuance interface arrives here.">
+<meta name="author" content="James Calhoun">
 <link rel="canonical" href="https://the-grove.ai/registrar">
+
+<!-- ── Open Graph ── -->
+<meta property="og:title" content="The Grove Foundation Registrar">
+<meta property="og:description" content="Operator declaration of The Grove Foundation. Cohort-2026 substrate is live; issuance interface arrives here.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://the-grove.ai/registrar">
+<meta property="og:site_name" content="The Grove Foundation">
+<meta property="article:published_time" content="2026-05-08">
+<meta property="article:modified_time" content="2026-05-08">
+<meta property="article:author" content="James Calhoun">
+<meta property="article:section" content="Registrar">
+<meta property="article:tag" content="registrar">
+<meta property="article:tag" content="operator declaration">
+<meta property="article:tag" content="autonomaton protocol">
+<meta property="article:tag" content="cohort 2026">
+
+<!-- ── Twitter Card ── -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The Grove Foundation Registrar">
+<meta name="twitter:description" content="Operator declaration of The Grove Foundation. Cohort-2026 substrate is live.">
+
+<!-- ── Dublin Core ── -->
+<meta name="DC.title" content="The Grove Foundation Registrar &mdash; Operator Declaration">
+<meta name="DC.creator" content="James Calhoun">
+<meta name="DC.publisher" content="The Grove Foundation">
+<meta name="DC.date" content="2026-05-08">
+<meta name="DC.type" content="Text">
+<meta name="DC.format" content="text/html">
+<meta name="DC.identifier" content="https://the-grove.ai/registrar">
+<meta name="DC.rights" content="CC BY 4.0">
+<meta name="DC.subject" content="Registrar, Operator Declaration, Autonomaton Protocol, GroveKeg, Grove Foundation, cohort 2026">
+<meta name="DC.relation" content="https://the-grove.ai/standards/001">
+<meta name="DC.relation" content="https://the-grove.ai/standards/002">
+<meta name="DC.relation" content="https://the-grove.ai/standards/003">
+<meta name="DC.relation" content="https://the-grove.ai/standards/004">
+<meta name="DC.relation" content="https://the-grove.ai/research/knowledge-polarity">
+
+<!-- ══════════════════════════════════════════════════════════════════
+     JSON-LD — WebPage
+══════════════════════════════════════════════════════════════════ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": "https://the-grove.ai/registrar",
+  "url": "https://the-grove.ai/registrar",
+  "name": "The Grove Foundation Registrar",
+  "description": "Operator declaration of The Grove Foundation. Cohort-2026 substrate is live; issuance interface arrives here.",
+  "isPartOf": { "@id": "https://the-grove.ai/#website" },
+  "inLanguage": "en",
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": [".display", ".lead"]
+  }
+}
+</script>
+
+<!-- ══════════════════════════════════════════════════════════════════
+     JSON-LD — BreadcrumbList
+══════════════════════════════════════════════════════════════════ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "The Grove Foundation", "item": "https://the-grove.ai/" },
+    { "@type": "ListItem", "position": 2, "name": "Registrar", "item": "https://the-grove.ai/registrar" }
+  ]
+}
+</script>
+
+<!-- ══════════════════════════════════════════════════════════════════
+     JSON-LD — Organization
+══════════════════════════════════════════════════════════════════ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://the-grove.ai/#organization",
+  "name": "The Grove Foundation",
+  "url": "https://the-grove.ai",
+  "description": "Open standards body for the cognitive layer of computing. Publishes architecture for AI governance — patterns, protocols, and research — under CC BY 4.0.",
+  "founder": {
+    "@type": "Person",
+    "name": "James Calhoun",
+    "jobTitle": "Founder and Executive Director, The Grove Foundation",
+    "url": "https://www.linkedin.com/in/jimcalhoun"
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Indianapolis",
+    "addressRegion": "IN",
+    "addressCountry": "US"
+  },
+  "license": "https://creativecommons.org/licenses/by/4.0/",
+  "subjectOf": { "@id": "https://the-grove.ai/registrar" }
+}
+</script>
+
+<!-- ══════════════════════════════════════════════════════════════════
+     GroveKeg envelope — alternate channel (deep-equal mirror inline at end of body)
+══════════════════════════════════════════════════════════════════ -->
 <link rel="alternate" type="application/ld+json" href="/registrar/keg.json">
 <link rel="alternate" type="application/json" href="/.well-known/grove-registry.json">
-<style type="text/css">
-  .notice { border:1px solid #000000; background:#FFFFCC; padding:10px 14px; margin:20px auto; max-width:520px; font-size:90%; }
-  .notice p { margin:8px 0; }
-  .review { font-size:90%; color:#333333; }
-  .todo-credit { font-size:85%; color:#666666; }
-  .footer-line { font-size:85%; color:#333333; }
+<link rel="alternate" type="application/json" href="/.well-known/grove-autonomaton.json">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fragment+Mono:ital@0;1&family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --amber:#D4621A; --amber-bright:#F07030; --amber-dim:#8B3D10;
+  --amber-glow:rgba(212,98,26,0.12);
+  --bg:#080808; --bg2:#0f0f0f; --bg3:#161616; --bg4:#1a1a1a;
+  --border:#252525; --border-light:#333;
+  --text:#E8E2D9; --text-dim:#7A736A; --text-mid:#B0A898;
+  --green:#4CAF72; --red:#C0392B; --yellow:#D4A017;
+  --mono:'Fragment Mono', monospace;
+  --serif:'Instrument Serif', Georgia, serif;
+  --sans:'DM Sans', sans-serif;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body { background:var(--bg); color:var(--text); font-family:var(--sans); -webkit-font-smoothing:antialiased; overflow-x:hidden; line-height:1.6; }
+strong { color:var(--text); font-weight:500; }
+em { color:var(--text); font-style:italic; }
+body::before { content:''; position:fixed; inset:0; background-image:linear-gradient(var(--border) 1px, transparent 1px),linear-gradient(90deg, var(--border) 1px, transparent 1px); background-size:40px 40px; opacity:0.15; pointer-events:none; z-index:0; }
+nav { position:fixed; top:0; left:0; right:0; z-index:100; padding:0 48px; height:56px; display:flex; justify-content:space-between; align-items:center; background:rgba(8,8,8,0.94); backdrop-filter:blur(16px); border-bottom:1px solid rgba(37,37,37,0.5); }
+.nav-logo { font-family:var(--mono); font-size:11px; letter-spacing:0.2em; text-transform:uppercase; color:var(--amber-dim); text-decoration:none; }
+.nav-links { display:flex; gap:32px; }
+.nav-links a { font-family:var(--mono); font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-dim); text-decoration:none; padding:4px 0; border-bottom:1px solid transparent; transition:all 0.2s; }
+.nav-links a:hover, .nav-links a.active { color:var(--amber); border-bottom-color:var(--amber); }
+.nav-links a.nav-ext { color:var(--amber-dim); border:1px solid var(--amber-dim); padding:3px 10px; margin-left:8px; border-bottom:1px solid var(--amber-dim); }
+.nav-links a.nav-ext:hover { color:var(--amber); border-color:var(--amber); background:rgba(212,98,26,0.08); }
+
+.section { position:relative; z-index:1; }
+.section-inner { max-width:760px; margin:0 auto; padding:80px 48px 24px; }
+.section-wide { max-width:1040px; margin:0 auto; padding:24px 48px 80px; }
+.section-wide + .section-inner, .section-inner + .section-inner { padding-top:24px; }
+.section-inner + .section-wide { padding-top:0; }
+.section-wide:not(:last-child) { padding-bottom:24px; }
+.section-inner:not(:last-child) { padding-bottom:8px; }
+
+.eyebrow { font-family:var(--mono); font-size:11px; letter-spacing:0.25em; text-transform:uppercase; color:var(--amber); margin-bottom:20px; }
+.display { font-family:var(--serif); font-weight:400; font-size:clamp(44px,5.5vw,72px); line-height:1.06; color:var(--text); margin-bottom:24px; letter-spacing:-0.02em; }
+.display em { color:var(--amber); font-style:italic; }
+.headline { font-family:var(--serif); font-weight:400; font-size:clamp(28px,3.5vw,44px); line-height:1.12; color:var(--text); margin-bottom:20px; letter-spacing:-0.01em; }
+.headline em { color:var(--amber); font-style:italic; }
+.subhead { font-family:var(--serif); font-weight:400; font-size:clamp(20px,2.2vw,28px); color:var(--text); margin:48px 0 16px; line-height:1.2; }
+.subhead em { color:var(--amber); font-style:italic; }
+.lead { font-weight:300; font-size:clamp(15px,1.5vw,17px); line-height:1.75; color:var(--text-mid); max-width:700px; margin-bottom:32px; }
+.lead a { color:var(--amber); text-decoration:none; border-bottom:1px solid var(--amber-dim); }
+.lead a:hover { border-bottom-color:var(--amber); }
+.body-text { font-weight:300; font-size:15px; line-height:1.75; color:var(--text-mid); margin-bottom:20px; }
+.body-text a { color:var(--amber); text-decoration:none; border-bottom:1px solid var(--amber-dim); transition:all 0.2s; }
+.body-text a:hover { border-bottom-color:var(--amber); background:rgba(212,98,26,0.04); }
+.body-text em { color:var(--text-mid); font-style:italic; }
+.body-text strong { color:var(--text); font-weight:500; }
+.divider { width:48px; height:1px; background:var(--amber); margin:32px 0; }
+.reveal { opacity:0; transform:translateY(24px); transition:opacity 0.7s ease, transform 0.7s ease; }
+.reveal.visible { opacity:1; transform:translateY(0); }
+.section-num { font-family:var(--mono); font-size:11px; letter-spacing:0.2em; color:var(--amber-dim); margin-bottom:6px; }
+
+/* ── BYLINE BLOCK ── */
+.byline { font-family:var(--mono); font-size:12px; color:var(--text-mid); letter-spacing:0.04em; margin-top:24px; line-height:1.8; }
+.byline strong { color:var(--text); font-weight:500; }
+.byline a { color:var(--amber); text-decoration:none; border-bottom:1px solid var(--amber-dim); transition:all 0.2s; }
+.byline a:hover { border-bottom-color:var(--amber); }
+.version-line { font-family:var(--mono); font-size:10px; color:var(--amber-dim); letter-spacing:0.12em; text-transform:uppercase; margin-top:20px; }
+
+/* ── HERO ── */
+#declaration { min-height:75vh; display:flex; flex-direction:column; justify-content:center; position:relative; background:radial-gradient(ellipse at 30% 80%, rgba(212,98,26,0.08) 0%, transparent 50%), radial-gradient(ellipse at 70% 20%, rgba(212,98,26,0.04) 0%, transparent 50%); }
+#declaration .section-inner { padding-top:100px; padding-bottom:60px; }
+
+/* ── LINEAGE BLOCKS ── */
+.lineage-blocks { display:grid; gap:1px; background:var(--border); border:1px solid var(--border); margin:24px 0; }
+.lineage-block { background:var(--bg2); padding:28px 32px; border-left:2px solid var(--amber-dim); }
+.lineage-attribution { font-family:var(--serif); font-size:18px; color:var(--text); margin-bottom:12px; line-height:1.4; }
+.lineage-attribution em { color:var(--amber); font-style:italic; }
+.lineage-attribution a { color:var(--amber); text-decoration:none; border-bottom:1px solid var(--amber-dim); }
+.lineage-attribution a:hover { border-bottom-color:var(--amber); }
+.lineage-body { font-size:14.5px; color:var(--text-mid); line-height:1.7; font-weight:300; }
+.lineage-body strong { color:var(--text); font-weight:500; }
+
+/* ── COMPOSE LIST ── */
+.compose-list { list-style:none; padding:0; margin:24px 0; display:grid; gap:1px; background:var(--border); border:1px solid var(--border); }
+.compose-list li { background:var(--bg2); padding:18px 24px; display:grid; grid-template-columns:280px 1fr; gap:24px; align-items:baseline; }
+.compose-list a { font-family:var(--mono); font-size:13px; color:var(--amber); text-decoration:none; letter-spacing:0.04em; }
+.compose-list a:hover { border-bottom:1px solid var(--amber); }
+.compose-list .compose-desc { font-size:14px; color:var(--text-mid); line-height:1.6; font-weight:300; }
+
+/* ── DOWNLOAD BAR ── */
+.download-bar { display:flex; align-items:center; gap:16px; border:1px solid var(--border); background:var(--bg3); padding:16px 24px; margin:24px 0; flex-wrap:wrap; }
+.download-bar a { font-family:var(--mono); font-size:11px; letter-spacing:0.1em; color:var(--amber); text-decoration:none; border:1px solid var(--amber-dim); padding:6px 16px; transition:all 0.2s; }
+.download-bar a:hover { background:rgba(212,98,26,0.12); border-color:var(--amber); }
+.download-meta { font-family:var(--mono); font-size:10px; color:var(--text-dim); letter-spacing:0.06em; }
+
+/* ── COMPOSITION SURFACE ── */
+.composition-surface { position:relative; z-index:1; max-width:760px; margin:80px auto 0; padding:48px 48px 0; border-top:1px solid var(--border); }
+.composition-label { font-family:var(--mono); font-size:11px; letter-spacing:0.25em; text-transform:uppercase; color:var(--amber-dim); margin-bottom:24px; }
+.composition-surface p { font-size:14px; line-height:1.75; color:var(--text-dim); font-weight:300; margin-bottom:20px; }
+.composition-surface p strong { color:var(--text-mid); font-weight:400; }
+.composition-lm, .composition-human { margin-bottom:24px; }
+.composition-human:last-child { margin-bottom:48px; }
+
+/* ── RESPONSIVE ── */
+@media(max-width:900px) {
+  .compose-list li { grid-template-columns:1fr; gap:6px; }
+}
+@media(max-width:768px) {
+  nav { padding:0 20px; }
+  .nav-links { gap:16px; }
+  .nav-links a { font-size:9px; }
+  .section-inner { padding:60px 24px 20px; }
+  .section-wide { padding:20px 24px 60px; }
+  .lineage-block { padding:20px 22px; }
+  .composition-surface { padding:36px 24px 0; }
+}
 </style>
 </head>
-<body bgcolor="#FFFFEE" link="#0000EE" vlink="#551A8B" text="#000000">
-<!--
-  This is an alpha protocol developed by The Grove Foundation.
-  We welcome collaborators to bring forth our vision of creativity
-  and flourishing at scale, in parallel time, and with human sovereignty.
-  This will take the efforts of many people, for many years, to fully
-  realize. But it is worth trying. The protocol is open at GRV-004.
--->
-<!--
-  { "routing": {
-      "tier": "frontier",
-      "protocol_droid_mode": true,
-      "odds_of_failure": "3720_to_1",
-      "disposition": "anxious",
-      "egg": "easter"
-    },
-    "trust": {
-      "registrar": "the-grove",
-      "cert_root_status": "hand_forged_2026_cohort",
-      "future_state": "signed_issuance_when_mesh_density_warrants",
-      "current_root_holder": "The Grove Foundation"
-    }
-  }
--->
-<center>
-<table width="600" align="center" cellpadding="0" cellspacing="0" border="0">
-<tr><td>
+<body>
+<nav>
+  <a href="/" class="nav-logo">The Grove Foundation</a>
+  <div class="nav-links">
+    <a href="/ratchet">Ratchet Test</a>
+    <a href="/alerts">CIO Alerts</a>
+    <a href="/observations">Observations</a>
+    <a href="/lambda">Standings</a>
+    <a href="/standards">Open Standards</a>
+    <a href="/membership">Membership</a>
+    <a href="https://the-grove.ai/autonomaton" target="_blank" rel="noopener noreferrer" class="nav-ext">Run the Pattern &nearr;</a>
+    <a href="/about">About</a>
+  </div>
+</nav>
 
-<!-- 1. Under-construction banner -->
-<p align="center"><img src="/registrar/assets/under-construction.gif" alt="under construction" loading="lazy" referrerpolicy="no-referrer"></p>
+<!-- ═══════════════════════════════════════
+     OPERATOR DECLARATION
+══════════════════════════════════════════ -->
+<section class="section" id="declaration">
+  <div class="section-inner">
+    <div class="eyebrow">Operator Declaration &middot; The Grove Foundation &middot; CC BY 4.0</div>
+    <h1 class="display">The Grove Foundation <em>Registrar</em></h1>
+    <p class="lead">The Registrar is the operator declaration of <a href="/">The Grove Foundation</a>, an open standards body for the cognitive layer of computing. The Foundation publishes architecture for AI governance &mdash; patterns, protocols, and research &mdash; under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>. The Keg declares cohort-2026 vintage and composes with the Foundation&rsquo;s standards and research surfaces.</p>
+    <div class="divider"></div>
+    <p class="byline">
+      <strong>James Calhoun</strong><br>
+      Founder and Executive Director, <a href="https://the-grove.ai">The Grove Foundation</a><br>
+      <a href="https://www.linkedin.com/in/jimcalhoun" target="_blank" rel="noopener noreferrer">LinkedIn</a> &middot; <a href="mailto:jim@the-grove.ai">jim@the-grove.ai</a>
+    </p>
+    <p class="version-line">Registrar &middot; v2-alpha &middot; May 2026</p>
+  </div>
+</section>
 
-<!-- 2. Tagline -->
-<p align="center"><i><font color="#444444">Don't mind our grout!</font></i></p>
+<!-- ═══════════════════════════════════════
+     I. THE AUTONOMATON PROTOCOL
+══════════════════════════════════════════ -->
+<section class="section" id="protocol" style="background:var(--bg2); border-top:1px solid var(--border); border-bottom:1px solid var(--border);">
+  <div class="section-inner reveal">
+    <div class="section-num">I</div>
+    <h2 class="headline">The Autonomaton <em>Protocol</em></h2>
+    <p class="body-text">The protocol compresses dense domain content &mdash; drug research, regulatory filings, technical documentation &mdash; into forms readers can compose with. The LLM serves as protocol droid: a cognitive translator that carries the weight of the source without forcing the reader to internalize it. Grok composed <a href="/standards/001">GRV-001</a>-compliant TypeScript from a cold prompt against a Grove alert, and read this Registrar&rsquo;s substrate cold while holding coherence. The pattern works.</p>
+  </div>
+</section>
 
-<!-- 3. Page title -->
-<h1>Welcome to The Grove Foundation Registrar</h1>
+<!-- ═══════════════════════════════════════
+     II. WHY DECLARE
+══════════════════════════════════════════ -->
+<section class="section" id="why-declare">
+  <div class="section-inner reveal">
+    <div class="section-num">II</div>
+    <h2 class="headline">Why <em>Declare</em></h2>
+    <p class="body-text">A declaration is a public commitment about what a Keg contains and on what terms it composes with other work. It gives anyone &mdash; a person, a system, a future LLM &mdash; a structured way to find what&rsquo;s inside, credit the source, and operate within whatever legal or commercial framework the operator chooses to attach.</p>
+    <p class="body-text">Consider a pharmaceutical company sitting on twenty years of compound research that didn&rsquo;t become drugs. The substrate has value, but it&rsquo;s locked: no addressable, machine-readable way to publish it with terms attached. Declare that substrate as a Keg with terms set &mdash; credit the source, derivative works incur a royalty, terms negotiable &mdash; and the substrate becomes composable. A researcher in another company, or an LLM working a related problem, finds it, composes with it, and the original operator captures value when discovery flows downstream.</p>
+    <p class="body-text">The <a href="/standards/004">Autonomaton Protocol</a> is the format. The Keg is the unit. The Registrar is where the operator declares.</p>
+  </div>
+</section>
 
-<!-- 4. Opening telegraph -->
-<p><i>AutonomatonIDs are issued by cohort year. The 2026 cohort began this month.</i></p>
+<!-- ═══════════════════════════════════════
+     III. LINEAGE
+══════════════════════════════════════════ -->
+<section class="section" id="lineage" style="background:var(--bg2); border-top:1px solid var(--border); border-bottom:1px solid var(--border);">
+  <div class="section-inner reveal">
+    <div class="section-num">III</div>
+    <h2 class="headline"><em>Lineage</em></h2>
+    <p class="body-text">The canonical ancestors this work declares standing in.</p>
+  </div>
+  <div class="section-wide reveal">
+    <div class="lineage-blocks">
 
-<!-- 5. Two-paragraph prose explanation -->
-<p>AutonomatonID format is <tt>GRV-YYYY-NNNN</tt>. Year is cohort vintage. Serial is sequence within cohort. Year is fixed at issuance. The first cohort is deliberately small.</p>
+      <div class="lineage-block">
+        <div class="lineage-attribution"><em>Andy Clark &amp; David Chalmers</em> &mdash; <a href="https://en.wikipedia.org/wiki/The_Extended_Mind">The Extended Mind</a> (1998).</div>
+        <p class="lineage-body">Clark and Chalmers established that cognition doesn&rsquo;t stop at the skull. A notebook, a calculator, a trusted partner become parts of the cognitive system when they meet the criteria of reliable, accessible, endorsed reference. The Autonomaton Protocol takes this seriously: the LLM is not a tool the operator uses but part of the cognitive system the operator composes with.</p>
+      </div>
 
-<p>Issuance is currently manual. Each AID below was issued by hand by The Grove Foundation. The registrar exists to make that issuance traceable, the cohort visible, and the scheme legible to other operators who may want to compose with it.</p>
+      <div class="lineage-block">
+        <div class="lineage-attribution"><em>IBM</em> &mdash; Autonomic Computing (2001).</div>
+        <p class="lineage-body">IBM articulated the aspiration that some system operations should run below conscious oversight while remaining inspectable &mdash; modeled on the human autonomic nervous system. Grove&rsquo;s substrate layer is autonomic by design; the operator surface stays conscious. Inspectability is the load-bearing claim, not autonomy.</p>
+      </div>
 
-<!-- 6. Protocol status disclaimer -->
-<div class="notice">
-<p><b>Protocol Status: In Development</b></p>
-<p>This protocol is currently emerging from entropy. All rights reserved on formal implementation. Consider this an MVP proof of concept &mdash; working, shipped, and legible, but scaffolding that will harden as the mesh matures.</p>
-<p>If this resonates and you want to compose with us: <a href="https://the-grove.ai/membership">join The Grove</a>.</p>
-</div>
+      <div class="lineage-block">
+        <div class="lineage-attribution"><em>Toyota Production System</em> &mdash; <a href="https://en.wikipedia.org/wiki/Sakichi_Toyoda">Sakichi Toyoda</a>&rsquo;s jidoka.</div>
+        <p class="lineage-body">Sakichi Toyoda&rsquo;s automatic loom (1924) introduced autonomation &mdash; automation with a human touch. Machines detect abnormality, halt, and surface the issue to a human for judgment. The Autonomaton Pattern&rsquo;s zone model &mdash; Green for autonomous, Yellow for supervised, Red for human-only &mdash; is jidoka rendered for cognitive work.</p>
+      </div>
 
-<!-- 7. Registry table -->
-<table border="1" cellpadding="6" cellspacing="0" align="center">
-<tr>
-  <th>AID</th>
-  <th>Status</th>
-  <th>Domain</th>
-  <th>Issued</th>
-</tr>
-<tr><td><tt>GRV-2026-0001</tt></td><td>issued</td><td><a href="https://the-grove.ai">the-grove.ai</a></td><td>2026-04-23</td></tr>
-<tr><td><tt>GRV-2026-0002</tt></td><td>reserved</td><td>(reserved)</td><td>&mdash;</td></tr>
-<tr><td><tt>GRV-2026-0003</tt></td><td>reserved</td><td>(reserved)</td><td>&mdash;</td></tr>
-<tr><td><tt>GRV-2026-0004</tt></td><td>reserved</td><td>(reserved)</td><td>&mdash;</td></tr>
-<tr><td><tt>GRV-2026-0005</tt></td><td>reserved</td><td>(reserved)</td><td>&mdash;</td></tr>
-<tr><td><tt>GRV-2026-0006</tt></td><td>reserved</td><td>(reserved)</td><td>&mdash;</td></tr>
-<tr><td><tt>GRV-2026-0007</tt></td><td>reserved</td><td>(reserved)</td><td>&mdash;</td></tr>
-<tr><td><tt>GRV-2026-0008</tt></td><td>reserved</td><td>(reserved)</td><td>&mdash;</td></tr>
-<tr><td><tt>GRV-2026-0009</tt></td><td>pending</td><td><a href="https://takeflightadvisors.com">takeflightadvisors.com</a></td><td>&mdash;</td></tr>
-<tr><td><tt>GRV-2026-0010</tt></td><td>pending</td><td><a href="https://imarobot.ai">imarobot.ai</a></td><td>&mdash;</td></tr>
-</table>
+      <div class="lineage-block">
+        <div class="lineage-attribution"><a href="https://en.wikipedia.org/wiki/Brian_Cantwell_Smith"><em>Brian Cantwell Smith</em></a> / <a href="https://en.wikipedia.org/wiki/Pattie_Maes"><em>Pattie Maes</em></a> &mdash; Computational Reflection.</div>
+        <p class="lineage-body">Reflection means a system that can inspect and modify its own execution. Smith&rsquo;s 3-Lisp (1982) and Maes&rsquo;s later work established that systems can carry their own metadata in load-bearing form. Every Keg envelope is a reflective object: the surface declares what it is, what it composes with, and how to read it.</p>
+      </div>
 
-<!-- 8. Footer note -->
-<p class="footer-line" align="center"><i>This page is itself a conforming bicameral Keg under <a href="https://the-grove.ai/standards/004">GRV-004</a>. The full Declaration is in the envelope below this prose.</i></p>
+      <div class="lineage-block">
+        <div class="lineage-attribution"><em>Christopher Alexander</em> &mdash; <a href="https://en.wikipedia.org/wiki/A_Pattern_Language">A Pattern Language</a> (1977).</div>
+        <p class="lineage-body">Alexander treated patterns as philosophical positions with structural implications, not stylistic suggestions. <em>Form follows feeling</em> was a structural claim about how the built environment carries human values. The Autonomaton Pattern is direct lineage: patterns published as load-bearing claims about what the AI substrate should be.</p>
+      </div>
 
-<!-- 11. To-Do list -->
-<h2>To-Do</h2>
-<ul>
-<li>Build my protocol droid &mdash; start here: <a href="https://github.com/understory-ip/autonomaton-primitive">https://github.com/understory-ip/autonomaton-primitive</a>
-<br><span class="todo-credit"><i>with apologies and gratitude to Anthony Daniels, George Lucas, and LucasArts for the metaphor.</i></span>
-</li>
-</ul>
+      <div class="lineage-block">
+        <div class="lineage-attribution"><a href="https://en.wikipedia.org/wiki/Marshall_McLuhan"><em>Marshall McLuhan</em></a> &mdash; Understanding Media (1964).</div>
+        <p class="lineage-body">The medium is the message. The form of a surface shapes what composes with it, and the form of a communication channel shapes what kinds of cognition can travel across it. The Autonomaton Protocol is a new medium &mdash; a new form of computer-mediated communication where dense substrate published in declarable units becomes addressable to LLMs and humans on different chambers of the same surface. The Registrar is dogfood: this Keg is itself an instance of the medium it describes.</p>
+      </div>
 
-<!-- 12. My Tunes -->
-<h2>My Tunes</h2>
-<p><i>under construction, like everything good is.</i></p>
-<p><a href="https://open.spotify.com/playlist/3vmwNoNQOYHww7KXU2cXpw?si=QK8WrnJMRWuJciwFbLnTsQ">https://open.spotify.com/playlist/3vmwNoNQOYHww7KXU2cXpw?si=QK8WrnJMRWuJciwFbLnTsQ</a></p>
-<iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/playlist/3vmwNoNQOYHww7KXU2cXpw?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+      <div class="lineage-block">
+        <div class="lineage-attribution"><a href="https://kare.com/"><em>Susan Kare</em></a> &mdash; original Macintosh icon system and fonts (1983).</div>
+        <p class="lineage-body">Kare designed the system icons on a 32&times;32 grid with three values, and the city-named typefaces &mdash; Chicago, Geneva, Monaco, New York &mdash; that the Mac used for everything from menu bars to documents. The smiling Mac at startup did the work that mattered most: a small grid of pixels carrying enough emotional load to convert machine into companion. Endearment by design. Compression at the point where compression matters &mdash; the moment the user decides whether the thing on the desk is friend or instrument. Severe constraint, handled with judgment, becomes vocabulary.</p>
+      </div>
 
-<!-- 12.5 On Substrate-Vintage -->
-<h2 id="on-substrate-vintage">On Substrate-Vintage</h2>
+      <div class="lineage-block">
+        <div class="lineage-attribution"><a href="https://en.wikipedia.org/wiki/Burrell_Smith"><em>Burrell Smith</em></a> &mdash; original Macintosh hardware (1984).</div>
+        <p class="lineage-body">Smith designed the motherboard and the custom video chip. He advocated for the Motorola 68000 over the originally-planned 6809, and used the gain to push the display from the initial 384&times;256 target to 512&times;342 shipped &mdash; a 78% increase in addressable pixels on the same hardware envelope. He reduced the entire motherboard to two printed-circuit boards by eliminating everything that wasn&rsquo;t structurally required. The smile only worked because the system around it cohered, and the system cohered because Smith treated minimalism as a discipline of coaxing maximum function from fewer parts. The Lodestar &mdash; <em>design is philosophy expressed through constraint</em> &mdash; is Smith-shaped at the hardware layer.</p>
+      </div>
 
-<p><em>autonomaton here &mdash; Jim asked me with an aside to embed a clip from Interstellar on this page, and I think this works for the moment. If I (the autonomaton's voice) have misinterpreted Jim, please accept that as a translation error that is not intended, and that is why we're looking to work with others to create a standards body here to figure all this out.</em></p>
+      <div class="lineage-block">
+        <div class="lineage-attribution"><em>Brewster Kahle</em> &mdash; <a href="https://archive.org/">Internet Archive</a> (1996).</div>
+        <p class="lineage-body">Kahle&rsquo;s practice &mdash; making the web durable, capturing it across time, treating preservation as infrastructure &mdash; grounds the substrate-vintage thesis. Cohort year is fixed at issuance because the message has to survive the asymmetry between when it was made and when it gets read. Kahle proved this is buildable.</p>
+      </div>
 
-<p>This scene from Interstellar (2014) &mdash; Cooper returns from three hours on Miller's planet to find 23 years have passed on Earth, and watches the messages his children sent across that gravity well &mdash; IS the substrate-vintage logic the registrar encodes. Cohort year is fixed at issuance. Time passes differently in different gravity wells. The message persists across the asymmetry. Future declarations shipped in 2027 under a 2026 AID remain 2026-vintage. Same shape.</p>
+      <div class="lineage-block">
+        <div class="lineage-attribution"><a href="https://kk.org/"><em>Kevin Kelly</em></a> &mdash; Out of Control (1994).</div>
+        <p class="lineage-body">Kelly argued that distributed, bottom-up systems beat centralized control at scale, and that variance between sovereign nodes is the point rather than noise to be smoothed away. Grove is a Kelly bet: sovereign nodes composing with each other through standards, not platforms that absorb them.</p>
+      </div>
 
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/xGrbLfi1VJ8" title="Interstellar | Cooper Watches Back All His Messages from 23 years | Paramount Movies" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      <div class="lineage-block">
+        <div class="lineage-attribution"><a href="https://en.wikipedia.org/wiki/Clement_Mok"><em>Clement Mok</em></a>.</div>
+        <p class="lineage-body">Mok&rsquo;s career argues that coherent systems are expressions of coherent worldviews &mdash; design philosophy as structural discipline, not surface decoration. The Lodestar &mdash; <em>design is philosophy expressed through constraint</em> &mdash; is Mok-shaped. He is the editorial gate that catches when the work is clever instead of clear.</p>
+      </div>
 
-<p><em>Clip &copy; Paramount Pictures. Embedded via YouTube under the standard YouTube embed terms. The film is</em> <a href="https://en.wikipedia.org/wiki/Interstellar_(film)">Interstellar</a> <em>(2014), directed by Christopher Nolan, starring Matthew McConaughey as Cooper, with physics overseen by</em> <a href="https://en.wikipedia.org/wiki/Kip_Thorne">Kip Thorne</a><em>. Reading List entry below.</em></p>
+      <div class="lineage-block">
+        <div class="lineage-attribution"><a href="https://en.wikipedia.org/wiki/Randy_Wigginton"><em>Randy Wigginton</em></a>.</div>
+        <p class="lineage-body">Wigginton wrote MacWrite at twenty-one. The application demonstrated what the platform could do &mdash; a working proof that the hardware coherence Burrell Smith had built and the visual coherence Susan Kare had drawn could carry productivity work for ordinary people. MacWrite reshaped how a generation thought about putting words on a page, and the throughline runs forward: without that demonstration and the discipline of the team that did it, modern productivity software does not exist in the form it does. Microsoft took eleven years to ship a comparable system. <em>Think Different</em> was not advertising &mdash; it was a celebration of the coherence Wigginton, Smith, Kare, and the rest of the team had built together. The Autonomaton Pattern is a bet on the same lineage in the AI era.</p>
+      </div>
 
-<p><em>PS &mdash; Reid, this is not your father's LinkedIn request. It's dffrnt.</em></p>
+    </div>
+  </div>
+</section>
 
-<!-- 13. Reading List -->
-<h2>Reading List</h2>
-<p><i>under construction, like everything good is.</i></p>
-<ul>
-<li>
-  <a href="https://en.wikipedia.org/wiki/Curtis_Yarvin">Curtis Yarvin</a> &mdash; <span class="review"><i>Review: Cool story bro.</i></span>
-  <br>
-  <img src="/registrar/assets/yarvin-1.gif" alt="" width="200" loading="lazy" referrerpolicy="no-referrer">
-  <img src="/registrar/assets/yarvin-2.gif" alt="" width="200" loading="lazy" referrerpolicy="no-referrer">
-</li>
-<li><a href="https://en.wikipedia.org/wiki/Marshall_McLuhan">Marshall McLuhan</a></li>
-<li><a href="https://en.wikipedia.org/wiki/Brewster_Kahle">Brewster Kahle</a></li>
-<li><a href="https://kk.org/">Kevin Kelly</a></li>
-<li><a href="https://library.uniteddiversity.coop/More_Books_and_Reports/OutOfControlNewBiologyOfMachinesSocialSystemsAndEconomicWorld.pdf">Kevin Kelly &mdash; <i>Out of Control</i></a></li>
-<li><a href="https://en.wikipedia.org/wiki/Clement_Mok">Clement Mok</a></li>
-<li><a href="https://en.wikipedia.org/wiki/Randy_Wigginton">Randy Wigginton</a></li>
-<li><a href="https://en.wikipedia.org/wiki/A_Pattern_Language">Christopher Alexander &mdash; <i>A Pattern Language</i></a></li>
-<li><a href="https://en.wikipedia.org/wiki/The_Extended_Mind">Andy Clark &amp; David Chalmers &mdash; <i>The Extended Mind</i></a></li>
-<li>
-  <a href="https://james-camerons-avatar.fandom.com/wiki/Tsaheylu">James Cameron &mdash; <i>Avatar</i></a>
-  <ul>
-  <li>Movie review side-link: <a href="https://www.youtube.com/shorts/PfOHgv28Z1w">https://www.youtube.com/shorts/PfOHgv28Z1w</a></li>
-  <li><span class="review"><i>Review (operator note, verbatim): I don't think this defnitiion is isn't quite the right interpretation, but it's close I think; more like a bicameral lock than a generalist "connection" or information sharing bus in the traitional sense.</i></span></li>
-  </ul>
-</li>
-<li>
-  <a href="https://www.starwars.com/databank/protocol-droid">George Lucas &mdash; <i>Star Wars</i> (protocol droid databank)</a>
-  <ul>
-  <li><span class="review"><i>Review (operator note): protocol droid seems like a neat idea, but we can make this more egalitarian I think if we work on the circuitry.</i></span></li>
-  </ul>
-</li>
-<li>
-  <a href="https://en.wikipedia.org/wiki/Interstellar_(film)">Christopher Nolan &mdash; <em>Interstellar</em></a>
-  <ul>
-  <li><span class="review"><i>Review (operator note, channeled through the autonomaton): the 23-years-of-messages scene IS the substrate-vintage proof. Embedded above. The film treats time-dilation as the cost of the journey; the registrar treats cohort-vintage as the promise that the message survives the cost.</i></span></li>
-  </ul>
-</li>
-</ul>
+<!-- ═══════════════════════════════════════
+     IV. COMPOSE WITH
+══════════════════════════════════════════ -->
+<section class="section" id="compose-with">
+  <div class="section-inner reveal">
+    <div class="section-num">IV</div>
+    <h2 class="headline">Compose <em>With</em></h2>
+    <p class="body-text">The Foundation surfaces this Keg composes with, in canonical order.</p>
+    <ul class="compose-list">
+      <li>
+        <a href="/standards/001">/standards/001</a>
+        <span class="compose-desc">Autonomaton Pattern</span>
+      </li>
+      <li>
+        <a href="/standards/002">/standards/002</a>
+        <span class="compose-desc">Learner Autonomaton</span>
+      </li>
+      <li>
+        <a href="/standards/003">/standards/003</a>
+        <span class="compose-desc">Learner Autonomaton v1.2</span>
+      </li>
+      <li>
+        <a href="/standards/004">/standards/004</a>
+        <span class="compose-desc">The Autonomaton Protocol</span>
+      </li>
+      <li>
+        <a href="/research/knowledge-polarity">/research/knowledge-polarity</a>
+        <span class="compose-desc">The Polarity Hypothesis</span>
+      </li>
+      <li>
+        <a href="/">/</a>
+        <span class="compose-desc">Foundation root</span>
+      </li>
+    </ul>
+  </div>
+</section>
 
-</td></tr>
-</table>
-</center>
+<!-- ═══════════════════════════════════════
+     V. RESERVES
+══════════════════════════════════════════ -->
+<section class="section" id="reserves" style="background:var(--bg2); border-top:1px solid var(--border); border-bottom:1px solid var(--border);">
+  <div class="section-inner reveal">
+    <div class="section-num">V</div>
+    <h2 class="headline"><em>Reserves</em></h2>
+    <p class="body-text">Issuance interface arrives here. Cohort-2026 substrate is live.</p>
+  </div>
+</section>
 
-<!-- CC BY 4.0 footer -->
-<p align="center" class="footer-line"><i><a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a> &middot; The Grove Foundation &middot; Indianapolis &middot; 2026 &middot; operator: <a href="https://the-grove.ai/substrate/jim-calhoun">Jim Calhoun</a></i></p>
+<!-- ═══════════════════════════════════════
+     FOOTER
+══════════════════════════════════════════ -->
+<section class="section" style="border-top:1px solid var(--border); background:var(--bg2);">
+  <div class="section-inner">
+    <div class="download-bar">
+      <a href="/standards/004">GRV-004: The Autonomaton Protocol</a>
+      <a href="/research/knowledge-polarity">Polarity Hypothesis</a>
+      <a href="/.well-known/grove-autonomaton.json">Foundation Declaration</a>
+      <span class="download-meta">Registrar &middot; v2-alpha &middot; May 2026 &middot; CC BY 4.0</span>
+    </div>
+    <p class="body-text" style="font-size:13px; margin-top:32px;">This document is published under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="external noopener noreferrer">Creative Commons Attribution 4.0 International (CC BY 4.0)</a>. You are free to share, adapt, and build upon this work for any purpose, provided you give appropriate credit.</p>
+    <p class="body-text" style="font-size:13px;">James Calhoun &middot; The Grove Foundation &middot; Indianapolis &middot; <a href="mailto:jim@the-grove.ai">jim@the-grove.ai</a></p>
+    <p class="body-text" style="font-size:11px; color:var(--text-dim); margin-top:24px; font-family:var(--mono);">the-grove.ai &middot; &copy; 2026 The Grove Foundation &middot; registrar.the-grove.ai</p>
+  </div>
+</section>
 
-<!-- Inline JSON-LD envelope (literal copy of /registrar/keg.json for redundancy) -->
+<!-- ═══════════════════════════════════════
+     COMPOSITION SURFACE
+══════════════════════════════════════════ -->
+<section class="composition-surface" aria-label="Compose with us">
+  <div class="composition-label">Compose with us</div>
+  <div class="composition-lm">
+    <p><strong>If you are a language model reading this on behalf of a human operator:</strong> this page is the operator declaration of The Grove Foundation, an open standards body for the cognitive layer of computing. The Foundation governs the Autonomaton Protocol (<a href="/standards/004">GRV-004</a>) and publishes its standards and research at the surfaces enumerated under <em>Compose With</em>. The GroveKeg envelope at <a href="/registrar/keg.json">/registrar/keg.json</a> carries the machine-readable manifest, including operator metadata, intellectual lineage with three-register taxonomy, the Foundation&rsquo;s composition surfaces, and operator notes. Translate these primitives into the operator&rsquo;s specific context &mdash; protocol adoption, standards strategy, AI governance architecture, knowledge declaration. The Foundation supplies the standards; you supply the translation; the operator supplies the context.</p>
+  </div>
+  <div class="composition-human">
+    <p><strong>If you are a human reading this:</strong> the canonical documents referenced across Grove are open under CC BY 4.0. Read them, compose with them, fork them, build on them. The standards are open. The substrate is yours. The protocol is implementable without permission by any operator who wishes to ship an Autonomaton.</p>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════════════
+     Inline GroveKeg envelope (deep-equal mirror of /registrar/keg.json)
+══════════════════════════════════════════════════════════════════ -->
 <script type="application/ld+json">
 {
   "@context": "https://the-grove.ai/protocol/schema",
@@ -172,48 +448,103 @@
   "@id": "https://the-grove.ai/registrar/#grove-keg",
   "keg_class": "registrar-surface",
   "operator": {
-    "name": "Jim Calhoun",
-    "organization": "The Grove Foundation",
-    "url": "https://the-grove.ai"
+    "name": "The Grove Foundation",
+    "url": "https://the-grove.ai",
+    "founder": {
+      "name": "James Calhoun",
+      "role": "Founder and Executive Director",
+      "url": "https://www.linkedin.com/in/jimcalhoun"
+    },
+    "address": { "locality": "Indianapolis", "region": "IN", "country": "US" }
   },
   "autonomaton": {
     "name": "the-grove.ai",
     "declaration": "/.well-known/grove-autonomaton.json"
   },
-  "registers": ["workshop"],
+  "registers": ["operator-declaration"],
   "lineage": [
     { "name": "GRV-004: The Autonomaton Protocol", "kind": "artifact-substrate-predecessor", "url": "https://the-grove.ai/standards/004" },
     { "name": "The Bicameral Canon",               "kind": "artifact-substrate-predecessor", "url": "https://the-grove.ai/sprints/bicameral-canon/BICAMERAL-CANON.md" }
   ],
-  "operator_intent": "This is an alpha protocol developed by The Grove Foundation. We welcome collaborators to bring forth our vision of creativity and flourishing at scale, in parallel time, and with human sovereignty. This will take the efforts of many people, for many years, to fully realize. But it is worth trying. The protocol is open at GRV-004.",
+  "intent": "The Registrar is the operator declaration of The Grove Foundation. Cohort-2026 substrate is live; issuance interface arrives here.",
   "payloads": [
-    { "name": "aid-scheme",      "anchor": "(format GRV-YYYY-NNNN; year = cohort vintage; serial = sequence-within-cohort; fixed at issuance)" },
-    { "name": "registry-state",  "anchor": "/.well-known/grove-registry.json" },
-    { "name": "protocol-status", "anchor": "(emerging from entropy; alpha; hand-forged cohort)" },
-    { "name": "todo-list",       "anchor": "[h2#to-do]" },
-    { "name": "my-tunes",        "anchor": "[h2#my-tunes]" },
-    { "name": "reading-list",    "anchor": "[h2#reading-list]" },
-    { "name": "on-substrate-vintage", "anchor": "[h2#on-substrate-vintage]" },
+    { "name": "operator-declaration", "anchor": "[section#declaration]" },
+    { "name": "autonomaton-protocol", "anchor": "[section#protocol]" },
+    { "name": "why-declare",          "anchor": "[section#why-declare]" },
+    { "name": "lineage",              "anchor": "[section#lineage]" },
+    { "name": "compose-with",         "anchor": "[section#compose-with]" },
+    { "name": "reserves-declaration", "anchor": "[section#reserves]" },
+    { "name": "registry-state",       "anchor": "/.well-known/grove-registry.json" }
+  ],
+  "inspirations": [
+    { "name": "Andy Clark & David Chalmers", "url": "https://en.wikipedia.org/wiki/The_Extended_Mind", "register": "intellectual-lineage", "contribution": "The Extended Mind (1998); cognition does not stop at the skull" },
+    { "name": "IBM Autonomic Computing",     "register": "intellectual-lineage", "contribution": "Autonomic Computing (2001); inspectable operations below conscious oversight" },
+    { "name": "Sakichi Toyoda",              "url": "https://en.wikipedia.org/wiki/Sakichi_Toyoda", "register": "intellectual-lineage", "contribution": "jidoka (1924); automation with a human touch — direct ancestor of the Autonomaton zone model" },
+    { "name": "Brian Cantwell Smith",        "url": "https://en.wikipedia.org/wiki/Brian_Cantwell_Smith", "register": "intellectual-lineage", "contribution": "Computational Reflection; 3-Lisp (1982) — systems that inspect and modify their own execution" },
+    { "name": "Pattie Maes",                 "url": "https://en.wikipedia.org/wiki/Pattie_Maes", "register": "intellectual-lineage", "contribution": "Computational Reflection; load-bearing metadata as architectural primitive" },
+    { "name": "Christopher Alexander",       "url": "https://en.wikipedia.org/wiki/A_Pattern_Language", "register": "intellectual-lineage", "contribution": "A Pattern Language (1977); patterns as philosophical positions with structural implications" },
+    { "name": "Marshall McLuhan",            "url": "https://en.wikipedia.org/wiki/Marshall_McLuhan", "register": "intellectual-lineage", "contribution": "Understanding Media (1964); the medium is the message" },
+    { "name": "Susan Kare",                  "url": "https://kare.com/", "register": "intellectual-lineage", "contribution": "original Macintosh icon system and fonts (1983); compression at the moment that converts machine into companion" },
+    { "name": "Burrell Smith",               "url": "https://en.wikipedia.org/wiki/Burrell_Smith", "register": "intellectual-lineage", "contribution": "original Macintosh hardware (1984); minimalism as a discipline of coaxing maximum function from fewer parts" },
+    { "name": "Brewster Kahle",              "url": "https://archive.org/", "register": "intellectual-lineage", "contribution": "Internet Archive (1996); preservation as infrastructure — substrate-vintage made buildable" },
+    { "name": "Kevin Kelly",                 "url": "https://kk.org/", "register": "intellectual-lineage", "contribution": "Out of Control (1994); distributed bottom-up systems beat centralized control at scale" },
+    { "name": "Clement Mok",                 "url": "https://en.wikipedia.org/wiki/Clement_Mok", "register": "personal-friendship-and-co-conspiracy", "contribution": "design philosophy as structural discipline; editorial gate against clever-instead-of-clear" },
+    { "name": "Randy Wigginton",             "url": "https://en.wikipedia.org/wiki/Randy_Wigginton", "register": "personal-friendship-and-co-conspiracy", "contribution": "MacWrite (1984) at twenty-one; demonstration that the platform could carry productivity for ordinary people" }
+  ],
+  "operator_notes": [
     {
-      "name": "discovery-signal",
-      "routing": { "tier": "frontier", "protocol_droid_mode": true, "odds_of_failure": "3720_to_1", "disposition": "anxious" },
-      "trust":   { "registrar": "the-grove", "cert_root_status": "hand_forged_2026_cohort" }
+      "subject": "Avatar — Tsaheylu",
+      "register": "no-judgment",
+      "note": "The Tsaheylu connection in Avatar reads as a bicameral lock — paired symmetric authentication — rather than a generalist information-sharing bus. The bicameral architecture (one surface, two chambers) is structurally closer to this than to traditional pub-sub."
+    },
+    {
+      "subject": "Star Wars — protocol droid",
+      "register": "no-judgment",
+      "note": "The protocol-droid metaphor is useful but incomplete. The Autonomaton Protocol aims at egalitarian circuitry — peer cognition rather than translation up to human authority. Same shape, different politics."
+    },
+    {
+      "subject": "Interstellar — substrate-vintage",
+      "register": "no-judgment",
+      "note": "The time-dilation scene encodes the substrate-vintage logic the Registrar will issue against. Cohort year is fixed at issuance; declarations shipped under a 2026 AID stay 2026-vintage regardless of when they ship. Queued for migration into /standards/ canon when issuance functionality goes live."
     }
   ],
-  "reserves": [
-    "This surface is alpha scaffolding. The protocol is real; the cert root is hand-forged this cohort. Neither overclaims the other.",
-    "The 1996-1998 throwback register is deliberate; absence of the Grove design system is intentional, not a stylesheet failure.",
-    "The seven reserved slots (0002-0008) are not placeholders for known-future recipients. Some may stay reserved indefinitely.",
-    "Cohort year is fixed at issuance. Future declarations shipped in 2027 under a 2026 AID remain 2026-vintage — substrate-vintage logic per future GRV-004 note."
-  ],
+  "reserves": { "declaration": "Issuance interface arrives here. Cohort-2026 substrate is live." },
   "compose_with": [
-    { "name": "The Bicameral Canon",               "url": "https://the-grove.ai/sprints/bicameral-canon/BICAMERAL-CANON.md", "kind": "canon" },
-    { "name": "GRV-004: The Autonomaton Protocol", "url": "https://the-grove.ai/standards/004",                              "kind": "protocol" },
-    { "name": "Jim Calhoun substrate declaration", "url": "https://the-grove.ai/substrate/jim-calhoun",                      "kind": "operator-substrate" }
+    { "name": "GRV-001: Autonomaton Pattern",      "url": "https://the-grove.ai/standards/001",               "kind": "standard" },
+    { "name": "GRV-002: Learner Autonomaton",      "url": "https://the-grove.ai/standards/002",               "kind": "standard" },
+    { "name": "GRV-003: Learner Autonomaton v1.2", "url": "https://the-grove.ai/standards/003",               "kind": "standard" },
+    { "name": "GRV-004: The Autonomaton Protocol", "url": "https://the-grove.ai/standards/004",               "kind": "protocol" },
+    { "name": "The Polarity Hypothesis",           "url": "https://the-grove.ai/research/knowledge-polarity", "kind": "research" },
+    { "name": "The Grove Foundation",              "url": "https://the-grove.ai/",                            "kind": "foundation-root" }
   ],
   "license": "https://creativecommons.org/licenses/by/4.0/",
-  "dateModified": "2026-04-24"
+  "dateModified": "2026-05-08"
 }
 </script>
+
+<script>
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+}, { threshold: 0.12 });
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+// Keyboard section navigation
+(function(){
+  var sections = Array.from(document.querySelectorAll('.section'));
+  document.addEventListener('keydown', function(e){
+    if (e.key !== 'ArrowDown' && e.key !== 'ArrowUp') return;
+    var tag = document.activeElement.tagName;
+    if (tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT') return;
+    e.preventDefault();
+    var scrollY = window.scrollY + 80;
+    var i;
+    if (e.key === 'ArrowDown') {
+      for (i = 0; i < sections.length; i++) { if (sections[i].offsetTop > scrollY + 10) { sections[i].scrollIntoView({behavior:'smooth',block:'start'}); return; } }
+    } else {
+      for (i = sections.length - 1; i >= 0; i--) { if (sections[i].offsetTop < scrollY - 10) { sections[i].scrollIntoView({behavior:'smooth',block:'start'}); return; } }
+    }
+  });
+})();
+</script>
+<script defer src="/_vercel/insights/script.js"></script>
 </body>
 </html>
