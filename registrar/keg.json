@@ -34,7 +34,7 @@
   ],
   "inspirations": [
     { "name": "Andy Clark & David Chalmers", "url": "https://en.wikipedia.org/wiki/The_Extended_Mind", "register": "intellectual-lineage", "contribution": "The Extended Mind (1998); cognition does not stop at the skull" },
-    { "name": "IBM Autonomic Computing",     "register": "intellectual-lineage", "contribution": "Autonomic Computing (2001); inspectable operations below conscious oversight" },
+    { "name": "IBM Autonomic Computing",     "url": "https://en.wikipedia.org/wiki/Autonomic_computing", "register": "intellectual-lineage", "contribution": "Autonomic Computing (2001); inspectable operations below conscious oversight" },
     { "name": "Sakichi Toyoda",              "url": "https://en.wikipedia.org/wiki/Sakichi_Toyoda", "register": "intellectual-lineage", "contribution": "jidoka (1924); automation with a human touch — direct ancestor of the Autonomaton zone model" },
     { "name": "Brian Cantwell Smith",        "url": "https://en.wikipedia.org/wiki/Brian_Cantwell_Smith", "register": "intellectual-lineage", "contribution": "Computational Reflection; 3-Lisp (1982) — systems that inspect and modify their own execution" },
     { "name": "Pattie Maes",                 "url": "https://en.wikipedia.org/wiki/Pattie_Maes", "register": "intellectual-lineage", "contribution": "Computational Reflection; load-bearing metadata as architectural primitive" },
