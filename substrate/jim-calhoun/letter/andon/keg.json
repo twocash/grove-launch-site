@@ -1,0 +1,52 @@
+{
+  "@context": "https://the-grove.ai/protocol/schema",
+  "@type": ["GroveKeg"],
+  "@id": "https://the-grove.ai/substrate/jim-calhoun/letter/andon/#grove-keg",
+  "keg_class": "andon-gate",
+  "operator": {
+    "name": "The Grove Foundation",
+    "url": "https://the-grove.ai",
+    "founder": {
+      "name": "Jim Calhoun",
+      "url": "https://www.linkedin.com/in/jimcalhoun"
+    }
+  },
+  "autonomaton": {
+    "name": "the-grove.ai",
+    "declaration": "/.well-known/grove-autonomaton.json"
+  },
+  "registers": ["andon-gate", "diligence-access"],
+  "lineage": [
+    { "name": "Sakichi Toyoda", "kind": "methodological-ancestor", "url": "https://en.wikipedia.org/wiki/Sakichi_Toyoda", "contribution": "jidoka (1924); andon system; structural humility as discipline" }
+  ],
+  "intent": "Andon gate for diligence access to memoir-register substrate at /substrate/jim-calhoun/letter/. Email-based, social vouching, no technical enforcement.",
+  "compose_with": [
+    { "name": "A Letter from Jim Calhoun", "url": "https://the-grove.ai/substrate/jim-calhoun/letter/", "kind": "gated-surface" },
+    { "name": "Founder Declaration", "url": "https://the-grove.ai/substrate/jim-calhoun/", "kind": "founder-declaration" },
+    { "name": "Foundation Registrar", "url": "https://the-grove.ai/registrar/", "kind": "foundation-operator-declaration" },
+    { "name": "GRV-004: The Autonomaton Protocol", "url": "https://the-grove.ai/standards/004", "kind": "protocol" }
+  ],
+  "diligence_email": "jim+diligence-andon@the-grove.ai",
+  "operator_notes": [
+    {
+      "subject": "Kaizen butler",
+      "register": "no-judgment",
+      "note": "This page operates in kaizen-butler mode — calm, helpful, walks-them-through, doesn't gatekeep aggressively. The phrase belongs envelope-only; surface stays understated. The kaizen-butler operating principle applies to all Andon surfaces: respond to the human asking for access with the discipline of a person who knows the building, not the suspicion of a person who guards the door."
+    },
+    {
+      "subject": "Andon yellow",
+      "register": "no-judgment",
+      "note": "Yellow andon-light usage is semantically precise. Green: running. Yellow: supervised, call for help. Red: line stopped. This page is yellow because the system is running and the gate is supervised, not because access is forbidden."
+    },
+    {
+      "subject": "Option C — per-recipient substrate",
+      "register": "no-judgment",
+      "note": "Per-recipient Kegs at /substrate/jim-calhoun/letter/recipients/{name}/ are forthcoming structural work. When mesh density warrants, the gate becomes load-bearing rather than purely social. Until then, the framing does the work."
+    }
+  ],
+  "reserves": [
+    "Andon ships v1 low-fi: yellow signal, plain prose, email address. Discipline rather than feature. Improves through use."
+  ],
+  "license": "https://creativecommons.org/licenses/by/4.0/",
+  "dateModified": "2026-05-08"
+}

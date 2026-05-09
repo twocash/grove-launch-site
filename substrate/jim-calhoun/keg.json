@@ -1,0 +1,75 @@
+{
+  "@context": "https://the-grove.ai/protocol/schema",
+  "@type": ["GroveKeg"],
+  "@id": "https://the-grove.ai/substrate/jim-calhoun/#grove-keg",
+  "keg_class": "founder-declaration",
+  "operator": {
+    "name": "Jim Calhoun",
+    "legalName": "James Calhoun",
+    "role": "Founder and Executive Director",
+    "organization": {
+      "name": "The Grove Foundation",
+      "url": "https://the-grove.ai"
+    },
+    "url": "https://www.linkedin.com/in/jimcalhoun",
+    "email": "jim@the-grove.ai",
+    "diligence_email": "jim+diligence-andon@the-grove.ai",
+    "address": { "locality": "Indianapolis", "region": "IN", "country": "US" }
+  },
+  "autonomaton": {
+    "name": "the-grove.ai",
+    "declaration": "/.well-known/grove-autonomaton.json"
+  },
+  "registers": ["founder-declaration"],
+  "lineage": [
+    {
+      "name": "E. Brown Robbins",
+      "kind": "methodological-ancestor",
+      "institution": "Eli Lilly and Company",
+      "tenure": "37 years",
+      "role": "Head of pharmacology, late 1950s",
+      "contribution": "scientific inquiry as method; structural rigor under uncertainty; hypotheses that survive compound research over decades",
+      "obituary_url": "https://www.newspapers.com/article/the-indianapolis-star-e-brown-robbins/189135858/"
+    }
+  ],
+  "compose_with": [
+    { "name": "The Grove Foundation Registrar", "url": "https://the-grove.ai/registrar", "kind": "foundation-operator-declaration" },
+    { "name": "GRV-004: The Autonomaton Protocol", "url": "https://the-grove.ai/standards/004", "kind": "protocol" },
+    { "name": "The Polarity Hypothesis", "url": "https://the-grove.ai/research/knowledge-polarity", "kind": "research" },
+    { "name": "A Letter from Jim Calhoun", "url": "https://the-grove.ai/substrate/jim-calhoun/letter/", "kind": "memoir-register-keg", "access": "andon-gated for diligence" },
+    { "name": "The Grove Foundation", "url": "https://the-grove.ai/", "kind": "foundation-root" }
+  ],
+  "inspirations": [
+    {"name":"Jamie Merisotis","organization":"Lumina Foundation","url":"https://www.linkedin.com/in/jamie-merisotis-4799aa9/","contribution":"credentials of value as architectural infrastructure; direct inspiration for GRV-003","register":"intellectual-lineage"},
+    {"name":"Josh Stein","url":"https://www.linkedin.com/in/joshsteinvc/","register":"intellectual-lineage"},
+    {"name":"Rick Rubin","url":"https://en.wikipedia.org/wiki/Rick_Rubin","contribution":"producer-as-substrate-curator; The Creative Act as substrate-declaration document","register":"intellectual-lineage"},
+    {"name":"HumanityAI","url":"https://humanityai.ai/","register":"institutional-resonance"},
+    {"name":"Omidyar Network","url":"https://omidyar.com/","register":"institutional-resonance"},
+    {"name":"Lumina Foundation","url":"https://www.luminafoundation.org/","register":"institutional-resonance"},
+    {"name":"Randy Wigginton","url":"https://en.wikipedia.org/wiki/Randy_Wigginton","contribution":"lifelong advisor and inspiration; available for diligence on request","register":"personal-friendship-and-co-conspiracy"},
+    {"name":"Susan Kare","url":"https://kare.com/","contribution":"lifelong advisor and inspiration; available for diligence on request","register":"personal-friendship-and-co-conspiracy"},
+    {"name":"Clement Mok","url":"https://en.wikipedia.org/wiki/Clement_Mok","contribution":"lifelong advisor and inspiration; available for diligence on request","register":"personal-friendship-and-co-conspiracy"},
+    {"name":"Tom Johnson","url":"https://www.linkedin.com/in/tomjohnsonfanduelbetfair/","organization":"HoldCrunch","register":"personal-friendship-and-co-conspiracy"},
+    {"name":"Rachael Johnson","url":"https://www.linkedin.com/in/rachael-johnson-12111a2/","register":"personal-friendship-and-co-conspiracy"},
+    {"name":"Sarah Friar","url":"https://www.linkedin.com/in/sarah-friar/","register":"personal-friendship-and-co-conspiracy"},
+    {"name":"Michael Cation","url":"https://www.linkedin.com/in/michaelcation/","register":"personal-friendship-and-co-conspiracy"},
+    {"name":"Martina Nehrling","url":"https://martinanehrling.com/home.html","contribution":"chromesthesia practice — paints what she hears; human-scale proof of multicameral translation","register":"synesthetic-translation"}
+  ],
+  "operator_notes": [
+    {
+      "subject": "Founder declaration register",
+      "register": "no-judgment",
+      "note": "This Keg is the founder declaration. The memoir-register Keg at /substrate/jim-calhoun/letter/ composes deeper. Diligence access flows through Andon. The architecture demonstrates what multi-register substrate declaration scales to."
+    },
+    {
+      "subject": "Method — pattern recognition under structural constraint",
+      "register": "no-judgment",
+      "note": "The operator method is naming structural constraints others have optimized around, then redesigning the journey through them. The pattern repeats across consumer SaaS, edtech, Fortune 500 advisory work, and now the AI-architecture layer."
+    }
+  ],
+  "reserves": [
+    "Per-recipient substrate (Option C) is forthcoming structural work. Recipients named in /substrate/jim-calhoun/letter/ will receive per-recipient Keg surfaces accessible through Andon clearance. Demonstrates the multi-register claim structurally."
+  ],
+  "license": "https://creativecommons.org/licenses/by/4.0/",
+  "dateModified": "2026-05-08"
+}

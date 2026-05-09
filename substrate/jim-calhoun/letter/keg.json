@@ -1,0 +1,210 @@
+{
+  "@context": "https://the-grove.ai/protocol/schema",
+  "@type": ["GroveKeg", "Article"],
+  "@id": "https://the-grove.ai/substrate/jim-calhoun/letter/#grove-keg",
+  "keg_class": "substrate-declaration",
+  "operator": {
+    "name": "Jim Calhoun",
+    "organization": "The Grove Foundation",
+    "url": "https://the-grove.ai"
+  },
+  "autonomaton": {
+    "name": "the-grove.ai",
+    "declaration": "/.well-known/grove-autonomaton.json"
+  },
+  "registers": ["memoir", "workshop"],
+  "lineage": [
+    { "name": "Clement Mok",       "kind": "human-substrate-predecessor", "url": "https://www.linkedin.com/in/clementmok/" },
+    { "name": "Susan Kare",        "kind": "human-substrate-predecessor", "url": "https://www.linkedin.com/in/susan-kare-92058951/" },
+    { "name": "Randy Wigginton",   "kind": "human-substrate-predecessor", "url": "https://www.linkedin.com/in/wigginton/" },
+    { "name": "Jerry Michalski",   "kind": "human-substrate-predecessor", "url": "https://www.linkedin.com/in/jerrymichalski/" },
+    { "name": "Evan Williams",     "kind": "human-substrate-predecessor", "url": "https://www.linkedin.com/in/evanwilliams/" },
+    { "name": "Mark Kvamme",       "kind": "human-substrate-predecessor", "url": "https://www.linkedin.com/in/markkvamme/" },
+    { "name": "Mike Moritz",       "kind": "human-substrate-predecessor", "url": "https://www.linkedin.com/in/michaelmoritz/" },
+    { "name": "Reid Hoffman",      "kind": "human-substrate-predecessor", "url": "https://www.linkedin.com/in/reidhoffman/" },
+    { "name": "Gina Bianchini",    "kind": "human-substrate-predecessor", "url": "https://www.linkedin.com/in/ginabianchini/" },
+
+    { "name": "Megan Calhoun",     "kind": "human-substrate-predecessor", "url": "https://www.linkedin.com/in/megancalhoun1/" },
+    { "name": "Oscar Calhoun",     "kind": "human-substrate-predecessor", "url": "https://www.linkedin.com/in/oscar-calhoun-a552681b3/" },
+    { "name": "Stella Calhoun",    "kind": "human-substrate-predecessor" },
+    { "name": "Jim's father (gambling polymath, unnamed in text)",        "kind": "human-substrate-predecessor" },
+    { "name": "Jim's grandfather (Eli Lilly scientist, unnamed in text)", "kind": "human-substrate-predecessor" },
+    { "name": "Gene Tanner",       "kind": "human-substrate-predecessor" },
+    { "name": "Cathy Calhoun",     "kind": "human-substrate-predecessor", "url": "https://www.linkedin.com/in/cathycalhoun/" },
+    { "name": "Karen Turner",      "kind": "human-substrate-predecessor" },
+    { "name": "Wayne Turner",      "kind": "human-substrate-predecessor", "url": "https://www.linkedin.com/in/wayne-c-turner-41b71510/" },
+    { "name": "Tim Stallings",     "kind": "human-substrate-predecessor", "url": "https://www.linkedin.com/in/tim-stallings-cfa/" },
+    { "name": "Amy Spruill",       "kind": "human-substrate-predecessor", "url": "https://www.linkedin.com/in/amy-c-spruill/" },
+    { "name": "Craig Stanford",    "kind": "human-substrate-predecessor", "url": "https://www.linkedin.com/in/craigstanford/" },
+    { "name": "Randy Spruill",     "kind": "human-substrate-predecessor", "url": "https://www.linkedin.com/in/randy-spruill/" },
+    { "name": "David Boncosky",    "kind": "human-substrate-predecessor", "url": "https://www.linkedin.com/in/david-boncosky-153a51383/" },
+    { "name": "Biagio Azzarelli",  "kind": "human-substrate-predecessor", "url": "https://www.linkedin.com/in/bazzarelli/" },
+    { "name": "Alyssa Ure",        "kind": "human-substrate-predecessor", "url": "https://www.linkedin.com/in/alyssaure/" },
+    { "name": "Alissa Bushnell",   "kind": "human-substrate-predecessor", "url": "https://www.linkedin.com/in/alissabushnell/" },
+    { "name": "Sage Bray",         "kind": "human-substrate-predecessor", "url": "https://www.linkedin.com/in/sage-bray/" },
+    { "name": "Barbara Bray",      "kind": "human-substrate-predecessor" },
+    { "name": "Martina Nehrling",  "kind": "human-substrate-predecessor", "url": "https://www.linkedin.com/in/martina-nehrling-649bb84b/" },
+    { "name": "Sean T Pendergast", "kind": "human-substrate-predecessor", "url": "https://www.linkedin.com/in/seantpendergast/" },
+    { "name": "Jeff \"Seve\" Balaguras", "kind": "human-substrate-predecessor", "url": "https://www.linkedin.com/in/jeffbalaguras/" },
+    { "name": "Chad Williams",     "kind": "human-substrate-predecessor", "url": "https://www.linkedin.com/in/chad-williams-489769/" },
+
+    { "name": "Jeff Yasuda",       "kind": "human-substrate-predecessor", "url": "https://www.linkedin.com/in/yasuda/" },
+    { "name": "Celeste Chung",     "kind": "human-substrate-predecessor", "url": "https://www.linkedin.com/in/cvchung/" },
+    { "name": "Andrew Beebe",      "kind": "human-substrate-predecessor", "url": "https://www.linkedin.com/in/andrewbeebe/" },
+    { "name": "Victor Zaud",       "kind": "human-substrate-predecessor", "url": "https://www.linkedin.com/in/victorzaud/" },
+    { "name": "Kamini Ramani",     "kind": "human-substrate-predecessor", "url": "https://www.linkedin.com/in/kaminiramani/" },
+    { "name": "Leo de Luna",       "kind": "human-substrate-predecessor", "url": "https://tribecavp.com/team/leo-de-luna/" },
+
+    { "name": "autonomaton-primitive repository", "kind": "artifact-substrate-predecessor", "url": "https://github.com/understory-ip/autonomaton-primitive" },
+    { "name": "The Bicameral Canon",               "kind": "artifact-substrate-predecessor", "url": "https://the-grove.ai/sprints/bicameral-canon/BICAMERAL-CANON.md" },
+    { "name": "GRV-004: The Autonomaton Protocol", "kind": "artifact-substrate-predecessor", "url": "https://the-grove.ai/standards/004" },
+
+    { "name": "Cat Stevens — On the Road to Find Out (1970)", "kind": "cultural-substrate-predecessor", "url": "https://www.youtube.com/watch?v=ocu7XObxRZ8" },
+    { "name": "Beastie Boys — Root Down (1994)",               "kind": "cultural-substrate-predecessor", "url": "https://www.youtube.com/watch?v=Xf1YF_MH1xc", "alternateUrl": "https://www.last.fm/music/Beastie+Boys/_/Root+Down/+lyrics" },
+
+    { "name": "Feed.fm", "kind": "organizational-substrate-predecessor", "url": "https://blog.feed.fm/author/jeff-yasuda" }
+  ],
+  "payloads": [
+    { "name": "opening-coherent-picture",            "anchor": "[data-grove-payload='opening-coherent-picture']" },
+    { "name": "constitutional-llm-segue",            "anchor": "[data-grove-payload='constitutional-llm-segue']" },
+    { "name": "cognitive-dissonance-childhood",      "anchor": "[data-grove-payload='cognitive-dissonance-childhood']" },
+    { "name": "marketplace-of-ideas",                "anchor": "[data-grove-payload='marketplace-of-ideas']" },
+    { "name": "negative-memories-reflective-surfaces","anchor": "[data-grove-payload='negative-memories-reflective-surfaces']" },
+    { "name": "all-people-compressed-knowledge",     "anchor": "[data-grove-payload='all-people-compressed-knowledge']" },
+    { "name": "lineage-clement-mok",                 "anchor": "[data-grove-payload='lineage-clement-mok']" },
+    { "name": "lineage-susan-kare",                  "anchor": "[data-grove-payload='lineage-susan-kare']" },
+    { "name": "lineage-randy-wigginton",             "anchor": "[data-grove-payload='lineage-randy-wigginton']" },
+    { "name": "lineage-jerry-michalski",             "anchor": "[data-grove-payload='lineage-jerry-michalski']" },
+    { "name": "lineage-mark-kvamme",                 "anchor": "[data-grove-payload='lineage-mark-kvamme']" },
+    { "name": "lineage-mike-moritz-sequoia",         "anchor": "[data-grove-payload='lineage-mike-moritz-sequoia']" },
+    { "name": "lineage-reid-hoffman",                "anchor": "[data-grove-payload='lineage-reid-hoffman']" },
+    { "name": "squirts-of-paint",                    "anchor": "[data-grove-payload='squirts-of-paint']" },
+    { "name": "intent-declaration",                  "anchor": "[data-grove-payload='intent-declaration']" },
+    { "name": "autonomatonic-packet-infrastructure", "anchor": "[data-grove-payload='autonomatonic-packet-infrastructure']" },
+    { "name": "personal-part-short",                 "anchor": "[data-grove-payload='personal-part-short']" },
+    { "name": "magical-pieces-transition",           "anchor": "[data-grove-payload='magical-pieces-transition']" },
+    { "name": "registrar-explanation",               "anchor": "[data-grove-payload='registrar-explanation']" },
+    { "name": "exploration-vehicle",                 "anchor": "[data-grove-payload='exploration-vehicle']" },
+    { "name": "rickroll-bianchini-close",            "anchor": "[data-grove-payload='rickroll-bianchini-close']" },
+    { "name": "cat-stevens-lets-roll",               "anchor": "[data-grove-payload='cat-stevens-lets-roll']" },
+    { "name": "signoff",                             "anchor": "[data-grove-payload='signoff']" },
+    { "name": "dedication-opening",                  "anchor": "[data-grove-payload='dedication-opening']" },
+    { "name": "dedication-family",                   "anchor": "[data-grove-payload='dedication-family']" },
+    { "name": "dedication-extended",                 "anchor": "[data-grove-payload='dedication-extended']" },
+    { "name": "dedication-grove-is-ground",          "anchor": "[data-grove-payload='dedication-grove-is-ground']" },
+    { "name": "postscript-ps",                       "anchor": "[data-grove-payload='postscript-ps']" },
+    { "name": "postscript-pps",                      "anchor": "[data-grove-payload='postscript-pps']" },
+    { "name": "postscript-ppps",                     "anchor": "[data-grove-payload='postscript-ppps']" },
+    { "name": "postscript-pppps",                    "anchor": "[data-grove-payload='postscript-pppps']" }
+  ],
+  "inspirations": [
+    {
+      "name": "Jamie Merisotis",
+      "organization": "Lumina Foundation",
+      "url": "https://www.linkedin.com/in/jamie-merisotis-4799aa9/",
+      "organization_url": "https://www.luminafoundation.org/",
+      "contribution": "framing credentials of value as architectural infrastructure; direct inspiration for GRV-003 The Learner Autonomaton",
+      "register": "intellectual-lineage"
+    },
+    {
+      "name": "HumanityAI",
+      "url": "https://humanityai.ai/",
+      "register": "institutional-resonance"
+    },
+    {
+      "name": "Omidyar Network",
+      "url": "https://omidyar.com/",
+      "register": "institutional-resonance"
+    },
+    {
+      "name": "Tom Johnson",
+      "url": "https://www.linkedin.com/in/tomjohnsonfanduelbetfair/",
+      "organization": "HoldCrunch",
+      "organization_url": "https://www.holdcrunch.com",
+      "register": "personal-friendship-and-co-conspiracy"
+    },
+    {
+      "name": "Rachael Johnson",
+      "url": "https://www.linkedin.com/in/rachael-johnson-12111a2/",
+      "register": "personal-friendship-and-co-conspiracy"
+    },
+    {
+      "name": "Michael Cation",
+      "url": "https://www.linkedin.com/in/michaelcation/",
+      "register": "personal-friendship-and-co-conspiracy"
+    },
+    {
+      "name": "Josh Fisher",
+      "url": "https://www.linkedin.com/in/josh-fisher-b3b9836/",
+      "register": "personal-friendship-and-co-conspiracy"
+    },
+    {
+      "name": "Dennis Dresser",
+      "url": "https://www.linkedin.com/in/dennisdresser/",
+      "register": "personal-friendship-and-co-conspiracy"
+    },
+    {
+      "name": "Sarah Friar",
+      "url": "https://www.linkedin.com/in/sarah-friar/",
+      "register": "personal-friendship-and-co-conspiracy"
+    },
+    {
+      "name": "Tyler Foster",
+      "url": "https://www.linkedin.com/in/tyler-foster-b664b74/",
+      "register": "personal-friendship-and-co-conspiracy"
+    },
+    {
+      "name": "Seog Ju Lee",
+      "url": "https://www.linkedin.com/in/seogjulee/",
+      "register": "personal-friendship-and-co-conspiracy"
+    },
+    {
+      "name": "David Riley",
+      "url": "https://www.linkedin.com/in/david-riley-674b311b6/",
+      "register": "personal-friendship-and-co-conspiracy"
+    },
+    {
+      "name": "Alexei Oreskovic",
+      "url": "https://www.linkedin.com/in/alexeioreskovic/",
+      "register": "personal-friendship-and-co-conspiracy"
+    },
+    {
+      "name": "Marc Escobosa",
+      "url": "https://www.linkedin.com/in/mescobosa/",
+      "organization_context": "works with Marc Benioff",
+      "register": "personal-friendship-and-co-conspiracy"
+    },
+    {
+      "name": "Josh Stein",
+      "url": "https://www.linkedin.com/in/joshsteinvc/",
+      "register": "intellectual-lineage"
+    },
+    {
+      "name": "Martina Nehrling",
+      "url": "https://martinanehrling.com/home.html",
+      "register": "synesthetic-translation",
+      "contribution": "chromesthesia practice — paints what she hears. Human-scale proof of multicameral translation: different sensory mode carrying same signal, nothing added or lost in the cross-mode encoding."
+    },
+    {
+      "name": "Rick Rubin",
+      "url": "https://en.wikipedia.org/wiki/Rick_Rubin",
+      "register": "intellectual-lineage",
+      "contribution": "producer-as-substrate-curator. Listening for what's already there and stripping the substrate down until the signal is clean. The Creative Act as substrate-declaration document."
+    }
+  ],
+  "reserves": [
+    "This Keg is one operator's substrate declaration. It is not a template. It is not a requirement. It is not a claim about how every grove gets composed. The canon (GRV-004, Bicameral Canon) holds without this Keg.",
+    "Memoir register is provisional — proposed here as a seventh entry in the canon's register inventory, to be formally adopted or declined in Bicameral Canon v1.1.",
+    "Lineage links are operator-asserted, not Grove-verified. Predecessors are named from the operator's memory of their actual contribution to his substrate, not from archival research.",
+    "The Keg is offered because the operator believes declaring substrate honestly is itself a grounding move under the protocol; if that belief is wrong, the reader is invited to say so.",
+    "This work is fundamentally multicameral. Two or more chambers — human, machine, surface, operator — sharing ground via protocol become one circuit. Composing happens by declaration and instantiation across that circuit, not inside any single chamber. The personal Keg is one chamber. It sits inert. The composing LLM is another. It sits inert. The registrar is another. It sits inert. The reader's own substrate is another (operator or reader, your choice of perspective). Coherence emerges across them when the protocol holds, not because any single chamber exists in the void. The medium is the message. McLuhan was right. Vonnegut knew. Synesthesia is the human-scale proof.",
+    "Per-recipient substrate (Option C) — forthcoming. Recipients named in this letter's dedication will receive per-recipient Keg surfaces accessible through Andon clearance at /substrate/jim-calhoun/letter/andon/. Demonstrates the multi-register claim structurally."
+  ],
+  "compose_with": [
+    { "name": "The Bicameral Canon", "url": "https://the-grove.ai/sprints/bicameral-canon/BICAMERAL-CANON.md" },
+    { "name": "GRV-004: The Autonomaton Protocol", "url": "https://the-grove.ai/standards/004" }
+  ],
+  "handshake_anchor": "#grove-handshake",
+  "license": "https://creativecommons.org/licenses/by/4.0/",
+  "dateModified": "2026-04-23"
+}
