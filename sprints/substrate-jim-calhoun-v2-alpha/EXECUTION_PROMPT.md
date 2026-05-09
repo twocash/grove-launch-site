@@ -36,7 +36,7 @@ In your **first response of this execution session**, before writing or modifyin
 2. List the 6 files you will create or modify, in order of operations.
 3. Confirm you understand the 19 strip operations against the letter (numbered 3.1 through 3.19 in SPEC §3) — a few strips are precise multi-line OLD/NEW pairs and need exact-match against the current file's whitespace and HTML entities.
 4. Confirm the locked operator calibrations:
-   - Display: "Jim _Calhoun_" (italic on Calhoun)
+   - Display: "Jim Calhoun" (plain serif, no italic split — per SPEC §1 reasoning: italic on a person-name surface reads as decoration; the noun-vs-person-name distinction governs)
    - Section II Body keeps softened language (no "the underlying claim about computer science is wrong")
    - Robbins surface framing has NO "grandfather" word
    - Andon address is `jim+diligence-andon@the-grove.ai` (with plus-aliasing)

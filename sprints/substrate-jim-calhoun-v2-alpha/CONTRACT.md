@@ -46,7 +46,7 @@ Verify with: `findstr /i /s "Cottrell Ferbos takeflightadvisors" C:\GitHub\grove
 
 ## §4 — Letter integrity
 
-**Invariant 9.** The letter file at `/substrate/jim-calhoun/letter/index.html` is functionally identical to the pre-sprint `/substrate/jim-calhoun/index.html` except for the 19 named strips in SPEC §3. Verify:
+**Invariant 9.** The letter file at `/substrate/jim-calhoun/letter/index.html` is functionally identical to the pre-sprint `/substrate/jim-calhoun/index.html` except for the 21 named strips in SPEC §3. Verify:
 - All 30 `data-grove-payload` sections preserved
 - Intentional voice-marks preserved verbatim:
   - "plese" in postscript-ps

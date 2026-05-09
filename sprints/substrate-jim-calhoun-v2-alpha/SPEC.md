@@ -450,6 +450,174 @@ NEW:
 <link rel="alternate" type="application/ld+json" href="/substrate/jim-calhoun/letter/keg.json">
 ```
 
+### Strip 3.13 — `<link rel="canonical">` URL canonicalization
+
+OLD:
+
+```html
+<link rel="canonical" href="https://the-grove.ai/substrate/jim-calhoun/">
+```
+
+NEW:
+
+```html
+<link rel="canonical" href="https://the-grove.ai/substrate/jim-calhoun/letter/">
+```
+
+### Strip 3.14 — `<meta property="og:url">` URL canonicalization
+
+OLD:
+
+```html
+<meta property="og:url" content="https://the-grove.ai/substrate/jim-calhoun/">
+```
+
+NEW:
+
+```html
+<meta property="og:url" content="https://the-grove.ai/substrate/jim-calhoun/letter/">
+```
+
+### Strip 3.15 — `<meta name="DC.identifier">` URL canonicalization
+
+OLD:
+
+```html
+<meta name="DC.identifier" content="https://the-grove.ai/substrate/jim-calhoun/">
+```
+
+NEW:
+
+```html
+<meta name="DC.identifier" content="https://the-grove.ai/substrate/jim-calhoun/letter/">
+```
+
+### Strip 3.16 — WebPage JSON-LD `@id` and `url`
+
+OLD:
+
+```json
+  "@type": "WebPage",
+  "@id": "https://the-grove.ai/substrate/jim-calhoun/",
+  "url": "https://the-grove.ai/substrate/jim-calhoun/",
+  "name": "A Letter from Jim Calhoun",
+```
+
+NEW:
+
+```json
+  "@type": "WebPage",
+  "@id": "https://the-grove.ai/substrate/jim-calhoun/letter/",
+  "url": "https://the-grove.ai/substrate/jim-calhoun/letter/",
+  "name": "A Letter from Jim Calhoun",
+```
+
+### Strip 3.17 — BreadcrumbList: insert position-3 "Jim Calhoun" (founder), demote letter to position-4
+
+OLD:
+
+```json
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "The Grove Foundation", "item": "https://the-grove.ai/" },
+    { "@type": "ListItem", "position": 2, "name": "Substrate", "item": "https://the-grove.ai/substrate/" },
+    { "@type": "ListItem", "position": 3, "name": "A Letter from Jim Calhoun", "item": "https://the-grove.ai/substrate/jim-calhoun/" }
+  ]
+```
+
+NEW:
+
+```json
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "The Grove Foundation", "item": "https://the-grove.ai/" },
+    { "@type": "ListItem", "position": 2, "name": "Substrate", "item": "https://the-grove.ai/substrate/" },
+    { "@type": "ListItem", "position": 3, "name": "Jim Calhoun", "item": "https://the-grove.ai/substrate/jim-calhoun/" },
+    { "@type": "ListItem", "position": 4, "name": "A Letter from Jim Calhoun", "item": "https://the-grove.ai/substrate/jim-calhoun/letter/" }
+  ]
+```
+
+### Strip 3.18 — Article JSON-LD `@id` and `url` (preserves `#article` fragment)
+
+OLD:
+
+```json
+  "@type": "Article",
+  "@id": "https://the-grove.ai/substrate/jim-calhoun/#article",
+  "headline": "A Letter from Jim Calhoun",
+  "alternativeHeadline": "One operator's substrate declaration, in memoir register",
+  "url": "https://the-grove.ai/substrate/jim-calhoun/",
+```
+
+NEW:
+
+```json
+  "@type": "Article",
+  "@id": "https://the-grove.ai/substrate/jim-calhoun/letter/#article",
+  "headline": "A Letter from Jim Calhoun",
+  "alternativeHeadline": "One operator's substrate declaration, in memoir register",
+  "url": "https://the-grove.ai/substrate/jim-calhoun/letter/",
+```
+
+### Strip 3.19 — GroveKeg JSON-LD `@id` (preserves `#grove-keg` fragment)
+
+OLD:
+
+```json
+  "@type": ["GroveKeg", "Article"],
+  "@id": "https://the-grove.ai/substrate/jim-calhoun/#grove-keg",
+  "keg_class": "substrate-declaration",
+  "operator": {
+    "name": "Jim Calhoun",
+```
+
+NEW:
+
+```json
+  "@type": ["GroveKeg", "Article"],
+  "@id": "https://the-grove.ai/substrate/jim-calhoun/letter/#grove-keg",
+  "keg_class": "substrate-declaration",
+  "operator": {
+    "name": "Jim Calhoun",
+```
+
+### Strip 3.20 — Inspirations Ron Dovich entry (in-flight Gate 1 amendment: register-coherence with founder envelope §2)
+
+OLD:
+
+```json
+    {
+      "name": "Ron Dovich",
+      "url": "https://www.linkedin.com/in/rdovich/",
+      "organization": "Brinqa",
+      "organization_url": "https://www.brinqa.com/",
+      "register": "personal-friendship-and-co-conspiracy"
+    },
+```
+
+NEW: (removed; no replacement)
+
+### Strip 3.21 — Inspirations Brinqa entry (in-flight Gate 1 amendment: register-coherence with founder envelope §2)
+
+Combined with Rick Rubin trailing-comma fix to preserve JSON validity (Brinqa is the inspirations array's terminal entry).
+
+OLD:
+
+```json
+      "contribution": "producer-as-substrate-curator. Listening for what's already there and stripping the substrate down until the signal is clean. The Creative Act as substrate-declaration document."
+    },
+    {
+      "name": "Brinqa",
+      "url": "https://www.brinqa.com/",
+      "register": "institutional-resonance"
+    }
+```
+
+NEW:
+
+```json
+      "contribution": "producer-as-substrate-curator. Listening for what's already there and stripping the substrate down until the signal is clean. The Creative Act as substrate-declaration document."
+    }
+```
+
 ## §4 — Letter envelope (file 4): keg.json
 
 Extracted from current inline JSON-LD GroveKeg block in `/substrate/jim-calhoun/index.html`, with strips 3.3–3.6 applied. Sibling file at `/substrate/jim-calhoun/letter/keg.json`. Deep-equal mirror with the inline envelope (which the strips will leave intact in the moved letter file). Spec'd minimally below; CC extracts verbatim and applies strips:
