@@ -114,6 +114,7 @@ nav { position:fixed; top:0; left:0; right:0; z-index:100; padding:0 48px; heigh
 .nav-links a:hover, .nav-links a.active { color:var(--amber); border-bottom-color:var(--amber); }
 .nav-links a.nav-ext { color:var(--amber-dim); border:1px solid var(--amber-dim); padding:3px 10px; margin-left:8px; border-bottom:1px solid var(--amber-dim); }
 .nav-links a.nav-ext:hover { color:var(--amber); border-color:var(--amber); background:rgba(212,98,26,0.08); }
+.nav-label-mobile { display:none; }
 .section { position:relative; z-index:1; }
 .section-inner { max-width:760px; margin:0 auto; padding:120px 48px 100px; }
 .eyebrow { font-family:var(--mono); font-size:11px; letter-spacing:0.25em; text-transform:uppercase; color:var(--amber); margin-bottom:20px; }
@@ -134,7 +135,7 @@ nav { position:fixed; top:0; left:0; right:0; z-index:100; padding:0 48px; heigh
 .alert-meta { font-family:var(--mono); font-size:10px; color:var(--text-dim); letter-spacing:0.08em; }
 .alert-arrow { font-family:var(--mono); color:var(--amber-dim); margin-left:8px; transition:margin-left 0.2s; }
 .alert-card:hover .alert-arrow { margin-left:14px; color:var(--amber); }
-@media(max-width:768px) { nav { padding:0 20px; } .nav-links { gap:16px; } .nav-links a { font-size:9px; } .section-inner { padding:80px 24px 60px; } .alert-card { grid-template-columns:56px 1fr; } }
+@media(max-width:768px) { nav { padding:0 20px; } .nav-links { gap:16px; } .nav-links a { font-size:9px; } .nav-label-full { display:none; } .nav-label-mobile { display:inline; } .section-inner { padding:80px 24px 60px; } .alert-card { grid-template-columns:56px 1fr; } }
 </style>
 </head>
 <body>
@@ -142,13 +143,13 @@ nav { position:fixed; top:0; left:0; right:0; z-index:100; padding:0 48px; heigh
   <a href="/" class="nav-logo">The Grove Foundation</a>
   <div class="nav-links">
     <a href="/ratchet">Ratchet Test</a>
+    <a href="/lambda"><span class="nav-label-full">Lambda (&Lambda;) Watch</span><span class="nav-label-mobile">&Lambda; Watch</span></a>
     <a href="/alerts" class="active">CIO Alerts<span class="nav-new-bug" aria-hidden="true"></span></a>
+    <a href="/standards">Published Standards</a>
     <a href="/observations">Observations</a>
-    <a href="/lambda">Standings</a>
-    <a href="/standards">Open Standards</a>
     <a href="/membership">Membership</a>
-    <a href="https://the-grove.ai/autonomaton" target="_blank" rel="noopener noreferrer" class="nav-ext">Run the Pattern &nearr;</a>
     <a href="/about">About</a>
+    <a href="https://the-grove.ai/autonomaton" target="_blank" rel="noopener noreferrer" class="nav-ext">Run the Pattern &nearr;</a>
   </div>
 </nav>
 

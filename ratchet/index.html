@@ -81,10 +81,13 @@ nav.site-nav {
   color:var(--amber); border-color:var(--amber);
   background:rgba(212,98,26,0.08);
 }
+.nav-label-mobile { display:none; }
 @media(max-width:768px) {
   nav.site-nav { padding:0 20px; }
   .nav-links { gap:16px; }
   .nav-links a { font-size:9px; }
+  .nav-label-full { display:none; }
+  .nav-label-mobile { display:inline; }
 }
 
 /* ══════════════════════════════════════════════════════
@@ -885,13 +888,13 @@ footer.site-footer {
   <a href="/" class="nav-logo">The Grove Foundation</a>
   <div class="nav-links">
     <a href="/ratchet" class="active">Ratchet Test</a>
+    <a href="/lambda"><span class="nav-label-full">Lambda (&Lambda;) Watch</span><span class="nav-label-mobile">&Lambda; Watch</span></a>
     <a href="/alerts">CIO Alerts<span class="nav-new-bug" aria-hidden="true"></span></a>
+    <a href="/standards">Published Standards</a>
     <a href="/observations">Observations</a>
-    <a href="/lambda">Standings</a>
-    <a href="/standards">Open Standards</a>
     <a href="/membership">Membership</a>
-    <a href="https://the-grove.ai/autonomaton" target="_blank" rel="noopener noreferrer" class="nav-ext">Run the Pattern &nearr;</a>
     <a href="/about">About</a>
+    <a href="https://the-grove.ai/autonomaton" target="_blank" rel="noopener noreferrer" class="nav-ext">Run the Pattern &nearr;</a>
   </div>
 </nav>
 
