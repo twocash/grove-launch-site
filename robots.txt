@@ -1,0 +1,16 @@
+# The Grove Foundation — robots.txt
+# Standards body for AI governance architecture.
+# Site-level Declaration: https://the-grove.ai/.well-known/grove-autonomaton.json
+
+User-agent: *
+Allow: /
+
+# Orphan pages — out of indexing per operator direction
+Disallow: /substrate/jim-calhoun/letter/
+Disallow: /substrate/jim-calhoun/letter/andon/
+
+# Non-production
+Disallow: /sprints/
+Disallow: /docs/
+
+Sitemap: https://the-grove.ai/sitemap.xml
