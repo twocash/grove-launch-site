@@ -1,0 +1,43 @@
+{
+  "@context": "https://schema.org",
+  "@type": "PublishedStandardsCorpus",
+  "operator": "The Grove Foundation",
+  "license": "CC BY 4.0",
+  "lastUpdated": "2026-05-14",
+  "canonical": "https://the-grove.ai/standards",
+  "manifestVersion": "1.0",
+  "corpus": [
+    {
+      "id": "GRV-001",
+      "title": "The Autonomaton Pattern",
+      "canonical": "https://the-grove.ai/standards/001",
+      "class": "standard",
+      "registers": ["standards"],
+      "summary": "Five-stage pipeline, zone model, Cognitive Router, Skill Flywheel."
+    },
+    {
+      "id": "GRV-002",
+      "title": "TCP/IP for the Cognitive Layer",
+      "canonical": "https://the-grove.ai/standards/002",
+      "class": "standard",
+      "registers": ["standards"],
+      "summary": "Architectural theory paper. Thin-waist invariant. The Autonomaton Pattern as open protocol."
+    },
+    {
+      "id": "GRV-003",
+      "title": "The Learner Autonomaton",
+      "canonical": "https://the-grove.ai/standards/003",
+      "class": "standard",
+      "registers": ["standards"],
+      "summary": "Lifelong cognitive router in a composable university."
+    },
+    {
+      "id": "GRV-004",
+      "title": "The Autonomaton Protocol",
+      "canonical": "https://the-grove.ai/standards/004",
+      "class": "standard",
+      "registers": ["standards"],
+      "summary": "Sovereign Declaration for the polarity-compliant internet."
+    }
+  ]
+}
