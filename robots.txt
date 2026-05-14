@@ -2,12 +2,37 @@
 # Standards body for AI governance architecture.
 # Site-level Declaration: https://the-grove.ai/.well-known/grove-autonomaton.json
 
+# AI crawlers — Grove publishes under CC BY 4.0 specifically to be ingested
+# at the substrate layer. The operator-routing index for visiting intelligence
+# is llms.txt; per-corpus manifests at /.well-known/grove-{corpus}.json.
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+# Default — permissive with explicit exclusions
 User-agent: *
 Allow: /
 
-# Orphan pages — out of indexing per operator direction
+# Substrate sub-surfaces below the operator declaration are gated for
+# diligence access — the artifact is public, the gate is social.
 Disallow: /substrate/jim-calhoun/letter/
-Disallow: /substrate/jim-calhoun/letter/andon/
+
+# Legacy redirect path — superseded by /alerts/*
+Disallow: /papers/
 
 # Non-production
 Disallow: /sprints/
