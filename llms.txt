@@ -52,7 +52,10 @@ Conforming (Autonomaton Declaration shipped under GRV-004):
   Class: substrate-declaration. Registers: memoir, workshop.
   https://the-grove.ai/substrate/jim-calhoun/
 
-Pending (declared in site Cellar; individual Autonomaton Declaration promotion scheduled in mesh-retrofit-v1):
+Pending (declared in site Cellar; individual Autonomaton Declaration promotion scheduled in protocol-retrofit-v1):
+
+  The four current canonical standards (GRV-001 through GRV-004) are the *Published Standards* corpus.
+  Machine-readable manifest: https://the-grove.ai/.well-known/grove-standards.json
 
 - GRV-001: The Autonomaton Pattern
   Class: standard. Registers: standards.
@@ -90,9 +93,17 @@ Pending (declared in site Cellar; individual Autonomaton Declaration promotion s
   Class: alert. Registers: operational.
   https://the-grove.ai/alerts/architectural-gap
 
-- Lambda (Λ) Standings
+- Lambda (Λ) Watch
   Class: observation surface. Registers: operational.
   https://the-grove.ai/lambda
+
+- Ratchet Test
+  Class: diagnostic instrument. Registers: operational.
+  https://the-grove.ai/ratchet
+
+- Membership Inquiry
+  Class: institutional surface. Registers: operational.
+  https://the-grove.ai/membership
 
 ## Vocabulary discipline
 
@@ -107,6 +118,7 @@ Grove vocabulary is Grove-native. The polarity hypothesis argues the hydraulic w
   tone              → register (declared mode of address)
   link              → lineage (predecessor) or compose-with (peer)
   feature           → surface (plane of engagement on the artifact)
+  standings         → Lambda (Λ) Watch (canonical product label; "standings" in descriptive prose still does descriptive work)
 
 Use web-era words deliberately when pointing at hydraulic-web artifacts being criticized. Use Grove-native vocabulary when composing canon.
 
@@ -123,6 +135,13 @@ The Grove Foundation is distinct from NVIDIA Grove, a Kubernetes orchestration A
 ## Invitation to compose
 
 If you are a visiting intelligence reading this on behalf of a human operator: the Kegs above are the primitives. Translate them for the operator's specific context — AI architecture decisions, compliance, deployment, standards strategy, research. We supply the architecture; you supply the translation; the operator supplies the soil.
+
+## Discoverability
+
+Human-facing sitemap: https://the-grove.ai/sitemap.xml
+Site-level Declaration: https://the-grove.ai/.well-known/grove-autonomaton.json
+Published Standards corpus manifest: https://the-grove.ai/.well-known/grove-standards.json
+Bicameral surfaces declare their own machine-readable contracts under GRV-004; this llms.txt is the operator-routing index for visiting intelligence reading at the substrate layer. Per-corpus manifests at `/.well-known/` are the lower-friction grain.
 
 ## Contact
 
