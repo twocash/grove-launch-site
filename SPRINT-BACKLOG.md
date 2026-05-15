@@ -2,7 +2,7 @@
 
 *Authoritative running ledger of sprint-eligible work for the-grove.ai. Updated at sprint close. Operator + Claude maintain this jointly; CC reads but doesn't update unless directed.*
 
-**Last updated:** 2026-05-14 (post `coherence-v1` close)
+**Last updated:** 2026-05-15 (post `nav-text-extraction-fix-v1` close)
 
 ---
 
@@ -39,6 +39,9 @@ Build actual authentication gate on `/substrate/jim-calhoun/letter/` and `/subst
 ---
 
 ## Tracking — completed sprints (most recent first)
+
+### `nav-text-extraction-fix-v1` (closed 2026-05-15)
+Four commits. Collapsed two-span responsive Lambda Watch label pattern to bare `&Lambda; Watch` text across 21 header-nav files (Touch 1, +21/−21) and 2 footer-nav files (Touch 2, +2/−2). Removed orphaned `.nav-label-*` rules from 21 inline `<style>` blocks (Touch 3, +7/−56). Plain-text extractors now read nav labels without the duplicated-label artifact. Single-span / bare-text is now canonical Grove convention for nav labels. HANDOFF at `sprints/nav-text-extraction-fix-v1/HANDOFF.md`.
 
 ### `coherence-v1` (closed 2026-05-14)
 Three commits. Renamed footer-nav vocabulary on `/about` and `/ratchet` to match `nav-rationalization-v1` header-nav (Lambda (Λ) Watch with two-span markup, Published Standards, reorder). Renamed homepage `Go deeper` card-grid headings (Λ Standings → Lambda (Λ) Watch, Open Standards → Published Standards). Two `nav-rationalization-v1` inheritance items resolved (footer-nav vocabulary, homepage card-grid vocabulary). HANDOFF at `sprints/coherence-v1/HANDOFF.md`.
