@@ -2,7 +2,7 @@
 
 *Authoritative running ledger of sprint-eligible work for the-grove.ai. Updated at sprint close. Operator + Claude maintain this jointly; CC reads but doesn't update unless directed.*
 
-**Last updated:** 2026-06-21 (post `grv001-red-learning-reconcile-v1` close; queued `governance-write-protection-v1`)
+**Last updated:** 2026-06-22 (GRV-001 2.0 shipped live; deploy pipeline restored; queued `repo-hygiene-v1`)
 
 ---
 
@@ -14,8 +14,8 @@
 
 ## Queued sprints — in suggested priority order
 
-### `governance-write-protection-v1` — substantive · **critical coherence fix**
-Re-key GRV-001 zones from *action category* to *operator scope*, and authorize operator-directed **inline** mutation of scope-defining config (zones/routing/permission boundaries) under a live, authenticated, provenance-stamped operator grant. Fixes the drift where a category-keyed guard ("operator config cannot be written by the agent") was over-generalized to block *any* filesystem write — so an Autonomaton refuses to persist an in-scope knowledge artifact into a granted workspace, contradicting its own ratchet thesis. Surfaced by operator while QA-ing GRV-001 against a Hermes Agent (Nous Research) refactor. Must deliver confused-deputy / downstream-read protection (an in-scope file later parsed as config = scope change) before any relaxation ships. Includes a **§VII reference-schema rewrite** and replaces the v1.3 "observes" placeholder with "writes, within scope, under authenticated grant, with provenance." Likely a GRV-001 → 2.0 bump. SPEC stub at `sprints/governance-write-protection-v1/SPEC.md`. **Probable sprint size:** large; spec-design heavy, multi-phase. Gated on Gemini pre-execution review + circularity resolution.
+### `repo-hygiene-v1` — infrastructure · **security/cleanup** (priority — repo is now public)
+The repo is now **public** (required: the private-repo commit-author gate was blocking Vercel deploys — see `DEPLOY.md`). Public exposure makes hygiene a priority. Scope: (1) **git-history secret scan** — gitleaks/trufflehog over *full history*, not just the working tree. First-pass working-tree scan was clean; the Supabase key in `/membership` + `/ratchet` is the public **anon** key (safe *iff* RLS is enabled — verify on the Supabase project). (2) **deploy-root hygiene** — add `.vercelignore` so working docs (`sprints/**`, `*.bat`, `SESSION-STATE.md`, `NEXT-SESSION-PROMPT.md`, `SPRINT-BACKLOG.md`) stop being served at `the-grove.ai`. (3) **repo structure cleanup** — `.gitignore` for scratch/backups/zips; remove orphaned artifacts (`sprints/**/_*.py` scratch, `*-backup.*`, the delivered `.zip`). (4) Confirm only publishable content lives at the public root; document the public-repo posture (can't go private without re-breaking deploys). SPEC at `sprints/repo-hygiene-v1/SPEC.md`. **Probable sprint size:** medium; Phase 1 is security-gated.
 
 ### `protocol-retrofit-v1` — substantive
 Substantive Bicameral Canon / GRV-004 conformance work on homepage and non-upgraded pages. Each page gets Handshake, machine-readable Declaration in `<head>`, operator-empathy Keg payload, register declarations. Judgment-required composition per page; not mechanical. Pages in scope: `/` (homepage), `/about`, `/membership`, `/ratchet`, `/observations`, `/alerts` index, possibly `/standards` index. Conforming Cellar entries in `llms.txt` get promoted from "Pending" to "Conforming" as each page ships its Declaration. **Probable sprint size:** large; may want to split into per-page sub-sprints or by-page-class batches.
@@ -42,6 +42,12 @@ Build actual authentication gate on `/substrate/jim-calhoun/letter/` and `/subst
 ---
 
 ## Tracking — completed sprints (most recent first)
+
+### `governance-write-protection-v1` (closed 2026-06-22)
+GRV-001 v1.3 → **2.0**, live on the-grove.ai. Re-keyed the zone model from action category to operator scope; partitioned writes into a scope-defining surface (autonomous-loop self-scope-expanding writes *impossible* at the OS level) and an in-scope surface (Green within a granted workspace); added the operator-authenticated **confirmation gate**, **Confused-Deputy Protection**, and **Provenance Stamping** (schema makes a self-scope-expanding write unrepresentable in the record). 5 published JSON Schemas at `/standards/001/schemas/`; manifest `governance` object; 5 vocabulary entries. 8 gated phases + Gemini **conditional pass** (six findings F1–F6 reworked, incl. the routing operational/authority split). Compatibility break (→ 2.0). Follow-up: standards index card/JSON-LD/prose corrected to v2.0 (commit `27ad087`). HANDOFF at `sprints/governance-write-protection-v1/HANDOFF.md`.
+
+### `deploy-pipeline-restore-v1` (closed 2026-06-22)
+Restored production auto-deploy after ~5 weeks frozen on the May-14 build. Two stacked failures: the project-level Git connection had severed (reconnected), then a **private-repo commit-author authorization** gate held builds at `BLOCKED` — cleared by making the repo **public**. One `READY` build shipped the whole backlog (nav close + GRV-001 v1.3 + v2.0). Deploy SOP + both failure modes documented in `DEPLOY.md`. SPEC at `sprints/deploy-pipeline-restore-v1/SPEC.md`.
 
 ### `grv001-red-learning-reconcile-v1` (closed 2026-06-21)
 One atomic commit, both surfaces. Prose-only drift fix GRV-001 v1.2 → v1.3: surfaced the operator-promotion learning loop in Stage 04 (Approval), §V Red Zone, and Principle IV — operator promotes patterns through governed checkpoints, the agent *observes* the sanctioned outcome, the Skill Flywheel turns. Append-only on all three passages; version/date stamps bumped across HTML (byline, footer, JSON-LD, og/DC modified-time) + JSON twin + `version_history`. Deliberately observe-only interim. Gate #1 (Gemini wording review) PASSED, verdict "publish as-is." Surfaced a deeper enforcement drift → spun out `governance-write-protection-v1` (queued). Sprint docs + Gemini brief in `sprints/grv001-red-learning-reconcile-v1/`.
