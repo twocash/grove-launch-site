@@ -6,11 +6,25 @@
 
 | Field | Value |
 |-------|-------|
-| **Current Phase** | Phase 1 — Secret audit (security-gated) |
-| **Status** | 🟡 Planned — first-pass working-tree scan clean; git-history scan pending |
-| **Blocking Issues** | None known; Phase 1 must confirm before lower phases |
+| **Current Phase** | Phases 1–3 ✅ done; Phase 4 covered by `DEPLOY.md` |
+| **Status** | 🟢 Secret scan clean; `.vercelignore` + `.gitignore` live and verified (working docs → 404, published → 200) |
+| **Blocking Issues** | None. Only open item: operator confirms Supabase RLS (anon INSERT-only, no SELECT) in dashboard |
 | **Last Updated** | 2026-06-22 |
-| **Next Action** | Run a full **git-history** secret scan (gitleaks/trufflehog) and verify Supabase RLS |
+| **Next Action** | Operator: confirm RLS. Sprint otherwise complete. |
+
+## Phase 2–3 — Results (2026-06-22)
+`.vercelignore` (commit `1dbcd74`) excludes `sprints/`, `*.bat`, `SESSION-STATE.md`, `NEXT-SESSION-PROMPT.md`, `SPRINT-BACKLOG.md`, `SITE-IA.md`, `DEPLOY.md`, GRV-003 notes from serving — kept in git for provenance. `.gitignore` extended for scratch (`*.zip`, `*-backup.*`, `sprints/**/_*.py`, `sovereignty-live.html`). Untracked working files left on disk (not deleted). **Verified live:** `/SPRINT-BACKLOG.md`, `/SITE-IA.md`, `/DEPLOY.md` → 404; `/standards/001`, `/standards/GRV-001.json`, `/standards/001/schemas/zones-v2.schema.json`, `/docs/the-autonomaton-pattern-grv-001.pdf` → 200. Phase 4 (public-repo posture) is documented in `DEPLOY.md` (must stay public unless consolidated under twocash).
+
+## Phase 1 — Results (2026-06-22)
+
+Full **git-history** scan (no gitleaks/trufflehog installed → git-native methods over all 238 commits / 5 branches):
+- Sensitive filenames ever committed (`.env`/`.pem`/`.key`/credentials): **none**.
+- High-signal tokens in any history diff (GitHub/OpenAI/AWS/Google/Slack/private-key/`service_role`/Vercel/GitHub tokens): **none**.
+- Secret-value assignments (`secret|token|api_key|… = "…"`) in history: **none**.
+- Distinct JWTs in all history: **1**, decoded `role: anon` (ref `cntzzxqgqsjzsvscunsp`). No `service_role` key ever committed.
+- **RLS probe** (read-only, id/count-only, anon key — already public on the live site): anon `SELECT` on `membership_inquiries` → `Content-Range: */0`. Public key reads **0** rows. No PII exposure.
+
+**Verdict:** repo is safe to be public from a secrets standpoint. **One residual:** `*/0` can't distinguish "RLS blocks reads" from "table currently empty" — operator must confirm in Supabase (Auth → Policies) that `membership_inquiries` has **RLS enabled** with an INSERT policy for anon and **no** SELECT policy, so future inquiries stay private rather than relying on the table being empty now.
 | **Attention Anchor** | The repo must stay **public** (private re-breaks deploys); so the public root must contain no secrets and serve only publishable content |
 
 ## Attention Anchor
