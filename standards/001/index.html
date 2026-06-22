@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="The Grove Foundation">
 <meta property="og:image" content="https://the-grove.ai/standards/001/og.png">
 <meta property="article:published_time" content="2026-03-01">
-<meta property="article:modified_time" content="2026-04-21">
+<meta property="article:modified_time" content="2026-06-18">
 <meta property="article:author" content="Jim Calhoun">
 <meta property="article:section" content="Open Standard">
 <meta property="article:tag" content="AI governance">
@@ -34,7 +34,7 @@
 <meta name="DC.title" content="The Autonomaton Pattern: Toward Self-Authoring Software Systems">
 <meta name="DC.creator" content="Jim Calhoun">
 <meta name="DC.publisher" content="The Grove Foundation">
-<meta name="DC.date" content="2026-04-21">
+<meta name="DC.date" content="2026-06-18">
 <meta name="DC.type" content="Text">
 <meta name="DC.format" content="text/html">
 <meta name="DC.identifier" content="https://the-grove.ai/standards/001">
@@ -65,9 +65,9 @@
   "alternativeHeadline": "Toward Self-Authoring Software Systems",
   "url": "https://the-grove.ai/standards/001",
   "identifier": "GRV-001",
-  "version": "1.2",
+  "version": "1.3",
   "datePublished": "2026-03-01",
-  "dateModified": "2026-04-21",
+  "dateModified": "2026-06-18",
   "inLanguage": "en",
   "articleSection": "Open Standard",
   "author": {
@@ -409,7 +409,7 @@ nav { position:fixed; top:0; left:0; right:0; z-index:100; padding:0 48px; heigh
     <div class="divider"></div>
     <p class="body-text">The <dfn>Autonomaton</dfn> <span class="pronunciation" title="IPA: /ɔːˈtɒnəmətɒn/">pronounced auto-NAHM-uh-tawn · /ɔːˈtɒnəmətɒn/</span> is a <dfn><strong>self-authoring engine</strong></dfn>: it converts metered cloud dependencies into permanent, <strong>zero-marginal-cost institutional assets</strong> that get smarter, cheaper, and more private with every human interaction.</p>
     <p class="body-text">Three files and a loop. A routing config, a zones schema, a structured telemetry log, and a pipeline that traverses them in order. That is the entire architecture. Everything else is implication.</p>
-    <p class="hero-meta">Jim Calhoun &middot; The Grove Foundation &middot; v1.2 &middot; April 21, 2026</p>
+    <p class="hero-meta">Jim Calhoun &middot; The Grove Foundation &middot; v1.3 &middot; June 18, 2026</p>
   </div>
 </section>
 
@@ -520,7 +520,7 @@ nav { position:fixed; top:0; left:0; right:0; z-index:100; padding:0 48px; heigh
       <div class="pipe-stage"><div class="pipe-num">01</div><div class="pipe-name">Telemetry</div><div class="pipe-desc">Capture interaction data. Structured, inspectable, owned by the operator. Every interaction produces a trace&mdash;this is the system&rsquo;s primary output.</div></div>
       <div class="pipe-stage"><div class="pipe-num">02</div><div class="pipe-name">Recognition</div><div class="pipe-desc">Classify intent, assess confidence, determine risk. The Cognitive Router dispatches to the cheapest tier capable of handling the request.</div></div>
       <div class="pipe-stage"><div class="pipe-num">03</div><div class="pipe-name">Compilation</div><div class="pipe-desc">Assemble context from local knowledge, historical patterns, domain expertise, and operator configuration. Build the response.</div></div>
-      <div class="pipe-stage"><div class="pipe-num">04</div><div class="pipe-name">Approval</div><div class="pipe-desc">Zone-governed human checkpoint. Green = autonomous. Yellow = supervised. Red = human-only. The system never acts beyond its granted authority.</div></div>
+      <div class="pipe-stage"><div class="pipe-num">04</div><div class="pipe-name">Approval</div><div class="pipe-desc">Zone-governed human checkpoint. Green = autonomous. Yellow = supervised. Red = human-only. The system never acts beyond its granted authority. When the operator approves a workflow or pattern at this checkpoint, the sanctioned outcome is recorded with a complete audit trail. The agent observes these normalized, repeatedly-approved intents &mdash; the primary input to the Skill Flywheel and the mechanism by which the system improves with use.</div></div>
       <div class="pipe-stage"><div class="pipe-num">05</div><div class="pipe-name">Execution</div><div class="pipe-desc">Action fires. Output becomes telemetry for the next cycle. Audit trail generated as byproduct, not afterthought.</div></div>
     </div>
   </div>
@@ -598,7 +598,7 @@ nav { position:fixed; top:0; left:0; right:0; z-index:100; padding:0 48px; heigh
         <div class="principle-num">IV</div>
         <div class="principle-body">
           <div class="principle-title"><dfn>Human-AI Symbiosis</dfn></div>
-          <div class="principle-desc">AI generates possibilities. Humans apply judgment. The system requires human-in-the-loop for all transitions that cross zone boundaries. Sovereignty is structural: the system earns autonomy through demonstrated reliability and can never unilaterally grant itself new authority.</div>
+          <div class="principle-desc">AI generates possibilities. Humans apply judgment. The system requires human-in-the-loop for all transitions that cross zone boundaries. Sovereignty is structural: the system earns autonomy through demonstrated reliability and can never unilaterally grant itself new authority. That reliability is demonstrated when the operator repeatedly approves and promotes patterns through the governed checkpoints. The agent observes these sanctioned, provenance-recorded outcomes &mdash; the essential input to the Skill Flywheel and the means by which the system ratchets capability toward cheaper, more local tiers.</div>
           <div class="principle-test">The test: does the system ever act beyond explicitly granted authority, regardless of model capability?</div>
         </div>
       </div>
@@ -638,7 +638,7 @@ nav { position:fixed; top:0; left:0; right:0; z-index:100; padding:0 48px; heigh
       <div class="zone-card" style="border-top:3px solid var(--red);">
         <div class="zone-label" style="color:var(--red);"><dfn>Red Zone</dfn></div>
         <div class="zone-name">Human-Only</div>
-        <div class="zone-desc">The system does not act. It may provide context, but the decision and execution belong entirely to the human. High-stakes, irreversible, or ethically sensitive operations. The system cannot promote itself out of the Red Zone.</div>
+        <div class="zone-desc">The system does not act. It may provide context, but the decision and execution belong entirely to the human. High-stakes, irreversible, or ethically sensitive operations. The system cannot promote itself out of the Red Zone. The operator, however, can promote workflows and patterns into the system&rsquo;s autonomous repertoire through the governed approval path. When such a promotion is approved and recorded, the agent observes the sanctioned outcome &mdash; this operator-initiated promotion of normalized patterns is how the Autonomaton learns and how the Skill Flywheel turns.</div>
       </div>
     </div>
     <p class="body-text">Zone boundaries are declarative&mdash;defined in configuration, not hardcoded. A healthcare deployment and a content scheduling deployment use the same Zone Model with different boundaries. The architecture is identical. The governance is domain-specific.</p>
@@ -799,7 +799,7 @@ nav { position:fixed; top:0; left:0; right:0; z-index:100; padding:0 48px; heigh
       <a href="/docs/the-autonomaton-pattern-grv-001.pdf">PDF</a>
       <a href="/standards/GRV-001.json">JSON Manifest</a>
       <a href="/standards/002">GRV-002: TCP/IP Paper</a>
-      <span class="download-meta">GRV-001 &middot; v1.2 &middot; April 21, 2026 &middot; CC BY 4.0</span>
+      <span class="download-meta">GRV-001 &middot; v1.3 &middot; June 18, 2026 &middot; CC BY 4.0</span>
     </div>
     <p class="body-text" style="font-size:13px; margin-top:32px;">This document is published under <a href="https://creativecommons.org/licenses/by/4.0/" style="color:var(--amber); text-decoration:none; border-bottom:1px solid var(--amber-dim);" target="_blank" rel="external noopener noreferrer">Creative Commons Attribution 4.0 International (CC BY 4.0)</a>. You are free to share, adapt, and build upon this work for any purpose, provided you give appropriate credit.</p>
     <p class="body-text" style="font-size:13px;">Jim Calhoun &middot; The Grove Foundation &middot; Indianapolis &middot; <a href="mailto:jim@the-grove.ai" style="color:var(--amber); text-decoration:none; border-bottom:1px solid var(--amber-dim);">jim@the-grove.ai</a></p>
