@@ -194,6 +194,51 @@ The hero-level framing of what an Autonomaton is: *a system that converts metere
 
 *Self-authoring engine* names the property that distinguishes an Autonomaton from an agent framework. An agent framework orchestrates model calls against a static configuration; a self-authoring engine compiles itself outward from observed human judgment, rewriting its own routing and skill tables as memorialized patterns accumulate. The operator's approvals are the authoring signal; the config is the written code.
 
+### Scope-defining surface
+
+**Valence:** Grove canon
+**Primary document:** [GRV-001](https://the-grove.ai/standards/001) §V, §VII
+**Fragment URL:** `https://the-grove.ai/vocabulary#scope-defining-surface`
+**Coined:** 2026-06-21
+
+The set of files and entries whose modification changes what the agent is authorized to do — the zones schema, the routing authority fields (escalation threshold, approval requirements), permission grants, skill activations, and grant tokens themselves. Writable only on the [operator-authenticated action surface](#the-two-surfaces), under a verified grant. On the autonomous loop a write to this surface is impossible—capability-absent, not merely refused. Introduced in GRV-001 2.0 to replace the v1 category-keyed authority model (the `zone_overrides` drift).
+
+### In-scope surface
+
+**Valence:** Grove canon
+**Primary document:** [GRV-001](https://the-grove.ai/standards/001) §V, §VII
+**Fragment URL:** `https://the-grove.ai/vocabulary#in-scope-surface`
+**Coined:** 2026-06-21
+
+The set of write targets within a granted workspace that do not change the agent's authority — telemetry, knowledge artifacts, pending skills, operational routing fields, pattern refinements. Writable on the autonomous loop with no per-write prompt; the operator's research-notes case lands here. Paired with [scope-defining surface](#scope-defining-surface); the partition of the two is what resolves the v1 "agent cannot write" over-generalization.
+
+### The two surfaces (autonomous loop / operator-authenticated action surface)
+
+**Valence:** Grove canon
+**Primary document:** [GRV-001](https://the-grove.ai/standards/001) §IV, §V
+**Fragment URL:** `https://the-grove.ai/vocabulary#the-two-surfaces`
+**Coined:** 2026-06-21
+
+The partition that reconciles "cannot" with "can." The **autonomous loop** (Surface A) is the agent acting on its own initiative; on it, a scope-defining write is impossible — capability-absent at the OS level. The **operator-authenticated action surface** (Surface B) is the execution context that exists only when a verified grant token is present; on it the agent executes the granted scope change as the operator's hands. The discriminator is the grant token, which the agent can request but can never issue or forge. This is how GRV-001 2.0 preserves "cannot, not won't" while enabling progressive personalization.
+
+### Confirmation gate (grant token)
+
+**Valence:** Grove canon
+**Primary document:** [GRV-001](https://the-grove.ai/standards/001) §V, §VII
+**Fragment URL:** `https://the-grove.ai/vocabulary#confirmation-gate`
+**Coined:** 2026-06-21
+
+The operator-issued authorization that opens one scope change for the agent to execute. A grant is authenticated (via a channel the autonomous loop cannot forge), sticky (durable across sessions and reboots until expiry or revocation), specific (a single surface-region + write-class pair), and [provenance](#provenance-stamp)-stamped. The agent can request a grant but cannot issue one to itself. The mechanism by which the operator exercises sovereignty through the agent without the agent ever self-granting authority. Paired with [scope-defining surface](#scope-defining-surface) and the canonical Side-B language of [the Ratchet](#the-ratchet) ("Stage-4-approved config mutations").
+
+### Provenance stamp
+
+**Valence:** Grove canon
+**Primary document:** [GRV-001](https://the-grove.ai/standards/001) §VII
+**Fragment URL:** `https://the-grove.ai/vocabulary#provenance-stamp`
+**Coined:** 2026-06-21
+
+The metadata attached to every agent-performed write: actor, surface, surface class, grant, and pipeline stage. [Provenance as Infrastructure](#provenance-as-infrastructure) applied to the act of writing. The stamp carries the zone guarantee in its own structure — a scope-defining write performed on the autonomous loop is unrepresentable, rejected before it can be recorded. "The agent cannot expand its own authority" is therefore not a rule the system promises to follow; it is a sentence the system cannot form. Cannot, not won't.
+
 ---
 
 ## II. Architectural canon
@@ -238,7 +283,7 @@ The pipeline is the hourglass waist of the cognitive architecture (see GRV-002 �
 
 The human approval gate in the five-stage pipeline. The single capture mechanism through which all memorialized judgment flows. Non-negotiable.
 
-Every cognitive action the Autonomaton executes passes through Stage 4; the zone model (§V of GRV-001) determines what happens there. Green zone actions proceed without human intervention (because prior Stage-4 approvals have already memorialized the pattern). Yellow zone actions require fresh approval. Red zone actions are refused by the architecture.
+Every cognitive action the Autonomaton executes passes through Stage 4; the zone model (§V of GRV-001) determines what happens there. Green zone actions proceed without human intervention (because prior Stage-4 approvals have already memorialized the pattern). Yellow zone actions require fresh approval. Red zone actions are not available to the autonomous loop — a self-scope-expanding write is impossible, not merely refused — and a scope change occurs only when the operator issues an authenticated grant the agent executes.
 
 ### Zone model (Green / Yellow / Red)
 
@@ -246,7 +291,7 @@ Every cognitive action the Autonomaton executes passes through Stage 4; the zone
 **Primary document:** [GRV-001](https://the-grove.ai/standards/001) §V
 **Fragment URL:** `https://the-grove.ai/vocabulary#zone-model`
 
-The governance taxonomy classifying every operation traversing the pipeline. **Green zone:** the system acts autonomously on confirmed skills. **Yellow zone:** the system proposes, the human approves. **Red zone:** the system does not act; the code lacks the permissions at the operating-system level. Not *will not* but *cannot*.
+The governance taxonomy classifying every operation traversing the pipeline. **Green zone:** the system acts autonomously on confirmed skills. **Yellow zone:** the system proposes, the human approves. **Red zone:** the system does not act on its own authority; on the autonomous loop the code lacks the permissions at the operating-system level — a self-scope-expanding write is impossible: *not will not but cannot*. The operator may open one specific scope change through an authenticated, provenance-stamped grant (see [confirmation gate](#confirmation-gate)), which the agent then executes as the operator's hands. The "cannot" is preserved exactly — it is scoped to the autonomous loop, where it was always structurally true.
 
 Zone boundaries are declarative, defined in configuration, not hardcoded. Identical pipeline architecture serves healthcare deployments and content-scheduling deployments by zone-config variance alone. The zone model is the end-to-end argument (GRV-002 §III) applied to cognitive governance: sovereignty lives at the operator endpoint, not inside the cognitive layer.
 
@@ -392,7 +437,7 @@ The Grove epigram *"a fact without a root is a weed"* is the canonical short-for
 **Primary document:** [GRV-001](https://the-grove.ai/standards/001) §IV principle IV
 **Fragment URL:** `https://the-grove.ai/vocabulary#human-ai-symbiosis`
 
-The fourth Autonomaton invariant. AI generates possibilities; humans apply judgment. The system requires human-in-the-loop for all transitions that cross zone boundaries. Sovereignty is structural: the system earns autonomy through demonstrated reliability and can never unilaterally grant itself new authority.
+The fourth Autonomaton invariant. AI generates possibilities; humans apply judgment. The system requires human-in-the-loop for all transitions that cross zone boundaries. Sovereignty is structural: the system earns autonomy through demonstrated reliability and can never unilaterally grant itself new authority. On the autonomous loop a self-scope-expanding write is impossible (capability-absent); an authenticated operator grant lets the agent execute one specific scope change inline, provenance-stamped (GRV-001 2.0).
 
 *Test: does the system ever act beyond explicitly granted authority, regardless of model capability?*
 

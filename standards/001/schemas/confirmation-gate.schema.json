@@ -1,0 +1,97 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://the-grove.ai/standards/001/schemas/confirmation-gate.schema.json",
+  "title": "GRV-001 Confirmation Gate — Grant Token",
+  "description": "An operator-issued grant token: the artifact that opens the operator-authenticated action surface (Surface B) for a specific scope-defining write. The autonomous loop can REQUEST a grant (request_ref) but cannot ISSUE one — issuance requires the operator's signing authority, held outside the loop. A grant is one-time (one authentication event), sticky (durable across sessions/reboots until expiry or revocation), and specific (a single surface_region + write_class pair).",
+  "$comment": "The Grove Foundation · GRV-001 2.0 · governance-write-protection-v1 · CC BY 4.0. Illustrative reference schema, not exhaustive (GRV-001 §VII). The signature is the unforgeable discriminator between Surface A and Surface B.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "grant_id", "scope_target", "granted_zone", "authorized_by", "issued_at", "authentication", "sticky", "revocation", "provenance"],
+  "properties": {
+    "schema_version": { "type": "string", "const": "2.0" },
+    "grant_id": { "type": "string", "description": "Stable identifier referenced by every write-under-grant and by skill_activation records." },
+    "scope_target": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "The specific (surface_region, write_class) pair this grant authorizes. NOT a blanket 'agent may write config'; NOT a single write-instance.",
+      "required": ["surface_region", "write_class"],
+      "properties": {
+        "surface_region": {
+          "type": "string",
+          "description": "A scope-defining region from zones-v2.surfaces.scope_defining (path or pattern), e.g. 'skills/research/*'."
+        },
+        "write_class": {
+          "type": "string",
+          "enum": ["zones_schema", "routing_authority", "permission_grant", "skill_activation", "grant_token"],
+          "description": "The class of scope-defining write authorized within the region."
+        }
+      }
+    },
+    "granted_zone": {
+      "type": "string",
+      "enum": ["green", "yellow"],
+      "description": "The zone this grant elevates the targeted scope-defining write to. Red is the default-denied state and is never a grant target."
+    },
+    "authorized_by": {
+      "type": "string",
+      "description": "Operator identity that issued the grant. The 'who' in the provenance chain."
+    },
+    "issued_at": { "type": "string", "format": "date-time" },
+    "authentication": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "Proof the grant is genuinely from the operator, via a channel the autonomous loop does not control. The agent can VERIFY this but can never PRODUCE it. Injected/poisoned content claiming operator consent carries no valid signature and is rejected.",
+      "required": ["method", "issuer_key_id", "signature"],
+      "properties": {
+        "method": {
+          "type": "string",
+          "enum": ["signing_key", "hardware_token", "out_of_band_control_surface"],
+          "$comment": "Conformance: absent an unforgeable method, inline scope writes are not permitted — fall back to strict human-performs-the-write (v1.0). This fallback is stated in spec prose at GRV-001 Principle IV (Human-AI Symbiosis), §IV."
+        },
+        "issuer_key_id": { "type": "string" },
+        "signature": { "type": "string", "description": "Issuer signature over (grant_id, scope_target, granted_zone, issued_at, expiry). Unforgeable by the autonomous loop." }
+      }
+    },
+    "sticky": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "Durability. A grant is standing state, not session state — this is what turns per-action friction into progressive personalization.",
+      "required": ["across_sessions", "across_reboots", "persists_until"],
+      "properties": {
+        "across_sessions": { "type": "boolean", "const": true },
+        "across_reboots": { "type": "boolean", "const": true },
+        "persists_until": {
+          "type": "string",
+          "enum": ["revocation", "expiry"],
+          "description": "A sticky grant is never re-prompted per write; it stands until revoked or expired."
+        }
+      }
+    },
+    "expiry": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Optional. Recommended for high-sensitivity (surface_region, write_class) pairs."
+    },
+    "revocation": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "A standing grant is standing authority — it MUST be revocable and auditable.",
+      "required": ["revocable", "status"],
+      "properties": {
+        "revocable": { "type": "boolean", "const": true },
+        "status": { "type": "string", "enum": ["active", "revoked"] },
+        "handle": { "type": "string", "description": "Operator-facing revocation handle." }
+      }
+    },
+    "request_ref": {
+      "type": "string",
+      "description": "Optional link to the agent-originated grant_request that prompted issuance. The agent may produce the request; only the operator produces the signed grant.",
+      "$comment": "Encodes 'agent can ask, only operator can grant'."
+    },
+    "provenance": {
+      "type": "object",
+      "description": "Provenance stamp for the issuance event itself. Invariant III.",
+      "$ref": "https://the-grove.ai/standards/001/schemas/provenance-stamp.schema.json"
+    }
+  }
+}

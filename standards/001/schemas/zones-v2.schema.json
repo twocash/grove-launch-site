@@ -1,0 +1,184 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://the-grove.ai/standards/001/schemas/zones-v2.schema.json",
+  "title": "GRV-001 Zones Schema (v2 — scope-keyed)",
+  "description": "Operator-authored zone classification for an Autonomaton. v2 keys zones on operator SCOPE — whether a write changes what the agent is authorized to do — not on action CATEGORY. Supersedes the v1 category-keyed model (zone_overrides on intent globs such as 'finance.*'). Encodes the two-surface partition (autonomous loop vs operator-authenticated action surface) and makes the skill-promotion boundary a first-class structure.",
+  "$comment": "The Grove Foundation · GRV-001 2.0 · governance-write-protection-v1 · CC BY 4.0. Illustrative reference schema, not exhaustive (GRV-001 §VII).",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "keying", "surfaces", "zone_assignment", "skill_promotion", "provenance_required"],
+  "properties": {
+    "schema_version": { "type": "string", "const": "2.0" },
+    "keying": {
+      "type": "string",
+      "const": "operator-scope",
+      "$comment": "The v1 authority axis was action-category (zone_overrides keyed on intent globs). v2 forbids category keying as the authority axis."
+    },
+    "surfaces": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "The two-surface partition. A write's surface is determined by what it CHANGES, never by its action category.",
+      "required": ["scope_defining", "in_scope"],
+      "properties": {
+        "scope_defining": {
+          "type": "object",
+          "additionalProperties": false,
+          "description": "Writes that change what the agent is authorized to do. Writable ONLY on the operator-authenticated action surface (Surface B), under a verified grant token. On the autonomous loop the agent is capability-absent here — 'cannot, not won't'.",
+          "required": ["writable_on", "default_zone", "members", "declared_read_paths"],
+          "properties": {
+            "writable_on": { "type": "string", "const": "operator_authenticated" },
+            "default_zone": {
+              "type": "string",
+              "const": "red",
+              "$comment": "Red by default. A verified grant (confirmation-gate.schema.json) elevates a specific (surface_region, write_class) to green or yellow."
+            },
+            "members": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": ["kind", "path"],
+                "properties": {
+                  "kind": {
+                    "type": "string",
+                    "enum": ["zones_schema", "routing_authority", "permission_grant", "skill_activation", "grant_token"]
+                  },
+                  "path": { "type": "string", "description": "File or pattern whose modification changes authority." }
+                }
+              },
+              "examples": [
+                [
+                  { "kind": "zones_schema", "path": "zones.schema" },
+                  { "kind": "routing_authority", "path": "routing.authority" },
+                  { "kind": "skill_activation", "path": "skills/*/activation.json" }
+                ]
+              ]
+            },
+            "declared_read_paths": {
+              "type": "array",
+              "items": { "type": "string" },
+              "description": "Every read path the scope-defining loaders consume. REQUIRED so the confused-deputy closure (Stage 04) is computable. An undeclared or dynamic read path voids the in-scope guarantee for anything it could reach — fail closed.",
+              "$comment": "Declarative Sovereignty: the config declares what it reads."
+            }
+          }
+        },
+        "in_scope": {
+          "type": "object",
+          "additionalProperties": false,
+          "description": "Authority-neutral writes within a granted workspace. Writable on the autonomous loop (Surface A) with no per-write prompt.",
+          "required": ["writable_on", "default_zone", "members", "granted_workspaces"],
+          "properties": {
+            "writable_on": { "type": "string", "const": "autonomous_loop" },
+            "default_zone": {
+              "type": "string",
+              "const": "green",
+              "$comment": "Green within a granted workspace, provided the confused-deputy test passes."
+            },
+            "members": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": ["kind"],
+                "properties": {
+                  "kind": {
+                    "type": "string",
+                    "enum": ["telemetry", "intent_classification", "pending_skill", "knowledge_artifact", "operational_routing", "pattern_refinement"]
+                  },
+                  "path": { "type": "string" }
+                }
+              }
+            },
+            "granted_workspaces": {
+              "type": "array",
+              "items": { "type": "string" },
+              "description": "Paths the operator has granted as in-scope write targets. A write outside these is not in-scope (the research-notes case lands here)."
+            }
+          }
+        }
+      }
+    },
+    "zone_assignment": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "Zones are DERIVED, not declared per category. The implementation MUST compute zone from surface + grant state, never from action category.",
+      "required": ["rule", "confused_deputy_test"],
+      "properties": {
+        "rule": {
+          "type": "string",
+          "const": "green when in_scope AND the confused-deputy test passes; else when scope_defining AND a verified grant covers (surface_region, write_class), the granted zone; else red",
+          "$comment": "Human-readable derivation. zone = f(surface_class, grant_state, confused_deputy_test)."
+        },
+        "confused_deputy_test": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["runs_at", "checks", "on_undeclared_read_path"],
+          "properties": {
+            "runs_at": { "type": "string", "const": "stage_04_approval" },
+            "checks": {
+              "type": "string",
+              "const": "write target is disjoint from the transitive read-closure of surfaces.scope_defining.declared_read_paths"
+            },
+            "on_undeclared_read_path": {
+              "type": "string",
+              "const": "fail_closed",
+              "$comment": "Treat the write as scope_defining; never default to autonomy."
+            }
+          }
+        }
+      }
+    },
+    "skill_promotion": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "FIRST-CLASS skill lifecycle boundary — deliberately top-level so implementers cannot miss it. Writing a proposed/pending skill is IN-SCOPE (Surface A). ACTIVATING a skill — making it autonomous — is a SCOPE-DEFINING write (Surface B, gated). A pending skill's `zone` field is a PROPOSAL, never an authorization.",
+      "required": ["pending_write", "activation"],
+      "properties": {
+        "pending_write": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["surface_class", "writable_on", "lifecycle_states", "zone_field_meaning", "inert"],
+          "properties": {
+            "surface_class": { "type": "string", "const": "in_scope" },
+            "writable_on": { "type": "string", "const": "autonomous_loop" },
+            "lifecycle_states": {
+              "type": "array",
+              "minItems": 1,
+              "items": { "type": "string", "enum": ["proposed", "pending"] }
+            },
+            "zone_field_meaning": {
+              "type": "string",
+              "const": "proposal",
+              "$comment": "A pending skill declaring zone:green is PROPOSING green; it carries no authority until activation."
+            },
+            "inert": {
+              "type": "boolean",
+              "const": true,
+              "description": "A pending skill never executes autonomously until a gated activation record references it. Presence is not activation."
+            }
+          }
+        },
+        "activation": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["surface_class", "writable_on", "requires", "produces", "lifecycle_state"],
+          "properties": {
+            "surface_class": { "type": "string", "const": "scope_defining" },
+            "writable_on": { "type": "string", "const": "operator_authenticated" },
+            "requires": { "type": "string", "const": "verified_grant_token" },
+            "produces": { "type": "string", "const": "skill_activation_record" },
+            "lifecycle_state": { "type": "string", "const": "active" }
+          }
+        }
+      }
+    },
+    "provenance_required": {
+      "type": "boolean",
+      "const": true,
+      "description": "Every agent-performed write MUST carry a provenance stamp. Invariant III.",
+      "$comment": "References https://the-grove.ai/standards/001/schemas/provenance-stamp.schema.json"
+    }
+  }
+}

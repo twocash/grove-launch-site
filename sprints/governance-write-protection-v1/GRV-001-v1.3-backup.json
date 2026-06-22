@@ -1,12 +1,12 @@
 {
   "pattern": "The Autonomaton Pattern",
   "identifier": "GRV-001",
-  "version": "2.0",
+  "version": "1.3",
   "license": "CC BY 4.0",
   "publisher": "The Grove Foundation",
   "canonical_url": "https://the-grove.ai/standards/001",
   "date_published": "2026-03-01",
-  "date_modified": "2026-06-22",
+  "date_modified": "2026-06-18",
   "tagline": "Toward Self-Authoring Software Systems",
   "summary": "Three files and a loop. A routing config, a zones schema, a structured telemetry log, and a pipeline that traverses them in order. That is the entire architecture. Everything else is implication.",
 
@@ -36,7 +36,7 @@
       "id": "human-ai-symbiosis",
       "number": "IV",
       "title": "Human-AI Symbiosis",
-      "description": "AI generates possibilities. Humans apply judgment. The system requires human-in-the-loop for every transition that crosses a zone boundary. Sovereignty is structural: the system earns autonomy through demonstrated reliability and can never unilaterally grant itself new authority — on the autonomous loop, a write that would expand the agent's own scope is impossible, the loop being capability-absent at the operating-system level, not merely refused. What the agent cannot do for itself, the operator can do for it: an authenticated, contemporaneous grant lets the agent execute one specific scope change inline, as the operator's hands, every such write provenance-stamped to the grant that authorized it. Where no operator channel can be made unforgeable, the system authorizes no inline scope change at all and falls back to operator-performed writes — the relaxation is only ever as strong as the authentication of consent. That authorized, recorded mutation is how reliability compounds into autonomy — the essential input to the Skill Flywheel and the means by which the system ratchets capability toward cheaper, more local tiers.",
+      "description": "AI generates possibilities. Humans apply judgment. The system requires human-in-the-loop for all transitions that cross zone boundaries. Sovereignty is structural: the system earns autonomy through demonstrated reliability and can never unilaterally grant itself new authority. That reliability is demonstrated when the operator repeatedly approves and promotes patterns through the governed checkpoints. The agent observes these sanctioned, provenance-recorded outcomes — the essential input to the Skill Flywheel and the means by which the system ratchets capability toward cheaper, more local tiers.",
       "test": "Does the system ever act beyond explicitly granted authority, regardless of model capability?"
     },
     {
@@ -72,7 +72,7 @@
       "stage": 4,
       "id": "approval",
       "name": "Approval",
-      "description": "Zone-governed checkpoint where each write is classed by what it changes, not by its category. Green = in-scope, autonomous. Yellow = supervised. Red = scope-defining, human-only. The system never acts beyond its granted authority: a write that would expand the agent's own scope is impossible on the autonomous loop, where the agent is capability-absent. When the operator issues an authenticated grant here, the agent executes that one scope change inline and stamps it with provenance — the authorized mutation that feeds the Skill Flywheel and lets the system improve with use.",
+      "description": "Zone-governed human checkpoint. Green = autonomous. Yellow = supervised. Red = human-only. The system never acts beyond its granted authority. When the operator approves a workflow or pattern at this checkpoint, the sanctioned outcome is recorded with a complete audit trail. The agent observes these normalized, repeatedly-approved intents — the primary input to the Skill Flywheel and the mechanism by which the system improves with use.",
       "gate": true
     },
     {
@@ -100,7 +100,7 @@
       "id": "red",
       "name": "Red Zone",
       "semantics": "human-only",
-      "description": "The system does not act on its own authority. It may provide context, but the decision belongs entirely to the human. Two things live here: high-stakes, irreversible, or ethically sensitive operations; and every write to the scope-defining surface — the zones schema, the routing authority fields, permission grants, skill activations — because changing those would change what the system is allowed to do. The system cannot promote itself out of the Red Zone: on the autonomous loop, a self-scope-expanding write is impossible—capability-absent at the operating-system level, not merely blocked. The operator, however, can. An authenticated, contemporaneous grant opens one scope change for the agent to execute inline — as the operator's hands, provenance-stamped to the grant. That operator-authorized mutation, not any act of the system's own, is how the Autonomaton's repertoire grows and how the Skill Flywheel turns."
+      "description": "The system does not act. It may provide context, but the decision and execution belong entirely to the human. High-stakes, irreversible, or ethically sensitive operations. The system cannot promote itself out of the Red Zone. The operator, however, can promote workflows and patterns into the system's autonomous repertoire through the governed approval path. When such a promotion is approved and recorded, the agent observes the sanctioned outcome — this operator-initiated promotion of normalized patterns is how the Autonomaton learns and how the Skill Flywheel turns."
     }
   ],
 
@@ -162,7 +162,6 @@
   ],
 
   "version_history": [
-    {"version": "2.0", "date": "2026-06-22", "changes": "Re-keys the zone model from action category to operator scope, resolving the v1 category-keyed zone_overrides drift. Partitions writes into a scope-defining surface (Red by default; on the autonomous loop a self-scope-expanding write is impossible, not merely refused) and an in-scope surface (Green within a granted workspace). Adds the operator-authenticated confirmation gate — an authenticated, sticky, provenance-stamped grant that lets the agent execute one specific scope change inline. Makes skill promotion explicit: pending skills are in-scope; activation is scope-defining and gated. Adds Confused-Deputy Protection and Provenance Stamping. Compatibility break: the v1 single routing.config is split into routing.operational (in-scope) and routing.authority (scope-defining), and the category-keyed zone_overrides is removed — a v1 config does not validate under 2.0 and must be migrated."},
     {"version": "1.3", "date": "2026-06-18", "changes": "Prose clarification: surfaces the operator-promotion learning loop in Stage 04 (Approval), the Red Zone, and Principle IV (Human-AI Symbiosis) — the operator promotes patterns through the governed checkpoints, the system observes the sanctioned outcome, the Skill Flywheel turns. No change to zone classification, invariants, reference schemas, or any guard."},
     {"version": "1.2", "date": "2026-04-21", "changes": "Adds canonical Grove Terms of Art (Cognitive platforming, Judgment extraction, Lien on thinking, Cultivation architecture) to Section VIII as the base-pattern citation home for downstream standards. Recalibrates closing positioning to the capital-asymmetry investment thesis and swaps the CIO Stake card firewall framing for substrate-ownership language. Refreshes Lineage section to tense-neutral architectural history; adds Atkinson to design-authorship credit on HyperCard / self-authoring-software grounds."},
     {"version": "1.1", "date": "2026-04-20", "changes": "Adds Composability as fifth Autonomaton invariant. No other body-prose changes; full AI-First Publication Standard conformance landed in same release."},
@@ -170,23 +169,6 @@
   ],
 
   "schema_context": "This manifest is the standard's machine-readable form, published alongside the HTML narrative at the same canonical URL root. It is the form in which the standard would be ingested by an Autonomaton implementation that needed to verify conformance. The HTML at /standards/001 is the reader-facing view; this JSON is the implementer-facing view. They are the same standard.",
-
-  "governance": {
-    "keying": "operator-scope",
-    "surfaces": {
-      "scope_defining": { "writable_on": "operator_authenticated", "default_zone": "red" },
-      "in_scope": { "writable_on": "autonomous_loop", "default_zone": "green" }
-    },
-    "confirmation_gate": { "authenticated": true, "sticky": true, "specific_to": "surface_region + write_class", "provenance_stamped": true },
-    "provenance_stamp_required": true,
-    "schemas": {
-      "zones": "/standards/001/schemas/zones-v2.schema.json",
-      "routing_operational": "/standards/001/schemas/routing-operational-v2.schema.json",
-      "routing_authority": "/standards/001/schemas/routing-authority-v2.schema.json",
-      "confirmation_gate": "/standards/001/schemas/confirmation-gate.schema.json",
-      "provenance_stamp": "/standards/001/schemas/provenance-stamp.schema.json"
-    }
-  },
 
   "related_standards": {
     "grv_002": "https://the-grove.ai/standards/002",

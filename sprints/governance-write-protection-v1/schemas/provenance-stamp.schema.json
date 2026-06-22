@@ -1,0 +1,73 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://the-grove.ai/standards/001/schemas/provenance-stamp.schema.json",
+  "title": "GRV-001 Provenance Stamp",
+  "description": "The provenance metadata attached to EVERY agent-performed write (Invariant III). It also encodes the razor line in the data model: a scope-defining write can only be stamped on the operator-authenticated surface and MUST carry a grant. A scope-defining write stamped as autonomous_loop is structurally unrepresentable — the schema rejects it.",
+  "$comment": "The Grove Foundation · GRV-001 2.0 · governance-write-protection-v1 · CC BY 4.0. Illustrative reference schema, not exhaustive (GRV-001 §VII).",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "actor", "surface", "surface_class", "write_target", "write_class", "pipeline_stage", "timestamp"],
+  "properties": {
+    "schema_version": { "type": "string", "const": "2.0" },
+    "actor": {
+      "type": "string",
+      "enum": ["agent", "operator", "flywheel"],
+      "description": "What performed the write."
+    },
+    "surface": {
+      "type": "string",
+      "enum": ["autonomous_loop", "operator_authenticated"],
+      "description": "Which execution surface performed the write. Surface A vs Surface B."
+    },
+    "surface_class": {
+      "type": "string",
+      "enum": ["scope_defining", "in_scope"],
+      "description": "What the write changes. The partition from zones-v2."
+    },
+    "write_target": { "type": "string", "description": "Path written." },
+    "write_class": { "type": "string", "description": "Class of write (see zones-v2 member kinds)." },
+    "pipeline_stage": {
+      "type": "string",
+      "enum": ["telemetry", "recognition", "compilation", "approval", "execution"],
+      "description": "Stage that produced the write."
+    },
+    "timestamp": { "type": "string", "format": "date-time" },
+    "grant_id": {
+      "type": "string",
+      "description": "Required for scope-defining writes — links to the confirmation-gate grant that authorized this write."
+    },
+    "authorized_by": {
+      "type": "string",
+      "description": "Required for scope-defining writes — the operator who issued the grant."
+    },
+    "source_chain": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Optional provenance arc: ids of the telemetry entry / classification / approval that led to this write."
+    }
+  },
+  "allOf": [
+    {
+      "$comment": "RAZOR (1): a scope-defining write can only occur on the operator-authenticated surface, and MUST carry a grant. This makes a scope-defining write on the autonomous loop unrepresentable.",
+      "if": {
+        "properties": { "surface_class": { "const": "scope_defining" } },
+        "required": ["surface_class"]
+      },
+      "then": {
+        "properties": { "surface": { "const": "operator_authenticated" } },
+        "required": ["surface", "grant_id", "authorized_by"]
+      }
+    },
+    {
+      "$comment": "RAZOR (2): the autonomous loop can only produce in-scope writes. Surface A never carries a scope-defining write_class.",
+      "if": {
+        "properties": { "surface": { "const": "autonomous_loop" } },
+        "required": ["surface"]
+      },
+      "then": {
+        "properties": { "surface_class": { "const": "in_scope" } },
+        "required": ["surface_class"]
+      }
+    }
+  ]
+}

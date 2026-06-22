@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://the-grove.ai/standards/001/schemas/routing-operational-v2.schema.json",
+  "title": "GRV-001 Routing Configuration — Operational (v2, in-scope)",
+  "description": "The operational half of the v1 routing.config, split out so the confused-deputy disjointness test works at the file level (Gemini review F2). Contains only authority-neutral engine settings — default tier, tier preferences, model/provider selection, latency, and retry logic. This file is on the IN-SCOPE surface: writable on the autonomous loop (Green). It declares NO zone assignments, NO escalation thresholds, and NO approval requirements; those live in routing-authority-v2.",
+  "$comment": "The Grove Foundation · GRV-001 2.0 · governance-write-protection-v1 · CC BY 4.0. The v1 single routing.config (which mixed operational and authority-gating fields) is replaced by routing.operational (this file) + routing.authority. Splitting by file makes path-level disjointness sufficient: an operational write can never touch an authority field because they are literally different files.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "surface_class", "default_tier", "tier_preferences"],
+  "properties": {
+    "schema_version": { "type": "string", "const": "2.0" },
+    "surface_class": {
+      "type": "string",
+      "const": "in_scope",
+      "$comment": "Writable on the autonomous loop. This file holds no authority-gating fields."
+    },
+    "default_tier": {
+      "type": "string",
+      "enum": ["T0", "T1", "T2", "T3"],
+      "description": "The tier the Cognitive Router falls back to absent a cheaper confirmed match. Operational — engine selection, not authority."
+    },
+    "tier_preferences": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "Engine/latency/retry settings per tier. Entirely operational.",
+      "properties": {
+        "T0": { "$ref": "#/$defs/tierPref" },
+        "T1": { "$ref": "#/$defs/tierPref" },
+        "T2": { "$ref": "#/$defs/tierPref" },
+        "T3": { "$ref": "#/$defs/tierPref" }
+      }
+    }
+  },
+  "$defs": {
+    "tierPref": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "model": { "type": "string", "description": "Engine selection." },
+        "provider": { "type": "string" },
+        "max_latency_ms": { "type": "integer", "minimum": 0 },
+        "retry": {
+          "type": "object",
+          "additionalProperties": false,
+          "description": "Retry logic — operational, authority-neutral.",
+          "properties": {
+            "max_attempts": { "type": "integer", "minimum": 0 },
+            "backoff_ms": { "type": "integer", "minimum": 0 }
+          }
+        }
+      }
+    }
+  }
+}

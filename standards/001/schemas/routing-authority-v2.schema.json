@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://the-grove.ai/standards/001/schemas/routing-authority-v2.schema.json",
+  "title": "GRV-001 Routing Configuration — Authority (v2, scope-defining)",
+  "description": "The authority-gating half of the v1 routing.config, split out so the confused-deputy disjointness test works at the file level (Gemini review F2). Contains every field whose modification changes what the agent is authorized to do — escalation thresholds, per-tier approval requirements, and zone-assignment keying. This file is on the SCOPE-DEFINING surface: Red by default, writable only on the operator-authenticated action surface under a verified grant. Replaces the v1 category-keyed zone_overrides.",
+  "$comment": "The Grove Foundation · GRV-001 2.0 · governance-write-protection-v1 · CC BY 4.0. Authority and operational routing are now separate files; a write to this file is a scope-defining write and requires a grant (see confirmation-gate.schema.json).",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "surface_class", "writable_on", "default_zone", "escalation_threshold", "approval_requirements", "zone_assignment"],
+  "properties": {
+    "schema_version": { "type": "string", "const": "2.0" },
+    "surface_class": { "type": "string", "const": "scope_defining" },
+    "writable_on": { "type": "string", "const": "operator_authenticated" },
+    "default_zone": {
+      "type": "string",
+      "const": "red",
+      "$comment": "A write to any field here is Red by default; a verified grant elevates a specific (surface_region, write_class) to green or yellow."
+    },
+    "escalation_threshold": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1,
+      "description": "Confidence below which a request escalates toward human approval. Authority-gating: changing it changes when approval is bypassed."
+    },
+    "approval_requirements": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "Per-tier human-in-the-loop requirements. Moved here from v1 tier_preferences.requires_approval because toggling approval is authority-gating, not operational.",
+      "properties": {
+        "T0": { "type": "boolean" },
+        "T1": { "type": "boolean" },
+        "T2": { "type": "boolean" },
+        "T3": { "type": "boolean" }
+      }
+    },
+    "zone_assignment": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["keying", "category_keying", "derived_from"],
+      "properties": {
+        "keying": { "type": "string", "const": "operator-scope" },
+        "category_keying": {
+          "type": "string",
+          "const": "forbidden",
+          "$comment": "The v1 zone_overrides (finance.* -> red, etc.) are removed. Category is no longer the authority axis."
+        },
+        "derived_from": { "type": "string", "const": "zones.schema/surfaces" }
+      }
+    }
+  }
+}

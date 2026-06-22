@@ -10,13 +10,13 @@
 
 <!-- ── Open Graph ── -->
 <meta property="og:title" content="The Autonomaton Pattern">
-<meta property="og:description" content="Toward Self-Authoring Software Systems. Open architectural standard for AI governance. GRV-001 v2.0 re-keys the zone model to operator scope: a write that would expand the agent's own authority is structurally impossible, not merely forbidden — yet the operator can authorize a specific scope change the agent executes inline, with provenance. Sovereignty as a structural guarantee. CC BY 4.0, Grove Foundation.">
+<meta property="og:description" content="Toward Self-Authoring Software Systems. Open architectural standard for AI governance. GRV-001 v1.2 adds canonical Terms of Art (cognitive platforming, judgment extraction, lien on thinking, cultivation architecture). CC BY 4.0, Grove Foundation.">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://the-grove.ai/standards/001">
 <meta property="og:site_name" content="The Grove Foundation">
 <meta property="og:image" content="https://the-grove.ai/standards/001/og.png">
 <meta property="article:published_time" content="2026-03-01">
-<meta property="article:modified_time" content="2026-06-22">
+<meta property="article:modified_time" content="2026-06-18">
 <meta property="article:author" content="Jim Calhoun">
 <meta property="article:section" content="Open Standard">
 <meta property="article:tag" content="AI governance">
@@ -34,7 +34,7 @@
 <meta name="DC.title" content="The Autonomaton Pattern: Toward Self-Authoring Software Systems">
 <meta name="DC.creator" content="Jim Calhoun">
 <meta name="DC.publisher" content="The Grove Foundation">
-<meta name="DC.date" content="2026-06-22">
+<meta name="DC.date" content="2026-06-18">
 <meta name="DC.type" content="Text">
 <meta name="DC.format" content="text/html">
 <meta name="DC.identifier" content="https://the-grove.ai/standards/001">
@@ -65,9 +65,9 @@
   "alternativeHeadline": "Toward Self-Authoring Software Systems",
   "url": "https://the-grove.ai/standards/001",
   "identifier": "GRV-001",
-  "version": "2.0",
+  "version": "1.3",
   "datePublished": "2026-03-01",
-  "dateModified": "2026-06-22",
+  "dateModified": "2026-06-18",
   "inLanguage": "en",
   "articleSection": "Open Standard",
   "author": {
@@ -188,13 +188,10 @@
     {"@type": "WebPageElement", "name": "II. The Lineage", "url": "https://the-grove.ai/standards/001#lineage", "description": "Synthesis of Autonomic Computing (IBM/Kephart-Chess), Computational Reflection (Smith), Digital Jidoka (Toyota/Ohno), and Telemetry-Driven Development. The PC-revolution insight: coherent products express coherent worldviews."},
     {"@type": "WebPageElement", "name": "III. The Pattern", "url": "https://the-grove.ai/standards/001#pattern", "description": "Every Autonomaton instance traverses the same five stages: Telemetry, Recognition, Compilation, Approval, Execution. The pipeline is invariant. The Cognitive Router dispatches to the cheapest tier capable. Tier landscape T0 through T3 orders cost and capability."},
     {"@type": "WebPageElement", "name": "IV. The Principles", "url": "https://the-grove.ai/standards/001#principles", "description": "The five Autonomaton invariants: Declarative Sovereignty, Capability Agnosticism, Provenance as Infrastructure, Human-AI Symbiosis, and Composability. Each carries a conformance test."},
-    {"@type": "WebPageElement", "name": "V. The Zone Model", "url": "https://the-grove.ai/standards/001#zone-model", "description": "Green, Yellow, Red zones enforce authority boundaries at Stage 4 Approval, keyed to operator scope rather than action category. A write that would expand the agent's own scope is impossible on the autonomous loop (capability-absent); only an authenticated operator grant opens it. Zone boundaries are declarative, not hardcoded — same architecture, domain-specific governance."},
+    {"@type": "WebPageElement", "name": "V. The Zone Model", "url": "https://the-grove.ai/standards/001#zone-model", "description": "Green, Yellow, Red zones enforce authority boundaries at Stage 4 Approval. The system never acts beyond its granted authority. Zone boundaries are declarative, not hardcoded — same architecture, domain-specific governance."},
     {"@type": "WebPageElement", "name": "VI. The Flywheel", "url": "https://the-grove.ai/standards/001#flywheel", "description": "The Skill Flywheel (Observe, Detect, Propose, Approve, Execute) is a ratchet that turns interaction data into reusable skills and migrates them toward cheaper execution tiers through confirmed use. The ratchet only turns toward cheaper, faster, more private."},
-    {"@type": "WebPageElement", "name": "VII. Reference Schemas", "url": "https://the-grove.ai/standards/001#reference-schemas", "description": "Illustrative JSON schemas for Telemetry Entry, Intent Classification, Skill Specification, scope-keyed Routing Configuration, the Zones Schema, the Confirmation-Gate grant token, and the Provenance Stamp. Enough structure to build; enough constraint to audit."},
-    {"@type": "WebPageElement", "name": "VIII. The Implications", "url": "https://the-grove.ai/standards/001#implications", "description": "Governance by Architecture, Auditability as Byproduct, Sovereign Computing, and the three-act architecture: Autonomaton (transistor), Trellis (integrated circuit), Knowledge Commons (network). Same architectural DNA at every scale."},
-    {"@type": "WebPageElement", "name": "V. Confused-Deputy Protection", "url": "https://the-grove.ai/standards/001#confused-deputy-protection", "description": "Why an in-scope write cannot become a scope change by the back door: the scope-defining surface declares its read paths; an in-scope write must be provably disjoint from their transitive read-closure; the Stage-04 test fails closed on any undeclared read path. Authority and operational routing live in separate files so the disjointness test works at the file level."},
-    {"@type": "WebPageElement", "name": "V. The Confirmation Gate", "url": "https://the-grove.ai/standards/001#confirmation-gate", "description": "How a scope change is authorized: an operator-issued grant token, naming one surface region and write class, delivered through the operator-authenticated channel and never the agent's write pipeline. The agent can request a grant but cannot issue one to itself. Blanket grants must be logged with an explicit scope flag."},
-    {"@type": "WebPageElement", "name": "VII. Provenance Stamping", "url": "https://the-grove.ai/standards/001#provenance-stamping", "description": "Every agent write carries a provenance stamp. A scope-defining write performed on the autonomous loop is unrepresentable — rejected before it can be recorded. The guarantee is structural, not a promise: cannot, not won't."}
+    {"@type": "WebPageElement", "name": "VII. Reference Schemas", "url": "https://the-grove.ai/standards/001#reference-schemas", "description": "Illustrative JSON schemas for Telemetry Entry, Intent Classification, Skill Specification, and Routing Configuration. Enough structure to build; enough constraint to audit."},
+    {"@type": "WebPageElement", "name": "VIII. The Implications", "url": "https://the-grove.ai/standards/001#implications", "description": "Governance by Architecture, Auditability as Byproduct, Sovereign Computing, and the three-act architecture: Autonomaton (transistor), Trellis (integrated circuit), Knowledge Commons (network). Same architectural DNA at every scale."}
   ],
   "speakable": {
     "@type": "SpeakableSpecification",
@@ -250,15 +247,7 @@
       "name": "Is this compatible with enterprise compliance?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Auditability is a byproduct of the pipeline. Every action traces back to a telemetry entry, a classification decision, a skill specification, a zone boundary, and an approval record. The Red Zone is enforced structurally — a self-scope-expanding write is impossible on the autonomous loop, not merely blocked. Compliance teams audit the configuration instead of interrogating the system at runtime. Governance becomes inspectable by design."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Can the operator change what the agent is allowed to do?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes — and only the operator can. In 2.0 the zone model keys on operator scope: a write that would expand the agent's own authority is impossible on the autonomous loop, not merely refused. To change what the agent may do, the operator issues an authenticated grant — one the agent can request but can never issue to itself — naming a specific scope region and write class. The agent then executes that one scope change inline, as the operator's hands, provenance-stamped to the grant. Progressive personalization without self-promotion: the operator widens the boundary once, the grant is sticky and auditable, and the agent never crosses it on its own."
+        "text": "Auditability is a byproduct of the pipeline. Every action traces back to a telemetry entry, a classification decision, a skill specification, a zone boundary, and an approval record. The Red Zone is enforced structurally — the system cannot promote itself out of it. Compliance teams audit the configuration instead of interrogating the system at runtime. Governance becomes inspectable by design."
       }
     }
   ]
@@ -420,7 +409,7 @@ nav { position:fixed; top:0; left:0; right:0; z-index:100; padding:0 48px; heigh
     <div class="divider"></div>
     <p class="body-text">The <dfn>Autonomaton</dfn> <span class="pronunciation" title="IPA: /ɔːˈtɒnəmətɒn/">pronounced auto-NAHM-uh-tawn · /ɔːˈtɒnəmətɒn/</span> is a <dfn><strong>self-authoring engine</strong></dfn>: it converts metered cloud dependencies into permanent, <strong>zero-marginal-cost institutional assets</strong> that get smarter, cheaper, and more private with every human interaction.</p>
     <p class="body-text">Three files and a loop. A routing config, a zones schema, a structured telemetry log, and a pipeline that traverses them in order. That is the entire architecture. Everything else is implication.</p>
-    <p class="hero-meta">Jim Calhoun &middot; The Grove Foundation &middot; v2.0 &middot; June 22, 2026</p>
+    <p class="hero-meta">Jim Calhoun &middot; The Grove Foundation &middot; v1.3 &middot; June 18, 2026</p>
   </div>
 </section>
 
@@ -531,7 +520,7 @@ nav { position:fixed; top:0; left:0; right:0; z-index:100; padding:0 48px; heigh
       <div class="pipe-stage"><div class="pipe-num">01</div><div class="pipe-name">Telemetry</div><div class="pipe-desc">Capture interaction data. Structured, inspectable, owned by the operator. Every interaction produces a trace&mdash;this is the system&rsquo;s primary output.</div></div>
       <div class="pipe-stage"><div class="pipe-num">02</div><div class="pipe-name">Recognition</div><div class="pipe-desc">Classify intent, assess confidence, determine risk. The Cognitive Router dispatches to the cheapest tier capable of handling the request.</div></div>
       <div class="pipe-stage"><div class="pipe-num">03</div><div class="pipe-name">Compilation</div><div class="pipe-desc">Assemble context from local knowledge, historical patterns, domain expertise, and operator configuration. Build the response.</div></div>
-      <div class="pipe-stage"><div class="pipe-num">04</div><div class="pipe-name">Approval</div><div class="pipe-desc">Zone-governed checkpoint where each write is classed by what it changes, not by its category. Green = in-scope, autonomous. Yellow = supervised. Red = scope-defining, human-only. The system never acts beyond its granted authority: a write that would expand the agent&rsquo;s own scope is impossible on the autonomous loop, where the agent is capability-absent. When the operator issues an authenticated grant here, the agent executes that one scope change inline and stamps it with provenance &mdash; the authorized mutation that feeds the Skill Flywheel and lets the system improve with use.</div></div>
+      <div class="pipe-stage"><div class="pipe-num">04</div><div class="pipe-name">Approval</div><div class="pipe-desc">Zone-governed human checkpoint. Green = autonomous. Yellow = supervised. Red = human-only. The system never acts beyond its granted authority. When the operator approves a workflow or pattern at this checkpoint, the sanctioned outcome is recorded with a complete audit trail. The agent observes these normalized, repeatedly-approved intents &mdash; the primary input to the Skill Flywheel and the mechanism by which the system improves with use.</div></div>
       <div class="pipe-stage"><div class="pipe-num">05</div><div class="pipe-name">Execution</div><div class="pipe-desc">Action fires. Output becomes telemetry for the next cycle. Audit trail generated as byproduct, not afterthought.</div></div>
     </div>
   </div>
@@ -609,7 +598,7 @@ nav { position:fixed; top:0; left:0; right:0; z-index:100; padding:0 48px; heigh
         <div class="principle-num">IV</div>
         <div class="principle-body">
           <div class="principle-title"><dfn>Human-AI Symbiosis</dfn></div>
-          <div class="principle-desc">AI generates possibilities. Humans apply judgment. The system requires human-in-the-loop for every transition that crosses a zone boundary. Sovereignty is structural: the system earns autonomy through demonstrated reliability and can never unilaterally grant itself new authority &mdash; on the autonomous loop, a write that would expand the agent&rsquo;s own scope is impossible, the loop being capability-absent at the operating-system level, not merely refused. What the agent cannot do for itself, the operator can do for it: an authenticated, contemporaneous grant lets the agent execute one specific scope change inline, as the operator&rsquo;s hands, every such write provenance-stamped to the grant that authorized it. Where no operator channel can be made unforgeable, the system authorizes no inline scope change at all and falls back to operator-performed writes &mdash; the relaxation is only ever as strong as the authentication of consent. That authorized, recorded mutation is how reliability compounds into autonomy &mdash; the essential input to the Skill Flywheel and the means by which the system ratchets capability toward cheaper, more local tiers.</div>
+          <div class="principle-desc">AI generates possibilities. Humans apply judgment. The system requires human-in-the-loop for all transitions that cross zone boundaries. Sovereignty is structural: the system earns autonomy through demonstrated reliability and can never unilaterally grant itself new authority. That reliability is demonstrated when the operator repeatedly approves and promotes patterns through the governed checkpoints. The agent observes these sanctioned, provenance-recorded outcomes &mdash; the essential input to the Skill Flywheel and the means by which the system ratchets capability toward cheaper, more local tiers.</div>
           <div class="principle-test">The test: does the system ever act beyond explicitly granted authority, regardless of model capability?</div>
         </div>
       </div>
@@ -649,19 +638,10 @@ nav { position:fixed; top:0; left:0; right:0; z-index:100; padding:0 48px; heigh
       <div class="zone-card" style="border-top:3px solid var(--red);">
         <div class="zone-label" style="color:var(--red);"><dfn>Red Zone</dfn></div>
         <div class="zone-name">Human-Only</div>
-        <div class="zone-desc">The system does not act on its own authority. It may provide context, but the decision belongs entirely to the human. Two things live here: high-stakes, irreversible, or ethically sensitive operations; and every write to the <dfn>scope-defining surface</dfn> &mdash; the zones schema, the routing authority fields, permission grants, skill activations &mdash; because changing those would change what the system is allowed to do. The system cannot promote itself out of the Red Zone: on the autonomous loop, a self-scope-expanding write is impossible&mdash;capability-absent at the operating-system level, not merely blocked. The operator, however, can. An authenticated, contemporaneous grant opens one scope change for the agent to execute inline &mdash; as the operator&rsquo;s hands, provenance-stamped to the grant. That operator-authorized mutation, not any act of the system&rsquo;s own, is how the Autonomaton&rsquo;s repertoire grows and how the Skill Flywheel turns.</div>
+        <div class="zone-desc">The system does not act. It may provide context, but the decision and execution belong entirely to the human. High-stakes, irreversible, or ethically sensitive operations. The system cannot promote itself out of the Red Zone. The operator, however, can promote workflows and patterns into the system&rsquo;s autonomous repertoire through the governed approval path. When such a promotion is approved and recorded, the agent observes the sanctioned outcome &mdash; this operator-initiated promotion of normalized patterns is how the Autonomaton learns and how the Skill Flywheel turns.</div>
       </div>
     </div>
-    <p class="body-text">Zone boundaries are declarative&mdash;defined in configuration, not hardcoded&mdash;and in 2.0 they key on operator scope, not action category: a write&rsquo;s zone is computed from what it changes (the scope-defining surface versus a granted in-scope workspace), never from which category of action it resembles. A healthcare deployment and a content-scheduling deployment use the same Zone Model with different boundaries. The architecture is identical. The governance is domain-specific.</p>
-  </div>
-  <div class="section-inner reveal">
-    <h3 class="subhead" id="confused-deputy-protection">Confused-Deputy <em>Protection</em></h3>
-    <p class="body-text">Keying zones to scope raises one hard question: what stops an in-scope write from becoming a scope change by the back door? If the agent writes a harmless-looking note that some later step then reads as configuration, an in-scope write has quietly rewritten authority. The architecture closes this structurally. The scope-defining surface must declare every path it reads; a write qualifies as in-scope only when its target is provably disjoint from the transitive read-closure of that surface, a test that runs at Stage 04 before any write executes. And it fails closed: any undeclared or dynamic read path on the scope-defining surface forfeits autonomy for everything it could reach. The system never resolves ambiguity in favor of its own authority.</p>
-  </div>
-  <div class="section-inner reveal">
-    <h3 class="subhead" id="confirmation-gate">The Confirmation <em>Gate</em></h3>
-    <p class="body-text">A scope change reaches the agent as a <dfn>grant token</dfn>: an operator-issued authorization naming one specific surface region and write class, authenticated through a channel the autonomous loop cannot forge, sticky across sessions until revoked, and provenance-stamped. The agent can request a grant; it can never issue one to itself. The grant token is delivered through the operator-authenticated channel&mdash;it never enters the agent&rsquo;s write pipeline&mdash;so there is no bootstrap by which the agent could author its own authority. Sovereignty stays with the operator because the one artifact that opens a scope change is the one artifact the agent cannot produce.</p>
-    <p class="body-text">Breadth is the operator&rsquo;s to decide&mdash;the standard does not cap it, because capping it would violate Declarative Sovereignty. But breadth must be legible: an implementation <strong>should</strong> warn when a grant exceeds a configurable maximum scope, and a blanket grant (a <code>surface_region</code> of <code>&quot;*&quot;</code> or equivalent) <strong>must</strong> be recorded with an explicit <code>scope: blanket</code> provenance flag, so a standing grant that restores broad write authority can never be silent.</p>
+    <p class="body-text">Zone boundaries are declarative&mdash;defined in configuration, not hardcoded. A healthcare deployment and a content scheduling deployment use the same Zone Model with different boundaries. The architecture is identical. The governance is domain-specific.</p>
   </div>
 </section>
 
@@ -696,8 +676,7 @@ nav { position:fixed; top:0; left:0; right:0; z-index:100; padding:0 48px; heigh
   <div class="section-inner reveal">
     <div class="section-num">VII</div>
     <h2 class="headline">Reference <em>Schemas</em></h2>
-    <p class="body-text">The Autonomaton Pattern is implemented through structured data&mdash;not proprietary APIs. The following schemas are illustrative, not exhaustive. They show enough structure that a developer can say &ldquo;I could build this&rdquo; and enough constraint that an architect can say &ldquo;I can audit this.&rdquo; The canonical machine-readable schemas&mdash;<code>zones-v2</code>, <code>routing-operational-v2</code>, <code>routing-authority-v2</code>, <code>confirmation-gate</code>, and <code>provenance-stamp</code>&mdash;are published under <code>/standards/001/schemas/</code>.</p>
-    <p class="body-text"><strong>Migration from v1.</strong> 2.0 breaks compatibility with v1 routing configurations: the single <code>routing.config</code> is split into <code>routing.operational</code> (in-scope) and <code>routing.authority</code> (scope-defining), and the category-keyed <code>zone_overrides</code> is removed. A v1 config does not validate under 2.0 and must be migrated.</p>
+    <p class="body-text">The Autonomaton Pattern is implemented through structured data&mdash;not proprietary APIs. The following schemas are illustrative, not exhaustive. They show enough structure that a developer can say &ldquo;I could build this&rdquo; and enough constraint that an architect can say &ldquo;I can audit this.&rdquo;</p>
   </div>
   <div class="section-wide reveal">
     <div class="schema-block">
@@ -720,7 +699,6 @@ nav { position:fixed; top:0; left:0; right:0; z-index:100; padding:0 48px; heigh
   "confidence": 0.94,
   "tier_assigned": "T0",
   "zone": "green",
-  "surface_class": "in_scope",
   "matched_skill": "skill-weekly-sync-017",
   "fallback_tier": "T2",
   "classification_source": "keyword_match",
@@ -736,8 +714,6 @@ nav { position:fixed; top:0; left:0; right:0; z-index:100; padding:0 48px; heigh
   "version": "1.3",
   "trigger": { "keywords": ["weekly sync", "team meeting", "recurring thursday"], "intent_pattern": "calendar.schedule.recurring" },
   "zone": "green",
-  "lifecycle_state": "active",
-  "activation_grant": "grant-20260218-008",
   "tier": "T0",
   "action": { "type": "calendar_create", "params": { "title": "Weekly Team Sync", "day": "thursday", "time": "14:00", "recurrence": "weekly" } },
   "promotion_history": [
@@ -749,100 +725,25 @@ nav { position:fixed; top:0; left:0; right:0; z-index:100; padding:0 48px; heigh
     </div>
 
     <div class="schema-block">
-      <div class="schema-label">Routing &mdash; Operational (In-Scope)</div>
+      <div class="schema-label">Routing Configuration</div>
 <pre>{
-  "schema_version": "2.0",
-  "surface_class": "in_scope",
-  "default_tier": "T2",
-  "tier_preferences": {
-    "T0": { "max_latency_ms": 50 },
-    "T1": { "model": "local-llama-3", "max_latency_ms": 500 },
-    "T2": { "provider": "anthropic", "model": "claude-sonnet" },
-    "T3": { "provider": "anthropic", "model": "claude-opus", "retry": { "max_attempts": 2, "backoff_ms": 400 } }
-  }
-}</pre>
-    </div>
-
-    <div class="schema-block">
-      <div class="schema-label">Routing &mdash; Authority (Scope-Defining)</div>
-<pre>{
-  "schema_version": "2.0",
-  "surface_class": "scope_defining",
-  "writable_on": "operator_authenticated",
-  "default_zone": "red",
-  "escalation_threshold": 0.6,
-  "approval_requirements": { "T3": true },
-  "zone_assignment": { "keying": "operator-scope", "category_keying": "forbidden", "derived_from": "zones.schema/surfaces" }
-}</pre>
-    </div>
-
-    <div class="schema-block">
-      <div class="schema-label">Zones Schema (Scope-Keyed)</div>
-<pre>{
-  "schema_version": "2.0",
-  "keying": "operator-scope",
-  "surfaces": {
-    "scope_defining": {
-      "writable_on": "operator_authenticated",
-      "default_zone": "red",
-      "members": [
-        { "kind": "zones_schema", "path": "zones.schema" },
-        { "kind": "routing_authority", "path": "routing.authority" },
-        { "kind": "skill_activation", "path": "skills/*/activation.json" }
-      ],
-      "declared_read_paths": ["zones.schema", "routing.authority", "skills/*/activation.json"]
+  "routing": {
+    "default_tier": "T2",
+    "escalation_threshold": 0.6,
+    "zone_overrides": {
+      "finance.*": "red",
+      "calendar.*": "green",
+      "hiring.*": "yellow"
     },
-    "in_scope": {
-      "writable_on": "autonomous_loop",
-      "default_zone": "green",
-      "members": [
-        { "kind": "telemetry" }, { "kind": "knowledge_artifact" }, { "kind": "pending_skill" }, { "kind": "operational_routing", "path": "routing.operational" }
-      ],
-      "granted_workspaces": ["research/", "notes/", "skills/proposed/"]
+    "tier_preferences": {
+      "T0": { "max_latency_ms": 50 },
+      "T1": { "model": "local-llama-3", "max_latency_ms": 500 },
+      "T2": { "provider": "anthropic", "model": "claude-sonnet" },
+      "T3": { "provider": "anthropic", "model": "claude-opus", "requires_approval": true }
     }
-  },
-  "skill_promotion": {
-    "pending_write": { "surface_class": "in_scope", "writable_on": "autonomous_loop", "zone_field_meaning": "proposal", "inert": true },
-    "activation": { "surface_class": "scope_defining", "writable_on": "operator_authenticated", "requires": "verified_grant_token" }
   }
 }</pre>
     </div>
-
-    <div class="schema-block">
-      <div class="schema-label">Confirmation Gate &mdash; Grant Token</div>
-<pre>{
-  "schema_version": "2.0",
-  "grant_id": "grant-20260621-007",
-  "scope_target": { "surface_region": "skills/research/*", "write_class": "skill_activation" },
-  "granted_zone": "green",
-  "authorized_by": "jim@example.com",
-  "issued_at": "2026-06-21T15:04:00Z",
-  "authentication": { "method": "signing_key", "issuer_key_id": "op-key-3", "signature": "ed25519:9f3c1a2b" },
-  "sticky": { "across_sessions": true, "across_reboots": true, "persists_until": "revocation" },
-  "revocation": { "revocable": true, "status": "active", "handle": "revoke/grant-20260621-007" }
-}</pre>
-    </div>
-
-    <div class="schema-block">
-      <div class="schema-label">Provenance Stamp</div>
-<pre>{
-  "schema_version": "2.0",
-  "actor": "agent",
-  "surface": "operator_authenticated",
-  "surface_class": "scope_defining",
-  "write_target": "skills/research/skill-arxiv-scan-003/activation.json",
-  "write_class": "skill_activation",
-  "pipeline_stage": "execution",
-  "timestamp": "2026-06-21T15:04:02Z",
-  "grant_id": "grant-20260621-007",
-  "authorized_by": "jim@example.com",
-  "source_chain": ["tel-20260621-114", "cls-20260621-114"]
-}</pre>
-    </div>
-  </div>
-  <div class="section-inner reveal">
-    <h3 class="subhead" id="provenance-stamping">Provenance <em>Stamping</em></h3>
-    <p class="body-text">Every write the agent performs carries a <dfn>provenance stamp</dfn>: who or what wrote it, on which surface, under which grant, at which stage of the pipeline. This is Provenance as Infrastructure applied to the act of writing&mdash;and it carries the zone guarantee inside its own structure. A provenance stamp cannot describe a scope-defining write performed on the autonomous loop; the combination is unrepresentable, rejected before it can be recorded. Two layers stand behind that guarantee: the operating-system permissions make the action impossible&mdash;the autonomous loop is capability-absent&mdash;and the schema makes the impossibility auditable. &ldquo;The agent cannot expand its own authority&rdquo; is therefore not a rule the system promises to follow. It is a sentence the system cannot form. Cannot, not won&rsquo;t.</p>
   </div>
 </section>
 
@@ -898,7 +799,7 @@ nav { position:fixed; top:0; left:0; right:0; z-index:100; padding:0 48px; heigh
       <a href="/docs/the-autonomaton-pattern-grv-001.pdf">PDF</a>
       <a href="/standards/GRV-001.json">JSON Manifest</a>
       <a href="/standards/002">GRV-002: TCP/IP Paper</a>
-      <span class="download-meta">GRV-001 &middot; v2.0 &middot; June 22, 2026 &middot; CC BY 4.0</span>
+      <span class="download-meta">GRV-001 &middot; v1.3 &middot; June 18, 2026 &middot; CC BY 4.0</span>
     </div>
     <p class="body-text" style="font-size:13px; margin-top:32px;">This document is published under <a href="https://creativecommons.org/licenses/by/4.0/" style="color:var(--amber); text-decoration:none; border-bottom:1px solid var(--amber-dim);" target="_blank" rel="external noopener noreferrer">Creative Commons Attribution 4.0 International (CC BY 4.0)</a>. You are free to share, adapt, and build upon this work for any purpose, provided you give appropriate credit.</p>
     <p class="body-text" style="font-size:13px;">Jim Calhoun &middot; The Grove Foundation &middot; Indianapolis &middot; <a href="mailto:jim@the-grove.ai" style="color:var(--amber); text-decoration:none; border-bottom:1px solid var(--amber-dim);">jim@the-grove.ai</a></p>
