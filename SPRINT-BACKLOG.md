@@ -2,7 +2,7 @@
 
 *Authoritative running ledger of sprint-eligible work for the-grove.ai. Updated at sprint close. Operator + Claude maintain this jointly; CC reads but doesn't update unless directed.*
 
-**Last updated:** 2026-05-15 (post `nav-text-extraction-fix-v1` close)
+**Last updated:** 2026-06-21 (post `grv001-red-learning-reconcile-v1` close; queued `governance-write-protection-v1`)
 
 ---
 
@@ -13,6 +13,9 @@
 ---
 
 ## Queued sprints — in suggested priority order
+
+### `governance-write-protection-v1` — substantive · **critical coherence fix**
+Re-key GRV-001 zones from *action category* to *operator scope*, and authorize operator-directed **inline** mutation of scope-defining config (zones/routing/permission boundaries) under a live, authenticated, provenance-stamped operator grant. Fixes the drift where a category-keyed guard ("operator config cannot be written by the agent") was over-generalized to block *any* filesystem write — so an Autonomaton refuses to persist an in-scope knowledge artifact into a granted workspace, contradicting its own ratchet thesis. Surfaced by operator while QA-ing GRV-001 against a Hermes Agent (Nous Research) refactor. Must deliver confused-deputy / downstream-read protection (an in-scope file later parsed as config = scope change) before any relaxation ships. Includes a **§VII reference-schema rewrite** and replaces the v1.3 "observes" placeholder with "writes, within scope, under authenticated grant, with provenance." Likely a GRV-001 → 2.0 bump. SPEC stub at `sprints/governance-write-protection-v1/SPEC.md`. **Probable sprint size:** large; spec-design heavy, multi-phase. Gated on Gemini pre-execution review + circularity resolution.
 
 ### `protocol-retrofit-v1` — substantive
 Substantive Bicameral Canon / GRV-004 conformance work on homepage and non-upgraded pages. Each page gets Handshake, machine-readable Declaration in `<head>`, operator-empathy Keg payload, register declarations. Judgment-required composition per page; not mechanical. Pages in scope: `/` (homepage), `/about`, `/membership`, `/ratchet`, `/observations`, `/alerts` index, possibly `/standards` index. Conforming Cellar entries in `llms.txt` get promoted from "Pending" to "Conforming" as each page ships its Declaration. **Probable sprint size:** large; may want to split into per-page sub-sprints or by-page-class batches.
@@ -39,6 +42,9 @@ Build actual authentication gate on `/substrate/jim-calhoun/letter/` and `/subst
 ---
 
 ## Tracking — completed sprints (most recent first)
+
+### `grv001-red-learning-reconcile-v1` (closed 2026-06-21)
+One atomic commit, both surfaces. Prose-only drift fix GRV-001 v1.2 → v1.3: surfaced the operator-promotion learning loop in Stage 04 (Approval), §V Red Zone, and Principle IV — operator promotes patterns through governed checkpoints, the agent *observes* the sanctioned outcome, the Skill Flywheel turns. Append-only on all three passages; version/date stamps bumped across HTML (byline, footer, JSON-LD, og/DC modified-time) + JSON twin + `version_history`. Deliberately observe-only interim. Gate #1 (Gemini wording review) PASSED, verdict "publish as-is." Surfaced a deeper enforcement drift → spun out `governance-write-protection-v1` (queued). Sprint docs + Gemini brief in `sprints/grv001-red-learning-reconcile-v1/`.
 
 ### `nav-text-extraction-fix-v1` (closed 2026-05-15)
 Four commits. Collapsed two-span responsive Lambda Watch label pattern to bare `&Lambda; Watch` text across 21 header-nav files (Touch 1, +21/−21) and 2 footer-nav files (Touch 2, +2/−2). Removed orphaned `.nav-label-*` rules from 21 inline `<style>` blocks (Touch 3, +7/−56). Plain-text extractors now read nav labels without the duplicated-label artifact. Single-span / bare-text is now canonical Grove convention for nav labels. HANDOFF at `sprints/nav-text-extraction-fix-v1/HANDOFF.md`.
