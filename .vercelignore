@@ -1,0 +1,15 @@
+# Internal working docs — kept in git for provenance, NOT served on the-grove.ai.
+# (Vercel deploys from the git commit minus these paths; they 404 on the domain.)
+
+sprints/
+*.bat
+SESSION-STATE.md
+NEXT-SESSION-PROMPT.md
+SPRINT-BACKLOG.md
+SITE-IA.md
+DEPLOY.md
+GRV-003-CONTINUATION-PROMPT.md
+grv-003-session-diffs.md
+
+# NOTE: docs/ is intentionally NOT excluded — the published white-paper PDFs/DOCX
+# there are linked from the standards pages (e.g. /docs/the-autonomaton-pattern-grv-001.pdf).

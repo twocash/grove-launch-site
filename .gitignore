@@ -1,2 +1,13 @@
 .vercel
 .claude/
+
+# Transient / scratch — never commit into the (public) repo
+*.zip
+*.tmp
+_*.tmp
+*-backup.html
+*-backup.json
+sprints/**/_*.py
+**/sovereignty-live.html
+.DS_Store
+Thumbs.db
