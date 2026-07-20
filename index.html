@@ -348,6 +348,8 @@ nav {
   letter-spacing:0.25em; text-transform:uppercase;
   color:var(--amber); margin-bottom:20px;
 }
+.pulse-dot { display:inline-block; width:7px; height:7px; border-radius:50%; background:var(--amber-bright); animation:pulse-dot 2.4s ease-in-out infinite; }
+@keyframes pulse-dot { 0%,100%{opacity:1;} 50%{opacity:0.35;} }
 .display {
   font-family:var(--serif); font-weight:400;
   font-size:clamp(36px,5vw,56px); line-height:1.15;
@@ -500,17 +502,25 @@ footer a:hover { color:var(--amber-bright); }
 ════════════════════════════════════════════════════ -->
 <section class="section" id="hero">
   <div class="section-inner">
-    <div class="eyebrow">The Grove Foundation</div>
-    <h1 class="display">Govern the Substrate.<br><em>Commoditize the Compute.</em></h1>
-
-    <p class="body-text">The Grove Foundation publishes the open standards that make AI governance an architectural property &mdash; not a vendor promise.</p>
-
-    <p class="body-text">Apex inference is critical infrastructure receiving roughly $650 billion in capital commitments. The architectural layer that determines whether that investment compounds at sovereign nodes or evaporates as extractive dependency is receiving effectively no comparable attention.</p>
-
-    <p class="body-text">When <a href="https://platform.openai.com/docs/deprecations" target="_blank" rel="noopener" style="color:var(--amber-bright); text-decoration:none; border-bottom:1px solid var(--amber-dim);">APIs deprecate on 90 days&rsquo; notice</a>, the workflows built on them deprecate too. Architecture determines whether that risk lands at the operator&rsquo;s substrate or in the operator&rsquo;s institutional knowledge. The Grove Foundation publishes the <a href="/standards" style="color:var(--amber-bright); text-decoration:none; border-bottom:1px solid var(--amber-dim);">open standards</a> that make the architectural layer legible &mdash; so capital, institutions, and engineers can build against it.</p>
-
-    <div style="width:48px; height:1px; background:var(--amber); margin:32px 0;"></div>
-    <p class="hero-meta">CC BY 4.0 &middot; <a id="hero-alert-link" href="/alerts/sovereignty-is-all-you-need" style="color:var(--amber-dim); text-decoration:none; border-bottom:1px solid var(--amber-dim);">Sovereignty Is All You Need &rarr;</a></p>
+    <!-- ═══ LAUNCH-HERO v1 · Structural Custody · swap deliberately, no timers ═══ -->
+    <div class="eyebrow" style="display:flex; align-items:center; gap:10px;">
+      <span class="pulse-dot" aria-hidden="true"></span>
+      New &middot; Q2 CIO Alert &middot; Published July 21, 2026
+    </div>
+    <h1 class="display">&ldquo;We Don&rsquo;t Train on Your Data&rdquo;<br>Is <em>Technically True.</em></h1>
+    <p class="body-text">Over the last 14 months, agentic-AI vendors quietly redrew the boundary between the customer data they protect and the human reasoning trace they harvest. It&rsquo;s documented in their own terms of service, privacy policies, and archives &mdash; and every claim is checkable.</p>
+    <div style="border-left:2px solid var(--amber); background:rgba(212,98,26,0.05); padding:20px 26px; max-width:640px; margin:8px 0 16px;">
+      <div style="font-family:var(--serif); font-style:italic; font-size:clamp(18px,2vw,23px); line-height:1.5; color:var(--text);">&ldquo;Cognition owns all right, title, and interest in and to the Usage Data.&rdquo;</div>
+      <div style="font-family:var(--mono); font-size:11px; letter-spacing:0.1em; color:var(--text-dim); margin-top:10px;">&mdash; Cognition Platform Terms of Service, &sect;3.3.2 &middot; June 30, 2026</div>
+    </div>
+    <p class="body-text">One clause of thirty documented. Where terms assert ownership, no opt-out exists at any tier &mdash; you cannot opt out of someone else&rsquo;s property.</p>
+    <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:28px;">
+      <a href="/alerts/structural-custody" style="display:inline-block; font-family:var(--mono); font-size:12px; letter-spacing:0.12em; text-transform:uppercase; padding:14px 28px; background:var(--amber); color:var(--bg); text-decoration:none; transition:background 0.2s;" onmouseover="this.style.background='var(--amber-bright)'" onmouseout="this.style.background='var(--amber)'">Read the Q2 CIO Alert &rarr;</a>
+      <a href="/alerts/structural-custody/evidence" style="display:inline-block; font-family:var(--mono); font-size:12px; letter-spacing:0.12em; text-transform:uppercase; padding:14px 28px; background:transparent; border:1px solid var(--amber-dim); color:var(--amber); text-decoration:none; transition:all 0.2s;" onmouseover="this.style.borderColor='var(--amber)';this.style.background='rgba(212,98,26,0.08)'" onmouseout="this.style.borderColor='var(--amber-dim)';this.style.background='transparent'">Open the Evidence Library &rarr;</a>
+    </div>
+    <div style="width:48px; height:1px; background:var(--amber); margin:32px 0 0;"></div>
+    <p class="hero-meta">Technologists, not attorneys &mdash; nothing here is legal advice &middot; For CISOs, enterprise architects, boards &middot; CC BY 4.0</p>
+    <!-- ═══ /LAUNCH-HERO v1 ═══ -->
   </div>
   <div class="scroll-cue" style="cursor:pointer;" onclick="this.parentElement.nextElementSibling.scrollIntoView({behavior:'smooth'})"><span>Scroll</span><svg width="16" height="10" viewBox="0 0 16 10" fill="none"><path d="M1 1L8 8L15 1" stroke="#8B3D10" stroke-width="1.5"/></svg></div>
 </section>
