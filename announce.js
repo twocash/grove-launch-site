@@ -10,7 +10,7 @@
   var KEY = 'grove-announce-q2-2026';
   try { if (localStorage.getItem(KEY) === 'dismissed') return; } catch (e) {}
 
-  var LINK = '/lambda/';
+  var LINK = '/alerts/structural-custody/';
   var CSS =
     '.gv-announce{position:fixed;top:0;left:0;right:0;z-index:200;' +
       'background:#17130f;border-bottom:1px solid rgba(212,98,26,0.45);' +
@@ -36,9 +36,9 @@
     '<div class="gv-announce-inner">' +
       '<span class="gv-announce-dot" aria-hidden="true"></span>' +
       '<span class="gv-announce-text">' +
-        '<strong>NEW</strong> · Q2 2026 Λ Standings are live — all five ' +
-        'Approaching-Critical seats are Sovereign open-weight. ' +
-        '<a class="gv-announce-link" href="' + LINK + '">Read the update →</a>' +
+        '<strong>NEW</strong> · Structural Custody in Agentic AI — how agentic-AI ' +
+        'vendors harvest the reasoning trace, in their own terms. ' +
+        '<a class="gv-announce-link" href="' + LINK + '">Read the Q2 CIO Alert →</a>' +
       '</span>' +
       '<button class="gv-announce-close" type="button" aria-label="Dismiss announcement">✕</button>' +
     '</div>';

@@ -4,8 +4,84 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script src="./support.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fragment+Mono:ital@0;1&family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<title>Structural Custody in Agentic AI — The Grove Foundation</title>
+<meta name="description" content="A technical audit of trajectory harvesting and zero-data-retention boundaries in agentic AI: how coding vendors legally decouple protected &ldquo;Customer Data&rdquo; from the human reasoning trace that produced it — documented in the vendors&rsquo; own terms. Q2 2026 CIO Alert from The Grove Foundation. 30 primary sources, CC BY 4.0.">
+<link rel="canonical" href="https://the-grove.ai/alerts/structural-custody/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Structural Custody in Agentic AI — The Grove Foundation">
+<meta property="og:description" content="How agentic-AI vendors legally decouple protected data from the human reasoning trace that produced it — and harvest the latter at scale. Documented in the vendors&rsquo; own terms. Q2 2026 CIO Alert.">
+<meta property="og:url" content="https://the-grove.ai/alerts/structural-custody/">
+<meta property="og:site_name" content="The Grove Foundation">
+<meta property="og:image" content="https://the-grove.ai/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Structural Custody in Agentic AI">
+<meta name="twitter:description" content="A technical audit of trajectory harvesting and zero-data-retention boundaries in agentic AI. Q2 2026 CIO Alert from The Grove Foundation.">
+<meta name="twitter:image" content="https://the-grove.ai/og.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ScholarlyArticle",
+  "@id": "https://the-grove.ai/alerts/structural-custody/#article",
+  "headline": "Structural Custody in Agentic AI",
+  "alternativeHeadline": "A technical audit of trajectory harvesting and zero-data-retention boundaries",
+  "description": "How agentic coding vendors legally decouple the protected \"Customer Data\" from the human reasoning trace that produced it — and harvest the latter at scale, documented in the vendors' own terms of service, privacy policies, and published archives.",
+  "url": "https://the-grove.ai/alerts/structural-custody/",
+  "datePublished": "2026-07-21",
+  "author": { "@type": "Person", "name": "Jim Calhoun", "affiliation": { "@type": "Organization", "name": "The Grove Foundation", "url": "https://the-grove.ai" } },
+  "publisher": { "@id": "https://the-grove.ai/#organization" },
+  "isPartOf": { "@id": "https://the-grove.ai/#website" },
+  "license": "https://creativecommons.org/licenses/by/4.0/",
+  "keywords": "structural custody, trajectory harvesting, reasoning trace, agentic AI, zero data retention, usage data ownership, de-identification, Λ framework, sovereign AI, CIO alert",
+  "inLanguage": "en"
+}
+</script>
 </head>
 <body>
+<style>
+:root{
+  --amber:#D4621A; --amber-bright:#F07030; --amber-dim:#8B3D10; --amber-glow:rgba(212,98,26,0.12);
+  --bg:#080808; --bg2:#0f0f0f; --bg3:#161616;
+  --border:#252525; --border-light:#333;
+  --text:#E8E2D9; --text-dim:#7A736A; --text-mid:#B0A898;
+  --mono:'Fragment Mono', monospace; --serif:'Instrument Serif', Georgia, serif; --sans:'DM Sans', sans-serif;
+}
+nav.gv-nav { position:fixed; top:0; left:0; right:0; z-index:100; padding:0 48px; height:56px; display:flex; justify-content:space-between; align-items:center; background:rgba(8,8,8,0.94); backdrop-filter:blur(16px); border-bottom:1px solid rgba(37,37,37,0.5); }
+nav.gv-nav .nav-logo { font-family:var(--mono); font-size:11px; letter-spacing:0.2em; text-transform:uppercase; color:var(--amber-dim); text-decoration:none; border:none; }
+nav.gv-nav .nav-links { display:flex; gap:32px; }
+nav.gv-nav .nav-links a { font-family:var(--mono); font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-dim); text-decoration:none; padding:4px 0; border-bottom:1px solid transparent; transition:all 0.2s; }
+nav.gv-nav .nav-links a:hover, nav.gv-nav .nav-links a.active { color:var(--amber); border-bottom-color:var(--amber); }
+nav.gv-nav .nav-links a.nav-ext { color:var(--amber-dim); border:1px solid var(--amber-dim); padding:3px 10px; margin-left:8px; }
+nav.gv-nav .nav-links a.nav-ext:hover { color:var(--amber); border-color:var(--amber); background:rgba(212,98,26,0.08); }
+footer.gv-footer { position:relative; z-index:1; border-top:1px solid var(--border); background:var(--bg2); padding-bottom:56px; }
+footer.gv-footer .section-inner { padding:48px 48px 48px; max-width:760px; margin:0 auto; }
+footer.gv-footer .footer-subscribe { border:1px solid var(--amber-dim); padding:24px 28px; margin-bottom:32px; display:flex; align-items:center; gap:20px; flex-wrap:wrap; }
+footer.gv-footer .footer-subscribe-label { font-family:var(--mono); font-size:11px; letter-spacing:0.15em; text-transform:uppercase; color:var(--amber); white-space:nowrap; }
+footer.gv-footer .footer-subscribe form { display:flex; gap:8px; flex:1; min-width:240px; }
+footer.gv-footer .footer-subscribe input { flex:1; background:var(--bg); border:1px solid var(--border-light); color:var(--text); font-family:var(--mono); font-size:12px; padding:8px 12px; outline:none; }
+footer.gv-footer .footer-subscribe button { background:var(--amber); color:var(--bg); font-family:var(--mono); font-size:10px; letter-spacing:0.12em; text-transform:uppercase; border:none; padding:8px 20px; cursor:pointer; }
+footer.gv-footer .footer-meta { font-family:var(--mono); font-size:11px; color:var(--text-dim); line-height:2; }
+footer.gv-footer .footer-meta a { color:var(--amber); text-decoration:none; border-bottom:1px solid var(--amber-dim); }
+footer.gv-footer .footer-links { display:flex; gap:24px; margin-top:20px; flex-wrap:wrap; }
+footer.gv-footer .footer-links a { font-family:var(--mono); font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-dim); text-decoration:none; border:none; }
+footer.gv-footer .footer-501 { font-family:var(--sans); font-size:11px; color:var(--text-dim); font-weight:300; line-height:1.6; margin-top:24px; padding-top:20px; border-top:1px solid var(--border); }
+@media(max-width:640px){ nav.gv-nav{padding:0 20px;} nav.gv-nav .nav-links{gap:16px;} nav.gv-nav .nav-links a{font-size:9px;} footer.gv-footer .section-inner{padding:40px 24px 40px;} }
+</style>
+<nav class="gv-nav">
+  <a href="/" class="nav-logo">The Grove Foundation</a>
+  <div class="nav-links">
+    <a href="/ratchet">Ratchet Test</a>
+    <a href="/lambda">&Lambda; Watch</a>
+    <a href="/alerts" class="active">CIO Alerts</a>
+    <a href="/standards">Published Standards</a>
+    <a href="/observations">Observations</a>
+    <a href="/membership">Membership</a>
+    <a href="/about">About</a>
+    <a href="https://the-grove.ai/autonomaton" target="_blank" rel="noopener noreferrer" class="nav-ext">Run the Pattern &nearr;</a>
+  </div>
+</nav>
 <x-dc>
 <helmet>
   <link rel="stylesheet" href="_ds/grove-foundation-design-system-1f1800dc-f3c1-4b76-a111-41ca3139a50b/tokens/fonts.css">
@@ -26,7 +102,6 @@
   <header style="border-bottom:1px solid #252525;padding:104px 48px 72px;background:radial-gradient(ellipse at 20% 70%, rgba(212,98,26,0.08), transparent 55%)">
     <div style="max-width:1140px;margin:0 auto;display:flex;flex-direction:column;gap:24px">
       <div style="display:flex;align-items:center;gap:14px">
-        <img src="assets/grove-mark.png" alt="" style="width:32px;height:32px;object-fit:contain">
         <span style="font-family:'Fragment Mono',monospace;font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:#8B3D10">The Grove Foundation</span>
       </div>
       <div style="font-family:'Fragment Mono',monospace;font-size:11px;letter-spacing:0.25em;color:#D4621A;text-transform:uppercase">CIO Alert · Structural Custody in Agentic AI · Published July 21, 2026</div>
@@ -40,6 +115,38 @@
       <div style="font-family:'Fragment Mono',monospace;font-size:10px;letter-spacing:0.15em;color:#7A736A;text-transform:uppercase">For CISOs · Enterprise Architects · Practitioners &nbsp;·&nbsp; CC BY 4.0 &nbsp;·&nbsp; the-grove.ai</div>
     </div>
   </header>
+
+<!-- ═══ EDITABLE: PRESS RELEASE INTRO — operator will revise ═══ -->
+  <section data-screen-label="Press Release" style="border-bottom:1px solid #252525;padding:88px 48px">
+    <div style="max-width:1140px;margin:0 auto;display:flex;flex-direction:column;gap:24px">
+      <div style="font-family:'Fragment Mono',monospace;font-size:11px;letter-spacing:0.25em;text-transform:uppercase;color:#D4621A">Q2 2026 &Lambda; Standings · Press Release · Indianapolis · July 21, 2026</div>
+      <h2 style="font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(30px,3.6vw,44px);line-height:1.1;letter-spacing:-0.02em;margin:0;max-width:960px">&ldquo;We Don&rsquo;t Train on Your Data&rdquo; Is True — Because AI Vendors Rewrote <em style="color:#D4621A">&ldquo;Usage Data&rdquo;</em> Terms to Carve Out Reasoning Traces, the New Gold of the AI Economy</h2>
+      <div style="width:48px;height:1px;background:#D4621A"></div>
+      <div style="max-width:760px;display:flex;flex-direction:column;gap:20px;font-size:16px;line-height:1.85;color:#B0A898;text-wrap:pretty">
+        <p style="margin:0">INDIANAPOLIS — July 21, 2026 — The most valuable asset in an enterprise AI contract is no longer the customer&rsquo;s to protect — and in the strongest terms reviewed, it is no longer the customer&rsquo;s at all. That is the central finding of The Grove Foundation&rsquo;s quarterly &Lambda; (Lambda) Standings, released today, which analyzed enterprise terms across six leading AI coding and agentic platforms over a 14-month period.</p>
+        <p style="margin:0">&ldquo;Usage Data&rdquo; historically meant narrow operational exhaust — uptime, latency, crash reports. The analysis finds the same contractual category now carries the reasoning trace: the detailed record of how employees think through problems with AI — which suggestions are accepted, edited, or rejected, how decisions unfold, and the execution paths behind them. In the most striking case, the definition of Usage Data remained word-for-word identical across the 14-month window while the surrounding terms added an outright ownership claim — &ldquo;all right, title, and interest&rdquo; — and flipped model training from opt-in to opt-out. The words held still. The meaning inverted.</p>
+        <p style="margin:0">Because these agreements carve Usage Data out of the Customer Data category enterprises traditionally negotiate, the standard safeguards — deletion rights, training opt-outs, zero-retention commitments — do not reach it. Where the terms assert ownership, no opt-out for that category exists at any tier or setting, and structurally none can: you cannot opt out of someone else&rsquo;s property.</p>
+        <p style="margin:0">The analysis identifies de-identification and aggregation — long presented to customers as privacy protections — as the transfer mechanism, and finds it operating across multiple providers. One provider&rsquo;s privacy policy exempts content already de-identified from its own 30-day deletion commitment. Another retains embeddings and codebase metadata after the underlying plaintext is deleted. A third states that once data is de-identified, it may be used and shared for any purpose — and that its privacy policy no longer applies to it. In each case, the customer&rsquo;s identity is removed from the record while the reasoning pattern stays with the vendor.</p>
+        <p style="margin:0">Retention is not a theoretical exposure. In active litigation this year, a federal court ordered one provider to preserve and produce approximately 20 million de-identified consumer conversation logs — demonstrating that retained data remains reachable by discovery and acquisition regardless of any training promise.</p>
+        <p style="margin:0"><strong style="color:#E8E2D9;font-weight:500">Scope and method:</strong> The Q2 2026 analysis reviewed the public enterprise terms of service, privacy policies, and data-use documentation of six leading AI providers — Anthropic, Cognition (Windsurf and Devin), Cursor, GitHub, OpenAI, and Replit — captured verbatim and archived between April 2025 and July 2026. Findings in this release are presented without attribution; postures vary materially across the six, and the full report presents each provider individually, with verbatim clause language and archive links. All documents reviewed are publicly available.</p>
+        <p style="margin:0">&ldquo;For two years, enterprises negotiated training opt-outs. Meanwhile, vendors rewrote what counted as the customer&rsquo;s data in the first place,&rdquo; said Jim Calhoun, Founder and Executive Director of The Grove Foundation. &ldquo;So when a vendor says &lsquo;we don&rsquo;t train on your data,&rsquo; the statement is accurate — under definitions the vendor wrote. The right question is no longer whether they train on your data. It&rsquo;s who owns the record of how your company thinks when the contract ends.&rdquo;</p>
+        <p style="margin:0">The Foundation documents what the terms say and what the systems capture; the analysis is technical, not legal advice. Its Autonomaton Pattern (GRV-001), published under CC BY 4.0, specifies an agent architecture that keeps telemetry, memory, and reasoning traces on operator-controlled infrastructure. The full &Lambda; Standings report, including provider-level findings and verbatim contract language, is available at <a href="https://the-grove.ai/alerts/" target="_blank">the-grove.ai/alerts</a>.</p>
+        <p style="margin:0"><strong style="color:#E8E2D9;font-weight:500">About The Grove Foundation:</strong> The Grove Foundation is an Indianapolis-based AI-governance standards body. Its &Lambda; Standings, methodology, and standards are published openly under CC BY 4.0 at <a href="https://the-grove.ai" target="_blank">the-grove.ai</a>.</p>
+      </div>
+    </div>
+  </section>
+<!-- ═══ /EDITABLE PRESS RELEASE INTRO ═══ -->
+
+  <section data-screen-label="Lambda Standings" style="border-bottom:1px solid #252525;padding:88px 48px;background:radial-gradient(ellipse at 80% 30%, rgba(212,98,26,0.06), transparent 55%)">
+    <div style="max-width:900px;margin:0 auto">
+      <div style="border:1px solid #8B3D10;background:rgba(212,98,26,0.04);padding:28px 32px;display:flex;flex-direction:column;gap:14px">
+        <div style="font-family:'Fragment Mono',monospace;font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:#D4621A">The research behind this alert</div>
+        <h2 style="font-family:'Instrument Serif',serif;font-weight:400;font-size:32px;line-height:1.15;letter-spacing:-0.01em;margin:0">Q2 2026 &Lambda; Standings</h2>
+        <p style="margin:0;font-family:'DM Sans',sans-serif;font-size:16px;line-height:1.8;color:#B0A898;text-wrap:pretty">All five Approaching-Critical patterns this quarter are Sovereign open-weight — DeepSeek V4, Mistral, Gemma 4, GLM-5.2, and Qwen 3.6 — the models an enterprise can download, run, and keep. The strongest closed API pattern sits a full tier below. The market is repricing structural viability toward the models a company can hold — the same custody logic this alert traces from the other direction.</p>
+        <a href="/lambda/" style="font-family:'Fragment Mono',monospace;font-size:12px;letter-spacing:0.1em;color:#F07030;padding-top:4px">Read the full &Lambda; Standings →</a>
+      </div>
+    </div>
+  </section>
 
   <section data-screen-label="Convergence Matrix" style="border-bottom:1px solid #252525;padding:88px 48px">
     <div style="max-width:1140px;margin:0 auto;display:flex;flex-direction:column;gap:20px">
@@ -745,7 +852,6 @@
       </div>
       <div style="display:flex;align-items:center;gap:14px;border-top:1px solid #252525;padding-top:24px;margin-top:12px;flex-wrap:wrap;justify-content:space-between">
         <div style="display:flex;align-items:center;gap:12px">
-          <img src="assets/grove-mark.png" alt="" style="width:30px;height:30px;object-fit:contain">
           <span style="font-family:'Fragment Mono',monospace;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:#8B3D10">The Grove Foundation · CC BY 4.0 · the-grove.ai</span>
         </div>
         <a href="slides.html" style="font-family:'Fragment Mono',monospace;font-size:10px;letter-spacing:0.15em;text-transform:uppercase">View as slideshow →</a>
@@ -758,6 +864,32 @@
     <a href="evidence.html" target="_blank" style="font-family:'Fragment Mono',monospace;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;white-space:nowrap">Evidence Library →</a>
   </div>
 </div>
+<footer class="gv-footer">
+  <div class="section-inner">
+    <div class="footer-subscribe">
+      <div class="footer-subscribe-label">Follow the pattern</div>
+      <form action="https://formspree.io/f/xqegowyj" method="POST">
+        <input type="email" name="email" placeholder="your@email.com" required>
+        <button type="submit">Subscribe</button>
+      </form>
+    </div>
+    <div class="footer-meta">
+      The Grove Foundation &middot; Indianapolis<br>
+      <a href="https://the-grove.ai">the-grove.ai</a><br>
+      CC BY 4.0 &middot; &copy; 2026 The Grove Foundation
+    </div>
+    <div class="footer-links">
+      <a href="/ratchet">Ratchet Test</a>
+      <a href="/alerts">CIO Alerts</a>
+      <a href="/observations">Observations</a>
+      <a href="/lambda">Standings</a>
+      <a href="/standards">Open Standards</a>
+      <a href="/membership">Membership</a>
+      <a href="/about">About</a>
+    </div>
+    <p class="footer-501">The Grove Foundation Inc. is a not-for-profit business league within the meaning of Section 501(c)(6) of the Internal Revenue Code of 1986, as amended.</p>
+  </div>
+</footer>
 </x-dc>
 </body>
 </html>
