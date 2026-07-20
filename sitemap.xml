@@ -20,7 +20,13 @@
   </url>
   <url>
     <loc>https://the-grove.ai/alerts</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-07-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://the-grove.ai/alerts/structural-custody</loc>
+    <lastmod>2026-07-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>

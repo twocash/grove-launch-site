@@ -73,6 +73,10 @@ Pending (declared in site Cellar; individual Autonomaton Declaration promotion s
   Class: standard. Registers: standards.
   https://the-grove.ai/standards/004
 
+- Structural Custody in Agentic AI
+  Class: alert. Registers: operational.
+  https://the-grove.ai/alerts/structural-custody
+
 - Ground the Circuit, Shape the Current
   Class: alert. Registers: operational.
   https://the-grove.ai/alerts/polarity-and-the-grove-protocol
