@@ -273,5 +273,25 @@ class Component extends DCLogic {
   }
 }
 </script>
+<script>
+/* Evidence cards render asynchronously from manifest.json, so a #Axx anchor in
+   the URL is processed by the browser before its target <article> exists.
+   Re-apply the scroll once the card is in the DOM (and on hashchange). */
+(function () {
+  function target() {
+    var h = location.hash;
+    if (!h || h.length < 2) return null;
+    try { return document.getElementById(decodeURIComponent(h.slice(1))); } catch (e) { return null; }
+  }
+  function jump() { var el = target(); if (el) { el.scrollIntoView(); return true; } return false; }
+  function jumpWhenReady() {
+    if (!location.hash || jump()) return;
+    var n = 0, iv = setInterval(function () { if (jump() || ++n > 100) clearInterval(iv); }, 100);
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', jumpWhenReady);
+  else jumpWhenReady();
+  window.addEventListener('hashchange', jumpWhenReady);
+})();
+</script>
 </body>
 </html>
