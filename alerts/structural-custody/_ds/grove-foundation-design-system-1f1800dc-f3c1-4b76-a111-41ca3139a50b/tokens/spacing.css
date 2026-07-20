@@ -1,0 +1,50 @@
+/* ══════════════════════════════════════════════════════
+   GROVE FOUNDATION — SPACING, BORDERS, GRID, MOTION
+   The whole system is built on a 40px grid. Borders are
+   1px hairlines (#252525). Radii are minimal — 4px on cards,
+   0px on tables / panels / inputs. No drop shadows; depth
+   comes from layered backgrounds and amber glow.
+══════════════════════════════════════════════════════ */
+:root {
+  /* ── SPACING SCALE (multiples that resolve to the 40px grid) ── */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;   /* one grid cell */
+  --space-12: 48px;   /* section horizontal padding */
+  --space-16: 64px;
+  --space-20: 80px;   /* section vertical padding */
+  --space-30: 120px;  /* generous section top padding */
+
+  /* ── GRID ── */
+  --grid-cell: 40px; /* @kind spacing */           /* texture overlay cell size */
+  --grid-opacity: 0.2; /* @kind other */         /* homepage / ratchet */
+  --grid-opacity-soft: 0.15; /* @kind other */   /* standards / lambda / about */
+
+  /* ── LAYOUT WIDTHS ── */
+  --measure-text: 760px;   /* reading column (section-inner) */
+  --measure-wide: 1040px;  /* wide column (tables, grids) */
+  --measure-body: 640px;   /* body paragraph max-width */
+
+  /* ── BORDERS & RADII ── */
+  --hairline: 1px solid var(--border);
+  --radius-card: 4px;   /* cards */
+  --radius-none: 0px;    /* tables, panels, inputs, buttons */
+  --rule-amber: 1px;     /* the 48px amber divider line */
+
+  /* ── NAV ── */
+  --nav-height: 56px;
+  --nav-blur: blur(16px); /* @kind other */
+  --nav-bg: rgba(8,8,8,0.94);
+
+  /* ── MOTION ── */
+  --ease-out: cubic-bezier(0.25, 0.46, 0.45, 0.94); /* @kind other */
+  --dur-fast: 0.2s; /* @kind other */
+  --dur-mid: 0.25s; /* @kind other */
+  --dur-slow: 0.5s; /* @kind other */
+  --dur-reveal: 0.7s; /* @kind other */
+}

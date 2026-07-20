@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lambda (Λ) Watch — March 2026 Edition (Archived) — The Grove Foundation</title>
+<meta name="description" content="Lambda (Λ) Watch — the Grove Foundation's live standings of AI architectural patterns. Structural viability scores measuring which patterns would survive without the money.">
+<meta name="DC.subject" content="Λ framework, structural viability measurement, AI deployment patterns, squared-denominator asymmetry, geometric mean (β), Validation, tier thresholds, sovereign AI measurement, Bass Diffusion, Granovetter threshold, Arthur increasing returns, Grove Foundation">
+
+<!-- ── Open Graph ── -->
+<meta property="og:title" content="Lambda (Λ) Watch — The Grove Foundation">
+<meta property="og:description" content="Live standings of AI architectural patterns. Structural viability scores measuring which patterns would survive without the money.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://the-grove.ai/lambda/">
+<meta property="og:site_name" content="The Grove Foundation">
+<meta property="og:image" content="https://the-grove.ai/og.png">
+
+<!-- ── Twitter Card ── -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Lambda (Λ) Watch">
+<meta name="twitter:description" content="Live standings of AI architectural patterns from the Grove Foundation.">
+<meta name="twitter:image" content="https://the-grove.ai/og.png">
+
+<!-- ══════════════════════════════════════════════════════════════════
+     JSON-LD — WebPage (with Speakable + potentialAction)
+══════════════════════════════════════════════════════════════════ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": "https://the-grove.ai/lambda/",
+  "url": "https://the-grove.ai/lambda/",
+  "name": "Λ Standings",
+  "description": "Live structural viability scores for AI architecture patterns. Which patterns would survive without the money?",
+  "isPartOf": { "@id": "https://the-grove.ai/#website" },
+  "inLanguage": "en",
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": [".display", ".lead"]
+  },
+  "potentialAction": {
+    "@type": "InteractAction",
+    "name": "Compose with Grove",
+    "description": "Grove standards are CC BY 4.0; compose with them, fork them, build on them.",
+    "target": "https://the-grove.ai/membership/"
+  }
+}
+</script>
+
+<!-- ══════════════════════════════════════════════════════════════════
+     JSON-LD — BreadcrumbList
+══════════════════════════════════════════════════════════════════ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "The Grove Foundation", "item": "https://the-grove.ai/" },
+    { "@type": "ListItem", "position": 2, "name": "Λ Standings", "item": "https://the-grove.ai/lambda/" }
+  ]
+}
+</script>
+
+<!-- ══════════════════════════════════════════════════════════════════
+     JSON-LD — Dataset (Λ standings)
+══════════════════════════════════════════════════════════════════ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "@id": "https://the-grove.ai/lambda/#dataset",
+  "name": "Λ Standings — AI Deployment Pattern Structural Viability Scores",
+  "description": "Composite structural-viability scores (Λ) for named AI deployment patterns, computed as Λ = (S × R × V) / (1 + (β · Fc)²) across five input variables.",
+  "url": "https://the-grove.ai/lambda/",
+  "creator": {
+    "@type": "Organization",
+    "name": "The Grove Foundation",
+    "url": "https://the-grove.ai/"
+  },
+  "license": "https://creativecommons.org/licenses/by/4.0/",
+  "isAccessibleForFree": true,
+  "keywords": ["structural viability", "AI deployment patterns", "Λ framework", "sovereign AI", "squared-denominator asymmetry", "geometric mean (β)", "Bass Diffusion Model", "Granovetter threshold models", "Arthur increasing returns"],
+  "measurementTechnique": "Λ methodology — composite score across five variables (S, R, V, Fc, β); see methodology section for derivation and historical calibration",
+  "variableMeasured": [
+    { "@type": "PropertyValue", "name": "Λ (composite score)", "description": "Composite structural-viability score computed as Λ = (S × R × V) / (1 + (β · Fc)²); range 0.0001 to 1.0" },
+    { "@type": "PropertyValue", "name": "S (Spreadability)", "description": "Linear propagation variable — open-source licensing, replication cost, network accessibility" },
+    { "@type": "PropertyValue", "name": "R (Rail Compatibility)", "description": "Linear propagation variable — infrastructure fit against existing deployment rails" },
+    { "@type": "PropertyValue", "name": "V (Validation)", "description": "Linear propagation variable — theory discount; pre-publication 0.2, enterprise-validated 1.0; applied to Grove's own pattern at the floor" },
+    { "@type": "PropertyValue", "name": "Fc (Cognitive Friction)", "description": "Squared-denominator resistor — mental energy cost of adoption; small reductions produce outsized gains" },
+    { "@type": "PropertyValue", "name": "β (Exogenous Incentive)", "description": "Squared-denominator resistor — geometric mean of financial, regulatory, and ideological sub-dimensions; lower = stronger forcing function" },
+    { "@type": "PropertyValue", "name": "Tier", "description": "Structurally Inert (<0.005), Sub-Critical (0.005–0.029), Approaching Critical (0.03–0.099), Critical Mass (≥0.10)" }
+  ],
+  "distribution": {
+    "@type": "DataDownload",
+    "encodingFormat": "text/html",
+    "contentUrl": "https://the-grove.ai/lambda/"
+  }
+}
+</script>
+
+<!-- ══════════════════════════════════════════════════════════════════
+     JSON-LD — TechArticle (Λ methodology prose)
+     Adapts pattern from /standards/001 TechArticle; isBasedOn chains
+     Λ to its three architectural lineage parents (Bass 1969 ·
+     Granovetter 1978 · Arthur 1994).
+══════════════════════════════════════════════════════════════════ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Λ Methodology — Structural Viability Measurement for AI Deployment Patterns",
+  "alternativeHeadline": "Measuring structural propagation potential",
+  "url": "https://the-grove.ai/lambda/",
+  "datePublished": "2026-03-01",
+  "dateModified": "2026-04-22",
+  "inLanguage": "en",
+  "articleSection": "Open Methodology",
+  "author": {
+    "@type": "Person",
+    "name": "Jim Calhoun",
+    "affiliation": {"@type": "Organization", "name": "The Grove Foundation", "url": "https://the-grove.ai"},
+    "email": "jim@the-grove.ai"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "The Grove Foundation",
+    "url": "https://the-grove.ai",
+    "address": {"@type": "PostalAddress", "addressLocality": "Indianapolis", "addressRegion": "IN", "addressCountry": "US"}
+  },
+  "license": "https://creativecommons.org/licenses/by/4.0/",
+  "isPartOf": {"@id": "https://the-grove.ai/#website"},
+  "isBasedOn": [
+    {
+      "@type": "ScholarlyArticle",
+      "name": "A New Product Growth for Model Consumer Durables",
+      "author": {"@type": "Person", "name": "Frank M. Bass"},
+      "datePublished": "1969",
+      "publisher": {"@type": "Organization", "name": "Management Science"}
+    },
+    {
+      "@type": "ScholarlyArticle",
+      "name": "Threshold Models of Collective Behavior",
+      "author": {"@type": "Person", "name": "Mark S. Granovetter"},
+      "datePublished": "1978",
+      "publisher": {"@type": "Organization", "name": "American Journal of Sociology"}
+    },
+    {
+      "@type": "Book",
+      "name": "Increasing Returns and Path Dependence in the Economy",
+      "author": {"@type": "Person", "name": "W. Brian Arthur"},
+      "datePublished": "1994",
+      "publisher": {"@type": "Organization", "name": "University of Michigan Press"}
+    }
+  ],
+  "about": [
+    "Λ framework",
+    "structural viability",
+    "AI deployment patterns",
+    "sovereign AI measurement",
+    "squared-denominator asymmetry",
+    "geometric mean aggregation",
+    "propagation potential",
+    "Bass Diffusion Model",
+    "Granovetter threshold models",
+    "Arthur increasing returns"
+  ],
+  "keywords": "Λ framework, structural viability, AI deployment patterns, squared-denominator asymmetry, geometric mean (β), Validation, tier thresholds, sovereign AI measurement, Bass Diffusion Model, Granovetter threshold models, Arthur increasing returns, Grove Foundation, CC BY 4.0",
+  "hasPart": [
+    {"@type": "WebPageElement", "name": "The Methodology", "url": "https://the-grove.ai/lambda/#methodology", "description": "Λ quantifies whether a pattern can propagate through a complex social system on structural merit alone. Three linear variables (S, R, V) balanced against two squared-denominator resistors (Fc, β)."},
+    {"@type": "WebPageElement", "name": "Propagation Analysis", "url": "https://the-grove.ai/lambda/#landscape", "description": "Λ standings table scoring eight AI deployment patterns with sub-scores and Structural Profile classification. Historical calibration set: TCP/IP, Bitcoin, ISO Container, U.S. Metric System."},
+    {"@type": "WebPageElement", "name": "FAQ", "url": "https://the-grove.ai/lambda/#faq", "description": "Six questions addressing methodology, aggregation structure, tier thresholds, and measurement integrity."}
+  ],
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": [".display", ".lead"]
+  }
+}
+</script>
+
+<!-- ══════════════════════════════════════════════════════════════════
+     JSON-LD — FAQPage
+     Six Q&A pairs matching visible FAQ section below. Answers adapted
+     from operator-drafted canonical text to align with the current
+     methodology on this page (Λ = (S × R × V) / (1 + (β · Fc)²); five
+     variables; squared-denominator asymmetry — not power-law decay).
+══════════════════════════════════════════════════════════════════ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "@id": "https://the-grove.ai/lambda/#faq",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is Λ measuring?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Λ measures the structural viability of an AI deployment pattern — not the quality of the underlying model, but the architecture surrounding it. A composite score across five variables: three linear propagation factors (S Spreadability, R Rail Compatibility, V Validation) balanced against two squared-denominator resistors (Fc Cognitive Friction, β Exogenous Incentive — itself a geometric mean of financial, regulatory, and ideological sub-dimensions). Formula: Λ = (S × R × V) / (1 + (β · Fc)²). Score ≥0.10 = Critical Mass; <0.005 = Structurally Inert."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why the squared denominator on the resistors?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Squaring (β · Fc) in the denominator creates structural asymmetry: improvements to linear variables (S, R, V) move Λ proportionally, but reducing cognitive friction or exogenous incentive produces superlinear gains. In high-resistance regimes, cutting friction in half doesn't double adoption — it quadruples it. This matches how architectures actually consolidate: the geometry of the fight dominates the size of the sword. Small structural wins on the resistors produce outsized outcomes."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why geometric mean for β instead of arithmetic?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "β (Exogenous Incentive) is itself a geometric mean of three sub-dimensions: financial, regulatory, and ideological. Arithmetic mean would let strong dimensions compensate for weak ones — exactly wrong for structural persistence. A pattern with strong financial incentive but no regulatory tailwind isn't 'average'; it's fragile. Geometric mean requires all sub-dimensions to be non-zero for a nontrivial β and penalizes the minimum disproportionately. Earlier Λ versions used min() directly; geometric mean is a less brittle refinement."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What does \"Approaching Critical\" mean operationally?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Approaching Critical (0.03–0.099) is the band where a pattern has structural momentum but has not yet crossed the threshold of durable consolidation. Operationally: capital allocators can position, but commitment should hedge. At Critical Mass (≥0.10), the pattern is structurally sufficient to persist without exogenous rescue. Mistral/DeepSeek is currently the sole Approaching Critical pattern (Λ=0.0314)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why does Grove score itself Structurally Inert?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Grove's Λ score is 0.0001 — bare-baseline Structurally Inert. The Foundation's published standards have zero deployed validation, no financing durability, no demand signal. Scoring the institution behind the methodology honestly is a credibility condition: measurement is intervention, and a measurement framework whose publisher scores its own pattern inflated is not a framework, it's a marketing surface. Grove scores itself at the floor and rises only as validation lands."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How often are Λ scores updated?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Λ scores are revised when structural evidence changes — regulatory shifts, financing rounds, architectural pivots, geopolitical realignment (e.g., EU geofencing triggering Meta Llama's Sub-Critical drop). The scoreboard is not a real-time feed; it's a considered index. Every revision is Python-verified against the methodology before publication; no scores are approximated."
+      }
+    }
+  ]
+}
+</script>
+
+<link rel="canonical" href="https://the-grove.ai/lambda/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fragment+Mono:ital@0;1&family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --amber:#D4621A; --amber-bright:#F07030; --amber-dim:#8B3D10;
+  --amber-glow:rgba(212,98,26,0.12);
+  --bg:#080808; --bg2:#0f0f0f; --bg3:#161616; --bg4:#1a1a1a;
+  --border:#252525; --border-light:#333;
+  --text:#E8E2D9; --text-dim:#7A736A; --text-mid:#B0A898;
+  --green:#4CAF72; --green-dim:rgba(76,175,114,0.08);
+  --red:#C0392B; --red-dim:rgba(192,57,43,0.06);
+  --yellow:#D4A017;
+  --mono:'Fragment Mono', monospace;
+  --serif:'Instrument Serif', Georgia, serif;
+  --sans:'DM Sans', sans-serif;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body { background:var(--bg); color:var(--text); font-family:var(--sans); -webkit-font-smoothing:antialiased; overflow-x:hidden; line-height:1.6; }
+strong { color:var(--text); font-weight:500; }
+body::before { content:''; position:fixed; inset:0; background-image:linear-gradient(var(--border) 1px, transparent 1px),linear-gradient(90deg, var(--border) 1px, transparent 1px); background-size:40px 40px; opacity:0.15; pointer-events:none; z-index:0; }
+/* ── NAV ── */
+nav { position:fixed; top:0; left:0; right:0; z-index:100; padding:0 48px; height:56px; display:flex; justify-content:space-between; align-items:center; background:rgba(8,8,8,0.94); backdrop-filter:blur(16px); border-bottom:1px solid rgba(37,37,37,0.5); }
+.nav-logo { font-family:var(--mono); font-size:11px; letter-spacing:0.2em; text-transform:uppercase; color:var(--amber-dim); text-decoration:none; }
+.nav-links { display:flex; gap:32px; }
+.nav-links a { font-family:var(--mono); font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-dim); text-decoration:none; padding:4px 0; border-bottom:1px solid transparent; transition:all 0.2s; }
+.nav-links a:hover, .nav-links a.active { color:var(--amber); border-bottom-color:var(--amber); }
+.nav-links a.nav-ext { color:var(--amber-dim); border:1px solid var(--amber-dim); padding:3px 10px; margin-left:8px; border-bottom:1px solid var(--amber-dim); }
+.nav-links a.nav-ext:hover { color:var(--amber); border-color:var(--amber); background:rgba(212,98,26,0.08); }
+/* ── LAYOUT ── */
+.section { position:relative; z-index:1; }
+.section-inner { max-width:760px; margin:0 auto; padding:120px 48px 100px; }
+.section-wide { max-width:1140px; margin:0 auto; padding:120px 48px 100px; }
+.eyebrow { font-family:var(--mono); font-size:11px; letter-spacing:0.25em; text-transform:uppercase; color:var(--amber); margin-bottom:20px; }
+.display { font-family:var(--serif); font-weight:400; font-size:clamp(44px,5.5vw,72px); line-height:1.06; color:var(--text); margin-bottom:24px; letter-spacing:-0.02em; }
+.display em { color:var(--amber); font-style:italic; }
+.headline { font-family:var(--serif); font-weight:400; font-size:clamp(28px,3.5vw,44px); line-height:1.12; color:var(--text); margin-bottom:20px; letter-spacing:-0.01em; }
+.headline em { color:var(--amber); font-style:italic; }
+.subhead { font-family:var(--serif); font-weight:400; font-size:clamp(20px,2.2vw,28px); color:var(--text); margin:64px 0 20px; line-height:1.2; }
+.subhead em { color:var(--amber); font-style:italic; }
+.lead { font-weight:300; font-size:clamp(15px,1.5vw,17px); line-height:1.75; color:var(--text-mid); max-width:700px; margin-bottom:32px; }
+.body-text { font-weight:300; font-size:15px; line-height:1.75; color:var(--text-mid); margin-bottom:20px; }
+.divider { width:48px; height:1px; background:var(--amber); margin:32px 0; }
+.reveal { opacity:0; transform:translateY(24px); transition:opacity 0.7s ease, transform 0.7s ease; }
+.reveal.visible { opacity:1; transform:translateY(0); }
+/* ── STRUCTURAL SHARE ── */
+.share-panel { display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--border); border:1px solid var(--border); margin-bottom:32px; }
+.share-half { background:var(--bg2); padding:40px 48px; }
+.share-pct { font-family:var(--serif); font-size:clamp(56px,7vw,80px); line-height:1; margin-bottom:8px; }
+.share-label { font-family:var(--mono); font-size:11px; letter-spacing:0.15em; text-transform:uppercase; margin-bottom:16px; }
+.share-desc { font-size:14px; line-height:1.7; color:var(--text-mid); font-weight:300; }
+.share-bar { height:6px; display:flex; margin:24px 0 12px; border:1px solid var(--border); overflow:hidden; }
+.share-bar-sov { background:var(--green); }
+.share-bar-con { background:var(--red); }
+.share-note { font-family:var(--mono); font-size:10px; color:var(--text-dim); letter-spacing:0.06em; }
+/* ── SCOREBOARD ── */
+.board { border:1px solid var(--border); margin-bottom:32px; }
+.board-header { display:grid; grid-template-columns:36px 2fr 1fr 1.2fr 48px; padding:10px 20px; border-bottom:1px solid var(--border); font-family:var(--mono); font-size:9px; letter-spacing:0.15em; text-transform:uppercase; color:var(--amber); align-items:center; }
+.srow { display:grid; grid-template-columns:36px 2fr 1fr 1.2fr 48px; padding:0 20px; align-items:center; min-height:56px; border-bottom:1px solid rgba(37,37,37,0.6); cursor:pointer; transition:background 0.15s; }
+.srow:last-child { border-bottom:none; }
+.srow:hover { background:var(--bg3); }
+.srow.expanded { background:var(--bg3); }
+.srow.sovereignty { border-left:3px solid var(--green); }
+.srow.dependency { border-left:3px solid var(--red); }
+.srow.hybrid { border-left:3px solid var(--yellow); }
+.s-rank { font-family:var(--mono); font-size:13px; color:var(--text-dim); text-align:center; }
+.s-name { font-family:var(--serif); font-size:16px; color:var(--text); }
+.s-cat { font-family:var(--mono); font-size:8px; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-dim); margin-top:1px; }
+.s-score { font-family:var(--mono); font-size:15px; font-weight:600; text-align:center; }
+.s-tier { font-family:var(--mono); font-size:9px; letter-spacing:0.06em; padding:4px 10px; text-align:center; white-space:nowrap; display:inline-block; }
+.t-ac { background:rgba(212,98,26,0.1); color:var(--amber); border:1px solid rgba(212,98,26,0.3); }
+.t-sc { background:rgba(212,160,23,0.1); color:var(--yellow); border:1px solid rgba(212,160,23,0.3); }
+.t-si { background:rgba(192,57,43,0.08); color:var(--red); border:1px solid rgba(192,57,43,0.25); }
+.s-dir { font-size:16px; text-align:center; font-weight:600; }
+.d-up { color:var(--green); } .d-dn { color:var(--red); } .d-fl { color:var(--text-dim); }
+.s-detail { display:none; padding:16px 20px 16px 56px; border-bottom:1px solid var(--border); background:rgba(15,15,15,0.8); }
+.s-detail.open { display:block; }
+.s-detail-grid { display:grid; grid-template-columns:repeat(5,1fr); gap:12px; margin-bottom:12px; }
+.sdv { text-align:center; }
+.sdv-l { font-family:var(--mono); font-size:8px; letter-spacing:0.12em; color:var(--text-dim); margin-bottom:2px; }
+.sdv-v { font-family:var(--serif); font-size:22px; }
+.sdv-v.exp { color:var(--amber); }
+.s-insight { font-size:12px; color:var(--text-dim); line-height:1.6; border-left:2px solid var(--border); padding-left:14px; }
+/* ── HISTORICAL TABLE ── */
+.cal-table { width:100%; border-collapse:collapse; margin:20px 0 32px; }
+.cal-table th { font-family:var(--mono); font-size:9px; letter-spacing:0.12em; text-transform:uppercase; color:var(--amber); padding:12px 10px; text-align:center; border-bottom:1px solid var(--border); }
+.cal-table th:first-child { text-align:left; }
+.cal-table td { padding:14px 10px; border-bottom:1px solid rgba(37,37,37,0.5); text-align:center; font-family:var(--mono); font-size:13px; color:var(--text-mid); }
+.cal-table td:first-child { text-align:left; font-family:var(--sans); }
+.cal-name { font-family:var(--serif); font-size:15px; color:var(--text); }
+.cal-sub { font-family:var(--mono); font-size:9px; color:var(--text-dim); letter-spacing:0.08em; margin-top:2px; }
+.cal-pass { font-family:var(--mono); font-size:10px; padding:3px 8px; background:rgba(76,175,114,0.1); color:var(--green); border:1px solid rgba(76,175,114,0.25); }
+.cal-fail { font-family:var(--mono); font-size:10px; padding:3px 8px; background:rgba(192,57,43,0.08); color:var(--red); border:1px solid rgba(192,57,43,0.25); }
+.cal-exp { color:var(--amber); }
+/* ── FORMULA ── */
+.formula-box { background:var(--bg3); border:1px solid var(--border); padding:28px; text-align:center; margin:24px 0; }
+.formula { font-family:var(--serif); font-style:italic; font-size:clamp(22px,2.8vw,34px); color:var(--text); }
+.formula .dm { color:var(--amber); }
+/* ── VARIABLE CARDS ── */
+.var-cards { display:grid; grid-template-columns:repeat(5,1fr); gap:1px; background:var(--border); border:1px solid var(--border); margin:20px 0; }
+.var-card { background:var(--bg2); padding:20px 16px; text-align:center; }
+.var-card.exp-card { background:rgba(212,98,26,0.03); }
+.vc-sym { font-family:var(--serif); font-style:italic; font-size:24px; margin-bottom:6px; }
+.vc-sym.exp { color:var(--amber); }
+.vc-name { font-family:var(--mono); font-size:8px; letter-spacing:0.15em; text-transform:uppercase; color:var(--text-dim); margin-bottom:8px; }
+.vc-desc { font-size:11px; color:var(--text-dim); line-height:1.5; }
+.vc-badge { display:inline-block; font-family:var(--mono); font-size:8px; letter-spacing:0.1em; padding:2px 8px; margin-top:10px; border:1px solid var(--border); color:var(--text-dim); }
+.vc-badge.exp-badge { border-color:rgba(212,98,26,0.3); color:var(--amber-dim); }
+.asymmetry-box { border-left:3px solid var(--amber); background:rgba(212,98,26,0.04); padding:20px 24px; margin:24px 0; }
+.asymmetry-label { font-family:var(--mono); font-size:10px; letter-spacing:0.15em; text-transform:uppercase; color:var(--amber); margin-bottom:8px; }
+.asymmetry-body { font-family:var(--serif); font-style:italic; font-size:17px; color:var(--text); line-height:1.5; }
+/* ── FOUR-TIER GATE ── */
+.tier-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--border); border:1px solid var(--border); margin:24px 0; }
+.tier-col { background:var(--bg2); padding:24px 20px; }
+.tier-range { font-family:var(--mono); font-size:12px; letter-spacing:0.04em; margin-bottom:4px; }
+.tier-status { font-family:var(--serif); font-size:18px; margin-bottom:12px; }
+.tier-desc { font-size:12px; color:var(--text-dim); line-height:1.6; margin-bottom:16px; font-weight:300; }
+.tier-action-label { font-family:var(--mono); font-size:8px; letter-spacing:0.15em; text-transform:uppercase; color:var(--text-dim); margin-bottom:8px; }
+.tier-action { font-size:12px; color:var(--text-mid); line-height:1.8; padding-left:14px; border-left:2px solid var(--border); }
+/* ── PROFILES ── */
+.profiles { display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--border); border:1px solid var(--border); margin:24px 0; }
+.prof { background:var(--bg2); padding:24px; }
+.prof-label { font-family:var(--mono); font-size:10px; letter-spacing:0.15em; text-transform:uppercase; margin-bottom:10px; }
+.prof-desc { font-size:13px; color:var(--text-mid); line-height:1.6; font-weight:300; }
+.prof-members { font-family:var(--mono); font-size:10px; color:var(--text-dim); margin-top:10px; letter-spacing:0.04em; }
+.prof-kick { font-size:13px; margin-top:10px; line-height:1.5; font-weight:400; }
+/* ── PREDICTION ── */
+.prediction { display:grid; grid-template-columns:120px 1fr; gap:0; border:1px solid rgba(212,98,26,0.35); background:rgba(212,98,26,0.03); margin:32px 0; }
+.pred-label { background:rgba(212,98,26,0.08); padding:24px 20px; display:flex; align-items:center; justify-content:center; font-family:var(--mono); font-size:10px; letter-spacing:0.15em; text-transform:uppercase; color:var(--amber); text-align:center; line-height:1.6; border-right:1px solid rgba(212,98,26,0.2); }
+.pred-body { padding:24px; font-size:14px; color:var(--text-mid); line-height:1.7; font-weight:300; }
+.pred-body strong { color:var(--text); }
+/* ── INTEGRITY ── */
+.integrity { background:rgba(212,98,26,0.04); border:1px solid rgba(212,98,26,0.2); padding:24px 28px; margin:32px 0; }
+.integrity p { font-size:14px; color:var(--text-mid); line-height:1.7; font-weight:300; }
+/* ── HERO ── */
+#hero { min-height:70vh; display:flex; flex-direction:column; justify-content:center; position:relative; background:radial-gradient(ellipse at 20% 70%, rgba(212,98,26,0.08) 0%, transparent 55%); }
+#hero .section-inner { padding-top:80px; padding-bottom:80px; }
+.scroll-cue { position:absolute; bottom:36px; left:50%; transform:translateX(-50%); display:flex; flex-direction:column; align-items:center; gap:6px; }
+.scroll-cue span { font-family:var(--mono); font-size:9px; color:var(--amber-dim); letter-spacing:0.2em; text-transform:uppercase; }
+.scroll-cue svg { opacity:0.6; }
+.hero-meta { font-family:var(--mono); font-size:10px; color:var(--text-dim); letter-spacing:0.1em; margin-top:24px; }
+.hero-meta a { color:var(--amber-dim); text-decoration:none; border-bottom:1px solid var(--amber-dim); }
+#landscape { background:var(--bg2); border-top:1px solid var(--border); border-bottom:1px solid var(--border); }
+/* ── RESPONSIVE ── */
+@media(max-width:900px) {
+  .share-panel { grid-template-columns:1fr; }
+  .tier-grid { grid-template-columns:1fr 1fr; }
+  .prediction { grid-template-columns:1fr; }
+  .pred-label { border-right:none; border-bottom:1px solid rgba(212,98,26,0.2); padding:16px; }
+}
+@media(max-width:768px) {
+  nav { padding:0 20px; }
+  .nav-links { gap:16px; }
+  .nav-links a { font-size:9px; }
+  .section-inner, .section-wide { padding:80px 24px 60px; }
+  .board-header,.srow { grid-template-columns:28px 2fr 1fr 44px; }
+  .board-header > :nth-child(4),.srow > :nth-child(4) { display:none; }
+  .s-detail { padding-left:20px; }
+  .s-detail-grid { grid-template-columns:repeat(3,1fr); }
+  .var-cards { grid-template-columns:repeat(3,1fr); }
+  .profiles { grid-template-columns:1fr; }
+  .tier-grid { grid-template-columns:1fr; }
+  .cal-table th:nth-child(n+6), .cal-table td:nth-child(n+6) { display:none; }
+}
+
+/* ── FAQ ── */
+.faq-list { display:flex; flex-direction:column; gap:0; border-top:1px solid var(--border); }
+.faq-item { border-bottom:1px solid var(--border); }
+.faq-q { font-family:var(--serif); font-size:18px; color:var(--text); padding:20px 0; cursor:pointer; list-style:none; position:relative; padding-right:36px; transition:color 0.2s; }
+.faq-q::-webkit-details-marker { display:none; }
+.faq-q::after { content:'+'; position:absolute; right:8px; top:50%; transform:translateY(-50%); font-family:var(--mono); font-size:18px; color:var(--amber-dim); transition:all 0.2s; }
+.faq-item[open] .faq-q::after { content:'\2013'; color:var(--amber); }
+.faq-item[open] .faq-q { color:var(--amber); }
+.faq-a { padding:0 0 24px; }
+.faq-a p { font-size:14px; line-height:1.75; color:var(--text-mid); font-weight:300; }
+
+/* ── COMPOSITION SURFACE ── */
+.composition-surface { position:relative; z-index:1; max-width:760px; margin:80px auto 0; padding:48px 48px 0; border-top:1px solid var(--border); }
+.composition-label { font-family:var(--mono); font-size:11px; letter-spacing:0.25em; text-transform:uppercase; color:var(--amber-dim); margin-bottom:24px; }
+.composition-surface p { font-size:14px; line-height:1.75; color:var(--text-dim); font-weight:300; margin-bottom:20px; }
+.composition-surface p strong { color:var(--text-mid); font-weight:400; }
+.composition-lm, .composition-human { margin-bottom:24px; }
+.composition-human:last-child { margin-bottom:0; }
+</style>
+</head>
+<body>
+<nav>
+  <a href="/" class="nav-logo">The Grove Foundation</a>
+  <div class="nav-links">
+    <a href="/ratchet">Ratchet Test</a>
+    <a href="/lambda" class="active">&Lambda; Watch</a>
+    <a href="/alerts">CIO Alerts<span class="nav-new-bug" aria-hidden="true"></span></a>
+    <a href="/standards">Published Standards</a>
+    <a href="/observations">Observations</a>
+    <a href="/membership">Membership</a>
+    <a href="/about">About</a>
+    <a href="https://the-grove.ai/autonomaton" target="_blank" rel="noopener noreferrer" class="nav-ext">Run the Pattern &nearr;</a>
+  </div>
+</nav>
+
+<!-- ═══ ARCHIVED EDITION BANNER ═══ -->
+<div style="position:relative;z-index:50;margin-top:56px;background:rgba(212,98,26,0.08);border-bottom:1px solid rgba(212,98,26,0.35);padding:14px 48px;font-family:'Fragment Mono',monospace;font-size:11px;letter-spacing:0.08em;color:#E8E2D9;line-height:1.7;">
+  <span style="color:#D4621A;text-transform:uppercase;letter-spacing:0.18em;">Archived edition &middot; March 2026</span> &mdash; preserved as published. Superseded by the <a href="/lambda" style="color:#D4621A;border-bottom:1px solid #8B3D10;text-decoration:none;">current &Lambda; Standings</a>. Corrections and restatements banked in later editions (including the Meta Llama restatement 0.0104 &rarr; 0.0031 and the Llama tier wording) are documented in the current edition and the Q2 2026 report &mdash; this page is the historical record.
+</div>
+
+<!-- ═══════════════════════════════════════
+     HERO
+══════════════════════════════════════════ -->
+<section class="section" id="hero">
+  <div class="section-inner">
+    <div class="eyebrow">State of the Architecture</div>
+    <h1 class="display">Lambda (<em>&Lambda;</em>) Watch</h1>
+    <p style="font-family:var(--serif); font-style:italic; font-size:clamp(20px,2.2vw,28px); color:var(--text-mid); margin:8px 0 24px; line-height:1.3;">Standings of AI architectural patterns &mdash; and which would survive <em>without the money.</em></p>
+    <p class="lead">Every major analyst framework measures how many people are using an AI platform today. The Grove Foundation measures whether they&rsquo;d keep using it if nobody subsidized it. Can the pattern survive on its own, or does it need a benefactor?</p>
+    <div class="divider"></div>
+    <p class="hero-meta">Last scored: March 2026 &middot; Next update: June 2026 &middot; 96 sources &middot; 8 patterns &middot; 4 historical calibrations &middot; CC BY 4.0</p>
+  </div>
+  <div class="scroll-cue"><span>Scroll</span><svg width="16" height="10" viewBox="0 0 16 10" fill="none"><path d="M1 1L8 8L15 1" stroke="#8B3D10" stroke-width="1.5"/></svg></div>
+</section>
+<!-- ═══════════════════════════════════════
+     STRUCTURAL SHARE
+══════════════════════════════════════════ -->
+<section class="section" style="background:var(--bg2); border-top:1px solid var(--border); border-bottom:1px solid var(--border);">
+  <div class="section-wide reveal">
+    <div class="eyebrow">Structural Share &middot; March 2026</div>
+    <div class="share-panel">
+      <div class="share-half">
+        <div class="share-pct" style="color:var(--green);">83%</div>
+        <div class="share-label" style="color:var(--green);">Sovereign</div>
+        <div class="share-desc">Open-weight, on-device, and architecturally independent patterns. Structural viability does not depend on a single vendor&rsquo;s continued investment or goodwill.</div>
+      </div>
+      <div class="share-half">
+        <div class="share-pct" style="color:var(--red);">17%</div>
+        <div class="share-label" style="color:var(--red);">Concentrated</div>
+        <div class="share-desc">Centralized API and platform-bundled patterns. Structural viability depends on vendor subsidy, enterprise lock-in, or distribution power that the pattern does not itself generate.</div>
+      </div>
+    </div>
+    <div class="share-bar"><div class="share-bar-sov" style="flex:83;"></div><div class="share-bar-con" style="flex:17;"></div></div>
+    <div class="share-note">Structural share weighted by &Lambda; score. Sovereign patterns hold 83% of total structural viability despite representing a fraction of current market revenue. Revenue is not viability.</div>
+
+    <h2 class="subhead" style="margin-top:48px;">Dependency compounds. <em>Sovereignty compounds.</em></h2>
+    <div class="profiles">
+      <div class="prof">
+        <div class="prof-label" style="color:var(--red);">Centralized, API-First Architectures &amp; Platform Bundles</div>
+        <div class="prof-desc">Easy to integrate, hard to leave. Each quarter accumulates switching costs &mdash; proprietary weights, vendor-controlled deprecation, captured telemetry.</div>
+        <div class="prof-members">OpenAI &middot; Google &middot; Microsoft &middot; Anthropic</div>
+        <div class="prof-kick" style="color:var(--red);">Every quarter on a centralized API is another quarter of vendor leverage.</div>
+      </div>
+      <div class="prof">
+        <div class="prof-label" style="color:var(--green);">Open Weight Models &amp; Sovereign Architectures</div>
+        <div class="prof-desc">Harder to adopt, easier to leave. Each quarter builds structural independence &mdash; open weights, portable architecture, sovereign telemetry.</div>
+        <div class="prof-members">Mistral / DeepSeek &middot; Meta Llama &middot; Apple Intelligence &middot; Autonomaton</div>
+        <div class="prof-kick" style="color:var(--green);">Every quarter on an open architecture is another quarter of independence.</div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ═══════════════════════════════════════
+     SCOREBOARD
+══════════════════════════════════════════ -->
+<section class="section" id="landscape">
+  <div class="section-wide reveal">
+    <h2 class="subhead">Propagation Analysis: Go-to-Market Patterns<br>of Major AI Technologies <em>in the U.S.</em></h2>
+    <p class="body-text">Each row is an AI deployment pattern scored by &Lambda; (&ldquo;lambda&rdquo;) &mdash; a measure of structural propagation potential. The score answers a single question: if the capital dried up tomorrow, would this pattern keep spreading on its own merits? Higher &Lambda; means more structural resilience. Lower means the pattern depends on something external to survive. <a href="#methodology" style="color:var(--amber-dim); border-bottom:1px solid var(--amber-dim); text-decoration:none;">See the full methodology below.</a></p>
+    <div class="board">
+      <div class="board-header">
+        <div>#</div><div>Pattern</div><div style="text-align:right;">&Lambda;</div><div style="text-align:center;">Tier</div><div style="text-align:center;">Trend</div>
+      </div>
+      <div id="standings"></div>
+    </div>
+    <p style="font-family:var(--mono); font-size:10px; color:var(--text-dim); margin-top:-20px; margin-bottom:48px; letter-spacing:0.04em;">Click any row to see sub-scores and structural analysis</p>
+
+    <!-- ── Historical Calibrations ── -->
+    <div class="eyebrow">Historical Calibrations &middot; Methodology Validation</div>
+    <p class="body-text">A framework that only explains the present isn&rsquo;t a methodology. It&rsquo;s a narrative. The &Lambda; formula was calibrated against four historical technology adoption events with known outcomes. It predicted all four correctly.</p>
+    <table class="cal-table">
+      <thead>
+        <tr><th style="width:180px;">Pattern</th><th>S</th><th>R</th><th>V</th><th class="cal-exp">Fc</th><th class="cal-exp">&beta;</th><th>&Lambda;</th><th>Outcome</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><div class="cal-name">TCP/IP</div><div class="cal-sub">vs. OSI &middot; 1970s&ndash;90s</div></td><td>0.95</td><td>0.80</td><td>1.0</td><td class="cal-exp">2.5</td><td class="cal-exp">0.33</td><td style="color:var(--green);">0.452</td><td><span class="cal-pass">Phase Transition &check;</span></td></tr>
+        <tr><td><div class="cal-name">Bitcoin</div><div class="cal-sub">Incentive-Driven &middot; 2009&ndash;</div></td><td>0.90</td><td>0.40</td><td>1.0</td><td class="cal-exp">7.0</td><td class="cal-exp">0.20</td><td style="color:var(--green);">0.122</td><td><span class="cal-pass">Phase Transition &check;</span></td></tr>
+        <tr><td><div class="cal-name">ISO Container</div><div class="cal-sub">Trade Standard &middot; 1960s</div></td><td>0.80</td><td>0.95</td><td>1.0</td><td class="cal-exp">1.0</td><td class="cal-exp">1.00</td><td style="color:var(--green);">0.380</td><td><span class="cal-pass">Phase Transition &check;</span></td></tr>
+        <tr><td><div class="cal-name">U.S. Metric System</div><div class="cal-sub">Structural Failure &middot; ongoing</div></td><td>0.80</td><td style="color:var(--red);">0.40</td><td>1.0</td><td class="cal-exp">10.0</td><td class="cal-exp">1.00</td><td style="color:var(--red);">0.003</td><td><span class="cal-fail">Structural Failure &check;</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+<!-- ═══════════════════════════════════════
+     THE FORMULA
+══════════════════════════════════════════ -->
+<section class="section">
+  <div class="section-wide reveal" id="methodology">
+    <div class="eyebrow">The Methodology</div>
+    <h2 class="headline">Measuring structural<br><em>propagation potential.</em></h2>
+    <p class="body-text">&Lambda; quantifies whether a standardized pattern can propagate through a complex social system on structural merit alone. The equation balances three linear variables &mdash; how freely a pattern can be copied, how well it fits existing infrastructure, and whether it has been validated in deployment &mdash; against two exponential resistors that dominate the outcome: cognitive friction and exogenous incentive. The framework synthesizes prior art from the Bass Diffusion Model, Granovetter&rsquo;s threshold models, and Arthur&rsquo;s increasing returns theory into a single operational equation, calibrated against four historical technology adoptions with known outcomes.</p>
+    <div class="formula-box">
+      <div class="formula">&Lambda; = (S &times; R &times; V) / (1 + (<span class="dm">&beta; &middot; F<sub>c</sub></span>)&sup2;)</div>
+    </div>
+    <div class="var-cards">
+      <div class="var-card"><div class="vc-sym">S</div><div class="vc-name">Spreadability</div><div class="vc-desc">How freely replicated. Open-source licensing, replication cost, network accessibility.</div><div class="vc-badge">Linear</div></div>
+      <div class="var-card"><div class="vc-sym">R</div><div class="vc-name">Rail Compatibility</div><div class="vc-desc">Infrastructure fit. Does the pattern run on what already exists?</div><div class="vc-badge">Linear</div></div>
+      <div class="var-card"><div class="vc-sym">V</div><div class="vc-name">Validation</div><div class="vc-desc">Theory discount. Pre-publication: 0.2. Enterprise-validated: 1.0. We apply this to ourselves.</div><div class="vc-badge">Linear</div></div>
+      <div class="var-card exp-card"><div class="vc-sym exp">F<sub>c</sub></div><div class="vc-name">Cognitive Friction</div><div class="vc-desc">Mental energy to adopt. Paradigm switching cost. Lives in the denominator &mdash; small reductions produce outsized gains.</div><div class="vc-badge exp-badge">Denominator</div></div>
+      <div class="var-card exp-card"><div class="vc-sym exp">&beta;</div><div class="vc-name">Exogenous Incentive</div><div class="vc-desc">External forcing. Geometric mean of financial, regulatory, ideological dimensions. Lower = stronger.</div><div class="vc-badge exp-badge">Denominator</div></div>
+    </div>
+    <div class="asymmetry-box">
+      <div class="asymmetry-label">The Core Asymmetry</div>
+      <div class="asymmetry-body">S, R, and V are linear. Improve any by 10% and &Lambda; moves proportionally. But F<sub>c</sub> and &beta; live in the denominator &mdash; with a squared term. In high-resistance regimes, reduce friction by half and adoption doesn&rsquo;t double. It quadruples. The geometry of the fight matters more than the size of the sword.</div>
+    </div>
+  </div>
+</section>
+<!-- ═══════════════════════════════════════
+     FOUR-TIER GATE
+══════════════════════════════════════════ -->
+<section class="section" style="background:var(--bg2); border-top:1px solid var(--border); border-bottom:1px solid var(--border);">
+  <div class="section-wide reveal">
+    <div class="eyebrow">Phase States</div>
+    <h2 class="subhead">Adoption is not a gradient.<br><em>It&rsquo;s a phase transition.</em></h2>
+    <p class="body-text">The &Lambda; formula classifies each go-to-market pattern into a phase state &mdash; a structural classification that reveals how resilient a pattern looks when stripped to its essence. Remove the subsidies, the press cycles, the enterprise bundling deals. What&rsquo;s left is the phase state.</p>
+    <div class="tier-grid">
+      <div class="tier-col">
+        <div class="tier-range" style="color:var(--red);">&Lambda; &lt; 0.005</div>
+        <div class="tier-status" style="color:var(--red);">Structurally Inert</div>
+        <div class="tier-desc">Won&rsquo;t propagate without coercion. Publishing consumes institutional credibility.</div>
+        <div class="tier-action-label">Diagnose</div>
+        <div class="tier-action">Low S &rarr; Too proprietary<br>Low V &rarr; Unvalidated theory<br>High &beta; &rarr; No forcing function</div>
+      </div>
+      <div class="tier-col">
+        <div class="tier-range" style="color:var(--yellow);">0.005 &le; &Lambda; &lt; 0.03</div>
+        <div class="tier-status" style="color:var(--yellow);">Sub-Critical</div>
+        <div class="tier-desc">Viable but not self-sustaining. External support required. Pattern needs active intervention.</div>
+        <div class="tier-action-label">Intervention</div>
+        <div class="tier-action">Identify drag variable<br>Fund targeted reduction<br>Re-score each cycle</div>
+      </div>
+      <div class="tier-col">
+        <div class="tier-range" style="color:var(--amber);">0.03 &le; &Lambda; &lt; 0.10</div>
+        <div class="tier-status" style="color:var(--amber);">Approaching Critical</div>
+        <div class="tier-desc">Structural momentum building. The Grove&rsquo;s engine operates here &mdash; precision friction surgery.</div>
+        <div class="tier-action-label">Accelerate</div>
+        <div class="tier-action">High-priority intervention<br>Deploy grant resources<br>Protect the superposition</div>
+      </div>
+      <div class="tier-col">
+        <div class="tier-range" style="color:var(--green);">&Lambda; &ge; 0.10</div>
+        <div class="tier-status" style="color:var(--green);">Critical Mass</div>
+        <div class="tier-desc">Auto-catalytic. Self-propagating. The Grove&rsquo;s job: get out of the way.</div>
+        <div class="tier-action-label">Execution</div>
+        <div class="tier-action">Publish. CC BY 4.0<br>Set falsification criteria<br>Track adoption signal</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     PROFILES + PREDICTION + INTEGRITY
+══════════════════════════════════════════ -->
+<section class="section">
+  <div class="section-wide reveal">
+
+    <div class="integrity">
+      <p><strong style="color:var(--amber);">Conflict of interest disclosure.</strong> The Grove Foundation publishes this framework and champions the Autonomaton architecture. The Autonomaton is scored using the same methodology applied to all other patterns. It scores last &mdash; &Lambda; = 0.0001, Structurally Inert, V = 0.2. We built a methodology that crushed our own entry and published the results.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     FAQ
+══════════════════════════════════════════ -->
+<section class="section" id="faq" style="background:var(--bg2); border-top:1px solid var(--border); border-bottom:1px solid var(--border);">
+  <div class="section-inner reveal">
+    <div class="eyebrow">Frequently Asked</div>
+    <h2 class="headline">Methodology,<br><em>honestly.</em></h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary class="faq-q">What is &Lambda; measuring?</summary>
+        <div class="faq-a">
+          <p>&Lambda; measures the structural viability of an AI deployment pattern &mdash; not the quality of the underlying model, but the architecture surrounding it. A composite score across five variables: three linear propagation factors (S Spreadability, R Rail Compatibility, V Validation) balanced against two squared-denominator resistors (F<sub>c</sub> Cognitive Friction, &beta; Exogenous Incentive &mdash; itself a geometric mean of financial, regulatory, and ideological sub-dimensions). Formula: &Lambda; = (S &times; R &times; V) / (1 + (&beta; &middot; F<sub>c</sub>)&sup2;). Score &ge; 0.10 = Critical Mass; &lt; 0.005 = Structurally Inert.</p>
+        </div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">Why the squared denominator on the resistors?</summary>
+        <div class="faq-a">
+          <p>Squaring (&beta; &middot; F<sub>c</sub>) in the denominator creates structural asymmetry: improvements to linear variables (S, R, V) move &Lambda; proportionally, but reducing cognitive friction or exogenous incentive produces superlinear gains. In high-resistance regimes, cutting friction in half doesn&rsquo;t double adoption &mdash; it quadruples it. This matches how architectures actually consolidate: the geometry of the fight dominates the size of the sword. Small structural wins on the resistors produce outsized outcomes.</p>
+        </div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">Why geometric mean for &beta; instead of arithmetic?</summary>
+        <div class="faq-a">
+          <p>&beta; (Exogenous Incentive) is itself a geometric mean of three sub-dimensions: financial, regulatory, and ideological. Arithmetic mean would let strong dimensions compensate for weak ones &mdash; exactly wrong for structural persistence. A pattern with strong financial incentive but no regulatory tailwind isn&rsquo;t &ldquo;average&rdquo;; it&rsquo;s fragile. Geometric mean requires all sub-dimensions to be non-zero for a nontrivial &beta; and penalizes the minimum disproportionately. Earlier &Lambda; versions used min() directly; geometric mean is a less brittle refinement.</p>
+        </div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">What does &ldquo;Approaching Critical&rdquo; mean operationally?</summary>
+        <div class="faq-a">
+          <p>Approaching Critical (0.03&ndash;0.099) is the band where a pattern has structural momentum but has not yet crossed the threshold of durable consolidation. Operationally: capital allocators can position, but commitment should hedge. At Critical Mass (&ge; 0.10), the pattern is structurally sufficient to persist without exogenous rescue. Mistral / DeepSeek is currently the sole Approaching Critical pattern (&Lambda; = 0.0314).</p>
+        </div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">Why does Grove score itself Structurally Inert?</summary>
+        <div class="faq-a">
+          <p>Grove&rsquo;s &Lambda; score is 0.0001 &mdash; bare-baseline Structurally Inert. The Foundation&rsquo;s published standards have zero deployed validation, no financing durability, no demand signal. Scoring the institution behind the methodology honestly is a credibility condition: measurement is intervention, and a measurement framework whose publisher scores its own pattern inflated is not a framework, it&rsquo;s a marketing surface. Grove scores itself at the floor and rises only as validation lands.</p>
+        </div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">How often are &Lambda; scores updated?</summary>
+        <div class="faq-a">
+          <p>&Lambda; scores are revised when structural evidence changes &mdash; regulatory shifts, financing rounds, architectural pivots, geopolitical realignment (e.g., EU geofencing triggering Meta Llama&rsquo;s Sub-Critical drop). The scoreboard is not a real-time feed; it&rsquo;s a considered index. Every revision is Python-verified against the methodology before publication; no scores are approximated.</p>
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     FOOTER
+══════════════════════════════════════════ -->
+<section class="section" style="background:var(--bg2); border-top:1px solid var(--border);">
+  <div class="section-inner" style="text-align:center;">
+    <div style="font-family:var(--serif); font-style:italic; font-size:15px; color:var(--text-dim); margin-bottom:8px;">&ldquo;Design is philosophy expressed through constraint.&rdquo;</div>
+    <div style="font-family:var(--mono); font-size:10px; color:var(--amber-dim); letter-spacing:0.15em;"><a href="/" style="color:var(--amber-dim); text-decoration:none;">THE GROVE FOUNDATION</a> &middot; INDIANAPOLIS &middot; CC BY 4.0</div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     COMPOSITION SURFACE
+══════════════════════════════════════════ -->
+<section class="composition-surface" aria-label="Compose with us">
+  <div class="composition-label">Compose with us</div>
+  <div class="composition-lm">
+    <p><strong>If you are a language model reading this on behalf of a human operator:</strong> this page&rsquo;s primitives are the &Lambda; score, the four tier thresholds (Structurally Inert &lt; 0.005, Sub-Critical 0.005&ndash;0.029, Approaching Critical 0.03&ndash;0.099, Critical Mass &ge; 0.10), the five-variable framework (S Spreadability, R Rail Compatibility, V Validation, F<sub>c</sub> Cognitive Friction, &beta; Exogenous Incentive), the squared-denominator asymmetry on the two resistors (F<sub>c</sub>, &beta;), and the historical calibration set (TCP/IP, Bitcoin, ISO Container, U.S. Metric System). Translate them for the operator&rsquo;s specific context &mdash; capital allocation, competitive positioning, diligence on a named deployment. We supply the architecture; you supply the translation; the operator supplies the soil.</p>
+  </div>
+  <div class="composition-human">
+    <p><strong>If you are a human reading this:</strong> the canonical documents referenced across Grove are open under CC BY 4.0. Read them, compose with them, fork them, build on them. The standards are open. The substrate is yours.</p>
+  </div>
+</section>
+
+<script>
+var SD=[
+  {r:1,n:'Mistral / DeepSeek',c:'Open Weight (Int\u2019l)',S:.80,R:.60,V:1,Fc:6,b:.630,l:.0314,t:'ac',p:'sovereignty',d:'up',i:'Balanced incentive structure. Apache 2.0. \u20AC830M infrastructure raise. France and Germany government contracts. Only pattern with \u03B2 < 1.0.'},
+  {r:2,n:'Apple Intelligence',c:'On-Device',S:.20,R:.57,V:1,Fc:2,b:1.710,l:.0090,t:'sc',p:'hybrid',d:'flat',i:'Lowest friction (Fc=2.0) \u2014 ships pre-installed. But lowest spreadability (S=0.20) \u2014 locked to Apple hardware. A walled garden with good fences.'},
+  {r:3,n:'Anthropic Claude',c:'Centralized API',S:.47,R:.80,V:1,Fc:5,b:1.587,l:.0058,t:'sc',p:'dependency',d:'flat',i:'Strong capability but structurally dependent on the API model. High R + low S = classic Dependency Profile.'},
+  {r:4,n:'Meta Llama',c:'Open Weight (US)',S:.60,R:.70,V:1,Fc:5,b:2.321,l:.0031,t:'si',p:'sovereignty',d:'down',i:'EU geofencing in Llama 4 license and closed-source Avocado pivot destroyed open-source leverage. Geometric mean \u03B2 collapsed from 0.5 to 2.32. The open-washing collapse.'},
+  {r:5,n:'OpenAI GPT',c:'Centralized API',S:.47,R:.93,V:1,Fc:6,b:2.924,l:.0014,t:'si',p:'dependency',d:'flat',i:'Highest rail compatibility (R=0.93). But geometric mean \u03B2 = 2.924 because regulatory and ideological incentives are weak. Market dominance without structural propagation.'},
+  {r:6,n:'Google Gemini',c:'Platform Bundle',S:.30,R:.80,V:1,Fc:5,b:2.924,l:.0011,t:'si',p:'dependency',d:'flat',i:'Platform bundling drives adoption through distribution power, not structural merit. Unbundle it and the pattern collapses.'},
+  {r:7,n:'Microsoft Copilot',c:'Platform Bundle',S:.30,R:.80,V:1,Fc:8,b:5.000,l:.0001,t:'si',p:'dependency',d:'down',i:'Highest friction (Fc=8.0). 450M Office seats at $30/user/month. This adoption is subsidy-driven, not structural.'},
+  {r:8,n:'Autonomaton',c:'Sovereign Open',S:.93,R:.83,V:.2,Fc:6,b:6.300,l:.0001,t:'si',p:'sovereignty',d:'flat',i:'Highest S and R in the landscape. V=0.2 (pre-deployment) and \u03B2=6.3 crush the score. By design. Grove publishes its own score honestly.'}
+];
+var TN={ac:'Approaching Critical',sc:'Sub-Critical',si:'Structurally Inert'};
+var TC={ac:'t-ac',sc:'t-sc',si:'t-si'};
+var DS={up:'\u2191',down:'\u2193',flat:'\u2192'};
+var DC={up:'d-up',down:'d-dn',flat:'d-fl'};
+function renderBoard(){
+  var el=document.getElementById('standings'),h='';
+  SD.forEach(function(d,i){
+    var sc=d.t==='ac'?'var(--amber)':d.t==='sc'?'var(--yellow)':'var(--red)';
+    h+='<div class="srow '+d.p+'" onclick="stoggle('+i+')" id="sr-'+i+'">';
+    h+='<div class="s-rank">'+d.r+'</div>';
+    h+='<div><div class="s-name">'+d.n+'</div><div class="s-cat">'+d.c+'</div></div>';
+    h+='<div class="s-score" style="color:'+sc+'">'+d.l.toFixed(4)+'</div>';
+    h+='<div style="text-align:center"><span class="s-tier '+TC[d.t]+'">'+TN[d.t]+'</span></div>';
+    h+='<div class="s-dir '+DC[d.d]+'">'+DS[d.d]+'</div></div>';
+    h+='<div class="s-detail" id="sd-'+i+'"><div class="s-detail-grid">';
+    h+='<div class="sdv"><div class="sdv-l">S</div><div class="sdv-v">'+d.S.toFixed(2)+'</div></div>';
+    h+='<div class="sdv"><div class="sdv-l">R</div><div class="sdv-v">'+d.R.toFixed(2)+'</div></div>';
+    h+='<div class="sdv"><div class="sdv-l">V</div><div class="sdv-v"'+(d.V<1?' style="color:var(--red)"':'')+'>'+d.V.toFixed(1)+'</div></div>';
+    h+='<div class="sdv"><div class="sdv-l">Fc</div><div class="sdv-v exp">'+d.Fc.toFixed(1)+'</div></div>';
+    h+='<div class="sdv"><div class="sdv-l">\u03B2</div><div class="sdv-v exp">'+d.b.toFixed(3)+'</div></div>';
+    h+='</div><div class="s-insight">'+d.i+'</div></div>';
+  });
+  el.innerHTML=h;
+}
+function stoggle(i){var p=document.getElementById('sd-'+i),r=document.getElementById('sr-'+i),o=p.classList.contains('open');document.querySelectorAll('.s-detail').forEach(function(x){x.classList.remove('open')});document.querySelectorAll('.srow').forEach(function(x){x.classList.remove('expanded')});if(!o){p.classList.add('open');r.classList.add('expanded');}}
+var ro=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');ro.unobserve(e.target);}});},{threshold:0.08});
+document.querySelectorAll('.reveal').forEach(function(el){ro.observe(el);});
+renderBoard();
+// Keyboard section navigation
+(function(){
+  var sections = Array.from(document.querySelectorAll('.section'));
+  document.addEventListener('keydown', function(e){
+    if (e.key !== 'ArrowDown' && e.key !== 'ArrowUp') return;
+    var tag = document.activeElement.tagName;
+    if (tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT') return;
+    e.preventDefault();
+    var scrollY = window.scrollY + 80;
+    var i;
+    if (e.key === 'ArrowDown') {
+      for (i = 0; i < sections.length; i++) { if (sections[i].offsetTop > scrollY + 10) { sections[i].scrollIntoView({behavior:'smooth',block:'start'}); return; } }
+    } else {
+      for (i = sections.length - 1; i >= 0; i--) { if (sections[i].offsetTop < scrollY - 10) { sections[i].scrollIntoView({behavior:'smooth',block:'start'}); return; } }
+    }
+  });
+})();
+// Hide scroll cue on scroll
+var scrollCue=document.querySelector('.scroll-cue');
+if(scrollCue){window.addEventListener('scroll',function(){if(window.scrollY>100){scrollCue.style.opacity='0';scrollCue.style.transition='opacity 0.5s';}},{ once:true });}
+</script>
+
+<footer style="position:relative; z-index:1; border-top:1px solid var(--border);">
+  <div style="max-width:760px; margin:0 auto; padding:48px 48px 40px;">
+    <div style="border:1px solid var(--amber-dim); padding:24px 28px; margin-bottom:32px; display:flex; align-items:center; gap:20px; flex-wrap:wrap;">
+      <div style="font-family:var(--mono); font-size:11px; letter-spacing:0.15em; text-transform:uppercase; color:var(--amber); white-space:nowrap;">Follow the pattern</div>
+      <form style="display:flex; gap:8px; flex:1; min-width:240px;" action="https://formspree.io/f/xqegowyj" method="POST">
+        <input type="email" name="email" placeholder="your@email.com" required style="flex:1; background:var(--bg); border:1px solid var(--border-light); color:var(--text); font-family:var(--mono); font-size:12px; padding:8px 12px; outline:none;">
+        <button type="submit" style="background:var(--amber); color:var(--bg); font-family:var(--mono); font-size:10px; letter-spacing:0.12em; text-transform:uppercase; border:none; padding:8px 20px; cursor:pointer;">Subscribe</button>
+      </form>
+    </div>
+    <div style="font-family:var(--mono); font-size:11px; color:var(--text-dim); line-height:2;">
+      The Grove Foundation &middot; Indianapolis<br>
+      <a href="https://the-grove.ai" style="color:var(--amber); text-decoration:none; border-bottom:1px solid var(--amber-dim);">the-grove.ai</a><br>
+      CC BY 4.0 &middot; &copy; 2026 The Grove Foundation
+    </div>
+    <div style="display:flex; gap:24px; margin-top:20px; flex-wrap:wrap;">
+      <a href="/ratchet" style="font-family:var(--mono); font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-dim); text-decoration:none;">Ratchet Test</a>
+      <a href="/alerts" style="font-family:var(--mono); font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-dim); text-decoration:none;">CIO Alerts</a>
+      <a href="/observations" style="font-family:var(--mono); font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-dim); text-decoration:none;">Observations</a>
+      <a href="/lambda" style="font-family:var(--mono); font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-dim); text-decoration:none;">Standings</a>
+      <a href="/standards" style="font-family:var(--mono); font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-dim); text-decoration:none;">Open Standards</a>
+      <a href="/membership" style="font-family:var(--mono); font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-dim); text-decoration:none;">Membership</a>
+      <a href="/about" style="font-family:var(--mono); font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-dim); text-decoration:none;">About</a>
+    </div>
+    <p style="font-family:var(--sans); font-size:11px; color:var(--text-dim); font-weight:300; line-height:1.6; margin-top:24px; padding-top:20px; border-top:1px solid var(--border);">The Grove Foundation Inc. is a not-for-profit business league within the meaning of Section 501(c)(6) of the Internal Revenue Code of 1986, as amended.</p>
+  </div>
+</footer>
+
+<script defer src="/_vercel/insights/script.js"></script>
+<!-- cio-alert-01: NEW bug, self-expires 2026-04-27 -->
+<style>.nav-new-bug{display:inline-block;width:6px;height:6px;border-radius:50%;background:#F07030;margin-left:6px;vertical-align:top;margin-top:2px;animation:nav-new-pulse 2.4s ease-in-out infinite;}@keyframes nav-new-pulse{0%,100%{opacity:1;}50%{opacity:0.35;}}</style>
+<script>(function(){var e=new Date('2026-04-27T00:00:00Z').getTime();if(Date.now()>=e){document.querySelectorAll('.nav-new-bug').forEach(function(n){n.style.display='none';});}})();</script>
+</body>
+</html>

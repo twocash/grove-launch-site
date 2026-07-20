@@ -1,0 +1,53 @@
+/* ══════════════════════════════════════════════════════
+   GROVE FOUNDATION — BASE
+   Foundational resets + the two signature global motifs:
+   the warm off-white-on-near-black body, and the fixed
+   40px grid-texture overlay. Import AFTER tokens.
+══════════════════════════════════════════════════════ */
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--sans);
+  font-weight: var(--weight-light);
+  line-height: var(--leading-body);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* ── GRID TEXTURE OVERLAY ──
+   The brand's defining background: a 40px hairline grid at
+   ~0.2 opacity, fixed behind all content. Add `.grid-soft`
+   to the body for the 0.15 variant used on document pages. */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(var(--border) 1px, transparent 1px),
+    linear-gradient(90deg, var(--border) 1px, transparent 1px);
+  background-size: var(--grid-cell) var(--grid-cell);
+  opacity: var(--grid-opacity);
+  pointer-events: none;
+  z-index: 0;
+  transform: translateZ(0);
+}
+body.grid-soft::before { opacity: var(--grid-opacity-soft); }
+
+/* Content sits above the grid */
+.section, main, nav, footer { position: relative; z-index: 1; }
+
+/* ── INLINE TEXT CONVENTIONS ── */
+strong { color: var(--text); font-weight: var(--weight-medium); }
+em { font-style: italic; }
+a { color: var(--amber); text-decoration: none; }
+a:hover { color: var(--amber-bright); }
+
+/* dfn / cite conventions from the long-form standards docs */
+dfn { font-style: normal; color: var(--text); border-bottom: 1px dotted var(--amber-dim); }
+cite { font-style: italic; color: var(--text); }
+
+::selection { background: var(--amber-glow); color: var(--text); }

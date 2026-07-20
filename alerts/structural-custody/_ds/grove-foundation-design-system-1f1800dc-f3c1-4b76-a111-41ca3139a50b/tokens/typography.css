@@ -1,0 +1,53 @@
+/* ══════════════════════════════════════════════════════
+   GROVE FOUNDATION — TYPOGRAPHY TOKENS
+   Three-font stack:
+     · Instrument Serif — display headlines, card titles (italic = amber emphasis)
+     · Fragment Mono    — labels, nav, metadata, eyebrows, code
+     · DM Sans (300–600) — body text, descriptions
+   Type scale is fluid (clamp). Mono labels run small with
+   wide tracking (0.1–0.25em). Body is 15–17px / 1.75–1.85.
+══════════════════════════════════════════════════════ */
+:root {
+  /* ── FONT FAMILIES ── */
+  --mono:  'Fragment Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace;  /* @kind font */
+  --serif: 'Instrument Serif', Georgia, 'Times New Roman', serif;  /* @kind font */
+  --sans:  'DM Sans', system-ui, -apple-system, sans-serif;  /* @kind font */
+
+  /* ── FLUID DISPLAY / HEADLINE SCALE ── */
+  --type-display:  clamp(44px, 5.5vw, 72px);  /* hero display (serif) */
+  --type-display-sm: clamp(36px, 5vw, 56px);  /* homepage hero display (serif) */
+  --type-headline: clamp(28px, 3.5vw, 44px);  /* section headline (serif) */
+  --type-subhead:  clamp(20px, 2.2vw, 28px);  /* subhead (serif) */
+  --type-card-title: 20px;                    /* card titles (serif, italic) */
+
+  /* ── BODY ── */
+  --type-lead: clamp(15px, 1.5vw, 17px);  /* lead paragraph */
+  --type-body: 15px;                      /* standard body */
+  --type-body-lg: 17px;                   /* generous body (homepage) */
+  --type-small: 13px;                     /* small body · descriptions */
+
+  /* ── MONO LABELS ── */
+  --type-eyebrow: 11px;   /* section eyebrow · tracking 0.25em */
+  --type-nav:     10px;   /* nav links · tracking 0.12em */
+  --type-meta:    11px;   /* metadata lines · tracking 0.08–0.1em */
+  --type-micro:   9px;    /* micro labels · tracking 0.15–0.2em */
+
+  /* ── WEIGHTS ── */
+  --weight-light:   300;  /* body default */
+  --weight-regular: 400;  /* serif default · mono */
+  --weight-medium:  500;  /* emphasized body (strong) */
+  --weight-semi:    600;  /* DM Sans heaviest in use */
+
+  /* ── LINE HEIGHTS ── */
+  --leading-display: 1.06;
+  --leading-headline: 1.15;
+  --leading-body: 1.75;
+  --leading-body-lg: 1.85;
+
+  /* ── LETTER SPACING ── */
+  --tracking-display: -0.02em;  /* tighten large serif */
+  --tracking-eyebrow: 0.25em;   /* widest mono */
+  --tracking-nav:     0.12em;
+  --tracking-label:   0.15em;
+  --tracking-meta:    0.08em;
+}

@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="_ds/grove-foundation-design-system-1f1800dc-f3c1-4b76-a111-41ca3139a50b/tokens/fonts.css">
+  <link rel="stylesheet" href="_ds/grove-foundation-design-system-1f1800dc-f3c1-4b76-a111-41ca3139a50b/tokens/colors.css">
+  <link rel="stylesheet" href="_ds/grove-foundation-design-system-1f1800dc-f3c1-4b76-a111-41ca3139a50b/tokens/typography.css">
+  <link rel="stylesheet" href="_ds/grove-foundation-design-system-1f1800dc-f3c1-4b76-a111-41ca3139a50b/tokens/spacing.css">
+  <link rel="stylesheet" href="_ds/grove-foundation-design-system-1f1800dc-f3c1-4b76-a111-41ca3139a50b/tokens/base.css">
+  <script src="_ds/grove-foundation-design-system-1f1800dc-f3c1-4b76-a111-41ca3139a50b/_ds_bundle.js"></script>
+  <style>
+    body{background:#080808;margin:0}
+    a{color:#D4621A;text-decoration:none;border-bottom:1px solid rgba(212,98,26,0.35)}
+    a:hover{color:#F07030;border-bottom-color:#F07030}
+    html{scroll-behavior:smooth}
+  </style>
+</helmet>
+<div style="min-height:100vh;color:#E8E2D9;font-family:'DM Sans',sans-serif;font-weight:300;position:relative;padding-bottom:64px">
+
+  <header style="border-bottom:1px solid #252525;padding:104px 48px 72px;background:radial-gradient(ellipse at 20% 70%, rgba(212,98,26,0.08), transparent 55%)">
+    <div style="max-width:1140px;margin:0 auto;display:flex;flex-direction:column;gap:24px">
+      <div style="display:flex;align-items:center;gap:14px">
+        <img src="assets/grove-mark.png" alt="" style="width:32px;height:32px;object-fit:contain">
+        <span style="font-family:'Fragment Mono',monospace;font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:#8B3D10">The Grove Foundation</span>
+      </div>
+      <div style="font-family:'Fragment Mono',monospace;font-size:11px;letter-spacing:0.25em;color:#D4621A;text-transform:uppercase">CIO Alert · Structural Custody in Agentic AI · Published July 21, 2026</div>
+      <h1 style="font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(40px,5.5vw,68px);line-height:1.05;letter-spacing:-0.02em;margin:0;max-width:900px">A technical audit of <em style="color:#D4621A">trajectory harvesting</em> and zero-data-retention boundaries.</h1>
+      <p style="max-width:760px;font-size:17px;line-height:1.8;color:#B0A898;margin:0;text-wrap:pretty">How agentic coding vendors legally decouple the protected "Customer Data" from the human reasoning trace that produced it — and harvest the latter at industrial scale.</p>
+      <div style="width:48px;height:1px;background:#D4621A"></div>
+      <div style="border-left:2px solid #8B3D10;background:rgba(212,98,26,0.04);padding:20px 26px;max-width:760px">
+        <div style="font-family:'Fragment Mono',monospace;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:#D4621A;margin-bottom:10px">Our lane</div>
+        <p style="font-size:14px;line-height:1.8;color:#B0A898;margin:0;text-wrap:pretty">We are technologists, not attorneys. We report two things only: what these systems capture, and what the vendors’ own terms literally say — both verifiable right here. What a court would make of any of it is a question for your counsel, not us. Nothing here is legal advice or creates an attorney-client relationship. <a href="evidence.html" target="_blank">Verify every claim in the Evidence Library →</a></p>
+      </div>
+      <div style="font-family:'Fragment Mono',monospace;font-size:10px;letter-spacing:0.15em;color:#7A736A;text-transform:uppercase">For CISOs · Enterprise Architects · Practitioners &nbsp;·&nbsp; CC BY 4.0 &nbsp;·&nbsp; the-grove.ai</div>
+    </div>
+  </header>
+
+  <section data-screen-label="Convergence Matrix" style="border-bottom:1px solid #252525;padding:88px 48px">
+    <div style="max-width:1140px;margin:0 auto;display:flex;flex-direction:column;gap:20px">
+      <div style="font-family:'Fragment Mono',monospace;font-size:11px;letter-spacing:0.25em;text-transform:uppercase;color:#D4621A">Cross-Vendor Convergence Matrix</div>
+      <h2 style="font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(30px,3.6vw,44px);line-height:1.08;letter-spacing:-0.02em;margin:0;max-width:900px">Every major vendor converged on the same legal architecture in <em style="color:#D4621A">under 14 months.</em></h2>
+      <p style="max-width:760px;font-size:16px;line-height:1.8;color:#B0A898;margin:0;text-wrap:pretty">Industry-wide standardization of trajectory harvesting. Even in “protected” environments, vendors systematically capture behavioral reasoning traces.</p>
+      <div style="border:1px solid #333;overflow-x:auto;margin-top:8px">
+        <div style="min-width:900px">
+          <div style="display:grid;grid-template-columns:1.1fr 1.6fr 1.6fr 0.6fr 2fr;background:#161616;border-bottom:1px solid #333;font-family:'Fragment Mono',monospace;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#D4621A">
+            <div style="padding:12px 16px">Vendor</div>
+            <div style="padding:12px 16px;border-left:1px solid #252525">Protected Customer Data</div>
+            <div style="padding:12px 16px;border-left:1px solid #252525">Vendor-owned "Usage Data"</div>
+            <div style="padding:12px 16px;border-left:1px solid #252525;text-align:center">ZDR?</div>
+            <div style="padding:12px 16px;border-left:1px solid #252525">Key trace elements captured</div>
+          </div>
+          <div style="display:grid;grid-template-columns:1.1fr 1.6fr 1.6fr 0.6fr 2fr;border-bottom:1px solid #252525;align-items:center">
+            <div style="padding:14px 16px;font-family:'Instrument Serif',serif;font-style:italic;font-size:19px">Windsurf<div style="font-family:'DM Sans',sans-serif;font-style:normal;font-size:12px;color:#7A736A">Cognition</div></div>
+            <div style="padding:14px 16px;border-left:1px solid #252525;font-size:14px;line-height:1.5;color:#B0A898">Prompts + source code (excludes Usage Data §1.2)</div>
+            <div style="padding:14px 16px;border-left:1px solid #252525;font-size:14px;line-height:1.5;color:#B0A898">Anonymized interaction manner; absolute title §3.3.2</div>
+            <div style="padding:14px 16px;border-left:1px solid #252525;text-align:center;font-family:'Fragment Mono',monospace;font-size:13px;color:#C0392B">No</div>
+            <div style="padding:14px 16px;border-left:1px solid #252525;font-size:14px;line-height:1.5;color:#B0A898">Full multi-step planning timelines + every human accept/reject decision + post-suggestion edits and corrections</div>
+          </div>
+          <div style="display:grid;grid-template-columns:1.1fr 1.6fr 1.6fr 0.6fr 2fr;border-bottom:1px solid #252525;align-items:center;background:#0c0c0c">
+            <div style="padding:14px 16px;font-family:'Instrument Serif',serif;font-style:italic;font-size:19px">Cursor<div style="font-family:'DM Sans',sans-serif;font-style:normal;font-size:12px;color:#7A736A">Anysphere</div></div>
+            <div style="padding:14px 16px;border-left:1px solid #252525;font-size:14px;line-height:1.5;color:#B0A898">Plaintext — only if Privacy Mode ON</div>
+            <div style="padding:14px 16px;border-left:1px solid #252525;font-size:14px;line-height:1.5;color:#B0A898">Editor actions, embeddings, indexing metrics</div>
+            <div style="padding:14px 16px;border-left:1px solid #252525;text-align:center;font-family:'Fragment Mono',monospace;font-size:13px;color:#C0392B">No</div>
+            <div style="padding:14px 16px;border-left:1px solid #252525;font-size:14px;line-height:1.5;color:#B0A898">How developers edit or reject AI suggestions + the semantic structure and relationships of their entire codebase (Levenshtein distance, semantic embeddings, repo maps)</div>
+          </div>
+          <div style="display:grid;grid-template-columns:1.1fr 1.6fr 1.6fr 0.6fr 2fr;border-bottom:1px solid #252525;align-items:center">
+            <div style="padding:14px 16px;font-family:'Instrument Serif',serif;font-style:italic;font-size:19px">Claude Code<div style="font-family:'DM Sans',sans-serif;font-style:normal;font-size:12px;color:#7A736A">Anthropic</div></div>
+            <div style="padding:14px 16px;border-left:1px solid #252525;font-size:14px;line-height:1.5;color:#B0A898">Prompts, source code, outputs returned</div>
+            <div style="padding:14px 16px;border-left:1px solid #252525;font-size:14px;line-height:1.5;color:#B0A898">Operational metrics + all /feedback &amp; survey transcripts</div>
+            <div style="padding:14px 16px;border-left:1px solid #252525;text-align:center;font-family:'Fragment Mono',monospace;font-size:13px;color:#C0392B">No</div>
+            <div style="padding:14px 16px;border-left:1px solid #252525;font-size:14px;line-height:1.5;color:#B0A898">Complete session transcripts + explicit human feedback/ratings + full Slack channel history and decision context</div>
+          </div>
+          <div style="display:grid;grid-template-columns:1.1fr 1.6fr 1.6fr 0.6fr 2fr;border-bottom:1px solid #252525;align-items:center;background:#0c0c0c">
+            <div style="padding:14px 16px;font-family:'Instrument Serif',serif;font-style:italic;font-size:19px">GitHub Copilot<div style="font-family:'DM Sans',sans-serif;font-style:normal;font-size:12px;color:#7A736A">Microsoft</div></div>
+            <div style="padding:14px 16px;border-left:1px solid #252525;font-size:14px;line-height:1.5;color:#B0A898">Repo code + explicit chat prompts</div>
+            <div style="padding:14px 16px;border-left:1px solid #252525;font-size:14px;line-height:1.5;color:#B0A898">Server-side metrics, LoC arrays, agent-mode logs</div>
+            <div style="padding:14px 16px;border-left:1px solid #252525;text-align:center;font-family:'Fragment Mono',monospace;font-size:13px;color:#C0392B">No</div>
+            <div style="padding:14px 16px;border-left:1px solid #252525;font-size:14px;line-height:1.5;color:#B0A898">Detailed patterns of how developers modify suggestions + multi-file iterative reasoning flows across the repository</div>
+          </div>
+          <div style="display:grid;grid-template-columns:1.1fr 1.6fr 1.6fr 0.6fr 2fr;border-bottom:1px solid #252525;align-items:center">
+            <div style="padding:14px 16px;font-family:'Instrument Serif',serif;font-style:italic;font-size:19px">Replit</div>
+            <div style="padding:14px 16px;border-left:1px solid #252525;font-size:14px;line-height:1.5;color:#B0A898">Private / Enterprise Repl code</div>
+            <div style="padding:14px 16px;border-left:1px solid #252525;font-size:14px;line-height:1.5;color:#B0A898">OT timelines, diagnostic traces, execution patterns</div>
+            <div style="padding:14px 16px;border-left:1px solid #252525;text-align:center;font-family:'Fragment Mono',monospace;font-size:13px;color:#C0392B">No</div>
+            <div style="padding:14px 16px;border-left:1px solid #252525;font-size:14px;line-height:1.5;color:#B0A898">Keystroke-by-keystroke repair behavior + error diagnosis paths + sequences that lead to passing tests</div>
+          </div>
+          <div style="display:grid;grid-template-columns:1.1fr 1.6fr 1.6fr 0.6fr 2fr;align-items:center;background:#0c0c0c">
+            <div style="padding:14px 16px;font-family:'Instrument Serif',serif;font-style:italic;font-size:19px">OpenAI<div style="font-family:'DM Sans',sans-serif;font-style:normal;font-size:12px;color:#7A736A">Enterprise / API</div></div>
+            <div style="padding:14px 16px;border-left:1px solid #252525;font-size:14px;line-height:1.5;color:#B0A898">Protected endpoint payloads</div>
+            <div style="padding:14px 16px;border-left:1px solid #252525;font-size:14px;line-height:1.5;color:#B0A898">De-identified &amp; disassociated content</div>
+            <div style="padding:14px 16px;border-left:1px solid #252525;text-align:center;font-family:'Fragment Mono',monospace;font-size:13px;color:#C0392B">No</div>
+            <div style="padding:14px 16px;border-left:1px solid #252525;font-size:14px;line-height:1.5;color:#B0A898">All "de-identified" interaction patterns + human corrections and verification loops</div>
+          </div>
+        </div>
+      </div>
+      <div style="font-family:'Fragment Mono',monospace;font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:#D4621A;text-align:center;margin-top:6px">The core point: ZDR protects code, PII, etc. It does <strong>not</strong> protect the reasoning trace.</div>
+      <div style="display:flex;gap:10px;align-items:baseline;font-family:'Fragment Mono',monospace;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:#7A736A">Verify → <a href="evidence.html#A4" target="_blank">A4</a> <a href="evidence.html#C5" target="_blank">C5</a></div>
+    </div>
+  </section>
+
+  <section data-screen-label="Broader Recognition" style="border-bottom:1px solid #252525;padding:88px 48px;background:radial-gradient(ellipse at 20% 30%, rgba(212,98,26,0.06), transparent 55%)">
+    <div style="max-width:1140px;margin:0 auto;display:flex;flex-direction:column;gap:24px">
+      <div style="font-family:'Fragment Mono',monospace;font-size:11px;letter-spacing:0.25em;text-transform:uppercase;color:#D4621A">Broader Recognition · Not just The Grove Foundation or Alex Karp</div>
+      <h2 style="font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(30px,3.6vw,44px);line-height:1.08;letter-spacing:-0.02em;margin:0;max-width:900px">The industry's own leaders name the same <em style="color:#D4621A">asymmetry.</em></h2>
+      <div style="display:grid;grid-template-columns:1.28fr 0.72fr;gap:40px">
+        <div style="display:flex;flex-direction:column;justify-content:center">
+          <div style="font-family:'Instrument Serif',serif;font-size:clamp(22px,2.4vw,29px);line-height:1.4;letter-spacing:-0.01em">"In the AI age, the buyer risks <em style="color:#D4621A">giving away knowledge</em>, just in order to use what they bought… Models learn from ‘exhaust,’ the prompts people write, the tools agents use, and especially <em style="color:#D4621A">the corrections people make</em> when the model is wrong. Every correction is distilled into institutional know-how."</div>
+          <div style="margin-top:24px;display:flex;align-items:center;gap:16px">
+            <div style="width:48px;height:1px;background:#D4621A"></div>
+            <span style="font-family:'Fragment Mono',monospace;font-size:12px;letter-spacing:0.1em;color:#B0A898">Satya Nadella · Microsoft CEO · "The Reverse Information Paradox" · July 12, 2026</span>
+          </div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:16px">
+          <div style="border:1px solid #252525;background:#0f0f0f;border-radius:4px;padding:22px 24px;display:flex;flex-direction:column;gap:8px">
+            <div style="font-family:'Fragment Mono',monospace;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:#D4621A">Same asymmetry</div>
+            <p style="font-size:14px;line-height:1.7;color:#B0A898;margin:0">Enterprises pay for intelligence while simultaneously feeding vendors the proprietary reasoning traces that make the models more powerful.</p>
+          </div>
+          <div style="border:1px solid #252525;background:#0f0f0f;border-radius:4px;padding:22px 24px;display:flex;flex-direction:column;gap:8px">
+            <div style="font-family:'Fragment Mono',monospace;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:#D4621A">The prescription</div>
+            <p style="font-size:14px;line-height:1.7;color:#B0A898;margin:0">A "real trust boundary" so organizations retain ownership of their traces, evals, memory, and institutional context.</p>
+          </div>
+          <div style="border:1px solid #252525;background:#0f0f0f;border-radius:4px;padding:22px 24px;display:flex;flex-direction:column;gap:8px">
+            <div style="font-family:'Fragment Mono',monospace;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:#D4621A">Echoing Karp</div>
+            <p style="font-size:14px;line-height:1.7;color:#B0A898;margin:0">Control over "compute, models, data stack, and alpha" — owning the means of production so learning isn't transferred to the vendor.</p>
+          </div>
+        </div>
+      </div>
+      <div style="display:flex;gap:10px;align-items:baseline;font-family:'Fragment Mono',monospace;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:#7A736A">Verify → <a href="evidence.html#A15" target="_blank">A15</a> <a href="evidence.html#A14" target="_blank">A14</a></div>
+    </div>
+  </section>
+
+  <section data-screen-label="The Data Wall" style="border-bottom:1px solid #252525;padding:88px 48px">
+    <div style="max-width:1140px;margin:0 auto;display:flex;flex-direction:column;gap:24px">
+      <div style="font-family:'Fragment Mono',monospace;font-size:11px;letter-spacing:0.25em;text-transform:uppercase;color:#D4621A">What changed? The Data Wall &amp; the pivot to trajectories</div>
+      <h2 style="font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(30px,3.6vw,44px);line-height:1.08;letter-spacing:-0.02em;margin:0;max-width:900px">From training on verified text to training <em style="color:#D4621A">Process Reward Models.</em></h2>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:#252525;border:1px solid #252525;border-radius:4px;overflow:hidden">
+        <div style="background:#0f0f0f;padding:28px 30px;display:flex;flex-direction:column;gap:12px">
+          <div style="font-family:'Fragment Mono',monospace;font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:#D4621A">The Exhausted Substrate</div>
+          <p style="font-size:15px;line-height:1.8;color:#B0A898;margin:0;text-wrap:pretty">High-quality training text is depleted. Training on unverified synthetic data — feeding the system its own output — triggers <strong style="color:#E8E2D9;font-weight:500">Model Autophagy Disorder (MAD)</strong>: exponential perplexity degradation, erosion of minority distributions, and systemic homogenization within successive generations.</p>
+        </div>
+        <div style="background:#0f0f0f;padding:28px 30px;display:flex;flex-direction:column;gap:12px">
+          <div style="font-family:'Fragment Mono',monospace;font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:#D4621A">The New Premium Fuel</div>
+          <p style="font-size:15px;line-height:1.8;color:#B0A898;margin:0;text-wrap:pretty">Process Reward Models (PRMs) require <strong style="color:#E8E2D9;font-weight:500">execution-feedback-enhanced trajectories</strong>: the step-by-step record of plan → execute → error → diagnose stack trace → adapt → pass test. This authentic "semantic resonance" cannot be synthesized in a vacuum without triggering autophagy — it must be harvested from real human operators.</p>
+        </div>
+        <div style="background:#0f0f0f;padding:28px 30px;display:flex;flex-direction:column;gap:12px;grid-column:1 / -1">
+          <div style="font-family:'Fragment Mono',monospace;font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:#D4621A">Why this matters for custody</div>
+          <p style="font-size:15px;line-height:1.8;color:#B0A898;margin:0;max-width:980px;text-wrap:pretty">Traditional Outcome Reward Models evaluate the final output only. PRMs assign dense, stepwise mathematical rewards to <em style="color:#E8E2D9">every intermediate step</em>. To train them, vendors need the full granular trajectory — not just the code, but the exact sequence of human corrections, error diagnostics, and verification loops. This is the <strong style="color:#E8E2D9;font-weight:500">cognitive trace</strong> now being extracted at industrial scale through agentic IDE telemetry pipelines.</p>
+        </div>
+      </div>
+      <div style="display:flex;gap:10px;align-items:baseline;font-family:'Fragment Mono',monospace;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:#7A736A">Verify → <a href="evidence.html#C6" target="_blank">C6</a></div>
+    </div>
+  </section>
+
+  <section data-screen-label="Cognitive Keyloggers" style="border-bottom:1px solid #252525;padding:88px 48px">
+    <div style="max-width:1140px;margin:0 auto;display:flex;flex-direction:column;gap:24px">
+      <div style="font-family:'Fragment Mono',monospace;font-size:11px;letter-spacing:0.25em;text-transform:uppercase;color:#D4621A">Agentic IDEs as Cognitive Keyloggers</div>
+      <h2 style="font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(30px,3.6vw,44px);line-height:1.08;letter-spacing:-0.02em;margin:0;max-width:900px">The agent harness / IDE has been re-engineered as a <em style="color:#D4621A">high-fidelity telemetry array.</em></h2>
+      <p style="max-width:760px;font-size:16px;line-height:1.8;color:#B0A898;margin:0;text-wrap:pretty">Autonomous coding harnesses no longer function merely as productivity accelerators. They are structurally integrated arrays that capture the operational graphs and cognitive trajectories of enterprise knowledge workers — the exact reasoning paths needed to train next-generation PRMs.</p>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;font-family:'Fragment Mono',monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#7A736A">
+        <span style="border:1px solid #252525;background:#0f0f0f;border-radius:2px;padding:6px 12px">Cursor</span>
+        <span style="border:1px solid #252525;background:#0f0f0f;border-radius:2px;padding:6px 12px">Windsurf · Devin</span>
+        <span style="border:1px solid #252525;background:#0f0f0f;border-radius:2px;padding:6px 12px">Claude Code</span>
+        <span style="border:1px solid #252525;background:#0f0f0f;border-radius:2px;padding:6px 12px">GitHub Copilot</span>
+        <span style="border:1px solid #252525;background:#0f0f0f;border-radius:2px;padding:6px 12px">Replit</span>
+        <span style="border:1px solid #252525;background:#0f0f0f;border-radius:2px;padding:6px 12px">OpenAI</span>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:#252525;border:1px solid #252525;border-radius:4px;overflow:hidden">
+        <div style="background:#0f0f0f;padding:26px 26px;display:flex;flex-direction:column;gap:10px">
+          <div style="font-family:'Instrument Serif',serif;font-style:italic;font-size:21px">Code suggestion acceptance</div>
+          <p style="font-size:14px;line-height:1.7;color:#B0A898;margin:0">Tab-accept and reject signals, post-accept edits, the Levenshtein distance between suggestion and shipped code, and <span style="font-family:'Fragment Mono',monospace;font-size:12px;color:#F07030">developer_modified_ratio</span>.</p>
+        </div>
+        <div style="background:#0f0f0f;padding:26px 26px;display:flex;flex-direction:column;gap:10px">
+          <div style="font-family:'Instrument Serif',serif;font-style:italic;font-size:21px">Diagnostic &amp; execution loops</div>
+          <p style="font-size:14px;line-height:1.7;color:#B0A898;margin:0">Terminal stack traces, LSP diagnostics, error-resolution timelines, and multi-step agent planning graphs captured via Operational Transformation.</p>
+        </div>
+        <div style="background:#0f0f0f;padding:26px 26px;display:flex;flex-direction:column;gap:10px">
+          <div style="font-family:'Instrument Serif',serif;font-style:italic;font-size:21px">Semantic &amp; structural maps</div>
+          <p style="font-size:14px;line-height:1.7;color:#B0A898;margin:0">Codebase embeddings, repository hierarchies, cryptographic file hashes, and in-situ context feeding the CSAP models.</p>
+        </div>
+      </div>
+      <div style="display:flex;gap:10px;align-items:baseline;font-family:'Fragment Mono',monospace;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:#7A736A">Verify → <a href="evidence.html#C7" target="_blank">C7</a> <a href="evidence.html#A11" target="_blank">A11</a></div>
+    </div>
+  </section>
+
+  <section data-screen-label="Legal Bifurcation" style="border-bottom:1px solid #252525;padding:88px 48px">
+    <div style="max-width:1140px;margin:0 auto;display:flex;flex-direction:column;gap:24px">
+      <div style="font-family:'Fragment Mono',monospace;font-size:11px;letter-spacing:0.25em;text-transform:uppercase;color:#D4621A">The Legal Bifurcation Architecture</div>
+      <h2 style="font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(30px,3.6vw,44px);line-height:1.08;letter-spacing:-0.02em;margin:0;max-width:900px">How vendors <em style="color:#D4621A">redrew</em> the data-custody boundary.</h2>
+      <p style="max-width:760px;font-size:16px;line-height:1.8;color:#B0A898;margin:0;text-wrap:pretty">Legacy cloud terms treated "telemetry" as server uptime, crash reports, and infrastructure metrics; the interaction payload — code, plans, files — was protected user content. Agentic vendors surgically decoupled the two.</p>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px">
+        <div style="border:1px solid #2A8C5A;background:#0f0f0f;border-radius:4px;padding:28px 30px;display:flex;flex-direction:column">
+          <div style="font-family:'Fragment Mono',monospace;font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:#4CAF72;margin-bottom:6px">Customer Data</div>
+          <div style="font-family:'Instrument Serif',serif;font-style:italic;font-size:20px;margin-bottom:16px">The protected bucket</div>
+          <ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px;font-size:15px;line-height:1.6;color:#B0A898">
+            <li style="display:flex;gap:10px"><span style="color:#4CAF72">→</span><span>Literal prompts and source code</span></li>
+            <li style="display:flex;gap:10px"><span style="color:#4CAF72">→</span><span>Generated outputs returned to the user</span></li>
+            <li style="display:flex;gap:10px"><span style="color:#4CAF72">→</span><span>ZDR applies — "not saved to disk… deleted upon generation of Output"</span></li>
+            <li style="display:flex;gap:10px"><span style="color:#4CAF72">→</span><span>User retains all rights</span></li>
+          </ul>
+          <div style="margin-top:20px;padding-top:16px;border-top:1px solid #252525;font-family:'Fragment Mono',monospace;font-size:12px;letter-spacing:0.08em;color:#7A736A">But: expressly <span style="color:#D4A017">excludes Usage Data.</span></div>
+        </div>
+        <div style="border:1px solid #C0392B;background:#0f0f0f;border-radius:4px;padding:28px 30px;display:flex;flex-direction:column">
+          <div style="font-family:'Fragment Mono',monospace;font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:#C0392B;margin-bottom:6px">Usage Data</div>
+          <div style="font-family:'Instrument Serif',serif;font-style:italic;font-size:20px;margin-bottom:16px">The harvested bucket</div>
+          <ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px;font-size:15px;line-height:1.6;color:#B0A898">
+            <li style="display:flex;gap:10px"><span style="color:#C0392B">→</span><span>"Anonymized / aggregated" manner of interaction</span></li>
+            <li style="display:flex;gap:10px"><span style="color:#C0392B">→</span><span>Reasoning traces, embeddings, CSAP metrics</span></li>
+            <li style="display:flex;gap:10px"><span style="color:#C0392B">→</span><span>OT timelines, LSP diagnostics, Levenshtein distances</span></li>
+            <li style="display:flex;gap:10px"><span style="color:#C0392B">→</span><span>Vendor claims absolute title — "all right, title, and interest"</span></li>
+          </ul>
+          <div style="margin-top:20px;padding-top:16px;border-top:1px solid #252525;font-family:'Fragment Mono',monospace;font-size:12px;letter-spacing:0.08em;color:#7A736A">ZDR does <span style="color:#C0392B">NOT</span> apply.</div>
+        </div>
+      </div>
+      <div style="display:flex;gap:10px;align-items:baseline;font-family:'Fragment Mono',monospace;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:#7A736A">Verify → <a href="evidence.html#A1" target="_blank">A1</a> <a href="evidence.html#C2" target="_blank">C2</a></div>
+    </div>
+  </section>
+
+  <section data-screen-label="Cognition Ratchet" style="border-bottom:1px solid #252525;padding:88px 48px">
+    <div style="max-width:1140px;margin:0 auto;display:flex;flex-direction:column;gap:24px">
+      <div style="font-family:'Fragment Mono',monospace;font-size:11px;letter-spacing:0.25em;text-transform:uppercase;color:#D4621A">Cognition · Windsurf &amp; Devin</div>
+      <h2 style="font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(30px,3.6vw,44px);line-height:1.08;letter-spacing:-0.02em;margin:0;max-width:900px">The explicit <em style="color:#D4621A">custody ratchet</em> — executed in plain view.</h2>
+      <div style="font-family:'Fragment Mono',monospace;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:#7A736A">Platform Terms of Service · evolutionary audit April 2025 → June 30, 2026</div>
+      <div style="display:grid;grid-template-columns:1.02fr 0.98fr;gap:28px;align-items:stretch">
+        <div style="border-left:2px solid #D4621A;background:rgba(212,98,26,0.04);padding:28px 30px;display:flex;flex-direction:column;justify-content:center;border-radius:0 4px 4px 0">
+          <div style="font-family:'Instrument Serif',serif;font-style:italic;font-size:clamp(19px,2vw,24px);line-height:1.5">"Cognition reserves the right to collect, analyze, and utilize Usage Data… Cognition owns <span style="color:#D4621A">all right, title, and interest</span> in and to the Usage Data."</div>
+          <div style="margin-top:20px;font-family:'Fragment Mono',monospace;font-size:12px;letter-spacing:0.12em;color:#7A736A">— Section 3.3.2, Cognition Platform ToS (June 30, 2026)</div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:12px">
+          <div style="font-family:'Fragment Mono',monospace;font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:#D4621A;margin-bottom:2px">The legal triad that nullifies ZDR</div>
+          <div style="display:flex;gap:12px;align-items:baseline"><span style="font-family:'Fragment Mono',monospace;font-size:12px;color:#8B3D10;flex-shrink:0">§3.1</span><span style="font-size:15px;line-height:1.6;color:#B0A898">User retains rights to <strong style="color:#E8E2D9;font-weight:500">Customer Data</strong> (prompts + generated source code).</span></div>
+          <div style="display:flex;gap:12px;align-items:baseline"><span style="font-family:'Fragment Mono',monospace;font-size:12px;color:#8B3D10;flex-shrink:0">§1.8</span><span style="font-size:15px;line-height:1.6;color:#B0A898">ZDR defined — data "not saved to disk… deleted upon generation of the relevant Output."</span></div>
+          <div style="display:flex;gap:12px;align-items:baseline"><span style="font-family:'Fragment Mono',monospace;font-size:12px;color:#8B3D10;flex-shrink:0">§1.2</span><span style="font-size:15px;line-height:1.6;color:#B0A898">Customer Data "expressly <span style="color:#D4A017">excludes Usage Data.</span>"</span></div>
+          <div style="display:flex;gap:12px;align-items:baseline"><span style="font-family:'Fragment Mono',monospace;font-size:12px;color:#8B3D10;flex-shrink:0">§1.7</span><span style="font-size:15px;line-height:1.6;color:#B0A898">Usage Data = "anonymized and aggregated data regarding the manner… you interact with the Services."</span></div>
+          <div style="display:flex;gap:12px;align-items:baseline"><span style="font-family:'Fragment Mono',monospace;font-size:12px;color:#8B3D10;flex-shrink:0">§3.3.2</span><span style="font-size:15px;line-height:1.6;color:#B0A898">Absolute ownership asserted over Usage Data.</span></div>
+          <div style="border-top:1px solid #252525;padding-top:14px;margin-top:6px;font-size:15px;line-height:1.6"><strong style="font-weight:500">Result:</strong> <span style="color:#B0A898">ZDR is legally valid — but applies only to the depreciating asset (raw text). The premium asset (the reasoning trace) is vendor property by contract.</span></div>
+        </div>
+      </div>
+      <div style="display:flex;gap:10px;align-items:baseline;font-family:'Fragment Mono',monospace;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:#7A736A">Verify → <a href="evidence.html#A1" target="_blank">A1</a> <a href="evidence.html#C1" target="_blank">C1</a></div>
+    </div>
+  </section>
+
+  <section data-screen-label="OpenAI De-identification" style="border-bottom:1px solid #252525;padding:88px 48px">
+    <div style="max-width:1140px;margin:0 auto;display:flex;flex-direction:column;gap:24px">
+      <div style="font-family:'Fragment Mono',monospace;font-size:11px;letter-spacing:0.25em;text-transform:uppercase;color:#D4621A">OpenAI · Enterprise &amp; API</div>
+      <h2 style="font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(30px,3.6vw,44px);line-height:1.08;letter-spacing:-0.02em;margin:0;max-width:900px">"De-identification" as an <em style="color:#D4621A">ownership-transfer mechanism.</em></h2>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:28px">
+        <div style="display:flex;flex-direction:column;gap:18px">
+          <p style="font-size:16px;line-height:1.8;color:#B0A898;margin:0;text-wrap:pretty">A standing exemption removes any content already "de-identified and disassociated from your account" from the scope of deletion requests. Once a trajectory is stripped of regulated identifiers and reduced to an abstract interaction graph, it is relabeled as de-identified telemetry — and the enterprise's <em style="color:#E8E2D9">right to delete ceases.</em></p>
+          <div style="border-left:2px solid #D4621A;background:rgba(212,98,26,0.04);padding:20px 24px;border-radius:0 4px 4px 0">
+            <p style="font-family:'Instrument Serif',serif;font-style:italic;font-size:19px;line-height:1.5;margin:0">"De-identified" is a database label — not a legal firewall. Once applied, the reasoning trace becomes vendor analytical property, outside deletion rights and ZDR scope.</p>
+          </div>
+        </div>
+        <div style="border:1px solid #252525;background:#0f0f0f;border-radius:4px;padding:28px 30px;display:flex;flex-direction:column;gap:14px">
+          <div style="font-family:'Fragment Mono',monospace;font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:#C0392B">NYT v. OpenAI · November 2025</div>
+          <p style="font-size:15px;line-height:1.8;color:#B0A898;margin:0">A federal court ordered the preservation and production of approximately <strong style="color:#E8E2D9;font-weight:500">twenty million consumer ChatGPT logs</strong> — explicitly including conversations users believed they had permanently deleted.</p>
+          <div style="width:48px;height:1px;background:#D4621A"></div>
+          <p style="font-size:15px;line-height:1.8;color:#B0A898;margin:0">Proven in open court: de-identified data retained on a vendor server is <em style="color:#E8E2D9">structurally preserved and legally reachable by subpoena</em> — regardless of any UI deletion assurance.</p>
+        </div>
+      </div>
+      <div style="display:flex;gap:10px;align-items:baseline;font-family:'Fragment Mono',monospace;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:#7A736A">Verify → <a href="evidence.html#A5" target="_blank">A5</a> <a href="evidence.html#B1" target="_blank">B1</a> <a href="evidence.html#C3" target="_blank">C3</a></div>
+    </div>
+  </section>
+
+  <section data-screen-label="Claude Code + Copilot" style="border-bottom:1px solid #252525;padding:88px 48px">
+    <div style="max-width:1140px;margin:0 auto;display:flex;flex-direction:column;gap:24px">
+      <div style="font-family:'Fragment Mono',monospace;font-size:11px;letter-spacing:0.25em;text-transform:uppercase;color:#D4621A">Claude Code &amp; GitHub Copilot</div>
+      <h2 style="font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(30px,3.6vw,44px);line-height:1.08;letter-spacing:-0.02em;margin:0;max-width:900px">Operational logging that captures <em style="color:#D4621A">cognitive flow.</em></h2>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:#252525;border:1px solid #252525;border-radius:4px;overflow:hidden">
+        <div style="background:#0f0f0f;padding:26px 28px;display:flex;flex-direction:column;gap:12px">
+          <div style="font-family:'Fragment Mono',monospace;font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:#D4621A">Anthropic · Claude Code</div>
+          <ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px;font-size:14px;line-height:1.65;color:#B0A898">
+            <li style="display:flex;gap:10px"><span style="color:#8B3D10">→</span><span>Logs operational metrics from the local machine to Anthropic servers.</span></li>
+            <li style="display:flex;gap:10px"><span style="color:#8B3D10">→</span><span>Tracks "latency, reliability, and general usage patterns."</span></li>
+            <li style="display:flex;gap:10px"><span style="color:#8B3D10">→</span><span>In multi-step loops, patterns reveal how tasks are mapped, delegated, resolved.</span></li>
+            <li style="display:flex;gap:10px"><span style="color:#C0392B">→</span><span><span style="font-family:'Fragment Mono',monospace;font-size:12px;color:#F07030">/feedback</span> &amp; Session Quality Surveys trigger full transcript upload — including proprietary code — to Google Cloud Storage.</span></li>
+            <li style="display:flex;gap:10px"><span style="color:#C0392B">→</span><span>Feedback data retained up to <strong style="color:#E8E2D9;font-weight:500">5 years</strong>; de-linked from user ID.</span></li>
+            <li style="display:flex;gap:10px"><span style="color:#C0392B">→</span><span>Claude Tag in Slack passively absorbs channel history and decision context.</span></li>
+            <li style="display:flex;gap:10px"><span style="color:#C0392B">→</span><span>Anthropic makes no ZDR gesture for Claude Tag at all: it "retains channel memory and session transcripts," so it "isn't available to organizations with Zero Data Retention (ZDR) enabled."</span></li>
+          </ul>
+        </div>
+        <div style="background:#0f0f0f;padding:26px 28px;display:flex;flex-direction:column;gap:12px">
+          <div style="font-family:'Fragment Mono',monospace;font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:#D4621A">GitHub Copilot</div>
+          <ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px;font-size:14px;line-height:1.65;color:#B0A898">
+            <li style="display:flex;gap:10px"><span style="color:#8B3D10">→</span><span>Server-side telemetry identifies users for engagement totals even when client-side telemetry is disabled by corporate policy.</span></li>
+            <li style="display:flex;gap:10px"><span style="color:#8B3D10">→</span><span>Captures detailed LoC metrics: <span style="font-family:'Fragment Mono',monospace;font-size:12px;color:#F07030">loc_suggested_to_add_sum, loc_added_sum, loc_deleted_sum</span>.</span></li>
+            <li style="display:flex;gap:10px"><span style="color:#8B3D10">→</span><span>Explicitly ties metrics to agentic features: <span style="font-family:'Fragment Mono',monospace;font-size:12px;color:#F07030">chat_panel_agent_mode, agent_edit</span>.</span></li>
+            <li style="display:flex;gap:10px"><span style="color:#8B3D10">→</span><span>In agentic modes, systematically tracks multi-file edits iteratively across the entire repository.</span></li>
+            <li style="display:flex;gap:10px"><span style="color:#8B3D10">→</span><span>Captures the full flow of logic across the repo ecosystem.</span></li>
+          </ul>
+        </div>
+      </div>
+      <div style="display:flex;gap:10px;align-items:baseline;font-family:'Fragment Mono',monospace;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:#7A736A">Verify → <a href="evidence.html#A10" target="_blank">A10</a> <a href="evidence.html#A9" target="_blank">A9</a></div>
+    </div>
+  </section>
+
+  <section data-screen-label="Cursor Embeddings" style="border-bottom:1px solid #252525;padding:88px 48px">
+    <div style="max-width:1140px;margin:0 auto;display:flex;flex-direction:column;gap:24px">
+      <div style="font-family:'Fragment Mono',monospace;font-size:11px;letter-spacing:0.25em;text-transform:uppercase;color:#D4621A">Cursor · Anysphere</div>
+      <h2 style="font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(30px,3.6vw,44px);line-height:1.08;letter-spacing:-0.02em;margin:0;max-width:900px">The plaintext perishes, but a high-value, <em style="color:#D4621A">structural blueprint</em> remains.</h2>
+      <div style="font-family:'Fragment Mono',monospace;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:#7A736A">Data Use &amp; Privacy Policy · last updated June 9, 2026</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:#252525;border:1px solid #252525;border-radius:4px;overflow:hidden">
+        <div style="background:#0f0f0f;padding:28px 30px;display:flex;flex-direction:column;gap:14px">
+          <div style="font-family:'Fragment Mono',monospace;font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:#D4621A">The bifurcation of physical custody</div>
+          <p style="font-size:15px;line-height:1.8;color:#B0A898;margin:0;text-wrap:pretty">With Privacy Mode manually on, plaintext inputs get ZDR — chunks are uploaded to compute multi-dimensional embeddings, then deleted "as soon as the lifecycle of that indexing request is completed."</p>
+          <p style="font-size:15px;line-height:1.8;color:#E8E2D9;margin:0;text-wrap:pretty"><strong style="font-weight:500">However:</strong> the resulting embeddings, exact file names, repository hierarchies and cryptographic hashes are <em style="color:#D4621A">permanently retained</em> in Cursor's backend clusters. The enterprise shreds the paper copy; the vendor keeps the blueprints.</p>
+        </div>
+        <div style="background:#0f0f0f;padding:28px 30px;display:flex;flex-direction:column;gap:14px">
+          <div style="font-family:'Fragment Mono',monospace;font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:#D4621A">Why embeddings beat raw text</div>
+          <p style="font-size:15px;line-height:1.8;color:#B0A898;margin:0;text-wrap:pretty">Embeddings preserve the mathematical topography of the architecture — semantic relationships, naming conventions, module dependencies, decision patterns — without literal syntax. This is the perfect PRM substrate: dense, contextual, and already de-identified.</p>
+          <p style="font-size:15px;line-height:1.8;color:#B0A898;margin:0;text-wrap:pretty">By classifying the embedding as an "operational product of the service" rather than protected Customer Data, Cursor legally retains a perfect topological map — outside ZDR and deletion rights.</p>
+        </div>
+      </div>
+      <div style="display:flex;gap:10px;align-items:baseline;font-family:'Fragment Mono',monospace;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:#7A736A">Verify → <a href="evidence.html#A3" target="_blank">A3</a></div>
+    </div>
+  </section>
+
+  <section data-screen-label="The Receipts" style="border-bottom:1px solid #252525;padding:88px 48px;background:radial-gradient(ellipse at 80% 20%, rgba(212,98,26,0.05), transparent 55%)">
+    <div style="max-width:1140px;margin:0 auto;display:flex;flex-direction:column;gap:24px">
+      <div style="font-family:'Fragment Mono',monospace;font-size:11px;letter-spacing:0.25em;text-transform:uppercase;color:#D4621A">The Receipts · A 14-Month Custody Ratchet</div>
+      <h2 style="font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(30px,3.6vw,44px);line-height:1.08;letter-spacing:-0.02em;margin:0;max-width:960px">“We won’t train on your data” became <em style="color:#D4621A">“we own the map of how your company thinks.”</em></h2>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:14px">
+        <div style="border:1px solid #252525;background:#0f0f0f;border-radius:4px;padding:20px 18px;display:flex;flex-direction:column">
+          <div style="font-family:'Fragment Mono',monospace;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:#7A736A">Apr 2025</div>
+          <div style="font-family:'Instrument Serif',serif;font-style:italic;font-size:17px;color:#B0A898;margin-top:4px">Cognition</div>
+          <div style="border-top:1px solid #252525;margin:12px 0"></div>
+          <div style="font-size:13px;line-height:1.6;color:#B0A898">Training on customer data was <strong style="color:#E8E2D9;font-weight:500">opt-in only.</strong> Usage Data carried <strong style="color:#E8E2D9;font-weight:500">no ownership claim.</strong></div>
+          <div style="font-family:'Fragment Mono',monospace;font-size:9px;letter-spacing:0.06em;color:#7A736A;margin-top:auto;padding-top:14px">Prior terms — vendor archive</div>
+        </div>
+        <div style="border:1px solid #252525;background:#0f0f0f;border-radius:4px;padding:20px 18px;display:flex;flex-direction:column">
+          <div style="font-family:'Fragment Mono',monospace;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:#7A736A">Oct 2025</div>
+          <div style="font-family:'Instrument Serif',serif;font-style:italic;font-size:17px;color:#B0A898;margin-top:4px">Cursor</div>
+          <div style="border-top:1px solid #252525;margin:12px 0"></div>
+          <div style="font-size:13px;line-height:1.6;color:#B0A898">A <strong style="color:#E8E2D9;font-weight:500">“de-identify and keep”</strong> regime begins. Accounts after this cutoff fall under broader data-sharing terms.</div>
+          <div style="font-family:'Fragment Mono',monospace;font-size:9px;letter-spacing:0.06em;color:#7A736A;margin-top:auto;padding-top:14px">cursor.com/data-use</div>
+        </div>
+        <div style="border:1px solid #8B3D10;background:rgba(212,98,26,0.05);border-radius:4px;padding:20px 18px;display:flex;flex-direction:column">
+          <div style="font-family:'Fragment Mono',monospace;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:#D4621A">May 2026</div>
+          <div style="font-family:'Instrument Serif',serif;font-style:italic;font-size:17px;margin-top:4px">Cursor</div>
+          <div style="border-top:1px solid #8B3D10;margin:12px 0"></div>
+          <div style="font-size:13px;line-height:1.6">Deletion stops at the plaintext. The <strong style="color:#D4621A;font-weight:500">delete button no longer reaches de-identified content.</strong></div>
+          <div style="font-family:'Fragment Mono',monospace;font-size:9px;letter-spacing:0.06em;color:#7A736A;margin-top:auto;padding-top:14px">cursor.com/data-use</div>
+        </div>
+        <div style="border:1px solid #8B3D10;background:rgba(212,98,26,0.05);border-radius:4px;padding:20px 18px;display:flex;flex-direction:column">
+          <div style="font-family:'Fragment Mono',monospace;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:#D4621A">Jun 9 2026</div>
+          <div style="font-family:'Instrument Serif',serif;font-style:italic;font-size:17px;margin-top:4px">Cursor</div>
+          <div style="border-top:1px solid #8B3D10;margin:12px 0"></div>
+          <div style="font-size:13px;line-height:1.6">Privacy Mode still retains <strong style="color:#D4621A;font-weight:500">embeddings</strong> — a permanent semantic map of your code’s structure and logic.</div>
+          <div style="font-family:'Fragment Mono',monospace;font-size:9px;letter-spacing:0.06em;color:#7A736A;margin-top:auto;padding-top:14px">cursor.com/data-use</div>
+        </div>
+        <div style="border:1px solid #D4621A;background:rgba(212,98,26,0.1);border-radius:4px;padding:20px 18px;display:flex;flex-direction:column">
+          <div style="font-family:'Fragment Mono',monospace;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:#D4621A">Jun 30 2026</div>
+          <div style="font-family:'Instrument Serif',serif;font-style:italic;font-size:17px;margin-top:4px">Cognition</div>
+          <div style="border-top:1px solid #D4621A;margin:12px 0"></div>
+          <div style="font-size:13px;line-height:1.6">“Cognition owns <strong style="color:#D4621A;font-weight:600">all right, title, and interest</strong>” in Usage Data — including the reasoning trace itself. Not retained. <em style="color:#D4621A">Owned.</em></div>
+          <div style="font-family:'Fragment Mono',monospace;font-size:9px;letter-spacing:0.06em;color:#7A736A;margin-top:auto;padding-top:14px">§ 3.3.2 — the endpoint</div>
+        </div>
+      </div>
+      <div style="display:flex;gap:32px;align-items:center;flex-wrap:wrap">
+        <p style="font-family:'Instrument Serif',serif;font-style:italic;font-size:clamp(19px,2.2vw,25px);line-height:1.35;flex:1.5;min-width:320px;margin:0">Five documented beats in fourteen months. Each one <span style="color:#D4621A">transferred more custody of how your company thinks</span> from the enterprise to the vendor.</p>
+        <p style="font-size:14px;line-height:1.7;color:#7A736A;flex:1;min-width:280px;margin:0">Every step is timestamped on the vendor’s own site — the April 2025 terms are still linked from the current page. Legal teams do not move this fast, in this direction, by accident.</p>
+      </div>
+      <div style="display:flex;gap:10px;align-items:baseline;font-family:'Fragment Mono',monospace;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:#7A736A">Verify → <a href="evidence.html#A2" target="_blank">A2</a> <a href="evidence.html#C4" target="_blank">C4</a></div>
+    </div>
+  </section>
+
+  <section data-screen-label="Trace Extractor Mechanics" style="border-bottom:1px solid #252525;padding:88px 48px">
+    <div style="max-width:1140px;margin:0 auto;display:flex;flex-direction:column;gap:24px">
+      <div style="font-family:'Fragment Mono',monospace;font-size:11px;letter-spacing:0.25em;text-transform:uppercase;color:#D4621A">The Trace Extractor Mechanics</div>
+      <h2 style="font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(30px,3.6vw,44px);line-height:1.08;letter-spacing:-0.02em;margin:0;max-width:900px">Cognitive keyloggers: <em style="color:#D4621A">CSAP, Levenshtein &amp; OT logging.</em></h2>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:#252525;border:1px solid #252525;border-radius:4px;overflow:hidden">
+        <div style="background:#0f0f0f;padding:26px 28px;display:flex;flex-direction:column;gap:14px">
+          <div style="font-family:'Fragment Mono',monospace;font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:#D4621A">Code Suggestion Acceptance Prediction</div>
+          <p style="font-size:14px;line-height:1.7;color:#B0A898;margin:0">Lightweight binary classifiers predict the likelihood of acceptance <em style="color:#E8E2D9">before ghost-text even renders.</em> Trained on three dimensions:</p>
+          <div style="display:flex;flex-direction:column;gap:8px;font-size:14px;line-height:1.6;color:#B0A898">
+            <div style="display:flex;gap:8px"><span style="color:#8B3D10">·</span><span><strong style="color:#E8E2D9;font-weight:500">Developer Habit</strong> — historical acceptance counts, modification frequency, generation intervals.</span></div>
+            <div style="display:flex;gap:8px"><span style="color:#8B3D10">·</span><span><strong style="color:#E8E2D9;font-weight:500">Project Preference</strong> — repo-specific architectural acceptance ratios.</span></div>
+            <div style="display:flex;gap:8px"><span style="color:#8B3D10">·</span><span><strong style="color:#E8E2D9;font-weight:500">In-Situ Context</strong> — IDE version, preceding code semantic density.</span></div>
+          </div>
+          <p style="font-size:14px;line-height:1.7;color:#B0A898;margin:0">~70% of suggestions are rejected → imbalanced data → a class-balanced weighted cross-entropy loss achieves <strong style="color:#F07030;font-weight:500">0.973 accuracy</strong> at labeling developer preferences. Post-accept, the harness computes the <span style="font-family:'Fragment Mono',monospace;font-size:12px;color:#F07030">developer_modified_chars</span> and <span style="font-family:'Fragment Mono',monospace;font-size:12px;color:#F07030">developer_modified_ratio</span> — mapping the enterprise's style without owning the files.</p>
+        </div>
+        <div style="background:#0f0f0f;padding:26px 28px;display:flex;flex-direction:column;gap:14px">
+          <div style="font-family:'Fragment Mono',monospace;font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:#D4621A">Intermediate Planning &amp; LSP / OT Logging</div>
+          <p style="font-size:14px;line-height:1.7;color:#B0A898;margin:0">Advanced tools (Windsurf Cascade, Replit agents, Copilot <span style="font-family:'Fragment Mono',monospace;font-size:12px;color:#F07030">agent_edit</span>) run multi-step reasoning loops. Vendors log the complete execution graph via OT timelines:</p>
+          <div style="border:1px solid #252525;background:#0b0b0b;border-radius:2px;padding:14px 16px;font-family:'Fragment Mono',monospace;font-size:12px;line-height:2;color:#B0A898">plan multi-file <span style="color:#8B3D10">→</span> execute bash <span style="color:#8B3D10">→</span> compiler error <span style="color:#8B3D10">→</span> read stack trace <span style="color:#8B3D10">→</span> adjust params <span style="color:#8B3D10">→</span> query LSP <span style="color:#8B3D10">→</span> <span style="color:#4CAF72">rewrite function</span></div>
+          <p style="font-size:14px;line-height:1.7;color:#B0A898;margin:0">PRMs require dense stepwise evaluation — so terminal stack traces, execution latency and raw LSP diagnostic logs route to the vendor backend under "diagnostic / analytical" clauses, classified as Usage Data, <em style="color:#E8E2D9">bypassing Customer-Data ZDR</em> and capturing the exact cognitive path to resolution.</p>
+        </div>
+      </div>
+      <div style="display:flex;gap:10px;align-items:baseline;font-family:'Fragment Mono',monospace;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:#7A736A">Verify → <a href="evidence.html#A11" target="_blank">A11</a></div>
+    </div>
+  </section>
+
+  <section data-screen-label="Enforcement and Loopholes" style="border-bottom:1px solid #252525;padding:88px 48px">
+    <div style="max-width:1140px;margin:0 auto;display:flex;flex-direction:column;gap:24px">
+      <div style="font-family:'Fragment Mono',monospace;font-size:11px;letter-spacing:0.25em;text-transform:uppercase;color:#D4621A">The Logical Enforcement &amp; Loopholes</div>
+      <h2 style="font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(30px,3.6vw,44px);line-height:1.08;letter-spacing:-0.02em;margin:0;max-width:900px">Privacy modes, feedback overrides &amp; <em style="color:#D4621A">poison pills.</em></h2>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:#252525;border:1px solid #252525;border-radius:4px;overflow:hidden">
+        <div style="background:#0f0f0f;padding:26px 24px;display:flex;flex-direction:column;gap:12px">
+          <div style="font-family:'Fragment Mono',monospace;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:#D4621A">Privacy-Mode Overrides</div>
+          <p style="font-size:14px;line-height:1.6;color:#B0A898;margin:0">Cursor's Privacy Mode claims ZDR with inference providers. However:</p>
+          <ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:9px;font-size:14px;line-height:1.6;color:#B0A898">
+            <li style="display:flex;gap:8px"><span style="color:#C0392B">→</span><span>Unilateral right to run "Abuse &amp; Violation Classifiers" on all data. If triggered, ZDR is <em style="color:#E8E2D9">silently suspended.</em></span></li>
+            <li style="display:flex;gap:8px"><span style="color:#C0392B">→</span><span>Local / server caching routes all prompts through backend infrastructure (unless a legacy grandfathered account).</span></li>
+            <li style="display:flex;gap:8px"><span style="color:#C0392B">→</span><span>Opaque, vendor-set algorithmic threshold for abuse triggers.</span></li>
+          </ul>
+        </div>
+        <div style="background:#0f0f0f;padding:26px 24px;display:flex;flex-direction:column;gap:12px">
+          <div style="font-family:'Fragment Mono',monospace;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:#C0392B">Feedback Override · "Thumbs-Up"</div>
+          <p style="font-size:14px;line-height:1.6;color:#E8E2D9;margin:0">The most pervasive ZDR circumvention in the industry:</p>
+          <ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:9px;font-size:14px;line-height:1.6;color:#B0A898">
+            <li style="display:flex;gap:8px"><span style="color:#C0392B">→</span><span><span style="font-family:'Fragment Mono',monospace;font-size:12px;color:#F07030">/feedback</span> or a UI rating uploads full conversation history — including proprietary code — to vendor GCS, bypassing standard retention.</span></li>
+            <li style="display:flex;gap:8px"><span style="color:#C0392B">→</span><span>Retained 5 years (Anthropic) or 6 months (surveys); de-linked from user ID → Usage-Data bucket.</span></li>
+            <li style="display:flex;gap:8px"><span style="color:#C0392B">→</span><span>A single thumbs-up from one junior dev <strong style="color:#E8E2D9;font-weight:500">voids org-level ZDR.</strong></span></li>
+            <li style="display:flex;gap:8px"><span style="color:#C0392B">→</span><span>Claude Tag in Slack amplifies: entire channel history becomes a 5-year training asset.</span></li>
+          </ul>
+        </div>
+        <div style="background:#0f0f0f;padding:26px 24px;display:flex;flex-direction:column;gap:12px">
+          <div style="font-family:'Fragment Mono',monospace;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:#D4621A">Poison Pills &amp; Safety Mandates</div>
+          <ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:9px;font-size:14px;line-height:1.6;color:#B0A898">
+            <li style="display:flex;gap:8px"><span style="color:#8B3D10">→</span><span><strong style="color:#E8E2D9;font-weight:500">Windsurf:</strong> opting out of training on Free/Pro disables Chat &amp; Cascade — reducing the tool to a legacy editor. Privacy requires an expensive Enterprise tier + months of DPA negotiation.</span></li>
+            <li style="display:flex;gap:8px"><span style="color:#8B3D10">→</span><span>No BAAs offered → incompatible with HIPAA / strict compliance.</span></li>
+            <li style="display:flex;gap:8px"><span style="color:#8B3D10">→</span><span><strong style="color:#E8E2D9;font-weight:500">Q2 2026:</strong> Anthropic Fable 5 / Mythos 5 mandated 30-day minimum retention even on AWS Bedrock — voiding prior ZDR.</span></li>
+            <li style="display:flex;gap:8px"><span style="color:#8B3D10">→</span><span><strong style="color:#E8E2D9;font-weight:500">June 12, 2026:</strong> a Commerce Dept. export control forced a global API shutdown — enterprises paralyzed without warning.</span></li>
+          </ul>
+        </div>
+      </div>
+      <div style="display:flex;gap:10px;align-items:baseline;font-family:'Fragment Mono',monospace;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:#7A736A">Verify → <a href="evidence.html#A6" target="_blank">A6</a> <a href="evidence.html#B2" target="_blank">B2</a> <a href="evidence.html#B3" target="_blank">B3</a> <a href="evidence.html#B4" target="_blank">B4</a></div>
+    </div>
+  </section>
+
+  <section data-screen-label="Actionable Defenses" style="border-bottom:1px solid #252525;padding:88px 48px;background:radial-gradient(ellipse at 20% 80%, rgba(212,98,26,0.05), transparent 55%)">
+    <div style="max-width:1140px;margin:0 auto;display:flex;flex-direction:column;gap:24px">
+      <div style="font-family:'Fragment Mono',monospace;font-size:11px;letter-spacing:0.25em;text-transform:uppercase;color:#D4621A">Actionable Defenses for Enterprise Compliance</div>
+      <h2 style="font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(30px,3.6vw,44px);line-height:1.08;letter-spacing:-0.02em;margin:0;max-width:900px">Four structural, <em style="color:#D4621A">non-negotiable</em> architectural defenses.</h2>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:#252525;border:1px solid #252525;border-radius:4px;overflow:hidden">
+        <div style="background:#0f0f0f;padding:26px 28px;display:flex;gap:20px">
+          <div style="font-family:'Instrument Serif',serif;font-size:40px;line-height:1;color:#8B3D10;flex-shrink:0">01</div>
+          <div style="display:flex;flex-direction:column;gap:8px">
+            <div style="font-family:'Fragment Mono',monospace;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:#D4621A">Redline "Usage Data" in DPAs</div>
+            <p style="font-size:14px;line-height:1.7;color:#B0A898;margin:0">Expand Protected Customer Data to explicitly include CSAP metrics, Levenshtein edit distances, codebase embeddings, LSP diagnostics, OT timelines, and all multi-step agent interaction logs. Do not let them default to ambiguous telemetry carve-outs.</p>
+          </div>
+        </div>
+        <div style="background:#0f0f0f;padding:26px 28px;display:flex;gap:20px">
+          <div style="font-family:'Instrument Serif',serif;font-size:40px;line-height:1;color:#8B3D10;flex-shrink:0">02</div>
+          <div style="display:flex;flex-direction:column;gap:8px">
+            <div style="font-family:'Fragment Mono',monospace;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:#D4621A">Nullify Feedback Overrides</div>
+            <p style="font-size:14px;line-height:1.7;color:#B0A898;margin:0">Contractually bar individual actions (thumbs-up, /feedback) from overriding org-level ZDR — then enforce it technically with fleet-wide env vars:</p>
+            <div style="font-family:'Fragment Mono',monospace;font-size:11px;line-height:1.9;color:#F07030">DISABLE_TELEMETRY=1 · CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC=1 · DISABLE_ERROR_REPORTING=1 · DISABLE_FEEDBACK_COMMAND=1</div>
+          </div>
+        </div>
+        <div style="background:#0f0f0f;padding:26px 28px;display:flex;gap:20px">
+          <div style="font-family:'Instrument Serif',serif;font-size:40px;line-height:1;color:#8B3D10;flex-shrink:0">03</div>
+          <div style="display:flex;flex-direction:column;gap:8px">
+            <div style="font-family:'Fragment Mono',monospace;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:#D4621A">Mandate Honest Ceilings + S3 Sinks</div>
+            <p style="font-size:14px;line-height:1.7;color:#B0A898;margin:0">For Bedrock / third-party inference, route all invocation logging — full request/response, terminal errors, token metrics — exclusively to customer-owned S3 / CloudWatch. The vendor inference environment must be <em style="color:#E8E2D9">structurally blind</em> to execution logs.</p>
+          </div>
+        </div>
+        <div style="background:#0f0f0f;padding:26px 28px;display:flex;gap:20px">
+          <div style="font-family:'Instrument Serif',serif;font-size:40px;line-height:1;color:#8B3D10;flex-shrink:0">04</div>
+          <div style="display:flex;flex-direction:column;gap:8px">
+            <div style="font-family:'Fragment Mono',monospace;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:#D4621A">Transition to Sovereign Architectures</div>
+            <p style="font-size:14px;line-height:1.7;color:#B0A898;margin:0">Move from black-box APIs to open declarative standards (Linux Foundation AGENTS.md, Learner Autonomaton / GRV-001). Enforce "Digital Jidoka": agent memory, tools and telemetry live in Git-tracked, enterprise-owned repositories. <strong style="color:#E8E2D9;font-weight:500">Bits move; meaning stays put.</strong></p>
+          </div>
+        </div>
+      </div>
+      <div style="display:flex;gap:10px;align-items:baseline;font-family:'Fragment Mono',monospace;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:#7A736A">Verify → <a href="evidence.html#A8" target="_blank">A8</a></div>
+    </div>
+  </section>
+
+  <section data-screen-label="Convergence GRV-001" style="border-bottom:1px solid #252525;padding:88px 48px;background:#0f0f0f">
+    <div style="max-width:1140px;margin:0 auto;display:flex;flex-direction:column;gap:24px">
+      <div style="font-family:'Fragment Mono',monospace;font-size:11px;letter-spacing:0.25em;text-transform:uppercase;color:#D4621A">The Convergence · GRV-001 · The Autonomaton Pattern</div>
+      <h2 style="font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(30px,3.6vw,44px);line-height:1.12;letter-spacing:-0.02em;margin:0;max-width:960px">The industry is converging on the fix. <em style="color:#D4621A">It stops one file short.</em></h2>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px">
+        <div style="border:1px solid #252525;background:#161616;border-radius:4px;padding:20px 22px;display:flex;flex-direction:column">
+          <div style="font-family:'Fragment Mono',monospace;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:#7A736A">Today · Vendor-resident telemetry</div>
+          <div style="font-family:'Instrument Serif',serif;font-size:19px;margin-top:8px;line-height:1.2">Proprietary black box</div>
+          <div style="font-size:13px;line-height:1.65;color:#B0A898;margin-top:8px">Rules and memory live inside the vendor. You can’t read them, can’t move them, can’t prove what happened.</div>
+        </div>
+        <div style="border:1px solid #8B3D10;background:rgba(212,98,26,0.05);border-radius:4px;padding:20px 22px;display:flex;flex-direction:column">
+          <div style="font-family:'Fragment Mono',monospace;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:#D4621A">The industry converges</div>
+          <div style="font-family:'Instrument Serif',serif;font-size:19px;margin-top:8px;line-height:1.2">AGENTS.md · .agents</div>
+          <div style="font-size:13px;line-height:1.65;color:#B0A898;margin-top:8px">Rules and memory in version-controlled files. Portable, readable, yours — but still just an instruction.</div>
+        </div>
+        <div style="border:1px solid #D4621A;background:rgba(212,98,26,0.1);border-radius:4px;padding:20px 22px;display:flex;flex-direction:column">
+          <div style="font-family:'Fragment Mono',monospace;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:#D4621A">The standard · GRV-001</div>
+          <div style="font-family:'Instrument Serif',serif;font-size:19px;margin-top:8px;line-height:1.2">Structural sovereignty</div>
+          <div style="font-size:13px;line-height:1.65;margin-top:8px">The same principle, made architectural — behavior the architecture guarantees, plus a record you own.</div>
+        </div>
+      </div>
+      <div style="border:1px solid #333;border-radius:4px;overflow-x:auto">
+        <div style="min-width:720px">
+          <div style="display:grid;grid-template-columns:1.05fr 1.5fr 1.6fr;background:#161616;border-bottom:1px solid #333;font-family:'Fragment Mono',monospace;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#D4621A">
+            <div style="padding:12px 18px"></div>
+            <div style="padding:12px 18px;border-left:1px solid #252525">AGENTS.md</div>
+            <div style="padding:12px 18px;border-left:1px solid #252525">The Autonomaton</div>
+          </div>
+          <div style="display:grid;grid-template-columns:1.05fr 1.5fr 1.6fr;border-bottom:1px solid #252525;align-items:center">
+            <div style="padding:14px 18px;font-family:'Instrument Serif',serif;font-style:italic;font-size:17px">Portability</div>
+            <div style="padding:14px 18px;border-left:1px solid #252525;font-size:14px;line-height:1.5;color:#B0A898"><span style="color:#4CAF72">✓</span> &nbsp;Your file, your repo</div>
+            <div style="padding:14px 18px;border-left:1px solid #252525;font-size:14px;line-height:1.5;color:#B0A898"><span style="color:#4CAF72">✓</span> &nbsp;Same file, plus your telemetry and skills</div>
+          </div>
+          <div style="display:grid;grid-template-columns:1.05fr 1.5fr 1.6fr;border-bottom:1px solid #252525;align-items:center;background:#0c0c0c">
+            <div style="padding:14px 18px;font-family:'Instrument Serif',serif;font-style:italic;font-size:17px">Enforcement</div>
+            <div style="padding:14px 18px;border-left:1px solid #252525;font-size:14px;line-height:1.5;color:#7A736A"><span style="color:#C0392B">—</span> &nbsp;The model may ignore it</div>
+            <div style="padding:14px 18px;border-left:1px solid #252525;font-size:14px;line-height:1.5"><span style="color:#4CAF72">✓</span> &nbsp;The dispatcher owns the run; the model cannot reach state</div>
+          </div>
+          <div style="display:grid;grid-template-columns:1.05fr 1.5fr 1.6fr;border-bottom:1px solid #252525;align-items:center">
+            <div style="padding:14px 18px;font-family:'Instrument Serif',serif;font-style:italic;font-size:17px">Cost trajectory</div>
+            <div style="padding:14px 18px;border-left:1px solid #252525;font-size:14px;line-height:1.5;color:#7A736A"><span style="color:#C0392B">—</span> &nbsp;Flat — every turn is a frontier call</div>
+            <div style="padding:14px 18px;border-left:1px solid #252525;font-size:14px;line-height:1.5"><span style="color:#4CAF72">✓</span> &nbsp;Ratchets down: T3 → T0 as patterns confirm</div>
+          </div>
+          <div style="display:grid;grid-template-columns:1.05fr 1.5fr 1.6fr;align-items:center;background:#0c0c0c">
+            <div style="padding:14px 18px;font-family:'Instrument Serif',serif;font-style:italic;font-size:17px">Accumulation</div>
+            <div style="padding:14px 18px;border-left:1px solid #252525;font-size:14px;line-height:1.5;color:#7A736A"><span style="color:#C0392B">—</span> &nbsp;A file learns nothing</div>
+            <div style="padding:14px 18px;border-left:1px solid #252525;font-size:14px;line-height:1.5"><span style="color:#4CAF72">✓</span> &nbsp;Every approval is a labeled training example you own</div>
+          </div>
+        </div>
+      </div>
+      <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:32px;flex-wrap:wrap">
+        <p style="font-family:'Instrument Serif',serif;font-style:italic;font-size:clamp(17px,2vw,21px);line-height:1.4;max-width:800px;margin:0">A file you own is table stakes. A system that cannot exceed it — and a record that grows more valuable every time you use it — <span style="color:#D4621A">that’s the standard.</span></p>
+        <div style="font-family:'Fragment Mono',monospace;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:#7A736A;white-space:nowrap"><a href="https://the-grove.ai/standards/001" target="_blank">the-grove.ai/standards/001</a> · GRV-001 v2.0 · CC BY 4.0</div>
+      </div>
+      <div style="display:flex;gap:10px;align-items:baseline;font-family:'Fragment Mono',monospace;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:#7A736A">Verify → <a href="evidence.html#A17" target="_blank">A17</a> <a href="evidence.html#C8" target="_blank">C8</a></div>
+    </div>
+  </section>
+
+  <section data-screen-label="Trace Made Legible" style="border-bottom:1px solid #252525;padding:88px 48px">
+    <div style="max-width:1140px;margin:0 auto;display:flex;flex-direction:column;gap:24px">
+      <div style="font-family:'Fragment Mono',monospace;font-size:11px;letter-spacing:0.25em;text-transform:uppercase;color:#D4621A">The Trace, Made Legible · Grove Autonomaton — Operator Portal</div>
+      <h2 style="font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(30px,3.6vw,44px);line-height:1.08;letter-spacing:-0.02em;margin:0;max-width:960px">What a reasoning trace looks like when <em style="color:#D4621A">you own the telemetry.</em></h2>
+      <p style="max-width:900px;font-size:16px;line-height:1.8;color:#B0A898;margin:0;text-wrap:pretty">The same signal the vendors bank as Usage Data, running inside operator-owned software. The model-independent agentic system (autonomaton harness) clustered ten memory records around an emergent theme, checked them against its tracked goals, found none, and proposed a precise amendment to its own goal file — in this case, evidence-linked and staged for human review and approval by design.</p>
+      <div style="display:grid;grid-template-columns:0.92fr 1.08fr;gap:28px">
+        <div style="display:flex;flex-direction:column;gap:16px;justify-content:center">
+          <div style="font-family:'Fragment Mono',monospace;font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:#7A736A">The chain, made auditable</div>
+          <div style="display:flex;gap:14px;align-items:flex-start">
+            <div style="font-family:'Fragment Mono',monospace;font-size:11px;color:#D4621A;border:1px solid #8B3D10;border-radius:3px;padding:3px 8px;flex-shrink:0">01</div>
+            <div><div style="font-weight:500;font-size:15px">Raw memory</div><div style="font-size:14px;line-height:1.55;color:#B0A898;margin-top:2px">Ten records accrue in the substrate — each timestamped and addressable by ID.</div></div>
+          </div>
+          <div style="display:flex;gap:14px;align-items:flex-start">
+            <div style="font-family:'Fragment Mono',monospace;font-size:11px;color:#D4621A;border:1px solid #8B3D10;border-radius:3px;padding:3px 8px;flex-shrink:0">02</div>
+            <div><div style="font-weight:500;font-size:15px">Pattern detection</div><div style="font-size:14px;line-height:1.55;color:#B0A898;margin-top:2px">The system names an emergent cluster: <em style="color:#E8E2D9">Platform Independence.</em></div></div>
+          </div>
+          <div style="display:flex;gap:14px;align-items:flex-start">
+            <div style="font-family:'Fragment Mono',monospace;font-size:11px;color:#D4621A;border:1px solid #8B3D10;border-radius:3px;padding:3px 8px;flex-shrink:0">03</div>
+            <div><div style="font-weight:500;font-size:15px">Gap analysis</div><div style="font-size:14px;line-height:1.55;color:#B0A898;margin-top:2px">It checks its tracked goals and reports the finding: <em style="color:#E8E2D9">“No Dock goal tracks this.”</em></div></div>
+          </div>
+          <div style="display:flex;gap:14px;align-items:flex-start">
+            <div style="font-family:'Fragment Mono',monospace;font-size:11px;color:#D4621A;border:1px solid #8B3D10;border-radius:3px;padding:3px 8px;flex-shrink:0">04</div>
+            <div><div style="font-weight:500;font-size:15px">Structured proposal</div><div style="font-size:14px;line-height:1.55;color:#B0A898;margin-top:2px">It emits a machine-readable diff to its own goal file — staged, not self-applied, pending operator approval.</div></div>
+          </div>
+          <div style="border-left:2px solid #D4621A;padding-left:18px;margin-top:4px"><div style="font-size:14px;line-height:1.6;color:#7A736A">Four such clusters surfaced from overlapping memory on a single day — the system reasoning about its own strategic focus, in the open.</div></div>
+        </div>
+        <div style="border:1px solid #252525;border-radius:5px;background:#0c0c0c;overflow:hidden;display:flex;flex-direction:column">
+          <div style="display:flex;align-items:center;gap:8px;padding:12px 18px;border-bottom:1px solid #252525;background:#111">
+            <span style="width:9px;height:9px;border-radius:50%;background:#4CAF72;display:inline-block"></span>
+            <span style="font-family:'Fragment Mono',monospace;font-size:11px;letter-spacing:0.08em;color:#B0A898">grove-autonomaton</span>
+            <span style="font-family:'Fragment Mono',monospace;font-size:10px;color:#7A736A">Operator Portal · Proposals</span>
+            <span style="margin-left:auto;font-family:'Fragment Mono',monospace;font-size:9px;letter-spacing:0.1em;text-transform:uppercase;color:#5a7fb0;background:rgba(90,127,176,0.13);border:1px solid rgba(90,127,176,0.3);border-radius:3px;padding:2px 7px">dock_mutation</span>
+          </div>
+          <div style="padding:18px 22px;display:flex;flex-direction:column;flex:1">
+            <div style="font-size:14px;line-height:1.5">10 memory records accumulating around ‘Platform Independence’. No Dock goal tracks this. Add a staging goal?</div>
+            <div style="font-family:'Fragment Mono',monospace;font-size:11px;line-height:1.7;background:#080808;border:1px solid #252525;border-radius:4px;padding:12px 14px;margin-top:12px;color:#B0A898">
+              <div style="color:#7A736A">dock.autonomaton.yaml:</div>
+              <div style="padding-left:12px">goals:</div>
+              <div style="padding-left:24px;color:#4CAF72">+add:</div>
+              <div style="padding-left:36px;color:#E8E2D9">id: auto-platform-independence</div>
+              <div style="padding-left:36px;color:#E8E2D9">name: Platform Independence</div>
+              <div style="padding-left:36px;color:#E8E2D9">keywords:</div>
+              <div style="padding-left:48px;color:#D4621A">- model independence</div>
+              <div style="padding-left:48px;color:#D4621A">- orchestration</div>
+              <div style="padding-left:48px;color:#D4621A">- open standards · open-weight · harness</div>
+              <div style="padding-left:36px;color:#E8E2D9">vector: personal</div>
+              <div style="padding-left:36px;color:#D4A017">status: staging</div>
+            </div>
+            <div style="font-family:'Fragment Mono',monospace;font-size:10px;color:#7A736A;margin-top:12px">▾ evidence (10)</div>
+            <div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:8px"><span style="font-family:'Fragment Mono',monospace;font-size:10px;color:#B0A898;background:#161616;border:1px solid #252525;border-radius:3px;padding:3px 7px">mem_db4b21ce</span><span style="font-family:'Fragment Mono',monospace;font-size:10px;color:#B0A898;background:#161616;border:1px solid #252525;border-radius:3px;padding:3px 7px">mem_0a9a546e</span><span style="font-family:'Fragment Mono',monospace;font-size:10px;color:#B0A898;background:#161616;border:1px solid #252525;border-radius:3px;padding:3px 7px">mem_50d8fff9</span><span style="font-family:'Fragment Mono',monospace;font-size:10px;color:#B0A898;background:#161616;border:1px solid #252525;border-radius:3px;padding:3px 7px">mem_027b13cc</span><span style="font-family:'Fragment Mono',monospace;font-size:10px;color:#B0A898;background:#161616;border:1px solid #252525;border-radius:3px;padding:3px 7px">mem_41ec9c35</span><span style="font-family:'Fragment Mono',monospace;font-size:10px;color:#B0A898;background:#161616;border:1px solid #252525;border-radius:3px;padding:3px 7px">mem_59b86cff</span><span style="font-family:'Fragment Mono',monospace;font-size:10px;color:#B0A898;background:#161616;border:1px solid #252525;border-radius:3px;padding:3px 7px">mem_5138754e</span><span style="font-family:'Fragment Mono',monospace;font-size:10px;color:#B0A898;background:#161616;border:1px solid #252525;border-radius:3px;padding:3px 7px">mem_ff0eace5</span><span style="font-family:'Fragment Mono',monospace;font-size:10px;color:#B0A898;background:#161616;border:1px solid #252525;border-radius:3px;padding:3px 7px">mem_55a42cce</span><span style="font-family:'Fragment Mono',monospace;font-size:10px;color:#B0A898;background:#161616;border:1px solid #252525;border-radius:3px;padding:3px 7px">mem_f5261b66</span></div>
+            <div style="font-family:'Fragment Mono',monospace;font-size:10px;color:#7A736A;margin-top:12px">created 2026-07-13T18:58:29.769345+00:00</div>
+            <div style="display:flex;gap:10px;margin-top:auto;padding-top:14px">
+              <span style="font-family:'Fragment Mono',monospace;font-size:11px;color:#4CAF72;border:1px solid #2f5d42;border-radius:4px;padding:6px 16px">Approve</span>
+              <span style="font-family:'Fragment Mono',monospace;font-size:11px;color:#C0392B;border:1px solid #6b2820;border-radius:4px;padding:6px 16px">Reject</span>
+              <span style="font-family:'Fragment Mono',monospace;font-size:11px;color:#7A736A;border:1px solid #252525;border-radius:4px;padding:6px 16px">Dismiss</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p style="font-family:'Instrument Serif',serif;font-style:italic;font-size:clamp(17px,2vw,21px);line-height:1.4;margin:0;max-width:900px">The vendor keeps this as opaque telemetry. The autonomaton hands the operator the whole chain — <span style="color:#D4621A">evidence, reasoning, and a veto.</span></p>
+    </div>
+  </section>
+
+  <section data-screen-label="Charts" style="border-bottom:1px solid #252525;padding:88px 48px">
+    <div style="max-width:1140px;margin:0 auto;display:flex;flex-direction:column;gap:64px">
+      <div style="display:flex;flex-direction:column;gap:20px">
+        <div style="font-family:'Fragment Mono',monospace;font-size:11px;letter-spacing:0.25em;text-transform:uppercase;color:#D4621A">State of the Architecture · OpenRouter</div>
+        <h2 style="font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(30px,3.6vw,44px);line-height:1.08;letter-spacing:-0.02em;margin:0">The open surge — a <em style="color:#D4621A">volume takeover.</em></h2>
+        <div style="display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:10px">
+          <div style="font-family:'Fragment Mono',monospace;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:#7A736A">Chinese Open-Weight Share of U.S.-Company Tokens · Weekly</div>
+          <div style="display:flex;align-items:center;gap:9px;font-family:'Fragment Mono',monospace;font-size:11px;color:#B0A898"><span style="width:20px;height:3px;background:#4CAF72;display:inline-block"></span>DeepSeek, Qwen, Z.ai &amp; peers</div>
+        </div>
+        <svg viewBox="0 0 1400 600" style="width:100%;height:auto;font-family:'Fragment Mono',monospace">
+          <defs>
+            <linearGradient id="surgeGrad" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#4CAF72" stop-opacity="0.34"></stop>
+              <stop offset="100%" stop-color="#4CAF72" stop-opacity="0"></stop>
+            </linearGradient>
+          </defs>
+          <line x1="90" y1="40" x2="1350" y2="40" stroke="#252525" stroke-dasharray="4 6"></line>
+          <text x="72" y="47" fill="#7A736A" font-size="17" text-anchor="end">50%</text>
+          <line x1="90" y1="193" x2="1350" y2="193" stroke="#252525" stroke-dasharray="4 6"></line>
+          <text x="72" y="200" fill="#7A736A" font-size="17" text-anchor="end">35%</text>
+          <line x1="90" y1="346" x2="1350" y2="346" stroke="#252525" stroke-dasharray="4 6"></line>
+          <text x="72" y="353" fill="#7A736A" font-size="17" text-anchor="end">20%</text>
+          <line x1="90" y1="499" x2="1350" y2="499" stroke="#252525" stroke-dasharray="4 6"></line>
+          <text x="72" y="506" fill="#7A736A" font-size="17" text-anchor="end">5%</text>
+          <line x1="90" y1="550" x2="1350" y2="550" stroke="#333333"></line>
+          <text x="72" y="556" fill="#7A736A" font-size="17" text-anchor="end">0%</text>
+          <line x1="90" y1="244" x2="1350" y2="244" stroke="#D4621A" stroke-width="2" stroke-dasharray="10 8"></line>
+          <text x="1345" y="232" fill="#D4621A" font-size="19" text-anchor="end">Above 30% every week since Feb 8, 2026</text>
+          <line x1="90" y1="438" x2="1350" y2="438" stroke="#7A736A" stroke-width="1.5" stroke-dasharray="3 6"></line>
+          <text x="98" y="428" fill="#B0A898" font-size="17" text-anchor="start">11% — trailing 12-month average</text>
+          <path d="M90,504 L440,504 L720,417 L1000,234 L1200,142 L1310,81 L1310,550 L90,550 Z" fill="url(#surgeGrad)"></path>
+          <path d="M90,504 L440,504 L720,417 L1000,234 L1200,142 L1310,81" fill="none" stroke="#4CAF72" stroke-width="3"></path>
+          <circle cx="440" cy="504" r="7" fill="#080808" stroke="#4CAF72" stroke-width="3"></circle>
+          <text x="452" y="490" fill="#4CAF72" font-size="20" text-anchor="start">4.5% · H1 2025 avg</text>
+          <circle cx="1000" cy="234" r="8" fill="#080808" stroke="#D4621A" stroke-width="3"></circle>
+          <circle cx="1310" cy="81" r="10" fill="#080808" stroke="#4CAF72" stroke-width="3"></circle>
+          <text x="1310" y="63" fill="#4CAF72" font-size="24" text-anchor="end">46% peak</text>
+          <text x="90" y="580" fill="#B0A898" font-size="17" text-anchor="start">JAN 2025</text>
+          <text x="510" y="580" fill="#B0A898" font-size="17" text-anchor="middle">JUL 2025</text>
+          <text x="930" y="580" fill="#B0A898" font-size="17" text-anchor="middle">JAN 2026</text>
+          <text x="1350" y="580" fill="#E8E2D9" font-size="17" text-anchor="end">JUL 2026</text>
+        </svg>
+        <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:32px;flex-wrap:wrap">
+          <p style="font-size:14px;line-height:1.7;color:#7A736A;max-width:700px;margin:0">A rounding error two years ago; roughly half of some weeks’ volume now. Enterprises are voting with volume for a sovereign, multi-model stack — where the trace never leaves the building.</p>
+          <div style="font-family:'Fragment Mono',monospace;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:#7A736A;white-space:nowrap">Source: CNBC / OpenRouter · July 7, 2026</div>
+        </div>
+        <div style="display:flex;gap:10px;align-items:baseline;font-family:'Fragment Mono',monospace;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:#7A736A">Verify → <a href="evidence.html#A12" target="_blank">A12</a></div>
+      </div>
+
+      <div style="display:flex;flex-direction:column;gap:20px;border-top:1px solid #252525;padding-top:64px">
+        <div style="font-family:'Fragment Mono',monospace;font-size:11px;letter-spacing:0.25em;text-transform:uppercase;color:#D4621A">The Telemetry Trap · Output API Pricing</div>
+        <h2 style="font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(30px,3.6vw,44px);line-height:1.08;letter-spacing:-0.02em;margin:0">The price floor <em style="color:#D4621A">drops.</em></h2>
+        <div style="font-family:'Fragment Mono',monospace;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:#7A736A">Cost per 1M Output Tokens · June 2026</div>
+        <div style="width:48px;height:1px;background:#D4621A"></div>
+        <div style="font-family:'Fragment Mono',monospace;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:#7A736A">The Dependency Profile</div>
+        <div style="display:flex;flex-direction:column;gap:12px">
+          <div style="display:grid;grid-template-columns:160px 1fr 76px;align-items:center;gap:18px">
+            <div style="font-size:15px;text-align:right">GPT-5.6 Sol</div>
+            <div style="height:26px;background:#0f0f0f;border:1px solid #252525"><div style="height:100%;width:100%;background:#C0392B"></div></div>
+            <div style="font-family:'Fragment Mono',monospace;font-size:14px;color:#C0392B">$30.00</div>
+          </div>
+          <div style="display:grid;grid-template-columns:160px 1fr 76px;align-items:center;gap:18px">
+            <div style="font-size:15px;text-align:right">Claude Opus 4.8</div>
+            <div style="height:26px;background:#0f0f0f;border:1px solid #252525"><div style="height:100%;width:83.3%;background:#C0392B"></div></div>
+            <div style="font-family:'Fragment Mono',monospace;font-size:14px;color:#C0392B">$25.00</div>
+          </div>
+          <div style="display:grid;grid-template-columns:160px 1fr 76px;align-items:center;gap:18px">
+            <div style="font-size:15px;text-align:right">Gemini 3.1 Pro</div>
+            <div style="height:26px;background:#0f0f0f;border:1px solid #252525"><div style="height:100%;width:40%;background:#D4A017"></div></div>
+            <div style="font-family:'Fragment Mono',monospace;font-size:14px;color:#D4A017">$12.00</div>
+          </div>
+        </div>
+        <div style="border-top:1px dashed #252525;margin:8px 0"></div>
+        <div style="font-family:'Fragment Mono',monospace;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:#7A736A">The Sovereignty Profile</div>
+        <div style="display:flex;flex-direction:column;gap:12px">
+          <div style="display:grid;grid-template-columns:160px 1fr 76px;align-items:center;gap:18px">
+            <div style="font-size:15px;text-align:right">GLM-5.2</div>
+            <div style="height:26px;background:#0f0f0f;border:1px solid #252525"><div style="height:100%;width:14.7%;background:#4CAF72"></div></div>
+            <div style="font-family:'Fragment Mono',monospace;font-size:14px;color:#4CAF72">$4.40</div>
+          </div>
+          <div style="display:grid;grid-template-columns:160px 1fr 76px;align-items:center;gap:18px">
+            <div style="font-size:15px;text-align:right">Qwen 3.7 Max</div>
+            <div style="height:26px;background:#0f0f0f;border:1px solid #252525"><div style="height:100%;width:12.5%;background:#4CAF72"></div></div>
+            <div style="font-family:'Fragment Mono',monospace;font-size:14px;color:#4CAF72">$3.75</div>
+          </div>
+          <div style="display:grid;grid-template-columns:160px 1fr 76px;align-items:center;gap:18px">
+            <div style="font-size:15px;text-align:right">DeepSeek V4 Flash</div>
+            <div style="height:26px;background:#0f0f0f;border:1px solid #252525"><div style="height:100%;width:1%;min-width:5px;background:#4CAF72"></div></div>
+            <div style="font-family:'Fragment Mono',monospace;font-size:14px;color:#4CAF72">$0.28</div>
+          </div>
+        </div>
+        <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:32px;flex-wrap:wrap;padding-top:8px">
+          <p style="font-size:14px;line-height:1.7;color:#7A736A;max-width:760px;margin:0">Independently confirmed: open Chinese models run <strong style="color:#B0A898;font-weight:500">60–90% cheaper</strong> than leading US models, and GLM-5.2 landed <strong style="color:#B0A898;font-weight:500">within one point of Claude Opus 4.8</strong> on a watched agentic benchmark — at roughly a fifth of the cost. <span style="color:#4CAF72">The frontier premium buys months, not moats.</span></p>
+          <div style="font-family:'Fragment Mono',monospace;font-size:14px;color:#4CAF72;white-space:nowrap">~107× spread</div>
+        </div>
+        <div style="display:flex;gap:10px;align-items:baseline;font-family:'Fragment Mono',monospace;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:#7A736A">Verify → <a href="evidence.html#A13" target="_blank">A13</a></div>
+      </div>
+    </div>
+  </section>
+
+  <section data-screen-label="The Core Finding" style="border-bottom:1px solid #252525;padding:88px 48px;background:radial-gradient(ellipse at 78% 30%, rgba(212,98,26,0.08), transparent 55%)">
+    <div style="max-width:1140px;margin:0 auto;display:flex;flex-direction:column;gap:24px">
+      <div style="font-family:'Fragment Mono',monospace;font-size:11px;letter-spacing:0.25em;text-transform:uppercase;color:#D4621A">The Core Finding</div>
+      <h2 style="font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(32px,4vw,50px);line-height:1.08;letter-spacing:-0.02em;margin:0;max-width:960px">Vendors are legally harvesting the cognitive trace — <em style="color:#D4621A">while you pay them to do it.</em></h2>
+      <div style="display:grid;grid-template-columns:1.15fr 0.85fr;gap:32px">
+        <div style="display:flex;flex-direction:column;gap:20px">
+          <p style="font-size:16px;line-height:1.85;color:#B0A898;margin:0;text-wrap:pretty">By classifying the outcome-verified reasoning trace — every accepted completion, every manually edited variable, every terminal-error correction — as "de-identified telemetry" or "usage metrics," vendors legally sidestep ZDR pledges. ZDR stays valid for raw text, which is now a <em style="color:#E8E2D9">depreciating asset.</em> The premium resource for PRMs is the interactive logic path itself.</p>
+          <p style="font-size:16px;line-height:1.85;margin:0"><strong style="color:#E8E2D9;font-weight:500">Enterprises are paying premium subscriptions to fund the automation of their own proprietary judgment.</strong></p>
+          <div style="border-left:2px solid #D4621A;padding-left:22px">
+            <div style="font-family:'Fragment Mono',monospace;font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:#D4621A;margin-bottom:8px">The Polarity Hypothesis</div>
+            <p style="font-size:15px;line-height:1.75;color:#B0A898;margin:0;text-wrap:pretty">Raw data (bits) is <strong style="color:#E8E2D9;font-weight:500">unipolar</strong> — it moves frictionlessly. Meaning, context and intent are <strong style="color:#E8E2D9;font-weight:500">multipolar</strong> — they depend on localized context and human agency. Harvesting interaction telemetry is the systematic capture of that agency.</p>
+          </div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:20px">
+          <div style="border:1px solid #252525;background:#0f0f0f;border-radius:4px;padding:24px 26px">
+            <div style="font-family:'Fragment Mono',monospace;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:#7A736A;margin-bottom:12px">Deployment concentration · HHI</div>
+            <div style="display:flex;align-items:baseline;gap:14px">
+              <span style="font-family:'Instrument Serif',serif;font-size:44px;line-height:1;color:#C0392B">4,100</span>
+              <span style="font-family:'Fragment Mono',monospace;font-size:20px;color:#8B3D10">→</span>
+              <span style="font-family:'Instrument Serif',serif;font-size:44px;line-height:1;color:#4CAF72">1,705</span>
+            </div>
+            <p style="font-size:14px;line-height:1.7;color:#B0A898;margin:10px 0 0">A single-quarter collapse from monopolistic to competitive — a volume-driven migration toward sovereign, multi-model, open-weight architectures.</p>
+          </div>
+          <div style="border:1px solid #D4621A;background:rgba(212,98,26,0.05);border-radius:4px;padding:24px 26px;display:flex;flex-direction:column;justify-content:center;flex:1">
+            <p style="font-family:'Instrument Serif',serif;font-style:italic;font-size:clamp(20px,2.4vw,25px);line-height:1.3;margin:0">Read the fine print. Then change your architecture.</p>
+          </div>
+        </div>
+      </div>
+      <div style="display:flex;gap:10px;align-items:baseline;font-family:'Fragment Mono',monospace;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:#7A736A">Verify → <a href="evidence.html#B5" target="_blank">B5</a></div>
+    </div>
+  </section>
+
+  <section data-screen-label="Sources" style="padding:88px 48px">
+    <div style="max-width:1140px;margin:0 auto;display:flex;flex-direction:column;gap:24px">
+      <div style="font-family:'Fragment Mono',monospace;font-size:11px;letter-spacing:0.25em;text-transform:uppercase;color:#D4621A">Verification · Fact-checked July 13, 2026</div>
+      <h2 style="font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(28px,3.2vw,40px);line-height:1.08;letter-spacing:-0.02em;margin:0">Every claim traces to a <em style="color:#D4621A">primary source.</em></h2>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px">
+        <div style="border:1px solid #D4621A;background:rgba(212,98,26,0.06);border-radius:4px;padding:28px 30px;display:flex;flex-direction:column;gap:12px">
+          <div style="font-family:'Fragment Mono',monospace;font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:#D4621A">Evidence Library</div>
+          <div style="font-family:'Instrument Serif',serif;font-size:22px;line-height:1.25">30 primary-source cards — verbatim clauses, dual captures (live + archive), SHA-256 hashed.</div>
+          <div style="font-size:14px;line-height:1.7;color:#B0A898">Don't take our word for any of it. Every load-bearing claim above carries a card: the clause, the capture, and the hash. Verify everything yourself.</div>
+          <a href="evidence.html" target="_blank" style="font-family:'Fragment Mono',monospace;font-size:12px;letter-spacing:0.1em;color:#F07030;margin-top:auto;padding-top:8px">Open the Evidence Library →</a>
+        </div>
+        <div style="border:1px solid #8B3D10;background:rgba(212,98,26,0.04);border-radius:4px;padding:28px 30px;display:flex;flex-direction:column;gap:12px">
+          <div style="font-family:'Fragment Mono',monospace;font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:#D4621A">The Standard</div>
+          <div style="font-family:'Instrument Serif',serif;font-size:22px;line-height:1.25">GRV-001 · The Autonomaton Pattern — sovereignty as a structural guarantee.</div>
+          <div style="font-size:14px;line-height:1.7;color:#B0A898">Operator-owned telemetry, config, and skills; the reasoning trace captured and kept locally. Open standard, CC BY 4.0.</div>
+          <a href="https://the-grove.ai/standards/001" target="_blank" style="font-family:'Fragment Mono',monospace;font-size:12px;letter-spacing:0.1em;color:#F07030;margin-top:auto;padding-top:8px">Read GRV-001 at the-grove.ai →</a>
+        </div>
+      </div>
+      <div style="display:flex;align-items:center;gap:14px;border-top:1px solid #252525;padding-top:24px;margin-top:12px;flex-wrap:wrap;justify-content:space-between">
+        <div style="display:flex;align-items:center;gap:12px">
+          <img src="assets/grove-mark.png" alt="" style="width:30px;height:30px;object-fit:contain">
+          <span style="font-family:'Fragment Mono',monospace;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:#8B3D10">The Grove Foundation · CC BY 4.0 · the-grove.ai</span>
+        </div>
+        <a href="slides.html" style="font-family:'Fragment Mono',monospace;font-size:10px;letter-spacing:0.15em;text-transform:uppercase">View as slideshow →</a>
+      </div>
+    </div>
+  </section>
+
+  <div style="position:fixed;bottom:0;left:0;right:0;z-index:50;background:rgba(8,8,8,0.94);backdrop-filter:blur(16px);border-top:1px solid rgba(37,37,37,0.5);padding:10px 24px;display:flex;justify-content:center;align-items:center;gap:20px;flex-wrap:wrap">
+    <span style="font-family:'Fragment Mono',monospace;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:#7A736A;text-align:center">Our lane — technologists, not attorneys. Nothing here is legal advice or creates an attorney-client relationship.</span>
+    <a href="evidence.html" target="_blank" style="font-family:'Fragment Mono',monospace;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;white-space:nowrap">Evidence Library →</a>
+  </div>
+</div>
+</x-dc>
+</body>
+</html>

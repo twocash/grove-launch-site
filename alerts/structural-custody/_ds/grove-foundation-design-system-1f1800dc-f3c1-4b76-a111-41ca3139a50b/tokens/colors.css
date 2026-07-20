@@ -1,0 +1,39 @@
+/* ══════════════════════════════════════════════════════
+   GROVE FOUNDATION — COLOR TOKENS
+   Near-black institutional dark mode. Amber is the single
+   accent; everything else is a layered neutral or a
+   semantic status color. Canonical source: homepage <style>.
+══════════════════════════════════════════════════════ */
+:root {
+  /* ── AMBER ACCENT (the only brand hue) ── */
+  --amber:        #D4621A;  /* primary accent · links · eyebrows · hover */
+  --amber-bright: #F07030;  /* emphasized inline text · external links */
+  --amber-dim:    #8B3D10;  /* borders · nav logo · secondary interactive */
+  --amber-glow:   rgba(212,98,26,0.12);  /* hover backgrounds · subtle emphasis */
+  --amber-wash:   rgba(212,98,26,0.04);  /* faint panel tint behind amber blocks */
+
+  /* ── LAYERED BACKGROUNDS (08 → 1a, darkest to elevated) ── */
+  --bg:   #080808;  /* page background */
+  --bg2:  #0f0f0f;  /* card backgrounds */
+  --bg3:  #161616;  /* hover card backgrounds */
+  --bg4:  #1a1a1a;  /* elevated surfaces */
+
+  /* ── BORDERS ── */
+  --border:       #252525;  /* default borders · grid lines */
+  --border-light: #333333;  /* table header borders · input borders */
+  --border-hover: rgba(232,224,216,0.14);  /* neutral hover border on interactive */
+
+  /* ── TEXT (warm off-white system) ── */
+  --text:     #E8E2D9;  /* primary text · warm off-white */
+  --text-mid: #B0A898;  /* body text */
+  --text-dim: #7A736A;  /* secondary · metadata · captions */
+
+  /* ── SEMANTIC STATUS (used in Λ scoring, ratchet, tables) ── */
+  --green:        #4CAF72;  /* sovereign · positive trend · pass */
+  --green-dim:    rgba(76,175,114,0.08);
+  --sovereign:    #2A8C5A;  /* deeper sovereign tone (ratchet band) */
+  --red:          #C0392B;  /* concentrated · negative trend · fail */
+  --red-dim:      rgba(192,57,43,0.06);
+  --danger:       #C43E2A;  /* provider-ratchet pole (ratchet diagnostic) */
+  --yellow:       #D4A017;  /* hybrid · sub-critical tier · caution */
+}

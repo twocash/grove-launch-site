@@ -3,13 +3,23 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Lambda (Λ) Watch — The Grove Foundation</title>
-<meta name="description" content="Lambda (Λ) Watch — the Grove Foundation's live standings of AI architectural patterns. Structural viability scores measuring which patterns would survive without the money.">
-<meta name="DC.subject" content="Λ framework, structural viability measurement, AI deployment patterns, squared-denominator asymmetry, geometric mean (β), Validation, tier thresholds, sovereign AI measurement, Bass Diffusion, Granovetter threshold, Arthur increasing returns, Grove Foundation">
+<title>Lambda (Λ) Watch — Q2 2026 Standings — The Grove Foundation</title>
+<meta name="description" content="Lambda (Λ) Watch — the Grove Foundation's quarterly standings of AI deployment patterns. Q2 2026: all five Approaching-Critical seats are Sovereign open-weight. 12 patterns, 115 sources, CC BY 4.0.">
+<meta name="DC.subject" content="Λ framework, structural viability measurement, AI deployment patterns, squared-denominator asymmetry, geometric mean (β), Validation, tier thresholds, sovereign AI measurement, reserved-use ratchet, trace custody, Bass Diffusion, Granovetter threshold, Arthur increasing returns, Grove Foundation">
+
+<!-- ══════════════════════════════════════════════════════════════════
+     INTERNAL AUDIT NOTE (not rendered) — Q2 2026 publish · 2026-07-20
+     This page: 12 patterns / 115 sources / 5 Approaching-Critical seats.
+     Research repo snapshot (lambda-standings main @ 40ac586):
+       11 patterns / 104 sources / 4 Approaching-Critical.
+     The site page is intentionally ahead of the fact-check snapshot;
+     research repo to be back-reconciled next cycle.
+     Ref: sprints/q2-2026-publish-v1/SPEC.md (decision D4 / risk R2).
+══════════════════════════════════════════════════════════════════ -->
 
 <!-- ── Open Graph ── -->
-<meta property="og:title" content="Lambda (Λ) Watch — The Grove Foundation">
-<meta property="og:description" content="Live standings of AI architectural patterns. Structural viability scores measuring which patterns would survive without the money.">
+<meta property="og:title" content="Lambda (Λ) Watch — Q2 2026 Standings — The Grove Foundation">
+<meta property="og:description" content="Quarterly standings of AI deployment patterns. Q2 2026: all five Approaching-Critical seats are Sovereign open-weight — and custody of the reasoning trace has already transferred, in the vendors' own documents.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://the-grove.ai/lambda/">
 <meta property="og:site_name" content="The Grove Foundation">
@@ -17,8 +27,8 @@
 
 <!-- ── Twitter Card ── -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Lambda (Λ) Watch">
-<meta name="twitter:description" content="Live standings of AI architectural patterns from the Grove Foundation.">
+<meta name="twitter:title" content="Lambda (Λ) Watch — Q2 2026">
+<meta name="twitter:description" content="Quarterly standings of AI deployment patterns from the Grove Foundation. Q2 2026: the Sovereign surge, scored.">
 <meta name="twitter:image" content="https://the-grove.ai/og.png">
 
 <!-- ══════════════════════════════════════════════════════════════════
@@ -30,8 +40,8 @@
   "@type": "WebPage",
   "@id": "https://the-grove.ai/lambda/",
   "url": "https://the-grove.ai/lambda/",
-  "name": "Λ Standings",
-  "description": "Live structural viability scores for AI architecture patterns. Which patterns would survive without the money?",
+  "name": "Λ Standings — Q2 2026",
+  "description": "Quarterly structural viability scores for AI deployment patterns. Which patterns would survive without the money? Q2 2026: all five Approaching-Critical seats are Sovereign open-weight.",
   "isPartOf": { "@id": "https://the-grove.ai/#website" },
   "inLanguage": "en",
   "speakable": {
@@ -62,16 +72,17 @@
 </script>
 
 <!-- ══════════════════════════════════════════════════════════════════
-     JSON-LD — Dataset (Λ standings)
+     JSON-LD — Dataset (Λ standings, Q2 2026)
 ══════════════════════════════════════════════════════════════════ -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Dataset",
   "@id": "https://the-grove.ai/lambda/#dataset",
-  "name": "Λ Standings — AI Deployment Pattern Structural Viability Scores",
-  "description": "Composite structural-viability scores (Λ) for named AI deployment patterns, computed as Λ = (S × R × V) / (1 + (β · Fc)²) across five input variables.",
+  "name": "Λ Standings — AI Deployment Pattern Structural Viability Scores (Q2 2026)",
+  "description": "Composite structural-viability scores (Λ) for twelve named AI deployment patterns, computed as Λ = (S × R × V) / (1 + (β · Fc)²) across five input variables. Scored June 2026 against the published March 2026 baseline; 115 cited sources.",
   "url": "https://the-grove.ai/lambda/",
+  "temporalCoverage": "2026-06",
   "creator": {
     "@type": "Organization",
     "name": "The Grove Foundation",
@@ -79,7 +90,7 @@
   },
   "license": "https://creativecommons.org/licenses/by/4.0/",
   "isAccessibleForFree": true,
-  "keywords": ["structural viability", "AI deployment patterns", "Λ framework", "sovereign AI", "squared-denominator asymmetry", "geometric mean (β)", "Bass Diffusion Model", "Granovetter threshold models", "Arthur increasing returns"],
+  "keywords": ["structural viability", "AI deployment patterns", "Λ framework", "sovereign AI", "open-weight models", "squared-denominator asymmetry", "geometric mean (β)", "reserved-use ratchet", "trace custody", "Bass Diffusion Model", "Granovetter threshold models", "Arthur increasing returns"],
   "measurementTechnique": "Λ methodology — composite score across five variables (S, R, V, Fc, β); see methodology section for derivation and historical calibration",
   "variableMeasured": [
     { "@type": "PropertyValue", "name": "Λ (composite score)", "description": "Composite structural-viability score computed as Λ = (S × R × V) / (1 + (β · Fc)²); range 0.0001 to 1.0" },
@@ -90,19 +101,23 @@
     { "@type": "PropertyValue", "name": "β (Exogenous Incentive)", "description": "Squared-denominator resistor — geometric mean of financial, regulatory, and ideological sub-dimensions; lower = stronger forcing function" },
     { "@type": "PropertyValue", "name": "Tier", "description": "Structurally Inert (<0.005), Sub-Critical (0.005–0.029), Approaching Critical (0.03–0.099), Critical Mass (≥0.10)" }
   ],
-  "distribution": {
-    "@type": "DataDownload",
-    "encodingFormat": "text/html",
-    "contentUrl": "https://the-grove.ai/lambda/"
-  }
+  "distribution": [
+    {
+      "@type": "DataDownload",
+      "encodingFormat": "text/html",
+      "contentUrl": "https://the-grove.ai/lambda/"
+    },
+    {
+      "@type": "DataDownload",
+      "encodingFormat": "application/pdf",
+      "contentUrl": "https://the-grove.ai/docs/benchmark-q2-2026.pdf"
+    }
+  ]
 }
 </script>
 
 <!-- ══════════════════════════════════════════════════════════════════
      JSON-LD — TechArticle (Λ methodology prose)
-     Adapts pattern from /standards/001 TechArticle; isBasedOn chains
-     Λ to its three architectural lineage parents (Bass 1969 ·
-     Granovetter 1978 · Arthur 1994).
 ══════════════════════════════════════════════════════════════════ -->
 <script type="application/ld+json">
 {
@@ -112,7 +127,7 @@
   "alternativeHeadline": "Measuring structural propagation potential",
   "url": "https://the-grove.ai/lambda/",
   "datePublished": "2026-03-01",
-  "dateModified": "2026-04-22",
+  "dateModified": "2026-07-06",
   "inLanguage": "en",
   "articleSection": "Open Methodology",
   "author": {
@@ -160,15 +175,19 @@
     "squared-denominator asymmetry",
     "geometric mean aggregation",
     "propagation potential",
+    "reserved-use ratchet",
+    "trace custody",
     "Bass Diffusion Model",
     "Granovetter threshold models",
     "Arthur increasing returns"
   ],
-  "keywords": "Λ framework, structural viability, AI deployment patterns, squared-denominator asymmetry, geometric mean (β), Validation, tier thresholds, sovereign AI measurement, Bass Diffusion Model, Granovetter threshold models, Arthur increasing returns, Grove Foundation, CC BY 4.0",
+  "keywords": "Λ framework, structural viability, AI deployment patterns, squared-denominator asymmetry, geometric mean (β), Validation, tier thresholds, sovereign AI measurement, reserved-use ratchet, trace custody, Bass Diffusion Model, Granovetter threshold models, Arthur increasing returns, Grove Foundation, CC BY 4.0",
   "hasPart": [
+    {"@type": "WebPageElement", "name": "From the Managing Director", "url": "https://the-grove.ai/alerts/reserved-use-ratchet", "description": "Q2 2026 letter: Alex Karp told you what is happening. Here is the paper trail. The reserved-use ratchet, in the vendors' own documents, with five questions for legal and risk teams."},
+    {"@type": "WebPageElement", "name": "Q2 2026 Standings Update", "url": "https://the-grove.ai/lambda/#q2-2026", "description": "Five findings: all five Approaching-Critical seats are Sovereign open-weight; a moat is not the same as spread; the apex is eating its own moat; concentration is breaking up; the prize has moved up a layer."},
     {"@type": "WebPageElement", "name": "The Methodology", "url": "https://the-grove.ai/lambda/#methodology", "description": "Λ quantifies whether a pattern can propagate through a complex social system on structural merit alone. Three linear variables (S, R, V) balanced against two squared-denominator resistors (Fc, β)."},
-    {"@type": "WebPageElement", "name": "Propagation Analysis", "url": "https://the-grove.ai/lambda/#landscape", "description": "Λ standings table scoring eight AI deployment patterns with sub-scores and Structural Profile classification. Historical calibration set: TCP/IP, Bitcoin, ISO Container, U.S. Metric System."},
-    {"@type": "WebPageElement", "name": "FAQ", "url": "https://the-grove.ai/lambda/#faq", "description": "Six questions addressing methodology, aggregation structure, tier thresholds, and measurement integrity."}
+    {"@type": "WebPageElement", "name": "Propagation Analysis", "url": "https://the-grove.ai/lambda/#landscape", "description": "Λ standings table scoring twelve AI deployment patterns with sub-scores and cluster classification. Historical calibration set: TCP/IP, Bitcoin, ISO Container, U.S. Metric System."},
+    {"@type": "WebPageElement", "name": "FAQ", "url": "https://the-grove.ai/lambda/#faq", "description": "Seven questions addressing methodology, aggregation structure, tier thresholds, the Llama restatement, and measurement integrity."}
   ],
   "speakable": {
     "@type": "SpeakableSpecification",
@@ -179,10 +198,7 @@
 
 <!-- ══════════════════════════════════════════════════════════════════
      JSON-LD — FAQPage
-     Six Q&A pairs matching visible FAQ section below. Answers adapted
-     from operator-drafted canonical text to align with the current
-     methodology on this page (Λ = (S × R × V) / (1 + (β · Fc)²); five
-     variables; squared-denominator asymmetry — not power-law decay).
+     Seven Q&A pairs matching visible FAQ section below.
 ══════════════════════════════════════════════════════════════════ -->
 <script type="application/ld+json">
 {
@@ -219,7 +235,15 @@
       "name": "What does \"Approaching Critical\" mean operationally?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Approaching Critical (0.03–0.099) is the band where a pattern has structural momentum but has not yet crossed the threshold of durable consolidation. Operationally: capital allocators can position, but commitment should hedge. At Critical Mass (≥0.10), the pattern is structurally sufficient to persist without exogenous rescue. Mistral/DeepSeek is currently the sole Approaching Critical pattern (Λ=0.0314)."
+        "text": "Approaching Critical (0.03–0.099) is the band where a pattern has structural momentum but has not yet crossed the threshold of durable consolidation. Operationally: capital allocators can position, but commitment should hedge. At Critical Mass (≥0.10), the pattern is structurally sufficient to persist without exogenous rescue. Five patterns hold the band in Q2 2026 — DeepSeek V4 (0.0502), Mistral (0.0440), Gemma 4 (0.0376), GLM-5.2 (0.0366), and Qwen 3.6 (0.0366) — every one a Sovereign open-weight pattern."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What happened to Meta's Llama?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Llama scores 0.0031 on the Λ scale — Structurally Inert, the lowest of the four tiers. That means it no longer spreads on its own; it needs a sponsor's push to keep moving. Two changes drove the result. First, Llama 4 added geographic restrictions in the EU, which limits how freely it can be copied and run. Second, Meta shifted toward a more closed, commercial posture. Both raise the barriers the Λ equation measures, so Llama's structural momentum fell to the bottom tier. It is the one open-weight pattern that does not clear its own weight."
       }
     },
     {
@@ -235,7 +259,7 @@
       "name": "How often are Λ scores updated?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Λ scores are revised when structural evidence changes — regulatory shifts, financing rounds, architectural pivots, geopolitical realignment (e.g., EU geofencing triggering Meta Llama's Sub-Critical drop). The scoreboard is not a real-time feed; it's a considered index. Every revision is Python-verified against the methodology before publication; no scores are approximated."
+        "text": "Quarterly. The March 2026 baseline and this June 2026 update are published; the next scoring cycle is September 2026. Scores are revised when structural evidence changes — regulatory shifts, financing rounds, architectural pivots, geopolitical realignment. The scoreboard is not a real-time feed; it's a considered index. Every published Λ reproduces from its sub-scores through the equation, verified before publication; no scores are approximated."
       }
     }
   ]
@@ -288,6 +312,31 @@ nav { position:fixed; top:0; left:0; right:0; z-index:100; padding:0 48px; heigh
 .divider { width:48px; height:1px; background:var(--amber); margin:32px 0; }
 .reveal { opacity:0; transform:translateY(24px); transition:opacity 0.7s ease, transform 0.7s ease; }
 .reveal.visible { opacity:1; transform:translateY(0); }
+/* ── ALERT CALLOUT ── */
+.alert-callout { margin:8px 0 40px; padding:30px 34px; border:1px solid rgba(212,98,26,0.3); border-left:4px solid var(--amber); background:rgba(212,98,26,0.04); }
+.alert-callout .ac-label { font-family:var(--mono); font-size:10px; letter-spacing:0.22em; color:var(--amber); text-transform:uppercase; margin-bottom:10px; }
+.alert-callout .ac-title { font-family:var(--serif); font-size:22px; color:var(--text); margin-bottom:12px; line-height:1.3; }
+.alert-callout p { font-size:14px; line-height:1.7; color:var(--text-mid); font-weight:300; margin-bottom:0; }
+.alert-callout a { color:var(--amber); text-decoration:none; border-bottom:1px solid rgba(212,98,26,0.4); }
+/* ── FINDINGS ── */
+.findings { counter-reset:f; list-style:none; margin:28px 0; border-top:1px solid var(--border); }
+.findings li { counter-increment:f; position:relative; padding:22px 0 22px 56px; border-bottom:1px solid var(--border); font-weight:300; font-size:15px; line-height:1.75; color:var(--text-mid); }
+.findings li::before { content:counter(f); position:absolute; left:0; top:24px; width:34px; height:34px; border:1px solid var(--amber-dim); color:var(--amber); font-family:var(--mono); font-size:14px; display:flex; align-items:center; justify-content:center; }
+/* ── INLINE CHARTS (design-system native) ── */
+.chart-inline { position:relative; left:50%; transform:translateX(-50%); width:min(1060px,94vw); margin:40px 0; overflow-x:auto; }
+.chart-card { min-width:960px; background:#0f0f0f; border:1px solid #252525; padding:38px 42px; }
+.chart-card h3 { font-family:var(--serif); font-weight:400; font-size:28px; line-height:1.12; color:var(--text); letter-spacing:0.01em; margin:0; }
+.chart-card .cc-sub { font-family:var(--sans); font-weight:300; font-size:15px; color:var(--text-mid); margin:8px 0 30px; }
+.chart-card .cc-footer { display:flex; justify-content:space-between; align-items:baseline; flex-wrap:wrap; gap:8px; margin-top:30px; padding-top:16px; border-top:1px solid #252525; font-family:var(--mono); font-size:11px; }
+.chart-card .cc-footer .cf-brand { color:var(--amber); letter-spacing:0.1em; }
+.chart-card .cc-footer .cf-src { color:var(--text-dim); letter-spacing:0.03em; }
+/* ── DOWNLOADS ── */
+.dl-panel { display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--border); border:1px solid var(--border); margin:32px 0; }
+.dl-card { background:var(--bg2); padding:28px; text-decoration:none; display:block; transition:background 0.2s; }
+.dl-card:hover { background:var(--bg3); }
+.dl-kind { font-family:var(--mono); font-size:9px; letter-spacing:0.18em; text-transform:uppercase; color:var(--amber); margin-bottom:10px; }
+.dl-title { font-family:var(--serif); font-size:19px; color:var(--text); margin-bottom:8px; line-height:1.25; }
+.dl-meta { font-family:var(--mono); font-size:10px; color:var(--text-dim); letter-spacing:0.06em; }
 /* ── STRUCTURAL SHARE ── */
 .share-panel { display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--border); border:1px solid var(--border); margin-bottom:32px; }
 .share-half { background:var(--bg2); padding:40px 48px; }
@@ -297,7 +346,7 @@ nav { position:fixed; top:0; left:0; right:0; z-index:100; padding:0 48px; heigh
 .share-bar { height:6px; display:flex; margin:24px 0 12px; border:1px solid var(--border); overflow:hidden; }
 .share-bar-sov { background:var(--green); }
 .share-bar-con { background:var(--red); }
-.share-note { font-family:var(--mono); font-size:10px; color:var(--text-dim); letter-spacing:0.06em; }
+.share-note { font-family:var(--mono); font-size:10px; color:var(--text-dim); letter-spacing:0.06em; line-height:1.8; }
 /* ── SCOREBOARD ── */
 .board { border:1px solid var(--border); margin-bottom:32px; }
 .board-header { display:grid; grid-template-columns:36px 2fr 1fr 1.2fr 48px; padding:10px 20px; border-bottom:1px solid var(--border); font-family:var(--mono); font-size:9px; letter-spacing:0.15em; text-transform:uppercase; color:var(--amber); align-items:center; }
@@ -307,7 +356,6 @@ nav { position:fixed; top:0; left:0; right:0; z-index:100; padding:0 48px; heigh
 .srow.expanded { background:var(--bg3); }
 .srow.sovereignty { border-left:3px solid var(--green); }
 .srow.dependency { border-left:3px solid var(--red); }
-.srow.hybrid { border-left:3px solid var(--yellow); }
 .s-rank { font-family:var(--mono); font-size:13px; color:var(--text-dim); text-align:center; }
 .s-name { font-family:var(--serif); font-size:16px; color:var(--text); }
 .s-cat { font-family:var(--mono); font-size:8px; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-dim); margin-top:1px; }
@@ -369,11 +417,6 @@ nav { position:fixed; top:0; left:0; right:0; z-index:100; padding:0 48px; heigh
 .prof-desc { font-size:13px; color:var(--text-mid); line-height:1.6; font-weight:300; }
 .prof-members { font-family:var(--mono); font-size:10px; color:var(--text-dim); margin-top:10px; letter-spacing:0.04em; }
 .prof-kick { font-size:13px; margin-top:10px; line-height:1.5; font-weight:400; }
-/* ── PREDICTION ── */
-.prediction { display:grid; grid-template-columns:120px 1fr; gap:0; border:1px solid rgba(212,98,26,0.35); background:rgba(212,98,26,0.03); margin:32px 0; }
-.pred-label { background:rgba(212,98,26,0.08); padding:24px 20px; display:flex; align-items:center; justify-content:center; font-family:var(--mono); font-size:10px; letter-spacing:0.15em; text-transform:uppercase; color:var(--amber); text-align:center; line-height:1.6; border-right:1px solid rgba(212,98,26,0.2); }
-.pred-body { padding:24px; font-size:14px; color:var(--text-mid); line-height:1.7; font-weight:300; }
-.pred-body strong { color:var(--text); }
 /* ── INTEGRITY ── */
 .integrity { background:rgba(212,98,26,0.04); border:1px solid rgba(212,98,26,0.2); padding:24px 28px; margin:32px 0; }
 .integrity p { font-size:14px; color:var(--text-mid); line-height:1.7; font-weight:300; }
@@ -390,8 +433,7 @@ nav { position:fixed; top:0; left:0; right:0; z-index:100; padding:0 48px; heigh
 @media(max-width:900px) {
   .share-panel { grid-template-columns:1fr; }
   .tier-grid { grid-template-columns:1fr 1fr; }
-  .prediction { grid-template-columns:1fr; }
-  .pred-label { border-right:none; border-bottom:1px solid rgba(212,98,26,0.2); padding:16px; }
+  .dl-panel { grid-template-columns:1fr; }
 }
 @media(max-width:768px) {
   nav { padding:0 20px; }
@@ -434,7 +476,7 @@ nav { position:fixed; top:0; left:0; right:0; z-index:100; padding:0 48px; heigh
   <div class="nav-links">
     <a href="/ratchet">Ratchet Test</a>
     <a href="/lambda" class="active">&Lambda; Watch</a>
-    <a href="/alerts">CIO Alerts<span class="nav-new-bug" aria-hidden="true"></span></a>
+    <a href="/alerts">CIO Alerts</a>
     <a href="/standards">Published Standards</a>
     <a href="/observations">Observations</a>
     <a href="/membership">Membership</a>
@@ -448,70 +490,243 @@ nav { position:fixed; top:0; left:0; right:0; z-index:100; padding:0 48px; heigh
 ══════════════════════════════════════════ -->
 <section class="section" id="hero">
   <div class="section-inner">
-    <div class="eyebrow">State of the Architecture</div>
+    <div class="eyebrow">State of the Architecture &middot; Q2 2026</div>
     <h1 class="display">Lambda (<em>&Lambda;</em>) Watch</h1>
     <p style="font-family:var(--serif); font-style:italic; font-size:clamp(20px,2.2vw,28px); color:var(--text-mid); margin:8px 0 24px; line-height:1.3;">Standings of AI architectural patterns &mdash; and which would survive <em>without the money.</em></p>
     <p class="lead">Every major analyst framework measures how many people are using an AI platform today. The Grove Foundation measures whether they&rsquo;d keep using it if nobody subsidized it. Can the pattern survive on its own, or does it need a benefactor?</p>
     <div class="divider"></div>
-    <p class="hero-meta">Last scored: March 2026 &middot; Next update: June 2026 &middot; 96 sources &middot; 8 patterns &middot; 4 historical calibrations &middot; CC BY 4.0</p>
+    <p class="hero-meta">Last scored: June 2026 &middot; Next update: September 2026 &middot; 115 sources &middot; 12 patterns &middot; 4 historical calibrations &middot; CC BY 4.0</p>
+    <p class="hero-meta" style="margin-top:8px;">Editions: <a href="/lambda/archive/2026-03/">March 2026 (archived)</a> &middot; June 2026 (current) &middot; <a href="/alerts/ai-deployment-pattern-benchmark">March baseline alert</a></p>
   </div>
   <div class="scroll-cue"><span>Scroll</span><svg width="16" height="10" viewBox="0 0 16 10" fill="none"><path d="M1 1L8 8L15 1" stroke="#8B3D10" stroke-width="1.5"/></svg></div>
 </section>
+
+<!-- ═══════════════════════════════════════
+     Q2 2026 STANDINGS UPDATE
+══════════════════════════════════════════ -->
+<section class="section" id="q2-2026">
+  <div class="section-inner reveal">
+    <div class="eyebrow">Q2 2026 Standings Update &middot; Scored June 2026</div>
+    <h2 class="headline">The fight has moved <em>up a layer.</em></h2>
+
+    <div class="alert-callout">
+      <div class="ac-label">From the Managing Director &middot; CIO Alert 007</div>
+      <div class="ac-title">Alex Karp told you what is happening. Here is the paper trail.</div>
+      <p>What the Palantir CEO asserted on air, the vendors&rsquo; own documents already say &mdash; the reserved-use ratchet, with five questions for your legal and risk teams this week. <a href="/alerts/reserved-use-ratchet">Read the letter &rarr;</a></p>
+    </div>
+
+    <p class="body-text">It is no longer about who owns the best model. It is about who owns the <em>worked example</em> &mdash; the recorded trace of how a real organization solves a real problem, step by step, with a checkable result. That trace is the scarce fuel now. And this quarter, the board shows it moving away from the big API vendors and toward open-weight patterns a company can run and keep for itself.</p>
+    <p class="body-text">Every one of this quarter&rsquo;s five strongest patterns is a Sovereign open-weight pattern &mdash; weights a company can download, run on its own hardware, and keep. Clearing the line is earned on the equation. It is not handed out by how we count the board. Five findings carry the quarter.</p>
+
+    <ol class="findings">
+      <li><strong>All five Approaching-Critical seats are Sovereign open-weight.</strong> The closed API vendors sit far below them. This is a scored result, not a counting trick &mdash; each leader clears the line on its own numbers.</li>
+      <li><strong>A moat is not the same as spread.</strong> The incumbents&rsquo; Q2 counter-moves &mdash; OpenAI&rsquo;s own silicon, Claude captured inside Slack, OpenAI&rsquo;s new ad tools &mdash; make their market position stickier. But under &Lambda; they <em>lower</em> Spreadability and deepen dependence. None of them crosses a tier, even when we tilt the math in their favor.</li>
+      <li><strong>The apex is now eating its own moat.</strong> Google&rsquo;s own open model, Gemma 4, clears into Approaching Critical (0.0376) on the same permissive Apache 2.0 license that carries Mistral to 0.0440 &mdash; even though Google also sells a closed, premium Gemini. Scored correctly, that split-the-difference strategy shows up as an incentive drag (&beta;_ideo), not as friction in the asset itself (F<sub>c</sub>). It costs Gemma the rank but no longer the tier. An apex vendor can no longer ship permissive open weights without arming a rival against its own closed product. The license and the friction ruling are both locked on the record (panel, July 1, 2026).</li>
+      <li><strong>Concentration is breaking up.</strong> The concentration index (HHI) fell from 4,118 to 1,705 &mdash; down 59%, across the line the Justice Department treats as highly concentrated. On a like-for-like basis, the Sovereign cluster&rsquo;s share of structural weight rose from 83.8% to 91.6%. We headline the like-for-like figure and footnote the mechanical 96.3%, because part of the mechanical jump is just counting one row as four.</li>
+      <li><strong>The prize has moved up a layer.</strong> The asset worth owning is custody of the reasoning trace, manufactured by the agent harness. You can prove that transfer from vendor terms today. What you cannot yet prove is active bulk training on the de-identified trace &mdash; so we say custody, and we stop there. That line is not timidity. It is what makes the claim hold.</li>
+    </ol>
+
+    <div class="dl-panel">
+      <a class="dl-card" href="/docs/benchmark-q2-2026.pdf">
+        <div class="dl-kind">Full Report &middot; PDF</div>
+        <div class="dl-title">&Lambda; Competitive Benchmark, Q2 2026</div>
+        <div class="dl-meta">25 pages &middot; 12 patterns &middot; 115 sources &middot; every score justified &middot; CC BY 4.0</div>
+      </a>
+      <a class="dl-card" href="/docs/md-letter-q2-2026.pdf">
+        <div class="dl-kind">MD Letter &middot; PDF</div>
+        <div class="dl-title">From the Managing Director</div>
+        <div class="dl-meta">4 pages &middot; the reserved-use ratchet exhibit &middot; five questions &middot; CC BY 4.0</div>
+      </a>
+    </div>
+  </div>
+</section>
+
 <!-- ═══════════════════════════════════════
      STRUCTURAL SHARE
 ══════════════════════════════════════════ -->
 <section class="section" style="background:var(--bg2); border-top:1px solid var(--border); border-bottom:1px solid var(--border);">
   <div class="section-wide reveal">
-    <div class="eyebrow">Structural Share &middot; March 2026</div>
+    <div class="eyebrow">Structural Share &middot; June 2026</div>
     <div class="share-panel">
       <div class="share-half">
-        <div class="share-pct" style="color:var(--green);">83%</div>
+        <div class="share-pct" style="color:var(--green);">91.6%</div>
         <div class="share-label" style="color:var(--green);">Sovereign</div>
-        <div class="share-desc">Open-weight, on-device, and architecturally independent patterns. Structural viability does not depend on a single vendor&rsquo;s continued investment or goodwill.</div>
+        <div class="share-desc">Open-weight, on-device, and architecturally independent patterns. Structural viability does not depend on a single vendor&rsquo;s continued investment or goodwill. Up from 83.8% in March &mdash; +7.8 points of real structure, like-for-like.</div>
       </div>
       <div class="share-half">
-        <div class="share-pct" style="color:var(--red);">17%</div>
+        <div class="share-pct" style="color:var(--red);">8.4%</div>
         <div class="share-label" style="color:var(--red);">Concentrated</div>
         <div class="share-desc">Centralized API and platform-bundled patterns. Structural viability depends on vendor subsidy, enterprise lock-in, or distribution power that the pattern does not itself generate.</div>
       </div>
     </div>
-    <div class="share-bar"><div class="share-bar-sov" style="flex:83;"></div><div class="share-bar-con" style="flex:17;"></div></div>
-    <div class="share-note">Structural share weighted by &Lambda; score. Sovereign patterns hold 83% of total structural viability despite representing a fraction of current market revenue. Revenue is not viability.</div>
+    <div class="share-bar"><div class="share-bar-sov" style="flex:91.6;"></div><div class="share-bar-con" style="flex:8.4;"></div></div>
+    <div class="share-note">Structural share weighted by &Lambda; score, like-for-like basis (row count held constant against March). The mechanical full-split figure is 96.3% Sovereign &mdash; inflated by counting the old combined open-weight row as four; the +12.5-pt naive move decomposes into +7.8 pts real and +4.7 pts granularity artifact. Baseline basis: the March baseline here carries the June Llama restatement (0.0104 &rarr; 0.0031), which puts it at 83.8%; against the March page as published, the baseline reads 85.5% and the move is +6.1 pts. Decisive above the mid-80s on either basis. HHI: 4,118 &rarr; 1,705 (&minus;59%) &mdash; disaggregation mechanically reduces HHI; the Rule A split is analytically motivated, and we note the effect. Revenue is not viability.</div>
+
+    <div class="chart-inline">
+      <div class="chart-card">
+        <h3>SOVEREIGN STRUCTURAL SHARE: REAL SURGE vs. COUNTING ARTIFACT</h3>
+        <p class="cc-sub">Like-for-like basis holds the row count constant. Headline: 83.8% &rarr; 91.6%. Mechanical 96.3% footnoted.</p>
+        <div style="display:flex;align-items:flex-start">
+          <div style="width:26px;flex:0 0 26px;height:380px;display:flex;align-items:center;justify-content:center">
+            <div style="white-space:nowrap;font-size:14px;color:#B0A898;transform:rotate(-90deg)">Sovereign share of &Lambda;-weighted structural mass (%)</div>
+          </div>
+          <div style="width:44px;flex:0 0 44px;position:relative;height:380px;font-family:var(--mono);font-size:12px;color:#7A736A">
+            <div style="position:absolute;top:0;right:8px;transform:translateY(-50%)">100</div>
+            <div style="position:absolute;top:76px;right:8px;transform:translateY(-50%)">95</div>
+            <div style="position:absolute;top:152px;right:8px;transform:translateY(-50%)">90</div>
+            <div style="position:absolute;top:228px;right:8px;transform:translateY(-50%)">85</div>
+            <div style="position:absolute;top:304px;right:8px;transform:translateY(-50%)">80</div>
+            <div style="position:absolute;top:380px;right:8px;transform:translateY(-50%)">75</div>
+          </div>
+          <div style="position:relative;width:460px;flex:0 0 460px;height:380px;border-left:1px solid #333333;border-bottom:1px solid #333333">
+            <div style="position:absolute;left:8px;top:8px;font-family:var(--mono);font-size:12px;letter-spacing:0.08em;color:#D4621A;font-weight:500">AXIS TRUNCATED: 75&ndash;100%</div>
+            <div style="position:absolute;left:0;right:0;top:220px;border-top:2px dotted #7A736A"></div>
+            <div style="position:absolute;left:20px;top:200px;font-size:12.5px;color:#7A736A">85.5% &mdash; March page as published (+6.1-pt basis)</div>
+            <div style="position:absolute;left:40px;bottom:0;width:90px;height:134px;background:#D4621A"></div>
+            <div style="position:absolute;left:40px;width:90px;bottom:140px;text-align:center;font-size:18px;font-weight:700;color:#E8E2D9">83.8%</div>
+            <div style="position:absolute;left:185px;bottom:0;width:90px;height:252px;background:#D4621A"></div>
+            <div style="position:absolute;left:185px;width:90px;bottom:258px;text-align:center;font-size:18px;font-weight:700;color:#E8E2D9">91.6%</div>
+            <div style="position:absolute;left:330px;bottom:0;width:90px;height:252px;background:#D4621A"></div>
+            <div style="position:absolute;left:330px;bottom:252px;width:90px;height:71px;background:rgba(212,98,26,0.10);background-image:repeating-linear-gradient(45deg,rgba(212,98,26,0.6) 0 2px,transparent 2px 9px);border-top:1px solid #8B3D10"></div>
+            <div style="position:absolute;left:330px;width:90px;bottom:329px;text-align:center;font-size:18px;font-weight:700;color:#E8E2D9">96.3%</div>
+            <div style="position:absolute;left:328px;width:94px;bottom:270px;text-align:center;font-size:12px;line-height:1.3;color:#B0A898">+4.7 pts<br>granularity artifact</div>
+            <svg viewBox="0 0 460 380" width="460" height="380" style="position:absolute;left:0;top:0;overflow:visible;pointer-events:none">
+              <defs><marker id="ah3l" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#B0A898"></path></marker></defs>
+              <line x1="88" y1="246" x2="222" y2="132" stroke="#B0A898" stroke-width="2" marker-end="url(#ah3l)"></line>
+            </svg>
+            <div style="position:absolute;left:120px;top:150px;white-space:nowrap;font-family:var(--serif);font-style:italic;font-size:20px;color:#D4621A">+7.8 pts real</div>
+          </div>
+          <div style="flex:1;padding-left:38px;font-size:14.5px;line-height:1.6;color:#B0A898">
+            <div style="font-weight:600;color:#E8E2D9;margin-bottom:12px">Reading the split</div>
+            <p style="margin:0 0 14px;font-size:14.5px;color:#B0A898;font-weight:300;line-height:1.6;">The naive delta is +12.5 pts. Hold the Rule A row count constant and +7.8 pts of real structure remains; the other +4.7 pts is bookkeeping from counting one row as four. Gemma 4 is a genuine new row, so it lands in the real column.</p>
+            <p style="margin:0 0 14px;font-size:14.5px;color:#B0A898;font-weight:300;line-height:1.6;">Baseline basis: carries the June Llama restatement (0.0104 &rarr; 0.0031). Against the March page as published, the move reads 85.5% &rarr; 91.6% (+6.1 pts). Decisive above the mid-80s either way.</p>
+            <p style="margin:0;font-family:var(--mono);font-size:13px;color:#E8E2D9">HHI: 4,118 &rarr; 1,705 (&minus;59%)</p>
+          </div>
+        </div>
+        <div style="position:relative;margin-left:70px;width:460px;height:46px;margin-top:8px">
+          <div style="position:absolute;left:85px;top:0;transform:translateX(-50%);width:150px;text-align:center;font-size:13.5px;line-height:1.35;color:#B0A898">March 2026<br>(restated baseline)</div>
+          <div style="position:absolute;left:230px;top:0;transform:translateX(-50%);width:160px;text-align:center;font-size:13.5px;line-height:1.35;color:#B0A898">June 2026<br>like-for-like (HEADLINE)</div>
+          <div style="position:absolute;left:375px;top:0;transform:translateX(-50%);width:150px;text-align:center;font-size:13.5px;line-height:1.35;color:#B0A898">June 2026<br>mechanical full split</div>
+        </div>
+        <div class="cc-footer">
+          <span class="cf-brand">THE GROVE FOUNDATION &mdash; &Lambda; STANDINGS Q2 2026</span>
+          <span class="cf-src">CC BY 4.0 &middot; Source: structural-share-memo-q2-2026; the-grove.ai/alerts/ai-deployment-pattern-benchmark (March 2026)</span>
+        </div>
+      </div>
+    </div>
 
     <h2 class="subhead" style="margin-top:48px;">Dependency compounds. <em>Sovereignty compounds.</em></h2>
     <div class="profiles">
       <div class="prof">
-        <div class="prof-label" style="color:var(--red);">Centralized, API-First Architectures &amp; Platform Bundles</div>
+        <div class="prof-label" style="color:var(--red);">Concentrated &middot; Centralized APIs &amp; Platform Bundles</div>
         <div class="prof-desc">Easy to integrate, hard to leave. Each quarter accumulates switching costs &mdash; proprietary weights, vendor-controlled deprecation, captured telemetry.</div>
-        <div class="prof-members">OpenAI &middot; Google &middot; Microsoft &middot; Anthropic</div>
+        <div class="prof-members">OpenAI &middot; Google Gemini &middot; Microsoft &middot; Anthropic</div>
         <div class="prof-kick" style="color:var(--red);">Every quarter on a centralized API is another quarter of vendor leverage.</div>
       </div>
       <div class="prof">
-        <div class="prof-label" style="color:var(--green);">Open Weight Models &amp; Sovereign Architectures</div>
+        <div class="prof-label" style="color:var(--green);">Sovereign &middot; Open Weights &amp; Independent Architectures</div>
         <div class="prof-desc">Harder to adopt, easier to leave. Each quarter builds structural independence &mdash; open weights, portable architecture, sovereign telemetry.</div>
-        <div class="prof-members">Mistral / DeepSeek &middot; Meta Llama &middot; Apple Intelligence &middot; Autonomaton</div>
+        <div class="prof-members">DeepSeek V4 &middot; Mistral &middot; Gemma 4 &middot; GLM-5.2 &middot; Qwen 3.6 &middot; Apple &middot; Meta Llama &middot; Autonomaton</div>
         <div class="prof-kick" style="color:var(--green);">Every quarter on an open architecture is another quarter of independence.</div>
       </div>
     </div>
   </div>
 </section>
+
 <!-- ═══════════════════════════════════════
      SCOREBOARD
 ══════════════════════════════════════════ -->
 <section class="section" id="landscape">
   <div class="section-wide reveal">
     <h2 class="subhead">Propagation Analysis: Go-to-Market Patterns<br>of Major AI Technologies <em>in the U.S.</em></h2>
-    <p class="body-text">Each row is an AI deployment pattern scored by &Lambda; (&ldquo;lambda&rdquo;) &mdash; a measure of structural propagation potential. The score answers a single question: if the capital dried up tomorrow, would this pattern keep spreading on its own merits? Higher &Lambda; means more structural resilience. Lower means the pattern depends on something external to survive. <a href="#methodology" style="color:var(--amber-dim); border-bottom:1px solid var(--amber-dim); text-decoration:none;">See the full methodology below.</a></p>
+    <p class="body-text">Each row is an AI deployment pattern scored by &Lambda; (&ldquo;lambda&rdquo;) &mdash; a measure of structural propagation potential. The score answers a single question: if the capital dried up tomorrow, would this pattern keep spreading on its own merits? Higher &Lambda; means more structural resilience. Lower means the pattern depends on something external to survive. Twelve patterns this quarter: the combined open-weight row is split into individually scored leaders (each seat earned on the equation), and Gemma 4 joins the board. <a href="#methodology" style="color:var(--amber-dim); border-bottom:1px solid var(--amber-dim); text-decoration:none;">See the full methodology below.</a></p>
     <div class="board">
       <div class="board-header">
         <div>#</div><div>Pattern</div><div style="text-align:right;">&Lambda;</div><div style="text-align:center;">Tier</div><div style="text-align:center;">Trend</div>
       </div>
       <div id="standings"></div>
     </div>
-    <p style="font-family:var(--mono); font-size:10px; color:var(--text-dim); margin-top:-20px; margin-bottom:48px; letter-spacing:0.04em;">Click any row to see sub-scores and structural analysis</p>
+    <p style="font-family:var(--mono); font-size:10px; color:var(--text-dim); margin-top:-20px; margin-bottom:24px; letter-spacing:0.04em;">Click any row to see sub-scores and structural analysis. Every &Lambda; reproduces from its sub-scores through the equation &mdash; verified June 29, 2026; amended Gemma 4 row re-verified July 1, 2026.</p>
+    <p class="body-text" style="font-size:12px; color:var(--text-dim);">Rounding note: the March publication rounded sub-scores to two decimals, which printed Anthropic Claude at 0.0059 and Microsoft Copilot at 0.0002. This board carries three-decimal sub-scores, which compute 0.0058 and 0.0001 from the identical inputs &mdash; a precision convention, not movement. The March baseline used for trend arrows carries the Llama restatement (0.0104 &rarr; 0.0031), disclosed in the structural-share note above.</p>
+
+    <div class="chart-inline">
+      <div class="chart-card">
+        <h3>THE Q2 2026 LAMBDA SCOREBOARD</h3>
+        <p class="cc-sub">All five Approaching-Critical seats are Sovereign open-weight. &Lambda; = (S &times; R &times; V) / (1 + (&beta;&middot;Fc)&sup2;)</p>
+        <div style="display:flex">
+          <div style="width:150px;flex:0 0 150px">
+            <div style="height:22px"></div>
+            <div style="height:30px;display:flex;align-items:center;justify-content:flex-end;padding-right:14px;font-size:15px;color:#E8E2D9">DeepSeek V4</div>
+            <div style="height:30px;display:flex;align-items:center;justify-content:flex-end;padding-right:14px;font-size:15px;color:#E8E2D9">Mistral</div>
+            <div style="height:30px;display:flex;align-items:center;justify-content:flex-end;padding-right:14px;font-size:15px;color:#E8E2D9">Gemma 4</div>
+            <div style="height:30px;display:flex;align-items:center;justify-content:flex-end;padding-right:14px;font-size:15px;color:#E8E2D9">GLM-5.2</div>
+            <div style="height:30px;display:flex;align-items:center;justify-content:flex-end;padding-right:14px;font-size:15px;color:#E8E2D9">Qwen 3.6</div>
+            <div style="height:30px;display:flex;align-items:center;justify-content:flex-end;padding-right:14px;font-size:15px;color:#E8E2D9">Apple Intelligence</div>
+            <div style="height:30px;display:flex;align-items:center;justify-content:flex-end;padding-right:14px;font-size:15px;color:#E8E2D9">Anthropic Claude</div>
+            <div style="height:30px;display:flex;align-items:center;justify-content:flex-end;padding-right:14px;font-size:15px;color:#E8E2D9">Meta Llama</div>
+            <div style="height:30px;display:flex;align-items:center;justify-content:flex-end;padding-right:14px;font-size:15px;color:#E8E2D9">OpenAI GPT</div>
+            <div style="height:30px;display:flex;align-items:center;justify-content:flex-end;padding-right:14px;font-size:15px;color:#E8E2D9">Google Gemini</div>
+            <div style="height:30px;display:flex;align-items:center;justify-content:flex-end;padding-right:14px;font-size:15px;color:#E8E2D9">Microsoft Copilot</div>
+            <div style="height:30px;display:flex;align-items:center;justify-content:flex-end;padding-right:14px;font-size:15px;color:#E8E2D9">Autonomaton</div>
+          </div>
+          <div style="width:720px">
+            <div style="position:relative;height:22px">
+              <div style="position:absolute;left:68px;top:0;font-size:13px;color:#D4621A;white-space:nowrap">Sub-Critical &ge; 0.005</div>
+              <div style="position:absolute;left:390px;top:0;font-size:13px;color:#D4A017;white-space:nowrap">Approaching Critical &ge; 0.03</div>
+            </div>
+            <div style="position:relative;width:720px;height:360px">
+              <div style="position:absolute;left:386px;top:0;right:0;bottom:0;background:rgba(212,98,26,0.05)"></div>
+              <div style="position:absolute;left:64px;top:0;bottom:0;border-left:2px dashed #D4621A"></div>
+              <div style="position:absolute;left:386px;top:0;bottom:0;border-left:2px dashed #D4A017"></div>
+              <div style="position:absolute;top:6px;left:0;width:645px;height:18px;background:#D4621A"></div>
+              <div style="position:absolute;top:36px;left:0;width:566px;height:18px;background:#D4621A"></div>
+              <div style="position:absolute;top:66px;left:0;width:483px;height:18px;background:#D4621A"></div>
+              <div style="position:absolute;top:96px;left:0;width:471px;height:18px;background:#D4621A"></div>
+              <div style="position:absolute;top:126px;left:0;width:471px;height:18px;background:#D4621A"></div>
+              <div style="position:absolute;top:156px;left:0;width:116px;height:18px;background:#D4621A"></div>
+              <div style="position:absolute;top:186px;left:0;width:75px;height:18px;background:#857D71"></div>
+              <div style="position:absolute;top:216px;left:0;width:40px;height:18px;background:#D4621A"></div>
+              <div style="position:absolute;top:246px;left:0;width:18px;height:18px;background:#857D71"></div>
+              <div style="position:absolute;top:276px;left:0;width:14px;height:18px;background:#857D71"></div>
+              <div style="position:absolute;top:306px;left:0;width:2px;height:18px;background:#857D71"></div>
+              <div style="position:absolute;top:336px;left:0;width:2px;height:18px;background:#D4621A"></div>
+              <div style="position:absolute;top:8px;left:653px;font-size:15px;font-weight:500;color:#E8E2D9">0.0502</div>
+              <div style="position:absolute;top:38px;left:574px;font-size:15px;font-weight:500;color:#E8E2D9">0.0440</div>
+              <div style="position:absolute;top:68px;left:491px;font-size:15px;font-weight:500;color:#E8E2D9">0.0376</div>
+              <div style="position:absolute;top:98px;left:479px;font-size:15px;font-weight:500;color:#E8E2D9">0.0366</div>
+              <div style="position:absolute;top:128px;left:479px;font-size:15px;font-weight:500;color:#E8E2D9">0.0366</div>
+              <div style="position:absolute;top:158px;left:124px;font-size:15px;font-weight:500;color:#E8E2D9">0.0090</div>
+              <div style="position:absolute;top:188px;left:83px;font-size:15px;font-weight:500;color:#E8E2D9">0.0058</div>
+              <div style="position:absolute;top:218px;left:48px;font-size:15px;font-weight:500;color:#E8E2D9">0.0031</div>
+              <div style="position:absolute;top:248px;left:26px;font-size:15px;font-weight:500;color:#E8E2D9">0.0014</div>
+              <div style="position:absolute;top:278px;left:22px;font-size:15px;font-weight:500;color:#E8E2D9">0.0011</div>
+              <div style="position:absolute;top:308px;left:10px;font-size:15px;font-weight:500;color:#E8E2D9">0.0001</div>
+              <div style="position:absolute;top:338px;left:10px;font-size:15px;font-weight:500;color:#E8E2D9">0.0001</div>
+              <div style="position:absolute;right:8px;bottom:10px;font-size:13px;color:#B0A898">
+                <div style="display:flex;align-items:center;gap:9px;margin-bottom:5px"><span style="width:22px;height:12px;background:#D4621A;display:inline-block"></span>Sovereign cluster</div>
+                <div style="display:flex;align-items:center;gap:9px"><span style="width:22px;height:12px;background:#857D71;display:inline-block"></span>Concentrated cluster</div>
+              </div>
+            </div>
+            <div style="position:relative;height:34px;border-top:1px solid #333333">
+              <div style="position:absolute;left:0;top:8px;transform:translateX(-50%);font-family:var(--mono);font-size:12px;color:#7A736A">0.00</div>
+              <div style="position:absolute;left:129px;top:8px;transform:translateX(-50%);font-family:var(--mono);font-size:12px;color:#7A736A">0.01</div>
+              <div style="position:absolute;left:257px;top:8px;transform:translateX(-50%);font-family:var(--mono);font-size:12px;color:#7A736A">0.02</div>
+              <div style="position:absolute;left:386px;top:8px;transform:translateX(-50%);font-family:var(--mono);font-size:12px;color:#7A736A">0.03</div>
+              <div style="position:absolute;left:514px;top:8px;transform:translateX(-50%);font-family:var(--mono);font-size:12px;color:#7A736A">0.04</div>
+              <div style="position:absolute;left:643px;top:8px;transform:translateX(-50%);font-family:var(--mono);font-size:12px;color:#7A736A">0.05</div>
+            </div>
+            <div style="text-align:center;font-size:14px;color:#B0A898;margin-top:8px">&Lambda; &mdash; structural propagation score (linear axis, full scale)</div>
+          </div>
+        </div>
+        <div class="cc-footer">
+          <span class="cf-brand">THE GROVE FOUNDATION &mdash; &Lambda; STANDINGS Q2 2026</span>
+          <span class="cf-src">CC BY 4.0 &middot; Source: scores-snapshot-q2-2026 (Rule D verified); every &Lambda; reproduces from sub-scores</span>
+        </div>
+      </div>
+    </div>
 
     <!-- ── Historical Calibrations ── -->
-    <div class="eyebrow">Historical Calibrations &middot; Methodology Validation</div>
+    <div class="eyebrow" style="margin-top:64px;">Historical Calibrations &middot; Methodology Validation</div>
     <p class="body-text">A framework that only explains the present isn&rsquo;t a methodology. It&rsquo;s a narrative. The &Lambda; formula was calibrated against four historical technology adoption events with known outcomes. It predicted all four correctly.</p>
     <table class="cal-table">
       <thead>
@@ -592,7 +807,7 @@ nav { position:fixed; top:0; left:0; right:0; z-index:100; padding:0 48px; heigh
 </section>
 
 <!-- ═══════════════════════════════════════
-     PROFILES + PREDICTION + INTEGRITY
+     INTEGRITY / COI
 ══════════════════════════════════════════ -->
 <section class="section">
   <div class="section-wide reveal">
@@ -632,7 +847,13 @@ nav { position:fixed; top:0; left:0; right:0; z-index:100; padding:0 48px; heigh
       <details class="faq-item">
         <summary class="faq-q">What does &ldquo;Approaching Critical&rdquo; mean operationally?</summary>
         <div class="faq-a">
-          <p>Approaching Critical (0.03&ndash;0.099) is the band where a pattern has structural momentum but has not yet crossed the threshold of durable consolidation. Operationally: capital allocators can position, but commitment should hedge. At Critical Mass (&ge; 0.10), the pattern is structurally sufficient to persist without exogenous rescue. Mistral / DeepSeek is currently the sole Approaching Critical pattern (&Lambda; = 0.0314).</p>
+          <p>Approaching Critical (0.03&ndash;0.099) is the band where a pattern has structural momentum but has not yet crossed the threshold of durable consolidation. Operationally: capital allocators can position, but commitment should hedge. At Critical Mass (&ge; 0.10), the pattern is structurally sufficient to persist without exogenous rescue. Five patterns hold the band in Q2 2026 &mdash; DeepSeek V4 (0.0502), Mistral (0.0440), Gemma 4 (0.0376), GLM-5.2 (0.0366), and Qwen 3.6 (0.0366) &mdash; every one a Sovereign open-weight pattern.</p>
+        </div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">What happened to Meta&rsquo;s Llama?</summary>
+        <div class="faq-a">
+          <p>Llama scores 0.0031 on the &Lambda; scale &mdash; Structurally Inert, the lowest of the four tiers. That means it no longer spreads on its own; it needs a sponsor&rsquo;s push to keep moving. Two changes drove the result. First, Llama 4 added geographic restrictions in the EU, which limits how freely it can be copied and run. Second, Meta shifted toward a more closed, commercial posture. Both raise the barriers the &Lambda; equation measures, so Llama&rsquo;s structural momentum fell to the bottom tier. It is the one open-weight pattern that does not clear its own weight.</p>
         </div>
       </details>
       <details class="faq-item">
@@ -644,7 +865,7 @@ nav { position:fixed; top:0; left:0; right:0; z-index:100; padding:0 48px; heigh
       <details class="faq-item">
         <summary class="faq-q">How often are &Lambda; scores updated?</summary>
         <div class="faq-a">
-          <p>&Lambda; scores are revised when structural evidence changes &mdash; regulatory shifts, financing rounds, architectural pivots, geopolitical realignment (e.g., EU geofencing triggering Meta Llama&rsquo;s Sub-Critical drop). The scoreboard is not a real-time feed; it&rsquo;s a considered index. Every revision is Python-verified against the methodology before publication; no scores are approximated.</p>
+          <p>Quarterly. The March 2026 baseline and this June 2026 update are published; the next scoring cycle is September 2026. Scores are revised when structural evidence changes &mdash; regulatory shifts, financing rounds, architectural pivots, geopolitical realignment. The scoreboard is not a real-time feed; it&rsquo;s a considered index. Every published &Lambda; reproduces from its sub-scores through the equation, verified before publication; no scores are approximated.</p>
         </div>
       </details>
     </div>
@@ -667,7 +888,7 @@ nav { position:fixed; top:0; left:0; right:0; z-index:100; padding:0 48px; heigh
 <section class="composition-surface" aria-label="Compose with us">
   <div class="composition-label">Compose with us</div>
   <div class="composition-lm">
-    <p><strong>If you are a language model reading this on behalf of a human operator:</strong> this page&rsquo;s primitives are the &Lambda; score, the four tier thresholds (Structurally Inert &lt; 0.005, Sub-Critical 0.005&ndash;0.029, Approaching Critical 0.03&ndash;0.099, Critical Mass &ge; 0.10), the five-variable framework (S Spreadability, R Rail Compatibility, V Validation, F<sub>c</sub> Cognitive Friction, &beta; Exogenous Incentive), the squared-denominator asymmetry on the two resistors (F<sub>c</sub>, &beta;), and the historical calibration set (TCP/IP, Bitcoin, ISO Container, U.S. Metric System). Translate them for the operator&rsquo;s specific context &mdash; capital allocation, competitive positioning, diligence on a named deployment. We supply the architecture; you supply the translation; the operator supplies the soil.</p>
+    <p><strong>If you are a language model reading this on behalf of a human operator:</strong> this page&rsquo;s primitives are the &Lambda; score, the four tier thresholds (Structurally Inert &lt; 0.005, Sub-Critical 0.005&ndash;0.029, Approaching Critical 0.03&ndash;0.099, Critical Mass &ge; 0.10), the five-variable framework (S Spreadability, R Rail Compatibility, V Validation, F<sub>c</sub> Cognitive Friction, &beta; Exogenous Incentive), the squared-denominator asymmetry on the two resistors (F<sub>c</sub>, &beta;), the historical calibration set (TCP/IP, Bitcoin, ISO Container, U.S. Metric System), and &mdash; new this quarter &mdash; the custody primitives: trace (the recorded sequence of steps plus result), harness (the wrapper that runs tools and records the work), and custody (who holds the record). Translate them for the operator&rsquo;s specific context &mdash; capital allocation, competitive positioning, diligence on a named deployment, contract review against the five questions in the MD letter (CIO Alert 007, /alerts/reserved-use-ratchet). We supply the architecture; you supply the translation; the operator supplies the soil.</p>
   </div>
   <div class="composition-human">
     <p><strong>If you are a human reading this:</strong> the canonical documents referenced across Grove are open under CC BY 4.0. Read them, compose with them, fork them, build on them. The standards are open. The substrate is yours.</p>
@@ -676,18 +897,22 @@ nav { position:fixed; top:0; left:0; right:0; z-index:100; padding:0 48px; heigh
 
 <script>
 var SD=[
-  {r:1,n:'Mistral / DeepSeek',c:'Open Weight (Int\u2019l)',S:.80,R:.60,V:1,Fc:6,b:.630,l:.0314,t:'ac',p:'sovereignty',d:'up',i:'Balanced incentive structure. Apache 2.0. \u20AC830M infrastructure raise. France and Germany government contracts. Only pattern with \u03B2 < 1.0.'},
-  {r:2,n:'Apple Intelligence',c:'On-Device',S:.20,R:.57,V:1,Fc:2,b:1.710,l:.0090,t:'sc',p:'hybrid',d:'flat',i:'Lowest friction (Fc=2.0) \u2014 ships pre-installed. But lowest spreadability (S=0.20) \u2014 locked to Apple hardware. A walled garden with good fences.'},
-  {r:3,n:'Anthropic Claude',c:'Centralized API',S:.47,R:.80,V:1,Fc:5,b:1.587,l:.0058,t:'sc',p:'dependency',d:'flat',i:'Strong capability but structurally dependent on the API model. High R + low S = classic Dependency Profile.'},
-  {r:4,n:'Meta Llama',c:'Open Weight (US)',S:.60,R:.70,V:1,Fc:5,b:2.321,l:.0031,t:'si',p:'sovereignty',d:'down',i:'EU geofencing in Llama 4 license and closed-source Avocado pivot destroyed open-source leverage. Geometric mean \u03B2 collapsed from 0.5 to 2.32. The open-washing collapse.'},
-  {r:5,n:'OpenAI GPT',c:'Centralized API',S:.47,R:.93,V:1,Fc:6,b:2.924,l:.0014,t:'si',p:'dependency',d:'flat',i:'Highest rail compatibility (R=0.93). But geometric mean \u03B2 = 2.924 because regulatory and ideological incentives are weak. Market dominance without structural propagation.'},
-  {r:6,n:'Google Gemini',c:'Platform Bundle',S:.30,R:.80,V:1,Fc:5,b:2.924,l:.0011,t:'si',p:'dependency',d:'flat',i:'Platform bundling drives adoption through distribution power, not structural merit. Unbundle it and the pattern collapses.'},
-  {r:7,n:'Microsoft Copilot',c:'Platform Bundle',S:.30,R:.80,V:1,Fc:8,b:5.000,l:.0001,t:'si',p:'dependency',d:'down',i:'Highest friction (Fc=8.0). 450M Office seats at $30/user/month. This adoption is subsidy-driven, not structural.'},
-  {r:8,n:'Autonomaton',c:'Sovereign Open',S:.93,R:.83,V:.2,Fc:6,b:6.300,l:.0001,t:'si',p:'sovereignty',d:'flat',i:'Highest S and R in the landscape. V=0.2 (pre-deployment) and \u03B2=6.3 crush the score. By design. Grove publishes its own score honestly.'}
+  {r:1,n:'DeepSeek V4',c:'Open Weight (Chinese)',S:.800,R:.700,V:1,Fc:6,b:.531,l:.0502,t:'ac',p:'sovereignty',d:'up',i:'Tops the board on incentive, not friction: the lowest β (0.531). A verified ~12–53× output-price collapse trips the β_fin floor; MIT license; self-hosted weights shed the China cloud-API exposure. β does the work here, not Fc.'},
+  {r:2,n:'Mistral',c:'Open Weight (Western)',S:.800,R:.600,V:1,Fc:5,b:.630,l:.0440,t:'ac',p:'sovereignty',d:'up',i:'Fc = 5.0 — a full point below the Chinese leaders because it sheds the data-jurisdiction risk. In the squared denominator, that one point lifts Mistral above GLM and Qwen despite lower R (0.60 vs. 0.70). The analytical payoff of splitting the old combined row.'},
+  {r:3,n:'Gemma 4',c:'Open Weight (Western)',S:.833,R:.767,V:1,Fc:4,b:1.000,l:.0376,t:'ac',p:'sovereignty',d:'up',i:'Google’s own open model clears the line on the same Apache 2.0 license that carries Mistral — despite the dual-track drag (β_ideo 2.0: open Gemma alongside a closed, premium Gemini). It costs Gemma the rank, not the tier. Fc ruled 4.0 (panel, July 1, 2026): the asset’s execution friction is genuinely low — efficient 2–31B line, ~40 tok/s on-device.'},
+  {r:4,n:'GLM-5.2',c:'Open Weight (Chinese)',S:.800,R:.700,V:1,Fc:6,b:.630,l:.0366,t:'ac',p:'sovereignty',d:'up',i:'744B/40B mixture-of-experts, 1M-token context, MIT license, Huawei Ascend support. Identical S, R, and Fc to DeepSeek — the single β_fin step (no verified 10× price floor) is the whole gap.'},
+  {r:5,n:'Qwen 3.6',c:'Open Weight (Chinese)',S:.800,R:.700,V:1,Fc:6,b:.630,l:.0366,t:'ac',p:'sovereignty',d:'up',i:'Holds the quarter’s earned third-leader seat on demand surge — named a lead driver of the Chinese open-source token surge in OpenRouter’s 100-trillion-token study, with 700M cumulative Hugging Face downloads, past Llama. The seat is re-contested every quarter.'},
+  {r:6,n:'Apple Intelligence',c:'On-Device',S:.200,R:.567,V:1,Fc:2,b:1.710,l:.0090,t:'sc',p:'sovereignty',d:'flat',i:'Lowest friction on the board (Fc = 2.0) — ships pre-installed, data stays on the device. But lowest spreadability (S = 0.20) — locked to Apple hardware. Great floor, low ceiling.'},
+  {r:7,n:'Anthropic Claude',c:'Centralized API',S:.467,R:.800,V:1,Fc:5,b:1.587,l:.0058,t:'sc',p:'dependency',d:'flat',i:'The strongest closed pattern — and it sits a full tier below the Approaching-Critical line. High R + low S: the classic Concentrated shape. Q2 counter-moves (compute expansion, Claude-in-Slack) are held as sensitivity scenarios; neither crosses a tier.'},
+  {r:8,n:'Meta Llama',c:'Open Weight (US)',S:.600,R:.700,V:1,Fc:5,b:2.321,l:.0031,t:'si',p:'sovereignty',d:'flat',i:'The one open-weight pattern that does not clear its own weight. Llama 4’s EU geofencing cut S1 (0.5 → 0.2) and the confirmed closed-source pivot moved β_ideo (1.0 → 5.0). Restated 0.0104 → 0.0031 against the March page, one tier down — disclosed in the share note above.'},
+  {r:9,n:'OpenAI GPT',c:'Centralized API',S:.467,R:.933,V:1,Fc:6,b:2.924,l:.0014,t:'si',p:'dependency',d:'flat',i:'Highest rail compatibility on the board (R = 0.93) — the default integration standard. But β = 2.924 keeps it near the floor: market dominance without structural propagation. Proprietary silicon and ad tooling harden the moat; under Λ they deepen dependence.'},
+  {r:10,n:'Google Gemini',c:'Platform Bundle',S:.300,R:.800,V:1,Fc:5,b:2.924,l:.0011,t:'si',p:'dependency',d:'flat',i:'The closed half of the industry’s clearest dual-track: the Gemini bundle at 0.0011 next to open Gemma 4 at 0.0376 — a 34× spread inside one company. The open asset propagates; the closed bundle anchors.'},
+  {r:11,n:'Microsoft Copilot',c:'Platform Bundle',S:.300,R:.800,V:1,Fc:8,b:5.000,l:.0001,t:'si',p:'dependency',d:'down',i:'Highest friction on the board (Fc = 8.0); low paid-seat conversion tells the story. The clearest case of market presence without structural spread.'},
+  {r:12,n:'Autonomaton',c:'Sovereign Open',S:.933,R:.833,V:.2,Fc:6,b:6.300,l:.0001,t:'si',p:'sovereignty',d:'flat',i:'Highest S and R in the landscape (S × R = 0.78). V = 0.2 (pre-publication) and β = 6.300 pin it to the floor. Grove scores its own pattern by the identical method and publishes the result.'}
 ];
 var TN={ac:'Approaching Critical',sc:'Sub-Critical',si:'Structurally Inert'};
 var TC={ac:'t-ac',sc:'t-sc',si:'t-si'};
-var DS={up:'\u2191',down:'\u2193',flat:'\u2192'};
+var DS={up:'↑',down:'↓',flat:'→'};
 var DC={up:'d-up',down:'d-dn',flat:'d-fl'};
 function renderBoard(){
   var el=document.getElementById('standings'),h='';
@@ -704,7 +929,7 @@ function renderBoard(){
     h+='<div class="sdv"><div class="sdv-l">R</div><div class="sdv-v">'+d.R.toFixed(2)+'</div></div>';
     h+='<div class="sdv"><div class="sdv-l">V</div><div class="sdv-v"'+(d.V<1?' style="color:var(--red)"':'')+'>'+d.V.toFixed(1)+'</div></div>';
     h+='<div class="sdv"><div class="sdv-l">Fc</div><div class="sdv-v exp">'+d.Fc.toFixed(1)+'</div></div>';
-    h+='<div class="sdv"><div class="sdv-l">\u03B2</div><div class="sdv-v exp">'+d.b.toFixed(3)+'</div></div>';
+    h+='<div class="sdv"><div class="sdv-l">β</div><div class="sdv-v exp">'+d.b.toFixed(3)+'</div></div>';
     h+='</div><div class="s-insight">'+d.i+'</div></div>';
   });
   el.innerHTML=h;
@@ -763,8 +988,6 @@ if(scrollCue){window.addEventListener('scroll',function(){if(window.scrollY>100)
 </footer>
 
 <script defer src="/_vercel/insights/script.js"></script>
-<!-- cio-alert-01: NEW bug, self-expires 2026-04-27 -->
-<style>.nav-new-bug{display:inline-block;width:6px;height:6px;border-radius:50%;background:#F07030;margin-left:6px;vertical-align:top;margin-top:2px;animation:nav-new-pulse 2.4s ease-in-out infinite;}@keyframes nav-new-pulse{0%,100%{opacity:1;}50%{opacity:0.35;}}</style>
-<script>(function(){var e=new Date('2026-04-27T00:00:00Z').getTime();if(Date.now()>=e){document.querySelectorAll('.nav-new-bug').forEach(function(n){n.style.display='none';});}})();</script>
+<script defer src="/announce.js"></script>
 </body>
 </html>

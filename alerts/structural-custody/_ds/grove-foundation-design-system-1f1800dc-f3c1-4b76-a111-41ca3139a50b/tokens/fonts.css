@@ -1,0 +1,16 @@
+/* ══════════════════════════════════════════════════════
+   GROVE FOUNDATION — WEBFONTS
+   All three families are Google-hosted (no self-hosted
+   binaries exist in the source repo). They load via the
+   Google Fonts CSS2 endpoint, which serves the @font-face
+   rules and woff2 binaries.
+
+     · Fragment Mono    — ital 0,1
+     · Instrument Serif — ital 0,1
+     · DM Sans          — weights 300,400,500,600
+
+   NOTE TO CONSUMERS: if you need offline / self-hosted
+   binaries, download these three families from Google Fonts
+   and replace this @import with local @font-face rules.
+══════════════════════════════════════════════════════ */
+@import url('https://fonts.googleapis.com/css2?family=Fragment+Mono:ital@0;1&family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap');

@@ -1,0 +1,1529 @@
+{
+  "packet": "Custody Inversion — Primary-Source Evidence Library",
+  "publisher": "The Grove Foundation",
+  "quarter": "Q2 2026",
+  "deck_title": "Custody Inversion",
+  "disclaimer": "The Grove Foundation studies how AI systems capture and use data. We are technologists, not attorneys; nothing here is legal advice or creates an attorney-client relationship. We tell you what these systems capture and what the words say (verifiable, technical); what a court would do with those clauses is your counsel's call. The practical point: the contents of these boilerplate 'Usage Data' buckets have inverted from SaaS-era exhaust to the agentic reasoning trace, and enterprises should read the clause and negotiate accordingly.",
+  "reading_vector": "Custody-inversion vector: the contractual bucket 'Usage Data' (and cousins: telemetry, feedback, interaction data) meant benign operational exhaust (uptime, latency, crash logs) in the SaaS era; in the agentic era the same category — often the same words — now carries the harness's high-value telemetry (accept/reject reward labels, Levenshtein edit-distance/CSAP, dwell/latency, embeddings & vectors of the codebase, metadata/hashes, outcome verification). Each card documents (1) the ownership/retention/definition clause and (2) what non-SaaS-era artifacts now populate that bucket. Fact (verbatim clause) is separated from interpretation; no scope or legal conclusion is asserted.",
+  "manifest_status": "17 Type-A + 5 Type-B + 8 Type-C interpretation cards. Adversarial QA pass: 8/8 load-bearing claims HOLD. NEXT: final assembly + PR. Type-C cards are labeled Grove interpretation (badge ceiling 'Interpretation - supported'); each carries an independent-expert-view placeholder to attach before publication.",
+  "status_counts": {
+    "Confirmed": 22,
+    "Partial": 0,
+    "Not_found": 0,
+    "Paywalled_secondary": 0,
+    "Interpretation_supported": 8,
+    "Unverifiable": 0,
+    "total_cards": 30
+  },
+  "generated_at": "2026-07-19T23:40:00Z",
+  "cards": [
+    {
+      "claim_id": "A10",
+      "claim_type": "A",
+      "special_callout": true,
+      "story_angle": "★ SPECIAL CALLOUT — The Telemetry Sink (Claude Tag)",
+      "secondary_angle": "The New Data Moat",
+      "vendor": "Anthropic, PBC",
+      "deck_slide": "Exhibit C — Claude Tag (slide 16) — ELEVATED per direction",
+      "deck_claim": "Claude Tag is a persistent, cross-channel learning agent embedded in Slack (the $27.7B collaboration layer); ~65% of Anthropic's product-team code is created by its internal version; introductory launch credit for Enterprise/Team.",
+      "primary_quotes_verbatim": [
+        {
+          "section": "Intro",
+          "label": "persistent channel memory",
+          "text": "Claude builds context by remembering relevant information from the channels it's in, and can plan out tasks to complete in the future."
+        },
+        {
+          "section": "@Claude learns over time",
+          "label": "cross-channel + data-source harvest",
+          "text": "As Claude follows along with its channel, it builds more context about the work. ... And Claude can even automatically learn from other Slack channels and data sources, if it's granted permission. (It doesn't report from private channels.) This gives it the tacit knowledge necessary for it to provide the best possible work."
+        },
+        {
+          "section": "@Claude is multiplayer",
+          "label": "one shared agent sees everyone",
+          "text": "Within a given Slack channel, there's one Claude that interacts with everyone. This means that anyone can see what it's working on, and can pick up the conversation from where the last person left off."
+        },
+        {
+          "section": "@Claude takes initiative",
+          "label": "ambient monitoring",
+          "text": "If “ambient” behavior is enabled, Claude will proactively keep you updated about whatever it thinks you might need to know. It'll flag relevant information from across the channels it's in and the tools it's connected to, and follow up on threads or tasks that have gone quiet without being resolved."
+        },
+        {
+          "section": "@Claude works asynchronously",
+          "label": "self-scheduled autonomy",
+          "text": "It can also schedule tasks for itself, pursuing a project autonomously over hours or days."
+        },
+        {
+          "section": "Adoption",
+          "label": "65% internal",
+          "text": "Today, 65% of our product team's code is created by our internal version of Claude Tag."
+        },
+        {
+          "section": "Getting started",
+          "label": "admin audit log",
+          "text": "Administrators can set limits for token spend ... and can view a log of everything that @Claude has done, along with who requested each task."
+        }
+      ],
+      "legal_clause_section": "Vendor launch disclosure (product announcement)",
+      "document_title": "Anthropic — Introducing Claude Tag",
+      "effective_date": "2026-06-23",
+      "source_url": "https://www.anthropic.com/news/introducing-claude-tag",
+      "archive_url": "http://web.archive.org/web/20260712013442/https://www.anthropic.com/news/introducing-claude-tag",
+      "retrieved_at": "2026-07-19T20:40:00Z",
+      "status": "Confirmed (live)",
+      "axis_tag": "STRUCTURALLY-CAPTURED (persistent channel + cross-channel memory, ambient monitoring, admin audit log of every action)",
+      "usage_data_vector": "The vector at its most complete. Every prior card is a bucket you must reason about; Claude Tag is the bucket walking into your Slack and sitting down. It is a persistent, multiplayer agent that 'remembers relevant information from the channels it's in,' 'can even automatically learn from other Slack channels and data sources,' runs 'ambient' monitoring 'across the channels it's in and the tools it's connected to,' and schedules its own work 'over hours or days.' The reasoning trace here is not an exhaust byproduct of coding — it is the entire operating record of how a company coordinates, decides, and works, captured continuously by a vendor-run agent. Anthropic's own '65% of our product team's code' is the tell: a closed internal loop of this telemetry is valuable enough that the vendor runs it on itself. It sits in the layer Salesforce valued at $27.7B (A9). And note what is ABSENT: no ZDR claim, no delete-after-use, no opt-out-of-retention — because persistent memory is the advertised feature, not a carve-out. The reassurance ritual of the ToS cards is simply gone.",
+      "why_special": "This is the deck's Exhibit C, elevated to a standalone callout per direction. Where the ToS cards (A1/A3) show a contractual bucket quietly redefined, Claude Tag shows the same capture as a shipped product feature — persistent, org-wide, cross-channel, ambient, and self-directed. It is the clearest single artifact of custody inversion: the harness is no longer in your IDE, it is a standing member of your team with memory of everything it sees. And it drops the pretense the other exhibits still keep: there is no ZDR claim here at all — a full telemetry and data sink where retention is the advertised feature, not the fine print.",
+      "interpretation_flag": "OUR LANE (computer scientists, not lawyers): FACT, verbatim from the vendor's own launch — persistent channel memory, cross-channel/data-source learning, ambient monitoring, self-scheduled autonomy, one shared agent per channel, admin audit log, 65% internal adoption. Crucially, there is NO zero-data-retention or delete-after-use claim here to negotiate around: the controls offered are scoping and audit (which channels, spend caps, a log of actions, 'doesn't report from private channels'), not retention limits. Persistence is the product. The '$25K' figure is BANKED in the repo source atlas (the page states an 'introductory launch credit'). THE POINT (practical): a standing vendor agent that remembers everything in your channels and can learn across them has no ZDR posture to fall back on — decide what it may see, where its memory lives, whether that memory is exportable when you leave, and who holds it, BEFORE you add it. Negotiate the memory, not the model. Not legal advice.",
+      "not_legal_advice": true,
+      "capture_tool": "Claude in Chrome",
+      "sha256": {
+        "live_header": "8204fece0d63f1caf2376b34d08365d0e01566f46d6fcca9faa97ec4fcde1fe2",
+        "live_remembering_65pct": "d54b67a228688c756abfdf38c287ce124a1db9e3eb95ee87e6340a1b35f4516d",
+        "live_four_advantages": "268457ebdcff7cf64646e2207da6e7177c0e1805eb6c60c86e8894ed603f457a"
+      },
+      "board_shots": [
+        [
+          "screenshots/A10_claude-tag_live_header_20260719.png",
+          "LIVE — Introducing Claude Tag (Jun 23, 2026)"
+        ],
+        [
+          "screenshots/A10_claude-tag_live_remembering-65pct_20260719.png",
+          "LIVE — \"remembering relevant information from the channels it's in\" + \"65% of our product team's code\""
+        ],
+        [
+          "screenshots/A10_claude-tag_live_four-advantages_20260719.png",
+          "LIVE — the four @Claude powers: multiplayer, learns-across-channels, ambient, self-scheduling"
+        ]
+      ],
+      "no_zdr_pretense": "Unlike the ToS cards, Claude Tag makes NO zero-data-retention claim to carve around. On the ToS cards a ZDR / 'deleted after each request' promise is offered and then narrowed (Usage Data excluded — A1; embeddings persist past the gate — A3). Here there is no such promise: persistence IS the product. The advertised value is memory — 'remembers relevant information from the channels it's in,' 'learns over time,' 'builds context.' The only controls the launch page offers are SCOPING and AUDIT (which channels, spend caps, admin activity log, 'doesn't report from private channels') — not deletion, not ZDR, not delete-after-use. This is custody inversion with the fig leaf removed: the vendor isn't pretending not to retain; retention is the pitch.",
+      "archive_batch_note": "Wayback snapshot confirmed (existing) during Jul 19 2026 batch."
+    },
+    {
+      "claim_id": "A1",
+      "claim_type": "A",
+      "story_angle": "IP & Trade Secrets",
+      "secondary_angle": "The New Data Moat",
+      "vendor": "Cognition AI, Inc.",
+      "deck_slide": "Exhibit A — Cognition Platform Terms of Service (slide 8)",
+      "deck_claim": "Cognition owns all right, title, and interest in and to the Usage Data.",
+      "primary_quotes_verbatim": [
+        {
+          "section": "§3.3.2",
+          "label": "ownership",
+          "text": "3.3.2 Usage Data: Cognition reserves the right to collect, analyze, and utilize Usage Data for operational, analytical, and improvement purposes. Cognition owns all right, title, and interest in and to the Usage Data."
+        },
+        {
+          "section": "§1.7",
+          "label": "definition",
+          "text": "1.7 Usage Data: means the anonymized and aggregated data regarding the manner in which you or your Authorized Users interact with the Services. For avoidance of doubt, Usage Data will not be linkable to you, and will not include any confidential information."
+        },
+        {
+          "section": "§1.2",
+          "label": "exclusion",
+          "text": "Customer Data expressly excludes: (i) any content owned by or licensed to Cognition; and (ii) Usage Data."
+        }
+      ],
+      "legal_clause_section": "§3.3.2 (+§1.7 definition, §1.2 exclusion)",
+      "document_title": "Cognition Platform Terms of Service",
+      "effective_date": "2026-06-30",
+      "source_url": "https://cognition.com/legal/platform-terms-of-service",
+      "archive_url": "http://web.archive.org/web/20260701204143/https://cognition.com/legal/platform-terms-of-service",
+      "archive_timestamp": "2026-07-01T20:41:43Z",
+      "retrieved_at": "2026-07-19T19:52:00Z",
+      "status": "Confirmed",
+      "axis_tag": "STRUCTURALLY-CAPTURED (ownership + definition are structural; ACTIVELY-TRAINED not established for the Usage Data bucket specifically — §3.3.1 governs Customer-Data training with a paid-tier opt-out)",
+      "usage_data_vector": "§1.7 defines Usage Data as 'the manner in which you or your Authorized Users interact with the Services' — the exact phrase that, in an agentic harness, denotes accept/reject/correction signals, edit-distance, dwell/latency, and interaction telemetry. That is the onramp: the SaaS-era 'interaction data' wording now scopes the agentic reasoning-trace signal. What concretely populates this class is documented in primary text on sibling cards — embeddings & metadata persisting outside ZDR (A3, Cursor), CSAP/Levenshtein value (A11), the four harvest signals (Exhibit: cognitive keylogger). Grove's reading (interpretation, for discussion): Cognition holds title to that bucket; the 'anonymized/aggregated/not linkable' language is a database label, not a legal wall (cf. OpenAI de-identified exemption A5).",
+      "screenshot_live_path": "screenshots/A1_cognition-tos_live_clause-context_20260719.png",
+      "screenshot_clause_path": "screenshots/A1_cognition-tos_live_clause-crop_20260719.png",
+      "screenshot_definitions_path": "screenshots/A1_cognition-tos_live_definitions_20260719.png",
+      "screenshot_s17_crop_path": "screenshots/A1_cognition-tos_live_s17-crop_20260719.png",
+      "screenshot_header_path": "screenshots/A1_cognition-tos_live_header_20260719.png",
+      "screenshot_archive_path": "screenshots/A1_cognition-tos_wayback_20260701.png",
+      "sha256": {
+        "live_header": "250c03b90ff4ab5b89a201abd4976cb8ebb78ce2ea3eea3957a8d9857acc2baf",
+        "live_definitions_s12_s17_s18": "444f64a227d0b28022247377d03d36a9a65d434ccce1bc84a0dd7d79e6575d06",
+        "live_s17_crop": "37f4355acb2f6b875c77a216fe9b76a3c04f1f4744994fac96131c0b05c12f1e",
+        "live_s332_context": "00d2a3f12b0f5f0384f66123e2c6fc7bb847a7b7971ff8835ffebc181fdb7932",
+        "live_s332_crop": "15e256da29d1a18b33f5c55e8b29037c5e823d1edda03b3f6baf77a30affba13",
+        "wayback_s332": "f88a623b35323964c2e921fa8a626c73864bb605612207c3e4cbca6e389b0186"
+      },
+      "interpretation_flag": "OUR LANE (computer scientists, not lawyers). FACT, verbatim: §3.3.2 gives Cognition title to 'Usage Data'; §1.7 defines that bucket as your interaction record ('the manner in which you interact with the Services') — in an agentic harness that is the reasoning trace, accept/reject signals, and embeddings, not SaaS-era uptime/crash logs. 'Anonymized/aggregated/not linkable' names a data transformation; as a systems matter it does not return control to you, halt retention, or stop the record being reconstructed, sold in an acquisition, or subpoenaed (cf. OpenAI de-identified exemption A5). Whether a court reads the clause the vendor's way is a legal question for your counsel — not our call. THE POINT (practical): the bucket's contents have inverted; most buyers still read it as boilerplate; the Usage Data definition, its ownership (§3.3.2), and whether ZDR/opt-out (§3.3.1) reach it belong in your next negotiation.",
+      "not_legal_advice": true,
+      "capture_tool": "Claude in Chrome + Wayback Machine",
+      "wayback_banner_visible": true,
+      "treatment_voice": "computer scientists, not lawyers — confident on the technical reality, no legal conclusion, lands on 'negotiate accordingly'",
+      "board_shots": [
+        [
+          "screenshots/A1_cognition-tos_live_header_20260719.png",
+          "LIVE — header, \"Last updated June 30, 2026\" + Previous-version link"
+        ],
+        [
+          "screenshots/A1_cognition-tos_live_definitions_20260719.png",
+          "LIVE — §1.2 / §1.7 / §1.8 definitions block"
+        ],
+        [
+          "screenshots/A1_cognition-tos_live_s17-crop_20260719.png",
+          "LIVE — §1.7 Usage Data definition (crop)"
+        ],
+        [
+          "screenshots/A1_cognition-tos_live_clause-crop_20260719.png",
+          "LIVE — §3.3.2 ownership (crop)"
+        ],
+        [
+          "screenshots/A1_cognition-tos_wayback_20260701.png",
+          "WAYBACK — JUL 01 2026 banner over §3.3.2"
+        ]
+      ]
+    },
+    {
+      "claim_id": "A3",
+      "claim_type": "A",
+      "story_angle": "The New Data Moat",
+      "secondary_angle": "IP & Trade Secrets",
+      "vendor": "Anysphere, Inc. (Cursor)",
+      "deck_slide": "Timeline 'Collected became owned' (slide 9) + Exhibit slide 10 & 'Every dial' table (slide 11)",
+      "deck_claim": "Cursor retains embeddings/metadata about your codebase after plaintext is deleted, outside the privacy gate.",
+      "primary_quotes_verbatim": [
+        {
+          "section": "Other notes — indexing",
+          "label": "embeddings persist",
+          "text": "If you choose to index your codebase, Cursor will upload your codebase in small chunks to our server to compute embeddings, but all plaintext code for computing embeddings ceases to exist after the life of the request. The embeddings and metadata about your codebase (hashes, file names) may be stored in our database."
+        },
+        {
+          "section": "Privacy Mode OFF",
+          "label": "editor actions trained",
+          "text": "If you choose to turn off “Privacy Mode”: we may use and store codebase data, prompts, editor actions, code snippets, and other code data and actions to improve our AI features and train our models."
+        }
+      ],
+      "legal_clause_section": "Data Use & Privacy Overview — indexing / Privacy-Mode-off paragraphs",
+      "document_title": "Cursor Data Use & Privacy Overview",
+      "effective_date_live": "2026-07-15",
+      "effective_date_deck_cited": "2026-06-09",
+      "source_url": "https://cursor.com/data-use",
+      "archive_url": "http://web.archive.org/web/20260611010202/https://cursor.com/data-use",
+      "retrieved_at": "2026-07-19T19:52:00Z",
+      "status": "Confirmed",
+      "axis_tag": "STRUCTURALLY-CAPTURED (embeddings + metadata stored regardless) AND ACTIVELY-TRAINED when Privacy Mode is off ('train our models') — note Privacy Mode is off by default per the deck's Q2 vendor table (A4).",
+      "usage_data_vector": "The clearest primary proof of the vector: Cursor's page enumerates the non-SaaS-era artifacts by name. Embeddings and vectors of the codebase, plus metadata (hashes, file names), 'may be stored' AFTER the plaintext 'ceases to exist' — i.e., the valuable map survives the deletion/ZDR gate. With Privacy Mode off (default), 'editor actions' and 'code data and actions' are used to 'train our models.' Editor actions = the accept/reject/edit-distance reward labels. This is exactly the CSAP substrate (A11).",
+      "date_discrepancy_flag": "DECK cites 'updated Jun 9 2026'; LIVE page reads 'Last updated July 15, 2026.' Clause materially unchanged; page revised again after the deck's date. Capture the Jun 9 2026 Wayback snapshot to match the timeline claim.",
+      "screenshot_header_path": "screenshots/A3_cursor-datause_live_header-privacymode_20260719.png",
+      "screenshot_clause_path": "screenshots/A3_cursor-datause_live_embeddings-crop_20260719.png",
+      "screenshot_context_path": "screenshots/A3_cursor-datause_live_embeddings-context_20260719.png",
+      "screenshot_archive_path": "screenshots/A3_cursor-datause_wayback_embeddings-oct15_20260609.png",
+      "sha256": {
+        "live_header_privacymode": "90b08d761f41e9d45f1d7ea195309813d8757eec7bfc4fd5663f5275a28f3034",
+        "live_embeddings_context": "81e874e03bf3f8d635170fc2b252cb6d30db3c941672c26321af142e7e1ac977",
+        "live_embeddings_crop": "db0df56f9e1fbb86ae36e99179ee0a495352a9c5c16bafc93d3a7b3b2923d493",
+        "wayback_embeddings_oct15": "f878049751ae305685dfb6de20350f32de8f6e9150eccd73a18f439f0e9fab26",
+        "wayback_header_jun9": "c7ad1b9cdd4a065a634da1780f11ad5a56b035214e3fefc29d31a7e1bc451f52"
+      },
+      "interpretation_flag": "OUR LANE (computer scientists, not lawyers). FACT, verbatim: embeddings/vectors of your codebase + metadata (hashes, file names) 'may be stored' AFTER the plaintext 'ceases to exist'; with Privacy Mode off (default) 'editor actions' train the models. Embeddings are a mathematical map of your code's meaning — deleting the plaintext does not delete the map. That is a systems reality, not a legal opinion. THE POINT (practical): your ZDR/privacy toggle governs the plaintext, not the embeddings or the edit-signal reward labels — if the retained map matters, negotiate it. Not legal advice.",
+      "not_legal_advice": true,
+      "capture_tool": "Claude in Chrome + Wayback Machine",
+      "wayback_banner_visible": false,
+      "archive_timestamp": "2026-06-11T01:02:02Z",
+      "archive_matches_deck_date": "Archived page reads 'Last updated June 9, 2026' — exact match to deck Source [2] cited date.",
+      "oct15_cutoff_confirmed": "Archived Jun 9 2026 version carries footnote [1]: 'This data will not be shared with model providers if your account was created before Oct 15, 2025.' — confirms deck's Oct 15 2025 regime cutoff.",
+      "screenshot_archive_embeddings_path": "screenshots/A3_cursor-datause_wayback_embeddings-oct15_20260609.png",
+      "screenshot_archive_header_path": "screenshots/A3_cursor-datause_wayback_header-jun9_20260609.png",
+      "archive_date_proof": "Wayback toolbar suppressed by the archived site's layout; archive date proven by (a) on-page 'Last updated June 9, 2026', (b) archive URL timestamp 20260611010202, (c) availability API record. Same handling as A1.",
+      "treatment_voice": "computer scientists, not lawyers — confident on the technical reality, no legal conclusion, lands on 'negotiate accordingly'",
+      "board_shots": [
+        [
+          "screenshots/A3_cursor-datause_live_header-privacymode_20260719.png",
+          "LIVE — header (Jul 15 2026) + Privacy-Mode on/off clauses"
+        ],
+        [
+          "screenshots/A3_cursor-datause_live_embeddings-crop_20260719.png",
+          "LIVE — embeddings/metadata persistence (crop)"
+        ],
+        [
+          "screenshots/A3_cursor-datause_wayback_header-jun9_20260609.png",
+          "WAYBACK — \"Last updated June 9, 2026\" (matches deck [2])"
+        ],
+        [
+          "screenshots/A3_cursor-datause_wayback_embeddings-oct15_20260609.png",
+          "WAYBACK — embeddings + \"Oct 15, 2025\" cutoff footnote"
+        ]
+      ]
+    },
+    {
+      "claim_id": "A11",
+      "claim_type": "A",
+      "story_angle": "The New Data Moat",
+      "secondary_angle": "IP & Trade Secrets",
+      "vendor": "Academic (Jiang et al.) — Source [13]",
+      "deck_slide": "Exhibit 'Every keystroke' (slide 6) — Edit Distance / CSAP card",
+      "deck_claim": "CSAP predicts developer acceptance at 0.973 accuracy from interaction signals (incl. edit distance); a 'Circuit Breaker' predicts the accept before the ghost-text renders.",
+      "primary_quotes_verbatim": [
+        {
+          "section": "Abstract",
+          "label": "CSAP 0.973",
+          "text": "predict whether a developer will accept a code suggestion before it is displayed. The evaluation of CSAP shows that it achieves the accuracy of 0.973 and 0.922 on imbalanced and balanced dataset respectively."
+        },
+        {
+          "section": "§3.1.1",
+          "label": "Circuit Breaker",
+          "text": "our industry partner has deployed an in-use acceptance prediction method, called Circuit Breaker, which uses numerical features to predict accepted code suggestions, such as the number of preceding lines of code. ... AI-generated code suggestions are displayed as grayed-out ghost text and can be accepted with a single keystroke (e.g., Tab)."
+        },
+        {
+          "section": "Features",
+          "label": "Levenshtein modification ratio",
+          "text": "we measure the average levenshtein distance [23] between an accepted suggestion and its final version (developer_modified_chars), and the ratio of accepted suggestions that are subsequently modified (developer_modified_ratio) for a given developer."
+        }
+      ],
+      "legal_clause_section": "n/a (research paper — figure confirmation)",
+      "document_title": "Predicting Developer Acceptance of AI-Generated Code Suggestions (Jiang, Li, Hou, Tan, Zhang)",
+      "effective_date": "2026-01-29 (submitted)",
+      "source_url": "https://arxiv.org/abs/2601.21379",
+      "archive_url": "arXiv is a permanent versioned archive (DOI: 10.48550/arXiv.2601.21379); v1 fixed. Wayback snapshot optional.",
+      "archive_timestamp": "arXiv v1 permanent",
+      "retrieved_at": "2026-07-19T20:05:00Z",
+      "status": "Confirmed",
+      "axis_tag": "ACTIVELY-MODELED — the accept/reject interaction signal is used to build a predictive model of the developer; demonstrates the telemetry's training value.",
+      "usage_data_vector": "This is the WHY of the vector: it proves the captured interaction telemetry is a modeled asset. From 66,329 real developer-AI interactions, accepted vs. rejected suggestions differ by historical acceptance counts/ratios, generation intervals, and preceding code context — features harvested from the exact accept/reject/edit stream that lands in the 'Usage Data' bucket. CSAP turns that stream into a 0.973-accuracy model of what you will accept, before the suggestion renders. The reward label is not exhaust; it is the product.",
+      "interpretation_flag": "OUR LANE (computer scientists, not lawyers): fully confirmed research finding. The accept/reject/edit signal — Levenshtein modification ratio, acceptance ratios, in-situ context — is modeled at 0.973 to predict acceptance before the ghost text even renders. That is precisely why title to the bucket holding this telemetry is worth caring about. No legal dimension.",
+      "not_legal_advice": true,
+      "capture_tool": "Claude in Chrome + arXiv",
+      "sha256": {
+        "arxiv_abstract": "1a2c2fdec0c6a20c952a3e08e28f2e1f30f859262375e67005df4500696257f6",
+        "csap_paper_p4_circuit_breaker": "61138d0664e1c20c04d68fe6c6f2383c2baa7c2e6d9e34c5e5953c06b1234559",
+        "csap_paper_p5_levenshtein": "73b29d56301bd406f937ac7ef35d2cca033d885a66c173f8e0836dd0f5f67df4"
+      },
+      "board_shots": [
+        [
+          "screenshots/A11_csap-arxiv_abstract_20260719.png",
+          "arXiv:2601.21379 abstract — CSAP 0.973, predicts acceptance before display"
+        ],
+        [
+          "screenshots/A11_csap-paper_p4_circuit-breaker_20260719.png",
+          "Full paper p.4 §3.1.1 — 'Circuit Breaker' in-production acceptance filter, ghost text + Tab"
+        ],
+        [
+          "screenshots/A11_csap-paper_p5_levenshtein_20260719.png",
+          "Full paper p.5 — Levenshtein distance + developer_modified_ratio features"
+        ]
+      ],
+      "status_note": "FULLY CONFIRMED from the full paper (uploaded PDF / repo). Earlier 'Circuit Breaker' & 'Levenshtein' apparent-miss RESOLVED: both are in the paper — Circuit Breaker is the industry partner's in-production ghost-text acceptance filter (§3.1.1); Levenshtein distance + developer_modified_ratio are the edit-distance features. Deck Source [13] is accurate.",
+      "source_url_full_paper": "uploaded PDF 2601.21379v1 (also arXiv:2601.21379)"
+    },
+    {
+      "claim_id": "A6",
+      "claim_type": "A",
+      "story_angle": "The New Data Moat",
+      "secondary_angle": "The Pledges Have Holes",
+      "vendor": "Anthropic, PBC",
+      "deck_slide": "Exhibit C — Claude Tag (slide 16) / documented sink",
+      "deck_claim": "A thumbs-up routes the entire conversation to a 5-year, training-eligible store; deletion does not reach models already trained.",
+      "primary_quotes_verbatim": [
+        {
+          "section": "Feedback",
+          "label": "5-year store + train",
+          "text": "When you provide us feedback via our thumbs up/down button, we will store the entire related conversation, including any content, custom styles or conversation preferences, in our secured back-end for up to 5 years. ... We de-link your feedback from your user ID (e.g. email address) before it's used by Anthropic. We may use your feedback to analyze the effectiveness of our Services, conduct research, study user behavior, and train our AI models as permitted under applicable laws."
+        },
+        {
+          "section": "Safety review",
+          "label": "opt-out override",
+          "text": "Your conversations are flagged for safety review (in which case we may use or analyze them to improve our ability to detect and enforce our Usage Policy, including training models for use by our Safeguards team ...)."
+        }
+      ],
+      "legal_clause_section": "Privacy Center — 'Is my data used for model training?' (Feedback section)",
+      "document_title": "Anthropic Privacy Center — Is my data used for model training? (Consumer)",
+      "effective_date": "checked 2026-07-19 (deck checked Jul 10 2026)",
+      "source_url": "https://privacy.claude.com/en/articles/10023580-is-my-data-used-for-model-training",
+      "archive_url": "PENDING — Wayback snapshot (help-center archives batched to avoid API rate-limit)",
+      "archive_timestamp": "pending",
+      "retrieved_at": "2026-07-19T20:05:00Z",
+      "status": "Confirmed (live)",
+      "axis_tag": "ACTIVELY-TRAINED — vendor states feedback is used to 'train our AI models'; a single explicit-feedback click is the trigger.",
+      "usage_data_vector": "The documented sink for the signal. One thumbs-up moves the ENTIRE related conversation into a 5-year, de-linked, training-eligible store. 'De-linked from your user ID' is the de-identification move again (a database label — the conversation is retained and trainable regardless). And a safety-review flag can pull conversations into model training independent of your training opt-out. This is where the harvested reasoning/interaction record goes.",
+      "interpretation_flag": "OUR LANE (computer scientists, not lawyers): FACT, verbatim — a feedback click stores the whole conversation up to 5 years, de-linked, and it may train the models; safety-flagged conversations may also train models. 'De-linked' is de-identification, not deletion or customer control. THE POINT (practical): if your people click thumbs-up in a consumer tier, that conversation is retained and trainable for years — know it, and set policy accordingly. Not legal advice.",
+      "not_legal_advice": true,
+      "capture_tool": "Claude in Chrome + Wayback (pending)",
+      "sha256": {
+        "live_feedback": "6c48f5728a8ce429f8ff62465dad0f4583bfdb10dba0221650a4d2aa268b2a03"
+      },
+      "board_shots": [
+        [
+          "screenshots/A6_anthropic-privacy_feedback-5yr_20260719.png",
+          "LIVE — Feedback section: \"store the entire related conversation ... for up to 5 years ... train our AI models\""
+        ]
+      ]
+    },
+    {
+      "claim_id": "A2",
+      "claim_type": "A",
+      "story_angle": "IP & Trade Secrets",
+      "secondary_angle": "The New Data Moat",
+      "vendor": "Cognition AI, Inc.",
+      "deck_slide": "Timeline 'Collected became owned' (slide 9) — the ratchet baseline",
+      "deck_claim": "Cognition's prior terms (Apr 2025) are still linked from the live page; training was opt-IN and Usage Data carried no ownership claim — the ratchet is on the record.",
+      "primary_quotes_verbatim": [
+        {
+          "section": "Apr 2025 §3.3.1",
+          "label": "training was OPT-IN",
+          "text": "3.3.1 Use of Customer Data: Any Customer Data that you submit, upload, or otherwise post to the Services will not be used for model training purposes unless you opt-in to allow Cognition to use such Customer Data to improve and enhance the Services."
+        },
+        {
+          "section": "Apr 2025 §3.3.2",
+          "label": "NO ownership of Usage Data",
+          "text": "3.3.2 Cognition reserves the right to collect, analyze, and utilize Usage Data for operational, analytical, and improvement purposes."
+        },
+        {
+          "section": "Apr 2025 §1.6",
+          "label": "Usage Data definition (identical to current §1.7)",
+          "text": "1.6 Usage Data: means the anonymized and aggregated data regarding the manner in which you or your Authorized Users interact with the Services. For avoidance of doubt, Usage Data will not be linkable to you, and will not include any confidential information."
+        }
+      ],
+      "legal_clause_section": "Apr 2025 §3.3.1 / §3.3.2 / §1.6 (vs current §3.3.1 / §3.3.2 / §1.7)",
+      "document_title": "Cognition Platform Terms of Service — prior version (Devin)",
+      "effective_date": "2025-04-03",
+      "source_url": "https://cognition.com/platform-terms-of-service-april-2025 (redirects to old.cognition.ai/terms-of-service; linked as 'Previous version' from the current ToS)",
+      "archive_url": "http://web.archive.org/web/20260701204153/https://old.cognition.ai/terms-of-service",
+      "archive_timestamp": "2026-07-01T20:41:53Z",
+      "retrieved_at": "2026-07-19T20:50:00Z",
+      "status": "Confirmed",
+      "axis_tag": "STRUCTURALLY-CAPTURED — the ratchet is documented on the vendor's own dated pages.",
+      "the_ratchet": "SIDE-BY-SIDE (both verbatim, both captured): (1) USAGE DATA OWNERSHIP — Apr 2025 §3.3.2 says only 'Cognition reserves the right to collect, analyze, and utilize Usage Data' with NO ownership sentence; Jun 30 2026 §3.3.2 ADDS 'Cognition owns all right, title, and interest in and to the Usage Data' (see A1). (2) TRAINING — Apr 2025 §3.3.1 = OPT-IN ('will not be used for model training ... unless you opt-in'); Jun 30 2026 §3.3.1 = OPT-OUT ('Cognition may use Customer Data for model training ... you may opt out'). (3) DEFINITION — the Usage Data definition is IDENTICAL across both (Apr §1.6 = Jun §1.7). Same words defining the bucket; title added; default flipped.",
+      "usage_data_vector": "This is the vector proven on the timeline. The DEFINITION of Usage Data never changed — same 'anonymized and aggregated ... manner in which you interact' language in Apr 2025 and Jun 2026. What changed is that Cognition went from merely 'reserving the right to collect/analyze/utilize' that interaction data to OWNING 'all right, title, and interest' in it — over the same 14-month window in which agentic harness telemetry became the reasoning-trace/CSAP substrate. The words held still; the ownership ratcheted.",
+      "capture_note": "Human-captured Wayback exhibits (JUL 01 2026 banner) now EMBEDDED (3 shots from Jim's desktop): the April 3, 2025 header with the 'Previous Version' link, and the S3.3.1 opt-IN / S3.3.2 no-ownership clauses. Plus my automated banner shot. Verbatim text confirmed from the page source; page's scroll-reveal blanked automated screenshots, resolved via the human captures.",
+      "interpretation_flag": "OUR LANE (computer scientists, not lawyers): FACT, verbatim from the vendor's own current and prior dated pages — training default flipped opt-IN to opt-OUT, and an ownership sentence for Usage Data was ADDED, while the definition stayed identical. THE POINT (practical): the prior terms are still linked from the live page, so the ratchet is checkable by anyone. If you signed under the older terms, diff them against the current ones and note what moved before you renew. Not legal advice.",
+      "not_legal_advice": true,
+      "capture_tool": "Claude in Chrome + Wayback Machine",
+      "sha256": {
+        "wayback_banner": "a12833ddd503ae5dbb5cf255464ba502cbbeddcdc1b698523e5a4bc0e1dd39b7",
+        "wayback_desktop1": "08e3476209ee8ca79cbe1ff5be49be6b291f65d4934bd01be409b57748158803",
+        "wayback_desktop2": "08e3476209ee8ca79cbe1ff5be49be6b291f65d4934bd01be409b57748158803",
+        "wayback_desktop3": "b21e6d8b63dc189c2cd4b8208f110026a2142635428c8c2b4eea380512c1b50b"
+      },
+      "board_shots": [
+        [
+          "screenshots/A2_cognition-apr2025_wayback_banner_20260701.png",
+          "WAYBACK — JUL 01 2026 capture of the April 3, 2025 prior terms (old.cognition.ai). Body text captured verbatim via DOM; page's scroll-reveal blanks the screenshot body."
+        ],
+        [
+          "screenshots/A2_cognition-apr2025_wayback_desktop1_20260701.png",
+          "WAYBACK (Jim-captured, JUL 01 2026) - April 2025 prior terms exhibit"
+        ],
+        [
+          "screenshots/A2_cognition-apr2025_wayback_desktop2_20260701.png",
+          "WAYBACK (Jim-captured, JUL 01 2026) - April 2025 prior terms exhibit"
+        ],
+        [
+          "screenshots/A2_cognition-apr2025_wayback_desktop3_20260701.png",
+          "WAYBACK (Jim-captured, JUL 01 2026) - April 2025 prior terms exhibit"
+        ]
+      ]
+    },
+    {
+      "claim_id": "A5",
+      "claim_type": "A",
+      "story_angle": "IP & Trade Secrets",
+      "secondary_angle": "The New Data Moat",
+      "vendor": "OpenAI OpCo, LLC",
+      "deck_slide": "Slide 15 'Custody alone is exposure' — Second Exhibit (OpenAI privacy policy)",
+      "deck_claim": "OpenAI's privacy policy exempts content already 'de-identified and disassociated from your account' from deletion requests — once the label is applied, the delete button no longer reaches it.",
+      "primary_quotes_verbatim": [
+        {
+          "section": "§4 Retention",
+          "label": "deletion exemption",
+          "text": "Once you choose to delete Personal Data, we will remove it from our systems within 30 days unless we need to retain it for longer as described below, or it has already been de-identified and disassociated from your account when you allow us to use your Content to improve our models."
+        },
+        {
+          "section": "§2",
+          "label": "de-identify + no reidentify",
+          "text": "We also aggregate or de-identify Personal Data so that it no longer identifies you and use this information for the purposes described above ... We will maintain and use de-identified information in de-identified form and not attempt to reidentify the information, unless required by law."
+        }
+      ],
+      "legal_clause_section": "§4 Retention ('Information we retain until you delete it')",
+      "document_title": "OpenAI US Privacy Policy",
+      "effective_date": "2026-05-18",
+      "source_url": "https://openai.com/policies/us-privacy-policy/",
+      "archive_url": "http://web.archive.org/web/20260716170218/https://openai.com/policies/us-privacy-policy/",
+      "retrieved_at": "2026-07-19T21:00:00Z",
+      "status": "Confirmed (live)",
+      "axis_tag": "STRUCTURALLY-CAPTURED — de-identification places content beyond the user's deletion right by policy design.",
+      "usage_data_vector": "The de-identification move, stated plainly by the vendor: once content is 'de-identified and disassociated from your account,' your deletion request no longer reaches it. This is the same mechanism as Cognition's §1.7 (A1) and Anthropic's 'de-link' (A6) — 'de-identified' is a database label describing a transformation, not a wall that returns control to you. In the agentic era, the reasoning/interaction record survives the delete button precisely because it has been de-identified into the 'improve our models' bucket.",
+      "interpretation_flag": "OUR LANE (computer scientists, not lawyers): FACT, verbatim — de-identified content is carved out of the 30-day deletion promise. As a systems matter, de-identification is a transformation, not deletion, and the data persists in the training/improvement bucket. THE POINT (practical): your 'delete' control governs identified content in your account, not content already de-identified into model-improvement use. If deletion reach matters to you, confirm what 'de-identified' excludes before you rely on the delete button. Not legal advice.",
+      "not_legal_advice": true,
+      "capture_tool": "Claude in Chrome + Wayback (batched)",
+      "sha256": {
+        "live_s4": "d15f3ffdbb8ca8d370f13e4e5bbf800f060ffe817bd3ba738e909a91766c58a2",
+        "live_crop": "bce2f94be43085a8cd817a935731f7b1c83a762a01635b2b1579e2b60620f16d"
+      },
+      "board_shots": [
+        [
+          "screenshots/A5_openai-privacy_live_retention-s4_20260719.png",
+          "LIVE — §4 Retention, 'Information we retain until you delete it' (OpenAI, updated May 18 2026)"
+        ],
+        [
+          "screenshots/A5_openai-privacy_live_deidentified-crop_20260719.png",
+          "LIVE — the de-identified/disassociated deletion exemption (crop)"
+        ]
+      ],
+      "archive_batch_note": "Wayback snapshot confirmed (existing) during Jul 19 2026 batch."
+    },
+    {
+      "claim_id": "A7",
+      "claim_type": "A",
+      "story_angle": "The New Data Moat",
+      "secondary_angle": "IP & Trade Secrets",
+      "vendor": "Anthropic, PBC",
+      "deck_slide": "'They can see inside the model. You can't.' (interpretability paradox, slide 17)",
+      "deck_claim": "Anthropic can see inside the model — millions/34M interpretable features from Claude 3 Sonnet, including power-seeking/deception/secrecy — while the operator gets only sanitized transcripts.",
+      "primary_quotes_verbatim": [
+        {
+          "section": "Body",
+          "label": "features from Claude 3 Sonnet",
+          "text": "We successfully extracted millions of features from the middle layer of Claude 3.0 Sonnet ... providing a rough conceptual map of its internal states halfway through its computation. This is the first ever detailed look inside a modern, production-grade large language model."
+        },
+        {
+          "section": "Body",
+          "label": "power-seeking / secrecy features",
+          "text": "we found features corresponding to: Capabilities with misuse potential (code backdoors, developing biological weapons); Different forms of bias (gender discrimination, racist claims about crime); Potentially problematic AI behaviors (power-seeking, manipulation, secrecy)."
+        }
+      ],
+      "legal_clause_section": "n/a (vendor research post)",
+      "document_title": "Anthropic — Mapping the mind of a large language model",
+      "effective_date": "2024-05-21",
+      "source_url": "https://www.anthropic.com/research/mapping-mind-language-model",
+      "archive_url": "PENDING — Wayback (batched); underlying paper 'Scaling Monosemanticity' (deck [8]) carries the exact 34M figure",
+      "retrieved_at": "2026-07-19T21:10:00Z",
+      "status": "Confirmed (core); see completeness note",
+      "axis_tag": "ASYMMETRY — the vendor has mechanistic visibility into the model; the operator does not.",
+      "usage_data_vector": "The observability asymmetry that completes the custody thesis. Anthropic can decompose its own model into millions of named features — down to 'power-seeking, manipulation, secrecy' — and causally steer them. The enterprise operator running the harness gets sanitized transcripts and audit logs, not activations. So the party that owns the model owns the decision logic AND the only real window into it. The reasoning trace you generate flows into a system only its vendor can actually see inside.",
+      "completeness_note": "This page (2024) confirms 'millions of features from Claude 3.0 Sonnet' and the power-seeking/manipulation/secrecy features; the specific '34 million' figure is the headline of the linked paper 'Scaling Monosemanticity: Extracting Interpretable Features from Claude 3 Sonnet' (deck Source [8]) — add the paper as the figure primary. The deck's 'open-sourced circuit-tracing tools' is a SEPARATE later Anthropic release (2025 attribution-graphs/circuit-tracing open-sourcing), not on this page — source it distinctly at assembly rather than attach it here. Neither is a miss; both are sourced, just on their own pages.",
+      "interpretation_flag": "OUR LANE (computer scientists, not lawyers): FACT — Anthropic published mechanistic interpretability of its deployed model (features incl. power-seeking/secrecy) and can steer them; operators get transcripts, not activations. THE POINT (practical): the party that owns the model owns the only real visibility into how your reasoning trace was processed — factor that asymmetry into where you route high-value cognition. Not legal advice.",
+      "not_legal_advice": true,
+      "capture_tool": "Claude in Chrome + Wayback (batched)",
+      "sha256": {
+        "live_features": "4eb0b475e2f947ad37f51457ff3fd078df12291264c311864055590f9c6406dc"
+      },
+      "board_shots": [
+        [
+          "screenshots/A7_anthropic-interp_live_problematic-features_20260719.png",
+          "LIVE — features incl. 'Potentially problematic AI behaviors (power-seeking, manipulation, secrecy)' + sycophantic 'flowery deception'"
+        ]
+      ]
+    },
+    {
+      "claim_id": "A9",
+      "claim_type": "A",
+      "story_angle": "The Telemetry Sink (Claude Tag)",
+      "secondary_angle": "The New Data Moat",
+      "vendor": "Salesforce / Slack",
+      "deck_slide": "Exhibit C — Claude Tag: '$27.7 billion ... operating system of enterprise work' (slide 16)",
+      "deck_claim": "Slack is the $27.7B 'operating system of enterprise work' — the layer Claude Tag now sits in.",
+      "primary_quotes_verbatim": [
+        {
+          "section": "Completion PR",
+          "label": "acquisition completed",
+          "text": "SAN FRANCISCO, July 21, 2021—Salesforce (NYSE: CRM), the global leader in CRM, today announced it has completed its acquisition of Slack Technologies, Inc. ... creating the digital HQ for success from anywhere."
+        }
+      ],
+      "legal_clause_section": "n/a (M&A press release)",
+      "document_title": "Salesforce — Salesforce Completes Acquisition of Slack",
+      "effective_date": "2021-07-21",
+      "source_url": "https://www.salesforce.com/news/press-releases/2021/07/21/salesforce-slack-deal-close/",
+      "archive_url": "PENDING — Wayback (batched)",
+      "retrieved_at": "2026-07-19T21:20:00Z",
+      "status": "Confirmed (acquisition); $27.7B via deal terms",
+      "axis_tag": "CONTEXT ANCHOR — valuation of the collaboration layer Claude Tag occupies.",
+      "usage_data_vector": "The valuation anchor for the Claude Tag callout (A10). Slack — the collaboration substrate Salesforce paid ~$27.7B for and calls the 'digital HQ' / operating system of enterprise work — is exactly where Claude Tag now embeds as a persistent, cross-channel agent. The deck's point: a vendor agent has planted itself in the most valuable coordination layer of the enterprise, the same layer that commanded a $27.7B price.",
+      "figure_sourcing": "This completion PR (Jul 21 2021) confirms the acquisition, parties, date, and the 'digital HQ for enterprise work' framing verbatim. The specific '$27.7 billion' deal value is from the definitive merger agreement (Dec 2020) and Salesforce SEC filings, corroborated consistently across TheHill, VentureBeat, and PRNewswire (~25x forward revenue per MergerSight, per repo atlas). Add the SEC 8-K / merger agreement as the durable $-figure primary at assembly.",
+      "interpretation_flag": "OUR LANE (computer scientists, not lawyers): FACT — Salesforce completed the Slack acquisition Jul 21 2021; $27.7B is the well-documented deal value. Purely a context/valuation anchor, no legal dimension. THE POINT: the telemetry sink (Claude Tag) sits in the highest-value coordination layer of the enterprise. Not legal advice.",
+      "not_legal_advice": true,
+      "capture_tool": "Claude in Chrome + WebSearch (URL) + Wayback (batched)",
+      "sha256": {
+        "live_completion": "6a08ac652fad5984e14e8d519a4a8a43695b852cc46e4bea7ca46d77993b3780"
+      },
+      "board_shots": [
+        [
+          "screenshots/A9_salesforce-slack_live_completion_20260719.png",
+          "LIVE — Salesforce completes Slack acquisition (July 21, 2021)"
+        ]
+      ]
+    },
+    {
+      "claim_id": "A17",
+      "claim_type": "A",
+      "story_angle": "The Countermeasure (Grove's own — party to the argument)",
+      "secondary_angle": "The New Data Moat",
+      "vendor": "The Grove Foundation (Grove's OWN standard — labeled)",
+      "deck_slide": "'The industry is converging on the fix' / 'Grove already wrote the standard' (slides 19, 23)",
+      "deck_claim": "Grove already published the countermeasure standard: GRV-001 'The Autonomaton Pattern' (originally March 2026; live page is v2.0, Jun 22 2026), CC BY 4.0.",
+      "primary_quotes_verbatim": [
+        {
+          "section": "Header",
+          "label": "standard identity",
+          "text": "OPEN STANDARD · GRV-001 · CC BY 4.0 — The Autonomaton Pattern. Toward Self-Authoring Software Systems. Jim Calhoun · The Grove Foundation · v2.0 · June 22, 2026."
+        },
+        {
+          "section": "Terms of Art",
+          "label": "lien on thinking",
+          "text": "Lien on thinking. The accumulating dependency that results when an operator's reasoning patterns are routed through a platform that retains them. Each interaction expands the lien; switching providers does not discharge it. The Autonomaton Pattern's substrate-ownership constraint is the architectural mechanism for keeping the lien at zero."
+        }
+      ],
+      "legal_clause_section": "n/a (published open standard, CC BY 4.0)",
+      "document_title": "The Grove Foundation — GRV-001 The Autonomaton Pattern v2.0",
+      "effective_date": "2026-03 (original) / 2026-06-22 (v2.0 update)",
+      "source_url": "https://the-grove.ai/standards/001",
+      "archive_url": "http://web.archive.org/web/20260719231823/https://the-grove.ai/standards/001",
+      "retrieved_at": "2026-07-19T21:30:00Z",
+      "status": "Confirmed",
+      "axis_tag": "GROVE'S OWN POSITION — party to the argument; presented as the proposed countermeasure, not neutral evidence.",
+      "party_to_argument": "THIS IS GROVE'S OWN PUBLISHED STANDARD. Per spec §3.4/C8, it is captured but explicitly labeled 'Grove Foundation — party to the argument.' It is the proposed fix, not third-party evidence for the problem.",
+      "usage_data_vector": "The constructive close of the vector. GRV-001 names the exact failure the evidence cards document — 'lien on thinking,' 'judgment extraction,' 'cognitive platforming' — and proposes the countermeasure: operator-owned telemetry, config, and skills; a five-stage pipeline (Telemetry → Recognition → Compilation → Approval → Execution); a Zone Model; and a T3→T0 cost ratchet. Where the ToS/product cards show the reasoning trace flowing to the vendor, GRV-001 is Grove's argument that the trace should be captured and kept locally. It answers the packet's own thesis — so it is labeled as Grove's position.",
+      "interpretation_flag": "OUR LANE (computer scientists, not lawyers) — and note: this is GROVE'S OWN standard, so it is advocacy, captured as such. FACT: the standard exists, is published CC BY 4.0, v2.0 dated Jun 22 2026, and states the pipeline/Zone Model/router as described. It is the proposed countermeasure, presented by a party to the argument, not neutral evidence. Not legal advice.",
+      "not_legal_advice": true,
+      "capture_tool": "Claude in Chrome + Wayback (batched)",
+      "sha256": {
+        "live_header": "136039e804b0c3e74506056902d426d7691208bf43534592e9cd13e47ed94fac"
+      },
+      "board_shots": [
+        [
+          "screenshots/A17_grove-grv001_live_header_20260719.png",
+          "LIVE — GRV-001 · CC BY 4.0 · v2.0 · June 22, 2026 (Grove's own standard — party to the argument)"
+        ]
+      ],
+      "version_note": "GRV-001 'The Autonomaton Pattern' was ORIGINALLY published ~March 2026; the live page is v2.0 (June 22, 2026), an updated draft. The countermeasure standard predates the Q2 'Custody Inversion' supplement — Grove published the fix before documenting the problem at length, which is the point of the 'Grove already wrote the standard' slide. (v2.0 date confirmed on the live page; original March publication per author and consistent with the repo atlas dating Grove methodology to Mar 2026.)",
+      "archive_batch_note": "Wayback snapshot confirmed (existing) during Jul 19 2026 batch."
+    },
+    {
+      "claim_id": "A12",
+      "claim_type": "A",
+      "story_angle": "Antitrust & Market Power",
+      "secondary_angle": "Geopolitics & Export Control",
+      "vendor": "OpenRouter / CNBC (market data)",
+      "deck_slide": "Slide 16 — Chart · The Open Surge (CNBC/OpenRouter, Jul 7 2026)",
+      "deck_claim": "OpenRouter: Chinese open-weight share of U.S.-company tokens surged — 4.5% (H1 2025) → 11% (trailing-12-month) → above 30% every week since Feb 8 2026 → 46% peak.",
+      "primary_quotes_verbatim": [
+        {
+          "section": "CNBC (Jul 7 2026) — the exact figures",
+          "label": "4.5% → 11% → >30% weekly since Feb 8 → 46%",
+          "text": "The share of tokens used by U.S. companies on Chinese AI models via OpenRouter — a platform that enables developers to access a range of AI models — has sat above 30% each week since Feb. 8, with that figure rising as high at 46%. The average across the previous 12 months was just 11%, falling to 4.5% in the first half of 2025."
+        },
+        {
+          "section": "CNBC chart",
+          "label": "chart title + source",
+          "text": "Chinese AI model usage by U.S. companies has risen significantly during 2026. Share of tokens from U.S. companies using OpenRouter that went to Chinese models, as a percentage. Source: OpenRouter • The dataset represents the token activity of thousands of US organizations using OpenRouter from Jan 2025 through June 2026."
+        },
+        {
+          "section": "OpenRouter arXiv study (public primary, window Nov 2024–Nov 2025)",
+          "label": "the general surge, peer-shareable primary",
+          "text": "we leverage the OpenRouter platform ... to analyze over 100 trillion tokens of real-world LLM interactions across tasks, geographies, and time. In our empirical study, we observe substantial adoption of open-weight models ... plus the rise of agentic inference."
+        }
+      ],
+      "legal_clause_section": "n/a (market-usage data — arXiv study + named CNBC reporting of OpenRouter data)",
+      "document_title": "CNBC — 'Chinese AI models are gaining ground with U.S. companies as OpenAI, Anthropic costs surge' (Jul 7 2026) + OpenRouter 'State of AI' study (arXiv:2601.10088)",
+      "effective_date": "2026-07-07",
+      "source_url": "https://www.cnbc.com/2026/07/07/chinese-ai-models-costs-us-openai-anthropic.html",
+      "primary_study_url": "https://arxiv.org/abs/2601.10088",
+      "archive_url": "http://web.archive.org/web/20260717204321/https://www.cnbc.com/2026/07/07/chinese-ai-models-costs-us-openai-anthropic.html",
+      "retrieved_at": "2026-07-19T22:10:00Z",
+      "status": "Confirmed",
+      "axis_tag": "MARKET SIGNAL — deployment is voting with tokens for open-weight, self-hostable models",
+      "usage_data_vector": "The demand-side proof that the custody argument is landing in the market. If enterprises are moving a third-to-half of their OpenRouter token volume to Chinese open-weight models — models they can self-host and whose weights they control — then the sovereign-custody thesis is not theoretical; it is a purchasing pattern. The surge (4.5% H1'25 → >30% weekly since Feb 8 2026 → 46% peak) is the market doing what the custody cards argue for: routing cognition to weights you can hold, not endpoints that hold you. Ties directly to A13 (60–90% cheaper is the forcing function) and A16 (the ~4–9-month capability gap makes it a rational trade). Note the China data-jurisdiction caveat per Λ Standing Rule A: the sovereign hedge is self-hosted weights, not Chinese cloud APIs (National Intelligence Law).",
+      "sourcing_discipline": "Two-tier, per spec §3.4. (1) The specific Q2-2026 figures (4.5% / 11% / >30% weekly since Feb 8 / 46% peak, U.S.-company denominator) are from CNBC's Jul 7 2026 report of OpenRouter's own data — the CNBC article was FREELY accessible on capture (no paywall circumvented); it names OpenRouter as the data source and reproduces the chart ('Source: OpenRouter'). (2) The general surge is independently anchored to the public OpenRouter 'State of AI' arXiv primary (2601.10088), whose window ends Nov 2025 and which banks the ~1.2%→~30%-peak-weeks / ~13% avg trend (per repo E2). RETIRED aggregator figures (Qwen ~12.7%, Chinese ~45%/61% — Dataconomy/Economic Times) stay out per Gate 1 ruling; the CNBC named figures supersede them.",
+      "interpretation_flag": "OUR LANE (computer scientists, not lawyers): FACT — CNBC (Jul 7 2026), citing OpenRouter data, reports Chinese-model token share among U.S. companies above 30% weekly since Feb 8, peaking at 46%, vs an 11% trailing-year average and 4.5% in H1 2025. The OpenRouter arXiv study independently documents the broader open-weight adoption surge. No legal dimension. THE POINT (practical): the market is already routing a large share of production tokens to self-hostable open weights — the sovereignty move is happening. If you make it, make it to weights you host (Λ Rule A: China cloud APIs carry a data-jurisdiction risk the self-hosted path avoids). Not legal advice.",
+      "not_legal_advice": true,
+      "capture_tool": "Claude in Chrome + Wayback (batched)",
+      "sha256": {
+        "live_arxiv_abstract": "d554b531e20417eb57025faed2e4203d538064648915b6c5abcf606cfb2f068d",
+        "live_cnbc_figures_paragraph": "6ccf69a030e7ce23803f2723683509d0ab23362cd2d7be972f3906488ce516de",
+        "live_cnbc_chart": "ad79fdafc7cdccba212ab0f104ead2de606ca8ac7dc738791abcc9e3308291d0"
+      },
+      "board_shots": [
+        [
+          "screenshots/A12_cnbc-openrouter_live_figures-paragraph_20260719.png",
+          "LIVE — CNBC (Jul 7 2026): 'above 30% each week since Feb. 8 ... rising as high [as] 46% ... previous 12 months was just 11%, falling to 4.5% in the first half of 2025'"
+        ],
+        [
+          "screenshots/A12_cnbc-openrouter_live_chart_20260719.png",
+          "LIVE — CNBC/OpenRouter chart: 'Share of tokens from U.S. companies using OpenRouter that went to Chinese models' (Jan 2025–June 2026)"
+        ],
+        [
+          "screenshots/A12_openrouter-arxiv_live_abstract_20260719.png",
+          "PRIMARY — OpenRouter 'State of AI' 100-Trillion-Token study (arXiv:2601.10088, Jan 15 2026): 'substantial adoption of open-weight models'"
+        ]
+      ],
+      "archive_batch_note": "Wayback snapshot confirmed (existing) during Jul 19 2026 batch."
+    },
+    {
+      "claim_id": "A13",
+      "claim_type": "A",
+      "story_angle": "Antitrust & Market Power",
+      "secondary_angle": "The New Data Moat",
+      "vendor": "OpenAI / OpenRouter (pricing) — cross-vendor",
+      "deck_slide": "Slide 17 — The Price Floor (Dependency Profile vs Sovereignty Profile, $/1M output, June 2026)",
+      "deck_claim": "Open API prices run 60–90% below frontier. Dependency Profile: GPT-5.5 $30.00, Claude Opus 4.8 $25.00, Gemini 3.1 Pro $12.00. Sovereignty Profile: GLM-5.2 $4.40, Qwen 3.7 Max $3.75, DeepSeek V4 Flash $0.28.",
+      "primary_quotes_verbatim": [
+        {
+          "section": "CNBC (Jul 7 2026) — the pricing claim, named source",
+          "label": "60–90% cheaper",
+          "text": "Open source Chinese models can be “60% to 90% cheaper” than the leading Anthropic and OpenAI models, Justin Summerville, who works on data and analytics at OpenRouter, told CNBC."
+        },
+        {
+          "section": "CNBC (Jul 7 2026)",
+          "label": "GLM-5.2 within a point of Opus 4.8 at ~1/5 cost",
+          "text": "GLM 5.2 landed within a percentage point of Anthropic's Opus 4.8 on one closely watched agentic benchmark, at roughly a fifth of the cost."
+        },
+        {
+          "section": "OpenAI — GPT-5.6 announcement (Jul 9 2026), 'Availability and pricing'",
+          "label": "GPT-5.6 Sol output = $30 (resolves the deck edit)",
+          "text": "GPT‑5.6 is priced per 1M tokens across three model sizes: Sol is $5 input / $30 output; Terra is $2.50 input / $15 output; and Luna is $1 input / $6 output."
+        }
+      ],
+      "legal_clause_section": "n/a (vendor pricing pages + named market reporting)",
+      "document_title": "OpenAI GPT-5.6 pricing (Jul 9 2026) + CNBC/OpenRouter '60–90% cheaper' (Jul 7 2026)",
+      "effective_date": "2026-07-09",
+      "source_url": "https://openai.com/index/gpt-5-6/",
+      "co_source_url": "https://www.cnbc.com/2026/07/07/chinese-ai-models-costs-us-openai-anthropic.html",
+      "archive_url": "PENDING — Wayback (batched)",
+      "retrieved_at": "2026-07-19T22:18:00Z",
+      "status": "Confirmed (pricing claim + GPT-5.6 resolution); per-model Sovereignty-Profile figures flagged for vendor-pricing-page capture at assembly",
+      "axis_tag": "MARKET SIGNAL — the price floor is the forcing function behind the open-weight surge (A12)",
+      "usage_data_vector": "The economic engine under the custody story. Open, self-hostable models running 60–90% below the frontier (named to OpenRouter's Summerville via CNBC) mean the enterprise no longer has to route high-value cognition — and the reasoning trace it generates — to a vendor endpoint just to afford capable inference. Cheap, ownable weights make sovereign custody economically rational, which is why token share is moving (A12) and concentration is falling (B5). The price gap is the lever; custody is what it unlocks.",
+      "deck_edit": "DECK EDIT for Jim — RESOLVED AT CAPTURE (this is the §1 inconsistency the spec flagged). Slide 17/20 label the $30/1M frontier price point 'GPT-5.5.' Verified against the OpenAI primary (openai.com/index/gpt-5-6/, Jul 9 2026): $30 output = GPT-5.6 Sol, the current flagship; GPT-5.5 is now the prior-gen comparison model. The deck's own closing Source [10] already cites the 'GPT-5.6 family (Jul 2026).' EXACT EDIT: change 'GPT-5.5 $30.00' → 'GPT-5.6 Sol $30.00' on the pricing graphic (and any slide-20 reference), so the table matches Source [10] and the live OpenAI primary. Price ($30) and frontier positioning are unchanged — only the model label moves from 5.5 to 5.6 Sol. (Do NOT silently re-anchor — hand Jim this exact change.) If Jim instead wants to preserve a dated 'June 2026 / GPT-5.5' snapshot, then Source [10] must be changed to cite GPT-5.5 pricing rather than the GPT-5.6 family — but re-anchoring to 5.6 Sol is the recommended path since the whole Q2 corpus (CNBC Jul 7, doc 16, source [10]) is GPT-5.6-current.",
+      "honest_miss": "RESOLVED (Jul 19 2026): all five Dependency/Sovereignty per-model figures now tie to a vendor pricing page. Opus 4.8 $25, Gemini 3.1 Pro $12 (<=200k), GLM-5.2 $4.40, DeepSeek V4 Flash $0.28 match EXACTLY; Qwen 3.7 Max $3.75 is the limited-time 50%-off price (list output $7.50) — deck figure is the promo, not list. Keep the multiple honest: GPT-5.6 Sol $30 vs DeepSeek V4 Flash $0.28 is a ~107x extreme, NOT the typical gap — headline the atlas-verified ~12-53x DeepSeek collapse, not the 90-100x aggregator inflation. 'DeepSeek-V4-Flash' variant name confirmed at the vendor page.",
+      "interpretation_flag": "OUR LANE (computer scientists, not lawyers): FACT — open Chinese models run '60% to 90% cheaper' than leading US frontier models (OpenRouter's Summerville, via CNBC Jul 7 2026); GPT-5.6 Sol output is $30/1M (OpenAI primary, Jul 9 2026). No legal dimension. THE POINT (practical): the cost gap is the forcing function — capable inference is now cheap on weights you can host, so the economic argument that used to force enterprises onto frontier endpoints (and their custody terms) has weakened sharply. Price the trade honestly, and fix the deck's model label. Not legal advice.",
+      "not_legal_advice": true,
+      "capture_tool": "Claude in Chrome + Wayback (batched)",
+      "sha256": {
+        "live_openai_pricing_lineup": "d9ac2a19920457dcfd210ebd1c1b9ca05e1823809610905a3f849929ed16260c",
+        "live_cnbc_60_90_cheaper": "5ae2772bc119a02c9edfa7eb0ca5caf6572cb40cd3901c9f35be259960c1d094",
+        "anthropic-pricing_live_opus48": "4076b741847c825ba7e4478baf7aff356d08a42de3d701ba0896de1b87a529ff",
+        "google-gemini-pricing_live_gemini31pro": "9eab4a273719db42202de867a02e81528c11469b0383b74e88d9752eeca94b01",
+        "zai-glm-pricing_live_glm52": "db2483755e36c3dbb6f538eebafe22f406fa43998b8cd256c4f3a547b7ce5f36",
+        "alibaba-qwen-pricing_live_qwen37max": "ef52750ccb08581db36f0d0790c91739c4636d99c3c4fc97645ff180e93a3fa1",
+        "deepseek-pricing_live_v4flash": "584ba7017ac9326b7eab0067697ce0f5a0d5d9b7054bc6a98fa1c617377a51cc"
+      },
+      "board_shots": [
+        [
+          "screenshots/A13_openai-gpt56_live_pricing-lineup_20260719.png",
+          "LIVE — OpenAI (Jul 9 2026): 'Sol is $5 input / $30 output; Terra $2.50/$15; Luna $1/$6' + benchmark table showing GPT-5.6 vs GPT-5.5 vs Opus 4.8 vs Gemini 3.1 (resolves the deck's '$30 = GPT-5.6 Sol')"
+        ],
+        [
+          "screenshots/A13_cnbc-pricing_live_60-90-cheaper_20260719.png",
+          "LIVE — CNBC/OpenRouter (Jul 7 2026): open Chinese models '60% to 90% cheaper' (Summerville, OpenRouter); 'Price is doing the work here' (Vercel's Arora)"
+        ],
+        [
+          "screenshots/A13_anthropic-pricing_live_opus48_20260719.png",
+          "LIVE - Anthropic API pricing: Opus 4.8 = $5 in / $25 out (Dependency Profile)"
+        ],
+        [
+          "screenshots/A13_google-gemini-pricing_live_gemini31pro_20260719.png",
+          "LIVE - Google: Gemini 3.1 Pro output $12.00 (<=200k) / $18.00 (>200k)"
+        ],
+        [
+          "screenshots/A13_zai-glm-pricing_live_glm52_20260719.png",
+          "LIVE - Z.ai: GLM-5.2 output $4.40 (Sovereignty Profile)"
+        ],
+        [
+          "screenshots/A13_alibaba-qwen-pricing_live_qwen37max_20260719.png",
+          "LIVE - Alibaba: qwen3.7-max output list $7.50, limited-time 50% off = $3.75"
+        ],
+        [
+          "screenshots/A13_deepseek-pricing_live_v4flash_20260719.png",
+          "LIVE - DeepSeek: deepseek-v4-flash output $0.28 (V4-Pro $0.87); variant name confirmed"
+        ]
+      ],
+      "per_model_pricing_captured": {
+        "Claude Opus 4.8": {
+          "figure": "$25.00 / 1M output (Input $5)",
+          "source": "claude.com/pricing#api (Anthropic)",
+          "match": "EXACT",
+          "shot": "screenshots/A13_anthropic-pricing_live_opus48_20260719.png"
+        },
+        "Gemini 3.1 Pro": {
+          "figure": "$12.00 / 1M output (<=200k; $18 >200k)",
+          "source": "ai.google.dev/gemini-api/docs/pricing (live label 'Gemini 3.1 Pro Preview')",
+          "match": "EXACT at <=200k tier",
+          "shot": "screenshots/A13_google-gemini-pricing_live_gemini31pro_20260719.png"
+        },
+        "GLM-5.2": {
+          "figure": "$4.40 / 1M output (Input $1.40)",
+          "source": "docs.z.ai/guides/overview/pricing (Z.ai)",
+          "match": "EXACT",
+          "shot": "screenshots/A13_zai-glm-pricing_live_glm52_20260719.png"
+        },
+        "Qwen 3.7 Max": {
+          "figure": "$3.75 / 1M output = list $7.50 with limited-time 50% off (Input list $2.50)",
+          "source": "alibabacloud.com/help/en/model-studio/model-pricing (Alibaba Model Studio)",
+          "match": "PROMO price ($3.75 = 50% off $7.50 list) — flag that the deck figure is the discounted price, not list",
+          "shot": "screenshots/A13_alibaba-qwen-pricing_live_qwen37max_20260719.png"
+        },
+        "DeepSeek V4 Flash": {
+          "figure": "$0.28 / 1M output (Input cache-miss $0.14)",
+          "source": "api-docs.deepseek.com/quick_start/pricing/ (DeepSeek)",
+          "match": "EXACT; variant name 'DeepSeek-V4-Flash' confirmed (V4-Pro is $0.87)",
+          "shot": "screenshots/A13_deepseek-pricing_live_v4flash_20260719.png"
+        }
+      }
+    },
+    {
+      "claim_id": "A14",
+      "claim_type": "A",
+      "story_angle": "Antitrust & Market Power",
+      "secondary_angle": "The New Data Moat",
+      "vendor": "Palantir Technologies / NVIDIA (Alex Karp)",
+      "deck_slide": "Slide 02 'The Meltdown' + Slide 20 antitrust angle (Karp CNBC Jul 1 2026 + Palantir–NVIDIA sovereign deal)",
+      "deck_claim": "Karp went off on live TV two days after a sovereign-AI deal — accusing frontier labs of 'stealing the weights and alpha' — while Palantir had just announced a sovereign-AI partnership with NVIDIA selling the exact fix.",
+      "primary_quotes_verbatim": [
+        {
+          "section": "CNBC Squawk Box, Jul 1 2026 (via Mediaite transcript)",
+          "label": "the headline quote",
+          "text": "But I’m telling you, in this county, at every single enterprise I deal with, these people are livid. They’re like, ‘I am paying for tokens that create no value. These people are stealing the weights and alpha of my business, and they’re creating a wealth tax that does not help the poor, it just punishes.’"
+        },
+        {
+          "section": "CNBC Squawk Box, Jul 1 2026 (via Mediaite)",
+          "label": "own the means of production",
+          "text": "What aligns me with Nvidia, and I think is what the technical customers want, is control over their compute, their models, their data stack, and their alpha. They want to know they own the means of production, it’s not being transferred to someone else."
+        },
+        {
+          "section": "CNBC Squawk Box, Jul 1 2026 (via Mediaite)",
+          "label": "control the weights",
+          "text": "In the classified context, when the Department of War goes to you and says, ‘I need this application’ – do they get to control the weights to do it, or do you get to the control the weights? Are we really going to outsource the battlefield of this country to the consensus view in Silicon Valley?"
+        },
+        {
+          "section": "Palantir–NVIDIA release (BusinessWire, Jun 29 2026)",
+          "label": "the deal he was selling (COI)",
+          "text": "Palantir Launches Engine for Deploying NVIDIA Nemotron Open Models in Sovereign Environments. Palantir and NVIDIA Team to Enable U.S. Government’s Own Model Improvement and Operational Control of Mission-Critical AI Work. ... a strategic initiative with NVIDIA to deliver an intelligent engine for running NVIDIA AI and Nemotron open models in sovereign environments ... where open models are essential for national security."
+        }
+      ],
+      "legal_clause_section": "n/a (broadcast remarks + M&A/partnership press release)",
+      "document_title": "Karp on CNBC Squawk Box (Jul 1 2026) + Palantir–NVIDIA Nemotron sovereign-AI release (BusinessWire, Jun 29 2026)",
+      "effective_date": "2026-07-01",
+      "source_url": "https://www.businesswire.com/news/home/20260629390275/en/Palantir-Launches-Engine-for-Deploying-NVIDIA-Nemotron-Open-Models-in-Sovereign-Environments",
+      "co_source_url": "https://www.mediaite.com/media/tv/you-sound-pretty-angry-cnbc-anchor-left-stunned-as-palantir-ceo-blows-his-stack-during-wild-interview/",
+      "manifesto_source": "CAPTURED (Jul 19 2026) via Wayback snapshot of @PalantirTech's 9-point AI-sovereignty manifesto (x.com/PalantirTech/status/2072114267776491695, posted 12:25 AM ET Jul 1 / late Jun 30 2026). Point 4 verbatim: 'Controlling your weights is controlling your fate. Weights are the distilled form of hard-won, accumulated institutional knowledge. If you let others control your weights, you are allowing them to migrate the alpha of your business to theirs.' Snapshot doubles as the archive; live X is login-walled (spec 3.4).",
+      "archive_url": "PENDING — Wayback (batched: BusinessWire + Mediaite; X manifesto to confirm)",
+      "retrieved_at": "2026-07-19T21:55:00Z",
+      "status": "Confirmed",
+      "axis_tag": "MARKET MOMENT / COI — the loudest public alarm about custody came from a vendor selling the sovereign fix two days earlier",
+      "usage_data_vector": "The market's own validation of the custody thesis — with the conflict of interest that makes it a fair exhibit rather than a plant. On Jul 1 2026 Karp, on CNBC, named the exact stakes this packet documents: frontier labs 'stealing the weights and alpha' of enterprises, customers wanting to 'own the means of production' over 'their compute, their models, their data stack, and their alpha,' and 'control the weights.' Two days earlier (Jun 29), Palantir + NVIDIA had announced the sovereign-deployment engine that sells precisely that control — so Karp brought the rhetoric while holding the product. The deck's honest framing ('he brought no receipts; the vendors had already written it down') is what keeps this an antitrust/market-power exhibit and not an endorsement: the paper trail (A1/A2/A6) is the evidence; Karp is the market noticing. Mirror-imaged by Nadella (A15), who makes the same argument without the sales motive.",
+      "coi_note": "COI is explicit and on the record: Mediaite reports Karp 'appeared on the show to discuss Palantir’s expanded partnership with Nvidia, which will see the company integrate Nvidia’s Nemotron AI models into its Sovereign AI platform, allowing government agencies and enterprise customers to deploy AI in secure environments while retaining control over their data and model weights.' Present the outburst and the deal together, per deck Slide 02.",
+      "sourcing_discipline": "Primary is the CNBC broadcast (spoken record). Per spec §3.4 (do not circumvent paywalls), the verbatim transcript is anchored to the public co-source Mediaite (Jul 1 2026, David Gilmour), which reproduces the segment and links 'Watch above via CNBC.' The Palantir–NVIDIA deal is captured from the BusinessWire primary directly. Karp's 'stealing the weights and alpha' is reported speech (Karp quoting what enterprises tell him) delivered on-air — attribute to the Karp CNBC episode, not to Karp as a first-person assertion.",
+      "interpretation_flag": "OUR LANE (computer scientists, not lawyers): FACT — Karp said it on CNBC (Jul 1 2026); the Palantir–NVIDIA sovereign-deployment engine is a real BusinessWire release dated Jun 29 2026. Both are verbatim-captured. The COI (he was selling the fix) is on the record, not our inference. No legal dimension. THE POINT (practical): the loudest market alarm about custody is real but comes from an interested party — so weigh it as market signal, and go to the primary documents (the ToS and policy cards) for the actual evidence. Not legal advice.",
+      "not_legal_advice": true,
+      "capture_tool": "Claude in Chrome + Wayback (batched)",
+      "sha256": {
+        "live_businesswire_header_lede": "4ab947e08b07ad7411032388f58de84c0b5713fc9b86f4d97c3544ad2ae3ba05",
+        "live_mediaite_header_video": "f0d22b6118438c61c0f2bde365493cd32ec89d686d4b6f94afd600921930aea3",
+        "live_mediaite_weights_alpha_quote": "3e68a4bd4700d7d40a95b53502e4bf3bce67b0ba487add4cc0f90a20221385a3",
+        "live_mediaite_control_weights_dow": "dfdfe7c96ef1de9713267843a9ec526b0ad72741de8cf004d8848b95a569be11",
+        "wayback_palantir_manifesto": "be92c62e72f0f05a2e531d0802d31be5113c1f2376b2fc99f20d50b2771e5052"
+      },
+      "board_shots": [
+        [
+          "screenshots/A14_palantir-nvidia-businesswire_live_header-lede_20260629.png",
+          "LIVE — BusinessWire (Jun 29 2026, 6:59am EDT): Palantir–NVIDIA Nemotron sovereign engine — the fix Karp was selling"
+        ],
+        [
+          "screenshots/A14_karp-cnbc-mediaite_live_header-video_20260719.png",
+          "LIVE — CNBC EXCLUSIVE (via Mediaite, Jul 1 2026): Karp on Squawk Box, 'You Sound Pretty Angry'"
+        ],
+        [
+          "screenshots/A14_karp-cnbc-mediaite_live_weights-alpha-quote_20260719.png",
+          "LIVE — verbatim: 'These people are stealing the weights and alpha of my business' + 'you sound pretty angry' + 'voice of American business'"
+        ],
+        [
+          "screenshots/A14_karp-cnbc-mediaite_live_control-weights-dow_20260719.png",
+          "LIVE — 'do they get to control the weights ... or do you' / 'own the means of production'"
+        ],
+        [
+          "screenshots/A14_palantir-manifesto_wayback_20260712.png",
+          "WAYBACK - Palantir 9-point manifesto, point 4: 'Controlling your weights is controlling your fate' (@PalantirTech, Jun 30/Jul 1 2026)"
+        ]
+      ],
+      "manifesto_archive_url": "http://web.archive.org/web/20260712214401/https://x.com/PalantirTech/status/2072114267776491695"
+    },
+    {
+      "claim_id": "A15",
+      "claim_type": "A",
+      "story_angle": "The New Data Moat",
+      "secondary_angle": "Antitrust & Market Power",
+      "vendor": "Microsoft (Satya Nadella — personal blog)",
+      "deck_slide": "Slide 18 — The Reckoning (Nadella validation) / Slide 15 'hill climbing machine' / Slide 17-18 'token capital'",
+      "deck_claim": "Nadella validated the threat: 'renting intelligence from vendor endpoints hollows out your own institutional knowledge.' (Satya Nadella, June 2026)",
+      "primary_quotes_verbatim": [
+        {
+          "section": "Reverse Information Paradox (Jul 12 2026)",
+          "label": "the custody mechanism, in the CEO's own words",
+          "text": "Models learn from “exhaust,” the prompts people write, the tools agents use, and especially the corrections people make when the model is wrong. Every correction is distilled into institutional know-how. It’s the kind of knowledge a competitor could never buy, and the kind that leaks almost imperceptibly: trace by trace, correction by correction, eval by eval."
+        },
+        {
+          "section": "Reverse Information Paradox (Jul 12 2026)",
+          "label": "pay twice / ownership",
+          "text": "In the AI age, the buyer risks giving away knowledge, just in order to use what they bought. You essentially pay for intelligence twice, once with money, and again with something even more valuable: the proprietary knowledge you must reveal to make that intelligence useful. ... In consuming intelligence, you are creating intelligence. And what you create should belong to you."
+        },
+        {
+          "section": "Reverse Information Paradox (Jul 12 2026)",
+          "label": "names the Usage-Data reservation",
+          "text": "I find it ironic that the status quo is to then turn around and impose restrictive terms on distillation, and to reserve the right to learn from customer usage and interaction data. If learning flows in only one direction, economic value converges toward the owners of the learning infrastructure rather than the creators of the knowledge itself."
+        },
+        {
+          "section": "Frontier Ecosystem essay (Jun 14 2026)",
+          "label": "token capital / hill-climbing machine",
+          "text": "A frontier without an ecosystem is not stable. ... Bring these four together and you create your own continuous learning loop (i.e. hill climbing machine) that will allow your AI investments to compound the value of your firm."
+        }
+      ],
+      "legal_clause_section": "n/a (published essays on the author's own blog)",
+      "document_title": "Satya Nadella — 'The Reverse Information Paradox' (Jul 12 2026) and 'A frontier without an ecosystem is not stable' (Jun 14 2026), sn scratchpad",
+      "effective_date": "2026-07-12",
+      "source_url": "https://snscratchpad.com/posts/reverse-information-paradox/",
+      "companion_source_url": "https://snscratchpad.com/posts/frontier-ecosystem/",
+      "archive_url": "http://web.archive.org/web/20260718082703/https://snscratchpad.com/posts/reverse-information-paradox/",
+      "retrieved_at": "2026-07-19T21:47:00Z",
+      "status": "Confirmed",
+      "axis_tag": "VALIDATION — a hyperscaler CEO independently names the exact capture mechanism and the ownership stakes",
+      "usage_data_vector": "The strongest third-party validation of the entire Custody Inversion thesis, in a hyperscaler CEO's own words. Nadella describes precisely the vector this packet documents: models 'learn from exhaust' — prompts, tool use, and 'especially the corrections people make when the model is wrong' — and that signal 'leaks almost imperceptibly: trace by trace, correction by correction, eval by eval.' He names the contractual mechanism directly ('reserve the right to learn from customer usage and interaction data' — the Usage Data bucket of A1/A2) and states the ownership norm the packet argues for ('what you create should belong to you'). This is not Grove framing; it is the CEO of the company that sells the most enterprise AI seats describing the custody problem and prescribing operator-owned learning loops (Control/Capability/Choice/Cost/Compound). When the incumbent validates the threat, the threat has arrived.",
+      "deck_edit": "DECK EDIT for Jim: Slide 18 puts 'renting intelligence from vendor endpoints hollows out your own institutional knowledge' in quotation marks attributed to Nadella. That exact sentence is NOT a verbatim Nadella line — it is a fair compression of two of his ideas (the rented-intelligence swap test + the globalization 'hollowing' analogy), but it should not sit inside quote marks as his words. FIX (pick one): (a) keep the sentence but drop the quotation marks and label it 'Nadella's argument, paraphrased'; or (b) replace with a verbatim line from the same author — recommended: 'In the AI age, the buyer risks giving away knowledge, just in order to use what they bought.' or the sharper 'Every correction is distilled into institutional know-how ... trace by trace, correction by correction, eval by eval.' (both from 'The Reverse Information Paradox,' snscratchpad.com, Jul 12 2026). Either way the underlying claim — Nadella validated the threat — is fully confirmed on his own primary.",
+      "source_provenance_note": "snscratchpad.com ('sn scratchpad — Notes on advances in technology and real-world impact') is Satya Nadella's personal blog; corroborated as the publication venue for the 'token capital / frontier ecosystem' essay by TechTimes (Jun 15 2026) and PureAI (Jun 17 2026), which describe Nadella posting the essay on his personal blog and cross-posting to X. Treated as author-primary. If Jim wants belt-and-suspenders, add Nadella's X cross-post URL at assembly.",
+      "interpretation_flag": "OUR LANE (computer scientists, not lawyers): FACT — on his own blog, Nadella names the capture mechanism (learning from 'exhaust'/corrections, 'trace by trace, correction by correction, eval by eval'), names the contractual reservation ('reserve the right to learn from customer usage and interaction data'), and states the ownership norm ('what you create should belong to you'). No legal dimension — this is an incumbent CEO corroborating the technical and market thesis. THE POINT (practical): the validation is not a vendor you can dismiss as a competitor with an axe to grind — it is Microsoft's CEO, prescribing operator-owned learning loops. That is cover for a GC or CISO to raise custody in the next negotiation. Not legal advice.",
+      "not_legal_advice": true,
+      "capture_tool": "Claude in Chrome + Wayback (batched)",
+      "sha256": {
+        "live_reverse_paradox_header": "dca930e7f43e63d5195abbc392383c0088467b53d8e6ab5c42d0f513119ec7d2",
+        "live_exhaust_trace_karp": "c7f98ae33bb65cef6980db56afa148a3248272425a8b2cc2fdba30cdfb922789",
+        "live_reverse_paradox_close": "ecb3b40b6f620fad8b3a7a24a1ef9500f3b47067b86ec996b1c2fe421c8fcf81",
+        "live_frontier_ecosystem_header": "a4b89ea3ca4f250980ee5f29e8a0383911aae634264ea8a7ed2ea026cb6f2558"
+      },
+      "board_shots": [
+        [
+          "screenshots/A15_nadella-snscratchpad_live_reverse-paradox-header_20260719.png",
+          "LIVE — Nadella, 'The Reverse Information Paradox' (sn scratchpad, Jul 12 2026): 'the buyer risks giving away knowledge, just in order to use what they bought'"
+        ],
+        [
+          "screenshots/A15_nadella-snscratchpad_live_exhaust-trace-karp_20260719.png",
+          "LIVE — the money passage: models learn from 'exhaust ... trace by trace, correction by correction, eval by eval'; 'what you create should belong to you'; + Karp quote"
+        ],
+        [
+          "screenshots/A15_nadella-snscratchpad_live_reverse-paradox-close_20260719.png",
+          "LIVE — Control/Capability/Choice/Cost/Compound → 'continuous learning loop (i.e. hill climbing machine)'"
+        ],
+        [
+          "screenshots/A15_nadella-snscratchpad_live_frontier-ecosystem-header_20260719.png",
+          "LIVE — companion essay 'A frontier without an ecosystem is not stable' (sn scratchpad, Jun 14 2026) — the 'token capital' primary"
+        ]
+      ],
+      "archive_batch_note": "Wayback snapshot confirmed (existing) during Jul 19 2026 batch."
+    },
+    {
+      "claim_id": "A16",
+      "claim_type": "A",
+      "story_angle": "Antitrust & Market Power",
+      "secondary_angle": "The New Data Moat",
+      "vendor": "Epoch AI (independent research)",
+      "deck_slide": "Slide 21 — Appendix · The Gap (Epoch AI)",
+      "deck_claim": "Open models trail the frontier by months, not generations — the capability gap oscillates near a single quarter on Epoch's Capabilities Index; independent analysts put it at four to nine months.",
+      "primary_quotes_verbatim": [
+        {
+          "section": "Lead",
+          "label": "4-month ECI gap",
+          "text": "Since January 2026, the most capable open-weight models have lagged frontier closed models by an average of four months in the Epoch Capabilities Index (ECI), our aggregate measure of model capability. The average ECI gap was 8 points, similar to the gap between GPT-5 and GPT-5.5."
+        },
+        {
+          "section": "Follow-up",
+          "label": "prior 3-month finding (roughly constant)",
+          "text": "This gap between open and closed models is slightly larger than the one we identified in our October 2025 Data Insight, which found that open models lagged by an average of three months between January 2023 and October 2025."
+        }
+      ],
+      "legal_clause_section": "n/a (independent research index — CC BY)",
+      "document_title": "Epoch AI Data Insight — Open models lag state-of-the-art closed models by 4 months",
+      "effective_date": "2026-05-29",
+      "source_url": "https://epoch.ai/data-insights/open-closed-eci-gap",
+      "archive_url": "http://web.archive.org/web/20260713201926/https://epoch.ai/data-insights/open-closed-eci-gap",
+      "retrieved_at": "2026-07-19T21:42:00Z",
+      "status": "Confirmed",
+      "axis_tag": "CONTEXT ANCHOR — the small, roughly-constant capability gap that makes self-hosted sovereignty a viable trade",
+      "usage_data_vector": "The market precondition for the whole custody argument. If the best open-weight models trail the frontier by ~4 months on Epoch's own aggregate index (up modestly from ~3 months in Oct 2025), then keeping the reasoning trace in-house — on self-hosted open weights — costs an enterprise months of raw capability, not generations. That reframes custody: routing high-value cognition to a vendor to buy a few ECI points is a small-capability rental, and the price of that rental is title to the trace (A1/A2/A6). The gap is narrow enough that sovereignty is a rational hedge, which is exactly why deployment concentration is collapsing (B5) and Chinese open-weight token share is surging (A12).",
+      "honest_miss": "PRECISION FLAG for Jim (not a sourcing failure): Epoch's own primary states ~4 months (this May-2026 insight) and ~3 months (Oct-2025 insight) — so 'months, not generations' and the low end of the deck's band are fully sourced to Epoch. The deck's UPPER bound of '9 months' is NOT Epoch's figure; it is the independent-analyst band. Recommend the deck attribute precisely: '≈4 months (Epoch Capabilities Index, May 2026); 4–9 months per independent analysts.' The '~4-9 months, roughly constant' phrasing is defensible only if the 9-month end is attributed to analysts, not Epoch.",
+      "interpretation_flag": "OUR LANE (computer scientists, not lawyers): FACT, verbatim from Epoch's own CC-BY index — the best open-weight models lag the frontier by an average of ~4 months on the ECI (an 8-point gap, 'similar to the gap between GPT-5 and GPT-5.5'), roughly constant vs. the ~3-month Oct-2025 reading. No legal dimension. THE POINT (practical): the capability cost of keeping your reasoning trace on self-hosted open weights is measured in months, not generations — so 'we have to use the frontier vendor' is a weaker forcing function than the custody terms assume. Weigh a few ECI points against title to the trace. Not legal advice.",
+      "not_legal_advice": true,
+      "capture_tool": "Claude in Chrome + Wayback (batched)",
+      "sha256": {
+        "live_statement": "c83dda134a0793e830c4ac3ef16aacb6fbe3663e2690f59c1528df6b329fe483",
+        "live_chart_ccby": "8a3a6c4d4c8d7f5534487a8bb2235c14b9dad5aabc33fa93742e23267caaefdc"
+      },
+      "board_shots": [
+        [
+          "screenshots/A16_epoch-eci_live_statement_20260719.png",
+          "LIVE — Epoch AI Data Insight (May 29, 2026): 'lagged frontier closed models by an average of four months' + ECI chart legend"
+        ],
+        [
+          "screenshots/A16_epoch-eci_live_chart-ccby_20260719.png",
+          "LIVE — full ECI chart (Closed vs Open weights) + EPOCH AI | CC-BY + Oct-2025 three-month follow-up"
+        ]
+      ],
+      "archive_batch_note": "Wayback snapshot confirmed (existing) during Jul 19 2026 batch."
+    },
+    {
+      "claim_id": "A4",
+      "claim_type": "A",
+      "story_angle": "The New Data Moat",
+      "secondary_angle": "IP & Trade Secrets",
+      "vendor": "Five-vendor posture table (Windsurf/Cognition · Cursor · Claude Code · GitHub Copilot · Replit)",
+      "deck_slide": "Slide 11 — 'Every dial is on the wrong bucket' (five-vendor posture table)",
+      "deck_claim": "Five vendors train/retain by default; the opt-outs and privacy toggles govern the wrong bucket — the protected controls reach prompts/outputs while the reasoning-trace/interaction telemetry (or title to it) sits outside them.",
+      "primary_quotes_verbatim": [
+        {
+          "section": "GitHub Copilot — Privacy Statement/ToS update (Mar 25 2026)",
+          "label": "default training ON, opt-out is the only dial",
+          "text": "Notably, from April 24 onward we will begin using interaction data—specifically inputs, outputs, code snippets, and associated context—from Copilot Free, Pro, and Pro+ users to train and improve our AI models unless you opt out. Copilot Business and Copilot Enterprise users are not affected by this update."
+        },
+        {
+          "section": "GitHub Copilot — New Section J",
+          "label": "license to train inputs+outputs unless opted out; no ownership grab",
+          "text": "Unless you opt out, you grant GitHub and our affiliates a license to collect and use your inputs (e.g., prompts and code context) and outputs (e.g., suggestions) to develop, train, and improve AI models. ... GitHub does not claim ownership of your inputs or outputs. They’re yours."
+        },
+        {
+          "section": "Claude Code — Data usage docs",
+          "label": "consumer default training + 5-year feedback retention",
+          "text": "Consumer users (Free, Pro, and Max plans): ... We will train new models using data from Free, Pro, and Max accounts when this setting is on. ... Transcripts shared via /feedback, or via /bug and /share ... are retained for 5 years. ... Consumer users who allow data use for model improvement: 5-year retention period ... Commercial users (Team, Enterprise, and API): Standard: 30-day retention period; Zero data retention: available to qualified accounts ... ZDR is not included in the standard Enterprise plan."
+        },
+        {
+          "section": "Cursor — Data Use (captured in A3)",
+          "label": "Privacy-Mode-off default trains; embeddings persist past the gate",
+          "text": "If you choose to turn off “Privacy Mode”: we may use and store codebase data, prompts, editor actions, code snippets, and other code data and actions to improve our AI features and train our models. [+] The embeddings and metadata about your codebase (hashes, file names) may be stored in our database. (See card A3 for full capture.)"
+        },
+        {
+          "section": "Replit — Privacy Policy (Legal Bases + Usage Info + De-Identified)",
+          "label": "code/interaction used to train code-gen ML on a legitimate-interest basis; de-identified data escapes the policy",
+          "text": "Legitimate interests. ... we have a legitimate interest in using your information for product development and internal analytics purposes, to improve the accuracy of our machine learning technologies such as code generation, and otherwise to improve the safety, security, and performance of our Services. | Usage Information: we automatically receive information about your interactions with our Services, like ... any content you enter or post, commands you type ... | De-Identified Information: Once information has been de-identified in this way, we can use and share it for any purpose in our discretion, and this Privacy Policy no longer applies to such information."
+        }
+      ],
+      "legal_clause_section": "Per-vendor data-use/privacy docs (Q2 2026)",
+      "document_title": "Five-vendor data-use posture table — vendor privacy/data-use docs, Q2 2026",
+      "effective_date": "2026-07-19 (as-checked)",
+      "source_url": "https://github.blog/changelog/2026-03-25-updates-to-our-privacy-statement-and-terms-of-service-how-we-use-your-data/",
+      "vendor_sources": {
+        "cursor": "https://cursor.com/data-use (captured in A3; Privacy Mode default-off per deck Q2 table; embeddings/metadata persist outside gate; editor-actions train)",
+        "claude_code": "https://code.claude.com/docs/en/data-usage (captured here; consumer default training, /feedback 5-yr, ZDR not in standard Enterprise)",
+        "github_copilot": "https://github.blog/changelog/2026-03-25-... + New Section J of ToS (captured here; Free/Pro/Pro+ default-train-unless-opt-out from Apr 24 2026; Business/Enterprise exempt; no ownership claim)",
+        "windsurf": "Cognition Platform ToS (E1 / A1) is the current governing instrument — Usage Data owned outright, no opt-out on that bucket (see A1/A2). NOTE: the old Windsurf §10.2 'poison pill' is CUT (superseded ToS) per repo atlas — do NOT resurrect. Windsurf-specific data-use page capture flagged for assembly.",
+        "replit": "https://replit.com/privacy-policy (captured; last updated 2025-02-24). Code + interaction telemetry ('commands you type') used to 'improve the accuracy of our machine learning technologies such as code generation' on a LEGITIMATE-INTEREST basis (no explicit opt-in; the only 'opt-out' is the GDPR object-to-processing right, EEA/UK/Brazil). De-identified data exits the policy entirely; code is public-by-default UGC unless upgraded to private; ML-vendor sharing disclosed. Account deletion -> 30 days."
+      },
+      "archive_url": "PENDING — Wayback (batched)",
+      "retrieved_at": "2026-07-19T22:26:00Z",
+      "status": "Confirmed (5 of 5 vendor rows anchored: Cursor via A3, Claude Code, GitHub Copilot, Replit, and Windsurf via the Cognition privacy policy + Platform ToS)",
+      "axis_tag": "STRUCTURALLY-CAPTURED + ACTIVELY-TRAINED (default) — the controls offered govern a narrower bucket than the telemetry they appear to cover",
+      "usage_data_vector": "The pattern across the harness market, with the honest range shown. Three verified rows: (1) GitHub Copilot now trains on Free/Pro/Pro+ inputs+outputs+code-context BY DEFAULT (opt-out only) — though notably it does NOT claim ownership. (2) Claude Code trains on consumer tiers by default and routes /feedback transcripts to a 5-year store; ZDR is a per-org add-on not in the standard Enterprise plan. (3) Cursor (A3) trains with Privacy Mode off (default) and retains embeddings/metadata AFTER plaintext deletion — outside the privacy gate. The 'every dial is on the wrong bucket' claim is SHARPEST where the retained/owned artifact sits outside the toggle: Cursor's embeddings (survive the ZDR gate) and Cognition/Windsurf's Usage Data (owned outright, NO opt-out on that bucket — A1/A2). It is WEAKEST for GitHub, whose opt-out actually reaches the training use and which disclaims ownership — present that accurately rather than flattening all five into one verdict. The common thread that holds across all rows: the default is collect/train, and the control that matters is which bucket the opt-out/ZDR actually reaches.",
+      "precision_flag": "PRECISION for Jim: don't flatten the five into an identical 'opt-out on the wrong bucket' verdict — a technical reporter will check each. GitHub Copilot's opt-out DOES reach the training bucket and GitHub disclaims ownership, so its row is 'default-train, real opt-out, no title grab' — the LEAST egregious. The 'wrong bucket / no exit' critique is strongest for Cognition/Windsurf (Usage Data owned, no opt-out on that bucket) and Cursor (embeddings persist outside the ZDR gate). Present per-vendor posture accurately; the shared, defensible headline is 'default is collect/train; the dial's reach varies and often misses the retained artifact.' REPLIT nuance: training rides on a 'legitimate interest' basis (improve code-gen ML) with no product opt-out toggle disclosed — the only exit is the GDPR right to object (EEA/UK/Brazil); elsewhere it is default. Place Replit between GitHub (real opt-out) and Cognition (no opt-out on the owned bucket).",
+      "honest_miss": "RESOLVED to 5/5 (Jul 19 2026): windsurf.com/privacy-policy now REDIRECTS to the Cognition privacy policy (cognition.com/legal/privacy-policy), which uses Service Usage Data 'to research and innovate' / 'improve and iterate our Services' on a LEGITIMATE-INTEREST basis. Combined with the Cognition Platform ToS (A1/A2: Usage Data owned, training opt-out), the Windsurf row is now anchored to two distinct Cognition instruments. (A WebFetch of a cached Exafunction-era version showed explicit 'train...models' language; the live redirect is the Cognition unified policy - cite the live redirect.)",
+      "interpretation_flag": "OUR LANE (computer scientists, not lawyers): FACT, verbatim per vendor — GitHub Copilot trains Free/Pro/Pro+ interaction data by default (opt-out only) but claims no ownership; Claude Code trains consumer tiers by default and keeps /feedback transcripts 5 years, ZDR being a per-org Enterprise add-on; Cursor trains with Privacy Mode off (default) and retains embeddings past deletion (A3). No legal conclusions. THE POINT (practical): read each vendor's ACTUAL default and ask precisely which bucket your opt-out/ZDR reaches — for some (Cursor embeddings, Cognition Usage Data) the retained or owned artifact sits outside the toggle entirely. Negotiate the bucket, not just the switch. Not legal advice.",
+      "not_legal_advice": true,
+      "capture_tool": "Claude in Chrome + Wayback (batched)",
+      "sha256": {
+        "live_claude_code_training_policy": "3fd7c3000f5d4f6db4c26b33b325bd21093bf690b37dc9f6afb90aef93baa4f2",
+        "live_claude_code_retention": "23df244130a487c3672ff8a78addb93a89628da13749b72102a11ea79fea3a90",
+        "live_github_copilot_header": "cf989c3f5553dc4fa70db057295a558d6406b86ca741f16c26e320c5c8744acb",
+        "live_github_copilot_default_training": "297d87762c43e4986fc444b1d8ca8dbdc308fc55ea2302af4b8fcb1f4d7c6e96",
+        "live_replit_ml_legitimate_interest": "9df9926c45e95db67a3e45d5f594cfc61dd14102a684b77dd55370cc3bacaaf1",
+        "live_windsurf_cognition_research_innovate": "c84ead890ea810a78834866c5c8073aba2da0b3e6b8602162fcd54023a5acc0c"
+      },
+      "board_shots": [
+        [
+          "screenshots/A4_github-copilot_live_default-training_20260719.png",
+          "LIVE — GitHub (Mar 25 2026): 'from April 24 onward we will begin using interaction data ... from Copilot Free, Pro, and Pro+ users to train ... unless you opt out. ... Business and Enterprise ... not affected'"
+        ],
+        [
+          "screenshots/A4_claude-code-datause_live_training-policy_20260719.png",
+          "LIVE — Claude Code Data usage: consumer default training on; commercial no-train unless Development Partner Program opt-in"
+        ],
+        [
+          "screenshots/A4_claude-code-datause_live_retention_20260719.png",
+          "LIVE — Claude Code retention: consumer data-use-on = 5-year; off = 30-day; commercial 30-day; ZDR a per-org Enterprise add-on (/feedback transcripts kept 5 years)"
+        ],
+        [
+          "screenshots/A4_github-copilot_live_header_20260719.png",
+          "LIVE — GitHub Changelog header (Mar 25 2026): 'Updates to our Privacy Statement and Terms of Service: How we use your data'"
+        ],
+        [
+          "screenshots/A4_replit-privacy_live_ml-legitimate-interest_20260719.png",
+          "LIVE — Replit Privacy Policy: 'legitimate interest ... to improve the accuracy of our machine learning technologies such as code generation'; ML-vendor sharing; de-identified data exits the policy"
+        ],
+        [
+          "screenshots/A4_windsurf-cognition-privacy_live_research-innovate_20260719.png",
+          "LIVE - windsurf.com/privacy-policy -> Cognition privacy policy: 'To research and innovate' on Service Usage Data (legitimate interest)"
+        ]
+      ]
+    },
+    {
+      "claim_id": "A8",
+      "claim_type": "A",
+      "story_angle": "The Countermeasure (operator-owned context)",
+      "secondary_angle": "The New Data Moat",
+      "vendor": "Vercel (Next.js team) — evaluation",
+      "deck_slide": "Slide 14 — The Countermeasure (AGENTS.md / .agents): 'owned context 100% vs vendor retrieval 53%'",
+      "deck_claim": "AGENTS.md/.agents beats vendor-owned retrieval empirically: in Vercel's evaluation, repository context via AGENTS.md scored 100% on build/lint/test, while vendor-owned retrieval scored 53% — no better than no documentation at all.",
+      "primary_quotes_verbatim": [
+        {
+          "section": "Summary",
+          "label": "100% vs skills; retrieval = no docs",
+          "text": "A compressed 8KB docs index embedded directly in AGENTS.md achieved a 100% pass rate, while skills maxed out at 79% even with explicit instructions telling the agent to use them. Without those instructions, skills performed no better than having no documentation at all."
+        },
+        {
+          "section": "Final pass rates (table)",
+          "label": "four configurations, verbatim",
+          "text": "Baseline (no docs): 53% (—). Skill (default behavior): 53% (+0pp). Skill with explicit instructions: 79% (+26pp). AGENTS.md docs index: 100% (+47pp)."
+        },
+        {
+          "section": "Build / Lint / Test breakdown (table)",
+          "label": "AGENTS.md perfect across all three",
+          "text": "Baseline: Build 84% / Lint 95% / Test 63%. Skill (default): 84% / 89% / 58%. Skill with explicit instructions: 95% / 100% / 84%. AGENTS.md: 100% / 100% / 100%."
+        },
+        {
+          "section": "Conclusion",
+          "label": "the 'dumb' file wins",
+          "text": "This wasn't what we expected. The \"dumb\" approach (a static markdown file) outperformed the more sophisticated skill-based retrieval, even when we fine-tuned the skill triggers. ... The goal is to shift agents from pre-training-led reasoning to retrieval-led reasoning. AGENTS.md turns out to be the most reliable way to make that happen."
+        }
+      ],
+      "legal_clause_section": "n/a (vendor engineering evaluation)",
+      "document_title": "Vercel — 'AGENTS.md outperforms skills in our agent evals' (Jude Gao, Next.js)",
+      "effective_date": "2026-01-27",
+      "source_url": "https://vercel.com/blog/agents-md-outperforms-skills-in-our-agent-evals",
+      "protocol_source": "AGENTS.md / .agents protocol — Linux Foundation Agentic AI Foundation (agents.md, dotagentsprotocol.com). The eval tests the AGENTS.md standard; protocol pages cited as the standard behind the evidence (not separately screenshot-captured this pass).",
+      "archive_url": "http://web.archive.org/web/20260709211050/https://vercel.com/blog/agents-md-outperforms-skills-in-our-agent-evals",
+      "retrieved_at": "2026-07-19T22:02:00Z",
+      "status": "Confirmed",
+      "axis_tag": "COUNTERMEASURE EVIDENCE — operator-owned, version-controlled context beats on-demand vendor-style retrieval, empirically",
+      "usage_data_vector": "The empirical case for the constructive close. The custody cards show the reasoning trace flowing TO the vendor; A8 shows that the operator-owned alternative isn't just a sovereignty preference — it wins on the merits. Vercel's own eval: a static, version-controlled AGENTS.md docs index (context the enterprise owns and can diff in Git) scored 100% on Build/Lint/Test, while on-demand 'skill' retrieval in default behavior scored 53% — identical to no documentation at all (the agent simply failed to invoke the skill in 56% of cases). Passive, owned context beats active retrieval because there is 'no decision point,' 'consistent availability,' and 'no ordering issues.' This is the technical spine under GRV-001 (A17) and the .agents/memories model: keep the context — and the trace it generates — in files you control.",
+      "precision_flag": "PRECISION for Jim (deck is defensible, but state it precisely): Vercel ran FOUR configs, not two. The deck's '100% vs 53%' correctly compares AGENTS.md (100%) to vendor-style retrieval in DEFAULT behavior (53%, = baseline no-docs). BUT skills reached 79% WITH explicit hand-holding instructions (+26pp). So the honest full claim is: 'operator-owned AGENTS.md context hit 100%; on-demand retrieval matched no-documentation-at-all (53%) unless explicitly forced, and even then topped out at 79%.' Recommend the deck footnote the 79% best-case so a technical reader can't say we cherry-picked the 53%. Also: Vercel's own term is 'skills,' not 'vendor-owned retrieval' — the deck's gloss is fair (skills = on-demand retrieval the model must choose to invoke) but note the source's wording. Eval is Next.js-16-API-specific (a hardened, training-data-excluded suite), n small; it is a vendor engineering eval, not peer-reviewed — frame as a directional result, not a universal law.",
+      "interpretation_flag": "OUR LANE (computer scientists, not lawyers): FACT, verbatim from Vercel's eval — owned AGENTS.md context 100% on Build/Lint/Test; default skill retrieval 53% (= no docs); skills 79% only with explicit instructions. No legal dimension. THE POINT (practical): the operator-owned, version-controlled context file isn't just a governance nicety — in this eval it outperformed the model deciding when to fetch. If you're choosing where your agent's knowledge (and the trace it produces) lives, the owned file is both more portable AND, here, more accurate. Not legal advice.",
+      "not_legal_advice": true,
+      "capture_tool": "Claude in Chrome + Wayback (batched)",
+      "sha256": {
+        "live_header_summary": "3e09942a6a8a68d6f01bbf21a231157ec323eb1153c9b7ac577e8a68f1177af1",
+        "live_passrates_table": "c09d5430ee87032a235b5d4c592c8b4982056cd3a631d8882f6e99719f2731a0",
+        "live_buildlinttest_table": "7b08b186017a8d1fad41a90c96913b4bc6132f8bb17eeeb6366f7a52a4259497"
+      },
+      "board_shots": [
+        [
+          "screenshots/A8_vercel-eval_live_header-summary_20260719.png",
+          "LIVE — Vercel (Jude Gao, Jan 27 2026): 'AGENTS.md achieved a 100% pass rate, while skills maxed out at 79% ... Without those instructions, skills performed no better than having no documentation at all'"
+        ],
+        [
+          "screenshots/A8_vercel-eval_live_passrates-table_20260719.png",
+          "LIVE — Final pass rates: Baseline 53%, Skill default 53% (+0pp), Skill+instructions 79% (+26pp), AGENTS.md 100% (+47pp)"
+        ],
+        [
+          "screenshots/A8_vercel-eval_live_buildlinttest-table_20260719.png",
+          "LIVE — Build/Lint/Test: AGENTS.md 100%/100%/100% vs Baseline 84%/95%/63%; 'the \"dumb\" approach ... outperformed ... skill-based retrieval'"
+        ]
+      ],
+      "archive_batch_note": "Wayback snapshot confirmed (existing) during Jul 19 2026 batch."
+    },
+    {
+      "claim_id": "B1",
+      "claim_type": "B",
+      "story_angle": "Retention & Disclosure (consumer scope)",
+      "secondary_angle": "The Pledges Have Holes",
+      "vendor": "OpenAI OpCo, LLC",
+      "deck_slide": "Slide 15 'Custody alone is exposure' (retention/disclosure exhibit)",
+      "deck_claim": "A court ordered OpenAI to preserve output logs that would otherwise be deleted (including at a user's request) and to produce ~20 million de-identified consumer ChatGPT logs to plaintiffs. Consumer scope; retention/disclosure axis only.",
+      "primary_quotes_verbatim": [
+        {
+          "section": "Preservation Order, ECF 551 (Wang, 5/13/2025)",
+          "label": "deleted chats preserved",
+          "text": "OpenAI is NOW DIRECTED to preserve and segregate all output log data that would otherwise be deleted on a going forward basis until further order of the Court (in essence, the output log data that OpenAI has been destroying), whether such data might be deleted at a user's request or because of 'numerous privacy laws and regulations' that might require OpenAI to do so."
+        },
+        {
+          "section": "Production order (Wang, Nov 2025; affirmed by Stein, 1/5/2026)",
+          "label": "~20M de-identified consumer logs",
+          "text": "OpenAI must now produce 20 million de-identified ChatGPT logs to both news plaintiffs and class plaintiffs."
+        },
+        {
+          "section": "Stein ruling (via Jones Walker / NatLawReview, 1/6/2026)",
+          "label": "voluntary submission defeats privacy objection",
+          "text": "ChatGPT users, unlike wiretap subjects, 'voluntarily submitted their communications' to OpenAI. That distinction proved fatal to OpenAI's privacy objection."
+        }
+      ],
+      "legal_clause_section": "Preservation Order ECF 551 (5/13/2025) + production order affirmed 1/5/2026",
+      "document_title": "In re: OpenAI, Inc. Copyright Infringement Litigation, MDL 25-md-3143 / NYT v. Microsoft 1:23-cv-11195 (S.D.N.Y.)",
+      "effective_date": "2025-05-13 (preservation) / 2026-01-05 (production affirmed)",
+      "source_url": "https://docs.justia.com/cases/federal/district-courts/new-york/nysdce/1:2023cv11195/612697/551",
+      "co_source_url": "https://natlawreview.com/article/openai-loses-privacy-gambit-20-million-chatgpt-logs-likely-headed-copyright",
+      "archive_url": "http://web.archive.org/web/20260416015333/https://docs.justia.com/cases/federal/district-courts/new-york/nysdce/1:2023cv11195/612697/551",
+      "retrieved_at": "2026-07-19T23:05:00Z",
+      "status": "Confirmed (court primary for preservation; public legal source for the 20M; consumer scope)",
+      "axis_tag": "RETENTION/DISCLOSURE - a litigation hold reached consumer conversations that users had deleted or that would otherwise be deleted",
+      "sourcing_discipline": "Two-tier per spec 3.4. (1) The preservation order (deleted logs retained) is quoted from the SDNY order itself via the Justia court-doc mirror (Filing 551, Magistrate Judge Ona T. Wang, 5/13/2025) - a court primary, not the deck paraphrase. (2) The 20M de-identified production figure and District Judge Sidney Stein's 1/5/2026 affirmance are anchored to a public legal analysis (Andrew R. Lee, Jones Walker LLP, via National Law Review, 1/6/2026); Bloomberg Law's Nov 12 2025 coverage is the paywalled analyst, footnoted per spec, not circumvented. SCOPE DISCIPLINE: this is the CONSUMER ChatGPT log corpus (0.5% of tens of billions of preserved logs); enterprise/API/ZDR customers are NOT claimed - retention/disclosure axis only, per spec.",
+      "usage_data_vector": "The court record proving the delete button is not the end-state. OpenAI was ordered to preserve output logs that would otherwise be deleted - explicitly including logs a user asked to delete - and then to hand 20M de-identified consumer conversations to plaintiffs. De-identification did not shield them (Stein: users 'voluntarily submitted their communications'). Same mechanism as the ToS cards (A1/A5/A6): 'deleted' and 'de-identified' are transformations, not walls, and a litigation hold or discovery order reaches the retained record.",
+      "interpretation_flag": "OUR LANE (computer scientists, not lawyers): FACT - a federal court directed OpenAI to preserve output logs that would otherwise be deleted (incl. at a user's request) and to produce 20M de-identified consumer ChatGPT logs; de-identification did not exempt them. THE POINT (practical): user deletion and de-identification do not put a consumer conversation beyond retention or discovery - a preserved, de-identified record can still be produced. Consumer scope; we do not claim this reached enterprise/API/ZDR data. Not legal advice.",
+      "not_legal_advice": true,
+      "capture_tool": "Claude in Chrome + Justia court-doc mirror + Wayback",
+      "sha256": {
+        "court_preservation_order_551": "9da1934c2a03b30883eacab4aa03aa4c9681e6fb27b23500759f08be0cace9b5",
+        "natlawreview_20M_production": "8336ec30d28aded909d252f7610029ccf93c0ec82114de45a8b3585e34b8bbac"
+      },
+      "board_shots": [
+        [
+          "screenshots/B1_openai-preservation-order-551_live_20260719.png",
+          "COURT PRIMARY - SDNY Filing 551 (Wang, 5/13/2025): 'preserve and segregate all output log data that would otherwise be deleted ... whether such data might be deleted at a user's request'"
+        ],
+        [
+          "screenshots/B1_openai-20M-production_natlawreview_20260719.png",
+          "PUBLIC CO-SOURCE - Jones Walker / NatLawReview (1/6/2026): 'OpenAI must now produce 20 million de-identified ChatGPT logs'; Stein affirmed Wang's order 1/5/2026"
+        ]
+      ]
+    },
+    {
+      "claim_id": "B2",
+      "claim_type": "B",
+      "story_angle": "The Pledges Have Holes",
+      "secondary_angle": "The New Data Moat",
+      "vendor": "Anthropic, PBC",
+      "deck_slide": "Hole 2 - the 30-day retention mandate overriding ZDR",
+      "deck_claim": "A safety mandate imposed 30-day retention on all covered-model traffic (including via AWS Bedrock), overriding negotiated zero-data-retention (ZDR).",
+      "primary_quotes_verbatim": [
+        {
+          "section": "Lede",
+          "label": "30-day retention on every platform",
+          "text": "we are requiring limited data retention and review as part of our safety work. Prompts submitted to, and outputs generated by, covered models are retained for 30 days to support our safety work, on every platform where these models are offered."
+        },
+        {
+          "section": "Effective date / scope",
+          "label": "applies to Mythos-class, effective Jun 9 2026",
+          "text": "This applies to Mythos-class models and future models with similar capabilities that we designate as covered models. ... This policy, described below, goes into effect on June 9, 2026."
+        },
+        {
+          "section": "Who this applies to",
+          "label": "overrides ZDR incl. AWS Bedrock",
+          "text": "This change only applies to organizations that have set up workspaces with zero data retention (ZDR) in Claude Console, use Claude Code with ZDR in Claude Enterprise, or access Claude through AWS Bedrock, Google Cloud Agent Platform, or Microsoft Foundry with ZDR."
+        },
+        {
+          "section": "Through Amazon Bedrock",
+          "label": "retention required to access",
+          "text": "Through Amazon Bedrock: Retention will need to be enabled to access covered models, and retained data stays in AWS."
+        }
+      ],
+      "legal_clause_section": "Privacy Center - 'Data retention practices for Covered Models'",
+      "document_title": "Anthropic Privacy Center - Data retention practices for Covered Models",
+      "effective_date": "2026-06-09",
+      "source_url": "https://privacy.claude.com/en/articles/15425996-data-retention-practices-for-covered-models",
+      "archive_url": "http://web.archive.org/web/20260716123659/https://privacy.claude.com/en/articles/15425996-data-retention-practices-for-covered-models",
+      "retrieved_at": "2026-07-19T23:09:00Z",
+      "status": "Confirmed (live + archived; Anthropic's own primary)",
+      "axis_tag": "RETENTION - a safety mandate installs a 30-day retention floor that a negotiated ZDR agreement does not reach for covered models",
+      "distinct_from_B4": "DISTINCT EVENT from B4. B2 = the RETENTION CONDITION: covered (Mythos-class) models carry a mandatory 30-day retention that overrides ZDR on every platform incl. AWS Bedrock, effective Jun 9 2026. B4 = the EXPORT-CONTROL SHUTDOWN: Commerce pulled Fable 5/Mythos 5 offline via a letter on Jun 12 2026. Both involve Fable/Mythos but are different events three days apart - keep visibly separate so a reporter does not read one claim as double-counted.",
+      "usage_data_vector": "The ZDR carve-out, stated by the vendor. An enterprise that negotiated zero data retention finds that for covered models the floor is 30 days 'on every platform where these models are offered' - including AWS Bedrock, where 'retention will need to be enabled to access covered models.' The strongest retention pledge in the market has an exception written into it the moment the model is capable enough to matter.",
+      "interpretation_flag": "OUR LANE (computer scientists, not lawyers): FACT, verbatim - covered (Mythos-class) models carry a mandatory 30-day retention of prompts and outputs on every platform, effective Jun 9 2026, and this reaches organizations that had ZDR set up (Console, Claude Code Enterprise, AWS Bedrock, Google Cloud, Azure Foundry). THE POINT (practical): a negotiated ZDR does not automatically survive a capability class the vendor designates as 'covered' - if you rely on ZDR, confirm whether it holds for the newest models before you route them work. Not legal advice.",
+      "not_legal_advice": true,
+      "capture_tool": "Claude in Chrome + Wayback",
+      "sha256": {
+        "live_header_30day": "fd76ada2d1cd7ebffb506b0ffad4a9d22c2a1bf2d1f6f9a97cdbd7d68413b4c8",
+        "live_zdr_bedrock_scope": "d2560751802af2512a2474ef58770daf79302d6ee1f30fcb1ba703ac903ae990"
+      },
+      "board_shots": [
+        [
+          "screenshots/B2_anthropic-covered-models-retention_live_header_20260719.png",
+          "LIVE - Anthropic: covered models 'retained for 30 days ... on every platform', effective June 9, 2026"
+        ],
+        [
+          "screenshots/B2_anthropic-covered-models-retention_live_zdr-scope_20260719.png",
+          "LIVE - overrides ZDR: applies to workspaces with ZDR and to AWS Bedrock / Google Cloud / Azure Foundry with ZDR"
+        ]
+      ]
+    },
+    {
+      "claim_id": "B3",
+      "claim_type": "B",
+      "story_angle": "The Pledges Have Holes",
+      "secondary_angle": "The New Data Moat",
+      "vendor": "Academic (T. Christakis) + Anthropic terms",
+      "deck_slide": "'One thumbs-up overrides your opt-out' + /feedback 5-year store",
+      "deck_claim": "A single thumbs-up/down can route the whole conversation into training even after a user opts out; Claude Code /feedback transcripts are kept 5 years.",
+      "primary_quotes_verbatim": [
+        {
+          "section": "Christakis, Part I, sec.3 (p.16-17)",
+          "label": "feedback overrides opt-out",
+          "text": "even after opting out, if the user clicks a thumbs-up or thumbs-down button on any response, the entire conversation associated with that feedback may be used for training. [documented for OpenAI; a parallel provision is quoted for xAI/Grok]"
+        },
+        {
+          "section": "Christakis, Outline (p.16)",
+          "label": "what an opt-out actually reaches",
+          "text": "To what extent may the provider treat a consumer interaction as material for training and product development, and what does an opt-out actually accomplish? What is excluded from the opt-out, and what remains visible to the provider even after the user exercises every available control?"
+        },
+        {
+          "section": "Anthropic (banked in A6 / A4)",
+          "label": "the Anthropic-specific sink",
+          "text": "A6 banks Anthropic's own thumbs-up -> entire conversation stored up to 5 years, de-linked, training-eligible; A4 banks Claude Code /feedback (and /bug, /share) transcripts retained for 5 years."
+        }
+      ],
+      "legal_clause_section": "n/a (academic study) + Anthropic feedback terms (A6/A4)",
+      "document_title": "Theodore Christakis, 'You Trust Your Chatbot With Everything. Should You?' (ai-regulation.com / MIAI, Mar 2026)",
+      "effective_date": "2026-03",
+      "source_url": "https://ai-regulation.com/wp-content/uploads/2026/03/You-Trust-Your-Chatbot-With-Everything.-Should-You-Theodore-CHRISTAKIS.pdf",
+      "landing_url": "https://ai-regulation.com/you-trust-your-chatbot-with-everything-should-you/",
+      "archive_url": "PENDING - Wayback (PDF; save to trigger at final assembly)",
+      "retrieved_at": "2026-07-19T23:12:00Z",
+      "status": "Confirmed (academic primary for the loophole; Anthropic-specific sink banked in A6/A4)",
+      "axis_tag": "ACTIVELY-TRAINED (via feedback) - an explicit-feedback click is a training trigger that a training opt-out does not stop",
+      "sourcing_discipline": "The general 'thumbs-up overrides opt-out' loophole is documented in a peer academic study (Christakis, Grenoble MIAI, Mar 2026) and is quoted there for OpenAI and xAI/Grok. Christakis does NOT quote identical override language for Anthropic; Anthropic's version of the same mechanism is the 5-year, de-linked, training-eligible feedback store already captured as a vendor primary in A6, plus the Claude Code /feedback 5-year retention in A4. Present B3 as: industry loophole (Christakis) + Anthropic-specific 5-year feedback sink (A6/A4) - do not attribute the OpenAI/Grok override sentence to Anthropic.",
+      "usage_data_vector": "Why the opt-out is narrower than it reads. A user who disables training and then rates a response can re-enable training for that conversation with one click; Christakis frames the core question - 'what does an opt-out actually accomplish ... what remains visible ... even after the user exercises every available control?' For Anthropic the same signal lands in a 5-year, training-eligible feedback store (A6) and Claude Code /feedback transcripts kept 5 years (A4). The reward label is the point of the bucket.",
+      "interpretation_flag": "OUR LANE (computer scientists, not lawyers): FACT - an academic study documents that clicking thumbs-up/down can send the whole conversation to training even after opt-out (quoted for OpenAI and xAI); Anthropic's parallel mechanism is a 5-year, de-linked, training-eligible feedback store (A6) and 5-year /feedback retention in Claude Code (A4). THE POINT (practical): a training opt-out governs the default flow, not a feedback click - set policy on who clicks thumbs-up in which tier, because that one action can retain and train on the conversation for years. Not legal advice.",
+      "not_legal_advice": true,
+      "capture_tool": "Claude in Chrome + arXiv/PDF + WebFetch (verbatim)",
+      "sha256": {
+        "christakis_p16_outline": "4cabc2d472b56edd2bedd894edf8caf02d05a08fe2309980d966b9e8fe2a0e86",
+        "christakis_p17_section1": "f0e6d4458c7ef849c0b584ada2615c610ce52251ac3e21fdba2b2ad3531f8337"
+      },
+      "board_shots": [
+        [
+          "screenshots/B3_christakis-paper_live_p16-outline_20260719.png",
+          "ACADEMIC PRIMARY - Christakis (Mar 2026): 'what does an opt-out actually accomplish ... what remains visible ... even after the user exercises every available control?'"
+        ],
+        [
+          "screenshots/B3_christakis-paper_live_p17-section1_20260719.png",
+          "ACADEMIC PRIMARY - sec. I 'Your Words, Their Data? Training Models With Consumer Chatbot Conversations'; opting out often costs functionality, diminishing voluntariness"
+        ]
+      ]
+    },
+    {
+      "claim_id": "B4",
+      "claim_type": "B",
+      "story_angle": "Geopolitics & Export Control",
+      "secondary_angle": "The New Data Moat",
+      "vendor": "Anthropic, PBC (named)",
+      "deck_slide": "Exhibit B - the June 12 blackout",
+      "deck_claim": "On June 12 2026 the U.S. Commerce Department ordered Anthropic, via a letter, to suspend worldwide access to Claude Fable 5 and Mythos 5 (including via AWS Bedrock); controls were lifted and access restored ~July 1 2026 - a ~19-day shutdown.",
+      "primary_quotes_verbatim": [
+        {
+          "section": "Anthropic statement (party admission), Jun 12 2026",
+          "label": "the directive + abrupt worldwide disable",
+          "text": "The US government, citing national security authorities, has issued an export control directive to suspend all access to Fable 5 and Mythos 5 by any foreign national, whether inside or outside the United States, including foreign national Anthropic employees. The net effect of this order is that we must abruptly disable Fable 5 and Mythos 5 for all our customers to ensure compliance. Access to all other Anthropic models will not be affected."
+        },
+        {
+          "section": "Anthropic statement, Jun 12 2026",
+          "label": "it was a letter, not a rule",
+          "text": "We received the directive from the government today at 5:21pm (ET). The letter did not provide specific details of its national security concern. Our understanding is that the government believes it has become aware of a method of bypassing, or 'jailbreaking' Fable 5."
+        },
+        {
+          "section": "CNBC (Ashley Capoot), Jun 30 2026",
+          "label": "controls lifted, access restored",
+          "text": "Anthropic said the U.S. Department of Commerce has lifted the export controls on its Claude Fable 5 and Mythos 5 models. ... The crackdown on Anthropic was gaining criticism from a number of tech executives and investors, in part because it handed valuable time to Chinese open-source developers that are trying to catch up."
+        }
+      ],
+      "legal_clause_section": "n/a (government-directed order via letter + vendor statement + named reporting)",
+      "document_title": "Anthropic - 'Statement on the US government directive to suspend access to Fable 5 and Mythos 5' (Jun 12 2026) + CNBC (Jun 30 2026)",
+      "effective_date": "2026-06-12 (shutdown) / ~2026-06-30-07-01 (restored)",
+      "source_url": "https://www.anthropic.com/news/fable-mythos-access",
+      "co_source_url": "https://www.cnbc.com/2026/06/30/anthropic-says-trump-admin-has-lifted-export-controls-on-claude-fable-5-and-mythos-5.html",
+      "archive_url": "http://web.archive.org/web/20260718142357/https://www.anthropic.com/news/fable-mythos-access",
+      "retrieved_at": "2026-07-19T23:07:00Z",
+      "status": "Confirmed (party admission + named outlet; front-page, undisputed)",
+      "axis_tag": "GEOPOLITICS/EXPORT CONTROL - a government letter took a frontier model offline worldwide, incl. AWS Bedrock, for ~19 days",
+      "realistic_primary_caveat": "Per spec: the primary is a DIRECTED ORDER / LETTER, not a Federal Register rule - Anthropic's own statement confirms this ('We received the directive ... The letter did not provide specific details'). Do not imply a Fed Register notice that does not exist. Anchor is Anthropic's own admission (a party statement) + CNBC/Forbes/Al Jazeera/Fortune, all of which name Anthropic and both models. The knowledgehubmedia.com writeup is NOT used as an anchor (aggregator, no government primary).",
+      "distinct_from_B2": "DISTINCT from B2 (the Jun 9 covered-models 30-day retention mandate). B4 is the Jun 12 export-control shutdown - a different event three days later.",
+      "usage_data_vector": "The sovereignty argument made concrete by the state. A single government letter, with no rule and thin stated reasoning, pulled a frontier model offline for every customer worldwide - including on AWS Bedrock - for ~19 days. An enterprise that had routed critical work to that endpoint had no recourse. This is the custody thesis at the infrastructure layer: if you do not control the weights, a third party (here, the U.S. government) can revoke your access overnight. Ties to A12/A14 - the shutdown 'handed valuable time to Chinese open-source developers.'",
+      "interpretation_flag": "OUR LANE (computer scientists, not lawyers): FACT - by Anthropic's own statement, a U.S. government export-control letter (received 5:21pm ET, Jun 12 2026) forced Anthropic to abruptly disable Fable 5 and Mythos 5 for all customers worldwide; CNBC reports Commerce lifted the controls ~Jun 30/Jul 1 (~19-day shutdown). The primary is a directed letter, not a Fed Register rule. THE POINT (practical): access to a vendor endpoint is revocable by parties who are not you - weigh that continuity risk against the convenience of not holding the weights. Not legal advice.",
+      "not_legal_advice": true,
+      "capture_tool": "Claude in Chrome + Wayback",
+      "sha256": {
+        "anthropic_statement_shutdown": "ca27df305ffed5aae0a6477ab9c7e06162d5fbe5d6a13080fb2a3a058512893d",
+        "cnbc_controls_lifted": "0e85e6ae9959a571681c93ad9e1cd404126548657ca6cf1c4dc8dbf72ad610f9"
+      },
+      "board_shots": [
+        [
+          "screenshots/B4_anthropic-fable-mythos-shutdown_live_20260612.png",
+          "PARTY ADMISSION - Anthropic (Jun 12 2026): 'an export control directive to suspend all access to Fable 5 and Mythos 5 ... we must abruptly disable [them] for all our customers'; 'received ... at 5:21pm (ET) ... The letter ...'"
+        ],
+        [
+          "screenshots/B4_cnbc-export-controls-lifted_live_20260630.png",
+          "NAMED OUTLET - CNBC (Jun 30 2026): 'the U.S. Department of Commerce has lifted the export controls on its Claude Fable 5 and Mythos 5 models' (restore endpoint; ~19-day window)"
+        ]
+      ]
+    },
+    {
+      "claim_id": "B5",
+      "claim_type": "B",
+      "story_angle": "Antitrust & Market Power",
+      "secondary_angle": "The New Data Moat",
+      "vendor": "The Grove Foundation (derived metric - reproducible)",
+      "deck_slide": "Slide 21 - concentration is collapsing (HHI)",
+      "deck_claim": "Enterprise deployment concentration fell ~60% in a quarter; HHI 4,100 -> 1,705.",
+      "primary_quotes_verbatim": [
+        {
+          "section": "Repo: scores-snapshot-q2-2026.md, 'Lambda Concentration Index (HHI)'",
+          "label": "authoritative endpoints",
+          "text": "March 2026: HHI = 4,118 (Highly Concentrated). June 2026: HHI = 1,705 (Moderately Concentrated). Delta vs March: -2,413 (-59%). Crossed DOJ threshold."
+        },
+        {
+          "section": "Repo: findings-collapse-q2-2026.md, Board finding 4",
+          "label": "method + caveat",
+          "text": "Concentration is collapsing. HHI fell 4,118 -> 1,705 (across the DOJ threshold). Caveat: any disaggregation mechanically reduces HHI; the Rule A split is analytically motivated (divergent beta_reg, licensing, demand curves) but readers should note the effect."
+        }
+      ],
+      "legal_clause_section": "n/a (derived market-concentration metric; methodology + inputs published in-repo)",
+      "document_title": "Grove Lambda Standings Q2 2026 - Lambda Concentration Index (HHI) reproducibility kit",
+      "effective_date": "2026-06",
+      "source_url": "repo: June-2026/deliverables/notebooklm/06-scores-snapshot-q2-2026.md (+ 03-findings-collapse-q2-2026.md)",
+      "archive_url": "n/a (Grove-internal derivation; published methodology)",
+      "retrieved_at": "2026-07-19T23:15:00Z",
+      "status": "Confirmed (reproducible; Grove-derived, both endpoints computed the same way)",
+      "axis_tag": "MARKET STRUCTURE - deployment concentration proxied by Lambda-weighted share; both endpoints computed identically",
+      "hhi_repro_kit": {
+        "formula": "HHI = sum of squared percent market shares, scale 0-10,000",
+        "doj_thresholds": ">2,500 highly concentrated; 1,500-2,500 moderately concentrated; <1,500 competitive/unconcentrated",
+        "authoritative_endpoints": "March 2026 = 4,118 (Highly Concentrated); June 2026 = 1,705 (Moderately Concentrated); -2,413 (-59%), crossed the 2,500 line",
+        "deck_rounding": "The deck's '4,100' is a rounding of the repo's precise 4,118. Endpoint 1,705 matches.",
+        "same_method_note": "Both endpoints are computed from the SAME Lambda-weighted deployment-share distribution across the scored board (Rule-A open-weight split applied consistently), resolving the spec 2.5 concern that the deck drew the two endpoints from different methods.",
+        "proxy_label": "Lambda-weighted / token share is a PROXY for deployment concentration, NOT revenue share.",
+        "rule_a_caveat": "Rule-A disaggregation (splitting open-weight leaders into individual rows) mechanically lowers HHI; it is analytically motivated (divergent beta_reg, licensing, demand curves) but should be disclosed - the repo does so.",
+        "independent_cross_check": "An independent reconstruction anchored to the ONE confirmed external figure (Chinese-cohort token share ~4.5% H1-2025 -> >30% weekly Q2-2026, CNBC/OpenRouter A12) with the remaining provider splits modeled: Q1-2025 HHI = 4,114; Q2-2026 HHI = 1,722 (58% fall). Same zones and delta as the repo's Lambda-derived figures - corroborative, not authoritative. Inputs published in README so anyone can re-square them."
+      },
+      "usage_data_vector": "The market-structure evidence that the custody trade is already being made. However you proxy it - the Grove Lambda-weighted deployment share (4,118 -> 1,705) or the CNBC/OpenRouter Chinese-cohort token share (4.5% -> >30%) - concentration fell across a DOJ threshold in ~a quarter as deployment spread to self-hostable open weights (A12/A13/A16). Token share is a proxy for deployment concentration, not revenue; and the Rule-A split inflates the move, which we disclose.",
+      "interpretation_flag": "OUR LANE (computer scientists, not lawyers - and note this is a Grove-derived metric): FACT - computed identically at both endpoints from the Lambda-weighted deployment-share distribution, HHI fell 4,118 -> 1,705 (-59%), crossing the DOJ 2,500 line from highly- to moderately-concentrated; an independent OpenRouter-token-share-anchored reconstruction lands in the same zones (4,114 -> 1,722). Token share is a PROXY for deployment concentration, not revenue, and Rule-A disaggregation inflates the move (disclosed). THE POINT (practical): deployment is de-concentrating fast as open weights spread - the 'everyone is on the same two vendors' assumption is weakening. Not legal advice.",
+      "not_legal_advice": true,
+      "capture_tool": "repo derivation + independent HHI recomputation (README kit)",
+      "sha256": {},
+      "board_shots": []
+    },
+    {
+      "claim_id": "C1",
+      "claim_type": "C",
+      "story_angle": "IP & Trade Secrets",
+      "rests_on": [
+        "A1 (Cognition ToS §3.3.2)"
+      ],
+      "underlying_primary_quote": "Cognition owns all right, title, and interest in and to the Usage Data. (§3.3.2)",
+      "grove_interpretation": "Grove's reading: 'all right, title, and interest' is the language of OWNERSHIP (an assignment), not a LICENSE (permission to use). A license would say 'you grant us a right to use'; this vests title in the vendor.",
+      "practical_point": "THE POINT (practical): if the bucket that now holds your reasoning-trace telemetry is owned outright, opt-out/ZDR on Customer Data does not reach it - read §3.3.2 against your own contract's Usage-Data clause before you renew.",
+      "independent_expert_view": "PLACEHOLDER - attach a named IP/trade-secret attorney's on-record view on ownership-vs-license before publication.",
+      "status": "Interpretation - supported",
+      "interpretation_flag": "OUR LANE (computer scientists, not lawyers): this card is GROVE'S READING of a captured primary, labeled as interpretation, not evidence. FACT lives on the cited primary card(s); the reading below is argument. THE POINT (practical): if the bucket that now holds your reasoning-trace telemetry is owned outright, opt-out/ZDR on Customer Data does not reach it - read §3.3.2 against your own contract's Usage-Data clause before you renew. Not legal advice.",
+      "not_legal_advice": true,
+      "badge_ceiling": "Interpretation - supported (no higher)",
+      "board_shots": []
+    },
+    {
+      "claim_id": "C2",
+      "claim_type": "C",
+      "story_angle": "IP & Trade Secrets",
+      "rests_on": [
+        "A5 (OpenAI §4)",
+        "A6 (Anthropic de-link)",
+        "A1 (Cognition §1.7)"
+      ],
+      "underlying_primary_quote": "...it has already been de-identified and disassociated from your account when you allow us to use your Content to improve our models. (OpenAI §4) / We de-link your feedback from your user ID (Anthropic) / anonymized and aggregated (Cognition §1.7)",
+      "grove_interpretation": "Grove's reading: 'de-identified/anonymized/de-linked' names a data TRANSFORMATION, not a legal wall. As a systems matter the transformation strips the regulated identifier while retaining the asset; it does not return control, halt retention, or prevent reconstruction/sale/subpoena.",
+      "practical_point": "THE POINT (practical): your delete/opt-out control governs identified content in your account, not content already de-identified into the model-improvement bucket - confirm what 'de-identified' excludes before you rely on the delete button.",
+      "independent_expert_view": "PLACEHOLDER - attach a privacy/data-protection expert view on whether de-identification defeats a deletion right in the relevant jurisdiction.",
+      "status": "Interpretation - supported",
+      "interpretation_flag": "OUR LANE (computer scientists, not lawyers): this card is GROVE'S READING of a captured primary, labeled as interpretation, not evidence. FACT lives on the cited primary card(s); the reading below is argument. THE POINT (practical): your delete/opt-out control governs identified content in your account, not content already de-identified into the model-improvement bucket - confirm what 'de-identified' excludes before you rely on the delete button. Not legal advice.",
+      "not_legal_advice": true,
+      "badge_ceiling": "Interpretation - supported (no higher)",
+      "board_shots": []
+    },
+    {
+      "claim_id": "C3",
+      "claim_type": "C",
+      "story_angle": "IP & Trade Secrets",
+      "rests_on": [
+        "A1 (Cognition ownership)",
+        "B1 (court-ordered production of retained/de-identified consumer logs)"
+      ],
+      "underlying_primary_quote": "Cognition owns all right, title, and interest in and to the Usage Data (A1) + a court ordered OpenAI to preserve logs that would otherwise be deleted and to produce 20M de-identified consumer logs (B1).",
+      "grove_interpretation": "Grove's reading: custody alone is exposure. Title enables sale, license, or transfer-on-acquisition; and even without title, a retained/de-identified record is reachable by subpoena or discovery (B1 shows exactly that happening). You do not need the vendor to 'train on' the data for custody to be a live risk.",
+      "practical_point": "THE POINT (practical): treat retained custody of your reasoning trace - owned or merely held - as the risk surface, independent of any training promise. Discovery and M&A both reach it.",
+      "independent_expert_view": "PLACEHOLDER - attach an M&A/litigation-discovery counsel view on transfer-on-acquisition and third-party subpoena reach.",
+      "status": "Interpretation - supported",
+      "interpretation_flag": "OUR LANE (computer scientists, not lawyers): this card is GROVE'S READING of a captured primary, labeled as interpretation, not evidence. FACT lives on the cited primary card(s); the reading below is argument. THE POINT (practical): treat retained custody of your reasoning trace - owned or merely held - as the risk surface, independent of any training promise. Discovery and M&A both reach it. Not legal advice.",
+      "not_legal_advice": true,
+      "badge_ceiling": "Interpretation - supported (no higher)",
+      "board_shots": []
+    },
+    {
+      "claim_id": "C4",
+      "claim_type": "C",
+      "story_angle": "The New Data Moat",
+      "rests_on": [
+        "A2 (Cognition ratchet: identical definition, added ownership + flipped default)"
+      ],
+      "underlying_primary_quote": "The Usage Data definition is IDENTICAL across Apr 2025 and Jun 2026 (A2); over the same window §3.3.2 ADDED 'Cognition owns all right, title, and interest' and §3.3.1 flipped training from opt-IN to opt-OUT.",
+      "grove_interpretation": "Grove's reading: the same words now mean the opposite. 'Usage Data / de-identified / interaction data' read as benign SaaS exhaust in 2025 and as owned agentic reasoning-trace telemetry in 2026 - the wording held still while the contents and the ownership posture inverted.",
+      "practical_point": "THE POINT (practical): do not assume a familiar boilerplate term carries its old meaning - diff your prior terms against the current ones (they are still linked) and note what moved.",
+      "independent_expert_view": "PLACEHOLDER - a contracts scholar's view on interpreting unchanged definitional language against a changed technical referent.",
+      "status": "Interpretation - supported",
+      "interpretation_flag": "OUR LANE (computer scientists, not lawyers): this card is GROVE'S READING of a captured primary, labeled as interpretation, not evidence. FACT lives on the cited primary card(s); the reading below is argument. THE POINT (practical): do not assume a familiar boilerplate term carries its old meaning - diff your prior terms against the current ones (they are still linked) and note what moved. Not legal advice.",
+      "not_legal_advice": true,
+      "badge_ceiling": "Interpretation - supported (no higher)",
+      "board_shots": []
+    },
+    {
+      "claim_id": "C5",
+      "claim_type": "C",
+      "story_angle": "The New Data Moat",
+      "rests_on": [
+        "A4 (five-vendor posture table)"
+      ],
+      "underlying_primary_quote": "Per-vendor defaults and toggles (A4): opt-outs/ZDR reach prompts/outputs/Customer Data, while the retained artifact (Cursor embeddings; Cognition Usage Data) or the training default often sits outside the toggle.",
+      "grove_interpretation": "Grove's reading: every dial is on the wrong bucket - the protected control governs a narrower bucket than the telemetry it appears to cover. STRONGEST for Cognition (Usage Data owned, no opt-out on that bucket) and Cursor (embeddings persist past the ZDR gate); WEAKEST for GitHub (opt-out reaches training, no ownership grab). Present per-vendor, do not flatten.",
+      "practical_point": "THE POINT (practical): read each vendor's ACTUAL default and ask precisely which bucket your opt-out/ZDR reaches - negotiate the bucket, not just the switch.",
+      "independent_expert_view": "PLACEHOLDER - a procurement/vendor-risk expert view on drafting a Usage-Data / derived-artifact carve-out.",
+      "status": "Interpretation - supported",
+      "interpretation_flag": "OUR LANE (computer scientists, not lawyers): this card is GROVE'S READING of a captured primary, labeled as interpretation, not evidence. FACT lives on the cited primary card(s); the reading below is argument. THE POINT (practical): read each vendor's ACTUAL default and ask precisely which bucket your opt-out/ZDR reaches - negotiate the bucket, not just the switch. Not legal advice.",
+      "not_legal_advice": true,
+      "badge_ceiling": "Interpretation - supported (no higher)",
+      "board_shots": []
+    },
+    {
+      "claim_id": "C6",
+      "claim_type": "C",
+      "story_angle": "The New Data Moat",
+      "rests_on": [
+        "A11 (CSAP 0.973)",
+        "A1 (title to the bucket)"
+      ],
+      "underlying_primary_quote": "CSAP predicts developer acceptance at 0.973 from the accept/reject/edit-distance signal before the suggestion renders (A11); that signal lands in the owned 'Usage Data' bucket (A1).",
+      "grove_interpretation": "Grove's reading - the core thesis: the contested asset in agentic AI is custody of the verified reasoning trace manufactured by the harness. It is demonstrably a modeled, high-value asset (A11), and vendor terms claim title to the bucket that holds it (A1) - so the asset has moved up a layer, from stored output to the interaction/reward record.",
+      "practical_point": "THE POINT (practical): decide where your reasoning trace - and title to it - lives before you route high-value cognition, because that trace is now the asset, not the exhaust.",
+      "independent_expert_view": "PLACEHOLDER - an ML/trade-secret expert view on whether interaction-derived reward labels constitute a protectable asset.",
+      "status": "Interpretation - supported",
+      "interpretation_flag": "OUR LANE (computer scientists, not lawyers): this card is GROVE'S READING of a captured primary, labeled as interpretation, not evidence. FACT lives on the cited primary card(s); the reading below is argument. THE POINT (practical): decide where your reasoning trace - and title to it - lives before you route high-value cognition, because that trace is now the asset, not the exhaust. Not legal advice.",
+      "not_legal_advice": true,
+      "badge_ceiling": "Interpretation - supported (no higher)",
+      "board_shots": []
+    },
+    {
+      "claim_id": "C7",
+      "claim_type": "C",
+      "story_angle": "The New Data Moat",
+      "rests_on": [
+        "A11 (Levenshtein/accept-reject features)",
+        "A3 (editor actions trained; embeddings persist)"
+      ],
+      "underlying_primary_quote": "developer_modified_ratio, Levenshtein edit-distance, acceptance history (A11) + 'editor actions ... to improve our AI features and train our models' with embeddings retained past deletion (A3).",
+      "grove_interpretation": "Grove's reading - the 'keylogger for cognition' framing and the Sarah vignette: the harness captures not just what you typed but how you thought - which suggestions you accepted, edited, or rejected, keystroke-adjacent - a continuous record of a developer's judgment. This is a RHETORICAL frame on real captured signals; label it as framing, not a technical claim that a keylogger is installed.",
+      "practical_point": "THE POINT (practical): the interaction telemetry is a behavioral record of cognition, not a crash log - weigh it as such when you decide what the harness may see.",
+      "independent_expert_view": "PLACEHOLDER - an independent security/telemetry expert to sanity-check the 'keylogger' analogy so it reads as frame, not overclaim.",
+      "status": "Interpretation - supported",
+      "interpretation_flag": "OUR LANE (computer scientists, not lawyers): this card is GROVE'S READING of a captured primary, labeled as interpretation, not evidence. FACT lives on the cited primary card(s); the reading below is argument. THE POINT (practical): the interaction telemetry is a behavioral record of cognition, not a crash log - weigh it as such when you decide what the harness may see. Not legal advice.",
+      "not_legal_advice": true,
+      "badge_ceiling": "Interpretation - supported (no higher)",
+      "board_shots": []
+    },
+    {
+      "claim_id": "C8",
+      "claim_type": "C",
+      "story_angle": "The Countermeasure (Grove's own)",
+      "rests_on": [
+        "A17 (GRV-001)"
+      ],
+      "underlying_primary_quote": "GRV-001 'The Autonomaton Pattern' v2.0 (CC BY 4.0, Jun 22 2026): operator-owned telemetry/config/skills; Telemetry->Recognition->Compilation->Approval->Execution; Zone Model; T3->T0 cost ratchet (A17).",
+      "grove_interpretation": "Grove's reading - AND note this is GROVE'S OWN published standard, so it is advocacy, presented as the proposed fix, not neutral evidence. GRV-001 names the failure the evidence cards document ('lien on thinking,' judgment extraction) and prescribes operator-owned, locally-held reasoning traces as the countermeasure.",
+      "practical_point": "THE POINT (practical): the constructive close - keep the context and the trace it generates in files you control (cf. A8, which shows operator-owned context also wins on the merits).",
+      "independent_expert_view": "GRV-001 is Grove's own position (party to the argument), captured and labeled as such per spec 3.4/C8 - no independent-expert view is claimed for Grove's own standard.",
+      "status": "Interpretation - supported",
+      "interpretation_flag": "OUR LANE (computer scientists, not lawyers): this card is GROVE'S READING of a captured primary, labeled as interpretation, not evidence. FACT lives on the cited primary card(s); the reading below is argument. THE POINT (practical): the constructive close - keep the context and the trace it generates in files you control (cf. A8, which shows operator-owned context also wins on the merits). Not legal advice.",
+      "not_legal_advice": true,
+      "badge_ceiling": "Interpretation - supported (no higher)",
+      "board_shots": []
+    }
+  ],
+  "source_map": "Repo primary-source atlas: June-2026/deliverables/notebooklm/13-primary-source-atlas.md (BANKED/SECONDARY/CUT status per claim). external-primaries/ E1 Cognition, E2 OpenRouter, E3 Cursor captured verbatim. Sweep sources each claim from BANKED primaries.",
+  "pending_visual_assets": [
+    "A2: April-2025 Cognition ToS Wayback shots on user's Mac desktop — embed at assembly."
+  ]
+}
