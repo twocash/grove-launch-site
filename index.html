@@ -767,6 +767,17 @@ footer a:hover { color:var(--amber-bright); }
   </div>
 </footer>
 
+<!-- ═══ ALERT NUDGE · homepage only · remove deliberately in post-launch sprint ═══ -->
+<div id="alert-nudge" style="position:fixed; bottom:28px; right:28px; z-index:90; opacity:0; pointer-events:none; transition:opacity 0.5s ease, transform 0.5s ease; transform:translateY(12px);">
+  <div style="display:flex; align-items:center; gap:0; background:var(--bg2); border:1px solid var(--amber-dim); box-shadow:0 4px 24px rgba(0,0,0,0.5);">
+    <a href="/alerts/structural-custody" style="display:flex; align-items:center; gap:10px; padding:14px 20px; text-decoration:none; font-family:var(--mono); font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:var(--amber); white-space:nowrap;">
+      <span class="pulse-dot" aria-hidden="true" style="width:6px; height:6px;"></span>
+      Q2 CIO Alert &rarr;
+    </a>
+    <button onclick="document.getElementById('alert-nudge').style.display='none'" style="background:none; border:none; border-left:1px solid var(--border); padding:14px 14px; cursor:pointer; color:var(--text-dim); font-size:14px; line-height:1;" aria-label="Dismiss">&times;</button>
+  </div>
+</div>
+
 <script>
 // Hide scroll cue on scroll
 var scrollCue=document.querySelector('.scroll-cue');
@@ -790,6 +801,23 @@ if(scrollCue){window.addEventListener('scroll',function(){if(window.scrollY>100)
       for (i = sections.length - 1; i >= 0; i--) { if (sections[i].offsetTop < scrollY - 10) { sections[i].scrollIntoView({behavior:'smooth',block:'start'}); return; } }
     }
   });
+})();
+// Alert nudge — show after hero exits viewport
+(function(){
+  var nudge=document.getElementById('alert-nudge');
+  if(!nudge)return;
+  var hero=document.getElementById('hero');
+  if(!hero)return;
+  var shown=false;
+  var io=new IntersectionObserver(function(entries){
+    if(!entries[0].isIntersecting && !shown){
+      shown=true;
+      nudge.style.opacity='1';
+      nudge.style.pointerEvents='auto';
+      nudge.style.transform='translateY(0)';
+    }
+  },{threshold:0});
+  io.observe(hero);
 })();
 </script>
 <script defer src="/_vercel/insights/script.js"></script>
