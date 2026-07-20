@@ -489,7 +489,7 @@ footer a:hover { color:var(--amber-bright); }
   <div class="nav-links">
     <a href="/ratchet">Ratchet Test</a>
     <a href="/lambda">&Lambda; Watch</a>
-    <a href="/alerts">CIO Alerts<span class="nav-new-bug" aria-hidden="true"></span></a>
+    <a href="/alerts">CIO Alerts<span class="pulse-dot" aria-hidden="true" style="width:6px; height:6px; margin-left:6px; vertical-align:top; margin-top:2px;"></span><!-- remove deliberately in post-launch sprint --></a>
     <a href="/standards">Published Standards</a>
     <a href="/observations">Observations</a>
     <a href="/membership">Membership</a>
@@ -540,20 +540,15 @@ footer a:hover { color:var(--amber-bright); }
     <p class="body-text">The industry&rsquo;s own leaders name the asymmetry. Grove publishes the architecture that answers it.</p>
   </div>
 </section>
-<!-- ═══════════════════════════════════════════════════
-     FEATURED ALERT — cio-alert-01 (self-expires 2026-04-27)
-════════════════════════════════════════════════════ -->
-<section class="section cio-alert-featured" id="featured-alert" style="background:linear-gradient(90deg,rgba(212,98,26,0.07),rgba(212,98,26,0.02)); border-top:1px solid var(--amber-dim); border-bottom:1px solid var(--border);">
-  <div class="section-inner" style="padding:28px 48px; max-width:1040px; display:grid; grid-template-columns:auto 1fr auto; gap:28px; align-items:center;">
-    <div style="font-family:var(--mono); font-size:10px; letter-spacing:0.22em; text-transform:uppercase; color:var(--amber); white-space:nowrap;">New &middot; CIO Alert 004</div>
-    <div>
-      <div style="font-family:var(--serif); font-weight:400; font-size:clamp(18px,2.1vw,24px); color:var(--text); line-height:1.25; margin-bottom:6px;"><em style="color:var(--amber); font-style:italic;">Sovereignty</em> Is All You Need</div>
-      <div style="font-family:var(--sans); font-size:13px; color:var(--text-mid); font-weight:300; line-height:1.5;">A response to Ramaswamy and Perault (WSJ, April 17, 2026). Grove's sovereignty thesis &mdash; the single architectural primitive missing from how the industry is building AI.</div>
-    </div>
-    <a href="/alerts/sovereignty-is-all-you-need" style="font-family:var(--mono); font-size:11px; letter-spacing:0.1em; color:var(--amber); text-decoration:none; border:1px solid var(--amber-dim); padding:10px 20px; white-space:nowrap; transition:background 0.2s,border-color 0.2s;" onmouseover="this.style.background='rgba(212,98,26,0.12)';this.style.borderColor='var(--amber)';" onmouseout="this.style.background='transparent';this.style.borderColor='var(--amber-dim)';">Read the Alert &rarr;</a>
+<!-- ═══ WHO PUBLISHES THIS · standards-body positioning ═══ -->
+<section class="section" id="standards-body" style="border-bottom:1px solid var(--border);">
+  <div class="section-inner">
+    <div class="eyebrow">The Grove Foundation</div>
+    <h2 class="headline">Govern the Substrate.<br><em>Commoditize the Compute.</em></h2>
+    <p class="body-text">The Grove Foundation publishes open standards for distributed AI architectures and governance. Governance should be an architectural property &mdash; not a vendor promise. Apex compute draws roughly $650 billion in capital commitments; the architectural layer you choose determines whether that investment compounds in your enterprise or your vendor&rsquo;s. When the fine print moves, architecture is the only protection that doesn&rsquo;t. All standards published CC BY 4.0.</p>
+    <p class="body-text" style="font-size:15px;"><a href="/standards" style="color:var(--amber); text-decoration:none; border-bottom:1px solid var(--amber-dim);">Read the Published Standards &rarr;</a></p>
   </div>
 </section>
-<script>(function(){var e=new Date('2026-04-27T00:00:00Z').getTime();if(Date.now()>=e){var n=document.querySelector('.cio-alert-featured');if(n)n.style.display='none';var l=document.getElementById('hero-alert-link');if(l){l.href='/alerts/telemetry-trap';l.textContent='Your telemetry is the product \u2192';}}})();</script>
 <!-- ═══════════════════════════════════════════════════
      THE GLOBAL REALITY
 ════════════════════════════════════════════════════ -->
@@ -788,9 +783,6 @@ if(scrollCue){window.addEventListener('scroll',function(){if(window.scrollY>100)
 })();
 </script>
 <script defer src="/_vercel/insights/script.js"></script>
-<!-- cio-alert-01: NEW bug, self-expires 2026-04-27 -->
-<style>.nav-new-bug{display:inline-block;width:6px;height:6px;border-radius:50%;background:#F07030;margin-left:6px;vertical-align:top;margin-top:2px;animation:nav-new-pulse 2.4s ease-in-out infinite;}@keyframes nav-new-pulse{0%,100%{opacity:1;}50%{opacity:0.35;}}</style>
-<script>(function(){var e=new Date('2026-04-27T00:00:00Z').getTime();if(Date.now()>=e){document.querySelectorAll('.nav-new-bug').forEach(function(n){n.style.display='none';});}})();</script>
 <script defer src="/announce.js"></script>
 </body>
 </html>
