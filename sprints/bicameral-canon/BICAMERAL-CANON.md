@@ -124,10 +124,10 @@ The whole enterprise is the operator's years-long felt-sense gradient — *expan
 **The institutional architecture.** Three layers, each with a distinct role:
 
 - *The Foundation* — 501(c)(6) business league. Steward of the protocol, registrar at registrar.the-grove.ai, publisher of canonical standards under CC BY 4.0. Funded by membership, registration, and research grants. Structurally non-commercial.
-- *Take Flight Advisors* — the commercial reference implementation arm. Where the patterns the Foundation publishes get tested in client engagements. Take Flight ships its own conforming Autonomatons; Take Flight is a member of the Foundation under the same terms any other operator is.
+- *Sokori* — the commercial reference implementation arm. Where the patterns the Foundation publishes get tested in production. Sokori ships its own conforming Autonomatons; Sokori is a member of the Foundation under the same terms any other operator is.
 - *Grove Ventures* — the planned $1B venture fund (Indianapolis). Funds implementation diversity in the patterns Grove judges worth compounding. Initial $10M raise structured 80% to Ventures, 20% to Foundation operations. Ventures exists because measured-and-published patterns still need multiple commercial paths to reach adoption density before any single path captures them.
 
-Each layer has its own polarity. The Foundation's polarity is standards-toward-commons. Take Flight's polarity is commercial-validation-of-standards. Ventures' polarity is implementation-diversity-funding. The three polarities compose; none of them subsume the others. This is the structural inverse of the platform-capture pattern Grove was founded to resist.
+Each layer has its own polarity. The Foundation's polarity is standards-toward-commons. Sokori's polarity is commercial-validation-of-standards. Ventures' polarity is implementation-diversity-funding. The three polarities compose; none of them subsume the others. This is the structural inverse of the platform-capture pattern Grove was founded to resist.
 
 ---
 
