@@ -32,6 +32,21 @@
       "source": "/alerts/open-weights-wont-be-enough/:path*",
       "destination": "/alerts/sovereignty-is-all-you-need/:path*",
       "permanent": true
+    },
+    {
+      "source": "/protocol/schema",
+      "destination": "/ns/autonomaton/v1",
+      "permanent": true
+    }
+  ],
+  "headers": [
+    {
+      "source": "/ns/autonomaton/v1/context.jsonld",
+      "headers": [
+        { "key": "Content-Type", "value": "application/ld+json; charset=utf-8" },
+        { "key": "Access-Control-Allow-Origin", "value": "*" },
+        { "key": "Cache-Control", "value": "public, max-age=3600" }
+      ]
     }
   ],
   "rewrites": [

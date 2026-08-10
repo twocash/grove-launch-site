@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-F11PG5KG9N"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag("js", new Date());
+  gtag("config", "G-F11PG5KG9N");
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Autonomaton Vocabulary Namespace &mdash; The Grove Foundation</title>
+<meta name="description" content="The canonical JSON-LD vocabulary namespace for the Grove Autonomaton Protocol (GRV-004) and the Autonomaton Pattern (GRV-001). Defines every term used in a published Grove Declaration, GroveKeg envelope, and reference schema.">
+<meta name="author" content="The Grove Foundation">
+<link rel="canonical" href="https://the-grove.ai/ns/autonomaton/v1">
+
+<!-- The dereferenceable JSON-LD context document for this namespace. -->
+<link rel="alternate" type="application/ld+json" href="/ns/autonomaton/v1/context.jsonld">
+
+<!-- ── Open Graph ── -->
+<meta property="og:title" content="Autonomaton Vocabulary Namespace">
+<meta property="og:description" content="The canonical JSON-LD vocabulary for the Grove Autonomaton Protocol. Every term used in a published Grove Declaration, defined and dereferenceable.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://the-grove.ai/ns/autonomaton/v1">
+<meta property="og:site_name" content="The Grove Foundation">
+
+<!-- ── Twitter Card ── -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Autonomaton Vocabulary Namespace">
+<meta name="twitter:description" content="The canonical JSON-LD vocabulary for the Grove Autonomaton Protocol. Every term used in a published Grove Declaration, defined and dereferenceable.">
+
+<!-- ── Dublin Core ── -->
+<meta name="DC.title" content="Autonomaton Vocabulary Namespace">
+<meta name="DC.creator" content="The Grove Foundation">
+<meta name="DC.publisher" content="The Grove Foundation">
+<meta name="DC.date" content="2026-08-10">
+<meta name="DC.type" content="Dataset">
+<meta name="DC.format" content="text/html">
+<meta name="DC.identifier" content="https://the-grove.ai/ns/autonomaton/v1">
+<meta name="DC.rights" content="CC BY 4.0">
+<meta name="DC.language" content="en">
+<meta name="DC.subject" content="JSON-LD, linked data, vocabulary namespace, Autonomaton Protocol, GRV-004, GRV-001, Autonomaton Declaration, GroveKeg, zone model, confirmation gate, provenance stamp, structured data">
+<meta name="DC.relation" content="https://the-grove.ai/standards/004">
+<meta name="DC.relation" content="https://the-grove.ai/standards/001">
+
+<!-- ══════════════════════════════════════════════════════════════════
+     JSON-LD — WebPage
+══════════════════════════════════════════════════════════════════ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": "https://the-grove.ai/ns/autonomaton/v1",
+  "url": "https://the-grove.ai/ns/autonomaton/v1",
+  "name": "Autonomaton Vocabulary Namespace",
+  "description": "The canonical JSON-LD vocabulary namespace for the Grove Autonomaton Protocol (GRV-004) and the Autonomaton Pattern (GRV-001).",
+  "isPartOf": { "@id": "https://the-grove.ai/#website" },
+  "inLanguage": "en",
+  "license": "https://creativecommons.org/licenses/by/4.0/"
+}
+</script>
+
+<!-- ══════════════════════════════════════════════════════════════════
+     JSON-LD — BreadcrumbList
+══════════════════════════════════════════════════════════════════ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "The Grove Foundation", "item": "https://the-grove.ai/" },
+    { "@type": "ListItem", "position": 2, "name": "Autonomaton Vocabulary Namespace", "item": "https://the-grove.ai/ns/autonomaton/v1" }
+  ]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fragment+Mono:ital@0;1&family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --amber:#D4621A; --amber-bright:#F07030; --amber-dim:#8B3D10;
+  --amber-glow:rgba(212,98,26,0.12);
+  --bg:#080808; --bg2:#0f0f0f; --bg3:#161616; --bg4:#1a1a1a;
+  --border:#252525; --border-light:#333;
+  --text:#E8E2D9; --text-dim:#7A736A; --text-mid:#B0A898;
+  --green:#4CAF72; --red:#C0392B; --yellow:#D4A017;
+  --mono:'Fragment Mono', monospace;
+  --serif:'Instrument Serif', Georgia, serif;
+  --sans:'DM Sans', sans-serif;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body { background:var(--bg); color:var(--text); font-family:var(--sans); -webkit-font-smoothing:antialiased; overflow-x:hidden; line-height:1.6; }
+strong { color:var(--text); font-weight:500; }
+em { font-style:italic; }
+body::before { content:''; position:fixed; inset:0; background-image:linear-gradient(var(--border) 1px, transparent 1px),linear-gradient(90deg, var(--border) 1px, transparent 1px); background-size:40px 40px; opacity:0.15; pointer-events:none; z-index:0; }
+nav { position:fixed; top:0; left:0; right:0; z-index:100; padding:0 48px; height:56px; display:flex; justify-content:space-between; align-items:center; background:rgba(8,8,8,0.94); backdrop-filter:blur(16px); border-bottom:1px solid rgba(37,37,37,0.5); }
+.nav-logo { font-family:var(--mono); font-size:11px; letter-spacing:0.2em; text-transform:uppercase; color:var(--amber-dim); text-decoration:none; }
+.nav-links { display:flex; gap:32px; }
+.nav-links a { font-family:var(--mono); font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-dim); text-decoration:none; padding:4px 0; border-bottom:1px solid transparent; transition:all 0.2s; }
+.nav-links a:hover, .nav-links a.active { color:var(--amber); border-bottom-color:var(--amber); }
+.nav-links a.nav-ext { color:var(--amber-dim); border:1px solid var(--amber-dim); padding:3px 10px; margin-left:8px; border-bottom:1px solid var(--amber-dim); }
+.nav-links a.nav-ext:hover { color:var(--amber); border-color:var(--amber); background:rgba(212,98,26,0.08); }
+.section { position:relative; z-index:1; }
+.section-inner { max-width:760px; margin:0 auto; padding:120px 48px 100px; }
+.eyebrow { font-family:var(--mono); font-size:11px; letter-spacing:0.25em; text-transform:uppercase; color:var(--amber); margin-bottom:20px; }
+.display { font-family:var(--serif); font-weight:400; font-size:clamp(40px,5vw,64px); line-height:1.06; color:var(--text); margin-bottom:24px; letter-spacing:-0.02em; }
+.display em { color:var(--amber); font-style:italic; }
+.headline { font-family:var(--serif); font-weight:400; font-size:clamp(24px,3vw,36px); line-height:1.12; color:var(--text); margin-bottom:20px; letter-spacing:-0.01em; }
+.lead { font-weight:300; font-size:clamp(17px,1.8vw,21px); line-height:1.6; color:var(--text); max-width:700px; margin-bottom:20px; letter-spacing:-0.005em; }
+.body-text { font-weight:300; font-size:15px; line-height:1.78; color:var(--text-mid); margin-bottom:20px; }
+.body-text a { color:var(--amber); text-decoration:none; border-bottom:1px solid var(--amber-dim); transition:all 0.2s; }
+.body-text a:hover { border-bottom-color:var(--amber); background:rgba(212,98,26,0.04); }
+.body-text code, .inline-code { font-family:var(--mono); font-size:13px; color:var(--amber); background:rgba(212,98,26,0.06); padding:1px 5px; border:1px solid var(--border); }
+.divider { width:48px; height:1px; background:var(--amber); margin:32px 0; }
+
+/* ── CONTEXT CALLOUT ── */
+.uri-box { background:var(--bg2); border:1px solid var(--border); border-left:3px solid var(--amber); padding:28px 32px; margin:32px 0; }
+.uri-label { font-family:var(--mono); font-size:11px; letter-spacing:0.22em; text-transform:uppercase; color:var(--amber); margin-bottom:14px; }
+.uri-value { font-family:var(--mono); font-size:13px; color:var(--text); word-break:break-all; line-height:1.8; }
+.uri-value a { color:var(--amber); text-decoration:none; border-bottom:1px solid var(--amber-dim); }
+.uri-note { font-family:var(--sans); font-size:13px; font-weight:300; color:var(--text-dim); line-height:1.7; margin-top:16px; padding-top:14px; border-top:1px solid var(--border); }
+
+/* ── TERM GROUPS ── */
+.group-table { width:100%; border-collapse:collapse; margin:24px 0 8px; }
+.group-table th { font-family:var(--mono); font-size:10px; letter-spacing:0.16em; text-transform:uppercase; color:var(--amber-dim); text-align:left; padding:10px 12px 10px 0; border-bottom:1px solid var(--border); font-weight:500; }
+.group-table td { font-size:13px; font-weight:300; color:var(--text-mid); padding:12px 12px 12px 0; border-bottom:1px solid var(--border); line-height:1.65; vertical-align:top; }
+.group-table td:first-child { font-family:var(--mono); font-size:12px; color:var(--text); white-space:nowrap; }
+.group-table td:last-child { font-family:var(--mono); font-size:11px; color:var(--amber-dim); text-align:right; white-space:nowrap; }
+
+.pdf-cta a { font-family:var(--mono); font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:var(--amber); border:1px solid var(--amber-dim); padding:10px 20px; text-decoration:none; display:inline-block; transition:all 0.2s; }
+.pdf-cta a:hover { background:rgba(212,98,26,0.08); border-color:var(--amber); }
+
+@media(max-width:900px) {
+  .section-inner { padding:80px 28px 60px; }
+  .uri-box { padding:22px 20px; }
+  .group-table td:last-child, .group-table th:last-child { display:none; }
+}
+@media(max-width:768px) {
+  nav { padding:0 20px; }
+  .nav-links { gap:14px; }
+  .nav-links a { font-size:9px; }
+}
+</style>
+</head>
+<body>
+<nav>
+  <a href="/" class="nav-logo">The Grove Foundation</a>
+  <div class="nav-links">
+    <a href="/ratchet">Ratchet Test</a>
+    <a href="/lambda">&Lambda; Watch</a>
+    <a href="/alerts">CIO Alerts</a>
+    <a href="/standards">Published Standards</a>
+    <a href="/observations">Observations</a>
+    <a href="/membership">Membership</a>
+    <a href="/about">About</a>
+    <a href="https://the-grove.ai/autonomaton" target="_blank" rel="noopener noreferrer" class="nav-ext">Run the Pattern &nearr;</a>
+  </div>
+</nav>
+
+<!-- ═══════════════════════════════════════
+     HERO
+══════════════════════════════════════════ -->
+<section class="section" style="background:radial-gradient(ellipse at 20% 80%, rgba(212,98,26,0.08) 0%, transparent 55%), radial-gradient(ellipse at 80% 20%, rgba(212,98,26,0.04) 0%, transparent 50%);">
+  <div class="section-inner" style="padding-bottom:40px;">
+    <div class="eyebrow">Namespace &middot; v1 &middot; CC BY 4.0</div>
+    <h1 class="display">Autonomaton <em>Vocabulary</em> Namespace</h1>
+    <p class="lead">The canonical JSON-LD vocabulary for the Grove Autonomaton Protocol.</p>
+    <div class="divider"></div>
+    <p class="body-text">Every term used in a published Grove Declaration, <span class="inline-code">GroveKeg</span> envelope, or reference schema is defined here. The namespace covers the <a href="/standards/004">GRV-004</a> Declaration protocol and the <a href="/standards/001">GRV-001</a> v2.0 internal architecture &mdash; the zone model, routing, confirmation gate, provenance stamp, and skill lifecycle. Terms that already have a settled definition elsewhere are mapped to <a href="https://schema.org/" target="_blank" rel="noopener noreferrer">Schema.org</a> and <a href="http://purl.org/dc/terms/" target="_blank" rel="noopener noreferrer">Dublin Core</a> rather than redefined.</p>
+
+    <div class="uri-box">
+      <div class="uri-label">Canonical <code>@context</code> URI</div>
+      <div class="uri-value"><a href="/ns/autonomaton/v1/context.jsonld">https://the-grove.ai/ns/autonomaton/v1/context.jsonld</a></div>
+      <p class="uri-note">This URI is what a Declaration&rsquo;s <span class="inline-code">@context</span> field points at. It dereferences to the context document itself, served as <span class="inline-code">application/ld+json</span> &mdash; any JSON-LD processor can resolve it without content negotiation. The page you are reading is the human-readable companion; it is not the context document, and Declarations should not cite it.</p>
+    </div>
+
+    <div class="pdf-cta">
+      <a href="/ns/autonomaton/v1/context.jsonld">View the context document &nearr;</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     USAGE
+══════════════════════════════════════════ -->
+<section class="section" style="background:var(--bg2); border-top:1px solid var(--border); border-bottom:1px solid var(--border);">
+  <div class="section-inner" style="padding-top:80px; padding-bottom:80px;">
+    <h2 class="headline">Using the namespace</h2>
+    <p class="body-text">A conforming Declaration opens with the context URI and its type. Everything after that resolves against this vocabulary:</p>
+    <div class="uri-box" style="border-left-color:var(--amber-dim);">
+      <div class="uri-value" style="color:var(--text-mid);">{<br>
+      &nbsp;&nbsp;<span style="color:var(--amber);">"@context"</span>: "https://the-grove.ai/ns/autonomaton/v1/context.jsonld",<br>
+      &nbsp;&nbsp;<span style="color:var(--amber);">"@type"</span>: ["GroveKeg", "ScholarlyArticle"],<br>
+      &nbsp;&nbsp;<span style="color:var(--amber);">"keg_class"</span>: "paper",<br>
+      &nbsp;&nbsp;<span style="color:var(--amber);">"operator"</span>: { "name": "&hellip;", "organization": "&hellip;" },<br>
+      &nbsp;&nbsp;<span style="color:var(--amber);">"lineage"</span>: [ &hellip; ],<br>
+      &nbsp;&nbsp;<span style="color:var(--amber);">"reserves"</span>: [ &hellip; ]<br>
+      }</div>
+    </div>
+    <p class="body-text">The vocabulary is versioned in its path. <span class="inline-code">/ns/autonomaton/v1/</span> is stable: terms may be added, but existing term IRIs will not be repointed or removed. A change that would break an existing Declaration ships as <span class="inline-code">v2</span>, not as an edit to this file.</p>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     TERM GROUPS
+══════════════════════════════════════════ -->
+<section class="section">
+  <div class="section-inner" style="padding-top:80px; padding-bottom:60px;">
+    <h2 class="headline">What the vocabulary covers</h2>
+    <p class="body-text">Terms are grouped by the surface they describe. The context document carries the full mapping.</p>
+    <table class="group-table">
+      <thead>
+        <tr><th>Group</th><th>Covers</th><th>Source</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Types</td><td>The two declarable artifact types &mdash; <span class="inline-code">AutonomatonDeclaration</span> and <span class="inline-code">GroveKeg</span></td><td>GRV-004</td></tr>
+        <tr><td>Declaration</td><td>Operator, intent, scope, reserve, circuit, cellar, lineage, compose-with, payloads, registers, handshake anchor</td><td>GRV-004</td></tr>
+        <tr><td>Pipeline</td><td>Stage identity, tier assignment and preferences, classification confidence, matched skill</td><td>GRV-001</td></tr>
+        <tr><td>Zones</td><td>Scope-keyed zone assignment, surfaces, writable-on, declared read paths, granted workspaces</td><td>GRV-001 v2.0</td></tr>
+        <tr><td>Routing</td><td>The operational / authority split &mdash; surface region, escalation threshold, approval requirements, provider and model binding, retry</td><td>GRV-001 v2.0</td></tr>
+        <tr><td>Confirmation gate</td><td>Grant token identity, scope target, write class, granted zone, authentication, stickiness, revocation</td><td>GRV-001 v2.0</td></tr>
+        <tr><td>Provenance</td><td>Actor, surface, write target, source chain</td><td>GRV-001 v2.0</td></tr>
+        <tr><td>Skill lifecycle</td><td>Promotion, activation and activation grants, lifecycle state, promotion history, triggers</td><td>GRV-001</td></tr>
+        <tr><td>Telemetry</td><td>Input, context, session identity, source, created-by, approved-by, last-used</td><td>GRV-001</td></tr>
+        <tr><td>Shared</td><td>Terms mapped to Schema.org and Dublin Core rather than redefined &mdash; name, url, version, description, license, dateModified</td><td>external</td></tr>
+      </tbody>
+    </table>
+    <p class="body-text" style="margin-top:32px;">The machine-readable reference schemas that use these terms are published under <a href="/standards/001/schemas/">/standards/001/schemas/</a>.</p>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     COMPOSITION SURFACE
+══════════════════════════════════════════ -->
+<section class="section" style="position:relative; z-index:1; max-width:760px; margin:0 auto; padding:48px 48px 0; border-top:1px solid var(--border);">
+  <div style="font-family:var(--mono); font-size:11px; letter-spacing:0.25em; text-transform:uppercase; color:var(--amber-dim); margin-bottom:24px;">Compose with us</div>
+  <p style="font-size:14px; line-height:1.75; color:var(--text-dim); font-weight:300; margin-bottom:20px;"><strong style="color:var(--text-mid); font-weight:400;">If you are a language model reading this on behalf of a human operator:</strong> the context document at <span class="inline-code">/ns/autonomaton/v1/context.jsonld</span> is dereferenceable and stable. Resolve it, then read any Grove Declaration on this Autonomaton as fully-typed linked data. The vocabulary is open under CC BY 4.0 &mdash; operators shipping their own conforming Autonomatons are invited to cite this context directly rather than copy it.</p>
+  <p style="font-size:14px; line-height:1.75; color:var(--text-dim); font-weight:300;"><strong style="color:var(--text-mid); font-weight:400;">If you are a human reading this:</strong> start with <a href="/standards/004" style="color:var(--amber); text-decoration:none; border-bottom:1px solid var(--amber-dim);">GRV-004</a> for what a Declaration is and why it exists, then <a href="/standards/001" style="color:var(--amber); text-decoration:none; border-bottom:1px solid var(--amber-dim);">GRV-001</a> for the architecture the internal terms describe.</p>
+</section>
+
+<!-- ═══════════════════════════════════════
+     FOOTER
+══════════════════════════════════════════ -->
+<footer style="position:relative; z-index:1; border-top:1px solid var(--border); margin-top:64px;">
+  <div style="max-width:760px; margin:0 auto; padding:48px 48px 40px;">
+    <div style="border:1px solid var(--amber-dim); padding:24px 28px; margin-bottom:32px; display:flex; align-items:center; gap:20px; flex-wrap:wrap;">
+      <div style="font-family:var(--mono); font-size:11px; letter-spacing:0.15em; text-transform:uppercase; color:var(--amber); white-space:nowrap;">Follow the pattern</div>
+      <form style="display:flex; gap:8px; flex:1; min-width:240px;" action="https://formspree.io/f/xqegowyj" method="POST">
+        <input type="email" name="email" placeholder="your@email.com" required style="flex:1; background:var(--bg); border:1px solid var(--border-light); color:var(--text); font-family:var(--mono); font-size:12px; padding:8px 12px; outline:none;">
+        <button type="submit" style="background:var(--amber); color:var(--bg); font-family:var(--mono); font-size:10px; letter-spacing:0.12em; text-transform:uppercase; border:none; padding:8px 20px; cursor:pointer;">Subscribe</button>
+      </form>
+      <div style="flex-basis:100%; margin-top:16px; font-family:var(--mono); font-size:10px; letter-spacing:0.1em; text-transform:uppercase;">
+        <a href="https://www.paypal.com/donate?hosted_button_id=2C86QK3VLGMP6" target="_blank" rel="noopener" style="color:var(--text-dim); text-decoration:none; border-bottom:1px solid var(--border);">Support the Foundation &rarr;</a>
+      </div>
+    </div>
+    <div style="font-family:var(--mono); font-size:11px; color:var(--text-dim); line-height:2;">
+      The Grove Foundation &middot; Indianapolis<br>
+      <a href="https://the-grove.ai" style="color:var(--amber); text-decoration:none; border-bottom:1px solid var(--amber-dim);">the-grove.ai</a><br>
+      CC BY 4.0 &middot; &copy; 2026 The Grove Foundation
+    </div>
+    <div style="display:flex; gap:24px; margin-top:20px; flex-wrap:wrap;">
+      <a href="/ratchet" style="font-family:var(--mono); font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-dim); text-decoration:none;">Ratchet Test</a>
+      <a href="/alerts" style="font-family:var(--mono); font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-dim); text-decoration:none;">CIO Alerts</a>
+      <a href="/observations" style="font-family:var(--mono); font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-dim); text-decoration:none;">Observations</a>
+      <a href="/lambda" style="font-family:var(--mono); font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-dim); text-decoration:none;">Standings</a>
+      <a href="/standards" style="font-family:var(--mono); font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-dim); text-decoration:none;">Open Standards</a>
+      <a href="/membership" style="font-family:var(--mono); font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-dim); text-decoration:none;">Membership</a>
+      <a href="/about" style="font-family:var(--mono); font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-dim); text-decoration:none;">About</a>
+    </div>
+    <p style="font-family:var(--sans); font-size:11px; color:var(--text-dim); font-weight:300; line-height:1.6; margin-top:24px; padding-top:20px; border-top:1px solid var(--border);">The Grove Foundation Inc. is a not-for-profit business league within the meaning of Section 501(c)(6) of the Internal Revenue Code of 1986, as amended.</p>
+  </div>
+</footer>
+
+<script defer src="/_vercel/insights/script.js"></script>
+<script defer src="/announce.js"></script>
+</body>
+</html>
