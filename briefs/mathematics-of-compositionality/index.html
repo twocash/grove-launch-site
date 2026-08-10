@@ -219,8 +219,11 @@ body { margin: 0; background: #080808; }
 <style>
 /* ── GROVE CHROME ──
    Tokens, body, and the grid overlay come from the design system's base.css;
-   only nav, footer, and the interstitial are defined here. */
-nav { position:fixed; top:0; left:0; right:0; z-index:100; padding:0 48px; height:var(--nav-height,56px); display:flex; justify-content:space-between; align-items:center; background:var(--nav-bg,rgba(8,8,8,0.94)); backdrop-filter:var(--nav-blur,blur(16px)); border-bottom:1px solid rgba(37,37,37,0.5); }
+   only nav, footer, and the interstitial are defined here.
+   Selectors are scoped to `body > nav` so that the design system's
+   ".section, main, nav, footer" rule cannot unpin the fixed nav regardless
+   of stylesheet order. */
+body > nav { position:fixed; top:0; left:0; right:0; z-index:100; padding:0 48px; height:var(--nav-height,56px); display:flex; justify-content:space-between; align-items:center; background:var(--nav-bg,rgba(8,8,8,0.94)); backdrop-filter:var(--nav-blur,blur(16px)); border-bottom:1px solid rgba(37,37,37,0.5); }
 .nav-logo { font-family:var(--mono); font-size:11px; letter-spacing:0.2em; text-transform:uppercase; color:var(--amber-dim); text-decoration:none; }
 .nav-links { display:flex; gap:32px; }
 .nav-links a { font-family:var(--mono); font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-dim); text-decoration:none; padding:4px 0; border-bottom:1px solid transparent; transition:all 0.2s; }
@@ -249,7 +252,7 @@ footer.grove-footer { position:relative; z-index:1; border-top:1px solid var(--b
 footer.grove-footer a { text-decoration:none; }
 
 @media(max-width:768px) {
-  nav { padding:0 20px; }
+  body > nav { padding:0 20px; }
   .nav-links { gap:14px; }
   .nav-links a { font-size:9px; }
 }
@@ -290,36 +293,7 @@ footer.grove-footer a { text-decoration:none; }
 <div id="brief" aria-live="polite">
 <x-dc>
 <helmet>
-  <link rel="stylesheet" href="/alerts/structural-custody/_ds/grove-foundation-design-system-1f1800dc-f3c1-4b76-a111-41ca3139a50b/tokens/fonts.css">
-  <link rel="stylesheet" href="/alerts/structural-custody/_ds/grove-foundation-design-system-1f1800dc-f3c1-4b76-a111-41ca3139a50b/tokens/colors.css">
-  <link rel="stylesheet" href="/alerts/structural-custody/_ds/grove-foundation-design-system-1f1800dc-f3c1-4b76-a111-41ca3139a50b/tokens/typography.css">
-  <link rel="stylesheet" href="/alerts/structural-custody/_ds/grove-foundation-design-system-1f1800dc-f3c1-4b76-a111-41ca3139a50b/tokens/spacing.css">
-  <link rel="stylesheet" href="/alerts/structural-custody/_ds/grove-foundation-design-system-1f1800dc-f3c1-4b76-a111-41ca3139a50b/tokens/base.css">
-  <link rel="stylesheet" href="/alerts/structural-custody/_ds/grove-foundation-design-system-1f1800dc-f3c1-4b76-a111-41ca3139a50b/styles.css">
   <script src="/alerts/structural-custody/_ds/grove-foundation-design-system-1f1800dc-f3c1-4b76-a111-41ca3139a50b/_ds_bundle.js"></script>
-  <style>
-    body { margin: 0; background: #080808; }
-    @keyframes meshPulse { 0%, 100% { opacity: 0.1; } 50% { opacity: 0.55; } }
-    a { color: #D4621A; text-decoration: none; }
-    a:hover { color: #F07030; }
-  </style>
-  <meta name="DC.creator" content="James Calhoun">
-  <meta name="DC.date" content="2026-08-10">
-  <meta name="DC.publisher" content="The Grove Foundation">
-  <meta name="DC.rights" content="CC BY 4.0">
-  <meta name="DC.subject" content="compositional computing, compositionality, governance verification, Jevons paradox, sovereign AI, GRV-001, GRV-002, GRV-004">
-  <meta name="DC.title" content="The Mathematics of Compositionality — Architecture Brief">
-  <meta name="DC.type" content="InteractiveResource">
-  <meta property="og:title" content="The Mathematics of Compositionality">
-  <meta property="og:description" content="Visual proof that governed composition costs O(1) under compositional computing. Architecture Brief, Members Only.">
-  <meta property="og:type" content="article">
-  <meta property="og:site_name" content="The Grove Foundation">
-  <meta property="article:author" content="James Calhoun">
-  <meta property="article:section" content="Architecture Brief">
-  <meta property="article:tag" content="GRV-001">
-  <meta property="article:tag" content="GRV-002">
-  <meta property="article:tag" content="GRV-004">
-  
 </helmet>
 <div ref="{{ root }}" style="min-height:100vh;background:var(--bg);color:var(--text);font-family:var(--sans);font-weight:300">
   <div style="position:fixed;top:0;left:0;right:0;height:2px;z-index:50;pointer-events:none"><div data-progress-bar style="height:100%;width:0%;background:var(--green)"></div></div>
