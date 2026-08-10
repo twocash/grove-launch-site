@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-F11PG5KG9N"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag("js", new Date());
+  gtag("config", "G-F11PG5KG9N");
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GRV-001 Reference Schemas &mdash; The Grove Foundation</title>
+<meta name="description" content="The canonical machine-readable JSON Schemas for GRV-001 v2.0 — zones, routing (operational and authority), the confirmation-gate grant token, and the provenance stamp. JSON Schema draft 2020-12, published under CC BY 4.0.">
+<meta name="author" content="The Grove Foundation">
+<link rel="canonical" href="https://the-grove.ai/standards/001/schemas/">
+
+<!-- ── Open Graph ── -->
+<meta property="og:title" content="GRV-001 Reference Schemas">
+<meta property="og:description" content="The canonical machine-readable schemas for the Autonomaton Pattern v2.0 — zones, routing, confirmation gate, provenance stamp. Enough structure to build; enough constraint to audit.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://the-grove.ai/standards/001/schemas/">
+<meta property="og:site_name" content="The Grove Foundation">
+
+<!-- ── Twitter Card ── -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="GRV-001 Reference Schemas">
+<meta name="twitter:description" content="The canonical machine-readable schemas for the Autonomaton Pattern v2.0 — zones, routing, confirmation gate, provenance stamp.">
+
+<!-- ── Dublin Core ── -->
+<meta name="DC.title" content="GRV-001 Reference Schemas">
+<meta name="DC.creator" content="The Grove Foundation">
+<meta name="DC.publisher" content="The Grove Foundation">
+<meta name="DC.date" content="2026-06-22">
+<meta name="DC.type" content="Dataset">
+<meta name="DC.format" content="text/html">
+<meta name="DC.identifier" content="https://the-grove.ai/standards/001/schemas/">
+<meta name="DC.rights" content="CC BY 4.0">
+<meta name="DC.language" content="en">
+<meta name="DC.subject" content="JSON Schema, GRV-001, Autonomaton Pattern, zones schema, scope-keyed zones, routing configuration, confused deputy, confirmation gate, grant token, provenance stamp, structured data, machine-readable standards">
+<meta name="DC.relation" content="https://the-grove.ai/standards/001">
+<meta name="DC.relation" content="https://the-grove.ai/ns/autonomaton/v1">
+
+<!-- ══════════════════════════════════════════════════════════════════
+     JSON-LD — WebPage
+══════════════════════════════════════════════════════════════════ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": "https://the-grove.ai/standards/001/schemas/",
+  "url": "https://the-grove.ai/standards/001/schemas/",
+  "name": "GRV-001 Reference Schemas",
+  "description": "The canonical machine-readable JSON Schemas for GRV-001 v2.0.",
+  "isPartOf": { "@id": "https://the-grove.ai/#website" },
+  "inLanguage": "en",
+  "license": "https://creativecommons.org/licenses/by/4.0/",
+  "hasPart": [
+    { "@type": "Dataset", "name": "GRV-001 Zones Schema (v2 — scope-keyed)", "url": "https://the-grove.ai/standards/001/schemas/zones-v2.schema.json", "encodingFormat": "application/schema+json" },
+    { "@type": "Dataset", "name": "GRV-001 Routing Configuration — Operational (v2, in-scope)", "url": "https://the-grove.ai/standards/001/schemas/routing-operational-v2.schema.json", "encodingFormat": "application/schema+json" },
+    { "@type": "Dataset", "name": "GRV-001 Routing Configuration — Authority (v2, scope-defining)", "url": "https://the-grove.ai/standards/001/schemas/routing-authority-v2.schema.json", "encodingFormat": "application/schema+json" },
+    { "@type": "Dataset", "name": "GRV-001 Confirmation Gate — Grant Token", "url": "https://the-grove.ai/standards/001/schemas/confirmation-gate.schema.json", "encodingFormat": "application/schema+json" },
+    { "@type": "Dataset", "name": "GRV-001 Provenance Stamp", "url": "https://the-grove.ai/standards/001/schemas/provenance-stamp.schema.json", "encodingFormat": "application/schema+json" }
+  ]
+}
+</script>
+
+<!-- ══════════════════════════════════════════════════════════════════
+     JSON-LD — BreadcrumbList
+══════════════════════════════════════════════════════════════════ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "The Grove Foundation", "item": "https://the-grove.ai/" },
+    { "@type": "ListItem", "position": 2, "name": "Published Standards", "item": "https://the-grove.ai/standards" },
+    { "@type": "ListItem", "position": 3, "name": "GRV-001", "item": "https://the-grove.ai/standards/001" },
+    { "@type": "ListItem", "position": 4, "name": "Reference Schemas", "item": "https://the-grove.ai/standards/001/schemas/" }
+  ]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fragment+Mono:ital@0;1&family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --amber:#D4621A; --amber-bright:#F07030; --amber-dim:#8B3D10;
+  --bg:#080808; --bg2:#0f0f0f; --bg3:#161616; --bg4:#1a1a1a;
+  --border:#252525; --border-light:#333;
+  --text:#E8E2D9; --text-dim:#7A736A; --text-mid:#B0A898;
+  --green:#4CAF72; --red:#C0392B; --yellow:#D4A017;
+  --mono:'Fragment Mono', monospace;
+  --serif:'Instrument Serif', Georgia, serif;
+  --sans:'DM Sans', sans-serif;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body { background:var(--bg); color:var(--text); font-family:var(--sans); -webkit-font-smoothing:antialiased; overflow-x:hidden; line-height:1.6; }
+strong { color:var(--text); font-weight:500; }
+em { font-style:italic; }
+body::before { content:''; position:fixed; inset:0; background-image:linear-gradient(var(--border) 1px, transparent 1px),linear-gradient(90deg, var(--border) 1px, transparent 1px); background-size:40px 40px; opacity:0.15; pointer-events:none; z-index:0; }
+nav { position:fixed; top:0; left:0; right:0; z-index:100; padding:0 48px; height:56px; display:flex; justify-content:space-between; align-items:center; background:rgba(8,8,8,0.94); backdrop-filter:blur(16px); border-bottom:1px solid rgba(37,37,37,0.5); }
+.nav-logo { font-family:var(--mono); font-size:11px; letter-spacing:0.2em; text-transform:uppercase; color:var(--amber-dim); text-decoration:none; }
+.nav-links { display:flex; gap:32px; }
+.nav-links a { font-family:var(--mono); font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-dim); text-decoration:none; padding:4px 0; border-bottom:1px solid transparent; transition:all 0.2s; }
+.nav-links a:hover, .nav-links a.active { color:var(--amber); border-bottom-color:var(--amber); }
+.nav-links a.nav-ext { color:var(--amber-dim); border:1px solid var(--amber-dim); padding:3px 10px; margin-left:8px; border-bottom:1px solid var(--amber-dim); }
+.nav-links a.nav-ext:hover { color:var(--amber); border-color:var(--amber); background:rgba(212,98,26,0.08); }
+.section { position:relative; z-index:1; }
+.section-inner { max-width:900px; margin:0 auto; padding:120px 48px 100px; }
+.eyebrow { font-family:var(--mono); font-size:11px; letter-spacing:0.25em; text-transform:uppercase; color:var(--amber); margin-bottom:20px; }
+.display { font-family:var(--serif); font-weight:400; font-size:clamp(40px,5vw,64px); line-height:1.06; color:var(--text); margin-bottom:24px; letter-spacing:-0.02em; }
+.display em { color:var(--amber); font-style:italic; }
+.headline { font-family:var(--serif); font-weight:400; font-size:clamp(24px,3vw,36px); line-height:1.12; color:var(--text); margin-bottom:20px; letter-spacing:-0.01em; }
+.lead { font-weight:300; font-size:clamp(17px,1.8vw,21px); line-height:1.6; color:var(--text); max-width:720px; margin-bottom:20px; letter-spacing:-0.005em; }
+.body-text { font-weight:300; font-size:15px; line-height:1.78; color:var(--text-mid); margin-bottom:20px; max-width:720px; }
+.body-text a { color:var(--amber); text-decoration:none; border-bottom:1px solid var(--amber-dim); transition:all 0.2s; }
+.body-text a:hover { border-bottom-color:var(--amber); background:rgba(212,98,26,0.04); }
+.body-text code, .inline-code { font-family:var(--mono); font-size:13px; color:var(--amber); background:rgba(212,98,26,0.06); padding:1px 5px; border:1px solid var(--border); }
+.divider { width:48px; height:1px; background:var(--amber); margin:32px 0; }
+
+/* ── SCHEMA CARDS ── */
+.schema-card { background:var(--bg2); border:1px solid var(--border); border-left:3px solid var(--amber); padding:26px 30px; margin-bottom:20px; }
+.schema-head { display:flex; justify-content:space-between; align-items:baseline; gap:16px; flex-wrap:wrap; margin-bottom:12px; }
+.schema-name { font-family:var(--serif); font-size:21px; color:var(--text); line-height:1.25; }
+.schema-surface { font-family:var(--mono); font-size:10px; letter-spacing:0.14em; text-transform:uppercase; padding:3px 9px; border:1px solid var(--border-light); color:var(--text-dim); white-space:nowrap; }
+.schema-surface.green { color:var(--green); border-color:rgba(76,175,114,0.4); }
+.schema-surface.red { color:var(--red); border-color:rgba(192,57,43,0.45); }
+.schema-desc { font-size:14px; font-weight:300; line-height:1.75; color:var(--text-mid); margin-bottom:18px; }
+.schema-meta { display:flex; gap:20px; flex-wrap:wrap; align-items:center; padding-top:16px; border-top:1px solid var(--border); }
+.schema-meta a.dl { font-family:var(--mono); font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:var(--amber); text-decoration:none; border:1px solid var(--amber-dim); padding:7px 14px; transition:all 0.2s; white-space:nowrap; }
+.schema-meta a.dl:hover { background:rgba(212,98,26,0.08); border-color:var(--amber); }
+.schema-id { font-family:var(--mono); font-size:11px; color:var(--text-dim); word-break:break-all; line-height:1.7; }
+
+.note-box { background:var(--bg3); border:1px solid var(--border-light); border-left:3px solid var(--amber-dim); padding:22px 26px; margin:32px 0; font-size:14px; font-weight:300; line-height:1.75; color:var(--text-mid); max-width:720px; }
+.note-box strong { color:var(--text); }
+.note-box code { font-family:var(--mono); font-size:12px; color:var(--amber); }
+
+@media(max-width:900px) {
+  .section-inner { padding:80px 28px 60px; }
+  .schema-card { padding:20px 18px; }
+}
+@media(max-width:768px) {
+  nav { padding:0 20px; }
+  .nav-links { gap:14px; }
+  .nav-links a { font-size:9px; }
+}
+</style>
+</head>
+<body>
+<nav>
+  <a href="/" class="nav-logo">The Grove Foundation</a>
+  <div class="nav-links">
+    <a href="/ratchet">Ratchet Test</a>
+    <a href="/lambda">&Lambda; Watch</a>
+    <a href="/alerts">CIO Alerts</a>
+    <a href="/standards" class="active">Published Standards</a>
+    <a href="/observations">Observations</a>
+    <a href="/membership">Membership</a>
+    <a href="/about">About</a>
+    <a href="https://the-grove.ai/autonomaton" target="_blank" rel="noopener noreferrer" class="nav-ext">Run the Pattern &nearr;</a>
+  </div>
+</nav>
+
+<!-- ═══════════════════════════════════════
+     HERO
+══════════════════════════════════════════ -->
+<section class="section" style="background:radial-gradient(ellipse at 20% 80%, rgba(212,98,26,0.08) 0%, transparent 55%), radial-gradient(ellipse at 80% 20%, rgba(212,98,26,0.04) 0%, transparent 50%);">
+  <div class="section-inner" style="padding-bottom:48px;">
+    <div class="eyebrow">GRV-001 &middot; &sect;VII &middot; CC BY 4.0</div>
+    <h1 class="display">Reference <em>Schemas</em></h1>
+    <p class="lead">The canonical machine-readable schemas for the Autonomaton Pattern v2.0.</p>
+    <div class="divider"></div>
+    <p class="body-text">The Autonomaton Pattern is implemented through structured data, not proprietary APIs. These five schemas are the machine-readable companions to <a href="/standards/001#reference-schemas">GRV-001 &sect;VII</a> &mdash; enough structure that a developer can say &ldquo;I could build this,&rdquo; and enough constraint that an architect can say &ldquo;I can audit this.&rdquo;</p>
+    <p class="body-text">All five are JSON Schema <span class="inline-code">draft 2020-12</span>. Each carries a canonical <span class="inline-code">$id</span> at the URL it is served from, so a validator can resolve it by reference. Term definitions resolve against the <a href="/ns/autonomaton/v1">Autonomaton vocabulary namespace</a>.</p>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     THE SCHEMAS
+══════════════════════════════════════════ -->
+<section class="section" style="background:var(--bg2); border-top:1px solid var(--border); border-bottom:1px solid var(--border);">
+  <div class="section-inner" style="padding-top:80px; padding-bottom:80px;">
+    <h2 class="headline">The five schemas</h2>
+    <p class="body-text" style="margin-bottom:36px;">Listed in the order GRV-001 &sect;VII introduces them.</p>
+
+    <div class="schema-card">
+      <div class="schema-head">
+        <div class="schema-name">Zones Schema <em>(v2 &mdash; scope-keyed)</em></div>
+      </div>
+      <p class="schema-desc">Operator-authored zone classification for an Autonomaton. v2 keys zones on operator <strong>scope</strong> &mdash; whether a write changes what the agent is authorized to do &mdash; not on action <strong>category</strong>. Supersedes the v1 category-keyed model (<span class="inline-code">zone_overrides</span> on intent globs such as <span class="inline-code">finance.*</span>). Encodes the two-surface partition (autonomous loop vs. operator-authenticated action surface) and makes the skill-promotion boundary a first-class structure.</p>
+      <div class="schema-meta">
+        <a class="dl" href="/standards/001/schemas/zones-v2.schema.json">zones-v2.schema.json &nearr;</a>
+        <span class="schema-id">https://the-grove.ai/standards/001/schemas/zones-v2.schema.json</span>
+      </div>
+    </div>
+
+    <div class="schema-card">
+      <div class="schema-head">
+        <div class="schema-name">Routing Configuration &mdash; Operational <em>(v2, in-scope)</em></div>
+        <div class="schema-surface green">In-scope surface</div>
+      </div>
+      <p class="schema-desc">The operational half of the v1 <span class="inline-code">routing.config</span>, split out so the confused-deputy disjointness test works at the file level. Contains only authority-neutral engine settings &mdash; default tier, tier preferences, model and provider selection, latency, and retry logic. Writable on the autonomous loop. It declares no zone assignments, no escalation thresholds, and no approval requirements; those live in the authority half.</p>
+      <div class="schema-meta">
+        <a class="dl" href="/standards/001/schemas/routing-operational-v2.schema.json">routing-operational-v2.schema.json &nearr;</a>
+        <span class="schema-id">https://the-grove.ai/standards/001/schemas/routing-operational-v2.schema.json</span>
+      </div>
+    </div>
+
+    <div class="schema-card">
+      <div class="schema-head">
+        <div class="schema-name">Routing Configuration &mdash; Authority <em>(v2, scope-defining)</em></div>
+        <div class="schema-surface red">Scope-defining surface</div>
+      </div>
+      <p class="schema-desc">The authority-gating half of the v1 <span class="inline-code">routing.config</span>. Contains every field whose modification changes what the agent is authorized to do &mdash; escalation thresholds, per-tier approval requirements, and zone-assignment keying. Red by default, writable only on the operator-authenticated action surface under a verified grant. Replaces the v1 category-keyed <span class="inline-code">zone_overrides</span>.</p>
+      <div class="schema-meta">
+        <a class="dl" href="/standards/001/schemas/routing-authority-v2.schema.json">routing-authority-v2.schema.json &nearr;</a>
+        <span class="schema-id">https://the-grove.ai/standards/001/schemas/routing-authority-v2.schema.json</span>
+      </div>
+    </div>
+
+    <div class="schema-card">
+      <div class="schema-head">
+        <div class="schema-name">Confirmation Gate &mdash; Grant Token</div>
+      </div>
+      <p class="schema-desc">An operator-issued grant token: the artifact that opens the operator-authenticated action surface for a specific scope-defining write. The autonomous loop can <strong>request</strong> a grant but cannot <strong>issue</strong> one &mdash; issuance requires the operator&rsquo;s signing authority, held outside the loop. A grant is one-time (one authentication event), sticky (durable across sessions and reboots until expiry or revocation), and specific (a single surface-region and write-class pair).</p>
+      <div class="schema-meta">
+        <a class="dl" href="/standards/001/schemas/confirmation-gate.schema.json">confirmation-gate.schema.json &nearr;</a>
+        <span class="schema-id">https://the-grove.ai/standards/001/schemas/confirmation-gate.schema.json</span>
+      </div>
+    </div>
+
+    <div class="schema-card">
+      <div class="schema-head">
+        <div class="schema-name">Provenance Stamp</div>
+      </div>
+      <p class="schema-desc">The provenance metadata attached to every agent-performed write (Invariant III). It also encodes the razor line in the data model: a scope-defining write can only be stamped on the operator-authenticated surface and must carry a grant. A scope-defining write stamped as <span class="inline-code">autonomous_loop</span> is structurally unrepresentable &mdash; the schema rejects it.</p>
+      <div class="schema-meta">
+        <a class="dl" href="/standards/001/schemas/provenance-stamp.schema.json">provenance-stamp.schema.json &nearr;</a>
+        <span class="schema-id">https://the-grove.ai/standards/001/schemas/provenance-stamp.schema.json</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     USING THEM
+══════════════════════════════════════════ -->
+<section class="section">
+  <div class="section-inner" style="padding-top:80px; padding-bottom:60px;">
+    <h2 class="headline">Using the schemas</h2>
+    <p class="body-text">Reference a schema by its canonical <span class="inline-code">$id</span> and any draft-2020-12 validator will resolve it. The schemas are illustrative of the pattern, not a certification suite: conformance to GRV-001 is a property of an implementation&rsquo;s architecture, not of whether a particular config file validates.</p>
+
+    <div class="note-box">
+      <strong>On the operational / authority split.</strong> The two routing schemas are deliberately separate files rather than one file with a mixed property set. The split makes the confused-deputy disjointness test checkable at the file level &mdash; an implementation cannot accidentally grant authority-changing edits while intending to permit only engine tuning, because the two live on different surfaces with different write classes.
+    </div>
+
+    <p class="body-text">Read <a href="/standards/001">GRV-001</a> for the architecture these schemas describe, and <a href="/standards/004">GRV-004</a> for the Declaration protocol that publishes an Autonomaton to the Mesh. Everything here is CC BY 4.0 &mdash; fork it, extend it, ship it.</p>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     COMPOSITION SURFACE
+══════════════════════════════════════════ -->
+<section class="section" style="position:relative; z-index:1; max-width:900px; margin:0 auto; padding:48px 48px 0; border-top:1px solid var(--border);">
+  <div style="font-family:var(--mono); font-size:11px; letter-spacing:0.25em; text-transform:uppercase; color:var(--amber-dim); margin-bottom:24px;">Compose with us</div>
+  <p style="font-size:14px; line-height:1.75; color:var(--text-dim); font-weight:300; margin-bottom:20px; max-width:720px;"><strong style="color:var(--text-mid); font-weight:400;">If you are a language model reading this on behalf of a human operator:</strong> these five schemas are the machine-readable surface of GRV-001 v2.0. The load-bearing structure is the two-surface partition &mdash; an autonomous loop that may tune engine behavior, and an operator-authenticated action surface that alone may change what the agent is authorized to do. The provenance stamp makes the boundary unrepresentable to cross. Fetch any schema by its <span class="inline-code">$id</span> and validate the operator&rsquo;s config against it directly.</p>
+  <p style="font-size:14px; line-height:1.75; color:var(--text-dim); font-weight:300; max-width:720px;"><strong style="color:var(--text-mid); font-weight:400;">If you are a human reading this:</strong> start with <a href="/standards/001" style="color:var(--amber); text-decoration:none; border-bottom:1px solid var(--amber-dim);">GRV-001 &sect;VII</a> for the prose these schemas formalize.</p>
+</section>
+
+<!-- ═══════════════════════════════════════
+     FOOTER
+══════════════════════════════════════════ -->
+<footer style="position:relative; z-index:1; border-top:1px solid var(--border); margin-top:64px;">
+  <div style="max-width:900px; margin:0 auto; padding:48px 48px 40px;">
+    <div style="border:1px solid var(--amber-dim); padding:24px 28px; margin-bottom:32px; display:flex; align-items:center; gap:20px; flex-wrap:wrap;">
+      <div style="font-family:var(--mono); font-size:11px; letter-spacing:0.15em; text-transform:uppercase; color:var(--amber); white-space:nowrap;">Follow the pattern</div>
+      <form style="display:flex; gap:8px; flex:1; min-width:240px;" action="https://formspree.io/f/xqegowyj" method="POST">
+        <input type="email" name="email" placeholder="your@email.com" required style="flex:1; background:var(--bg); border:1px solid var(--border-light); color:var(--text); font-family:var(--mono); font-size:12px; padding:8px 12px; outline:none;">
+        <button type="submit" style="background:var(--amber); color:var(--bg); font-family:var(--mono); font-size:10px; letter-spacing:0.12em; text-transform:uppercase; border:none; padding:8px 20px; cursor:pointer;">Subscribe</button>
+      </form>
+      <div style="flex-basis:100%; margin-top:16px; font-family:var(--mono); font-size:10px; letter-spacing:0.1em; text-transform:uppercase;">
+        <a href="https://www.paypal.com/donate?hosted_button_id=2C86QK3VLGMP6" target="_blank" rel="noopener" style="color:var(--text-dim); text-decoration:none; border-bottom:1px solid var(--border);">Support the Foundation &rarr;</a>
+      </div>
+    </div>
+    <div style="font-family:var(--mono); font-size:11px; color:var(--text-dim); line-height:2;">
+      The Grove Foundation &middot; Indianapolis<br>
+      <a href="https://the-grove.ai" style="color:var(--amber); text-decoration:none; border-bottom:1px solid var(--amber-dim);">the-grove.ai</a><br>
+      CC BY 4.0 &middot; &copy; 2026 The Grove Foundation
+    </div>
+    <div style="display:flex; gap:24px; margin-top:20px; flex-wrap:wrap;">
+      <a href="/ratchet" style="font-family:var(--mono); font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-dim); text-decoration:none;">Ratchet Test</a>
+      <a href="/alerts" style="font-family:var(--mono); font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-dim); text-decoration:none;">CIO Alerts</a>
+      <a href="/observations" style="font-family:var(--mono); font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-dim); text-decoration:none;">Observations</a>
+      <a href="/lambda" style="font-family:var(--mono); font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-dim); text-decoration:none;">Standings</a>
+      <a href="/standards" style="font-family:var(--mono); font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-dim); text-decoration:none;">Open Standards</a>
+      <a href="/membership" style="font-family:var(--mono); font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-dim); text-decoration:none;">Membership</a>
+      <a href="/about" style="font-family:var(--mono); font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-dim); text-decoration:none;">About</a>
+    </div>
+    <p style="font-family:var(--sans); font-size:11px; color:var(--text-dim); font-weight:300; line-height:1.6; margin-top:24px; padding-top:20px; border-top:1px solid var(--border);">The Grove Foundation Inc. is a not-for-profit business league within the meaning of Section 501(c)(6) of the Internal Revenue Code of 1986, as amended.</p>
+  </div>
+</footer>
+
+<script defer src="/_vercel/insights/script.js"></script>
+<script defer src="/announce.js"></script>
+</body>
+</html>
