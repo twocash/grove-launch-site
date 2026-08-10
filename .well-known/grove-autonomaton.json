@@ -50,6 +50,19 @@
       "status": "conforming"
     },
     {
+      "path": "/briefs/mathematics-of-compositionality",
+      "class": "architecture-brief",
+      "scope": "member",
+      "registers": ["standards", "workshop"],
+      "lineage": [
+        "https://the-grove.ai/standards/001",
+        "https://the-grove.ai/standards/002",
+        "https://the-grove.ai/standards/004",
+        "https://the-grove.ai/alerts/polarity-and-the-grove-protocol"
+      ],
+      "status": "conforming"
+    },
+    {
       "path": "/standards/001",
       "class": "standard",
       "registers": ["standards"],
