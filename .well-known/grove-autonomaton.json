@@ -39,25 +39,36 @@
       "status": "conforming"
     },
     {
+      "path": "/research/bicameral-canon",
+      "class": "canon",
+      "registers": ["standards", "workshop"],
+      "lineage": [
+        "https://the-grove.ai/standards/001",
+        "https://the-grove.ai/standards/004",
+        "https://the-grove.ai/research/knowledge-polarity"
+      ],
+      "status": "conforming"
+    },
+    {
       "path": "/standards/001",
       "class": "standard",
       "registers": ["standards"],
       "lineage": [],
-      "status": "pending"
+      "status": "conforming"
     },
     {
       "path": "/standards/002",
       "class": "standard",
       "registers": ["standards"],
       "lineage": ["https://the-grove.ai/standards/001"],
-      "status": "pending"
+      "status": "conforming"
     },
     {
       "path": "/standards/003",
       "class": "standard",
       "registers": ["standards"],
       "lineage": ["https://the-grove.ai/standards/001"],
-      "status": "pending"
+      "status": "conforming"
     },
     {
       "path": "/standards/004",
@@ -67,7 +78,7 @@
         "https://the-grove.ai/standards/001",
         "https://the-grove.ai/research/knowledge-polarity"
       ],
-      "status": "pending"
+      "status": "conforming"
     },
     {
       "path": "/alerts/polarity-and-the-grove-protocol",
@@ -108,10 +119,31 @@
       "status": "pending"
     },
     {
+      "path": "/alerts/structural-custody",
+      "class": "alert",
+      "registers": ["operational"],
+      "lineage": ["https://the-grove.ai/standards/001"],
+      "status": "pending"
+    },
+    {
+      "path": "/alerts/structural-custody/evidence",
+      "class": "evidence-library",
+      "registers": ["operational"],
+      "lineage": ["https://the-grove.ai/alerts/structural-custody"],
+      "status": "pending"
+    },
+    {
       "path": "/lambda",
       "class": "observation-surface",
       "registers": ["operational"],
       "lineage": [],
+      "status": "pending"
+    },
+    {
+      "path": "/ratchet",
+      "class": "interactive-tool",
+      "registers": ["operational"],
+      "lineage": ["https://the-grove.ai/standards/001"],
       "status": "pending"
     },
     {
@@ -145,5 +177,5 @@
     }
   ],
   "published": "2026-04-23",
-  "updated": "2026-04-23"
+  "updated": "2026-08-10"
 }
