@@ -34,6 +34,12 @@ Disallow: /substrate/jim-calhoun/letter/
 # Legacy redirect path — superseded by /alerts/*
 Disallow: /papers/
 
+# Published white papers are citation targets — the research pages point at
+# them via citation_pdf_url, so Google Scholar and other crawlers must be able
+# to fetch them. Everything else under /docs/ stays closed.
+Allow: /docs/the-autonomaton-pattern-grv-001.pdf
+Allow: /docs/compositional-computing-grove-white-paper.pdf
+
 # Non-production
 Disallow: /sprints/
 Disallow: /docs/

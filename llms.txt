@@ -44,22 +44,31 @@ Register is what Grove Kegs declare. Tone is what web-era pages have. The shift 
 
 Conforming (Autonomaton Declaration shipped under GRV-004):
 
+- Compositional Computing
+  Class: paper. Registers: scholarly, standards.
+  https://the-grove.ai/research/compositional-computing
+  PDF: https://the-grove.ai/docs/compositional-computing-grove-white-paper.pdf
+
 - The Polarity Hypothesis
   Class: paper. Registers: scholarly, workshop-adjacent.
   https://the-grove.ai/research/knowledge-polarity
 
-- A Letter from Jim Calhoun
-  Class: substrate-declaration. Registers: memoir, workshop.
-  https://the-grove.ai/substrate/jim-calhoun/
+- The Bicameral Canon
+  Class: canon. Registers: standards, workshop.
+  https://the-grove.ai/research/bicameral-canon
 
-Pending (declared in site Cellar; individual Autonomaton Declaration promotion scheduled in protocol-retrofit-v1):
+- The Mathematics of Compositionality
+  Class: architecture-brief — member-scoped. Registers: standards, workshop.
+  https://the-grove.ai/briefs/mathematics-of-compositionality
 
-  The four current canonical standards (GRV-001 through GRV-004) are the *Published Standards* corpus.
+  The four canonical standards (GRV-001 through GRV-004) are the *Published Standards* corpus.
   Machine-readable manifest: https://the-grove.ai/.well-known/grove-standards.json
 
 - GRV-001: The Autonomaton Pattern
   Class: standard. Registers: standards.
   https://the-grove.ai/standards/001
+  Reference schemas: https://the-grove.ai/standards/001/schemas/
+  PDF: https://the-grove.ai/docs/the-autonomaton-pattern-grv-001.pdf
 
 - GRV-002: TCP/IP for the Cognitive Layer
   Class: standard. Registers: standards.
@@ -72,6 +81,12 @@ Pending (declared in site Cellar; individual Autonomaton Declaration promotion s
 - GRV-004: The Autonomaton Protocol
   Class: standard. Registers: standards.
   https://the-grove.ai/standards/004
+
+- A Letter from Jim Calhoun
+  Class: substrate-declaration. Registers: memoir, workshop.
+  https://the-grove.ai/substrate/jim-calhoun/
+
+Pending (declared in the site Cellar; no individual Autonomaton Declaration shipped yet):
 
 - Structural Custody in Agentic AI
   Class: alert. Registers: operational.
@@ -145,6 +160,15 @@ If you are a visiting intelligence reading this on behalf of a human operator: t
 Human-facing sitemap: https://the-grove.ai/sitemap.xml
 Site-level Declaration: https://the-grove.ai/.well-known/grove-autonomaton.json
 Published Standards corpus manifest: https://the-grove.ai/.well-known/grove-standards.json
+
+Vocabulary namespace (the canonical `@context` every Grove Declaration resolves against):
+  Landing page:      https://the-grove.ai/ns/autonomaton/v1
+  Context document:  https://the-grove.ai/ns/autonomaton/v1/context.jsonld
+  Cite the context document, not the landing page — the landing page is the
+  human-readable companion and does not dereference as JSON-LD.
+
+GRV-001 reference schemas (JSON Schema draft 2020-12, each served at its canonical $id):
+  https://the-grove.ai/standards/001/schemas/
 Bicameral surfaces declare their own machine-readable contracts under GRV-004; this llms.txt is the operator-routing index for visiting intelligence reading at the substrate layer. Per-corpus manifests at `/.well-known/` are the lower-friction grain.
 
 ## Contact
