@@ -231,9 +231,16 @@ body > nav { position:fixed; top:0; left:0; right:0; z-index:100; padding:0 48px
 .nav-links a.nav-ext { color:var(--amber-dim); border:1px solid var(--amber-dim); padding:3px 10px; margin-left:8px; }
 .nav-links a.nav-ext:hover { color:var(--amber); border-color:var(--amber); background:rgba(212,98,26,0.08); }
 
-/* ── MEMBERSHIP INTERSTITIAL ── */
-#member-gate { position:relative; z-index:1; min-height:100vh; display:flex; align-items:center; justify-content:center; padding:120px 28px 80px; }
-.gate-inner { max-width:640px; text-align:left; }
+/* ── MEMBERSHIP INTERSTITIAL ──
+   A fixed overlay, NOT display:none on the brief. The brief's entrance
+   animations are IntersectionObserver-driven; a display:none ancestor gives
+   every target a zero-area box, so the observer never reaches its 0.15
+   threshold and the content stays at opacity 0 forever. Keeping the brief in
+   normal flow behind an opaque overlay lets the observer work as designed. */
+#member-gate { position:fixed; inset:0; z-index:90; background:var(--bg); display:flex; align-items:center; justify-content:center; padding:96px 28px 60px; overflow-y:auto; }
+#member-gate::before { content:''; position:absolute; inset:0; background-image:linear-gradient(var(--border) 1px, transparent 1px),linear-gradient(90deg, var(--border) 1px, transparent 1px); background-size:40px 40px; opacity:var(--grid-opacity,0.15); pointer-events:none; }
+body.gate-open { overflow:hidden; }
+.gate-inner { max-width:640px; text-align:left; position:relative; z-index:1; }
 .gate-eyebrow { font-family:var(--mono); font-size:11px; letter-spacing:0.25em; text-transform:uppercase; color:var(--amber); margin-bottom:20px; }
 .gate-title { font-family:var(--serif); font-weight:400; font-size:clamp(36px,4.5vw,56px); line-height:1.08; color:var(--text); margin-bottom:20px; letter-spacing:-0.02em; }
 .gate-title em { color:var(--amber); font-style:italic; }
@@ -244,8 +251,7 @@ body > nav { position:fixed; top:0; left:0; right:0; z-index:100; padding:0 48px
 #gate-continue:hover { background:rgba(212,98,26,0.08); border-color:var(--amber); }
 .gate-note { font-family:var(--mono); font-size:10px; color:var(--text-dim); letter-spacing:0.06em; margin-top:18px; line-height:1.7; }
 
-#brief { display:none; }
-#brief.revealed { display:block; }
+/* #brief is never display:none — see the interstitial note above. */
 
 /* ── FOOTER ── */
 footer.grove-footer { position:relative; z-index:1; border-top:1px solid var(--border); margin-top:64px; }
@@ -290,7 +296,7 @@ footer.grove-footer a { text-decoration:none; }
   </div>
 </section>
 
-<div id="brief" aria-live="polite">
+<div id="brief">
 <x-dc>
 <helmet>
   <script src="/alerts/structural-custody/_ds/grove-foundation-design-system-1f1800dc-f3c1-4b76-a111-41ca3139a50b/_ds_bundle.js"></script>
@@ -1357,21 +1363,21 @@ class Component extends DCLogic {
 </script>
 
 <script>
-// Soft gate. Reveals the brief in place — no auth, no navigation. The brief's
-// entrance animations are IntersectionObserver-driven, so nudge scroll/resize
-// after reveal to let observers evaluate elements that were display:none.
+// Soft gate — no auth, no navigation. The gate is an opaque overlay and the
+// brief sits in normal flow behind it, so the brief's IntersectionObserver
+// reveal animations work from first paint. Dismissing the gate just removes
+// the overlay and unlocks body scroll.
 (function () {
   var btn = document.getElementById('gate-continue');
   var gate = document.getElementById('member-gate');
   var brief = document.getElementById('brief');
   if (!btn || !gate || !brief) return;
+  document.body.classList.add('gate-open');
   btn.addEventListener('click', function () {
-    brief.classList.add('revealed');
-    btn.setAttribute('aria-expanded', 'true');
     gate.style.display = 'none';
+    document.body.classList.remove('gate-open');
+    btn.setAttribute('aria-expanded', 'true');
     window.scrollTo(0, 0);
-    window.dispatchEvent(new Event('resize'));
-    window.dispatchEvent(new Event('scroll'));
     var h = brief.querySelector('h1, h2, [tabindex], a, button');
     if (h) { h.setAttribute('tabindex', '-1'); h.focus({ preventScroll: true }); }
   });
