@@ -56,7 +56,7 @@
     { "name": "Leo de Luna",       "kind": "human-substrate-predecessor", "url": "https://tribecavp.com/team/leo-de-luna/" },
 
     { "name": "autonomaton-primitive repository", "kind": "artifact-substrate-predecessor", "url": "https://github.com/understory-ip/autonomaton-primitive" },
-    { "name": "The Bicameral Canon",               "kind": "artifact-substrate-predecessor", "url": "https://the-grove.ai/sprints/bicameral-canon/BICAMERAL-CANON.md" },
+    { "name": "The Bicameral Canon",               "kind": "artifact-substrate-predecessor", "url": "https://the-grove.ai/research/bicameral-canon" },
     { "name": "GRV-004: The Autonomaton Protocol", "kind": "artifact-substrate-predecessor", "url": "https://the-grove.ai/standards/004" },
 
     { "name": "Cat Stevens — On the Road to Find Out (1970)", "kind": "cultural-substrate-predecessor", "url": "https://www.youtube.com/watch?v=ocu7XObxRZ8" },
@@ -201,7 +201,7 @@
     "Per-recipient substrate (Option C) — forthcoming. Recipients named in this letter's dedication will receive per-recipient Keg surfaces accessible through Andon clearance at /substrate/jim-calhoun/letter/andon/. Demonstrates the multi-register claim structurally."
   ],
   "compose_with": [
-    { "name": "The Bicameral Canon", "url": "https://the-grove.ai/sprints/bicameral-canon/BICAMERAL-CANON.md" },
+    { "name": "The Bicameral Canon", "url": "https://the-grove.ai/research/bicameral-canon" },
     { "name": "GRV-004: The Autonomaton Protocol", "url": "https://the-grove.ai/standards/004" }
   ],
   "handshake_anchor": "#grove-handshake",

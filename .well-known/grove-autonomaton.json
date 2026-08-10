@@ -121,7 +121,7 @@
       "lineage": [
         "https://the-grove.ai/standards/001",
         "https://the-grove.ai/standards/004",
-        "https://the-grove.ai/sprints/bicameral-canon/BICAMERAL-CANON.md"
+        "https://the-grove.ai/research/bicameral-canon"
       ],
       "status": "conforming"
     }
@@ -130,7 +130,7 @@
   "compose_with": [
     {
       "name": "The Bicameral Canon",
-      "url": "https://the-grove.ai/sprints/bicameral-canon/BICAMERAL-CANON.md",
+      "url": "https://the-grove.ai/research/bicameral-canon",
       "kind": "canon"
     },
     {

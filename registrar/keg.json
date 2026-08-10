@@ -20,7 +20,7 @@
   "registers": ["operator-declaration"],
   "lineage": [
     { "name": "GRV-004: The Autonomaton Protocol", "kind": "artifact-substrate-predecessor", "url": "https://the-grove.ai/standards/004" },
-    { "name": "The Bicameral Canon",               "kind": "artifact-substrate-predecessor", "url": "https://the-grove.ai/sprints/bicameral-canon/BICAMERAL-CANON.md" }
+    { "name": "The Bicameral Canon",               "kind": "artifact-substrate-predecessor", "url": "https://the-grove.ai/research/bicameral-canon" }
   ],
   "intent": "The Registrar is the operator declaration of The Grove Foundation. Cohort-2026 substrate is live; issuance interface arrives here.",
   "payloads": [
