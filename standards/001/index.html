@@ -275,6 +275,59 @@
 
 <link rel="alternate" type="application/json" href="/standards/GRV-001.json" title="GRV-001 as structured data manifest">
 
+<!-- ══════════════════════════════════════════════════════════════════
+     JSON-LD — GroveKeg (Autonomaton Declaration surface)
+══════════════════════════════════════════════════════════════════ -->
+<script type="application/ld+json">
+{
+  "@context": "https://the-grove.ai/ns/autonomaton/v1/context.jsonld",
+  "@type": ["GroveKeg", "TechArticle"],
+  "@id": "https://the-grove.ai/standards/001#grove-keg",
+  "keg_class": "standard",
+  "scope": "public",
+  "protocol": "GRV-004",
+  "protocolVersion": "1.0",
+  "operator": {
+    "name": "Jim Calhoun",
+    "organization": "The Grove Foundation",
+    "url": "https://the-grove.ai"
+  },
+  "autonomaton": {
+    "name": "the-grove.ai",
+    "declaration": "/.well-known/grove-autonomaton.json"
+  },
+  "registers": ["standards"],
+  "lineage": [],
+  "payloads": [
+    { "name": "problem",           "anchor": "#problem" },
+    { "name": "governance",        "anchor": "#governance" },
+    { "name": "lineage",           "anchor": "#lineage" },
+    { "name": "pattern",           "anchor": "#pattern" },
+    { "name": "principles",        "anchor": "#principles" },
+    { "name": "zone-model",        "anchor": "#zone-model" },
+    { "name": "flywheel",          "anchor": "#flywheel" },
+    { "name": "reference-schemas", "anchor": "#reference-schemas" },
+    { "name": "implications",      "anchor": "#implications" }
+  ],
+  "reserves": [
+    "The reference schemas are illustrative, not exhaustive. They carry enough structure to build against and enough constraint to audit against; they are not a certification suite. Conformance to GRV-001 is a property of an implementation's architecture, not of whether a particular config file validates.",
+    "The Pattern describes an architecture, not a product. Nothing here specifies a vendor, a model, a runtime, or a hosting arrangement — an implementation that pins any of those has added a commitment the standard does not make.",
+    "v2.0 keys zones on operator scope rather than action category. The v1 category-keyed model is superseded, not merely deprecated; implementations carrying category-keyed zone overrides are running a retired model."
+  ],
+  "compose_with": [
+    "five-stage invariant pipeline (Telemetry, Recognition, Compilation, Approval, Execution — one entry per stage, canonical order)",
+    "DEX principles (Declarative Sovereignty, Capability Agnosticism, Provenance as Infrastructure, Composability)",
+    "zone model (scope-keyed: whether a write changes what the agent is authorized to do)",
+    "confirmation gate (operator-issued grant token; the loop may request, only the operator may issue)",
+    "provenance stamping (every agent-performed write carries its actor, surface, and write class)",
+    "canonical vocabulary (Autonomaton, operator, Jidoka, Andon, Kaizen)"
+  ],
+  "license": "https://creativecommons.org/licenses/by/4.0/",
+  "version": "2.0",
+  "dateModified": "2026-06-22"
+}
+</script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fragment+Mono:ital@0;1&family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">

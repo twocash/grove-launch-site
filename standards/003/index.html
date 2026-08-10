@@ -85,6 +85,66 @@
   ]
 }
 </script>
+<!-- ══════════════════════════════════════════════════════════════════
+     JSON-LD — GroveKeg (Autonomaton Declaration surface)
+══════════════════════════════════════════════════════════════════ -->
+<script type="application/ld+json">
+{
+  "@context": "https://the-grove.ai/ns/autonomaton/v1/context.jsonld",
+  "@type": ["GroveKeg", "TechArticle"],
+  "@id": "https://the-grove.ai/standards/003#grove-keg",
+  "keg_class": "standard",
+  "scope": "public",
+  "protocol": "GRV-004",
+  "protocolVersion": "1.0",
+  "operator": {
+    "name": "Jim Calhoun",
+    "organization": "The Grove Foundation",
+    "url": "https://the-grove.ai"
+  },
+  "autonomaton": {
+    "name": "the-grove.ai",
+    "declaration": "/.well-known/grove-autonomaton.json"
+  },
+  "registers": ["standards"],
+  "lineage": [
+    { "name": "GRV-001: The Autonomaton Pattern", "url": "https://the-grove.ai/standards/001" }
+  ],
+  "payloads": [
+    { "name": "thesis",                       "anchor": "#thesis" },
+    { "name": "cognitive-platforming-hazard", "anchor": "#cognitive-platforming-hazard" },
+    { "name": "what-current-models-get-wrong","anchor": "#what-current-models-get-wrong" },
+    { "name": "invariants",                   "anchor": "#invariants" },
+    { "name": "composition-thesis",           "anchor": "#composition-thesis" },
+    { "name": "node-taxonomy",                "anchor": "#node-taxonomy" },
+    { "name": "ratchet-learning-trajectory",  "anchor": "#ratchet-learning-trajectory" },
+    { "name": "memorialized-judgment",        "anchor": "#memorialized-judgment" },
+    { "name": "dock",                         "anchor": "#dock" },
+    { "name": "goals",                        "anchor": "#goals" },
+    { "name": "credential-of-value",          "anchor": "#credential-of-value" },
+    { "name": "federated-expertise-economy",  "anchor": "#federated-expertise-economy" },
+    { "name": "regional-imperative",          "anchor": "#regional-imperative" },
+    { "name": "out-of-scope",                 "anchor": "#out-of-scope" }
+  ],
+  "reserves": [
+    "The standard declares its own out-of-scope surface (§ out-of-scope). What is marked out of scope is not deferred judgment — it is outside what this standard claims to govern.",
+    "The 2040 goal is a direction of travel, not a forecast. It states what the architecture is aimed at so that drift from it is legible; it does not predict that the institutional preconditions will be met.",
+    "The learner-facing framing is deliberately institutional. It describes what a composable university would require structurally, not what any particular institution should adopt or on what timeline."
+  ],
+  "compose_with": [
+    "cognitive platforming hazard (the failure mode where a learner's judgment accrues to a vendor's substrate)",
+    "memorialized judgment (the ratchet as a record of decisions, not a score)",
+    "dock (the learner's owned cognitive coupling)",
+    "credential of value (what a credential attests when judgment is portable)",
+    "node taxonomy (the roles a participant can occupy in a federated expertise economy)",
+    "composition interfaces (how sovereign learning nodes interoperate)"
+  ],
+  "license": "https://creativecommons.org/licenses/by/4.0/",
+  "version": "1.2",
+  "dateModified": "2026-04-19"
+}
+</script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fragment+Mono:ital@0;1&family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">

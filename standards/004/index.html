@@ -131,7 +131,7 @@
   "dependencies": "GRV-001, GRV-003, Polarity Hypothesis",
   "author": {
     "@type": "Person",
-    "name": "James Calhoun",
+    "name": "Jim Calhoun",
     "jobTitle": "Founder, The Grove Foundation · Managing Director, Take Flight Advisors",
     "affiliation": [
       {"@type": "Organization", "name": "The Grove Foundation", "url": "https://the-grove.ai"},
@@ -264,6 +264,65 @@
       }
     }
   ]
+}
+</script>
+
+<!-- ══════════════════════════════════════════════════════════════════
+     JSON-LD — GroveKeg (Autonomaton Declaration surface)
+     The protocol declaring itself under its own terms.
+══════════════════════════════════════════════════════════════════ -->
+<script type="application/ld+json">
+{
+  "@context": "https://the-grove.ai/ns/autonomaton/v1/context.jsonld",
+  "@type": ["GroveKeg", "TechArticle"],
+  "@id": "https://the-grove.ai/standards/004#grove-keg",
+  "keg_class": "standard",
+  "scope": "public",
+  "protocol": "GRV-004",
+  "protocolVersion": "1.0",
+  "operator": {
+    "name": "Jim Calhoun",
+    "organization": "The Grove Foundation",
+    "url": "https://the-grove.ai"
+  },
+  "autonomaton": {
+    "name": "the-grove.ai",
+    "declaration": "/.well-known/grove-autonomaton.json"
+  },
+  "registrar": "https://the-grove.ai",
+  "registers": ["standards"],
+  "lineage": [
+    { "name": "GRV-001: The Autonomaton Pattern", "url": "https://the-grove.ai/standards/001" },
+    { "name": "The Polarity Hypothesis",          "url": "https://the-grove.ai/research/knowledge-polarity" },
+    { "name": "The Bicameral Canon",              "url": "https://the-grove.ai/research/bicameral-canon" }
+  ],
+  "payloads": [
+    { "name": "executive-summary", "anchor": "#executive-summary" },
+    { "name": "problem",           "anchor": "#problem" },
+    { "name": "pattern",           "anchor": "#pattern" },
+    { "name": "invariants",        "anchor": "#invariants" },
+    { "name": "reference-schema",  "anchor": "#reference-schema" },
+    { "name": "handshake",         "anchor": "#handshake" },
+    { "name": "trajectory",        "anchor": "#trajectory" },
+    { "name": "conformance",       "anchor": "#conformance" }
+  ],
+  "reserves": [
+    "Registration is Stage-1 scaffolding and is designed to recede. The registrar's signing role exists to bootstrap verification before the Mesh reaches the density at which conformance is verifiable by composition. A registrar accumulating signing revenue or certification pressure has drifted from the protocol's own trajectory.",
+    "Conformance is a property of the Declaration, not of the operator. A conforming Autonomaton has declared its intent, scope, and reserve honestly; the protocol does not and cannot attest that the declaration is true.",
+    "The Mesh is an aggregate, not a system anyone operates. Nothing in this protocol grants the Foundation, the registrar, or any participant authority over another operator's node."
+  ],
+  "compose_with": [
+    "Autonomaton Protocol (the declaration standard itself)",
+    "Autonomaton Declaration (the operator's sovereign statement of intent, scope, and reserve)",
+    "Autonomaton Handshake (what visiting intelligence reads before composing)",
+    "Autonomaton Mesh (the emergent network of conforming nodes)",
+    "keg (the distilled unit of an operator's cellar)",
+    "cellar (the operator's collection of Kegs, scoped by the Declaration)",
+    "autonomic understanding (composition at the speed of recognition, because ground is declared rather than reconstructed)"
+  ],
+  "license": "https://creativecommons.org/licenses/by/4.0/",
+  "version": "1.0",
+  "dateModified": "2026-04-22"
 }
 </script>
 

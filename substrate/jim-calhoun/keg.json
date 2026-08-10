@@ -1,5 +1,5 @@
 {
-  "@context": "https://the-grove.ai/protocol/schema",
+  "@context": "https://the-grove.ai/ns/autonomaton/v1/context.jsonld",
   "@type": ["GroveKeg"],
   "@id": "https://the-grove.ai/substrate/jim-calhoun/#grove-keg",
   "keg_class": "founder-declaration",

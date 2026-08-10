@@ -253,6 +253,51 @@
 }
 </script>
 
+<!-- ══════════════════════════════════════════════════════════════════
+     JSON-LD — GroveKeg (Autonomaton Declaration surface)
+══════════════════════════════════════════════════════════════════ -->
+<script type="application/ld+json">
+{
+  "@context": "https://the-grove.ai/ns/autonomaton/v1/context.jsonld",
+  "@type": ["GroveKeg", "TechArticle"],
+  "@id": "https://the-grove.ai/standards/002#grove-keg",
+  "keg_class": "standard",
+  "scope": "public",
+  "protocol": "GRV-004",
+  "protocolVersion": "1.0",
+  "operator": {
+    "name": "Jim Calhoun",
+    "organization": "The Grove Foundation",
+    "url": "https://the-grove.ai"
+  },
+  "autonomaton": {
+    "name": "the-grove.ai",
+    "declaration": "/.well-known/grove-autonomaton.json"
+  },
+  "registers": ["standards"],
+  "lineage": [
+    { "name": "GRV-001: The Autonomaton Pattern", "url": "https://the-grove.ai/standards/001" }
+  ],
+  "payloads": [
+    { "name": "faq", "anchor": "#faq" }
+  ],
+  "reserves": [
+    "The TCP/IP correspondence is structural, not historical. The argument is that the same design principles — a thin waist, end-to-end intelligence, permissionless composition — apply to the cognitive layer. It is not a claim that the cognitive layer will follow the same adoption path, on the same timescale, or with the same winners.",
+    "The reverse tax is an argument about incentives, not a measurement. It predicts which way costs run under composition versus capture; it does not quantify them for any particular deployment.",
+    "The open questions in §VIII are open. Where the protocol analogy runs out — governance of the naming layer, economics of the substrate, what replaces the IETF function — the standard marks the edge rather than asserting past it."
+  ],
+  "compose_with": [
+    "thin waist (the narrow interoperable layer everything else composes over)",
+    "end-to-end argument (intelligence at the edges, not in the substrate)",
+    "composition primitives (how sovereign nodes interoperate without a coordinating authority)",
+    "reverse tax (composition lowers marginal cost where capture raises it)",
+    "permissionless innovation (no gatekeeper approves a new participant)"
+  ],
+  "license": "https://creativecommons.org/licenses/by/4.0/",
+  "dateModified": "2026-04-22"
+}
+</script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fragment+Mono:ital@0;1&family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">

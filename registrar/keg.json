@@ -1,5 +1,5 @@
 {
-  "@context": "https://the-grove.ai/protocol/schema",
+  "@context": "https://the-grove.ai/ns/autonomaton/v1/context.jsonld",
   "@type": ["GroveKeg"],
   "@id": "https://the-grove.ai/registrar/#grove-keg",
   "keg_class": "registrar-surface",
@@ -7,7 +7,7 @@
     "name": "The Grove Foundation",
     "url": "https://the-grove.ai",
     "founder": {
-      "name": "James Calhoun",
+      "name": "Jim Calhoun",
       "role": "Founder and Executive Director",
       "url": "https://www.linkedin.com/in/jimcalhoun"
     },
