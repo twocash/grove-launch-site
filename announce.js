@@ -30,7 +30,8 @@
     '.gv-announce-close{flex:none;background:none;border:none;color:#8a8178;' +
       'font-size:15px;line-height:1;cursor:pointer;padding:4px;margin-left:4px;}' +
     '.gv-announce-close:hover{color:#e8e2d9;}' +
-    '@media(max-width:640px){.gv-announce-inner{padding:8px 18px;font-size:12.5px;gap:8px;}}';
+    '@media(max-width:640px){.gv-announce-inner{padding:8px 18px;font-size:12.5px;gap:8px;}}' +
+    '@media print{.gv-announce{display:none !important;}}';
 
   var HTML =
     '<div class="gv-announce-inner">' +
